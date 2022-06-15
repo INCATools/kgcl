@@ -1,4 +1,4 @@
-site_name: "My Datamodel"
+site_name: "KGCL"
 theme:
   name: material
   analytics:
@@ -27,5 +27,5 @@ nav:
 #  - Home: home.md
   - Index: index.md
   - About: about.md
-site_url: https://my-org.github.io/my-datamodel/
-repo_url: https://github.com/my-org/my-datamodel/
+site_url: https://incatools.github.io/kgcl/
+repo_url: https://github.com/INCATools/kgcl
