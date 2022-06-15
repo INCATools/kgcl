@@ -8,7 +8,7 @@ on:
 
     # paths:
     # - 'src/docs/*'
-    # - 'src/kgcl/schema/kgcl.yaml'
+    # - 'src/kgcl_schema/schema/kgcl.yaml'
 
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
@@ -71,5 +71,5 @@ jobs:
         mkdir docs
         touch docs/.nojekyll
         cp -r src/docs/* docs/
-        poetry run gen-doc -d docs src/kgcl/schema/kgcl.yaml
+        poetry run gen-doc -d docs src/kgcl_schema/schema/kgcl.yaml
         poetry run mkdocs gh-deploy
