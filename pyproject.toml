@@ -1,10 +1,13 @@
 [tool.poetry]
-name = "linkml-project-template"
+name = "kgcl-schema"
 version = "0.1.0"
-description = "Enter description of your project here"
-authors = ["Mark A. Miller <mamillerpa@gmail.com>"]
+description = "Schema fro the KGCL project."
+authors = [
+    "Chris Mungall <cjmungall@lbl.gov>",
+    "Harshad Hegde <hhegde@lbl.gov>"
+    ]
 license = "MIT"
-include = ["README.md", "src/linkml", "project"]
+
 
 [tool.poetry.dependencies]
 python = "^3.9"
