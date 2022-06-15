@@ -1,0 +1,826 @@
+BASE <http://w3id.org/kgcl/>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX linkml: <https://w3id.org/linkml/>
+PREFIX om: <http://w3id.org/kgcl/om/>
+PREFIX dc1: <http://purl.org/dc/terms/>
+PREFIX basics: <https://w3id.org/kgcl/basics/>
+PREFIX xml1: <http://example.org/UNKNOWN/xml/>
+
+
+<ChangeClassType> IRI
+
+linkml:String xsd:string
+
+linkml:Integer xsd:integer
+
+linkml:Boolean xsd:boolean
+
+linkml:Float xsd:float
+
+linkml:Double xsd:double
+
+linkml:Decimal xsd:decimal
+
+linkml:Time xsd:dateTime
+
+linkml:Date xsd:date
+
+linkml:Datetime xsd:dateTime
+
+linkml:Uriorcurie IRI
+
+linkml:Uri IRI
+
+linkml:Ncname xsd:string
+
+linkml:Objectidentifier IRI
+
+linkml:Nodeidentifier NONLITERAL
+
+basics:LanguageTag xml1:lang
+
+prov:Activity CLOSED {
+    (  $prov:Activity_tes (  prov:startedAtTime @linkml:String ? ;
+          prov:endedAtTime @linkml:String ? ;
+          prov:wasInformedBy @prov:Activity ? ;
+          prov:wasAssociatedWith @prov:Agent ? ;
+          prov:used @linkml:String ? ;
+          dc1:description @linkml:String ?
+       ) ;
+       rdf:type [ prov:Activity ]
+    )
+}
+
+<AddNodeToSubset> CLOSED {
+    (  $<AddNodeToSubset_tes> (  &<NodeChange_tes> ;
+          rdf:type [ <NodeChange> ] ? ;
+          &<AddToSubset_tes> ;
+          rdf:type [ <AddToSubset> ] ? ;
+          <in_subset> @om:OntologySubset ?
+       ) ;
+       rdf:type [ <AddNodeToSubset> ]
+    )
+}
+
+<AddToSubset> {
+    (  $<AddToSubset_tes> (  &<SubsetMembershipChange_tes> ;
+          rdf:type [ <SubsetMembershipChange> ] ? ;
+          <in_subset> @om:OntologySubset ?
+       ) ;
+       rdf:type [ <AddToSubset> ] ?
+    )
+}
+
+prov:Agent CLOSED {
+    (  $prov:Agent_tes (  prov:actedOnBehalfOf @prov:Agent ? ;
+          prov:wasInformedBy @prov:Activity ?
+       ) ;
+       rdf:type [ prov:Agent ]
+    )
+}
+
+<AllowsAutomaticReplacementOfEdges> {
+    (  $<AllowsAutomaticReplacementOfEdges_tes> (  &<Obsoletion_tes> ;
+          rdf:type [ <Obsoletion> ] ?
+       ) ;
+       rdf:type [ <AllowsAutomaticReplacementOfEdges> ] ?
+    )
+}
+
+om:Annotation CLOSED {
+    (  $om:Annotation_tes (  &om:PropertyValue_tes ;
+          rdf:type [ om:PropertyValue ] ? ;
+          om:annotation_set @om:Annotation ? ;
+          om:property_type @linkml:String ? ;
+          om:filler_type @linkml:String ?
+       ) ;
+       rdf:type [ om:Annotation ] ?
+    )
+}
+
+<Change>  (
+    @<ComplexChange> OR @<SimpleChange> OR @<Transaction>
+)
+
+<Change_struct> {
+    (  $<Change_tes> (  prov:wasGeneratedBy @prov:Activity ? ;
+          rdfs:seeAlso @linkml:String ? ;
+          <pull_request> @linkml:String ? ;
+          dc1:creator @linkml:String ? ;
+          dc1:date @linkml:String ? ;
+          dc1:creator @linkml:String ? ;
+          <has_undo> @<Change> ?
+       ) ;
+       rdf:type [ <Change> ]
+    )
+}
+
+<ChangeMixin>  (
+    @<Creation> OR @<DatatypeOrLanguageTagChange> OR @<Deletion> OR @<Obsoletion> OR @<SubsetMembershipChange> OR @<Unobsoletion>
+)
+
+<ChangeMixin_struct> {
+    (  $<ChangeMixin_tes> rdf:type . * ;
+       rdf:type [ <ChangeMixin> ] ?
+    )
+}
+
+<ChangeSetSummaryStatistic> CLOSED {
+    (  $<ChangeSetSummaryStatistic_tes> (  <change_type> @<ChangeClassType> ? ;
+          <count> @linkml:Integer ? ;
+          om:property_value_set @om:PropertyValue *
+       ) ;
+       rdf:type [ <ChangeSetSummaryStatistic> ] ?
+    )
+}
+
+<ClassCreation> CLOSED {
+    (  $<ClassCreation_tes> (  &<NodeCreation_tes> ;
+          rdf:type [ <NodeCreation> ] ? ;
+          <superclass> @om:Node ? ;
+          <change_description> @linkml:String ?
+       ) ;
+       rdf:type [ <ClassCreation> ]
+    )
+}
+
+om:ClassNode CLOSED {
+    (  $om:ClassNode_tes (  &om:Node_tes ;
+          rdf:type [ om:Node ] ?
+       ) ;
+       rdf:type [ owl:Class ]
+    )
+}
+
+<ComplexChange>  (
+    {
+       (  $<ComplexChange_tes> (  &<Change_tes> ;
+             rdf:type [ <Change> ] ? ;
+             <change_set> @<Change> *
+          ) ;
+          rdf:type [ <ComplexChange> ]
+       )
+    } OR @<MultiNodeObsoletion>
+)
+
+<Configuration> CLOSED {
+    (  $<Configuration_tes> (  <name_predicate> @linkml:String ? ;
+          <definition_predicate> @linkml:String ? ;
+          <main_synonym_predicate> @linkml:String ? ;
+          <synonym_predicates> @linkml:String ? ;
+          <creator_predicate> @linkml:String ? ;
+          <contributor_predicate> @linkml:String ? ;
+          <obsoletion_workflow> @linkml:String ? ;
+          <obsoletion_policy> @linkml:String ?
+       ) ;
+       rdf:type [ <Configuration> ] ?
+    )
+}
+
+<Creation> {
+    (  $<Creation_tes> (  &<ChangeMixin_tes> ;
+          rdf:type [ <ChangeMixin> ] ? ;
+          <has_undo> @<Deletion> ?
+       ) ;
+       rdf:type [ <Creation> ] ?
+    )
+}
+
+<DatatypeChange> CLOSED {
+    (  $<DatatypeChange_tes> (  &<DatatypeOrLanguageTagChange_tes> ;
+          rdf:type [ <DatatypeOrLanguageTagChange> ] ?
+       ) ;
+       rdf:type [ <DatatypeChange> ] ?
+    )
+}
+
+<DatatypeOrLanguageTagChange>  (
+    @<DatatypeChange> OR @<LanguageTagChange>
+)
+
+<DatatypeOrLanguageTagChange_struct> {
+    (  $<DatatypeOrLanguageTagChange_tes> (  &<ChangeMixin_tes> ;
+          rdf:type [ <ChangeMixin> ] ?
+       ) ;
+       rdf:type [ <DatatypeOrLanguageTagChange> ] ?
+    )
+}
+
+<Deletion> {
+    (  $<Deletion_tes> (  &<ChangeMixin_tes> ;
+          rdf:type [ <ChangeMixin> ] ?
+       ) ;
+       rdf:type [ <Deletion> ] ?
+    )
+}
+
+om:Edge CLOSED {
+    (  $om:Edge_tes (  &om:OntologyElement_tes ;
+          rdf:type [ om:OntologyElement ] ? ;
+          om:subject @om:Node ? ;
+          om:predicate @om:Node ? ;
+          om:object @om:Node ? ;
+          om:subject_representation @linkml:String ? ;
+          om:predicate_representation @linkml:String ? ;
+          om:object_representation @linkml:String ? ;
+          om:annotation_set @om:Annotation ?
+       ) ;
+       rdf:type [ om:Edge ] ?
+    )
+}
+
+<EdgeChange>  (
+    @<EdgeCreation> OR @<EdgeDeletion> OR @<EdgeLogicalInterpretationChange> OR @<EdgeObsoletion> OR @<EdgeRewiring> OR @<NodeMove>
+    OR @<PredicateChange>
+)
+
+<EdgeChange_struct> {
+    (  $<EdgeChange_tes> (  &<SimpleChange_tes> ;
+          rdf:type [ <SimpleChange> ] ? ;
+          <about_edge> @om:Edge ? ;
+          <object_type> @linkml:String ? ;
+          <language> @basics:LanguageTag ? ;
+          <datatype> @linkml:String ? ;
+          om:subject @om:Node ?
+       ) ;
+       rdf:type [ <EdgeChange> ]
+    )
+}
+
+<EdgeCreation>  (
+    CLOSED {
+       (  $<EdgeCreation_tes> (  &<EdgeChange_tes> ;
+             rdf:type [ <EdgeChange> ] ? ;
+             &<Creation_tes> ;
+             rdf:type [ <Creation> ] ? ;
+             om:subject @om:Node ? ;
+             om:predicate @om:Node ? ;
+             om:object @om:Node ? ;
+             <subject_type> @linkml:String ? ;
+             <predicate_type> @linkml:String ? ;
+             om:annotation_set @om:Annotation ? ;
+             <change_description> @linkml:String ?
+          ) ;
+          rdf:type [ <EdgeCreation> ]
+       )
+    } OR @<MappingCreation> OR @<PlaceUnder>
+)
+
+<EdgeDeletion>  (
+    CLOSED {
+       (  $<EdgeDeletion_tes> (  &<EdgeChange_tes> ;
+             rdf:type [ <EdgeChange> ] ? ;
+             &<Deletion_tes> ;
+             rdf:type [ <Deletion> ] ? ;
+             om:subject @om:Node ? ;
+             om:predicate @om:Node ? ;
+             om:object @om:Node ? ;
+             <subject_type> @linkml:String ? ;
+             <predicate_type> @linkml:String ? ;
+             om:annotation_set @om:Annotation ? ;
+             <change_description> @linkml:String ?
+          ) ;
+          rdf:type [ <EdgeDeletion> ]
+       )
+    } OR @<RemoveUnder>
+)
+
+<EdgeLogicalInterpretationChange> CLOSED {
+    (  $<EdgeLogicalInterpretationChange_tes> (  &<EdgeChange_tes> ;
+          rdf:type [ <EdgeChange> ] ?
+       ) ;
+       rdf:type [ <EdgeLogicalInterpretationChange> ]
+    )
+}
+
+<EdgeObsoletion> CLOSED {
+    (  $<EdgeObsoletion_tes> (  &<EdgeChange_tes> ;
+          rdf:type [ <EdgeChange> ] ? ;
+          &<Obsoletion_tes> ;
+          rdf:type [ <Obsoletion> ] ? ;
+          om:subject @om:Node ? ;
+          om:predicate @om:Node ? ;
+          om:object @om:Node ? ;
+          om:annotation_set @om:Annotation ? ;
+          <change_description> @linkml:String ? ;
+          <about> @om:OntologyElement ?
+       ) ;
+       rdf:type [ <EdgeObsoletion> ]
+    )
+}
+
+<EdgeRewiring> CLOSED {
+    (  $<EdgeRewiring_tes> (  &<EdgeChange_tes> ;
+          rdf:type [ <EdgeChange> ] ?
+       ) ;
+       rdf:type [ <EdgeRewiring> ]
+    )
+}
+
+om:InstanceNode CLOSED {
+    (  $om:InstanceNode_tes (  &om:Node_tes ;
+          rdf:type [ om:Node ] ?
+       ) ;
+       rdf:type [ owl:NamedIndividual ]
+    )
+}
+
+<LanguageTagChange> CLOSED {
+    (  $<LanguageTagChange_tes> (  &<DatatypeOrLanguageTagChange_tes> ;
+          rdf:type [ <DatatypeOrLanguageTagChange> ] ? ;
+          <old_value> @basics:LanguageTag ? ;
+          <new_value> @basics:LanguageTag ?
+       ) ;
+       rdf:type [ <LanguageTagChange> ] ?
+    )
+}
+
+<LogicalAxiomChange> CLOSED {
+    (  $<LogicalAxiomChange_tes> (  &<SimpleChange_tes> ;
+          rdf:type [ <SimpleChange> ] ?
+       ) ;
+       rdf:type [ <LogicalAxiomChange> ]
+    )
+}
+
+om:LogicalDefinition CLOSED {
+    (  $om:LogicalDefinition_tes (  &om:OntologyElement_tes ;
+          rdf:type [ om:OntologyElement ] ?
+       ) ;
+       rdf:type [ om:LogicalDefinition ] ?
+    )
+}
+
+<MappingCreation> CLOSED {
+    (  $<MappingCreation_tes> (  &<EdgeCreation_tes> ;
+          rdf:type [ <EdgeCreation> ] ? ;
+          &<Creation_tes> ;
+          rdf:type [ <Creation> ] ? ;
+          om:subject @om:Node ? ;
+          om:predicate @om:Node ? ;
+          om:object @om:Node ? ;
+          <change_description> @linkml:String ?
+       ) ;
+       rdf:type [ <MappingCreation> ]
+    )
+}
+
+<MultiNodeObsoletion> CLOSED {
+    (  $<MultiNodeObsoletion_tes> (  &<ComplexChange_tes> ;
+          rdf:type [ <ComplexChange> ] ? ;
+          <change_set> @<NodeObsoletion> * ;
+          <change_description> @linkml:String ? ;
+          <associated_change_set> @<Change> *
+       ) ;
+       rdf:type [ <MultiNodeObsoletion> ]
+    )
+}
+
+<NameBecomesSynonym> CLOSED {
+    (  $<NameBecomesSynonym_tes> (  &<NodeSynonymChange_tes> ;
+          rdf:type [ <NodeSynonymChange> ] ? ;
+          <change_1> @<NodeRename> ? ;
+          <change_2> @<NewSynonym> ? ;
+          <change_description> @linkml:String ?
+       ) ;
+       rdf:type [ <NameBecomesSynonym> ]
+    )
+}
+
+<NewSynonym> CLOSED {
+    (  $<NewSynonym_tes> (  &<NodeSynonymChange_tes> ;
+          rdf:type [ <NodeSynonymChange> ] ? ;
+          <qualifier> @linkml:String ?
+       ) ;
+       rdf:type [ <NewSynonym> ]
+    )
+}
+
+<NewTextDefinition> CLOSED {
+    (  $<NewTextDefinition_tes> (  &<NodeTextDefinitionChange_tes> ;
+          rdf:type [ <NodeTextDefinitionChange> ] ?
+       ) ;
+       rdf:type [ <NewTextDefinition> ]
+    )
+}
+
+om:Node  (
+    CLOSED {
+       (  $om:Node_tes (  &om:OntologyElement_tes ;
+             rdf:type [ om:OntologyElement ] ? ;
+             om:name @linkml:String ? ;
+             om:annotation_set @om:Annotation ? ;
+             om:owl_type @om:OwlTypeEnum ?
+          ) ;
+          rdf:type [ om:Node ]
+       )
+    } OR @om:ClassNode OR @om:InstanceNode
+)
+
+<NodeAnnotationChange>  (
+    CLOSED {
+       (  $<NodeAnnotationChange_tes> (  &<NodeChange_tes> ;
+             rdf:type [ <NodeChange> ] ? ;
+             <annotation_property> @linkml:String ? ;
+             <annotation_property_type> @linkml:String ?
+          ) ;
+          rdf:type [ <NodeAnnotationChange> ]
+       )
+    } OR @<NodeAnnotationReplacement>
+)
+
+<NodeAnnotationReplacement> CLOSED {
+    (  $<NodeAnnotationReplacement_tes> (  &<NodeAnnotationChange_tes> ;
+          rdf:type [ <NodeAnnotationChange> ] ?
+       ) ;
+       rdf:type [ <NodeAnnotationReplacement> ]
+    )
+}
+
+<NodeChange>  (
+    @<AddNodeToSubset> OR @<NodeAnnotationChange> OR @<NodeCreation> OR @<NodeDeletion> OR @<NodeObsoletion> OR @<NodeRename> OR
+    @<NodeSynonymChange> OR @<NodeTextDefinitionChange> OR @<NodeUnobsoletion> OR @<RemovedNodeFromSubset> OR @<SetLanguageForName>
+)
+
+<NodeChange_struct> {
+    (  $<NodeChange_tes> (  &<SimpleChange_tes> ;
+          rdf:type [ <SimpleChange> ] ? ;
+          <about_node> @om:Node ? ;
+          <about_node_representation> @linkml:String ? ;
+          <language> @basics:LanguageTag ?
+       ) ;
+       rdf:type [ <NodeChange> ]
+    )
+}
+
+<NodeCreation>  (
+    CLOSED {
+       (  $<NodeCreation_tes> (  &<NodeChange_tes> ;
+             rdf:type [ <NodeChange> ] ? ;
+             &<Creation_tes> ;
+             rdf:type [ <Creation> ] ? ;
+             <node_id> @om:Node ? ;
+             om:name @linkml:String ? ;
+             om:owl_type @om:OwlTypeEnum ? ;
+             om:annotation_set @om:Annotation ? ;
+             <change_description> @linkml:String ?
+          ) ;
+          rdf:type [ <NodeCreation> ]
+       )
+    } OR @<ClassCreation>
+)
+
+<NodeDeepening> CLOSED {
+    (  $<NodeDeepening_tes> (  &<NodeMove_tes> ;
+          rdf:type [ <NodeMove> ] ? ;
+          <change_description> @linkml:String ?
+       ) ;
+       rdf:type [ <NodeDeepening> ]
+    )
+}
+
+<NodeDeletion> CLOSED {
+    (  $<NodeDeletion_tes> (  &<NodeChange_tes> ;
+          rdf:type [ <NodeChange> ] ? ;
+          &<Deletion_tes> ;
+          rdf:type [ <Deletion> ] ? ;
+          <change_description> @linkml:String ?
+       ) ;
+       rdf:type [ <NodeDeletion> ]
+    )
+}
+
+<NodeDirectMerge> CLOSED {
+    (  $<NodeDirectMerge_tes> (  &<NodeObsoletion_tes> ;
+          rdf:type [ <NodeObsoletion> ] ? ;
+          &<AllowsAutomaticReplacementOfEdges_tes> ;
+          rdf:type [ <AllowsAutomaticReplacementOfEdges> ] ? ;
+          <has_direct_replacement> @om:Node ;
+          <about_node> @om:Node ? ;
+          <change_description> @linkml:String ?
+       ) ;
+       rdf:type [ <NodeDirectMerge> ]
+    )
+}
+
+<NodeMove>  (
+    CLOSED {
+       (  $<NodeMove_tes> (  &<EdgeChange_tes> ;
+             rdf:type [ <EdgeChange> ] ? ;
+             <old_object_type> @linkml:String ? ;
+             <new_object_type> @linkml:String ? ;
+             <change_description> @linkml:String ?
+          ) ;
+          rdf:type [ <NodeMove> ]
+       )
+    } OR @<NodeDeepening> OR @<NodeShallowing>
+)
+
+<NodeObsoletion>  (
+    CLOSED {
+       (  $<NodeObsoletion_tes> (  &<NodeChange_tes> ;
+             rdf:type [ <NodeChange> ] ? ;
+             &<Obsoletion_tes> ;
+             rdf:type [ <Obsoletion> ] ? ;
+             <has_direct_replacement> @om:Node ? ;
+             <has_nondirect_replacement> @om:Node * ;
+             <change_description> @linkml:String ? ;
+             <associated_change_set> @<Change> * ;
+             <about> @om:OntologyElement ?
+          ) ;
+          rdf:type [ <NodeObsoletion> ]
+       )
+    } OR @<NodeDirectMerge> OR @<NodeObsoletionWithDirectReplacement> OR @<NodeObsoletionWithNoDirectReplacement>
+)
+
+<NodeObsoletionWithDirectReplacement> CLOSED {
+    (  $<NodeObsoletionWithDirectReplacement_tes> (  &<NodeObsoletion_tes> ;
+          rdf:type [ <NodeObsoletion> ] ? ;
+          &<AllowsAutomaticReplacementOfEdges_tes> ;
+          rdf:type [ <AllowsAutomaticReplacementOfEdges> ] ? ;
+          <has_direct_replacement> @om:Node ;
+          <change_description> @linkml:String ?
+       ) ;
+       rdf:type [ <NodeObsoletionWithDirectReplacement> ]
+    )
+}
+
+<NodeObsoletionWithNoDirectReplacement> CLOSED {
+    (  $<NodeObsoletionWithNoDirectReplacement_tes> (  &<NodeObsoletion_tes> ;
+          rdf:type [ <NodeObsoletion> ] ? ;
+          <has_nondirect_replacement> @om:Node + ;
+          <change_description> @linkml:String ?
+       ) ;
+       rdf:type [ <NodeObsoletionWithNoDirectReplacement> ]
+    )
+}
+
+<NodeRename> CLOSED {
+    (  $<NodeRename_tes> (  &<NodeChange_tes> ;
+          rdf:type [ <NodeChange> ] ? ;
+          <old_value> @linkml:String ? ;
+          <new_value> @linkml:String ? ;
+          <has_textual_diff> @<TextualDiff> ? ;
+          <change_description> @linkml:String ?
+       ) ;
+       rdf:type [ <NodeRename> ]
+    )
+}
+
+<NodeShallowing> CLOSED {
+    (  $<NodeShallowing_tes> (  &<NodeMove_tes> ;
+          rdf:type [ <NodeMove> ] ? ;
+          <change_description> @linkml:String ?
+       ) ;
+       rdf:type [ <NodeShallowing> ]
+    )
+}
+
+<NodeSynonymChange>  (
+    CLOSED {
+       (  $<NodeSynonymChange_tes> (  &<NodeChange_tes> ;
+             rdf:type [ <NodeChange> ] ?
+          ) ;
+          rdf:type [ <NodeSynonymChange> ]
+       )
+    } OR @<NameBecomesSynonym> OR @<NewSynonym> OR @<RemoveSynonym> OR @<SynonymPredicateChange> OR @<SynonymReplacement>
+)
+
+<NodeTextDefinitionChange>  (
+    @<NewTextDefinition> OR @<RemoveTextDefinition> OR @<TextDefinitionReplacement>
+)
+
+<NodeTextDefinitionChange_struct> {
+    (  $<NodeTextDefinitionChange_tes> (  &<NodeChange_tes> ;
+          rdf:type [ <NodeChange> ] ?
+       ) ;
+       rdf:type [ <NodeTextDefinitionChange> ]
+    )
+}
+
+<NodeUnobsoletion> CLOSED {
+    (  $<NodeUnobsoletion_tes> (  &<NodeChange_tes> ;
+          rdf:type [ <NodeChange> ] ? ;
+          &<Unobsoletion_tes> ;
+          rdf:type [ <Unobsoletion> ] ? ;
+          <change_description> @linkml:String ? ;
+          <replaced_by> @om:Node ? ;
+          <consider> @om:Node ?
+       ) ;
+       rdf:type [ <NodeUnobsoletion> ]
+    )
+}
+
+<Obsoletion>  (
+    {
+       (  $<Obsoletion_tes> (  &<ChangeMixin_tes> ;
+             rdf:type [ <ChangeMixin> ] ? ;
+             <about> @om:OntologyElement ? ;
+             <has_undo> @<Obsoletion> ?
+          ) ;
+          rdf:type [ <Obsoletion> ] ?
+       )
+    } OR @<AllowsAutomaticReplacementOfEdges>
+)
+
+om:OntologyElement  (
+    CLOSED {
+       (  $om:OntologyElement_tes rdf:type . * ;
+          rdf:type [ om:OntologyElement ] ?
+       )
+    } OR @om:Edge OR @om:LogicalDefinition OR @om:Node OR @om:OntologySubset OR @om:PropertyValue
+)
+
+om:OntologySubset CLOSED {
+    (  $om:OntologySubset_tes (  &om:OntologyElement_tes ;
+          rdf:type [ om:OntologyElement ] ?
+       ) ;
+       rdf:type [ om:OntologySubset ] ?
+    )
+}
+
+<PlaceUnder> CLOSED {
+    (  $<PlaceUnder_tes> (  &<EdgeCreation_tes> ;
+          rdf:type [ <EdgeCreation> ] ?
+       ) ;
+       rdf:type [ <PlaceUnder> ]
+    )
+}
+
+<PredicateChange> CLOSED {
+    (  $<PredicateChange_tes> (  &<EdgeChange_tes> ;
+          rdf:type [ <EdgeChange> ] ? ;
+          <change_description> @linkml:String ?
+       ) ;
+       rdf:type [ <PredicateChange> ]
+    )
+}
+
+om:PropertyValue  (
+    CLOSED {
+       (  $om:PropertyValue_tes (  &om:OntologyElement_tes ;
+             rdf:type [ om:OntologyElement ] ? ;
+             om:property @om:Node ? ;
+             om:filler @linkml:String ?
+          ) ;
+          rdf:type [ om:PropertyValue ] ?
+       )
+    } OR @om:Annotation
+)
+
+<RemoveFromSubset> {
+    (  $<RemoveFromSubset_tes> (  &<SubsetMembershipChange_tes> ;
+          rdf:type [ <SubsetMembershipChange> ] ? ;
+          <in_subset> @om:OntologySubset ? ;
+          <has_undo> @<AddToSubset> ?
+       ) ;
+       rdf:type [ <RemoveFromSubset> ] ?
+    )
+}
+
+<RemoveSynonym> CLOSED {
+    (  $<RemoveSynonym_tes> (  &<NodeSynonymChange_tes> ;
+          rdf:type [ <NodeSynonymChange> ] ?
+       ) ;
+       rdf:type [ <RemoveSynonym> ]
+    )
+}
+
+<RemoveTextDefinition> CLOSED {
+    (  $<RemoveTextDefinition_tes> (  &<NodeTextDefinitionChange_tes> ;
+          rdf:type [ <NodeTextDefinitionChange> ] ?
+       ) ;
+       rdf:type [ <RemoveTextDefinition> ]
+    )
+}
+
+<RemoveUnder> CLOSED {
+    (  $<RemoveUnder_tes> (  &<EdgeDeletion_tes> ;
+          rdf:type [ <EdgeDeletion> ] ?
+       ) ;
+       rdf:type [ <RemoveUnder> ]
+    )
+}
+
+<RemovedNodeFromSubset> CLOSED {
+    (  $<RemovedNodeFromSubset_tes> (  &<NodeChange_tes> ;
+          rdf:type [ <NodeChange> ] ? ;
+          &<RemoveFromSubset_tes> ;
+          rdf:type [ <RemoveFromSubset> ] ? ;
+          <change_description> @linkml:String ? ;
+          <about_node> @om:Node ? ;
+          <subset> @linkml:String ? ;
+          <in_subset> @om:OntologySubset ?
+       ) ;
+       rdf:type [ <RemovedNodeFromSubset> ]
+    )
+}
+
+<Session> CLOSED {
+    (  $<Session_tes> (  <change_set> @<Change> * ;
+          prov:activity_set @prov:Activity *
+       ) ;
+       rdf:type [ <Session> ] ?
+    )
+}
+
+<SetLanguageForName> CLOSED {
+    (  $<SetLanguageForName_tes> (  &<NodeChange_tes> ;
+          rdf:type [ <NodeChange> ] ? ;
+          &<LanguageTagChange_tes> ;
+          rdf:type [ <LanguageTagChange> ] ? ;
+          <change_description> @linkml:String ?
+       ) ;
+       rdf:type [ <SetLanguageForName> ]
+    )
+}
+
+<SimpleChange>  (
+    @<EdgeChange> OR @<LogicalAxiomChange> OR @<NodeChange>
+)
+
+<SimpleChange_struct> {
+    (  $<SimpleChange_tes> (  &<Change_tes> ;
+          rdf:type [ <Change> ] ? ;
+          <old_value> @linkml:String ? ;
+          <new_value> @linkml:String ? ;
+          <old_value_type> @linkml:String ? ;
+          <new_value_type> @linkml:String ? ;
+          <new_language> @linkml:String ? ;
+          <old_language> @linkml:String ? ;
+          <new_datatype> @linkml:String ? ;
+          <old_datatype> @linkml:String ?
+       ) ;
+       rdf:type [ <SimpleChange> ]
+    )
+}
+
+<SubsetMembershipChange>  (
+    @<AddToSubset> OR @<RemoveFromSubset>
+)
+
+<SubsetMembershipChange_struct> {
+    (  $<SubsetMembershipChange_tes> (  &<ChangeMixin_tes> ;
+          rdf:type [ <ChangeMixin> ] ? ;
+          <in_subset> @om:OntologySubset ?
+       ) ;
+       rdf:type [ <SubsetMembershipChange> ] ?
+    )
+}
+
+<SynonymPredicateChange> CLOSED {
+    (  $<SynonymPredicateChange_tes> (  &<NodeSynonymChange_tes> ;
+          rdf:type [ <NodeSynonymChange> ] ? ;
+          <has_textual_diff> @<TextualDiff> ?
+       ) ;
+       rdf:type [ <SynonymPredicateChange> ]
+    )
+}
+
+<SynonymReplacement> CLOSED {
+    (  $<SynonymReplacement_tes> (  &<NodeSynonymChange_tes> ;
+          rdf:type [ <NodeSynonymChange> ] ? ;
+          <has_textual_diff> @<TextualDiff> ?
+       ) ;
+       rdf:type [ <SynonymReplacement> ]
+    )
+}
+
+<TextDefinitionReplacement> CLOSED {
+    (  $<TextDefinitionReplacement_tes> (  &<NodeTextDefinitionChange_tes> ;
+          rdf:type [ <NodeTextDefinitionChange> ] ? ;
+          <has_textual_diff> @<TextualDiff> ?
+       ) ;
+       rdf:type [ <TextDefinitionReplacement> ]
+    )
+}
+
+<TextualDiff> CLOSED {
+    (  $<TextualDiff_tes> rdf:type . * ;
+       rdf:type [ <TextualDiff> ] ?
+    )
+}
+
+<Transaction> CLOSED {
+    (  $<Transaction_tes> (  &<Change_tes> ;
+          rdf:type [ <Change> ] ? ;
+          <change_set> @<Change> *
+       ) ;
+       rdf:type [ <Transaction> ]
+    )
+}
+
+<Unobsoletion> {
+    (  $<Unobsoletion_tes> (  &<ChangeMixin_tes> ;
+          rdf:type [ <ChangeMixin> ] ? ;
+          <has_undo> @<Obsoletion> ?
+       ) ;
+       rdf:type [ <Unobsoletion> ] ?
+    )
+}
+
+

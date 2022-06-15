@@ -1,0 +1,1089 @@
+// a provence-generating activity
+message Activity
+ {
+  string id = 0
+  string startedAtTime = 0
+  string endedAtTime = 0
+  activity wasInformedBy = 0
+  agent wasAssociatedWith = 0
+  string used = 0
+  string description = 0
+ }
+// Places a node inside a subset, by annotating that node
+message AddNodeToSubset
+ {
+  string id = 0
+  activity wasGeneratedBy = 0
+  string seeAlso = 0
+  string pullRequest = 0
+  string creator = 0
+  string changeDate = 0
+  string contributor = 0
+  change hasUndo = 0
+  string oldValue = 0
+  string newValue = 0
+  string oldValueType = 0
+  string newValueType = 0
+  string newLanguage = 0
+  string oldLanguage = 0
+  string newDatatype = 0
+  string oldDatatype = 0
+  node aboutNode = 0
+  string aboutNodeRepresentation = 0
+  languageTag language = 0
+  ontologySubset inSubset = 0
+ }
+// a provence-generating agent
+message Agent
+ {
+  string id = 0
+  agent actedOnBehalfOf = 0
+  activity wasInformedBy = 0
+ }
+// owl annotations. Not to be confused with annotations sensu GO
+message Annotation
+ {
+  node property = 0
+  string filler = 0
+  annotation annotationSet = 0
+  string propertyType = 0
+  string fillerType = 0
+ }
+// A summary statistic for a set of changes of the same type, grouped by zero or more node properties
+message ChangeSetSummaryStatistic
+ {
+  changeClassType changeType = 0
+  integer count = 0
+ repeated  propertyValue propertyValueSet = 0
+ }
+// A node creation where the owl type is 'class'
+message ClassCreation
+ {
+  string id = 0
+  activity wasGeneratedBy = 0
+  string seeAlso = 0
+  string pullRequest = 0
+  string creator = 0
+  string changeDate = 0
+  string contributor = 0
+  change hasUndo = 0
+  string oldValue = 0
+  string newValue = 0
+  string oldValueType = 0
+  string newValueType = 0
+  string newLanguage = 0
+  string oldLanguage = 0
+  string newDatatype = 0
+  string oldDatatype = 0
+  node aboutNode = 0
+  string aboutNodeRepresentation = 0
+  node nodeId = 0
+  string name = 0
+  owlTypeEnum owlType = 0
+  annotation annotationSet = 0
+  languageTag language = 0
+  node superclass = 0
+  string changeDescription = 0
+ }
+// A node that is a class
+message ClassNode
+ {
+  string id = 0
+  string name = 0
+  annotation annotationSet = 0
+  owlTypeEnum owlType = 0
+ }
+// The meaning of operations can be configured
+message Configuration
+ {
+  string namePredicate = 0
+  string definitionPredicate = 0
+  string mainSynonymPredicate = 0
+  string synonymPredicates = 0
+  string creatorPredicate = 0
+  string contributorPredicate = 0
+  string obsoletionWorkflow = 0
+  string obsoletionPolicy = 0
+ }
+// A relationship between two nodes.
+// Currently the only kinds of edges supported in KGCL:
+// 
+//   * A subClassOf B <==> Edge(subject=A, predicate=owl:subClassOf, object=B)
+//   * A subClassOf P some B <==> Edge(subject=A, predicate=P, object=B)
+//   * P subPropertyOf Q <==> Edge(subject=P, predicate=owl:subPropertyOf, object=Q)
+// 
+// These represent the most common kind of pairwise relationship between classes, and classes are the dominant node type in ontologies.
+//   
+// In future a wider variety of OWL axiom types will be supportedn through the use of an additional edge property/slot to indicate the interpretation of the axiom, following owlstar (https://github.com/cmungall/owlstar).
+// For example:
+//  * `A subClassOf R only B <==> Edge(subject=A, predicate=P, object=B, interpretation=AllOnly)`
+//  * `A Annotation(P,B) <==> Edge(subject=A, predicate=P, object=B, interpretation=annotationAssertion)`
+// 
+// Note that not all axioms are intended to map to edges. Axioms/triples where the object is a literal would be represented as node properties. Complex OWL axioms involving nesting would have their own dedicated construct, or may be represented generically. These are out of scope for the current version of KGCL
+message Edge
+ {
+  node subject = 0
+  node predicate = 0
+  node object = 0
+  string subjectRepresentation = 0
+  string predicateRepresentation = 0
+  string objectRepresentation = 0
+  annotation annotationSet = 0
+ }
+// An edge change in which a de-novo edge is created. The edge is potentially annotated in the same action.
+message EdgeCreation
+ {
+  string id = 0
+  activity wasGeneratedBy = 0
+  string seeAlso = 0
+  string pullRequest = 0
+  string creator = 0
+  string changeDate = 0
+  string contributor = 0
+  change hasUndo = 0
+  string oldValue = 0
+  string newValue = 0
+  string oldValueType = 0
+  string newValueType = 0
+  string newLanguage = 0
+  string oldLanguage = 0
+  string newDatatype = 0
+  string oldDatatype = 0
+  edge aboutEdge = 0
+  languageTag language = 0
+  string datatype = 0
+  node subject = 0
+  node predicate = 0
+  node object = 0
+  string subjectType = 0
+  string predicateType = 0
+  string objectType = 0
+  annotation annotationSet = 0
+  string changeDescription = 0
+ }
+// An edge change in which an edge is removed. All edge annotations/properies are removed in the same action.
+message EdgeDeletion
+ {
+  string id = 0
+  activity wasGeneratedBy = 0
+  string seeAlso = 0
+  string pullRequest = 0
+  string creator = 0
+  string changeDate = 0
+  string contributor = 0
+  change hasUndo = 0
+  string oldValue = 0
+  string newValue = 0
+  string oldValueType = 0
+  string newValueType = 0
+  string newLanguage = 0
+  string oldLanguage = 0
+  string newDatatype = 0
+  string oldDatatype = 0
+  edge aboutEdge = 0
+  languageTag language = 0
+  string datatype = 0
+  node subject = 0
+  node predicate = 0
+  node object = 0
+  string subjectType = 0
+  string predicateType = 0
+  string objectType = 0
+  annotation annotationSet = 0
+  string changeDescription = 0
+ }
+// An edge change where the subjet, object, and predicate are unchanged, but the logical interpretation changes
+message EdgeLogicalInterpretationChange
+ {
+  string id = 0
+  activity wasGeneratedBy = 0
+  string seeAlso = 0
+  string pullRequest = 0
+  string creator = 0
+  string changeDate = 0
+  string contributor = 0
+  change hasUndo = 0
+  string oldValue = 0
+  string newValue = 0
+  string oldValueType = 0
+  string newValueType = 0
+  string newLanguage = 0
+  string oldLanguage = 0
+  string newDatatype = 0
+  string oldDatatype = 0
+  edge aboutEdge = 0
+  string objectType = 0
+  languageTag language = 0
+  string datatype = 0
+  node subject = 0
+ }
+// An edge change in which an edge is obsoleted.
+message EdgeObsoletion
+ {
+  string id = 0
+  activity wasGeneratedBy = 0
+  string seeAlso = 0
+  string pullRequest = 0
+  string creator = 0
+  string changeDate = 0
+  string contributor = 0
+  change hasUndo = 0
+  string oldValue = 0
+  string newValue = 0
+  string oldValueType = 0
+  string newValueType = 0
+  string newLanguage = 0
+  string oldLanguage = 0
+  string newDatatype = 0
+  string oldDatatype = 0
+  edge aboutEdge = 0
+  string objectType = 0
+  languageTag language = 0
+  string datatype = 0
+  node subject = 0
+  node predicate = 0
+  node object = 0
+  annotation annotationSet = 0
+  string changeDescription = 0
+  ontologyElement about = 0
+ }
+// An edge change where one node is replaced with another, as in the case of obsoletion with replacement
+message EdgeRewiring
+ {
+  string id = 0
+  activity wasGeneratedBy = 0
+  string seeAlso = 0
+  string pullRequest = 0
+  string creator = 0
+  string changeDate = 0
+  string contributor = 0
+  change hasUndo = 0
+  string oldValue = 0
+  string newValue = 0
+  string oldValueType = 0
+  string newValueType = 0
+  string newLanguage = 0
+  string oldLanguage = 0
+  string newDatatype = 0
+  string oldDatatype = 0
+  edge aboutEdge = 0
+  string objectType = 0
+  languageTag language = 0
+  string datatype = 0
+  node subject = 0
+ }
+// A node that is an individual
+message InstanceNode
+ {
+  string id = 0
+  string name = 0
+  annotation annotationSet = 0
+  owlTypeEnum owlType = 0
+ }
+message LanguageTagChange
+ {
+  languageTag oldValue = 0
+  languageTag newValue = 0
+ }
+// A simple change where a logical axiom is changed, where the logical axiom cannot be represented as an edge
+// 
+//   
+message LogicalAxiomChange
+ {
+  string id = 0
+  activity wasGeneratedBy = 0
+  string seeAlso = 0
+  string pullRequest = 0
+  string creator = 0
+  string changeDate = 0
+  string contributor = 0
+  change hasUndo = 0
+  string oldValue = 0
+  string newValue = 0
+  string oldValueType = 0
+  string newValueType = 0
+  string newLanguage = 0
+  string oldLanguage = 0
+  string newDatatype = 0
+  string oldDatatype = 0
+ }
+// A specific kind of edge creation in which the created edge is a mapping.
+message MappingCreation
+ {
+  string id = 0
+  activity wasGeneratedBy = 0
+  string seeAlso = 0
+  string pullRequest = 0
+  string creator = 0
+  string changeDate = 0
+  string contributor = 0
+  change hasUndo = 0
+  string oldValue = 0
+  string newValue = 0
+  string oldValueType = 0
+  string newValueType = 0
+  string newLanguage = 0
+  string oldLanguage = 0
+  string newDatatype = 0
+  string oldDatatype = 0
+  edge aboutEdge = 0
+  languageTag language = 0
+  string datatype = 0
+  string subjectType = 0
+  string predicateType = 0
+  string objectType = 0
+  node subject = 0
+  node predicate = 0
+  node object = 0
+  annotation annotationSet = 0
+  string changeDescription = 0
+ }
+// A complex change consisting of multiple obsoletions.
+message MultiNodeObsoletion
+ {
+  string id = 0
+  activity wasGeneratedBy = 0
+  string seeAlso = 0
+  string pullRequest = 0
+  string creator = 0
+  string changeDate = 0
+  string contributor = 0
+  change hasUndo = 0
+ repeated  nodeObsoletion changeSet = 0
+  string changeDescription = 0
+ repeated  change associatedChangeSet = 0
+ }
+// A node synonym where the name NAME of an node NODE moves to a synonym, and NODE receives a new name. This change consists of compose of (1) a node rename where NAME is replaced by a different name (2) a new synonym
+message NameBecomesSynonym
+ {
+  string id = 0
+  activity wasGeneratedBy = 0
+  string seeAlso = 0
+  string pullRequest = 0
+  string creator = 0
+  string changeDate = 0
+  string contributor = 0
+  change hasUndo = 0
+  string oldValue = 0
+  string newValue = 0
+  string oldValueType = 0
+  string newValueType = 0
+  string newLanguage = 0
+  string oldLanguage = 0
+  string newDatatype = 0
+  string oldDatatype = 0
+  node aboutNode = 0
+  string aboutNodeRepresentation = 0
+  languageTag language = 0
+  nodeRename change1 = 0
+  newSynonym change2 = 0
+  string changeDescription = 0
+ }
+// A node synonym change where a de-novo synonym is created
+message NewSynonym
+ {
+  string id = 0
+  activity wasGeneratedBy = 0
+  string seeAlso = 0
+  string pullRequest = 0
+  string creator = 0
+  string changeDate = 0
+  string contributor = 0
+  change hasUndo = 0
+  string oldValue = 0
+  string oldValueType = 0
+  string newValueType = 0
+  string newLanguage = 0
+  string oldLanguage = 0
+  string newDatatype = 0
+  string oldDatatype = 0
+  node aboutNode = 0
+  string aboutNodeRepresentation = 0
+  string newValue = 0
+  languageTag language = 0
+  string qualifier = 0
+ }
+// A node change where a de-novo text definition is created
+message NewTextDefinition
+ {
+  string id = 0
+  activity wasGeneratedBy = 0
+  string seeAlso = 0
+  string pullRequest = 0
+  string creator = 0
+  string changeDate = 0
+  string contributor = 0
+  change hasUndo = 0
+  string oldValue = 0
+  string oldValueType = 0
+  string newValueType = 0
+  string newLanguage = 0
+  string oldLanguage = 0
+  string newDatatype = 0
+  string oldDatatype = 0
+  node aboutNode = 0
+  string aboutNodeRepresentation = 0
+  languageTag language = 0
+  string newValue = 0
+ }
+// Any named entity in an ontology. May be a class, individual, property
+message Node
+ {
+  string id = 0
+  string name = 0
+  annotation annotationSet = 0
+  owlTypeEnum owlType = 0
+ }
+// A node change where the change alters node properties/annotations. TODO
+message NodeAnnotationChange
+ {
+  string id = 0
+  activity wasGeneratedBy = 0
+  string seeAlso = 0
+  string pullRequest = 0
+  string creator = 0
+  string changeDate = 0
+  string contributor = 0
+  change hasUndo = 0
+  string oldValue = 0
+  string newValue = 0
+  string oldValueType = 0
+  string newValueType = 0
+  string newLanguage = 0
+  string oldLanguage = 0
+  string newDatatype = 0
+  string oldDatatype = 0
+  node aboutNode = 0
+  string aboutNodeRepresentation = 0
+  languageTag language = 0
+  string annotationProperty = 0
+  string annotationPropertyType = 0
+ }
+// A node annotation change where the change replaces a particular property value. TODO
+message NodeAnnotationReplacement
+ {
+  string id = 0
+  activity wasGeneratedBy = 0
+  string seeAlso = 0
+  string pullRequest = 0
+  string creator = 0
+  string changeDate = 0
+  string contributor = 0
+  change hasUndo = 0
+  string oldValue = 0
+  string newValue = 0
+  string oldValueType = 0
+  string newValueType = 0
+  string newLanguage = 0
+  string oldLanguage = 0
+  string newDatatype = 0
+  string oldDatatype = 0
+  node aboutNode = 0
+  string aboutNodeRepresentation = 0
+  languageTag language = 0
+  string annotationProperty = 0
+  string annotationPropertyType = 0
+ }
+// a node change in which a new node is created
+message NodeCreation
+ {
+  string id = 0
+  activity wasGeneratedBy = 0
+  string seeAlso = 0
+  string pullRequest = 0
+  string creator = 0
+  string changeDate = 0
+  string contributor = 0
+  change hasUndo = 0
+  string oldValue = 0
+  string newValue = 0
+  string oldValueType = 0
+  string newValueType = 0
+  string newLanguage = 0
+  string oldLanguage = 0
+  string newDatatype = 0
+  string oldDatatype = 0
+  node aboutNode = 0
+  string aboutNodeRepresentation = 0
+  node nodeId = 0
+  string name = 0
+  owlTypeEnum owlType = 0
+  annotation annotationSet = 0
+  languageTag language = 0
+  string changeDescription = 0
+ }
+// A node move in which a node where the destination is a proper descendant of the original location. Note that here descendant applied not just to subclass, but edges of any predicate in the relational graph
+message NodeDeepening
+ {
+  string id = 0
+  activity wasGeneratedBy = 0
+  string seeAlso = 0
+  string pullRequest = 0
+  string creator = 0
+  string changeDate = 0
+  string contributor = 0
+  change hasUndo = 0
+  string oldValue = 0
+  string newValue = 0
+  string oldValueType = 0
+  string newValueType = 0
+  string newLanguage = 0
+  string oldLanguage = 0
+  string newDatatype = 0
+  string oldDatatype = 0
+  edge aboutEdge = 0
+  string objectType = 0
+  languageTag language = 0
+  string datatype = 0
+  node subject = 0
+  string oldObjectType = 0
+  string newObjectType = 0
+  string changeDescription = 0
+ }
+// Deletion of a node from the graph. Note it is recommended nodes are obsoleted and never merged, but this operation exists to represent deletions in ontologies, accidental or otherwise
+message NodeDeletion
+ {
+  string id = 0
+  activity wasGeneratedBy = 0
+  string seeAlso = 0
+  string pullRequest = 0
+  string creator = 0
+  string changeDate = 0
+  string contributor = 0
+  change hasUndo = 0
+  string oldValue = 0
+  string newValue = 0
+  string oldValueType = 0
+  string newValueType = 0
+  string newLanguage = 0
+  string oldLanguage = 0
+  string newDatatype = 0
+  string oldDatatype = 0
+  node aboutNode = 0
+  string aboutNodeRepresentation = 0
+  languageTag language = 0
+  string changeDescription = 0
+ }
+// An obsoletion change in which all metadata (including name/label) from the source node is deleted and added to the target node, and edges can automatically be rewired to point to the target node
+message NodeDirectMerge
+ {
+  string id = 0
+  activity wasGeneratedBy = 0
+  string seeAlso = 0
+  string pullRequest = 0
+  string creator = 0
+  string changeDate = 0
+  string contributor = 0
+  change hasUndo = 0
+  string oldValue = 0
+  string newValue = 0
+  string oldValueType = 0
+  string newValueType = 0
+  string newLanguage = 0
+  string oldLanguage = 0
+  string newDatatype = 0
+  string oldDatatype = 0
+  string aboutNodeRepresentation = 0
+  languageTag language = 0
+ repeated  node hasNondirectReplacement = 0
+ repeated  change associatedChangeSet = 0
+  ontologyElement about = 0
+  node hasDirectReplacement = 0
+  node aboutNode = 0
+  string changeDescription = 0
+ }
+// A node move is a combination of deleting a parent edge and adding a parent edge, where the predicate is preserved and the object/parent node changes
+message NodeMove
+ {
+  string id = 0
+  activity wasGeneratedBy = 0
+  string seeAlso = 0
+  string pullRequest = 0
+  string creator = 0
+  string changeDate = 0
+  string contributor = 0
+  change hasUndo = 0
+  string oldValue = 0
+  string newValue = 0
+  string oldValueType = 0
+  string newValueType = 0
+  string newLanguage = 0
+  string oldLanguage = 0
+  string newDatatype = 0
+  string oldDatatype = 0
+  edge aboutEdge = 0
+  string objectType = 0
+  languageTag language = 0
+  string datatype = 0
+  node subject = 0
+  string oldObjectType = 0
+  string newObjectType = 0
+  string changeDescription = 0
+ }
+// Obsoletion of a node deprecates usage of that node, but does not delete it.
+message NodeObsoletion
+ {
+  string id = 0
+  activity wasGeneratedBy = 0
+  string seeAlso = 0
+  string pullRequest = 0
+  string creator = 0
+  string changeDate = 0
+  string contributor = 0
+  change hasUndo = 0
+  string oldValue = 0
+  string newValue = 0
+  string oldValueType = 0
+  string newValueType = 0
+  string newLanguage = 0
+  string oldLanguage = 0
+  string newDatatype = 0
+  string oldDatatype = 0
+  node aboutNode = 0
+  string aboutNodeRepresentation = 0
+  languageTag language = 0
+  node hasDirectReplacement = 0
+ repeated  node hasNondirectReplacement = 0
+  string changeDescription = 0
+ repeated  change associatedChangeSet = 0
+  ontologyElement about = 0
+ }
+// An obsoletion change in which information from the obsoleted node is selectively copied to a single target, and edges can automatically be rewired to point to the target node
+message NodeObsoletionWithDirectReplacement
+ {
+  string id = 0
+  activity wasGeneratedBy = 0
+  string seeAlso = 0
+  string pullRequest = 0
+  string creator = 0
+  string changeDate = 0
+  string contributor = 0
+  change hasUndo = 0
+  string oldValue = 0
+  string newValue = 0
+  string oldValueType = 0
+  string newValueType = 0
+  string newLanguage = 0
+  string oldLanguage = 0
+  string newDatatype = 0
+  string oldDatatype = 0
+  node aboutNode = 0
+  string aboutNodeRepresentation = 0
+  languageTag language = 0
+ repeated  node hasNondirectReplacement = 0
+ repeated  change associatedChangeSet = 0
+  ontologyElement about = 0
+  node hasDirectReplacement = 0
+  string changeDescription = 0
+ }
+// An obsoletion change in which there is no direct replacement
+message NodeObsoletionWithNoDirectReplacement
+ {
+  string id = 0
+  activity wasGeneratedBy = 0
+  string seeAlso = 0
+  string pullRequest = 0
+  string creator = 0
+  string changeDate = 0
+  string contributor = 0
+  change hasUndo = 0
+  string oldValue = 0
+  string newValue = 0
+  string oldValueType = 0
+  string newValueType = 0
+  string newLanguage = 0
+  string oldLanguage = 0
+  string newDatatype = 0
+  string oldDatatype = 0
+  node aboutNode = 0
+  string aboutNodeRepresentation = 0
+  languageTag language = 0
+  node hasDirectReplacement = 0
+ repeated  change associatedChangeSet = 0
+  ontologyElement about = 0
+ repeated  node hasNondirectReplacement = 0
+  string changeDescription = 0
+ }
+// A node change where the name (aka rdfs:label) of the node changes
+message NodeRename
+ {
+  string id = 0
+  activity wasGeneratedBy = 0
+  string seeAlso = 0
+  string pullRequest = 0
+  string creator = 0
+  string changeDate = 0
+  string contributor = 0
+  change hasUndo = 0
+  string oldValueType = 0
+  string newValueType = 0
+  string newDatatype = 0
+  string oldDatatype = 0
+  node aboutNode = 0
+  string aboutNodeRepresentation = 0
+  languageTag language = 0
+  string oldValue = 0
+  string newValue = 0
+  textualDiff hasTextualDiff = 0
+  string newLanguage = 0
+  string oldLanguage = 0
+  string changeDescription = 0
+ }
+// The opposite of node deepening
+message NodeShallowing
+ {
+  string id = 0
+  activity wasGeneratedBy = 0
+  string seeAlso = 0
+  string pullRequest = 0
+  string creator = 0
+  string changeDate = 0
+  string contributor = 0
+  change hasUndo = 0
+  string oldValue = 0
+  string newValue = 0
+  string oldValueType = 0
+  string newValueType = 0
+  string newLanguage = 0
+  string oldLanguage = 0
+  string newDatatype = 0
+  string oldDatatype = 0
+  edge aboutEdge = 0
+  string objectType = 0
+  languageTag language = 0
+  string datatype = 0
+  node subject = 0
+  string oldObjectType = 0
+  string newObjectType = 0
+  string changeDescription = 0
+ }
+message NodeSynonymChange
+ {
+  string id = 0
+  activity wasGeneratedBy = 0
+  string seeAlso = 0
+  string pullRequest = 0
+  string creator = 0
+  string changeDate = 0
+  string contributor = 0
+  change hasUndo = 0
+  string oldValue = 0
+  string newValue = 0
+  string oldValueType = 0
+  string newValueType = 0
+  string newLanguage = 0
+  string oldLanguage = 0
+  string newDatatype = 0
+  string oldDatatype = 0
+  node aboutNode = 0
+  string aboutNodeRepresentation = 0
+  languageTag language = 0
+ }
+// unobsoletion of a node deprecates usage of that node. Rarely applied.
+message NodeUnobsoletion
+ {
+  string id = 0
+  activity wasGeneratedBy = 0
+  string seeAlso = 0
+  string pullRequest = 0
+  string creator = 0
+  string changeDate = 0
+  string contributor = 0
+  change hasUndo = 0
+  string oldValue = 0
+  string newValue = 0
+  string oldValueType = 0
+  string newValueType = 0
+  string newLanguage = 0
+  string oldLanguage = 0
+  string newDatatype = 0
+  string oldDatatype = 0
+  node aboutNode = 0
+  string aboutNodeRepresentation = 0
+  languageTag language = 0
+  string changeDescription = 0
+  node replacedBy = 0
+  node consider = 0
+ }
+// An edge creation where the predicate is owl:subClassOf
+message PlaceUnder
+ {
+  string id = 0
+  activity wasGeneratedBy = 0
+  string seeAlso = 0
+  string pullRequest = 0
+  string creator = 0
+  string changeDate = 0
+  string contributor = 0
+  change hasUndo = 0
+  string oldValue = 0
+  string newValue = 0
+  string oldValueType = 0
+  string newValueType = 0
+  string newLanguage = 0
+  string oldLanguage = 0
+  string newDatatype = 0
+  string oldDatatype = 0
+  edge aboutEdge = 0
+  languageTag language = 0
+  string datatype = 0
+  node subject = 0
+  node predicate = 0
+  node object = 0
+  string subjectType = 0
+  string predicateType = 0
+  string objectType = 0
+  annotation annotationSet = 0
+  string changeDescription = 0
+ }
+// An edge change where the predicate (relationship type) is modified.
+message PredicateChange
+ {
+  string id = 0
+  activity wasGeneratedBy = 0
+  string seeAlso = 0
+  string pullRequest = 0
+  string creator = 0
+  string changeDate = 0
+  string contributor = 0
+  change hasUndo = 0
+  string oldValue = 0
+  string newValue = 0
+  string oldValueType = 0
+  string newValueType = 0
+  string newLanguage = 0
+  string oldLanguage = 0
+  string newDatatype = 0
+  string oldDatatype = 0
+  edge aboutEdge = 0
+  string objectType = 0
+  languageTag language = 0
+  string datatype = 0
+  node subject = 0
+  string changeDescription = 0
+ }
+// a property-value pair
+message PropertyValue
+ {
+  node property = 0
+  string filler = 0
+ }
+// A node synonym change where a synonym is deleted
+message RemoveSynonym
+ {
+  string id = 0
+  activity wasGeneratedBy = 0
+  string seeAlso = 0
+  string pullRequest = 0
+  string creator = 0
+  string changeDate = 0
+  string contributor = 0
+  change hasUndo = 0
+  string newValue = 0
+  string oldValueType = 0
+  string newValueType = 0
+  string newLanguage = 0
+  string oldLanguage = 0
+  string newDatatype = 0
+  string oldDatatype = 0
+  node aboutNode = 0
+  string aboutNodeRepresentation = 0
+  languageTag language = 0
+  string oldValue = 0
+ }
+// A node change where a text definition is deleted
+message RemoveTextDefinition
+ {
+  string id = 0
+  activity wasGeneratedBy = 0
+  string seeAlso = 0
+  string pullRequest = 0
+  string creator = 0
+  string changeDate = 0
+  string contributor = 0
+  change hasUndo = 0
+  string newValue = 0
+  string oldValueType = 0
+  string newValueType = 0
+  string newLanguage = 0
+  string oldLanguage = 0
+  string newDatatype = 0
+  string oldDatatype = 0
+  node aboutNode = 0
+  string aboutNodeRepresentation = 0
+  languageTag language = 0
+  string oldValue = 0
+ }
+// An edge deletion where the predicate is owl:subClassOf
+//   
+message RemoveUnder
+ {
+  string id = 0
+  activity wasGeneratedBy = 0
+  string seeAlso = 0
+  string pullRequest = 0
+  string creator = 0
+  string changeDate = 0
+  string contributor = 0
+  change hasUndo = 0
+  string oldValue = 0
+  string newValue = 0
+  string oldValueType = 0
+  string newValueType = 0
+  string newLanguage = 0
+  string oldLanguage = 0
+  string newDatatype = 0
+  string oldDatatype = 0
+  edge aboutEdge = 0
+  languageTag language = 0
+  string datatype = 0
+  node subject = 0
+  node predicate = 0
+  node object = 0
+  string subjectType = 0
+  string predicateType = 0
+  string objectType = 0
+  annotation annotationSet = 0
+  string changeDescription = 0
+ }
+// Removes a node from a subset, by removing an annotation
+message RemovedNodeFromSubset
+ {
+  string id = 0
+  activity wasGeneratedBy = 0
+  string seeAlso = 0
+  string pullRequest = 0
+  string creator = 0
+  string changeDate = 0
+  string contributor = 0
+  change hasUndo = 0
+  string oldValue = 0
+  string newValue = 0
+  string oldValueType = 0
+  string newValueType = 0
+  string newLanguage = 0
+  string oldLanguage = 0
+  string newDatatype = 0
+  string oldDatatype = 0
+  string aboutNodeRepresentation = 0
+  languageTag language = 0
+  string changeDescription = 0
+  node aboutNode = 0
+  string subset = 0
+  ontologySubset inSubset = 0
+ }
+// A session consists of a set of change sets bundled with the activities that generated those change sets
+message Session
+ {
+ repeated  change changeSet = 0
+ repeated  activity activitySet = 0
+ }
+// A node change where the string value for the name is unchanged but the language tag is set
+message SetLanguageForName
+ {
+  string id = 0
+  activity wasGeneratedBy = 0
+  string seeAlso = 0
+  string pullRequest = 0
+  string creator = 0
+  string changeDate = 0
+  string contributor = 0
+  change hasUndo = 0
+  string oldValueType = 0
+  string newValueType = 0
+  string newLanguage = 0
+  string oldLanguage = 0
+  string newDatatype = 0
+  string oldDatatype = 0
+  node aboutNode = 0
+  string aboutNodeRepresentation = 0
+  languageTag language = 0
+  string oldValue = 0
+  string newValue = 0
+  string changeDescription = 0
+ }
+// A node synonym change where the predicate of a synonym is changed. Background: synonyms can be represented by a variety of predicates. For example, many OBO ontologies make use of predicates such as oio:hasExactSynonym, oio:hasRelatedSynonym, etc
+message SynonymPredicateChange
+ {
+  string id = 0
+  activity wasGeneratedBy = 0
+  string seeAlso = 0
+  string pullRequest = 0
+  string creator = 0
+  string changeDate = 0
+  string contributor = 0
+  change hasUndo = 0
+  string oldValueType = 0
+  string newValueType = 0
+  string newLanguage = 0
+  string oldLanguage = 0
+  string newDatatype = 0
+  string oldDatatype = 0
+  node aboutNode = 0
+  string aboutNodeRepresentation = 0
+  languageTag language = 0
+  string oldValue = 0
+  string newValue = 0
+  textualDiff hasTextualDiff = 0
+ }
+// A node synonym change where the text of a synonym is changed
+message SynonymReplacement
+ {
+  string id = 0
+  activity wasGeneratedBy = 0
+  string seeAlso = 0
+  string pullRequest = 0
+  string creator = 0
+  string changeDate = 0
+  string contributor = 0
+  change hasUndo = 0
+  string oldValueType = 0
+  string newValueType = 0
+  string newLanguage = 0
+  string oldLanguage = 0
+  string newDatatype = 0
+  string oldDatatype = 0
+  node aboutNode = 0
+  string aboutNodeRepresentation = 0
+  languageTag language = 0
+  string oldValue = 0
+  string newValue = 0
+  textualDiff hasTextualDiff = 0
+ }
+// A node change where a text definition is modified
+message TextDefinitionReplacement
+ {
+  string id = 0
+  activity wasGeneratedBy = 0
+  string seeAlso = 0
+  string pullRequest = 0
+  string creator = 0
+  string changeDate = 0
+  string contributor = 0
+  change hasUndo = 0
+  string oldValueType = 0
+  string newValueType = 0
+  string newLanguage = 0
+  string oldLanguage = 0
+  string newDatatype = 0
+  string oldDatatype = 0
+  node aboutNode = 0
+  string aboutNodeRepresentation = 0
+  languageTag language = 0
+  string oldValue = 0
+  string newValue = 0
+  textualDiff hasTextualDiff = 0
+ }
+// A change that is a composition of a set of changes, where those changes are treated as a single unit. Could be a single change, or the results of an ontology diff
+message Transaction
+ {
+  string id = 0
+  activity wasGeneratedBy = 0
+  string seeAlso = 0
+  string pullRequest = 0
+  string creator = 0
+  string changeDate = 0
+  string contributor = 0
+  change hasUndo = 0
+ repeated  change changeSet = 0
+ }

@@ -1,0 +1,191 @@
+id: https://w3id.org/kgcl/ontology
+name: kgcl-ontology-model
+title: knowledge graph change language ontology model
+description: >-
+  A basic bare-bones model of an ontology or ontology-like structure. The purpose is not to provide a complete model,
+  rather just sufficient structure for domain and range constraints in the ocl model
+
+license: https://creativecommons.org/publicdomain/zero/1.0/
+version: 0.0.1
+
+prefixes:
+  om: http://w3id.org/kgcl/om/
+  dcterms: http://purl.org/dc/terms/
+  linkml: https://w3id.org/linkml/
+  oio: http://www.geneontology.org/formats/oboInOwl#
+  
+default_prefix: om
+default_range: string
+
+imports:
+  - linkml:types
+  - basics
+  
+classes:
+
+  ontology element:
+    aliases:
+      - entity
+    description: >-
+      Any component of an ontology or knowledge graph
+
+  property value:
+    is_a: ontology element
+    description: >-
+      a property-value pair
+    slots:
+      - property
+      - filler
+      
+  annotation:
+    is_a: property value
+    description: >-
+      owl annotations. Not to be confused with annotations sensu GO
+    slots:
+      - property
+      - filler
+      - annotation set
+      - property type
+      - filler type
+    mappings:
+      - owl:Annotation
+      
+  node:
+    aliases:
+      - entity
+      - term
+    is_a: ontology element
+    description: >-
+      Any named entity in an ontology. May be a class, individual, property
+    slots:
+      - id
+      - name
+      - annotation set
+      - owl type
+
+  class node:
+    aliases:
+      - concept
+    is_a: node
+    description: >-
+      A node that is a class
+    class_uri: owl:Class
+
+  instance node:
+    aliases:
+      - named individual
+    is_a: node
+    description: >-
+      A node that is an individual
+    class_uri: owl:NamedIndividual
+
+  edge:
+    aliases:
+      - triple
+      - axiom
+      - relationship
+    is_a: ontology element
+    description: >-
+      A relationship between two nodes.
+      
+      Currently the only kinds of edges supported in KGCL:
+
+        * A subClassOf B <==> Edge(subject=A, predicate=owl:subClassOf, object=B)
+        * A subClassOf P some B <==> Edge(subject=A, predicate=P, object=B)
+        * P subPropertyOf Q <==> Edge(subject=P, predicate=owl:subPropertyOf, object=Q)
+
+      These represent the most common kind of pairwise relationship between classes,
+      and classes are the dominant node type in ontologies.
+        
+      In future a wider variety of OWL axiom types will be supportedn through the use
+      of an additional edge property/slot to indicate the interpretation of the axiom,
+      following owlstar (https://github.com/cmungall/owlstar).
+
+      For example:
+       * `A subClassOf R only B <==> Edge(subject=A, predicate=P, object=B, interpretation=AllOnly)`
+       * `A Annotation(P,B) <==> Edge(subject=A, predicate=P, object=B, interpretation=annotationAssertion)`
+
+      Note that not all axioms are intended to map to edges. Axioms/triples where the object is a literal
+      would be represented as node properties. Complex OWL axioms involving nesting would have their own
+      dedicated construct, or may be represented generically. These are out of scope for the current
+      version of KGCL
+    mappings:
+      - owl:Axiom
+      - rdf:Statement
+    slots:
+      - subject
+      - predicate
+      - object
+      - subject representation
+      - predicate representation
+      - object representation
+      - annotation set
+
+  logical definition:
+    is_a: ontology element
+  
+  ontology subset:
+    is_a: ontology element
+  
+
+slots:
+
+  owl type:
+    range: owl_type_enum
+    
+  name: {}
+
+  subject:
+    range: node
+
+  object:
+    range: node
+    
+  predicate:
+    range: node    
+    
+  annotation set:
+    range: annotation    
+
+  property:
+    range: node
+
+  filler: {}
+
+  property type: {}
+
+  filler type: {}
+
+  subject representation: {}
+
+  predicate representation: {}
+
+  object representation: {}
+
+  property value set:
+    range: property value
+    multivalued: true
+    inlined: true
+
+enums:
+
+  owl_type_enum:
+    permissible_values:
+      CLASS:
+        meaning: owl:Class
+      OBJECT_PROPERTY:
+        meaning: owl:ObjectProperty
+      NAMED_INDIVIDUAL:
+        meaning: owl:NamedIndividual
+
+  synonym_scope_enum:
+    permissible_values:
+      related:
+        meaning: oio:hasNarrowSynonym
+      broad:
+        meaning: oio:hasBroadSynonym
+      narrow:
+        meaning: oio:hasNarrowSynonym
+      exact:
+        meaning: oio:hasExactSynonym
+        

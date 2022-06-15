@@ -1,2 +1,5 @@
 # kgcl
-Python tool to KGCL (Knowledge Graph Change Language)
+
+my awesome datamodel is for awesome things
+
+

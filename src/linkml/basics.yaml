@@ -1,0 +1,30 @@
+id: https://w3id.org/kgcl/basics
+name: basics
+title: basic predicates
+description: >-
+  Core predicates
+license: https://creativecommons.org/publicdomain/zero/1.0/
+
+prefixes:
+  basics: https://w3id.org/kgcl/basics/
+  linkml: https://w3id.org/linkml/
+
+default_prefix: basics
+default_range: string
+
+default_curi_maps:
+  - semweb_context
+
+imports:
+  - linkml:types
+
+types:
+  language tag:
+    base: str
+    uri: xml:lang
+
+slots:
+  id:
+    identifier: true
+  description:
+    slot_uri: dcterms:description
