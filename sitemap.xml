@@ -1,792 +1,792 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-         <loc>https://my-org.github.io/my-datamodel/</loc>
+         <loc>https://incatools.github.io/kgcl/</loc>
          <lastmod>2022-06-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/Activity/</loc>
+         <loc>https://incatools.github.io/kgcl/Activity/</loc>
          <lastmod>2022-06-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/AddNodeToSubset/</loc>
+         <loc>https://incatools.github.io/kgcl/AddNodeToSubset/</loc>
          <lastmod>2022-06-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/AddToSubset/</loc>
+         <loc>https://incatools.github.io/kgcl/AddToSubset/</loc>
          <lastmod>2022-06-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/Agent/</loc>
+         <loc>https://incatools.github.io/kgcl/Agent/</loc>
          <lastmod>2022-06-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/AllowsAutomaticReplacementOfEdges/</loc>
+         <loc>https://incatools.github.io/kgcl/AllowsAutomaticReplacementOfEdges/</loc>
          <lastmod>2022-06-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/Annotation/</loc>
+         <loc>https://incatools.github.io/kgcl/Annotation/</loc>
          <lastmod>2022-06-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/Change/</loc>
+         <loc>https://incatools.github.io/kgcl/Change/</loc>
          <lastmod>2022-06-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/ChangeClassType/</loc>
+         <loc>https://incatools.github.io/kgcl/ChangeClassType/</loc>
          <lastmod>2022-06-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/ChangeMixin/</loc>
+         <loc>https://incatools.github.io/kgcl/ChangeMixin/</loc>
          <lastmod>2022-06-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/ChangeSetSummaryStatistic/</loc>
+         <loc>https://incatools.github.io/kgcl/ChangeSetSummaryStatistic/</loc>
          <lastmod>2022-06-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/ClassCreation/</loc>
+         <loc>https://incatools.github.io/kgcl/ClassCreation/</loc>
          <lastmod>2022-06-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/ClassNode/</loc>
+         <loc>https://incatools.github.io/kgcl/ClassNode/</loc>
          <lastmod>2022-06-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/ComplexChange/</loc>
+         <loc>https://incatools.github.io/kgcl/ComplexChange/</loc>
          <lastmod>2022-06-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/Configuration/</loc>
+         <loc>https://incatools.github.io/kgcl/Configuration/</loc>
          <lastmod>2022-06-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/Creation/</loc>
+         <loc>https://incatools.github.io/kgcl/Creation/</loc>
          <lastmod>2022-06-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/DatatypeChange/</loc>
+         <loc>https://incatools.github.io/kgcl/DatatypeChange/</loc>
          <lastmod>2022-06-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/DatatypeOrLanguageTagChange/</loc>
+         <loc>https://incatools.github.io/kgcl/DatatypeOrLanguageTagChange/</loc>
          <lastmod>2022-06-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/Deletion/</loc>
+         <loc>https://incatools.github.io/kgcl/Deletion/</loc>
          <lastmod>2022-06-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/Edge/</loc>
+         <loc>https://incatools.github.io/kgcl/Edge/</loc>
          <lastmod>2022-06-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/EdgeChange/</loc>
+         <loc>https://incatools.github.io/kgcl/EdgeChange/</loc>
          <lastmod>2022-06-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/EdgeCreation/</loc>
+         <loc>https://incatools.github.io/kgcl/EdgeCreation/</loc>
          <lastmod>2022-06-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/EdgeDeletion/</loc>
+         <loc>https://incatools.github.io/kgcl/EdgeDeletion/</loc>
          <lastmod>2022-06-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/EdgeLogicalInterpretationChange/</loc>
+         <loc>https://incatools.github.io/kgcl/EdgeLogicalInterpretationChange/</loc>
          <lastmod>2022-06-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/EdgeObsoletion/</loc>
+         <loc>https://incatools.github.io/kgcl/EdgeObsoletion/</loc>
          <lastmod>2022-06-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/EdgeRewiring/</loc>
+         <loc>https://incatools.github.io/kgcl/EdgeRewiring/</loc>
          <lastmod>2022-06-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/InstanceNode/</loc>
+         <loc>https://incatools.github.io/kgcl/InstanceNode/</loc>
          <lastmod>2022-06-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/KGCL-PROV/</loc>
+         <loc>https://incatools.github.io/kgcl/KGCL-PROV/</loc>
          <lastmod>2022-06-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/LanguageTag/</loc>
+         <loc>https://incatools.github.io/kgcl/LanguageTag/</loc>
          <lastmod>2022-06-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/LanguageTagChange/</loc>
+         <loc>https://incatools.github.io/kgcl/LanguageTagChange/</loc>
          <lastmod>2022-06-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/LogicalAxiomChange/</loc>
+         <loc>https://incatools.github.io/kgcl/LogicalAxiomChange/</loc>
          <lastmod>2022-06-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/LogicalDefinition/</loc>
+         <loc>https://incatools.github.io/kgcl/LogicalDefinition/</loc>
          <lastmod>2022-06-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/MappingCreation/</loc>
+         <loc>https://incatools.github.io/kgcl/MappingCreation/</loc>
          <lastmod>2022-06-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/MultiNodeObsoletion/</loc>
+         <loc>https://incatools.github.io/kgcl/MultiNodeObsoletion/</loc>
          <lastmod>2022-06-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/NameBecomesSynonym/</loc>
+         <loc>https://incatools.github.io/kgcl/NameBecomesSynonym/</loc>
          <lastmod>2022-06-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/NewSynonym/</loc>
+         <loc>https://incatools.github.io/kgcl/NewSynonym/</loc>
          <lastmod>2022-06-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/NewTextDefinition/</loc>
+         <loc>https://incatools.github.io/kgcl/NewTextDefinition/</loc>
          <lastmod>2022-06-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/Node/</loc>
+         <loc>https://incatools.github.io/kgcl/Node/</loc>
          <lastmod>2022-06-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/NodeAnnotationChange/</loc>
+         <loc>https://incatools.github.io/kgcl/NodeAnnotationChange/</loc>
          <lastmod>2022-06-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/NodeAnnotationReplacement/</loc>
+         <loc>https://incatools.github.io/kgcl/NodeAnnotationReplacement/</loc>
          <lastmod>2022-06-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/NodeChange/</loc>
+         <loc>https://incatools.github.io/kgcl/NodeChange/</loc>
          <lastmod>2022-06-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/NodeCreation/</loc>
+         <loc>https://incatools.github.io/kgcl/NodeCreation/</loc>
          <lastmod>2022-06-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/NodeDeepening/</loc>
+         <loc>https://incatools.github.io/kgcl/NodeDeepening/</loc>
          <lastmod>2022-06-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/NodeDeletion/</loc>
+         <loc>https://incatools.github.io/kgcl/NodeDeletion/</loc>
          <lastmod>2022-06-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/NodeDirectMerge/</loc>
+         <loc>https://incatools.github.io/kgcl/NodeDirectMerge/</loc>
          <lastmod>2022-06-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/NodeMove/</loc>
+         <loc>https://incatools.github.io/kgcl/NodeMove/</loc>
          <lastmod>2022-06-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/NodeObsoletion/</loc>
+         <loc>https://incatools.github.io/kgcl/NodeObsoletion/</loc>
          <lastmod>2022-06-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/NodeObsoletionWithDirectReplacement/</loc>
+         <loc>https://incatools.github.io/kgcl/NodeObsoletionWithDirectReplacement/</loc>
          <lastmod>2022-06-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/NodeObsoletionWithNoDirectReplacement/</loc>
+         <loc>https://incatools.github.io/kgcl/NodeObsoletionWithNoDirectReplacement/</loc>
          <lastmod>2022-06-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/NodeRename/</loc>
+         <loc>https://incatools.github.io/kgcl/NodeRename/</loc>
          <lastmod>2022-06-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/NodeShallowing/</loc>
+         <loc>https://incatools.github.io/kgcl/NodeShallowing/</loc>
          <lastmod>2022-06-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/NodeSynonymChange/</loc>
+         <loc>https://incatools.github.io/kgcl/NodeSynonymChange/</loc>
          <lastmod>2022-06-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/NodeTextDefinitionChange/</loc>
+         <loc>https://incatools.github.io/kgcl/NodeTextDefinitionChange/</loc>
          <lastmod>2022-06-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/NodeUnobsoletion/</loc>
+         <loc>https://incatools.github.io/kgcl/NodeUnobsoletion/</loc>
          <lastmod>2022-06-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/Obsoletion/</loc>
+         <loc>https://incatools.github.io/kgcl/Obsoletion/</loc>
          <lastmod>2022-06-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/OntologyElement/</loc>
+         <loc>https://incatools.github.io/kgcl/OntologyElement/</loc>
          <lastmod>2022-06-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/OntologySubset/</loc>
+         <loc>https://incatools.github.io/kgcl/OntologySubset/</loc>
          <lastmod>2022-06-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/OwlTypeEnum/</loc>
+         <loc>https://incatools.github.io/kgcl/OwlTypeEnum/</loc>
          <lastmod>2022-06-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/PlaceUnder/</loc>
+         <loc>https://incatools.github.io/kgcl/PlaceUnder/</loc>
          <lastmod>2022-06-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/PredicateChange/</loc>
+         <loc>https://incatools.github.io/kgcl/PredicateChange/</loc>
          <lastmod>2022-06-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/PropertyValue/</loc>
+         <loc>https://incatools.github.io/kgcl/PropertyValue/</loc>
          <lastmod>2022-06-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/RemoveFromSubset/</loc>
+         <loc>https://incatools.github.io/kgcl/RemoveFromSubset/</loc>
          <lastmod>2022-06-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/RemoveSynonym/</loc>
+         <loc>https://incatools.github.io/kgcl/RemoveSynonym/</loc>
          <lastmod>2022-06-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/RemoveTextDefinition/</loc>
+         <loc>https://incatools.github.io/kgcl/RemoveTextDefinition/</loc>
          <lastmod>2022-06-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/RemoveUnder/</loc>
+         <loc>https://incatools.github.io/kgcl/RemoveUnder/</loc>
          <lastmod>2022-06-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/RemovedNodeFromSubset/</loc>
+         <loc>https://incatools.github.io/kgcl/RemovedNodeFromSubset/</loc>
          <lastmod>2022-06-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/Session/</loc>
+         <loc>https://incatools.github.io/kgcl/Session/</loc>
          <lastmod>2022-06-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/SetLanguageForName/</loc>
+         <loc>https://incatools.github.io/kgcl/SetLanguageForName/</loc>
          <lastmod>2022-06-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/SimpleChange/</loc>
+         <loc>https://incatools.github.io/kgcl/SimpleChange/</loc>
          <lastmod>2022-06-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/SubsetMembershipChange/</loc>
+         <loc>https://incatools.github.io/kgcl/SubsetMembershipChange/</loc>
          <lastmod>2022-06-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/SynonymPredicateChange/</loc>
+         <loc>https://incatools.github.io/kgcl/SynonymPredicateChange/</loc>
          <lastmod>2022-06-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/SynonymReplacement/</loc>
+         <loc>https://incatools.github.io/kgcl/SynonymReplacement/</loc>
          <lastmod>2022-06-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/SynonymScopeEnum/</loc>
+         <loc>https://incatools.github.io/kgcl/SynonymScopeEnum/</loc>
          <lastmod>2022-06-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/TextDefinitionReplacement/</loc>
+         <loc>https://incatools.github.io/kgcl/TextDefinitionReplacement/</loc>
          <lastmod>2022-06-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/TextualDiff/</loc>
+         <loc>https://incatools.github.io/kgcl/TextualDiff/</loc>
          <lastmod>2022-06-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/Transaction/</loc>
+         <loc>https://incatools.github.io/kgcl/Transaction/</loc>
          <lastmod>2022-06-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/Unobsoletion/</loc>
+         <loc>https://incatools.github.io/kgcl/Unobsoletion/</loc>
          <lastmod>2022-06-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/about/</loc>
+         <loc>https://incatools.github.io/kgcl/about/</loc>
          <lastmod>2022-06-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/about_edge/</loc>
+         <loc>https://incatools.github.io/kgcl/about_edge/</loc>
          <lastmod>2022-06-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/about_node/</loc>
+         <loc>https://incatools.github.io/kgcl/about_node/</loc>
          <lastmod>2022-06-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/about_node_representation/</loc>
+         <loc>https://incatools.github.io/kgcl/about_node_representation/</loc>
          <lastmod>2022-06-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/acted_on_behalf_of/</loc>
+         <loc>https://incatools.github.io/kgcl/acted_on_behalf_of/</loc>
          <lastmod>2022-06-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/activity_set/</loc>
+         <loc>https://incatools.github.io/kgcl/activity_set/</loc>
          <lastmod>2022-06-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/agent_set/</loc>
+         <loc>https://incatools.github.io/kgcl/agent_set/</loc>
          <lastmod>2022-06-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/annotation_property/</loc>
+         <loc>https://incatools.github.io/kgcl/annotation_property/</loc>
          <lastmod>2022-06-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/annotation_property_type/</loc>
+         <loc>https://incatools.github.io/kgcl/annotation_property_type/</loc>
          <lastmod>2022-06-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/annotation_set/</loc>
+         <loc>https://incatools.github.io/kgcl/annotation_set/</loc>
          <lastmod>2022-06-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/basics/</loc>
+         <loc>https://incatools.github.io/kgcl/basics/</loc>
          <lastmod>2022-06-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/change_date/</loc>
+         <loc>https://incatools.github.io/kgcl/change_date/</loc>
          <lastmod>2022-06-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/change_description/</loc>
+         <loc>https://incatools.github.io/kgcl/change_description/</loc>
          <lastmod>2022-06-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/change_set/</loc>
+         <loc>https://incatools.github.io/kgcl/change_set/</loc>
          <lastmod>2022-06-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/contributor/</loc>
+         <loc>https://incatools.github.io/kgcl/contributor/</loc>
          <lastmod>2022-06-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/contributor_predicate/</loc>
+         <loc>https://incatools.github.io/kgcl/contributor_predicate/</loc>
          <lastmod>2022-06-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/creator/</loc>
+         <loc>https://incatools.github.io/kgcl/creator/</loc>
          <lastmod>2022-06-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/creator_predicate/</loc>
+         <loc>https://incatools.github.io/kgcl/creator_predicate/</loc>
          <lastmod>2022-06-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/datatype/</loc>
+         <loc>https://incatools.github.io/kgcl/datatype/</loc>
          <lastmod>2022-06-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/definition_predicate/</loc>
+         <loc>https://incatools.github.io/kgcl/definition_predicate/</loc>
          <lastmod>2022-06-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/description/</loc>
+         <loc>https://incatools.github.io/kgcl/description/</loc>
          <lastmod>2022-06-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/ended_at_time/</loc>
+         <loc>https://incatools.github.io/kgcl/ended_at_time/</loc>
          <lastmod>2022-06-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/filler/</loc>
+         <loc>https://incatools.github.io/kgcl/filler/</loc>
          <lastmod>2022-06-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/filler_type/</loc>
+         <loc>https://incatools.github.io/kgcl/filler_type/</loc>
          <lastmod>2022-06-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/has_direct_replacement/</loc>
+         <loc>https://incatools.github.io/kgcl/has_direct_replacement/</loc>
          <lastmod>2022-06-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/has_nondirect_replacement/</loc>
+         <loc>https://incatools.github.io/kgcl/has_nondirect_replacement/</loc>
          <lastmod>2022-06-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/has_replacement/</loc>
+         <loc>https://incatools.github.io/kgcl/has_replacement/</loc>
          <lastmod>2022-06-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/has_textual_diff/</loc>
+         <loc>https://incatools.github.io/kgcl/has_textual_diff/</loc>
          <lastmod>2022-06-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/has_undo/</loc>
+         <loc>https://incatools.github.io/kgcl/has_undo/</loc>
          <lastmod>2022-06-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/id/</loc>
+         <loc>https://incatools.github.io/kgcl/id/</loc>
          <lastmod>2022-06-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/in_subset/</loc>
+         <loc>https://incatools.github.io/kgcl/in_subset/</loc>
          <lastmod>2022-06-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/kgcl-ontology-model/</loc>
+         <loc>https://incatools.github.io/kgcl/kgcl-ontology-model/</loc>
          <lastmod>2022-06-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/kgcl/</loc>
+         <loc>https://incatools.github.io/kgcl/kgcl/</loc>
          <lastmod>2022-06-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/language/</loc>
+         <loc>https://incatools.github.io/kgcl/language/</loc>
          <lastmod>2022-06-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/main_synonym_predicate/</loc>
+         <loc>https://incatools.github.io/kgcl/main_synonym_predicate/</loc>
          <lastmod>2022-06-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/name/</loc>
+         <loc>https://incatools.github.io/kgcl/name/</loc>
          <lastmod>2022-06-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/name_predicate/</loc>
+         <loc>https://incatools.github.io/kgcl/name_predicate/</loc>
          <lastmod>2022-06-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/new_datatype/</loc>
+         <loc>https://incatools.github.io/kgcl/new_datatype/</loc>
          <lastmod>2022-06-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/new_filler/</loc>
+         <loc>https://incatools.github.io/kgcl/new_filler/</loc>
          <lastmod>2022-06-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/new_language/</loc>
+         <loc>https://incatools.github.io/kgcl/new_language/</loc>
          <lastmod>2022-06-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/new_object_type/</loc>
+         <loc>https://incatools.github.io/kgcl/new_object_type/</loc>
          <lastmod>2022-06-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/new_property/</loc>
+         <loc>https://incatools.github.io/kgcl/new_property/</loc>
          <lastmod>2022-06-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/new_subclass/</loc>
+         <loc>https://incatools.github.io/kgcl/new_subclass/</loc>
          <lastmod>2022-06-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/new_value/</loc>
+         <loc>https://incatools.github.io/kgcl/new_value/</loc>
          <lastmod>2022-06-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/new_value_type/</loc>
+         <loc>https://incatools.github.io/kgcl/new_value_type/</loc>
          <lastmod>2022-06-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/node_id/</loc>
+         <loc>https://incatools.github.io/kgcl/node_id/</loc>
          <lastmod>2022-06-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/object/</loc>
+         <loc>https://incatools.github.io/kgcl/object/</loc>
          <lastmod>2022-06-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/object_representation/</loc>
+         <loc>https://incatools.github.io/kgcl/object_representation/</loc>
          <lastmod>2022-06-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/object_type/</loc>
+         <loc>https://incatools.github.io/kgcl/object_type/</loc>
          <lastmod>2022-06-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/obsoletion_policy/</loc>
+         <loc>https://incatools.github.io/kgcl/obsoletion_policy/</loc>
          <lastmod>2022-06-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/obsoletion_workflow/</loc>
+         <loc>https://incatools.github.io/kgcl/obsoletion_workflow/</loc>
          <lastmod>2022-06-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/old_datatype/</loc>
+         <loc>https://incatools.github.io/kgcl/old_datatype/</loc>
          <lastmod>2022-06-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/old_language/</loc>
+         <loc>https://incatools.github.io/kgcl/old_language/</loc>
          <lastmod>2022-06-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/old_object_type/</loc>
+         <loc>https://incatools.github.io/kgcl/old_object_type/</loc>
          <lastmod>2022-06-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/old_value/</loc>
+         <loc>https://incatools.github.io/kgcl/old_value/</loc>
          <lastmod>2022-06-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/old_value_type/</loc>
+         <loc>https://incatools.github.io/kgcl/old_value_type/</loc>
          <lastmod>2022-06-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/owl_type/</loc>
+         <loc>https://incatools.github.io/kgcl/owl_type/</loc>
          <lastmod>2022-06-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/predicate/</loc>
+         <loc>https://incatools.github.io/kgcl/predicate/</loc>
          <lastmod>2022-06-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/predicate_representation/</loc>
+         <loc>https://incatools.github.io/kgcl/predicate_representation/</loc>
          <lastmod>2022-06-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/predicate_type/</loc>
+         <loc>https://incatools.github.io/kgcl/predicate_type/</loc>
          <lastmod>2022-06-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/property/</loc>
+         <loc>https://incatools.github.io/kgcl/property/</loc>
          <lastmod>2022-06-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/property_type/</loc>
+         <loc>https://incatools.github.io/kgcl/property_type/</loc>
          <lastmod>2022-06-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/property_value_set/</loc>
+         <loc>https://incatools.github.io/kgcl/property_value_set/</loc>
          <lastmod>2022-06-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/pull_request/</loc>
+         <loc>https://incatools.github.io/kgcl/pull_request/</loc>
          <lastmod>2022-06-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/qualifier/</loc>
+         <loc>https://incatools.github.io/kgcl/qualifier/</loc>
          <lastmod>2022-06-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/see_also/</loc>
+         <loc>https://incatools.github.io/kgcl/see_also/</loc>
          <lastmod>2022-06-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/started_at_time/</loc>
+         <loc>https://incatools.github.io/kgcl/started_at_time/</loc>
          <lastmod>2022-06-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/subclass/</loc>
+         <loc>https://incatools.github.io/kgcl/subclass/</loc>
          <lastmod>2022-06-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/subclass_type/</loc>
+         <loc>https://incatools.github.io/kgcl/subclass_type/</loc>
          <lastmod>2022-06-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/subject/</loc>
+         <loc>https://incatools.github.io/kgcl/subject/</loc>
          <lastmod>2022-06-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/subject_representation/</loc>
+         <loc>https://incatools.github.io/kgcl/subject_representation/</loc>
          <lastmod>2022-06-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/subject_type/</loc>
+         <loc>https://incatools.github.io/kgcl/subject_type/</loc>
          <lastmod>2022-06-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/superclass/</loc>
+         <loc>https://incatools.github.io/kgcl/superclass/</loc>
          <lastmod>2022-06-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/superclass_type/</loc>
+         <loc>https://incatools.github.io/kgcl/superclass_type/</loc>
          <lastmod>2022-06-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/synonym_predicates/</loc>
+         <loc>https://incatools.github.io/kgcl/synonym_predicates/</loc>
          <lastmod>2022-06-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/target/</loc>
+         <loc>https://incatools.github.io/kgcl/target/</loc>
          <lastmod>2022-06-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/types/</loc>
+         <loc>https://incatools.github.io/kgcl/types/</loc>
          <lastmod>2022-06-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/used/</loc>
+         <loc>https://incatools.github.io/kgcl/used/</loc>
          <lastmod>2022-06-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/was_associated_with/</loc>
+         <loc>https://incatools.github.io/kgcl/was_associated_with/</loc>
          <lastmod>2022-06-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/was_generated_by/</loc>
+         <loc>https://incatools.github.io/kgcl/was_generated_by/</loc>
          <lastmod>2022-06-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/was_informed_by/</loc>
+         <loc>https://incatools.github.io/kgcl/was_informed_by/</loc>
          <lastmod>2022-06-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
