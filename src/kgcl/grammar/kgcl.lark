@@ -1,0 +1,131 @@
+?expression: rename 
+           | create
+           | obsolete 
+           | delete 
+           | move
+           | create_class 
+           | unobsolete
+           | deepen
+           | shallow
+           | change_relationship
+           | change_annotation
+           | create_edge
+           | delete_edge 
+           | create_synonym 
+           | remove_from_subset
+           | add_to_subset 
+
+rename : "rename" _WS [id _WS "from" _WS] old_label ["@" old_language] _WS ("to"|"as"|"->") _WS new_label ["@" new_language]
+
+create : "create node" _WS id _WS label ["@" language]
+create_class: "create" _WS id
+
+create_synonym: "create" _WS [synonym_qualifier _WS] "synonym" _WS synonym ["@" language] _WS "for" _WS entity
+synonym_qualifier : /exact|narrow|broad|related/
+
+delete : "delete" _WS entity
+
+obsolete : "obsolete" _WS entity
+         | "obsolete" _WS entity _WS "with replacement" _WS replacement
+
+unobsolete: "unobsolete" _WS entity 
+
+deepen : "deepen" _WS entity _WS "from" _WS old_entity _WS ("to"|"->") _WS new_entity 
+shallow : "shallow" _WS entity _WS "from" _WS old_entity _WS ("to"|"->") _WS new_entity 
+
+move : "move" _WS entity_subject _WS entity_predicate _WS entity_object _WS "from" _WS old_entity _WS ("to"|"as"|"->") _WS new_entity 
+
+create_edge : "create edge" _WS entity_subject _WS entity_predicate _WS entity_object_id
+delete_edge : "delete edge" _WS entity_subject _WS entity_predicate _WS entity_object_id 
+
+change_relationship: "change relationship between" _WS entity_subject _WS "and" _WS entity_object _WS "from" _WS old_entity _WS "to" _WS new_entity 
+
+change_annotation: "change annotation of" _WS entity_subject _WS "with" _WS entity_predicate _WS "from" _WS old_entity_object _WS "to" _WS new_entity_object
+
+
+remove_from_subset :  "remove" _WS id _WS "from subset" _WS subset
+add_to_subset :  "add" _WS id _WS "to subset" _WS subset
+
+replacement : ID
+id : ID 
+     | CURIE
+
+subset: ID
+synonym : LABEL
+
+subclass: _entity
+superclass: _entity
+property: _entity
+filler: _entity
+
+label : SINGLE_QUOTE_LITERAL
+old_label : SINGLE_QUOTE_LITERAL
+new_label : SINGLE_QUOTE_LITERAL
+
+language: LANGUAGE_TAG
+old_language : LANGUAGE_TAG
+new_language : LANGUAGE_TAG
+datatype: _datatype
+new_datatype: _datatype
+old_datatype: _datatype
+
+_datatype: "^^" ID
+
+IRI: /((?!>>)\S)+/
+     | /((?!>>>)\S)+/
+
+LANGUAGE_TAG :  /[a-zA-Z]+(?:-[a-zA-Z0-9]+)*/
+
+annotation_property : _entity
+annotation : STRING
+
+old_id : ID
+new_id : ID
+
+old_predicate : ID
+new_predicate : ID
+
+entity: _entity 
+old_entity: _entity
+new_entity: _entity
+entity_subject: _entity
+entity_predicate: _entity
+entity_object_id: _entity
+entity_object: _entity
+              | TERM ["@" language | datatype] 
+old_entity_object: _entity
+              | TERM ["@" old_language | old_datatype] 
+new_entity_object: _entity
+              | TERM ["@" new_language | new_datatype] 
+
+_entity: ID
+         | LABEL 
+         | CURIE
+
+CURIE: /[a-zA-Z]+/ ":" /((?!>>)\S)+/
+
+LABEL: SINGLE_QUOTE_LITERAL
+
+TERM : TRIPLE_SINGLE_QUOTE_LITERAL
+       | TRIPLE_DOUBLE_QUOTE_LITERAL
+       | DOUBLE_QUOTE_LITERAL
+
+DOUBLE_QUOTE_LITERAL : "\"" INNER_DOUBLE_QUOTE_LITERAL "\""
+TRIPLE_DOUBLE_QUOTE_LITERAL : "\"\"\"" INNER_TRIPLE_DOUBLE_QUOTE_LITERAL "\"\"\""
+
+TRIPLE_SINGLE_QUOTE_LITERAL : "'''" INNER_TRIPLE_SINGLE_QUOTE_LITERAL "'''" 
+SINGLE_QUOTE_LITERAL : "'" INNER_SINGLE_QUOTE_LITERAL "'" 
+
+INNER_DOUBLE_QUOTE_LITERAL: /((?!\").)*/
+INNER_TRIPLE_DOUBLE_QUOTE_LITERAL: /((?!\"\"\").)*/
+
+INNER_SINGLE_QUOTE_LITERAL: /((?!\').)*/
+INNER_TRIPLE_SINGLE_QUOTE_LITERAL: /((?!\'\'\').)*/
+
+ID :  "<" INNER_ID ">" 
+
+INNER_ID: /((?!>).)*/
+STRING: /.+/
+
+_WS: /[ \t\f\r\n]/+
+
