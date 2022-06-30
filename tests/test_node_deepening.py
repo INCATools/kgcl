@@ -1,5 +1,5 @@
 """Test node deepening."""
-from util import run_test
+from .util import run_test
 
 
 def test_node_deepening_with_ids():

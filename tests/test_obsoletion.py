@@ -1,5 +1,5 @@
 """Tesr obsoeltion."""
-from util import run_test
+from .util import run_test
 
 
 def test_obsoletion_with_ids():

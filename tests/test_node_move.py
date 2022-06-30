@@ -1,5 +1,5 @@
 """Test node move."""
-from util import run_test
+from .util import run_test
 
 
 def test_node_move_with_ids():

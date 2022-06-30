@@ -1,5 +1,5 @@
 """Test Unobsolete."""
-from util import run_test
+from .util import run_test
 
 
 def test_unobsolete_with_id():
