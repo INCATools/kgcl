@@ -31,6 +31,8 @@ linkml:Date xsd:date
 
 linkml:Datetime xsd:dateTime
 
+linkml:DateOrDatetime linkml:DateOrDatetime
+
 linkml:Uriorcurie IRI
 
 linkml:Uri IRI

@@ -89,7 +89,6 @@ classes:
     slots:
       - change set
 
-    
   multi node obsoletion:
     aliases:
       - multi node deprecation
@@ -117,7 +116,14 @@ classes:
           and we obsolete {B,C}, then the individual changes are
           `A moves from B to C` and `B moves from C to D`, but the composed
           change set is `A moves from B to D`
-      
+
+#  multi node identifier migration:
+#    is_a: complex change
+#    description: >-
+#      Rewire replacing all usages of some CURIEs
+#    slots:
+#      - identifier map
+          
   transaction:
     is_a: change
     description: >-

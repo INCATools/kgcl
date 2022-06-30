@@ -148,6 +148,17 @@
       "@type": "TypeDefinition"
     },
     {
+      "name": "date_or_datetime",
+      "definition_uri": "https://w3id.org/linkml/DateOrDatetime",
+      "description": "Either a date or a datetime",
+      "from_schema": "https://w3id.org/linkml/types",
+      "imported_from": "linkml:types",
+      "base": "str",
+      "uri": "https://w3id.org/linkml/DateOrDatetime",
+      "repr": "str",
+      "@type": "TypeDefinition"
+    },
+    {
       "name": "uriorcurie",
       "definition_uri": "https://w3id.org/linkml/Uriorcurie",
       "description": "a URI or a CURIE",
@@ -5132,9 +5143,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "kgcl.yaml",
-  "source_file_date": "2022-06-15T12:50:54",
-  "source_file_size": 29327,
-  "generation_date": "2022-06-15T12:51:08",
+  "source_file_date": "2022-06-30T14:40:21",
+  "source_file_size": 29496,
+  "generation_date": "2022-06-30T14:43:30",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/kgcl.context.jsonld",

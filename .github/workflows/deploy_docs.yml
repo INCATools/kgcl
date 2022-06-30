@@ -8,7 +8,7 @@ on:
 
     # paths:
     # - 'src/docs/*'
-    # - 'src/kgcl_schema/schema/kgcl.yaml'
+    # - 'src/kgcl/schema/kgcl.yaml'
 
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel

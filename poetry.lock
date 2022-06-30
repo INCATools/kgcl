@@ -329,7 +329,7 @@ format-nongpl = ["fqdn", "idna", "isoduration", "jsonpointer (>1.13)", "rfc3339-
 
 [[package]]
 name = "linkml"
-version = "1.2.14"
+version = "1.2.15"
 description = "Linked Open Data Modeling Language"
 category = "dev"
 optional = false
@@ -1081,7 +1081,7 @@ docs = []
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.9"
-content-hash = "ce338e3c43beb0d70a9692536c99b4ed22f140c11a638f9edc4fa9f972e6ccbf"
+content-hash = "3e0a6eeeafeeaef974549ba772a39c60a3ee309756b7a9ca96ef09fa9e712841"
 
 [metadata.files]
 alabaster = [
@@ -1261,8 +1261,8 @@ jsonschema = [
     {file = "jsonschema-4.6.0.tar.gz", hash = "sha256:9d6397ba4a6c0bf0300736057f649e3e12ecbc07d3e81a0dacb72de4e9801957"},
 ]
 linkml = [
-    {file = "linkml-1.2.14-py3-none-any.whl", hash = "sha256:198f88a6157604afa78db2e41b1c91e4e795803d5ed09ab4fc7ce58b89b88d01"},
-    {file = "linkml-1.2.14.tar.gz", hash = "sha256:593a3bcfdac22ba3a1aae29056e02abf9e2a6d423ad65b5526f08af288adc3dc"},
+    {file = "linkml-1.2.15-py3-none-any.whl", hash = "sha256:3da9470da7271742058c6da497bdf227d5f329868bec76d1317371d0e7570bb0"},
+    {file = "linkml-1.2.15.tar.gz", hash = "sha256:d49125f2ee9aaf8865bade3d3cddd2be5a29c4f247249133582875f61037db8f"},
 ]
 linkml-dataops = [
     {file = "linkml_dataops-0.1.0-py3-none-any.whl", hash = "sha256:193cf7f659e5f07946d2c2761896910d5f7151d91282543b1363801f68307f4c"},

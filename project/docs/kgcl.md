@@ -281,6 +281,7 @@ A data model for describing change operations at a high level on an ontology or 
  * [Boolean](types/Boolean.md)  (**Bool**)  - A binary (true or false) value
  * [ChangeClassType](types/ChangeClassType.md)  ([Uriorcurie](types/Uriorcurie.md))  - CURIE for a class within this datamodel. E.g. kgcl:NodeObsoletion
  * [Date](types/Date.md)  (**XSDDate**)  - a date (year, month and day) in an idealized calendar
+ * [DateOrDatetime](types/DateOrDatetime.md)  (**str**)  - Either a date or a datetime
  * [Datetime](types/Datetime.md)  (**XSDDateTime**)  - The combination of a date and time
  * [Decimal](types/Decimal.md)  (**Decimal**)  - A real number with arbitrary precision that conforms to the xsd:decimal specification
  * [Double](types/Double.md)  (**float**)  - A real number that conforms to the xsd:double specification
