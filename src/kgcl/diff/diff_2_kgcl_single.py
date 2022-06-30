@@ -10,7 +10,7 @@ from kgcl.diff.change_detection import (detect_annotation_changes,
 from kgcl.diff.graph_diff import (get_added_thin_triples,
                                   get_deleted_thin_triples)
 from kgcl.diff.render_operations import render
-from kgcl.model.kgcl import ClassCreation, NewSynonym, PlaceUnder, RemoveUnder
+from kgcl.datamodel.kgcl import ClassCreation, NewSynonym, PlaceUnder, RemoveUnder
 
 
 def id_generator():

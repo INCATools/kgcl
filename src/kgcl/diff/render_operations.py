@@ -1,5 +1,5 @@
 """Render operations."""
-from kgcl.model.kgcl import (ClassCreation, EdgeCreation, EdgeDeletion,
+from kgcl.datamodel.kgcl import (ClassCreation, EdgeCreation, EdgeDeletion,
                              NewSynonym, NodeAnnotationChange, NodeCreation,
                              NodeDeletion, NodeMove, NodeObsoletion,
                              NodeRename, NodeUnobsoletion, PlaceUnder,

@@ -1,7 +1,7 @@
 """KGCL SPARQL implementation."""
 import re
 
-from kgcl.model.kgcl import (ClassCreation, EdgeCreation, EdgeDeletion,
+from kgcl.datamodel.kgcl import (ClassCreation, EdgeCreation, EdgeDeletion,
                              NewSynonym, NodeAnnotationChange, NodeCreation,
                              NodeDeepening, NodeDeletion, NodeMove,
                              NodeObsoletion, NodeRename, NodeShallowing,
