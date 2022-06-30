@@ -21,7 +21,7 @@ def compare_graphs(actual, expected):
         print(in_second.serialize(format="nt").decode("utf-8"))
         # dump_ttl_sorted(in_second)
 
-    # assert actual_iso == expected_iso # commented by H2.
+    assert actual_iso == expected_iso # commented by H2.
 
 
 def run_test(input_graph, kgcl_patch, expected_graph):

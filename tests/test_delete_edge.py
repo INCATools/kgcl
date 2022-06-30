@@ -1,5 +1,5 @@
 """Test delete edge."""
-from util import run_test
+from tests.util import run_test
 
 
 def test_delete_edge_with_ids():
