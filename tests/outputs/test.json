@@ -1,56 +1,56 @@
 {
   "change_set": [
     {
-      "id": "uuid:f4080d56-ce83-11ec-98e0-acde48001122",
+      "id": "uuid:05df21a0-f8cc-11ec-b72f-acde48001122",
       "node_id": "ANAT:BodyPart",
       "name": "body part",
       "type": "kgcl:ClassCreation"
     },
     {
-      "id": "uuid:f408108a-ce83-11ec-98e0-acde48001122",
+      "id": "uuid:05df2466-f8cc-11ec-b72f-acde48001122",
       "node_id": "ANAT:Limb",
       "name": "limb",
       "type": "kgcl:ClassCreation"
     },
     {
-      "id": "uuid:f40812ba-ce83-11ec-98e0-acde48001122",
+      "id": "uuid:05df268c-f8cc-11ec-b72f-acde48001122",
       "object": "ANAT:BodyPart",
       "type": "kgcl:PlaceUnder"
     },
     {
-      "id": "uuid:f40814fe-ce83-11ec-98e0-acde48001122",
+      "id": "uuid:05df288a-f8cc-11ec-b72f-acde48001122",
       "node_id": "ANAT:Forelimb",
       "name": "forelimb",
       "superclass": "ANAT:Limb",
       "type": "kgcl:ClassCreation"
     },
     {
-      "id": "uuid:f4081724-ce83-11ec-98e0-acde48001122",
+      "id": "uuid:05df2a74-f8cc-11ec-b72f-acde48001122",
       "new_value": "upper limb",
       "about_node": "ANAT:Forelimb",
       "type": "kgcl:NewSynonym"
     },
     {
-      "id": "uuid:f408192c-ce83-11ec-98e0-acde48001122",
+      "id": "uuid:05df2c40-f8cc-11ec-b72f-acde48001122",
       "node_id": "ANAT:Hindlimb",
       "name": "hindlimb",
       "superclass": "ANAT:Limb",
       "type": "kgcl:ClassCreation"
     },
     {
-      "id": "uuid:f4081b48-ce83-11ec-98e0-acde48001122",
+      "id": "uuid:05df2e16-f8cc-11ec-b72f-acde48001122",
       "new_value": "lower limb",
       "about_node": "ANAT:Hindlimb",
       "type": "kgcl:NewSynonym"
     },
     {
-      "id": "uuid:f4081d3c-ce83-11ec-98e0-acde48001122",
+      "id": "uuid:05df2fba-f8cc-11ec-b72f-acde48001122",
       "new_value": "en",
       "about_node": "ANAT:Hindlimb",
       "type": "kgcl:SetLanguageForName"
     },
     {
-      "id": "uuid:f4081f26-ce83-11ec-98e0-acde48001122",
+      "id": "uuid:05df3168-f8cc-11ec-b72f-acde48001122",
       "new_value": "bouche",
       "about_node": "ANAT:Mouse",
       "language": "fr",

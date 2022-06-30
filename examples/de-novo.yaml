@@ -1,0 +1,19 @@
+## note this is a slight variant of the linkml serialization of the model;
+## we include a type field for all change objects, so the correct class can be instantiated
+activity_set:
+- {id: uuid:876aac6a6ef6, description: "my sane edits", was_associated_with: "https://orcid.org/0000-0002-6601-2165"}
+- {id: uuid:e887d3aac33f, description: "deliberate mistakes", was_associated_with: "OntologicalAnarchist"}
+change_set:
+- {type: ClassCreation, node_id: ANAT:BodyPart, name: "body part"}
+- {type: ClassCreation, node_id: ANAT:Limb, name: "limb"}  ## TODO: decide whether to use node_id or about
+- {type: PlaceUnder, object: ANAT:BodyPart}   ## subject is filled from about of last change
+- {type: ClassCreation, node_id: ANAT:Forelimb, name: "forelimb", superclass: ANAT:Limb} 
+- {type: NewSynonym, about_node: ANAT:Forelimb, new_value: "upper limb"}
+- {type: ClassCreation, node_id: ANAT:Hindlimb, name: "hindlimb", superclass: ANAT:Limb}
+- {type: NewSynonym, about_node: ANAT:Hindlimb, new_value: "lower limb"}
+- {type: SetLanguageForName, about_node: ANAT:Hindlimb, new_value: "en"}
+- {type: NewSynonym, about_node: ANAT:Mouse, new_value: "bouche", language: "fr"}
+#- {type: ClassCreation, node_id: ANAT:Foot, name: "foot", superclass: ANAT:BodyPart, relationship: {predicate: ANAT:part-of, filler: ANAT:Hindlimb}}
+#- {type: ClassCreation, node_id: ANAT:Hand, name: "hand", superclass: ANAT:BodyPart, relationship: {predicate: ANAT:part-of, filler: ANAT:Hindlimb}, was_generated_by: uuid:e887d3aac33f} ## deliberate mistake
+#- {type: NodeMove, about_node: ANAT:Hand, old_predicate: ANAT:part-of, new_predicate: ANAT:Hindlimb, new_parent: ANAT:Forelimb}
+#- {type: PredicateChange, about_edge: {subject: ANAT:Hindlimb, object: ANAT:Limb}, new_value: "subClassOf"}

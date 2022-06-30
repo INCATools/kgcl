@@ -20,11 +20,12 @@ from rdflib import Graph
 
 import kgcl.datamodel as model
 from kgcl.datamodel.kgcl import Session
-from kgcl.datamodel.prov import Activity
+from kgcl.datamodel.kgcl import Activity
+from os.path import dirname, join
 
-THIS_DIR = os.path.abspath(os.path.dirname(__file__))
-LD = os.path.join(THIS_DIR, "../ldcontext/kgcl.context.jsonld")
-
+# THIS_DIR = os.path.abspath(os.path.dirname(__file__))
+# LD = os.path.join(THIS_DIR, "../ldcontext/kgcl.context.jsonld")
+LD = join(dirname(dirname(dirname(__file__))),"ldcontext/kgcl.context.jsonld")
 
 def get_context() -> str:
     """Get JSON-LD context."""
