@@ -48,6 +48,9 @@ deploy: all mkd-gh-deploy
 gen-project: $(PYMODEL)
 	$(RUN) gen-project -d $(DEST) $(SOURCE_SCHEMA_PATH) && mv $(DEST)/*.py $(PYMODEL)
 
+src/kgcl/datamodel/%.py: src/kgcl/schema/%.yaml
+	$(RUN) gen-python $< > $@.tmp && mv $@.tmp $@
+
 test:
 	$(RUN) gen-project -d tmp $(SOURCE_SCHEMA_PATH) 
 
