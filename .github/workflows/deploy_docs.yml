@@ -71,5 +71,5 @@ jobs:
         mkdir docs
         touch docs/.nojekyll
         cp -r src/docs/* docs/
-        poetry run gen-doc -d docs src/kgcl_schema/schema/kgcl.yaml
+        poetry run gen-doc -d docs src/kgcl/schema/kgcl.yaml
         poetry run mkdocs gh-deploy
