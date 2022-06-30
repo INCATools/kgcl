@@ -13,6 +13,7 @@ readme = "README.md"
 [tool.poetry.dependencies]
 python = "^3.9"
 linkml-runtime = "^1.1.24"
+lark = "^1.1.2"
 
 [tool.poetry.dev-dependencies]
 linkml = "^1.2.15"
