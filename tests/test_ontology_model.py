@@ -4,7 +4,7 @@ import unittest
 
 from linkml_runtime.dumpers import JSONDumper
 
-from kgcl.model.ontology_model import ClassNode, OwlTypeEnum
+from kgcl.datamodel.ontology_model import ClassNode, OwlTypeEnum
 
 cwd = os.path.abspath(os.path.dirname(__file__))
 EXAMPLE_DIR = os.path.join(cwd, "../examples")
