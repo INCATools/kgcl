@@ -1,0 +1,73 @@
+{
+  "change_set": [
+    {
+      "id": "uuid:f4080d56-ce83-11ec-98e0-acde48001122",
+      "node_id": "ANAT:BodyPart",
+      "name": "body part",
+      "type": "kgcl:ClassCreation"
+    },
+    {
+      "id": "uuid:f408108a-ce83-11ec-98e0-acde48001122",
+      "node_id": "ANAT:Limb",
+      "name": "limb",
+      "type": "kgcl:ClassCreation"
+    },
+    {
+      "id": "uuid:f40812ba-ce83-11ec-98e0-acde48001122",
+      "object": "ANAT:BodyPart",
+      "type": "kgcl:PlaceUnder"
+    },
+    {
+      "id": "uuid:f40814fe-ce83-11ec-98e0-acde48001122",
+      "node_id": "ANAT:Forelimb",
+      "name": "forelimb",
+      "superclass": "ANAT:Limb",
+      "type": "kgcl:ClassCreation"
+    },
+    {
+      "id": "uuid:f4081724-ce83-11ec-98e0-acde48001122",
+      "new_value": "upper limb",
+      "about_node": "ANAT:Forelimb",
+      "type": "kgcl:NewSynonym"
+    },
+    {
+      "id": "uuid:f408192c-ce83-11ec-98e0-acde48001122",
+      "node_id": "ANAT:Hindlimb",
+      "name": "hindlimb",
+      "superclass": "ANAT:Limb",
+      "type": "kgcl:ClassCreation"
+    },
+    {
+      "id": "uuid:f4081b48-ce83-11ec-98e0-acde48001122",
+      "new_value": "lower limb",
+      "about_node": "ANAT:Hindlimb",
+      "type": "kgcl:NewSynonym"
+    },
+    {
+      "id": "uuid:f4081d3c-ce83-11ec-98e0-acde48001122",
+      "new_value": "en",
+      "about_node": "ANAT:Hindlimb",
+      "type": "kgcl:SetLanguageForName"
+    },
+    {
+      "id": "uuid:f4081f26-ce83-11ec-98e0-acde48001122",
+      "new_value": "bouche",
+      "about_node": "ANAT:Mouse",
+      "language": "fr",
+      "type": "kgcl:NewSynonym"
+    }
+  ],
+  "activity_set": [
+    {
+      "id": "uuid:876aac6a6ef6",
+      "was_associated_with": "https://orcid.org/0000-0002-6601-2165",
+      "description": "my sane edits"
+    },
+    {
+      "id": "uuid:e887d3aac33f",
+      "was_associated_with": "OntologicalAnarchist",
+      "description": "deliberate mistakes"
+    }
+  ],
+  "@type": "Session"
+}
