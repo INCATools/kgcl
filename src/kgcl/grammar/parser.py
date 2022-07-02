@@ -1,14 +1,15 @@
 """KGCL parser."""
 from pathlib import Path
+from typing import List
 
 from lark import Lark, Token
 
 from kgcl.datamodel.kgcl import (ClassCreation, EdgeCreation, EdgeDeletion,
-                             NewSynonym, NodeAnnotationChange, NodeCreation,
-                             NodeDeepening, NodeDeletion, NodeMove,
-                             NodeObsoletion, NodeRename, NodeShallowing,
-                             NodeUnobsoletion, PlaceUnder, PredicateChange,
-                             RemovedNodeFromSubset, RemoveUnder)
+                                 NewSynonym, NodeAnnotationChange, NodeCreation,
+                                 NodeDeepening, NodeDeletion, NodeMove,
+                                 NodeObsoletion, NodeRename, NodeShallowing,
+                                 NodeUnobsoletion, PlaceUnder, PredicateChange,
+                                 RemovedNodeFromSubset, RemoveUnder, Change)
 from kgcl.datamodel.ontology_model import Edge
 
 
@@ -29,7 +30,7 @@ path = Path(__file__).parent
 kgcl_parser = Lark.open(str(path) + "/kgcl.lark", start="expression")
 
 
-def parse(input):
+def parse(input: str) -> List[Change]:
     """
     Parse a set of KGCL command separated by next-line operator.
 
@@ -43,7 +44,7 @@ def parse(input):
     return parsed
 
 
-def parse_statement(input):
+def parse_statement(input: str) -> Change:
     """
     Parse a KGCL command.
 
