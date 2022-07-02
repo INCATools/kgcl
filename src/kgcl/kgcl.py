@@ -8,6 +8,7 @@ from rdflib.util import guess_format
 from kgcl.apply import graph_transformer
 from kgcl.grammar import parser
 
+# TODO: remove this
 sys.path.append("../")
 
 
@@ -22,19 +23,16 @@ pass_config = click.make_pass_decorator(Config, ensure=True)
 
 
 @click.command()
-@click.argument("graph", type=click.Path(), required=True)
-@click.argument("kgcl", type=click.File("r"), required=True)
-@click.argument("output", type=click.Path(), required=True)
+@click.option("--graph", type=click.Path(), required=True)
+@click.option("--kgcl", type=click.File("r"), required=True)
+@click.option("--output",
+              "-o",
+              type=click.Path(), required=True)
 # @click.option("--verbose", "-v", is_flag=True, help="Print more output.")
 @pass_config
 def cli(config, graph, kgcl, output):
     """
     Modify graph based on KGCL commands.
-
-    :param config: Configuration info.
-    :param graph: Graph
-    :param kgcl: KGCL commands file.
-    :param output: Target location.
     """
     # read kgcl commands from file
     kgcl_patch = kgcl.read()
@@ -49,7 +47,7 @@ def cli(config, graph, kgcl, output):
     graph_transformer.apply_patch(parsed_patch, g)
 
     # save updated graph
-    g.serialize(destination=output, format="nt")
+    g.serialize(destination=output, format="ttl")
 
 
 if __name__ == "__main__":

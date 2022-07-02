@@ -1,4 +1,0 @@
-linkml >= 1.0.1
-mkdocs
-Flask
-lark 
