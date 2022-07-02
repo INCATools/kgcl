@@ -24,5 +24,9 @@ pytest = "^7.1.2"
 requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
 
+[tool.poetry.scripts]
+kgcl-diff = "kgcl.kgcl_diff:cli"
+kgcl-apply = "kgcl.kgcl:cli"
+
 [tool.poetry.extras]
 docs = ["linkml", "mkdocs-material"]
