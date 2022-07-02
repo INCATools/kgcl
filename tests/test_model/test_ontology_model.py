@@ -7,8 +7,8 @@ from linkml_runtime.dumpers import JSONDumper
 from kgcl.datamodel.ontology_model import ClassNode, OwlTypeEnum
 
 cwd = os.path.abspath(os.path.dirname(__file__))
-EXAMPLE_DIR = os.path.join(cwd, "../examples")
-OUTPUT_DIR = os.path.join(cwd, "outputs")
+EXAMPLE_DIR = os.path.join(cwd, "../../examples")
+OUTPUT_DIR = os.path.join(cwd, "../outputs")
 
 
 class OntologyModelTestSuite(unittest.TestCase):

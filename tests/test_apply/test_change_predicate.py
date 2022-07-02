@@ -1,5 +1,5 @@
 """Test change predicate."""
-from .util import run_test
+from tests.util import run_test
 
 
 def test_change_predicate_with_ids():

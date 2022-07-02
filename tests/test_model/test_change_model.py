@@ -8,8 +8,8 @@ from kgcl.datamodel.kgcl import NewSynonym, PredicateChange
 from kgcl.datamodel.ontology_model import Edge
 
 cwd = os.path.abspath(os.path.dirname(__file__))
-EXAMPLE_DIR = os.path.join(cwd, "../examples")
-OUTPUT_DIR = os.path.join(cwd, "outputs")
+EXAMPLE_DIR = os.path.join(cwd, "../../examples")
+OUTPUT_DIR = os.path.join(cwd, "../outputs")
 
 
 class ChangeModelTestSuite(unittest.TestCase):

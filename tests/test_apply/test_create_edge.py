@@ -1,5 +1,5 @@
 """Test creat edge."""
-from .util import run_test
+from tests.util import run_test
 
 
 def test_create_edge_with_ids():

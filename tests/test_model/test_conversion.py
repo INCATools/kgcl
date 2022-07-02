@@ -8,8 +8,8 @@ from kgcl.utils import from_yaml, to_json, to_jsonld, to_rdf
 
 # from test import EXAMPLE_DIR
 cwd = os.path.abspath(os.path.dirname(__file__))
-EXAMPLE_DIR = os.path.join(cwd, "../examples")
-OUTPUT_DIR = os.path.join(cwd, "outputs")
+EXAMPLE_DIR = os.path.join(cwd, "../../examples")
+OUTPUT_DIR = os.path.join(cwd, "../outputs")
 
 
 class ConversionTestSuite(unittest.TestCase):
