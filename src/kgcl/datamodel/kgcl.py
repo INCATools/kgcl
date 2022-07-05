@@ -1,5 +1,5 @@
 # Auto generated from kgcl.yaml by pythongen.py version: 0.9.0
-# Generation date: 2022-06-15T12:51:16
+# Generation date: 2022-07-04T19:48:32
 # Schema: kgcl
 #
 # id: https://w3id.org/kgcl
@@ -277,6 +277,7 @@ class Change(YAMLRoot):
     class_model_uri: ClassVar[URIRef] = KGCL.Change
 
     id: Union[str, ChangeId] = None
+    type: Optional[str] = None
     was_generated_by: Optional[Union[str, ActivityId]] = None
     see_also: Optional[str] = None
     pull_request: Optional[str] = None
@@ -290,6 +291,9 @@ class Change(YAMLRoot):
             self.MissingRequiredField("id")
         if not isinstance(self.id, ChangeId):
             self.id = ChangeId(self.id)
+
+        if self.type is not None and not isinstance(self.type, str):
+            self.type = str(self.type)
 
         if self.was_generated_by is not None and not isinstance(self.was_generated_by, ActivityId):
             self.was_generated_by = ActivityId(self.was_generated_by)
@@ -2407,6 +2411,9 @@ class SynonymScopeEnum(EnumDefinitionImpl):
 # Slots
 class slots:
     pass
+
+slots.type = Slot(uri=RDF.type, name="type", curie=RDF.curie('type'),
+                   model_uri=KGCL.type, domain=None, range=Optional[str])
 
 slots.pull_request = Slot(uri=KGCL.pull_request, name="pull request", curie=KGCL.curie('pull_request'),
                    model_uri=KGCL.pull_request, domain=None, range=Optional[str])
