@@ -27,5 +27,5 @@ nav:
 #  - Home: home.md
   - Index: index.md
   - About: about.md
-site_url: https://incatools.github.io/kgcl/
-repo_url: https://github.com/INCATools/kgcl
+site_url: https://incatools.github.io/kgcl_schema/
+repo_url: https://github.com/INCATools/kgcl_schema

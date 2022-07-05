@@ -1,8 +1,8 @@
 import unittest
 
-from kgcl.diff.render_operations import render
-from kgcl.grammar.parser import parse_statement
-from kgcl.schema import get_schemaview
+from kgcl_schema.diff.render_operations import render
+from kgcl_schema.grammar.parser import parse_statement
+from kgcl_schema.schema import get_schemaview
 from linkml_runtime.dumpers import yaml_dumper, json_dumper
 from linkml_runtime.utils.inference_utils import infer_slot_value, infer_all_slot_values
 

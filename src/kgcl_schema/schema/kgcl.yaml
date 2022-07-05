@@ -1,5 +1,5 @@
-id: https://w3id.org/kgcl
-name: kgcl
+id: https://w3id.org/kgcl_schema
+name: kgcl_schema
 title: Knowledge Graph Change Language
 description: |-
   A data model for describing change operations at a high level on an ontology or ontology-like artefact, such as a Knowledge Graph.
@@ -11,14 +11,14 @@ license: https://creativecommons.org/publicdomain/zero/1.0/
 version: 0.0.1
 
 prefixes:
-  kgcl: http://w3id.org/kgcl/
+  kgcl: http://w3id.org/kgcl_schema/
   dcterms: http://purl.org/dc/terms/
   IAO: http://purl.obolibrary.org/obo/IAO_
   oio: "http://www.geneontology.org/formats/oboInOwl#"
   xml: http://www.w3.org/XML/1998/namespace#
   linkml: https://w3id.org/linkml/
   
-default_prefix: kgcl
+default_prefix: kgcl_schema
 default_range: string
 
 imports:

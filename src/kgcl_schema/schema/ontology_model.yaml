@@ -1,5 +1,5 @@
-id: https://w3id.org/kgcl/ontology
-name: kgcl-ontology-model
+id: https://w3id.org/kgcl_schema/ontology
+name: kgcl_schema-ontology-model
 title: knowledge graph change language ontology model
 description: >-
   A basic bare-bones model of an ontology or ontology-like structure. The purpose is not to provide a complete model,
@@ -9,7 +9,7 @@ license: https://creativecommons.org/publicdomain/zero/1.0/
 version: 0.0.1
 
 prefixes:
-  om: http://w3id.org/kgcl/om/
+  om: http://w3id.org/kgcl_schema/om/
   dcterms: http://purl.org/dc/terms/
   linkml: https://w3id.org/linkml/
   oio: http://www.geneontology.org/formats/oboInOwl#

@@ -1,6 +1,6 @@
-# Auto generated from kgcl.yaml by pythongen.py version: 0.9.0
+# Auto generated from kgcl_schema.yaml by pythongen.py version: 0.9.0
 # Generation date: 2022-07-04T19:48:32
-# Schema: kgcl
+# Schema: kgcl_schema
 #
 # id: https://w3id.org/kgcl
 # description: A data model for describing change operations at a high level on an ontology or ontology-like
@@ -38,7 +38,7 @@ dataclasses._init_fn = dataclasses_init_fn_with_kwargs
 IAO = CurieNamespace('IAO', 'http://purl.obolibrary.org/obo/IAO_')
 BASICS = CurieNamespace('basics', 'https://w3id.org/kgcl/basics/')
 DCTERMS = CurieNamespace('dcterms', 'http://purl.org/dc/terms/')
-KGCL = CurieNamespace('kgcl', 'http://w3id.org/kgcl/')
+KGCL = CurieNamespace('kgcl_schema', 'http://w3id.org/kgcl/')
 LINKML = CurieNamespace('linkml', 'https://w3id.org/linkml/')
 OIO = CurieNamespace('oio', 'http://www.geneontology.org/formats/oboInOwl#')
 OM = CurieNamespace('om', 'http://w3id.org/kgcl/om/')
@@ -53,7 +53,7 @@ DEFAULT_ = KGCL
 
 # Types
 class ChangeClassType(Uriorcurie):
-    """ CURIE for a class within this datamodel. E.g. kgcl:NodeObsoletion """
+    """ CURIE for a class within this datamodel. E.g. kgcl_schema:NodeObsoletion """
     type_class_uri = XSD.anyURI
     type_class_curie = "xsd:anyURI"
     type_name = "change class type"
@@ -272,7 +272,7 @@ class Change(YAMLRoot):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = KGCL.Change
-    class_class_curie: ClassVar[str] = "kgcl:Change"
+    class_class_curie: ClassVar[str] = "kgcl_schema:Change"
     class_name: ClassVar[str] = "change"
     class_model_uri: ClassVar[URIRef] = KGCL.Change
 
@@ -327,7 +327,7 @@ class SimpleChange(Change):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = KGCL.SimpleChange
-    class_class_curie: ClassVar[str] = "kgcl:SimpleChange"
+    class_class_curie: ClassVar[str] = "kgcl_schema:SimpleChange"
     class_name: ClassVar[str] = "simple change"
     class_model_uri: ClassVar[URIRef] = KGCL.SimpleChange
 
@@ -377,7 +377,7 @@ class ComplexChange(Change):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = KGCL.ComplexChange
-    class_class_curie: ClassVar[str] = "kgcl:ComplexChange"
+    class_class_curie: ClassVar[str] = "kgcl_schema:ComplexChange"
     class_name: ClassVar[str] = "complex change"
     class_model_uri: ClassVar[URIRef] = KGCL.ComplexChange
 
@@ -398,7 +398,7 @@ class MultiNodeObsoletion(ComplexChange):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = KGCL.MultiNodeObsoletion
-    class_class_curie: ClassVar[str] = "kgcl:MultiNodeObsoletion"
+    class_class_curie: ClassVar[str] = "kgcl_schema:MultiNodeObsoletion"
     class_name: ClassVar[str] = "multi node obsoletion"
     class_model_uri: ClassVar[URIRef] = KGCL.MultiNodeObsoletion
 
@@ -432,7 +432,7 @@ class Transaction(Change):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = KGCL.Transaction
-    class_class_curie: ClassVar[str] = "kgcl:Transaction"
+    class_class_curie: ClassVar[str] = "kgcl_schema:Transaction"
     class_name: ClassVar[str] = "transaction"
     class_model_uri: ClassVar[URIRef] = KGCL.Transaction
 
@@ -458,7 +458,7 @@ class ChangeSetSummaryStatistic(YAMLRoot):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = KGCL.ChangeSetSummaryStatistic
-    class_class_curie: ClassVar[str] = "kgcl:ChangeSetSummaryStatistic"
+    class_class_curie: ClassVar[str] = "kgcl_schema:ChangeSetSummaryStatistic"
     class_name: ClassVar[str] = "change set summary statistic"
     class_model_uri: ClassVar[URIRef] = KGCL.ChangeSetSummaryStatistic
 
@@ -487,7 +487,7 @@ class ChangeMixin(YAMLRoot):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = KGCL.ChangeMixin
-    class_class_curie: ClassVar[str] = "kgcl:ChangeMixin"
+    class_class_curie: ClassVar[str] = "kgcl_schema:ChangeMixin"
     class_name: ClassVar[str] = "change mixin"
     class_model_uri: ClassVar[URIRef] = KGCL.ChangeMixin
 
@@ -500,7 +500,7 @@ class Obsoletion(ChangeMixin):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = KGCL.Obsoletion
-    class_class_curie: ClassVar[str] = "kgcl:Obsoletion"
+    class_class_curie: ClassVar[str] = "kgcl_schema:Obsoletion"
     class_name: ClassVar[str] = "obsoletion"
     class_model_uri: ClassVar[URIRef] = KGCL.Obsoletion
 
@@ -524,7 +524,7 @@ class DatatypeOrLanguageTagChange(ChangeMixin):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = KGCL.DatatypeOrLanguageTagChange
-    class_class_curie: ClassVar[str] = "kgcl:DatatypeOrLanguageTagChange"
+    class_class_curie: ClassVar[str] = "kgcl_schema:DatatypeOrLanguageTagChange"
     class_name: ClassVar[str] = "datatype or language tag change"
     class_model_uri: ClassVar[URIRef] = KGCL.DatatypeOrLanguageTagChange
 
@@ -534,7 +534,7 @@ class LanguageTagChange(DatatypeOrLanguageTagChange):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = KGCL.LanguageTagChange
-    class_class_curie: ClassVar[str] = "kgcl:LanguageTagChange"
+    class_class_curie: ClassVar[str] = "kgcl_schema:LanguageTagChange"
     class_name: ClassVar[str] = "language tag change"
     class_model_uri: ClassVar[URIRef] = KGCL.LanguageTagChange
 
@@ -555,7 +555,7 @@ class DatatypeChange(DatatypeOrLanguageTagChange):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = KGCL.DatatypeChange
-    class_class_curie: ClassVar[str] = "kgcl:DatatypeChange"
+    class_class_curie: ClassVar[str] = "kgcl_schema:DatatypeChange"
     class_name: ClassVar[str] = "datatype change"
     class_model_uri: ClassVar[URIRef] = KGCL.DatatypeChange
 
@@ -568,7 +568,7 @@ class AllowsAutomaticReplacementOfEdges(Obsoletion):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = KGCL.AllowsAutomaticReplacementOfEdges
-    class_class_curie: ClassVar[str] = "kgcl:AllowsAutomaticReplacementOfEdges"
+    class_class_curie: ClassVar[str] = "kgcl_schema:AllowsAutomaticReplacementOfEdges"
     class_name: ClassVar[str] = "allows automatic replacement of edges"
     class_model_uri: ClassVar[URIRef] = KGCL.AllowsAutomaticReplacementOfEdges
 
@@ -581,7 +581,7 @@ class Unobsoletion(ChangeMixin):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = KGCL.Unobsoletion
-    class_class_curie: ClassVar[str] = "kgcl:Unobsoletion"
+    class_class_curie: ClassVar[str] = "kgcl_schema:Unobsoletion"
     class_name: ClassVar[str] = "unobsoletion"
     class_model_uri: ClassVar[URIRef] = KGCL.Unobsoletion
 
@@ -601,7 +601,7 @@ class Deletion(ChangeMixin):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = KGCL.Deletion
-    class_class_curie: ClassVar[str] = "kgcl:Deletion"
+    class_class_curie: ClassVar[str] = "kgcl_schema:Deletion"
     class_name: ClassVar[str] = "deletion"
     class_model_uri: ClassVar[URIRef] = KGCL.Deletion
 
@@ -614,7 +614,7 @@ class Creation(ChangeMixin):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = KGCL.Creation
-    class_class_curie: ClassVar[str] = "kgcl:Creation"
+    class_class_curie: ClassVar[str] = "kgcl_schema:Creation"
     class_name: ClassVar[str] = "creation"
     class_model_uri: ClassVar[URIRef] = KGCL.Creation
 
@@ -635,7 +635,7 @@ class SubsetMembershipChange(ChangeMixin):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = KGCL.SubsetMembershipChange
-    class_class_curie: ClassVar[str] = "kgcl:SubsetMembershipChange"
+    class_class_curie: ClassVar[str] = "kgcl_schema:SubsetMembershipChange"
     class_name: ClassVar[str] = "subset membership change"
     class_model_uri: ClassVar[URIRef] = KGCL.SubsetMembershipChange
 
@@ -656,7 +656,7 @@ class AddToSubset(SubsetMembershipChange):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = KGCL.AddToSubset
-    class_class_curie: ClassVar[str] = "kgcl:AddToSubset"
+    class_class_curie: ClassVar[str] = "kgcl_schema:AddToSubset"
     class_name: ClassVar[str] = "add to subset"
     class_model_uri: ClassVar[URIRef] = KGCL.AddToSubset
 
@@ -677,7 +677,7 @@ class RemoveFromSubset(SubsetMembershipChange):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = KGCL.RemoveFromSubset
-    class_class_curie: ClassVar[str] = "kgcl:RemoveFromSubset"
+    class_class_curie: ClassVar[str] = "kgcl_schema:RemoveFromSubset"
     class_name: ClassVar[str] = "remove from subset"
     class_model_uri: ClassVar[URIRef] = KGCL.RemoveFromSubset
 
@@ -702,7 +702,7 @@ class EdgeChange(SimpleChange):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = KGCL.EdgeChange
-    class_class_curie: ClassVar[str] = "kgcl:EdgeChange"
+    class_class_curie: ClassVar[str] = "kgcl_schema:EdgeChange"
     class_name: ClassVar[str] = "edge change"
     class_model_uri: ClassVar[URIRef] = KGCL.EdgeChange
 
@@ -740,7 +740,7 @@ class EdgeCreation(EdgeChange):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = KGCL.EdgeCreation
-    class_class_curie: ClassVar[str] = "kgcl:EdgeCreation"
+    class_class_curie: ClassVar[str] = "kgcl_schema:EdgeCreation"
     class_name: ClassVar[str] = "edge creation"
     class_model_uri: ClassVar[URIRef] = KGCL.EdgeCreation
 
@@ -795,7 +795,7 @@ class PlaceUnder(EdgeCreation):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = KGCL.PlaceUnder
-    class_class_curie: ClassVar[str] = "kgcl:PlaceUnder"
+    class_class_curie: ClassVar[str] = "kgcl_schema:PlaceUnder"
     class_name: ClassVar[str] = "place under"
     class_model_uri: ClassVar[URIRef] = KGCL.PlaceUnder
 
@@ -818,7 +818,7 @@ class EdgeDeletion(EdgeChange):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = KGCL.EdgeDeletion
-    class_class_curie: ClassVar[str] = "kgcl:EdgeDeletion"
+    class_class_curie: ClassVar[str] = "kgcl_schema:EdgeDeletion"
     class_name: ClassVar[str] = "edge deletion"
     class_model_uri: ClassVar[URIRef] = KGCL.EdgeDeletion
 
@@ -873,7 +873,7 @@ class RemoveUnder(EdgeDeletion):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = KGCL.RemoveUnder
-    class_class_curie: ClassVar[str] = "kgcl:RemoveUnder"
+    class_class_curie: ClassVar[str] = "kgcl_schema:RemoveUnder"
     class_name: ClassVar[str] = "remove under"
     class_model_uri: ClassVar[URIRef] = KGCL.RemoveUnder
 
@@ -896,7 +896,7 @@ class EdgeObsoletion(EdgeChange):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = KGCL.EdgeObsoletion
-    class_class_curie: ClassVar[str] = "kgcl:EdgeObsoletion"
+    class_class_curie: ClassVar[str] = "kgcl_schema:EdgeObsoletion"
     class_name: ClassVar[str] = "edge obsoletion"
     class_model_uri: ClassVar[URIRef] = KGCL.EdgeObsoletion
 
@@ -943,7 +943,7 @@ class EdgeRewiring(EdgeChange):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = KGCL.EdgeRewiring
-    class_class_curie: ClassVar[str] = "kgcl:EdgeRewiring"
+    class_class_curie: ClassVar[str] = "kgcl_schema:EdgeRewiring"
     class_name: ClassVar[str] = "edge rewiring"
     class_model_uri: ClassVar[URIRef] = KGCL.EdgeRewiring
 
@@ -966,7 +966,7 @@ class MappingCreation(EdgeCreation):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = KGCL.MappingCreation
-    class_class_curie: ClassVar[str] = "kgcl:MappingCreation"
+    class_class_curie: ClassVar[str] = "kgcl_schema:MappingCreation"
     class_name: ClassVar[str] = "mapping creation"
     class_model_uri: ClassVar[URIRef] = KGCL.MappingCreation
 
@@ -1010,7 +1010,7 @@ class NodeMove(EdgeChange):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = KGCL.NodeMove
-    class_class_curie: ClassVar[str] = "kgcl:NodeMove"
+    class_class_curie: ClassVar[str] = "kgcl_schema:NodeMove"
     class_name: ClassVar[str] = "node move"
     class_model_uri: ClassVar[URIRef] = KGCL.NodeMove
 
@@ -1046,7 +1046,7 @@ class NodeDeepening(NodeMove):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = KGCL.NodeDeepening
-    class_class_curie: ClassVar[str] = "kgcl:NodeDeepening"
+    class_class_curie: ClassVar[str] = "kgcl_schema:NodeDeepening"
     class_name: ClassVar[str] = "node deepening"
     class_model_uri: ClassVar[URIRef] = KGCL.NodeDeepening
 
@@ -1073,7 +1073,7 @@ class NodeShallowing(NodeMove):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = KGCL.NodeShallowing
-    class_class_curie: ClassVar[str] = "kgcl:NodeShallowing"
+    class_class_curie: ClassVar[str] = "kgcl_schema:NodeShallowing"
     class_name: ClassVar[str] = "node shallowing"
     class_model_uri: ClassVar[URIRef] = KGCL.NodeShallowing
 
@@ -1100,7 +1100,7 @@ class PredicateChange(EdgeChange):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = KGCL.PredicateChange
-    class_class_curie: ClassVar[str] = "kgcl:PredicateChange"
+    class_class_curie: ClassVar[str] = "kgcl_schema:PredicateChange"
     class_name: ClassVar[str] = "predicate change"
     class_model_uri: ClassVar[URIRef] = KGCL.PredicateChange
 
@@ -1127,7 +1127,7 @@ class EdgeLogicalInterpretationChange(EdgeChange):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = KGCL.EdgeLogicalInterpretationChange
-    class_class_curie: ClassVar[str] = "kgcl:EdgeLogicalInterpretationChange"
+    class_class_curie: ClassVar[str] = "kgcl_schema:EdgeLogicalInterpretationChange"
     class_name: ClassVar[str] = "edge logical interpretation change"
     class_model_uri: ClassVar[URIRef] = KGCL.EdgeLogicalInterpretationChange
 
@@ -1150,7 +1150,7 @@ class LogicalAxiomChange(SimpleChange):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = KGCL.LogicalAxiomChange
-    class_class_curie: ClassVar[str] = "kgcl:LogicalAxiomChange"
+    class_class_curie: ClassVar[str] = "kgcl_schema:LogicalAxiomChange"
     class_name: ClassVar[str] = "logical axiom change"
     class_model_uri: ClassVar[URIRef] = KGCL.LogicalAxiomChange
 
@@ -1173,7 +1173,7 @@ class NodeChange(SimpleChange):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = KGCL.NodeChange
-    class_class_curie: ClassVar[str] = "kgcl:NodeChange"
+    class_class_curie: ClassVar[str] = "kgcl_schema:NodeChange"
     class_name: ClassVar[str] = "node change"
     class_model_uri: ClassVar[URIRef] = KGCL.NodeChange
 
@@ -1203,7 +1203,7 @@ class NodeRename(NodeChange):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = KGCL.NodeRename
-    class_class_curie: ClassVar[str] = "kgcl:NodeRename"
+    class_class_curie: ClassVar[str] = "kgcl_schema:NodeRename"
     class_name: ClassVar[str] = "node rename"
     class_model_uri: ClassVar[URIRef] = KGCL.NodeRename
 
@@ -1250,7 +1250,7 @@ class SetLanguageForName(NodeChange):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = KGCL.SetLanguageForName
-    class_class_curie: ClassVar[str] = "kgcl:SetLanguageForName"
+    class_class_curie: ClassVar[str] = "kgcl_schema:SetLanguageForName"
     class_name: ClassVar[str] = "set language for name"
     class_model_uri: ClassVar[URIRef] = KGCL.SetLanguageForName
 
@@ -1285,7 +1285,7 @@ class NodeAnnotationChange(NodeChange):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = KGCL.NodeAnnotationChange
-    class_class_curie: ClassVar[str] = "kgcl:NodeAnnotationChange"
+    class_class_curie: ClassVar[str] = "kgcl_schema:NodeAnnotationChange"
     class_name: ClassVar[str] = "node annotation change"
     class_model_uri: ClassVar[URIRef] = KGCL.NodeAnnotationChange
 
@@ -1316,7 +1316,7 @@ class NodeAnnotationReplacement(NodeAnnotationChange):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = KGCL.NodeAnnotationReplacement
-    class_class_curie: ClassVar[str] = "kgcl:NodeAnnotationReplacement"
+    class_class_curie: ClassVar[str] = "kgcl_schema:NodeAnnotationReplacement"
     class_name: ClassVar[str] = "node annotation replacement"
     class_model_uri: ClassVar[URIRef] = KGCL.NodeAnnotationReplacement
 
@@ -1336,7 +1336,7 @@ class NodeSynonymChange(NodeChange):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = KGCL.NodeSynonymChange
-    class_class_curie: ClassVar[str] = "kgcl:NodeSynonymChange"
+    class_class_curie: ClassVar[str] = "kgcl_schema:NodeSynonymChange"
     class_name: ClassVar[str] = "node synonym change"
     class_model_uri: ClassVar[URIRef] = KGCL.NodeSynonymChange
 
@@ -1359,7 +1359,7 @@ class NewSynonym(NodeSynonymChange):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = KGCL.NewSynonym
-    class_class_curie: ClassVar[str] = "kgcl:NewSynonym"
+    class_class_curie: ClassVar[str] = "kgcl_schema:NewSynonym"
     class_name: ClassVar[str] = "new synonym"
     class_model_uri: ClassVar[URIRef] = KGCL.NewSynonym
 
@@ -1395,7 +1395,7 @@ class NameBecomesSynonym(NodeSynonymChange):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = KGCL.NameBecomesSynonym
-    class_class_curie: ClassVar[str] = "kgcl:NameBecomesSynonym"
+    class_class_curie: ClassVar[str] = "kgcl_schema:NameBecomesSynonym"
     class_name: ClassVar[str] = "name becomes synonym"
     class_model_uri: ClassVar[URIRef] = KGCL.NameBecomesSynonym
 
@@ -1430,7 +1430,7 @@ class RemoveSynonym(NodeSynonymChange):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = KGCL.RemoveSynonym
-    class_class_curie: ClassVar[str] = "kgcl:RemoveSynonym"
+    class_class_curie: ClassVar[str] = "kgcl_schema:RemoveSynonym"
     class_name: ClassVar[str] = "remove synonym"
     class_model_uri: ClassVar[URIRef] = KGCL.RemoveSynonym
 
@@ -1457,7 +1457,7 @@ class SynonymReplacement(NodeSynonymChange):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = KGCL.SynonymReplacement
-    class_class_curie: ClassVar[str] = "kgcl:SynonymReplacement"
+    class_class_curie: ClassVar[str] = "kgcl_schema:SynonymReplacement"
     class_name: ClassVar[str] = "synonym replacement"
     class_model_uri: ClassVar[URIRef] = KGCL.SynonymReplacement
 
@@ -1494,7 +1494,7 @@ class SynonymPredicateChange(NodeSynonymChange):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = KGCL.SynonymPredicateChange
-    class_class_curie: ClassVar[str] = "kgcl:SynonymPredicateChange"
+    class_class_curie: ClassVar[str] = "kgcl_schema:SynonymPredicateChange"
     class_name: ClassVar[str] = "synonym predicate change"
     class_model_uri: ClassVar[URIRef] = KGCL.SynonymPredicateChange
 
@@ -1529,7 +1529,7 @@ class NodeTextDefinitionChange(NodeChange):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = KGCL.NodeTextDefinitionChange
-    class_class_curie: ClassVar[str] = "kgcl:NodeTextDefinitionChange"
+    class_class_curie: ClassVar[str] = "kgcl_schema:NodeTextDefinitionChange"
     class_name: ClassVar[str] = "node text definition change"
     class_model_uri: ClassVar[URIRef] = KGCL.NodeTextDefinitionChange
 
@@ -1543,7 +1543,7 @@ class NewTextDefinition(NodeTextDefinitionChange):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = KGCL.NewTextDefinition
-    class_class_curie: ClassVar[str] = "kgcl:NewTextDefinition"
+    class_class_curie: ClassVar[str] = "kgcl_schema:NewTextDefinition"
     class_name: ClassVar[str] = "new text definition"
     class_model_uri: ClassVar[URIRef] = KGCL.NewTextDefinition
 
@@ -1570,7 +1570,7 @@ class RemoveTextDefinition(NodeTextDefinitionChange):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = KGCL.RemoveTextDefinition
-    class_class_curie: ClassVar[str] = "kgcl:RemoveTextDefinition"
+    class_class_curie: ClassVar[str] = "kgcl_schema:RemoveTextDefinition"
     class_name: ClassVar[str] = "remove text definition"
     class_model_uri: ClassVar[URIRef] = KGCL.RemoveTextDefinition
 
@@ -1597,7 +1597,7 @@ class TextDefinitionReplacement(NodeTextDefinitionChange):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = KGCL.TextDefinitionReplacement
-    class_class_curie: ClassVar[str] = "kgcl:TextDefinitionReplacement"
+    class_class_curie: ClassVar[str] = "kgcl_schema:TextDefinitionReplacement"
     class_name: ClassVar[str] = "text definition replacement"
     class_model_uri: ClassVar[URIRef] = KGCL.TextDefinitionReplacement
 
@@ -1632,7 +1632,7 @@ class AddNodeToSubset(NodeChange):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = KGCL.AddNodeToSubset
-    class_class_curie: ClassVar[str] = "kgcl:AddNodeToSubset"
+    class_class_curie: ClassVar[str] = "kgcl_schema:AddNodeToSubset"
     class_name: ClassVar[str] = "add node to subset"
     class_model_uri: ClassVar[URIRef] = KGCL.AddNodeToSubset
 
@@ -1659,7 +1659,7 @@ class RemovedNodeFromSubset(NodeChange):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = KGCL.RemovedNodeFromSubset
-    class_class_curie: ClassVar[str] = "kgcl:RemovedNodeFromSubset"
+    class_class_curie: ClassVar[str] = "kgcl_schema:RemovedNodeFromSubset"
     class_name: ClassVar[str] = "removed node from subset"
     class_model_uri: ClassVar[URIRef] = KGCL.RemovedNodeFromSubset
 
@@ -1698,7 +1698,7 @@ class NodeObsoletion(NodeChange):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = KGCL.NodeObsoletion
-    class_class_curie: ClassVar[str] = "kgcl:NodeObsoletion"
+    class_class_curie: ClassVar[str] = "kgcl_schema:NodeObsoletion"
     class_name: ClassVar[str] = "node obsoletion"
     class_model_uri: ClassVar[URIRef] = KGCL.NodeObsoletion
 
@@ -1741,7 +1741,7 @@ class NodeUnobsoletion(NodeChange):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = KGCL.NodeUnobsoletion
-    class_class_curie: ClassVar[str] = "kgcl:NodeUnobsoletion"
+    class_class_curie: ClassVar[str] = "kgcl_schema:NodeUnobsoletion"
     class_name: ClassVar[str] = "node unobsoletion"
     class_model_uri: ClassVar[URIRef] = KGCL.NodeUnobsoletion
 
@@ -1776,7 +1776,7 @@ class NodeCreation(NodeChange):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = KGCL.NodeCreation
-    class_class_curie: ClassVar[str] = "kgcl:NodeCreation"
+    class_class_curie: ClassVar[str] = "kgcl_schema:NodeCreation"
     class_name: ClassVar[str] = "node creation"
     class_model_uri: ClassVar[URIRef] = KGCL.NodeCreation
 
@@ -1823,7 +1823,7 @@ class ClassCreation(NodeCreation):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = KGCL.ClassCreation
-    class_class_curie: ClassVar[str] = "kgcl:ClassCreation"
+    class_class_curie: ClassVar[str] = "kgcl_schema:ClassCreation"
     class_name: ClassVar[str] = "class creation"
     class_model_uri: ClassVar[URIRef] = KGCL.ClassCreation
 
@@ -1855,7 +1855,7 @@ class NodeDeletion(NodeChange):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = KGCL.NodeDeletion
-    class_class_curie: ClassVar[str] = "kgcl:NodeDeletion"
+    class_class_curie: ClassVar[str] = "kgcl_schema:NodeDeletion"
     class_name: ClassVar[str] = "node deletion"
     class_model_uri: ClassVar[URIRef] = KGCL.NodeDeletion
 
@@ -1883,7 +1883,7 @@ class NodeDirectMerge(NodeObsoletion):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = KGCL.NodeDirectMerge
-    class_class_curie: ClassVar[str] = "kgcl:NodeDirectMerge"
+    class_class_curie: ClassVar[str] = "kgcl_schema:NodeDirectMerge"
     class_name: ClassVar[str] = "node direct merge"
     class_model_uri: ClassVar[URIRef] = KGCL.NodeDirectMerge
 
@@ -1921,7 +1921,7 @@ class NodeObsoletionWithDirectReplacement(NodeObsoletion):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = KGCL.NodeObsoletionWithDirectReplacement
-    class_class_curie: ClassVar[str] = "kgcl:NodeObsoletionWithDirectReplacement"
+    class_class_curie: ClassVar[str] = "kgcl_schema:NodeObsoletionWithDirectReplacement"
     class_name: ClassVar[str] = "node obsoletion with direct replacement"
     class_model_uri: ClassVar[URIRef] = KGCL.NodeObsoletionWithDirectReplacement
 
@@ -1954,7 +1954,7 @@ class NodeObsoletionWithNoDirectReplacement(NodeObsoletion):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = KGCL.NodeObsoletionWithNoDirectReplacement
-    class_class_curie: ClassVar[str] = "kgcl:NodeObsoletionWithNoDirectReplacement"
+    class_class_curie: ClassVar[str] = "kgcl_schema:NodeObsoletionWithNoDirectReplacement"
     class_name: ClassVar[str] = "node obsoletion with no direct replacement"
     class_model_uri: ClassVar[URIRef] = KGCL.NodeObsoletionWithNoDirectReplacement
 
@@ -1987,7 +1987,7 @@ class TextualDiff(YAMLRoot):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = KGCL.TextualDiff
-    class_class_curie: ClassVar[str] = "kgcl:TextualDiff"
+    class_class_curie: ClassVar[str] = "kgcl_schema:TextualDiff"
     class_name: ClassVar[str] = "textual diff"
     class_model_uri: ClassVar[URIRef] = KGCL.TextualDiff
 
@@ -2000,7 +2000,7 @@ class Configuration(YAMLRoot):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = KGCL.Configuration
-    class_class_curie: ClassVar[str] = "kgcl:Configuration"
+    class_class_curie: ClassVar[str] = "kgcl_schema:Configuration"
     class_name: ClassVar[str] = "configuration"
     class_model_uri: ClassVar[URIRef] = KGCL.Configuration
 
@@ -2049,7 +2049,7 @@ class Session(YAMLRoot):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = KGCL.Session
-    class_class_curie: ClassVar[str] = "kgcl:Session"
+    class_class_curie: ClassVar[str] = "kgcl_schema:Session"
     class_name: ClassVar[str] = "session"
     class_model_uri: ClassVar[URIRef] = KGCL.Session
 

@@ -3,7 +3,7 @@ import logging
 from typing import List
 
 import rdflib
-from kgcl.datamodel.kgcl import Change
+from kgcl_schema.datamodel.kgcl import Change
 
 from .kgcl_2_sparql import convert
 

@@ -2,15 +2,15 @@
 
 """KGCL RDF-related operations."""
 from deprecated.classic import deprecated
-from kgcl.grammar.parser import parse
-from kgcl.datamodel.kgcl import (ClassCreation, EdgeCreation, EdgeDeletion,
-                             NewSynonym, NodeAnnotationChange, NodeCreation,
-                             NodeDeepening, NodeDeletion, NodeMove,
-                             NodeObsoletion, NodeRename, NodeShallowing,
-                             NodeUnobsoletion, PlaceUnder, PredicateChange,
-                             RemoveUnder)
+from kgcl_schema.grammar.parser import parse
+from kgcl_schema.datamodel.kgcl import (ClassCreation, EdgeCreation, EdgeDeletion,
+                                        NewSynonym, NodeAnnotationChange, NodeCreation,
+                                        NodeDeepening, NodeDeletion, NodeMove,
+                                        NodeObsoletion, NodeRename, NodeShallowing,
+                                        NodeUnobsoletion, PlaceUnder, PredicateChange,
+                                        RemoveUnder)
 
-# parse kgcl to python data class
+# parse kgcl_schema to python data class
 # serialse puython data class to yaml
 # convert python data class to RDF
 

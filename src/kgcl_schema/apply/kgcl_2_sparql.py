@@ -3,12 +3,12 @@ import logging
 import re
 from typing import Optional, List
 
-from kgcl.datamodel.kgcl import (ClassCreation, EdgeCreation, EdgeDeletion,
-                                 NewSynonym, NodeAnnotationChange, NodeCreation,
-                                 NodeDeepening, NodeDeletion, NodeMove,
-                                 NodeObsoletion, NodeRename, NodeShallowing,
-                                 NodeUnobsoletion, PlaceUnder, PredicateChange,
-                                 RemovedNodeFromSubset, RemoveUnder, Change)
+from kgcl_schema.datamodel.kgcl import (ClassCreation, EdgeCreation, EdgeDeletion,
+                                        NewSynonym, NodeAnnotationChange, NodeCreation,
+                                        NodeDeepening, NodeDeletion, NodeMove,
+                                        NodeObsoletion, NodeRename, NodeShallowing,
+                                        NodeUnobsoletion, PlaceUnder, PredicateChange,
+                                        RemovedNodeFromSubset, RemoveUnder, Change)
 
 
 CURIE_PATTERN = re.compile(r"^(\w+):(\S+)$")
