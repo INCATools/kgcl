@@ -1,12 +1,17 @@
 """KGCL SPARQL implementation."""
+import logging
 import re
+from typing import Optional, List
 
 from kgcl.datamodel.kgcl import (ClassCreation, EdgeCreation, EdgeDeletion,
-                             NewSynonym, NodeAnnotationChange, NodeCreation,
-                             NodeDeepening, NodeDeletion, NodeMove,
-                             NodeObsoletion, NodeRename, NodeShallowing,
-                             NodeUnobsoletion, PlaceUnder, PredicateChange,
-                             RemovedNodeFromSubset, RemoveUnder)
+                                 NewSynonym, NodeAnnotationChange, NodeCreation,
+                                 NodeDeepening, NodeDeletion, NodeMove,
+                                 NodeObsoletion, NodeRename, NodeShallowing,
+                                 NodeUnobsoletion, PlaceUnder, PredicateChange,
+                                 RemovedNodeFromSubset, RemoveUnder, Change)
+
+
+CURIE_PATTERN = re.compile(r"^(\w+):(\S+)$")
 
 
 def get_prefix(curie):
@@ -34,15 +39,33 @@ prefix_2_uri = {
     "CL": "<http://purl.obolibrary.org/obo/CL_>",
     "IAO": "<http://purl.obolibrary.org/obo/IAO_>",
     "NCBITaxon": "<http://purl.obolibrary.org/obo/NCBITaxon_>",
+    "GO": "<http://purl.obolibrary.org/obo/GO_>",
     "OBI": "<http://purl.obolibrary.org/obo/OBI_>",
     "PR": "<http://purl.obolibrary.org/obo/PR_>",
-    "obo": "<http://purl.obolibrary.org/obo/>",
     "UP": "<http://purl.uniprot.org/uniprot/>",
     "UC": "<http://purl.uniprot.org/core/>",
     "PRO": "<http://www.uniprot.org/annotation/PRO_>",
     "faldo": "<http://biohackathon.org/resource/faldo#>",
     # TODO add more prefixes
 }
+
+
+def get_sparql_prefix_header(prefixes: List[str]) -> str:
+    if prefixes is None:
+        prefixes = ['rdfs', 'rdf']
+    return "\n".join([f"PREFIX {prefix}: {prefix_2_uri[prefix]}" for prefix in prefixes])
+
+
+def get_representation(node_term: str) -> Optional[str]:
+    if node_term is None:
+        logging.warning(f"None value for representation")
+        return None
+    elif node_term.startswith('<http'):
+        return 'uri'
+    elif ':' in node_term and CURIE_PATTERN.match(node_term):
+        return 'curie'
+    else:
+        return 'label'
 
 
 def is_label(input):
@@ -69,7 +92,7 @@ def escape_literal(literal):
     # .replace("\\'", "\\\\'")
 
 
-def convert(kgcl_instance):
+def convert(kgcl_instance: Change) -> str:
     """
     Given a KGCL dataclass, return a SPARQL UPDATE _query.
 
@@ -81,7 +104,8 @@ def convert(kgcl_instance):
 
     # node obsoletion
     if type(kgcl_instance) is NodeObsoletion:
-        representation = kgcl_instance.about_node_representation
+        representation = get_representation(kgcl_instance.about_node)
+        # TODO: abstract into a single function
         if representation == "uri":
             return obsolete_by_id(kgcl_instance)
         if representation == "label":
@@ -91,7 +115,8 @@ def convert(kgcl_instance):
 
     # node obsoletion
     if type(kgcl_instance) is NodeUnobsoletion:
-        representation = kgcl_instance.about_node_representation
+        representation = get_representation(kgcl_instance.about_node)
+        # TODO: abstract into a single function
         if representation == "uri":
             return unobsolete_by_id(kgcl_instance)
         if representation == "label":
@@ -101,7 +126,8 @@ def convert(kgcl_instance):
 
     # node deletion
     if type(kgcl_instance) is NodeDeletion:
-        representation = kgcl_instance.about_node_representation
+        representation = get_representation(kgcl_instance.about_node)
+        # TODO: abstract into a single function
         if representation == "uri":
             return delete_by_id(kgcl_instance)
         if representation == "label":
@@ -133,8 +159,8 @@ def convert(kgcl_instance):
         return node_move(kgcl_instance)
 
     if type(kgcl_instance) is NewSynonym:
-        representation = kgcl_instance.about_node_representation
-
+        representation = get_representation(kgcl_instance.about_node)
+        # TODO: abstract into a single function
         if representation == "uri":
             return new_synonym_for_uri(kgcl_instance)
         if representation == "label":
@@ -162,16 +188,16 @@ def convert(kgcl_instance):
         return delete_existential_restriction(kgcl_instance)
 
 
-def node_move(kgcl_instance) -> str:
+def node_move(kgcl_instance: NodeMove) -> str:
     """Return SPARQL query to move node."""
     # NB: object and old_value are (necessarily) the same
     subject = kgcl_instance.about_edge.subject
     predicate = kgcl_instance.about_edge.predicate
     object = kgcl_instance.about_edge.object
 
-    subject_type = kgcl_instance.about_edge.subject_representation
-    predicate_type = kgcl_instance.about_edge.predicate_representation
-    object_type = kgcl_instance.about_edge.object_representation
+    subject_type = get_representation(kgcl_instance.about_edge.subject)
+    predicate_type = get_representation(kgcl_instance.about_edge.predicate)
+    object_type = get_representation(kgcl_instance.about_edge.object)
 
     old_value = kgcl_instance.old_value
     new_value = kgcl_instance.new_value
@@ -281,8 +307,8 @@ def change_predicate(kgcl_instance) -> str:
     language = kgcl_instance.language
     datatype = kgcl_instance.datatype
 
-    subject_type = kgcl_instance.about_edge.subject_representation
-    object_type = kgcl_instance.about_edge.object_representation
+    subject_type = get_representation(kgcl_instance.about_edge.subject)
+    object_type = get_representation(kgcl_instance.about_edge.object)
 
     old_value_type = kgcl_instance.old_value_type
     new_value_type = kgcl_instance.new_value_type
@@ -364,7 +390,7 @@ def node_deepening(kgcl_instance) -> str:
     old_value = kgcl_instance.old_value
     new_value = kgcl_instance.new_value
 
-    entity_type = kgcl_instance.about_edge.subject_representation
+    entity_type = get_representation(kgcl_instance.about_edge.subject)
     old_type = kgcl_instance.old_object_type
     new_type = kgcl_instance.new_object_type
 
@@ -420,13 +446,13 @@ def node_deepening(kgcl_instance) -> str:
     return update__query
 
 
-def node_shallowing(kgcl_instance) -> str:
+def node_shallowing(kgcl_instance: NodeShallowing) -> str:
     """Return SPARQL query to make node shallow."""
     entity = kgcl_instance.about_edge.subject
     old_value = kgcl_instance.old_value
     new_value = kgcl_instance.new_value
 
-    entity_type = kgcl_instance.about_edge.subject_representation
+    entity_type = get_representation(kgcl_instance.about_edge.subject)
     old_type = kgcl_instance.old_object_type
     new_type = kgcl_instance.new_object_type
 
@@ -660,7 +686,7 @@ def unobsolete_curie(kgcl_instance) -> str:
 
 
 # NB this does not preserve language tags
-def rename(kgcl_instance) -> str:
+def rename(kgcl_instance: NodeRename) -> str:
     """Return SPARQL query to rename node."""
     old_value = kgcl_instance.old_value
     new_value = kgcl_instance.new_value
@@ -678,7 +704,7 @@ def rename(kgcl_instance) -> str:
         subject = "?entity"
     else:
         subject = kgcl_instance.about_node
-        if kgcl_instance.about_node_representation == "curie":
+        if get_representation(kgcl_instance.about_node) == "curie":
             prefix += build_curie_prefix(subject)
 
     delete__query = subject + " rdfs:label ?oldlabel ."
@@ -835,10 +861,10 @@ def delete_by_label(kgcl_instance) -> str:
     return update_query
 
 
-def create_class(kgcl_instance) -> str:
+def create_class(kgcl_instance: ClassCreation) -> str:
     """Return SPARQL query to create a class."""
     term_id = kgcl_instance.node_id
-    id_type = kgcl_instance.about_node_representation
+    id_type = get_representation(kgcl_instance.node_id)
 
     prefix = "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>  "
     prefix += "PREFIX owl: <http://www.w3.org/2002/07/owl#>  "
@@ -860,7 +886,7 @@ def create_node(kgcl_instance) -> str:
     term_id = kgcl_instance.node_id
     label = kgcl_instance.name
     language = kgcl_instance.language
-    id_type = kgcl_instance.about_node_representation
+    id_type = get_representation(kgcl_instance.about_node)
 
     prefix = "PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>  "
 
@@ -892,7 +918,7 @@ def node_annotation_change(kgcl_instance) -> str:
     old_object = kgcl_instance.old_value
     new_object = kgcl_instance.new_value
 
-    subject_type = kgcl_instance.about_node_representation
+    subject_type = get_representation(kgcl_instance.about_node)
     predicate_type = kgcl_instance.annotation_property_type
     old_type = kgcl_instance.old_value_type
     new_type = kgcl_instance.new_value_type
@@ -1423,7 +1449,6 @@ def obsolete_by_id(kgcl_instance) -> str:
     where = "WHERE {" + where_query + "}"
 
     update_query = prefix + " " + delete + " " + insert + " " + where
-
     return update_query
 
 
