@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "kgcl-schema"
+name = "kgcl"
 version = "0.1.0"
 description = "Schema fro the KGCL project."
 authors = [
@@ -27,6 +27,7 @@ build-backend = "poetry.core.masonry.api"
 [tool.poetry.scripts]
 kgcl-diff = "kgcl.kgcl_diff:cli"
 kgcl-apply = "kgcl.kgcl:cli"
+kgcl-parse = "kgcl.grammar.parser:cli"
 
 [tool.poetry.extras]
 docs = ["linkml", "mkdocs-material"]
