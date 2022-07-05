@@ -1,4 +1,6 @@
 """KGCL Graph Transformer."""
+import logging
+
 from .kgcl_2_sparql import convert
 
 
@@ -6,6 +8,7 @@ def apply_patch(kgcl_instances, graph):
     """Apply patch."""
     for i in kgcl_instances:
         query = convert(i)
+        logging.info(f"Query: {query}")
         graph.update(query)
 
 
