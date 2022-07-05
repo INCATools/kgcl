@@ -1,4 +1,5 @@
 """KGCL."""
+import logging
 import sys
 
 import click
@@ -12,33 +13,36 @@ from kgcl.grammar import parser
 sys.path.append("../")
 
 
-class Config(object):
-    """Configuration class."""
-
-    def __init__(self):
-        self.verbose = False
-
-
-pass_config = click.make_pass_decorator(Config, ensure=True)
-
-
 @click.command()
-@click.option("--graph", type=click.Path(), required=True)
-@click.option("--kgcl", type=click.File("r"), required=True)
+@click.option("-i", "--graph", type=click.Path(), required=True)
+@click.option("--kgcl-file", type=click.File("r"))
 @click.option("--output",
               "-o",
-              type=click.Path(), required=True)
-# @click.option("--verbose", "-v", is_flag=True, help="Print more output.")
-@pass_config
-def cli(config, graph, kgcl, output):
+              type=click.File(mode='wb'),
+              default=sys.stdout)
+@click.option("-v", "--verbose", count=True)
+@click.argument('patch')
+def cli(patch, verbose: int, graph, kgcl_file, output):
     """
     Modify graph based on KGCL commands.
     """
+    if verbose >= 2:
+        logging.basicConfig(level=logging.DEBUG)
+    elif verbose == 1:
+        logging.basicConfig(level=logging.INFO)
+    else:
+        logging.basicConfig(level=logging.WARNING)
     # read kgcl commands from file
-    kgcl_patch = kgcl.read()
+    if kgcl_file:
+        kgcl_patch = kgcl_file.read()
+    elif patch:
+        kgcl_patch = patch
+    else:
+        raise ValueError(f"Must pass EITHER kgcl-file OR kgcl")
 
     # parser kgcl commands
     parsed_patch = parser.parse(kgcl_patch)
+    logging.info(f"Patch: {patch}")
 
     # apply kgcl commands as SPARQL UPDATE queries to graph
     g = rdflib.Graph()
