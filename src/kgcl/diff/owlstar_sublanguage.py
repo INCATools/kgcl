@@ -251,7 +251,7 @@ def get_bnodes_2_atomic_existentials(g):
 
         if not bnode_property and not bnode_filler:
             for subclass in subclasses:
-                bnode_triples[i].append((i, OWL.some_values_from, filler))
+                bnode_triples[i].append((i, OWL.someValuesFrom, filler))
                 bnode_triples[i].append((i, OWL.onProperty, property))
                 bnode_triples[i].append((subclass, RDFS.subClassOf, i))
 
