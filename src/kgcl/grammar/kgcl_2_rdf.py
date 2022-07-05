@@ -1,4 +1,7 @@
+# TODO: Remove this - it is mis-named and doesn't do anything
+
 """KGCL RDF-related operations."""
+from deprecated.classic import deprecated
 from kgcl.grammar.parser import parse
 from kgcl.datamodel.kgcl import (ClassCreation, EdgeCreation, EdgeDeletion,
                              NewSynonym, NodeAnnotationChange, NodeCreation,
@@ -11,7 +14,7 @@ from kgcl.datamodel.kgcl import (ClassCreation, EdgeCreation, EdgeDeletion,
 # serialse puython data class to yaml
 # convert python data class to RDF
 
-
+@deprecated("Use builtin linkml yaml_dumper")
 def kgcl_2_yaml(kgcl_patch, output):
     """
     Generate YAML from KGCL.
@@ -23,6 +26,7 @@ def kgcl_2_yaml(kgcl_patch, output):
     serialise_yaml(parsed_patch, output)
 
 
+@deprecated("Use builtin linkml yaml_dumper")
 def serialise_yaml(kgcl_instances, output):
     """Write YAML file based on KGCL instances."""
     preamble = """activity_set:
@@ -37,6 +41,7 @@ change_set:\n"""
             f.write("\n")
 
 
+@deprecated("Use builtin linkml yaml_dumper")
 def data_model_to_yaml(kgcl_instance):
     """
     Convert a data model to YAML.
