@@ -1,5 +1,5 @@
 
-# Slot: about node representation
+# Slot: ~~about node representation~~ _(deprecated)_
 
 
 The representation of a node (URI, CURIE, label)

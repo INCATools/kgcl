@@ -1,5 +1,5 @@
 
-# Slot: property type
+# Slot: ~~property type~~ _(deprecated)_
 
 
 
