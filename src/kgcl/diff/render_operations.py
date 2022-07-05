@@ -1,11 +1,14 @@
 """Render operations."""
+# TODO: move this to grammar package
+
 from kgcl.datamodel.kgcl import (ClassCreation, EdgeCreation, EdgeDeletion,
-                             NewSynonym, NodeAnnotationChange, NodeCreation,
-                             NodeDeletion, NodeMove, NodeObsoletion,
-                             NodeRename, NodeUnobsoletion, PlaceUnder,
-                             PredicateChange, RemoveUnder)
+                                 NewSynonym, NodeAnnotationChange, NodeCreation,
+                                 NodeDeletion, NodeMove, NodeObsoletion,
+                                 NodeRename, NodeUnobsoletion, PlaceUnder,
+                                 PredicateChange, RemoveUnder, Change)
 
 
+# TODO: replace this with rdflib methods
 def render_entity(entity, rdf_type):
     """
     Render entity based on rdf type.
@@ -14,7 +17,9 @@ def render_entity(entity, rdf_type):
     :param rdf_type: type of RDF ["uri", "label", "literal]
     """
     entity = repr(entity)[1:-1]
-    if rdf_type == "uri":
+    if rdf_type is None:
+        return entity
+    elif rdf_type == "uri":
         return "<" + entity + ">"
     elif rdf_type == "label":
         if "'" in entity:
@@ -31,15 +36,13 @@ def render_entity(entity, rdf_type):
         elif '"""' not in entity and entity[-1] != '"':
             return '"""' + entity + '"""'
         else:
-            print("Rendering error: " + entity)
-            raise
+            raise ValueError("Rendering error: " + entity)
     else:
-        print("Rendering error: " + entity)
-        raise
+        raise ValueError(f"Rendering error: {entity} {rdf_type}")
     # return "'" + entity.replace("\\'", "`") + "'"
 
 
-def render(kgcl_instance):
+def render(kgcl_instance: Change) -> str:
     """Render KGCL."""
     if type(kgcl_instance) is NodeRename:
         # TODO: subject could be 'None'?
