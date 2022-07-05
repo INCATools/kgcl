@@ -1,5 +1,5 @@
 
-# Slot: subject representation
+# Slot: ~~subject representation~~ _(deprecated)_
 
 
 

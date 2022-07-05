@@ -1,7 +1,8 @@
 """Tesr obsoeltion."""
-from .util import run_test
+from tests.util import run_test
 
-
+# TODO: extend tests to ensure not over-obsoleting
+# TODO: test for proper obsoletion model
 def test_obsoletion_with_ids():
     """Test obsoletion with IDs."""
     input_graph = """<http://purl.obolibrary.org/obo/NCBITaxon_2> <http://www.w3.org/2000/01/rdf-schema#label> "Bacteria" .

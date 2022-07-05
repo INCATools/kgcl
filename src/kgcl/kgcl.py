@@ -1,4 +1,5 @@
 """KGCL."""
+import logging
 import sys
 
 import click
@@ -8,39 +9,40 @@ from rdflib.util import guess_format
 from kgcl.apply import graph_transformer
 from kgcl.grammar import parser
 
+# TODO: remove this
 sys.path.append("../")
 
 
-class Config(object):
-    """Configuration class."""
-
-    def __init__(self):
-        self.verbose = False
-
-
-pass_config = click.make_pass_decorator(Config, ensure=True)
-
-
 @click.command()
-@click.argument("graph", type=click.Path(), required=True)
-@click.argument("kgcl", type=click.File("r"), required=True)
-@click.argument("output", type=click.Path(), required=True)
-# @click.option("--verbose", "-v", is_flag=True, help="Print more output.")
-@pass_config
-def cli(config, graph, kgcl, output):
+@click.option("-i", "--graph", type=click.Path(), required=True)
+@click.option("--kgcl-file", type=click.File("r"))
+@click.option("--output",
+              "-o",
+              type=click.File(mode='wb'),
+              default=sys.stdout)
+@click.option("-v", "--verbose", count=True)
+@click.argument('patch')
+def cli(patch, verbose: int, graph, kgcl_file, output):
     """
     Modify graph based on KGCL commands.
-
-    :param config: Configuration info.
-    :param graph: Graph
-    :param kgcl: KGCL commands file.
-    :param output: Target location.
     """
+    if verbose >= 2:
+        logging.basicConfig(level=logging.DEBUG)
+    elif verbose == 1:
+        logging.basicConfig(level=logging.INFO)
+    else:
+        logging.basicConfig(level=logging.WARNING)
     # read kgcl commands from file
-    kgcl_patch = kgcl.read()
+    if kgcl_file:
+        kgcl_patch = kgcl_file.read()
+    elif patch:
+        kgcl_patch = patch
+    else:
+        raise ValueError(f"Must pass EITHER kgcl-file OR kgcl")
 
     # parser kgcl commands
     parsed_patch = parser.parse(kgcl_patch)
+    logging.info(f"Patch: {patch}")
 
     # apply kgcl commands as SPARQL UPDATE queries to graph
     g = rdflib.Graph()
@@ -49,7 +51,7 @@ def cli(config, graph, kgcl, output):
     graph_transformer.apply_patch(parsed_patch, g)
 
     # save updated graph
-    g.serialize(destination=output, format="nt")
+    g.serialize(destination=output, format="ttl")
 
 
 if __name__ == "__main__":

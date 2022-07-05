@@ -1,5 +1,5 @@
 """Test create synonym."""
-from .util import run_test
+from tests.util import run_test
 
 
 def test_create_synonym_with_ids():

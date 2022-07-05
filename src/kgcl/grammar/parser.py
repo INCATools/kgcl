@@ -1,15 +1,21 @@
 """KGCL parser."""
+import logging
+import sys
 from pathlib import Path
+from typing import List
 
+import click
+from kgcl.utils import to_json, to_rdf, to_yaml
 from lark import Lark, Token
 
 from kgcl.datamodel.kgcl import (ClassCreation, EdgeCreation, EdgeDeletion,
-                             NewSynonym, NodeAnnotationChange, NodeCreation,
-                             NodeDeepening, NodeDeletion, NodeMove,
-                             NodeObsoletion, NodeRename, NodeShallowing,
-                             NodeUnobsoletion, PlaceUnder, PredicateChange,
-                             RemovedNodeFromSubset, RemoveUnder)
+                                 NewSynonym, NodeAnnotationChange, NodeCreation,
+                                 NodeDeepening, NodeDeletion, NodeMove,
+                                 NodeObsoletion, NodeRename, NodeShallowing,
+                                 NodeUnobsoletion, PlaceUnder, PredicateChange,
+                                 RemovedNodeFromSubset, RemoveUnder, Change, Session)
 from kgcl.datamodel.ontology_model import Edge
+from linkml_runtime.dumpers import yaml_dumper, json_dumper
 
 
 def id_generator():
@@ -29,7 +35,7 @@ path = Path(__file__).parent
 kgcl_parser = Lark.open(str(path) + "/kgcl.lark", start="expression")
 
 
-def parse(input):
+def parse(input: str) -> List[Change]:
     """
     Parse a set of KGCL command separated by next-line operator.
 
@@ -43,7 +49,7 @@ def parse(input):
     return parsed
 
 
-def parse_statement(input):
+def parse_statement(input: str) -> Change:
     """
     Parse a KGCL command.
 
@@ -513,14 +519,43 @@ def get_entity_representation(entity):
     # return entity, "error"
 
 
+@click.command()
+@click.option("--output",
+              "-o",
+              type=click.File(mode='w'),
+              default=sys.stdout)
+@click.option("--output-type",
+              "-O",
+              help="format for output")
+@click.option("-v", "--verbose", count=True)
+@click.argument('patches', nargs=-1)
+def cli(patches, verbose: int, output, output_type):
+    """
+    Parse a patch or patches specified in KGCL DSL
+    """
+    if verbose >= 2:
+        logging.basicConfig(level=logging.DEBUG)
+    elif verbose == 1:
+        logging.basicConfig(level=logging.INFO)
+    else:
+        logging.basicConfig(level=logging.WARNING)
+
+    # parser kgcl commands
+    changes = []
+    for patch in patches:
+        logging.info(f"Patch: {patch}")
+        changes += parse(patch)
+    session = Session(change_set=changes)
+    if output_type is None or output_type == 'yaml':
+        output.write(to_yaml(session))
+    elif output_type == 'json':
+        output.write(to_json(session))
+    elif output_type == 'rdf':
+        output.write(to_rdf(session))
+    else:
+        raise NotImplementedError(output_type)
+
+
+
 if __name__ == "__main__":
-    #
-    # MANUAL TESTING
-    #
-    example1 = "renamea 'abnormal ear' to 'abnormal ear morphology'"
-    tree = kgcl_parser.parse(example1)
-    print(tree)
-    old = next(tree.find_data("old_label"))
-    print(old)
-    old_token = next(get_tokens(old))
-    print(old_token)
+    cli()

@@ -46,7 +46,7 @@ change_annotation: "change annotation of" _WS entity_subject _WS "with" _WS enti
 remove_from_subset :  "remove" _WS id _WS "from subset" _WS subset
 add_to_subset :  "add" _WS id _WS "to subset" _WS subset
 
-replacement : ID
+replacement : _entity
 id : ID 
      | CURIE
 
@@ -102,7 +102,7 @@ _entity: ID
          | LABEL 
          | CURIE
 
-CURIE: /[a-zA-Z]+/ ":" /((?!>>)\S)+/
+CURIE: /[a-zA-Z0-9_]+/ ":" /((?!>>)\S)+/
 
 LABEL: SINGLE_QUOTE_LITERAL
 

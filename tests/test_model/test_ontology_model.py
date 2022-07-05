@@ -2,13 +2,12 @@
 import os
 import unittest
 
-from linkml_runtime.dumpers import JSONDumper
+from linkml_runtime.dumpers import JSONDumper, json_dumper
 
 from kgcl.datamodel.ontology_model import ClassNode, OwlTypeEnum
+from linkml_runtime.loaders import json_loader
 
-cwd = os.path.abspath(os.path.dirname(__file__))
-EXAMPLE_DIR = os.path.join(cwd, "../examples")
-OUTPUT_DIR = os.path.join(cwd, "outputs")
+from tests.util import roundtrip
 
 
 class OntologyModelTestSuite(unittest.TestCase):
@@ -17,6 +16,7 @@ class OntologyModelTestSuite(unittest.TestCase):
     def test_create(self):
         """Test create."""
         c = ClassNode(id="X:1", owl_type=OwlTypeEnum.CLASS)
-        print(c)
-        d = JSONDumper()
-        print(d.dumps(c))
+        c2 = roundtrip(c)
+        self.assertEqual(c, c2)
+
+

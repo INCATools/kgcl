@@ -150,17 +150,22 @@ slots:
   property:
     range: node
 
-  filler: {}
+  filler:
 
-  property type: {}
+  property type:
+    deprecated: no longer required
 
-  filler type: {}
+  filler type:
+    deprecated: no longer required
 
-  subject representation: {}
+  subject representation:
+    deprecated: no longer required
 
-  predicate representation: {}
+  predicate representation:
+    deprecated: no longer required
 
-  object representation: {}
+  object representation:
+    deprecated: no longer required
 
   property value set:
     range: property value

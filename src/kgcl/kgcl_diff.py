@@ -1,24 +1,19 @@
 """Render non-deterministic difference."""
+import logging
 import os
+import sys
 from datetime import datetime
+from pathlib import Path
+from typing import List
 
 import click
-import diff.diff_2_kgcl_existential as existential
-import diff.diff_2_kgcl_single as single
-import diff.diff_2_kgcl_triple_annotation as annotation
+import kgcl.diff.diff_2_kgcl_existential as existential
+import kgcl.diff.diff_2_kgcl_single as single
+import kgcl.diff.diff_2_kgcl_triple_annotation as annotation
 import rdflib
+from kgcl.datamodel.kgcl import Change
 
 from kgcl.diff.pretty_print_kgcl import render_instances
-
-
-class Config(object):
-    """Configuration class."""
-
-    def __init__(self):
-        self.verbose = False
-
-
-pass_config = click.make_pass_decorator(Config, ensure=True)
 
 
 def ts():
@@ -28,32 +23,58 @@ def ts():
     return dt_string
 
 
+def diff(g1: rdflib.Graph, g2: rdflib.Graph) -> List[Change]:
+    existential_summary = existential.generate_atomic_existential_commands(g1, g2)
+    triple_annotation_summary = annotation.generate_triple_annotation_commands(g1, g2)
+    single_triple_summary = single.generate_thin_triple_commands(g1, g2)
+    kgcl_commands = existential_summary.get_commands()
+    kgcl_commands += triple_annotation_summary.get_commands()
+    kgcl_commands += single_triple_summary.get_commands()
+    return kgcl_commands
+
+
 @click.command()
+@click.option("--output-directory",
+              "-d",
+              type=click.Path(), required=False)
+@click.option("--output",
+              "-o",
+              type=click.File(mode='w'),
+              default=sys.stdout,
+              help="Where to write derived diffs")
+@click.option("-v", "--verbose", count=True)
 @click.argument("ingraph", type=click.Path(), required=True)
 @click.argument("outgraph", type=click.Path(), required=True)
-@click.argument("output", type=click.Path(), required=True)
-# @click.option("--verbose", "-v", is_flag=True, help="Print more output.")
-@pass_config
-def cli(config, ingraph, outgraph, output):
+def cli(ingraph, outgraph, verbose: int, output, output_directory):
     """
-    Write out reports.
-
-    :param config: Configuration information.
-    :param ingraph: Graph 1.
-    :param outgraph: Graph 2.
-    :param output: Target location which holds reports.
+    Generate diff.
     """
-    os.mkdir(output)
-
+    if verbose >= 2:
+        logging.basicConfig(level=logging.DEBUG)
+    elif verbose == 1:
+        logging.basicConfig(level=logging.INFO)
+    else:
+        logging.basicConfig(level=logging.WARNING)
     # load graphs
     g1 = rdflib.Graph()
     g2 = rdflib.Graph()
-    # g1.load(ingraph, format="nt")
     g1.parse(ingraph)
-    print(ts() + "Loaded Graph 1")
+    logging.info(ts() + "Loaded Graph 1")
     g2.parse(outgraph)
     # g2.load(outgraph, format="nt")
-    print(ts() + "Loaded Graph 2")
+    logging.info(ts() + "Loaded Graph 2")
+
+    changes = diff(g1, g2)
+
+    for change in changes:
+        output.write(change)
+        output.write("\n")
+
+    if output_directory:
+        write_summaries(g1, g2, output_directory)
+
+def write_summaries(g1: rdflib.Graph, g2: rdflib.Graph, output_directory):
+    Path(output_directory).mkdir(parents=True, exist_ok=True)
 
     # compute diff
     existential_summary = existential.generate_atomic_existential_commands(g1, g2)
@@ -64,7 +85,7 @@ def cli(config, ingraph, outgraph, output):
     print(ts() + "Generated Diff for Thin Triples")
 
     # write summary report
-    with open(output + "/kgcl_summary.txt", "w") as f:
+    with open(output_directory + "/kgcl_summary.txt", "w") as f:
         f.write(existential_summary.get_summary_kgcl_commands())
         f.write(triple_annotation_summary.get_summary_kgcl_commands())
         f.write(single_triple_summary.get_summary_kgcl_commands())
@@ -76,8 +97,8 @@ def cli(config, ingraph, outgraph, output):
     )
     nd_renamings = single_triple_summary.get_non_deterministic_renamings()
 
-    non_deterministic_folder = os.path.join(output, "non_deterministic")
-    os.mkdir(non_deterministic_folder)
+    non_deterministic_folder = os.path.join(output_directory, "non_deterministic")
+    Path(non_deterministic_folder).mkdir(exist_ok=True)
     with open(non_deterministic_folder + "/node_moves.txt", "w") as f:
         f.write(render_non_deterministic_diff(nd_node_moves))
     with open(non_deterministic_folder + "/predicate_changes.txt", "w") as f:
@@ -91,14 +112,14 @@ def cli(config, ingraph, outgraph, output):
     kgcl_commands += single_triple_summary.get_commands()
 
     # write KGCL commands
-    with open(output + "/patch.kgcl", "w") as f:
+    with open(output_directory + "/patch.kgcl", "w") as f:
         for k in kgcl_commands:
             f.write(k)
             f.write("\n")
 
     # write distinct KGCL commands
-    patch_folder = os.path.join(output, "patch")
-    os.mkdir(patch_folder)
+    patch_folder = os.path.join(output_directory, "patch")
+    Path(patch_folder).mkdir(exist_ok=True)
 
     with open(patch_folder + "/existential_additions.txt", "w") as f:
         for k in existential_summary.get_existential_additions():
@@ -155,18 +176,18 @@ def cli(config, ingraph, outgraph, output):
             f.write(k)
             f.write("\n")
 
-    with open(patch_folder + "/edge_creations.txt", "w") as f:
-        for k in single_triple_summary.get_edge_creations():
-            f.write(k)
-            f.write("\n")
+    #with open(patch_folder + "/edge_creations.txt", "w") as f:
+    #    for k in single_triple_summary.get_edge_creations():
+    #        f.write(k)
+    #        f.write("\n")
 
-    with open(patch_folder + "/edge_deletions.txt", "w") as f:
-        for k in single_triple_summary.get_edge_deletions():
-            f.write(k)
-            f.write("\n")
+    #with open(patch_folder + "/edge_deletions.txt", "w") as f:
+    #    for k in single_triple_summary.get_edge_deletions():
+    #        f.write(k)
+    #        f.write("\n")
 
     pp_kgcl_commands = render_instances(kgcl_commands, g1)
-    with open(output + "/pp_patch.kgcl", "w") as f:
+    with open(output_directory + "/pp_patch.kgcl", "w") as f:
         for a in pp_kgcl_commands:
             f.write(a)
             f.write("\n")

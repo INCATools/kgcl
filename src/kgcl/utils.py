@@ -8,18 +8,22 @@ Some of this will become unnecessary in the future
 import json
 import logging
 import os
-from typing import List
+from typing import List, Dict, Any, Union
 from uuid import uuid1
 
 import click
 import yaml
+from kgcl.schema import get_schemaview
+from linkml_runtime.dumpers import json_dumper, yaml_dumper, rdflib_dumper
 from linkml_runtime.dumpers.json_dumper import JSONDumper
 from linkml_runtime.dumpers.rdf_dumper import RDFDumper
 from linkml_runtime.loaders.yaml_loader import YAMLLoader
+from linkml_runtime.utils.formatutils import camelcase
+from linkml_runtime.utils.yamlutils import YAMLRoot
 from rdflib import Graph
 
 import kgcl.datamodel as model
-from kgcl.datamodel.kgcl import Session
+from kgcl.datamodel.kgcl import Session, Change
 from kgcl.datamodel.kgcl import Activity
 from os.path import dirname, join
 
@@ -43,25 +47,39 @@ def get_context() -> str:
         return json.dumps(context)
 
 
-def to_json(session: Session) -> Graph:
+def to_json(session: Session) -> str:
     """Convert a session object to plain json."""
-    dumper = JSONDumper()
-    jsons = dumper.dumps(session)
-    return jsons
+    assign_types(session)
+    return json_dumper.dumps(session)
+
+
+def to_yaml(session: Session) -> str:
+    """Convert a session object to plain json."""
+    assign_types(session)
+    return yaml_dumper.dumps(session)
 
 
 def to_jsonld(session: Session) -> str:
     """Convert a session object to JSON-LD."""
-    dumper = JSONDumper()
-    jsons = dumper.dumps(session, get_context())
-    return jsons
+    assign_types(session)
+    return json_dumper.dumps(session, get_context())
 
 
-def to_rdf(session: Session) -> Graph:
-    """Convert a session object to an rdflib Graph."""
-    dumper = RDFDumper()
-    g = dumper.as_rdf_graph(element=session, contexts=get_context())
-    return g
+# TODO: allow passing of prefix maps
+def to_rdf(session: Session, prefix_map: Dict[str, str] = None) -> str:
+    """Convert a session object to an rdflib Graph string."""
+    assign_types(session)
+    return rdflib_dumper.dumps(session, prefix_map=prefix_map, schemaview=get_schemaview())
+
+
+def from_json(filename: str) -> Session:
+    """
+    As from_yaml, but with json
+    """
+    logging.info(f"Converting {filename}")
+    with open(filename, "r") as stream:
+        obj = json.load(stream)
+        return from_dict(obj)
 
 
 def from_yaml(filename: str) -> Session:
@@ -74,23 +92,40 @@ def from_yaml(filename: str) -> Session:
     code for instantiating to the correct class
     """
     logging.info(f"Converting {filename}")
-    session = Session()
-    loader = YAMLLoader()
     with open(filename, "r") as stream:
         obj = yaml.safe_load(stream)
-        for a in obj["activity_set"]:
-            activity = loader.load(source=a, target_class=Activity)
-            session.activity_set.append(activity)
-        for c in obj["change_set"]:
-            # auto-create an ID
-            c["id"] = f"uuid:{uuid1()}"
-            tc = c["type"]
-            del c["type"]
-            print(f"Converting type {tc} // {c}")
-            chg = loader.load(source=c, target_class=getattr(model.kgcl, tc))
-            chg.type = f"kgcl:{tc}"
-            session.change_set.append(chg)
+        return from_dict(obj)
+
+
+def from_dict(obj: Dict[str, Any]) -> Session:
+    # TODO: move this to LinkML runtime
+    # at this time we need wrapper code to introspect type fields
+    # and use this to determine which type to instantiate;
+    # we also auto-populate identifier fields
+    session = Session()
+    loader = YAMLLoader()
+    for a in obj.get("activity_set", []):
+        session.activity_set.append(Activity(**a))
+    for c in obj.get("change_set", []):
+        # auto-create an ID
+        c["id"] = f"uuid:{uuid1()}"
+        tc = c["type"]
+        del c["type"]
+        typ = getattr(model.kgcl, tc)
+        logging.info(f"Converting type {tc} // {c}")
+        chg = typ(**c)
+        chg.type = f"kgcl:{tc}"
+        session.change_set.append(chg)
     return session
+
+
+def assign_types(obj: YAMLRoot):
+    if isinstance(obj, Session):
+        for ch in obj.change_set:
+            assign_types(ch)
+    elif isinstance(obj, Change):
+        tc = type(obj).class_name
+        obj.type = camelcase(tc)
 
 
 @click.command()
