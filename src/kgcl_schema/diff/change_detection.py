@@ -3,9 +3,9 @@ import rdflib
 from rdflib import Literal, URIRef
 from rdflib.namespace import RDFS
 
-from kgcl.datamodel.kgcl import (NodeAnnotationChange, NodeMove, NodeRename,
-                             PredicateChange)
-from kgcl.datamodel.ontology_model import Edge
+from kgcl_schema.datamodel.kgcl import (NodeAnnotationChange, NodeMove, NodeRename,
+                                        PredicateChange)
+from kgcl_schema.datamodel.ontology_model import Edge
 
 
 def id_generator():
@@ -109,7 +109,7 @@ def detect_annotation_changes(added, deleted, new_annotations, old_annotations):
     :param deleted: Deleted node.
     :param new_annotations: new annotations.
     :param old_annotations: old annotations.
-    :return: Tuple(kgcl, covered, non_deterministic)
+    :return: Tuple(kgcl_schema, covered, non_deterministic)
     """
     covered = rdflib.Graph()
 

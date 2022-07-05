@@ -1,12 +1,12 @@
 """Print KGCL in user-friendly format."""
 from rdflib.namespace import RDFS
 
-import kgcl.grammar.parser
-from kgcl.datamodel.kgcl import (ClassCreation, EdgeCreation, EdgeDeletion,
-                             NewSynonym, NodeAnnotationChange, NodeCreation,
-                             NodeDeletion, NodeMove, NodeObsoletion,
-                             NodeRename, NodeUnobsoletion, PlaceUnder,
-                             PredicateChange, RemoveUnder)
+import kgcl_schema.grammar.parser
+from kgcl_schema.datamodel.kgcl import (ClassCreation, EdgeCreation, EdgeDeletion,
+                                        NewSynonym, NodeAnnotationChange, NodeCreation,
+                                        NodeDeletion, NodeMove, NodeObsoletion,
+                                        NodeRename, NodeUnobsoletion, PlaceUnder,
+                                        PredicateChange, RemoveUnder)
 
 # TODO: maintain this dictionary in a file
 prefix_2_uri = {
@@ -64,7 +64,7 @@ def render_instances(kgcl_patch, graph):
 
     pretty_print_kgcl_patch = []
     for k in kgcl_patch:
-        kgcl_instance = kgcl.grammar.parser.parse_statement(k)
+        kgcl_instance = kgcl_schema.grammar.parser.parse_statement(k)
         # render_instance(kgcl_instance, labelling)
         pretty_print_kgcl_patch.append(render_instance(kgcl_instance, labelling))
 

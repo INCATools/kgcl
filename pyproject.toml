@@ -1,7 +1,7 @@
 [tool.poetry]
-name = "kgcl"
-version = "0.1.0"
-description = "Schema fro the KGCL project."
+name = "kgcl_schema"
+version = "0.0.0"
+description = "Schema for the KGCL project."
 authors = [
     "Chris Mungall <cjmungall@lbl.gov>",
     "Harshad Hegde <hhegde@lbl.gov>"
@@ -25,9 +25,9 @@ requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
 
 [tool.poetry.scripts]
-kgcl-diff = "kgcl.kgcl_diff:cli"
-kgcl-apply = "kgcl.kgcl:cli"
-kgcl-parse = "kgcl.grammar.parser:cli"
+kgcl-diff = "kgcl_schema.kgcl_diff:cli"
+kgcl-apply = "kgcl_schema.kgcl:cli"
+kgcl-parse = "kgcl_schema.grammar.parser:cli"
 
 [tool.poetry.extras]
 docs = ["linkml", "mkdocs-material"]

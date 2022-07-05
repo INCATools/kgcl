@@ -1,4 +1,4 @@
-id: https://w3id.org/kgcl/basics
+id: https://w3id.org/kgcl_schema/basics
 name: basics
 title: basic predicates
 description: >-
@@ -6,7 +6,7 @@ description: >-
 license: https://creativecommons.org/publicdomain/zero/1.0/
 
 prefixes:
-  basics: https://w3id.org/kgcl/basics/
+  basics: https://w3id.org/kgcl_schema/basics/
   linkml: https://w3id.org/linkml/
 
 default_prefix: basics

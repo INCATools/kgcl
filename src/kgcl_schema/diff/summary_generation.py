@@ -5,9 +5,9 @@ from datetime import datetime
 import rdflib
 from rdflib.util import guess_format
 
-import kgcl.diff.diff_2_kgcl_existential as existential
-import kgcl.diff.diff_2_kgcl_single as single
-from kgcl.diff.pretty_print_kgcl import render_instances
+import kgcl_schema.diff.diff_2_kgcl_existential as existential
+import kgcl_schema.diff.diff_2_kgcl_single as single
+from kgcl_schema.diff.pretty_print_kgcl import render_instances
 
 
 def ts():
@@ -68,7 +68,7 @@ def run(ingraph, outgraph, output):
     kgcl_commands += single_triple_summary.get_commands()
 
     # write KGCL commands
-    with open(output + "/patch.kgcl", "w") as f:
+    with open(output + "/patch.kgcl_schema", "w") as f:
         for k in kgcl_commands:
             f.write(k)
             f.write("\n")
@@ -129,7 +129,7 @@ def run(ingraph, outgraph, output):
 
     # TODO pretty printing
     pp_kgcl_commands = render_instances(kgcl_commands, g1)
-    with open(output + "/pp_patch.kgcl", "w") as f:
+    with open(output + "/pp_patch.kgcl_schema", "w") as f:
         for a in pp_kgcl_commands:
             f.write(a)
             f.write("\n")

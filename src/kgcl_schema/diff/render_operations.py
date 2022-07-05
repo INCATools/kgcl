@@ -1,11 +1,11 @@
 """Render operations."""
 # TODO: move this to grammar package
 
-from kgcl.datamodel.kgcl import (ClassCreation, EdgeCreation, EdgeDeletion,
-                                 NewSynonym, NodeAnnotationChange, NodeCreation,
-                                 NodeDeletion, NodeMove, NodeObsoletion,
-                                 NodeRename, NodeUnobsoletion, PlaceUnder,
-                                 PredicateChange, RemoveUnder, Change)
+from kgcl_schema.datamodel.kgcl import (ClassCreation, EdgeCreation, EdgeDeletion,
+                                        NewSynonym, NodeAnnotationChange, NodeCreation,
+                                        NodeDeletion, NodeMove, NodeObsoletion,
+                                        NodeRename, NodeUnobsoletion, PlaceUnder,
+                                        PredicateChange, RemoveUnder, Change)
 
 
 # TODO: replace this with rdflib methods

@@ -2,9 +2,9 @@ import os
 import unittest
 
 import rdflib
-from kgcl.apply import graph_transformer
-from kgcl.grammar import parser
-from kgcl.kgcl_diff import diff
+from kgcl_schema.apply import graph_transformer
+from kgcl_schema.grammar import parser
+from kgcl_schema.kgcl_diff import diff
 from rdflib.util import guess_format
 
 from tests import INPUT

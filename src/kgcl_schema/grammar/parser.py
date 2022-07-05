@@ -5,17 +5,16 @@ from pathlib import Path
 from typing import List
 
 import click
-from kgcl.utils import to_json, to_rdf, to_yaml
+from kgcl_schema.utils import to_json, to_rdf, to_yaml
 from lark import Lark, Token
 
-from kgcl.datamodel.kgcl import (ClassCreation, EdgeCreation, EdgeDeletion,
-                                 NewSynonym, NodeAnnotationChange, NodeCreation,
-                                 NodeDeepening, NodeDeletion, NodeMove,
-                                 NodeObsoletion, NodeRename, NodeShallowing,
-                                 NodeUnobsoletion, PlaceUnder, PredicateChange,
-                                 RemovedNodeFromSubset, RemoveUnder, Change, Session)
-from kgcl.datamodel.ontology_model import Edge
-from linkml_runtime.dumpers import yaml_dumper, json_dumper
+from kgcl_schema.datamodel.kgcl import (ClassCreation, EdgeCreation, EdgeDeletion,
+                                        NewSynonym, NodeAnnotationChange, NodeCreation,
+                                        NodeDeepening, NodeDeletion, NodeMove,
+                                        NodeObsoletion, NodeRename, NodeShallowing,
+                                        NodeUnobsoletion, PlaceUnder, PredicateChange,
+                                        RemovedNodeFromSubset, RemoveUnder, Change, Session)
+from kgcl_schema.datamodel.ontology_model import Edge
 
 
 def id_generator():
@@ -39,7 +38,7 @@ def parse(input: str) -> List[Change]:
     """
     Parse a set of KGCL command separated by next-line operator.
 
-    Returns instantiated dataclass objects from model.kgcl.
+    Returns instantiated dataclass objects from model.kgcl_schema.
     """
     statements = input.splitlines()
     parsed = []
@@ -53,7 +52,7 @@ def parse_statement(input: str) -> Change:
     """
     Parse a KGCL command.
 
-    Return an instantiated dataclass object from model.kgcl.
+    Return an instantiated dataclass object from model.kgcl_schema.
     """
     tree = kgcl_parser.parse(input)
     id = "kgcl_change_id_" + str(next(id_gen))
@@ -540,7 +539,7 @@ def cli(patches, verbose: int, output, output_type):
     else:
         logging.basicConfig(level=logging.WARNING)
 
-    # parser kgcl commands
+    # parser kgcl_schema commands
     changes = []
     for patch in patches:
         logging.info(f"Patch: {patch}")

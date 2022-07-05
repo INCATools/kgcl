@@ -13,7 +13,7 @@ from uuid import uuid1
 
 import click
 import yaml
-from kgcl.schema import get_schemaview
+from kgcl_schema.schema import get_schemaview
 from linkml_runtime.dumpers import json_dumper, yaml_dumper, rdflib_dumper
 from linkml_runtime.dumpers.json_dumper import JSONDumper
 from linkml_runtime.dumpers.rdf_dumper import RDFDumper
@@ -22,13 +22,13 @@ from linkml_runtime.utils.formatutils import camelcase
 from linkml_runtime.utils.yamlutils import YAMLRoot
 from rdflib import Graph
 
-import kgcl.datamodel as model
-from kgcl.datamodel.kgcl import Session, Change
-from kgcl.datamodel.kgcl import Activity
+import kgcl_schema.datamodel as model
+from kgcl_schema.datamodel.kgcl import Session, Change
+from kgcl_schema.datamodel.kgcl import Activity
 from os.path import dirname, join
 
 # THIS_DIR = os.path.abspath(os.path.dirname(__file__))
-# LD = os.path.join(THIS_DIR, "../ldcontext/kgcl.context.jsonld")
+# LD = os.path.join(THIS_DIR, "../ldcontext/kgcl_schema.context.jsonld")
 LD = join(dirname(dirname(dirname(__file__))),"ldcontext/kgcl.context.jsonld")
 
 def get_context() -> str:
@@ -114,7 +114,7 @@ def from_dict(obj: Dict[str, Any]) -> Session:
         typ = getattr(model.kgcl, tc)
         logging.info(f"Converting type {tc} // {c}")
         chg = typ(**c)
-        chg.type = f"kgcl:{tc}"
+        chg.type = f"kgcl_schema:{tc}"
         session.change_set.append(chg)
     return session
 

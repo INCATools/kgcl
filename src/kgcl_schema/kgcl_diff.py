@@ -7,13 +7,13 @@ from pathlib import Path
 from typing import List
 
 import click
-import kgcl.diff.diff_2_kgcl_existential as existential
-import kgcl.diff.diff_2_kgcl_single as single
-import kgcl.diff.diff_2_kgcl_triple_annotation as annotation
+import kgcl_schema.diff.diff_2_kgcl_existential as existential
+import kgcl_schema.diff.diff_2_kgcl_single as single
+import kgcl_schema.diff.diff_2_kgcl_triple_annotation as annotation
 import rdflib
-from kgcl.datamodel.kgcl import Change
+from kgcl_schema.datamodel.kgcl import Change
 
-from kgcl.diff.pretty_print_kgcl import render_instances
+from kgcl_schema.diff.pretty_print_kgcl import render_instances
 
 
 def ts():

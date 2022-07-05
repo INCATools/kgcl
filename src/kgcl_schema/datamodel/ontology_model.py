@@ -1,6 +1,6 @@
 # Auto generated from ontology_model.yaml by pythongen.py version: 0.9.0
 # Generation date: 2022-06-30T15:03:19
-# Schema: kgcl-ontology-model
+# Schema: kgcl_schema-ontology-model
 #
 # id: https://w3id.org/kgcl/ontology
 # description: A basic bare-bones model of an ontology or ontology-like structure. The purpose is not to provide a

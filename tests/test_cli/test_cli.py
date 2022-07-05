@@ -4,11 +4,11 @@ import unittest
 import rdflib
 from click.testing import CliRunner
 
-import kgcl.kgcl as kgcl_apply
-import kgcl.kgcl_diff as kgcl_diff
-import kgcl.grammar.parser as kgcl_parser
-from kgcl.datamodel.kgcl import Session
-from kgcl.utils import from_yaml
+import kgcl_schema.kgcl as kgcl_apply
+import kgcl_schema.kgcl_diff as kgcl_diff
+import kgcl_schema.grammar.parser as kgcl_parser
+from kgcl_schema.datamodel.kgcl import Session
+from kgcl_schema.utils import from_yaml
 
 from tests import INPUT, TMP_OUTPUT, DIFF_OUTPUT, DIFF_OUTPUT_DIR, TMP_YAML
 from tests.cases import CASES, TODO_TOKEN, UID
