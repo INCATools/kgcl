@@ -12,7 +12,7 @@ from kgcl.datamodel.kgcl import (ClassCreation, EdgeCreation, EdgeDeletion,
 
 
 CURIE_PATTERN = re.compile(r"^(\w+):(\S+)$")
-
+SPARQL_COMMAND = str
 
 def get_prefix(curie):
     """Get prefix."""
@@ -68,17 +68,17 @@ def get_representation(node_term: str) -> Optional[str]:
         return 'label'
 
 
-def is_label(input):
+def is_label(input: str) -> bool:
     """Check if text is label."""
-    return re.match(r"\'[^ \s\'].*\'", input)
+    return re.match(r"\'[^ \s\'].*\'", input) is not None
 
 
-def is_id(input):
+def is_id(input: str) -> bool:
     """Check if text is id."""
-    return re.match(r"<\S+>", input)
+    return re.match(r"<\S+>", input) is not None
 
 
-def build_curie_prefix(entity):
+def build_curie_prefix(entity: str) -> str:
     """Build CURIE prefix."""
     curie_prefix = get_prefix(entity)
     curie_uri = prefix_2_uri[curie_prefix]
@@ -86,24 +86,24 @@ def build_curie_prefix(entity):
 
 
 # TODO proper escape handling
-def escape_literal(literal):
+def escape_literal(literal: str) -> str:
     """Handle escape characters."""
     return literal.replace("\\", "\\\\").replace('"', '\\"')
     # .replace("\\'", "\\\\'")
 
 
-def convert(kgcl_instance: Change) -> str:
+def convert(kgcl_instance: Change) -> SPARQL_COMMAND:
     """
     Given a KGCL dataclass, return a SPARQL UPDATE _query.
 
     This corresponding to the encoded change.
     """
     # label renaming
-    if type(kgcl_instance) is NodeRename:
+    if isinstance(kgcl_instance, NodeRename):
         return rename(kgcl_instance)
 
     # node obsoletion
-    if type(kgcl_instance) is NodeObsoletion:
+    if isinstance(kgcl_instance, NodeObsoletion):
         representation = get_representation(kgcl_instance.about_node)
         # TODO: abstract into a single function
         if representation == "uri":
@@ -114,7 +114,7 @@ def convert(kgcl_instance: Change) -> str:
             return obsolete_curie(kgcl_instance)
 
     # node obsoletion
-    if type(kgcl_instance) is NodeUnobsoletion:
+    if isinstance(kgcl_instance, NodeUnobsoletion):
         representation = get_representation(kgcl_instance.about_node)
         # TODO: abstract into a single function
         if representation == "uri":
@@ -125,7 +125,7 @@ def convert(kgcl_instance: Change) -> str:
             return unobsolete_curie(kgcl_instance)
 
     # node deletion
-    if type(kgcl_instance) is NodeDeletion:
+    if isinstance(kgcl_instance, NodeDeletion):
         representation = get_representation(kgcl_instance.about_node)
         # TODO: abstract into a single function
         if representation == "uri":
@@ -135,30 +135,30 @@ def convert(kgcl_instance: Change) -> str:
         if representation == "curie":
             return delete_curie(kgcl_instance)
 
-    # node creation
-    if type(kgcl_instance) is NodeCreation:
-        return create_node(kgcl_instance)
-
     # class creation
-    if type(kgcl_instance) is ClassCreation:
+    if isinstance(kgcl_instance, ClassCreation):
         return create_class(kgcl_instance)
 
+    # node creation
+    if isinstance(kgcl_instance, NodeCreation):
+        return create_node(kgcl_instance)
+
     # node deepending
-    if type(kgcl_instance) is NodeDeepening:
+    if isinstance(kgcl_instance, NodeDeepening):
         return node_deepening(kgcl_instance)
 
     # node shallowing
-    if type(kgcl_instance) is NodeShallowing:
+    if isinstance(kgcl_instance, NodeShallowing):
         return node_shallowing(kgcl_instance)
 
-    if type(kgcl_instance) is NodeAnnotationChange:
+    if isinstance(kgcl_instance, NodeAnnotationChange):
         return node_annotation_change(kgcl_instance)
 
     # node move
-    if type(kgcl_instance) is NodeMove:
+    if isinstance(kgcl_instance, NodeMove):
         return node_move(kgcl_instance)
 
-    if type(kgcl_instance) is NewSynonym:
+    if isinstance(kgcl_instance, NewSynonym):
         representation = get_representation(kgcl_instance.about_node)
         # TODO: abstract into a single function
         if representation == "uri":
@@ -168,27 +168,27 @@ def convert(kgcl_instance: Change) -> str:
         if representation == "curie":
             return new_synonym_for_curie(kgcl_instance)
 
-    if type(kgcl_instance) is PredicateChange:
+    if isinstance(kgcl_instance, PredicateChange):
         return change_predicate(kgcl_instance)
 
-    if type(kgcl_instance) is RemovedNodeFromSubset:
+    if isinstance(kgcl_instance, RemovedNodeFromSubset):
         if is_id(kgcl_instance.about_node) and is_id(kgcl_instance.subset):
             return remove_node_from_subset(kgcl_instance)
 
-    if type(kgcl_instance) is PlaceUnder:
+    if isinstance(kgcl_instance, PlaceUnder):
         return triple_creation(kgcl_instance)
 
-    if type(kgcl_instance) is RemoveUnder:
+    if isinstance(kgcl_instance, RemoveUnder):
         return triple_deletion(kgcl_instance)
 
-    if type(kgcl_instance) is EdgeCreation:
+    if isinstance(kgcl_instance, EdgeCreation):
         return create_existential_restriction(kgcl_instance)
 
-    if type(kgcl_instance) is EdgeDeletion:
+    if isinstance(kgcl_instance, EdgeDeletion):
         return delete_existential_restriction(kgcl_instance)
 
 
-def node_move(kgcl_instance: NodeMove) -> str:
+def node_move(kgcl_instance: NodeMove) -> SPARQL_COMMAND:
     """Return SPARQL query to move node."""
     # NB: object and old_value are (necessarily) the same
     subject = kgcl_instance.about_edge.subject
@@ -268,7 +268,7 @@ def node_move(kgcl_instance: NodeMove) -> str:
     return update__query
 
 
-def remove_node_from_subset(kgcl_instance) -> str:
+def remove_node_from_subset(kgcl_instance: RemovedNodeFromSubset) -> SPARQL_COMMAND:
     """Return SPARQL query to remove node from subset."""
     about = kgcl_instance.about_node
     subset = kgcl_instance.subset
@@ -296,7 +296,7 @@ def remove_node_from_subset(kgcl_instance) -> str:
     return update__query
 
 
-def change_predicate(kgcl_instance) -> str:
+def change_predicate(kgcl_instance: PredicateChange) -> SPARQL_COMMAND:
     """Return SPARQL query to change predicate."""
     subject = kgcl_instance.about_edge.subject
     object = kgcl_instance.about_edge.object
@@ -509,7 +509,7 @@ def node_shallowing(kgcl_instance: NodeShallowing) -> str:
 
 # TODO: handling of language tags
 # look things up at https://www.ebi.ac.uk/ols/ontologies/iao
-def unobsolete_by_id(kgcl_instance) -> str:
+def unobsolete_by_id(kgcl_instance: NodeUnobsoletion) -> SPARQL_COMMAND:
     """Return SPARQL query to unobsolete by id."""
     about = kgcl_instance.about_node
     # http://wiki.geneontology.org/index.php/Restoring_an_Obsolete_Ontology_Term
@@ -565,7 +565,7 @@ def unobsolete_by_id(kgcl_instance) -> str:
     return update__query
 
 
-def unobsolete_by_label(kgcl_instance) -> str:
+def unobsolete_by_label(kgcl_instance: NodeUnobsoletion) -> SPARQL_COMMAND:
     """Return SPARQL query to unobsolete by label."""
     about = kgcl_instance.about_node
     # http://wiki.geneontology.org/index.php/Restoring_an_Obsolete_Ontology_Term
@@ -625,7 +625,7 @@ def unobsolete_by_label(kgcl_instance) -> str:
     return update__query
 
 
-def unobsolete_curie(kgcl_instance) -> str:
+def unobsolete_curie(kgcl_instance: NodeUnobsoletion) -> SPARQL_COMMAND:
     """Return SPARQL query to unobsolete a CURIE."""
     about = kgcl_instance.about_node
     # http://wiki.geneontology.org/index.php/Restoring_an_Obsolete_Ontology_Term
@@ -686,7 +686,7 @@ def unobsolete_curie(kgcl_instance) -> str:
 
 
 # NB this does not preserve language tags
-def rename(kgcl_instance: NodeRename) -> str:
+def rename(kgcl_instance: NodeRename) -> SPARQL_COMMAND:
     """Return SPARQL query to rename node."""
     old_value = kgcl_instance.old_value
     new_value = kgcl_instance.new_value
@@ -741,7 +741,7 @@ def rename(kgcl_instance: NodeRename) -> str:
 # TODO: this implementation is buggy
 # this implementation should preserve language tags
 # note that this cannot be used for diffing
-def rename_preserve(kgcl_instance) -> str:
+def rename_preserve(kgcl_instance: NodeRename) -> SPARQL_COMMAND:
     """Return SPARQL query to rename node but preserve language tags."""
     old_value = kgcl_instance.old_value
     new_value = kgcl_instance.new_value
@@ -787,7 +787,7 @@ def rename_preserve(kgcl_instance) -> str:
     return update_query
 
 
-def delete_by_id(kgcl_instance) -> str:
+def delete_by_id(kgcl_instance: NodeDeletion) -> str:
     """Return SPARQL query to delete node by id."""
     about = kgcl_instance.about_node  # this needs to be an ID - not a label
 
@@ -813,7 +813,7 @@ def delete_by_id(kgcl_instance) -> str:
     return update_query
 
 
-def delete_curie(kgcl_instance) -> str:
+def delete_curie(kgcl_instance: NodeDeletion) -> str:
     """Return SPARQL query to delete CURIE."""
     about = kgcl_instance.about_node
 
@@ -839,7 +839,7 @@ def delete_curie(kgcl_instance) -> str:
     return update_query
 
 
-def delete_by_label(kgcl_instance) -> str:
+def delete_by_label(kgcl_instance: NodeDeletion) -> str:
     """Return SPARQL query to delete by label."""
     about = kgcl_instance.about_node
 
@@ -881,7 +881,7 @@ def create_class(kgcl_instance: ClassCreation) -> str:
     return update_query
 
 
-def create_node(kgcl_instance) -> str:
+def create_node(kgcl_instance: NodeCreation) -> str:
     """Return SPARQL query to create a node."""
     term_id = kgcl_instance.node_id
     label = kgcl_instance.name
@@ -911,7 +911,7 @@ def create_node(kgcl_instance) -> str:
     return update_query
 
 
-def node_annotation_change(kgcl_instance) -> str:
+def node_annotation_change(kgcl_instance: NodeAnnotationChange) -> str:
     """Return SPARQL query to change node annotation."""
     subject = kgcl_instance.about_node
     predicate = kgcl_instance.annotation_property
