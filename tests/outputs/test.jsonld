@@ -1,60 +1,60 @@
 {
   "change_set": [
     {
-      "id": "uuid:80bd9114-f902-11ec-ad1e-acde48001122",
+      "id": "uuid:2a098968-fc72-11ec-b8c3-acde48001122",
+      "type": "ClassCreation",
       "node_id": "ANAT:BodyPart",
-      "name": "body part",
-      "type": "kgcl:ClassCreation"
+      "name": "body part"
     },
     {
-      "id": "uuid:80bd9326-f902-11ec-ad1e-acde48001122",
+      "id": "uuid:2a098b02-fc72-11ec-b8c3-acde48001122",
+      "type": "ClassCreation",
       "node_id": "ANAT:Limb",
-      "name": "limb",
-      "type": "kgcl:ClassCreation"
+      "name": "limb"
     },
     {
-      "id": "uuid:80bd9574-f902-11ec-ad1e-acde48001122",
-      "object": "ANAT:BodyPart",
-      "type": "kgcl:PlaceUnder"
+      "id": "uuid:2a098c56-fc72-11ec-b8c3-acde48001122",
+      "type": "PlaceUnder",
+      "object": "ANAT:BodyPart"
     },
     {
-      "id": "uuid:80bd99ca-f902-11ec-ad1e-acde48001122",
+      "id": "uuid:2a098da0-fc72-11ec-b8c3-acde48001122",
+      "type": "ClassCreation",
       "node_id": "ANAT:Forelimb",
       "name": "forelimb",
-      "superclass": "ANAT:Limb",
-      "type": "kgcl:ClassCreation"
+      "superclass": "ANAT:Limb"
     },
     {
-      "id": "uuid:80bd9f88-f902-11ec-ad1e-acde48001122",
+      "id": "uuid:2a098eea-fc72-11ec-b8c3-acde48001122",
+      "type": "NewSynonym",
       "new_value": "upper limb",
-      "about_node": "ANAT:Forelimb",
-      "type": "kgcl:NewSynonym"
+      "about_node": "ANAT:Forelimb"
     },
     {
-      "id": "uuid:80bda28a-f902-11ec-ad1e-acde48001122",
+      "id": "uuid:2a09900c-fc72-11ec-b8c3-acde48001122",
+      "type": "ClassCreation",
       "node_id": "ANAT:Hindlimb",
       "name": "hindlimb",
-      "superclass": "ANAT:Limb",
-      "type": "kgcl:ClassCreation"
+      "superclass": "ANAT:Limb"
     },
     {
-      "id": "uuid:80bda604-f902-11ec-ad1e-acde48001122",
+      "id": "uuid:2a099142-fc72-11ec-b8c3-acde48001122",
+      "type": "NewSynonym",
       "new_value": "lower limb",
-      "about_node": "ANAT:Hindlimb",
-      "type": "kgcl:NewSynonym"
+      "about_node": "ANAT:Hindlimb"
     },
     {
-      "id": "uuid:80bda8ca-f902-11ec-ad1e-acde48001122",
+      "id": "uuid:2a09925a-fc72-11ec-b8c3-acde48001122",
+      "type": "SetLanguageForName",
       "new_value": "en",
-      "about_node": "ANAT:Hindlimb",
-      "type": "kgcl:SetLanguageForName"
+      "about_node": "ANAT:Hindlimb"
     },
     {
-      "id": "uuid:80bdaadc-f902-11ec-ad1e-acde48001122",
+      "id": "uuid:2a099372-fc72-11ec-b8c3-acde48001122",
+      "type": "NewSynonym",
       "new_value": "bouche",
       "about_node": "ANAT:Mouse",
-      "language": "fr",
-      "type": "kgcl:NewSynonym"
+      "language": "fr"
     }
   ],
   "activity_set": [
