@@ -2,10 +2,7 @@
 import os
 import unittest
 
-from linkml_runtime.dumpers import JSONDumper, json_dumper
-
 from kgcl_schema.datamodel.ontology_model import ClassNode, OwlTypeEnum
-from linkml_runtime.loaders import json_loader
 
 from tests.util import roundtrip
 
