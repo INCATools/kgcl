@@ -6,7 +6,7 @@ from pathlib import Path
 from typing import List
 
 import click
-from bioregistry import curie_from_iri
+from bioregistry import parse_iri, get_preferred_prefix, curie_to_str
 from kgcl_schema.datamodel.kgcl import (Change, ClassCreation, EdgeCreation,
                                         EdgeDeletion, NewSynonym,
                                         NodeAnnotationChange, NodeCreation,
@@ -61,7 +61,10 @@ def parse_statement(input: str) -> Change:
     regex = r'<http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+'
     uri = re.findall(regex, input)
     if uri:
-        curie = curie_from_iri(uri[0].replace("<", "").replace(">",""))
+        # curie = curie_from_iri(uri[0].replace("<", "").replace(">",""))
+        pref, i = parse_iri(uri[0].replace("<", "").replace(">",""))
+        pref = get_preferred_prefix(pref)
+        curie = curie_to_str(pref, i)
         input = input.replace(uri[0], curie)
 
     tree = kgcl_parser.parse(input)
