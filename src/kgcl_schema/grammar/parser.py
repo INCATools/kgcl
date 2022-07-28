@@ -1,20 +1,24 @@
 """KGCL parser."""
 import logging
+import re
 import sys
 from pathlib import Path
 from typing import List
 
 import click
+from bioregistry import curie_from_iri
+from kgcl_schema.datamodel.kgcl import (Change, ClassCreation, EdgeCreation,
+                                        EdgeDeletion, NewSynonym,
+                                        NodeAnnotationChange, NodeCreation,
+                                        NodeDeepening, NodeDeletion, NodeMove,
+                                        NodeObsoletion, NodeRename,
+                                        NodeShallowing, NodeUnobsoletion,
+                                        PlaceUnder, PredicateChange,
+                                        RemovedNodeFromSubset, RemoveUnder,
+                                        Session)
+from kgcl_schema.datamodel.ontology_model import Edge
 from kgcl_schema.utils import to_json, to_rdf, to_yaml
 from lark import Lark, Token
-
-from kgcl_schema.datamodel.kgcl import (ClassCreation, EdgeCreation, EdgeDeletion,
-                                        NewSynonym, NodeAnnotationChange, NodeCreation,
-                                        NodeDeepening, NodeDeletion, NodeMove,
-                                        NodeObsoletion, NodeRename, NodeShallowing,
-                                        NodeUnobsoletion, PlaceUnder, PredicateChange,
-                                        RemovedNodeFromSubset, RemoveUnder, Change, Session)
-from kgcl_schema.datamodel.ontology_model import Edge
 
 
 def id_generator():
@@ -54,6 +58,12 @@ def parse_statement(input: str) -> Change:
 
     Return an instantiated dataclass object from model.kgcl_schema.
     """
+    regex = r'<http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+'
+    uri = re.findall(regex, input)
+    if uri:
+        curie = curie_from_iri(uri[0].replace("<", "").replace(">",""))
+        input = input.replace(uri[0], curie)
+
     tree = kgcl_parser.parse(input)
     id = "kgcl_change_id_" + str(next(id_gen))
 

@@ -17,7 +17,7 @@ IMBO = "GO:0043231"
 IMBO_URI = "<http://purl.obolibrary.org/obo/GO_0043231>"
 NUCLEAR_ENVELOPE = "GO:0005635"
 NUCLEAR_ENVELOPE_URI = "<http://purl.obolibrary.org/obo/GO_0005635>"
-NEW_TERM = "GO:9999999"
+NEW_TERM = "go:9999999"
 NEW_TERM_URI = "<http://purl.obolibrary.org/obo/GO_9999999>"
 RESPONSE_TO_UV = "GO:0009411"
 RESPONSE_TO_UV_URI = "<http://purl.obolibrary.org/obo/GO_0009411>"
@@ -124,10 +124,10 @@ CASES: List[CASE] = [
         #f"create node {NEW_TERM_URI} 'foo'",
         TODO_TOKEN,
         NodeCreation(id=UID,
-                     node_id=NEW_TERM_URI,   ## TODO: remove this
-                     about_node=NEW_TERM_URI,
+                     node_id=NEW_TERM,   ## TODO: remove this
+                     about_node=NEW_TERM,
                      name="'foo'",
-                     about_node_representation='uri'),
+                     about_node_representation='curie'),
         None
     ),
     (
