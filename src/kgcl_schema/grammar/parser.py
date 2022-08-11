@@ -58,7 +58,7 @@ def parse_statement(input: str) -> Change:
 
     Return an instantiated dataclass object from model.kgcl_schema.
     """
-    regex = r'<http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+'
+    regex = r'http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+'
     uri = re.findall(regex, input)
     if uri:
         # curie = curie_from_iri(uri[0].replace("<", "").replace(">",""))

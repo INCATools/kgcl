@@ -20,7 +20,7 @@ def render_entity(entity, rdf_type):
     if rdf_type is None:
         return entity
     elif rdf_type == "uri":
-        return "<" + entity + ">"
+        return entity
     elif rdf_type == "label":
         if "'" in entity:
             # TODO: replacing quotes with backticks
