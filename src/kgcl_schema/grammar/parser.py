@@ -59,13 +59,14 @@ def parse_statement(input: str) -> Change:
     Return an instantiated dataclass object from model.kgcl_schema.
     """
     regex = r'http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+'
-    uri = re.findall(regex, input)
-    if uri:
+    uri_list = re.findall(regex, input)
+    if uri_list:
         # curie = curie_from_iri(uri[0].replace("<", "").replace(">",""))
-        pref, i = parse_iri(uri[0])
-        pref = get_preferred_prefix(pref)
-        curie = curie_to_str(pref, i)
-        input = input.replace(uri[0], curie)
+        for _, uri in enumerate(uri_list):
+            pref, i = parse_iri(uri)
+            pref = get_preferred_prefix(pref)
+            curie = curie_to_str(pref, i)
+            input = input.replace(uri, curie)
 
     tree = kgcl_parser.parse(input)
     id = "kgcl_change_id_" + str(next(id_gen))
