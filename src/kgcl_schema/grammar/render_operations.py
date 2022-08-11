@@ -26,7 +26,7 @@ def render_entity(entity, rdf_type):
             # TODO: replacing quotes with backticks
             # is only a temporary workaround
             entity = entity.replace("'", "`")
-        return "'" + entity + "'"
+        return entity
     elif rdf_type == "literal":
         # TODO: test this
         if '"' not in entity:
