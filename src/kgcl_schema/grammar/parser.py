@@ -62,7 +62,7 @@ def parse_statement(input: str) -> Change:
     uri = re.findall(regex, input)
     if uri:
         # curie = curie_from_iri(uri[0].replace("<", "").replace(">",""))
-        pref, i = parse_iri(uri[0].replace("<", "").replace(">",""))
+        pref, i = parse_iri(uri[0])
         pref = get_preferred_prefix(pref)
         curie = curie_to_str(pref, i)
         input = input.replace(uri[0], curie)
