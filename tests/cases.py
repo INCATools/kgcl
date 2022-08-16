@@ -119,7 +119,7 @@ CASES: List[CASE] = [
         None
     ),
     (
-        f"create node {NEW_TERM} 'foo'",
+        f"create node {NEW_TERM_URI} 'foo'",
         # TODO: diff not working here:
         #f"create node {NEW_TERM_URI} 'foo'",
         TODO_TOKEN,
