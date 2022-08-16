@@ -14,6 +14,7 @@ readme = "README.md"
 python = "^3.8"
 linkml-runtime = "^1.1.24"
 lark = "^1.1.2"
+bioregistry = "^0.5.49"
 
 [tool.poetry.dev-dependencies]
 linkml = "^1.2.15"
