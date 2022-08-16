@@ -58,15 +58,15 @@ def parse_statement(input: str) -> Change:
 
     Return an instantiated dataclass object from model.kgcl_schema.
     """
-    regex = r'http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+'
-    uri_list = re.findall(regex, input)
-    if uri_list:
-        # curie = curie_from_iri(uri[0].replace("<", "").replace(">",""))
-        for _, uri in enumerate(uri_list):
-            pref, i = parse_iri(uri)
-            pref = get_preferred_prefix(pref)
-            curie = curie_to_str(pref, i)
-            input = input.replace(uri, curie)
+    # regex = r'http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+'
+    # uri_list = re.findall(regex, input)
+    # if uri_list:
+    #     # curie = curie_from_iri(uri[0].replace("<", "").replace(">",""))
+    #     for _, uri in enumerate(uri_list):
+    #         pref, i = parse_iri(uri)
+    #         pref = get_preferred_prefix(pref)
+    #         curie = curie_to_str(pref, i)
+    #         input = input.replace(uri, curie)
 
     tree = kgcl_parser.parse(input)
     id = "kgcl_change_id_" + str(next(id_gen))
@@ -517,7 +517,7 @@ def get_entity_representation(entity):
     first_character = entity[0]
     last_character = entity[-1:]
     if first_character == "<" and last_character == ">":
-        return entity, "uri"  # not removing brackets (TODO why?)
+        return contract_uri(entity.replace("<", "").replace(">","")), "curie"  # removing brackets
     if first_character == "'" and last_character == "'" and entity[1] != "'":
         return entity[1:-1], "label"
     if first_character == '"' and last_character == '"':
@@ -528,9 +528,17 @@ def get_entity_representation(entity):
         return entity[3:-3], "literal"
 
     # TODO: use predefined set of prefixes to identify CURIEs
-    return entity, "curie"
+    return contract_uri(entity), "curie"
     # return entity, "error"
 
+def contract_uri(uri_or_curie:str):
+    if uri_or_curie.startswith("http://") or uri_or_curie.startswith("https://"):
+        pref, i = parse_iri(uri_or_curie)
+        pref = get_preferred_prefix(pref)
+        curie = curie_to_str(pref, i)
+        return curie
+    else:
+        return uri_or_curie
 
 @click.command()
 @click.option("--output",
