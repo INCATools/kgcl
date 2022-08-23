@@ -181,12 +181,12 @@ def parse_create(tree, id):
     language_token = extract(tree, "language")
 
     entity, representation = get_entity_representation(term_id_token)
-
+    
     return NodeCreation(
         id=id,
         about_node=entity,
         about_node_representation=representation,
-        node_id=term_id_token,
+        node_id=entity, # was term_id_token
         name=label_token,
         language=language_token,
     )
@@ -528,7 +528,7 @@ def get_entity_representation(entity):
         return entity[3:-3], "literal"
 
     # TODO: use predefined set of prefixes to identify CURIEs
-    return contract_uri(entity), "curie"
+    return contract_uri(str(entity)), "curie"
     # return entity, "error"
 
 def contract_uri(uri_or_curie:str):
