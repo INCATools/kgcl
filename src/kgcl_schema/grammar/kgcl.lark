@@ -123,8 +123,10 @@ INNER_SINGLE_QUOTE_LITERAL: /((?!\').)*/
 INNER_TRIPLE_SINGLE_QUOTE_LITERAL: /((?!\'\'\').)*/
 
 ID :  "<" INNER_ID ">" 
+     | INNER_ID
 
-INNER_ID: /((?!>).)*/
+INNER_ID: /\S+/
+
 STRING: /.+/
 
 _WS: /[ \t\f\r\n]/+
