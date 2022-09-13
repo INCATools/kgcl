@@ -121,7 +121,7 @@ CASES: List[CASE] = [
         None
     ),
     (
-        f"create node {NEW_TERM_URI} 'foo'",
+        f"create node {NEW_TERM} 'foo'",
         # TODO: diff not working here:
         #f"create node {NEW_TERM_URI} 'foo'",
         TODO_TOKEN,
@@ -132,18 +132,19 @@ CASES: List[CASE] = [
                      about_node_representation='curie'),
         None
     ),
-    (
-        f"create node {NEW_TERM_URI} 'foo'",
-        # TODO: diff not working here:
-        #f"create node {NEW_TERM_URI} 'foo'",
-        TODO_TOKEN,
-        NodeCreation(id=UID,
-                     node_id=NEW_TERM,   ## TODO: remove this
-                     about_node=NEW_TERM,
-                     name="'foo'",
-                     about_node_representation='curie'),
-        None
-    ),
+    #! SAME AS ABOVE
+    # (
+    #     f"create node {NEW_TERM} 'foo'",
+    #     # TODO: diff not working here:
+    #     #f"create node {NEW_TERM_URI} 'foo'",
+    #     TODO_TOKEN,
+    #     NodeCreation(id=UID,
+    #                  node_id=NEW_TERM,   ## TODO: remove this
+    #                  about_node=NEW_TERM,
+    #                  name="'foo'",
+    #                  about_node_representation='curie'),
+    #     None
+    # ),
     (
         f"create edge {NUCLEUS} {PART_OF} {RESPONSE_TO_UV}",
         f"create edge {NUCLEUS_URI} {PART_OF_URI} {RESPONSE_TO_UV_URI}",
