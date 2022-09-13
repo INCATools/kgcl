@@ -233,7 +233,6 @@ def render(kgcl_instance: Change) -> str:
         filler = render_entity(kgcl_instance.object, "uri")
         return "delete edge " + subclass + " " + property + " " + filler
 
-    #TODO NodeDeepening
     if type(kgcl_instance) is NodeDeepening:
         subject = kgcl_instance.about_edge.subject
         old_value = kgcl_instance.old_value
