@@ -44,7 +44,7 @@ Each case is a tuple of:
 
 CASES: List[CASE] = [
     (
-        "rename 'nuclear envelope' to 'foo bar'",
+        f"rename {NUCLEAR_ENVELOPE} from 'nuclear envelope' to 'foo bar'",
         f"rename {NUCLEAR_ENVELOPE_URI} from 'nuclear envelope' to 'foo bar'",
         NodeRename(id=UID,
                    old_value="'nuclear envelope'",

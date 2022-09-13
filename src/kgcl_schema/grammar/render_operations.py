@@ -6,6 +6,7 @@ from kgcl_schema.datamodel.kgcl import (ClassCreation, EdgeCreation, EdgeDeletio
                                         NodeDeletion, NodeMove, NodeObsoletion,
                                         NodeRename, NodeUnobsoletion, PlaceUnder,
                                         PredicateChange, RemoveUnder, Change)
+from lark.lexer import Token
 
 
 # TODO: replace this with rdflib methods
@@ -16,16 +17,19 @@ def render_entity(entity, rdf_type):
     :param entity: entity to be rendered.
     :param rdf_type: type of RDF ["uri", "label", "literal]
     """
-    entity = repr(entity)[1:-1]
+    entity = repr(entity)
     if rdf_type is None:
         return entity
     elif rdf_type == "uri":
+        entity = entity.replace("'", "")
         return entity
     elif rdf_type == "label":
-        if "'" in entity:
-            # TODO: replacing quotes with backticks
-            # is only a temporary workaround
-            entity = entity.replace("'", "`")
+        if type(eval(entity)) == Token:
+            entity = eval(entity).value
+        # elif "'" in entity:
+        #     # TODO: replacing quotes with backticks
+        #     # is only a temporary workaround
+        #     entity = entity.replace("'", "`")
         return entity
     elif rdf_type == "literal":
         # TODO: test this
