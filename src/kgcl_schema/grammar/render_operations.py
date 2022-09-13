@@ -2,7 +2,7 @@
 # TODO: move this to grammar package
 
 from kgcl_schema.datamodel.kgcl import (ClassCreation, EdgeCreation, EdgeDeletion,
-                                        NewSynonym, NodeAnnotationChange, NodeCreation,
+                                        NewSynonym, NodeAnnotationChange, NodeCreation, NodeDeepening,
                                         NodeDeletion, NodeMove, NodeObsoletion,
                                         NodeRename, NodeUnobsoletion, PlaceUnder,
                                         PredicateChange, RemoveUnder, Change)
@@ -144,7 +144,7 @@ def render(kgcl_instance: Change) -> str:
     if type(kgcl_instance) is PredicateChange:
         subject = render_entity(kgcl_instance.about_edge.subject, "uri")
         object = render_entity(
-            kgcl_instance.about_edge.object, kgcl_instance.object_type
+            kgcl_instance.about_edge.object, "uri"
         )
         new = render_entity(kgcl_instance.new_value, "uri")
         old = render_entity(kgcl_instance.old_value, "uri")
@@ -197,20 +197,26 @@ def render(kgcl_instance: Change) -> str:
     if type(kgcl_instance) is PlaceUnder:
         subclass = render_entity(kgcl_instance.subject, "uri")
         superclass = render_entity(kgcl_instance.object, "uri")
+        predicate_type = render_entity(kgcl_instance.predicate, "uri")
         return (
             "create edge "
             + subclass
-            + " <http://www.w3.org/2000/01/rdf-schema#subClassOf> "
+            + " "
+            + predicate_type
+            + " "
             + superclass
         )
 
     if type(kgcl_instance) is RemoveUnder:
         subclass = render_entity(kgcl_instance.subject, "uri")
         superclass = render_entity(kgcl_instance.object, "uri")
+        predicate_type = render_entity(kgcl_instance.predicate, "uri")
         return (
             "delete edge "
             + subclass
-            + " <http://www.w3.org/2000/01/rdf-schema#subClassOf> "
+            + " "
+            + predicate_type
+            + " "
             + superclass
         )
 
@@ -226,3 +232,10 @@ def render(kgcl_instance: Change) -> str:
         property = render_entity(kgcl_instance.predicate, "uri")
         filler = render_entity(kgcl_instance.object, "uri")
         return "delete edge " + subclass + " " + property + " " + filler
+
+    #TODO NodeDeepening
+    if type(kgcl_instance) is NodeDeepening:
+        subject = kgcl_instance.about_edge.subject
+        old_value = kgcl_instance.old_value
+        new_value = kgcl_instance.new_value
+        return "deepen "+ subject + " from " + old_value + " to " + new_value
