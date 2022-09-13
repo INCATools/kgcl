@@ -175,7 +175,7 @@ def render(kgcl_instance: Change) -> str:
             return "create " + subject
 
     if type(kgcl_instance) is ClassCreation:
-        subject = render_entity(kgcl_instance.about_node, "uri")
+        subject = render_entity(kgcl_instance.node_id, "uri")
         return "create " + subject
 
     if type(kgcl_instance) is NewSynonym:
