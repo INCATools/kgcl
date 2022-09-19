@@ -22,6 +22,6 @@ class RenderTestSuite(unittest.TestCase):
             # TODO:
             # - render does not currently accept CURIEs; it will place <>s around curies
             # - label tokens in rename broken
-            #self.assertEqual(patch, patch_roundtripped)
+            self.assertEqual(patch, patch_roundtripped)
             # for now, we implement this much weaker test:
             #self.assertEqual(_first_word(patch), _first_word(patch_roundtripped))
