@@ -1,6 +1,6 @@
 from typing import Tuple, Optional, List, Union
 
-from kgcl_schema.datamodel.kgcl import NodeRename, NodeObsoletion, NewSynonym, ClassCreation, PredicateChange, Change, \
+from kgcl_schema.datamodel.kgcl import NodeObsoletionWithDirectReplacement, NodeRename, NodeObsoletion, NewSynonym, ClassCreation, PredicateChange, Change, \
     NodeCreation, EdgeCreation, PlaceUnder, RemoveUnder, EdgeDeletion, NodeDeepening
 from kgcl_schema.datamodel.ontology_model import Edge
 
@@ -85,7 +85,7 @@ CASES: List[CASE] = [
     (
         f"obsolete {NUCLEUS} with replacement {TERM2}",
         None,
-        NodeObsoletion(id=UID,
+        NodeObsoletionWithDirectReplacement(id=UID,
                        about_node=NUCLEUS,
                        about_node_representation='curie',
                        has_direct_replacement=TERM2),
