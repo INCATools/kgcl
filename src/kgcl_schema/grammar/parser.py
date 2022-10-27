@@ -11,8 +11,8 @@ from kgcl_schema.datamodel.kgcl import (Change, ClassCreation, EdgeCreation,
                                         EdgeDeletion, NewSynonym,
                                         NodeAnnotationChange, NodeCreation,
                                         NodeDeepening, NodeDeletion, NodeMove,
-                                        NodeObsoletion, NodeRename,
-                                        NodeShallowing, NodeUnobsoletion,
+                                        NodeObsoletion, NodeObsoletionWithDirectReplacement,
+                                        NodeRename, NodeShallowing, NodeUnobsoletion,
                                         PlaceUnder, PredicateChange,
                                         RemovedNodeFromSubset, RemoveUnder,
                                         Session)
@@ -452,13 +452,19 @@ def parse_obsolete(tree, id):
     entity, representation = get_entity_representation(entity_token)
 
     replacement_token = extract(tree, "replacement")
-
-    return NodeObsoletion(
-        id=id,
-        about_node=entity,
-        about_node_representation=representation,
-        has_direct_replacement=replacement_token,
-    )
+    if replacement_token:
+        return NodeObsoletionWithDirectReplacement(
+            id=id,
+            about_node=entity,
+            about_node_representation=representation,
+            has_direct_replacement=replacement_token,
+        )
+    else:
+        return NodeObsoletion(
+            id=id,
+            about_node=entity,
+            about_node_representation=representation
+        )
 
 
 def parse_rename(tree, id):
