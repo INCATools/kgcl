@@ -3,7 +3,7 @@
 
 from kgcl_schema.datamodel.kgcl import (ClassCreation, EdgeCreation, EdgeDeletion,
                                         NewSynonym, NodeAnnotationChange, NodeCreation, NodeDeepening,
-                                        NodeDeletion, NodeMove, NodeObsoletion,
+                                        NodeDeletion, NodeMove, NodeObsoletion, NodeObsoletionWithDirectReplacement,
                                         NodeRename, NodeUnobsoletion, PlaceUnder,
                                         PredicateChange, RemoveUnder, Change)
 from lark.lexer import Token
@@ -102,7 +102,7 @@ def render(kgcl_instance: Change) -> str:
             + new_object
         )
 
-    if type(kgcl_instance) is NodeObsoletion:
+    if type(kgcl_instance) is NodeObsoletion or type(kgcl_instance) is NodeObsoletionWithDirectReplacement:
         subject = render_entity(kgcl_instance.about_node, "uri")
         # TODO: type this correctly
         replacement = render_entity(kgcl_instance.has_direct_replacement, "uri")
