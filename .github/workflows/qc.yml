@@ -33,7 +33,9 @@ jobs:
     #    install your root project, if required 
     #----------------------------------------------      
     - name: Install library
-      run: poetry install --no-interaction
+      run: |
+        pip install -U poetry
+        poetry install --no-interaction
 
     #----------------------------------------------
     #              run pytest
