@@ -4,7 +4,7 @@
 
 The type (IRI or Literal) of an edge's subject
 
-URI: [kgcl:subject_type](http://w3id.org/kgcl_schema/subject_type)
+URI: [kgcl:subject_type](http://w3id.org/kgcl/subject_type)
 
 
 ## Domain and Range

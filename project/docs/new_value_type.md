@@ -4,7 +4,7 @@
 
 The type (IRI or Literal) of a new value
 
-URI: [kgcl:new_value_type](http://w3id.org/kgcl_schema/new_value_type)
+URI: [kgcl:new_value_type](http://w3id.org/kgcl/new_value_type)
 
 
 ## Domain and Range

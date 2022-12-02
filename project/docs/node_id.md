@@ -4,7 +4,7 @@
 
 id of a node to be created
 
-URI: [kgcl:node_id](http://w3id.org/kgcl_schema/node_id)
+URI: [kgcl:node_id](http://w3id.org/kgcl/node_id)
 
 
 ## Domain and Range

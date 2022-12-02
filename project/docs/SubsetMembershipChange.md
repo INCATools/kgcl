@@ -4,7 +4,7 @@
 
 A change in the membership status of a node with respect to a subset (view)
 
-URI: [kgcl:SubsetMembershipChange](http://w3id.org/kgcl_schema/SubsetMembershipChange)
+URI: [kgcl:SubsetMembershipChange](http://w3id.org/kgcl/SubsetMembershipChange)
 
 
 [![img](https://yuml.me/diagram/nofunky;dir:TB/class/[OntologySubset]<in%20subset%200..1-++[SubsetMembershipChange],[SubsetMembershipChange]^-[RemoveFromSubset],[SubsetMembershipChange]^-[AddToSubset],[ChangeMixin]^-[SubsetMembershipChange],[RemoveFromSubset],[OntologySubset],[ChangeMixin],[AddToSubset])](https://yuml.me/diagram/nofunky;dir:TB/class/[OntologySubset]<in%20subset%200..1-++[SubsetMembershipChange],[SubsetMembershipChange]^-[RemoveFromSubset],[SubsetMembershipChange]^-[AddToSubset],[ChangeMixin]^-[SubsetMembershipChange],[RemoveFromSubset],[OntologySubset],[ChangeMixin],[AddToSubset])

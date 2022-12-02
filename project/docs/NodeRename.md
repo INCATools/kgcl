@@ -4,7 +4,7 @@
 
 A node change where the name (aka rdfs:label) of the node changes
 
-URI: [kgcl:NodeRename](http://w3id.org/kgcl_schema/NodeRename)
+URI: [kgcl:NodeRename](http://w3id.org/kgcl/NodeRename)
 
 
 [![img](https://yuml.me/diagram/nofunky;dir:TB/class/[TextualDiff],[TextualDiff]<has%20textual%20diff%200..1-++[NodeRename&#124;old_value:string%20%3F;new_value:string%20%3F;change_description:string%20%3F;about_node_representation(i):string%20%3F;language(i):language_tag%20%3F;old_value_type(i):string%20%3F;new_value_type(i):string%20%3F;new_language(i):string%20%3F;old_language(i):string%20%3F;new_datatype(i):string%20%3F;old_datatype(i):string%20%3F;id(i):string;type(i):string%20%3F;see_also(i):string%20%3F;pull_request(i):string%20%3F;creator(i):string%20%3F;change_date(i):string%20%3F;contributor(i):string%20%3F],[NameBecomesSynonym]-%20change%201%200..1>[NodeRename],[NodeChange]^-[NodeRename],[NodeChange],[Node],[NameBecomesSynonym],[Change],[Activity])](https://yuml.me/diagram/nofunky;dir:TB/class/[TextualDiff],[TextualDiff]<has%20textual%20diff%200..1-++[NodeRename&#124;old_value:string%20%3F;new_value:string%20%3F;change_description:string%20%3F;about_node_representation(i):string%20%3F;language(i):language_tag%20%3F;old_value_type(i):string%20%3F;new_value_type(i):string%20%3F;new_language(i):string%20%3F;old_language(i):string%20%3F;new_datatype(i):string%20%3F;old_datatype(i):string%20%3F;id(i):string;type(i):string%20%3F;see_also(i):string%20%3F;pull_request(i):string%20%3F;creator(i):string%20%3F;change_date(i):string%20%3F;contributor(i):string%20%3F],[NameBecomesSynonym]-%20change%201%200..1>[NodeRename],[NodeChange]^-[NodeRename],[NodeChange],[Node],[NameBecomesSynonym],[Change],[Activity])

@@ -4,7 +4,7 @@
 
 
 
-URI: [kgcl:filler](http://w3id.org/kgcl_schema/filler)
+URI: [kgcl:filler](http://w3id.org/kgcl/filler)
 
 
 ## Domain and Range

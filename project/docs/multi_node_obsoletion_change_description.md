@@ -4,7 +4,7 @@
 
 A string serialization of the change. This should be both human-readable, and parseable.
 
-URI: [kgcl:multi_node_obsoletion_change_description](http://w3id.org/kgcl_schema/multi_node_obsoletion_change_description)
+URI: [kgcl:multi_node_obsoletion_change_description](http://w3id.org/kgcl/multi_node_obsoletion_change_description)
 
 
 ## Domain and Range

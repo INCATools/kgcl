@@ -4,7 +4,7 @@
 
 
 
-URI: [kgcl:contributor](http://w3id.org/kgcl_schema/contributor)
+URI: [kgcl:contributor](http://w3id.org/kgcl/contributor)
 
 
 ## Domain and Range

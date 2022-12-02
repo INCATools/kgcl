@@ -4,7 +4,7 @@
 
 
 
-URI: [kgcl:started_at_time](http://w3id.org/kgcl_schema/started_at_time)
+URI: [kgcl:started_at_time](http://w3id.org/kgcl/started_at_time)
 
 
 ## Domain and Range

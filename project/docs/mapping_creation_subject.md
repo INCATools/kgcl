@@ -4,7 +4,7 @@
 
 This corresponds to subject_id in SSSOM
 
-URI: [kgcl:mapping_creation_subject](http://w3id.org/kgcl_schema/mapping_creation_subject)
+URI: [kgcl:mapping_creation_subject](http://w3id.org/kgcl/mapping_creation_subject)
 
 
 ## Domain and Range

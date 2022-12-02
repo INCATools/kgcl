@@ -4,7 +4,7 @@
 
 The value of a property held in the new instance of the ontology
 
-URI: [kgcl:node_rename_new_value](http://w3id.org/kgcl_schema/node_rename_new_value)
+URI: [kgcl:node_rename_new_value](http://w3id.org/kgcl/node_rename_new_value)
 
 
 ## Domain and Range

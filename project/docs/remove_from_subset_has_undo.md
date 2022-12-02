@@ -4,7 +4,7 @@
 
 A change that reverses this change
 
-URI: [kgcl:remove_from_subset_has_undo](http://w3id.org/kgcl_schema/remove_from_subset_has_undo)
+URI: [kgcl:remove_from_subset_has_undo](http://w3id.org/kgcl/remove_from_subset_has_undo)
 
 
 ## Domain and Range

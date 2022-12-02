@@ -1,12 +1,12 @@
 {
-   "_comments": "Auto generated from kgcl.yaml by jsonldcontextgen.py version: 0.1.1\n    Generation date: 2022-12-02T07:39:06\n    Schema: kgcl_schema\n    metamodel version: 1.7.0\n    model version: 0.0.1\n    \n    id: https://w3id.org/kgcl_schema\n    description: A data model for describing change operations at a high level on an ontology or ontology-like artefact, such as a Knowledge Graph.\n\n* [Browse Schema](https://cmungall.github.io/knowledge-graph-change-language/)\n* [GitHub](https://github.com/cmungall/knowledge-graph-change-language)\n    license: https://creativecommons.org/publicdomain/zero/1.0/\n    ",
+   "_comments": "Auto generated from kgcl.yaml by jsonldcontextgen.py version: 0.1.1\n    Generation date: 2022-12-02T07:47:10\n    Schema: kgcl_schema\n    metamodel version: 1.7.0\n    model version: 0.0.1\n    \n    id: https://w3id.org/kgcl\n    description: A data model for describing change operations at a high level on an ontology or ontology-like artefact, such as a Knowledge Graph.\n\n* [Browse Schema](https://cmungall.github.io/knowledge-graph-change-language/)\n* [GitHub](https://github.com/cmungall/knowledge-graph-change-language)\n    license: https://creativecommons.org/publicdomain/zero/1.0/\n    ",
    "@context": {
       "IAO": {
          "@id": "http://purl.obolibrary.org/obo/IAO_",
          "@prefix": true
       },
       "dcterms": "http://purl.org/dc/terms/",
-      "kgcl": "http://w3id.org/kgcl_schema/",
+      "kgcl": "http://w3id.org/kgcl/",
       "linkml": "https://w3id.org/linkml/",
       "oio": "http://www.geneontology.org/formats/oboInOwl#",
       "om": "http://w3id.org/kgcl_schema/om/",
@@ -16,7 +16,7 @@
       "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
       "skos": "http://www.w3.org/2004/02/skos/core#",
       "xml": "http://www.w3.org/XML/1998/namespace#",
-      "@vocab": "http://w3id.org/kgcl_schema/",
+      "@vocab": "http://w3id.org/kgcl/",
       "about": {
          "@type": "@id"
       },

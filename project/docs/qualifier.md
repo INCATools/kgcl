@@ -4,7 +4,7 @@
 
 The qualifier of a change operation
 
-URI: [kgcl:qualifier](http://w3id.org/kgcl_schema/qualifier)
+URI: [kgcl:qualifier](http://w3id.org/kgcl/qualifier)
 
 
 ## Domain and Range

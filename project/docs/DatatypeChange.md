@@ -4,7 +4,7 @@
 
 
 
-URI: [kgcl:DatatypeChange](http://w3id.org/kgcl_schema/DatatypeChange)
+URI: [kgcl:DatatypeChange](http://w3id.org/kgcl/DatatypeChange)
 
 
 [![img](https://yuml.me/diagram/nofunky;dir:TB/class/[DatatypeOrLanguageTagChange],[DatatypeOrLanguageTagChange]^-[DatatypeChange])](https://yuml.me/diagram/nofunky;dir:TB/class/[DatatypeOrLanguageTagChange],[DatatypeOrLanguageTagChange]^-[DatatypeChange])

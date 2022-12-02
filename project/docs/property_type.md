@@ -4,7 +4,7 @@
 
 
 
-URI: [kgcl:property_type](http://w3id.org/kgcl_schema/property_type)
+URI: [kgcl:property_type](http://w3id.org/kgcl/property_type)
 
 
 ## Domain and Range

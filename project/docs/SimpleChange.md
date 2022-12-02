@@ -4,7 +4,7 @@
 
 A change that is about a single ontology element
 
-URI: [kgcl:SimpleChange](http://w3id.org/kgcl_schema/SimpleChange)
+URI: [kgcl:SimpleChange](http://w3id.org/kgcl/SimpleChange)
 
 
 [![img](https://yuml.me/diagram/nofunky;dir:TB/class/[SimpleChange&#124;old_value:string%20%3F;new_value:string%20%3F;old_value_type:string%20%3F;new_value_type:string%20%3F;new_language:string%20%3F;old_language:string%20%3F;new_datatype:string%20%3F;old_datatype:string%20%3F;id(i):string;type(i):string%20%3F;see_also(i):string%20%3F;pull_request(i):string%20%3F;creator(i):string%20%3F;change_date(i):string%20%3F;contributor(i):string%20%3F]^-[NodeChange],[SimpleChange]^-[LogicalAxiomChange],[SimpleChange]^-[EdgeChange],[Change]^-[SimpleChange],[NodeChange],[LogicalAxiomChange],[EdgeChange],[Change],[Activity])](https://yuml.me/diagram/nofunky;dir:TB/class/[SimpleChange&#124;old_value:string%20%3F;new_value:string%20%3F;old_value_type:string%20%3F;new_value_type:string%20%3F;new_language:string%20%3F;old_language:string%20%3F;new_datatype:string%20%3F;old_datatype:string%20%3F;id(i):string;type(i):string%20%3F;see_also(i):string%20%3F;pull_request(i):string%20%3F;creator(i):string%20%3F;change_date(i):string%20%3F;contributor(i):string%20%3F]^-[NodeChange],[SimpleChange]^-[LogicalAxiomChange],[SimpleChange]^-[EdgeChange],[Change]^-[SimpleChange],[NodeChange],[LogicalAxiomChange],[EdgeChange],[Change],[Activity])

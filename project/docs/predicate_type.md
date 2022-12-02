@@ -4,7 +4,7 @@
 
 The type (IRI or Literal) of an edge's subject
 
-URI: [kgcl:predicate_type](http://w3id.org/kgcl_schema/predicate_type)
+URI: [kgcl:predicate_type](http://w3id.org/kgcl/predicate_type)
 
 
 ## Domain and Range

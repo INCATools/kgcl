@@ -4,7 +4,7 @@
 
 
 
-URI: [kgcl:superclass](http://w3id.org/kgcl_schema/superclass)
+URI: [kgcl:superclass](http://w3id.org/kgcl/superclass)
 
 
 ## Domain and Range

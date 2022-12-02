@@ -4,7 +4,7 @@
 
 
 
-URI: [kgcl:consider](http://w3id.org/kgcl_schema/consider)
+URI: [kgcl:consider](http://w3id.org/kgcl/consider)
 
 
 ## Domain and Range

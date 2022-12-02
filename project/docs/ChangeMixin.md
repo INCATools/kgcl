@@ -4,7 +4,7 @@
 
 root class for all change mixins
 
-URI: [kgcl:ChangeMixin](http://w3id.org/kgcl_schema/ChangeMixin)
+URI: [kgcl:ChangeMixin](http://w3id.org/kgcl/ChangeMixin)
 
 
 [![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Unobsoletion],[SubsetMembershipChange],[Obsoletion],[Deletion],[DatatypeOrLanguageTagChange],[Creation],[ChangeMixin]^-[Unobsoletion],[ChangeMixin]^-[SubsetMembershipChange],[ChangeMixin]^-[Obsoletion],[ChangeMixin]^-[Deletion],[ChangeMixin]^-[DatatypeOrLanguageTagChange],[ChangeMixin]^-[Creation])](https://yuml.me/diagram/nofunky;dir:TB/class/[Unobsoletion],[SubsetMembershipChange],[Obsoletion],[Deletion],[DatatypeOrLanguageTagChange],[Creation],[ChangeMixin]^-[Unobsoletion],[ChangeMixin]^-[SubsetMembershipChange],[ChangeMixin]^-[Obsoletion],[ChangeMixin]^-[Deletion],[ChangeMixin]^-[DatatypeOrLanguageTagChange],[ChangeMixin]^-[Creation])

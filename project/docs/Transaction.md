@@ -4,7 +4,7 @@
 
 A change that is a composition of a set of changes, where those changes are treated as a single unit. Could be a single change, or the results of an ontology diff
 
-URI: [kgcl:Transaction](http://w3id.org/kgcl_schema/Transaction)
+URI: [kgcl:Transaction](http://w3id.org/kgcl/Transaction)
 
 
 [![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Change]<change%20set%200..*-++[Transaction&#124;id(i):string;type(i):string%20%3F;see_also(i):string%20%3F;pull_request(i):string%20%3F;creator(i):string%20%3F;change_date(i):string%20%3F;contributor(i):string%20%3F],[Change]^-[Transaction],[Change],[Activity])](https://yuml.me/diagram/nofunky;dir:TB/class/[Change]<change%20set%200..*-++[Transaction&#124;id(i):string;type(i):string%20%3F;see_also(i):string%20%3F;pull_request(i):string%20%3F;creator(i):string%20%3F;change_date(i):string%20%3F;contributor(i):string%20%3F],[Change]^-[Transaction],[Change],[Activity])

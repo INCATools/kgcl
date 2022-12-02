@@ -4,7 +4,7 @@
 
 The datatype of a literal
 
-URI: [kgcl:datatype](http://w3id.org/kgcl_schema/datatype)
+URI: [kgcl:datatype](http://w3id.org/kgcl/datatype)
 
 
 ## Domain and Range

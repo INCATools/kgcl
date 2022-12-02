@@ -4,7 +4,7 @@
 
 
 
-URI: [kgcl:activity_set](http://w3id.org/kgcl_schema/activity_set)
+URI: [kgcl:activity_set](http://w3id.org/kgcl/activity_set)
 
 
 ## Domain and Range

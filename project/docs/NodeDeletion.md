@@ -4,7 +4,7 @@
 
 Deletion of a node from the graph. Note it is recommended nodes are obsoleted and never merged, but this operation exists to represent deletions in ontologies, accidental or otherwise
 
-URI: [kgcl:NodeDeletion](http://w3id.org/kgcl_schema/NodeDeletion)
+URI: [kgcl:NodeDeletion](http://w3id.org/kgcl/NodeDeletion)
 
 
 [![img](https://yuml.me/diagram/nofunky;dir:TB/class/[NodeDeletion&#124;change_description:string%20%3F;about_node_representation(i):string%20%3F;language(i):language_tag%20%3F;old_value(i):string%20%3F;new_value(i):string%20%3F;old_value_type(i):string%20%3F;new_value_type(i):string%20%3F;new_language(i):string%20%3F;old_language(i):string%20%3F;new_datatype(i):string%20%3F;old_datatype(i):string%20%3F;id(i):string;type(i):string%20%3F;see_also(i):string%20%3F;pull_request(i):string%20%3F;creator(i):string%20%3F;change_date(i):string%20%3F;contributor(i):string%20%3F]uses%20-.->[Deletion],[NodeChange]^-[NodeDeletion],[NodeChange],[Node],[Deletion],[Change],[Activity])](https://yuml.me/diagram/nofunky;dir:TB/class/[NodeDeletion&#124;change_description:string%20%3F;about_node_representation(i):string%20%3F;language(i):language_tag%20%3F;old_value(i):string%20%3F;new_value(i):string%20%3F;old_value_type(i):string%20%3F;new_value_type(i):string%20%3F;new_language(i):string%20%3F;old_language(i):string%20%3F;new_datatype(i):string%20%3F;old_datatype(i):string%20%3F;id(i):string;type(i):string%20%3F;see_also(i):string%20%3F;pull_request(i):string%20%3F;creator(i):string%20%3F;change_date(i):string%20%3F;contributor(i):string%20%3F]uses%20-.->[Deletion],[NodeChange]^-[NodeDeletion],[NodeChange],[Node],[Deletion],[Change],[Activity])

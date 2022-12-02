@@ -4,7 +4,7 @@
 
 An obsoletion replacement where it IS valid to automatically update annotations/edges pointing at the node with its direct replacement
 
-URI: [kgcl:node_obsoletion_with_direct_replacement_has_direct_replacement](http://w3id.org/kgcl_schema/node_obsoletion_with_direct_replacement_has_direct_replacement)
+URI: [kgcl:node_obsoletion_with_direct_replacement_has_direct_replacement](http://w3id.org/kgcl/node_obsoletion_with_direct_replacement_has_direct_replacement)
 
 
 ## Domain and Range

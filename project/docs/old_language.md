@@ -4,7 +4,7 @@
 
 The old language tag of a literal
 
-URI: [kgcl:old_language](http://w3id.org/kgcl_schema/old_language)
+URI: [kgcl:old_language](http://w3id.org/kgcl/old_language)
 
 
 ## Domain and Range

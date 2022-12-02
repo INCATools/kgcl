@@ -4,7 +4,7 @@
 
 The new property of an OWL restriction
 
-URI: [kgcl:new_property](http://w3id.org/kgcl_schema/new_property)
+URI: [kgcl:new_property](http://w3id.org/kgcl/new_property)
 
 
 ## Domain and Range

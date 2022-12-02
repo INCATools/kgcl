@@ -4,7 +4,7 @@
 
 
 
-URI: [kgcl:configuration__synonym_predicates](http://w3id.org/kgcl_schema/configuration__synonym_predicates)
+URI: [kgcl:configuration__synonym_predicates](http://w3id.org/kgcl/configuration__synonym_predicates)
 
 
 ## Domain and Range

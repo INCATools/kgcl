@@ -4,7 +4,7 @@
 
 The type of a superclass
 
-URI: [kgcl:superclass_type](http://w3id.org/kgcl_schema/superclass_type)
+URI: [kgcl:superclass_type](http://w3id.org/kgcl/superclass_type)
 
 
 ## Domain and Range

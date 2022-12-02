@@ -4,7 +4,7 @@
 
 A complex change consisting of multiple obsoletions.
 
-URI: [kgcl:MultiNodeObsoletion](http://w3id.org/kgcl_schema/MultiNodeObsoletion)
+URI: [kgcl:MultiNodeObsoletion](http://w3id.org/kgcl/MultiNodeObsoletion)
 
 
 [![img](https://yuml.me/diagram/nofunky;dir:TB/class/[NodeObsoletion],[Change]<associated%20change%20set%200..*-++[MultiNodeObsoletion&#124;change_description:string%20%3F;id(i):string;type(i):string%20%3F;see_also(i):string%20%3F;pull_request(i):string%20%3F;creator(i):string%20%3F;change_date(i):string%20%3F;contributor(i):string%20%3F],[NodeObsoletion]<change%20set%200..*-++[MultiNodeObsoletion],[ComplexChange]^-[MultiNodeObsoletion],[ComplexChange],[Change],[Activity])](https://yuml.me/diagram/nofunky;dir:TB/class/[NodeObsoletion],[Change]<associated%20change%20set%200..*-++[MultiNodeObsoletion&#124;change_description:string%20%3F;id(i):string;type(i):string%20%3F;see_also(i):string%20%3F;pull_request(i):string%20%3F;creator(i):string%20%3F;change_date(i):string%20%3F;contributor(i):string%20%3F],[NodeObsoletion]<change%20set%200..*-++[MultiNodeObsoletion],[ComplexChange]^-[MultiNodeObsoletion],[ComplexChange],[Change],[Activity])

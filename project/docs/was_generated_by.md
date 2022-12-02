@@ -4,7 +4,7 @@
 
 
 
-URI: [kgcl:was_generated_by](http://w3id.org/kgcl_schema/was_generated_by)
+URI: [kgcl:was_generated_by](http://w3id.org/kgcl/was_generated_by)
 
 
 ## Domain and Range

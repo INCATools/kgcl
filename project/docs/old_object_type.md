@@ -4,7 +4,7 @@
 
 The type (IRI or Literal) of an old object
 
-URI: [kgcl:old_object_type](http://w3id.org/kgcl_schema/old_object_type)
+URI: [kgcl:old_object_type](http://w3id.org/kgcl/old_object_type)
 
 
 ## Domain and Range

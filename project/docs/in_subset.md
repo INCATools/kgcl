@@ -4,7 +4,7 @@
 
 The subset that pertains to this change
 
-URI: [kgcl:in_subset](http://w3id.org/kgcl_schema/in_subset)
+URI: [kgcl:in_subset](http://w3id.org/kgcl/in_subset)
 
 
 ## Domain and Range

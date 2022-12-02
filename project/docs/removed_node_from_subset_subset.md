@@ -4,7 +4,7 @@
 
 The subset from which the node is to be removed
 
-URI: [kgcl:removed_node_from_subset_subset](http://w3id.org/kgcl_schema/removed_node_from_subset_subset)
+URI: [kgcl:removed_node_from_subset_subset](http://w3id.org/kgcl/removed_node_from_subset_subset)
 
 
 ## Domain and Range

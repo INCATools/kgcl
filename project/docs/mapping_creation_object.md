@@ -4,7 +4,7 @@
 
 This corresponds to object_id in SSSOM
 
-URI: [kgcl:mapping_creation_object](http://w3id.org/kgcl_schema/mapping_creation_object)
+URI: [kgcl:mapping_creation_object](http://w3id.org/kgcl/mapping_creation_object)
 
 
 ## Domain and Range

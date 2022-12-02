@@ -4,7 +4,7 @@
 
 A node change where a text definition is modified
 
-URI: [kgcl:TextDefinitionReplacement](http://w3id.org/kgcl_schema/TextDefinitionReplacement)
+URI: [kgcl:TextDefinitionReplacement](http://w3id.org/kgcl/TextDefinitionReplacement)
 
 
 [![img](https://yuml.me/diagram/nofunky;dir:TB/class/[TextualDiff],[TextualDiff]<has%20textual%20diff%200..1-++[TextDefinitionReplacement&#124;about_node_representation(i):string%20%3F;language(i):language_tag%20%3F;old_value(i):string%20%3F;new_value(i):string%20%3F;old_value_type(i):string%20%3F;new_value_type(i):string%20%3F;new_language(i):string%20%3F;old_language(i):string%20%3F;new_datatype(i):string%20%3F;old_datatype(i):string%20%3F;id(i):string;type(i):string%20%3F;see_also(i):string%20%3F;pull_request(i):string%20%3F;creator(i):string%20%3F;change_date(i):string%20%3F;contributor(i):string%20%3F],[NodeTextDefinitionChange]^-[TextDefinitionReplacement],[NodeTextDefinitionChange],[Node],[Change],[Activity])](https://yuml.me/diagram/nofunky;dir:TB/class/[TextualDiff],[TextualDiff]<has%20textual%20diff%200..1-++[TextDefinitionReplacement&#124;about_node_representation(i):string%20%3F;language(i):language_tag%20%3F;old_value(i):string%20%3F;new_value(i):string%20%3F;old_value_type(i):string%20%3F;new_value_type(i):string%20%3F;new_language(i):string%20%3F;old_language(i):string%20%3F;new_datatype(i):string%20%3F;old_datatype(i):string%20%3F;id(i):string;type(i):string%20%3F;see_also(i):string%20%3F;pull_request(i):string%20%3F;creator(i):string%20%3F;change_date(i):string%20%3F;contributor(i):string%20%3F],[NodeTextDefinitionChange]^-[TextDefinitionReplacement],[NodeTextDefinitionChange],[Node],[Change],[Activity])

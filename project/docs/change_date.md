@@ -4,7 +4,7 @@
 
 
 
-URI: [kgcl:change_date](http://w3id.org/kgcl_schema/change_date)
+URI: [kgcl:change_date](http://w3id.org/kgcl/change_date)
 
 
 ## Domain and Range

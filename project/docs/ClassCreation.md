@@ -4,7 +4,7 @@
 
 A node creation where the owl type is 'class'
 
-URI: [kgcl:ClassCreation](http://w3id.org/kgcl_schema/ClassCreation)
+URI: [kgcl:ClassCreation](http://w3id.org/kgcl/ClassCreation)
 
 
 [![img](https://yuml.me/diagram/nofunky;dir:TB/class/[NodeCreation],[Node],[Node]<superclass%200..1-%20[ClassCreation&#124;change_description:string%20%3F;name(i):string%20%3F;owl_type(i):owl_type_enum%20%3F;about_node_representation(i):string%20%3F;language(i):language_tag%20%3F;old_value(i):string%20%3F;new_value(i):string%20%3F;old_value_type(i):string%20%3F;new_value_type(i):string%20%3F;new_language(i):string%20%3F;old_language(i):string%20%3F;new_datatype(i):string%20%3F;old_datatype(i):string%20%3F;id(i):string;type(i):string%20%3F;see_also(i):string%20%3F;pull_request(i):string%20%3F;creator(i):string%20%3F;change_date(i):string%20%3F;contributor(i):string%20%3F],[NodeCreation]^-[ClassCreation],[Change],[Annotation],[Activity])](https://yuml.me/diagram/nofunky;dir:TB/class/[NodeCreation],[Node],[Node]<superclass%200..1-%20[ClassCreation&#124;change_description:string%20%3F;name(i):string%20%3F;owl_type(i):owl_type_enum%20%3F;about_node_representation(i):string%20%3F;language(i):language_tag%20%3F;old_value(i):string%20%3F;new_value(i):string%20%3F;old_value_type(i):string%20%3F;new_value_type(i):string%20%3F;new_language(i):string%20%3F;old_language(i):string%20%3F;new_datatype(i):string%20%3F;old_datatype(i):string%20%3F;id(i):string;type(i):string%20%3F;see_also(i):string%20%3F;pull_request(i):string%20%3F;creator(i):string%20%3F;change_date(i):string%20%3F;contributor(i):string%20%3F],[NodeCreation]^-[ClassCreation],[Change],[Annotation],[Activity])

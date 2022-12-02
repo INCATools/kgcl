@@ -4,7 +4,7 @@
 
 
 
-URI: [kgcl:configuration__obsoletion_policy](http://w3id.org/kgcl_schema/configuration__obsoletion_policy)
+URI: [kgcl:configuration__obsoletion_policy](http://w3id.org/kgcl/configuration__obsoletion_policy)
 
 
 ## Domain and Range

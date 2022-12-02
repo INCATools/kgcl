@@ -4,7 +4,7 @@
 
 The new language tag of a literal
 
-URI: [kgcl:new_language](http://w3id.org/kgcl_schema/new_language)
+URI: [kgcl:new_language](http://w3id.org/kgcl/new_language)
 
 
 ## Domain and Range

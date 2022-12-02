@@ -4,7 +4,7 @@
 
 
 
-URI: [kgcl:change_set_summary_statistic_change_type](http://w3id.org/kgcl_schema/change_set_summary_statistic_change_type)
+URI: [kgcl:change_set_summary_statistic_change_type](http://w3id.org/kgcl/change_set_summary_statistic_change_type)
 
 
 ## Domain and Range

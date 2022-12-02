@@ -4,7 +4,7 @@
 
 A node change where a de-novo text definition is created
 
-URI: [kgcl:NewTextDefinition](http://w3id.org/kgcl_schema/NewTextDefinition)
+URI: [kgcl:NewTextDefinition](http://w3id.org/kgcl/NewTextDefinition)
 
 
 [![img](https://yuml.me/diagram/nofunky;dir:TB/class/[NodeTextDefinitionChange],[Node],[NodeTextDefinitionChange]^-[NewTextDefinition&#124;about_node_representation(i):string%20%3F;language(i):language_tag%20%3F;old_value(i):string%20%3F;new_value(i):string%20%3F;old_value_type(i):string%20%3F;new_value_type(i):string%20%3F;new_language(i):string%20%3F;old_language(i):string%20%3F;new_datatype(i):string%20%3F;old_datatype(i):string%20%3F;id(i):string;type(i):string%20%3F;see_also(i):string%20%3F;pull_request(i):string%20%3F;creator(i):string%20%3F;change_date(i):string%20%3F;contributor(i):string%20%3F],[Change],[Activity])](https://yuml.me/diagram/nofunky;dir:TB/class/[NodeTextDefinitionChange],[Node],[NodeTextDefinitionChange]^-[NewTextDefinition&#124;about_node_representation(i):string%20%3F;language(i):language_tag%20%3F;old_value(i):string%20%3F;new_value(i):string%20%3F;old_value_type(i):string%20%3F;new_value_type(i):string%20%3F;new_language(i):string%20%3F;old_language(i):string%20%3F;new_datatype(i):string%20%3F;old_datatype(i):string%20%3F;id(i):string;type(i):string%20%3F;see_also(i):string%20%3F;pull_request(i):string%20%3F;creator(i):string%20%3F;change_date(i):string%20%3F;contributor(i):string%20%3F],[Change],[Activity])

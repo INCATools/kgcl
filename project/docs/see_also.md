@@ -4,7 +4,7 @@
 
 
 
-URI: [kgcl:see_also](http://w3id.org/kgcl_schema/see_also)
+URI: [kgcl:see_also](http://w3id.org/kgcl/see_also)
 
 
 ## Domain and Range

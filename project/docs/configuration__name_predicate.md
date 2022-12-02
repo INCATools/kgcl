@@ -4,7 +4,7 @@
 
 
 
-URI: [kgcl:configuration__name_predicate](http://w3id.org/kgcl_schema/configuration__name_predicate)
+URI: [kgcl:configuration__name_predicate](http://w3id.org/kgcl/configuration__name_predicate)
 
 
 ## Domain and Range

@@ -4,7 +4,7 @@
 
 Applies to an obsoletion in which annotations or edges pointing at the obsoleted node can be automatically rewired to point to a target
 
-URI: [kgcl:AllowsAutomaticReplacementOfEdges](http://w3id.org/kgcl_schema/AllowsAutomaticReplacementOfEdges)
+URI: [kgcl:AllowsAutomaticReplacementOfEdges](http://w3id.org/kgcl/AllowsAutomaticReplacementOfEdges)
 
 
 [![img](https://yuml.me/diagram/nofunky;dir:TB/class/[OntologyElement],[Obsoletion],[NodeObsoletionWithDirectReplacement]uses%20-.->[AllowsAutomaticReplacementOfEdges],[NodeDirectMerge]uses%20-.->[AllowsAutomaticReplacementOfEdges],[Obsoletion]^-[AllowsAutomaticReplacementOfEdges],[NodeObsoletionWithDirectReplacement],[NodeDirectMerge])](https://yuml.me/diagram/nofunky;dir:TB/class/[OntologyElement],[Obsoletion],[NodeObsoletionWithDirectReplacement]uses%20-.->[AllowsAutomaticReplacementOfEdges],[NodeDirectMerge]uses%20-.->[AllowsAutomaticReplacementOfEdges],[Obsoletion]^-[AllowsAutomaticReplacementOfEdges],[NodeObsoletionWithDirectReplacement],[NodeDirectMerge])

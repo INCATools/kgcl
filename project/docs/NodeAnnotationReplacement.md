@@ -4,7 +4,7 @@
 
 A node annotation change where the change replaces a particular property value. TODO
 
-URI: [kgcl:NodeAnnotationReplacement](http://w3id.org/kgcl_schema/NodeAnnotationReplacement)
+URI: [kgcl:NodeAnnotationReplacement](http://w3id.org/kgcl/NodeAnnotationReplacement)
 
 
 [![img](https://yuml.me/diagram/nofunky;dir:TB/class/[NodeAnnotationChange]^-[NodeAnnotationReplacement&#124;annotation_property(i):string%20%3F;annotation_property_type(i):string%20%3F;about_node_representation(i):string%20%3F;language(i):language_tag%20%3F;old_value(i):string%20%3F;new_value(i):string%20%3F;old_value_type(i):string%20%3F;new_value_type(i):string%20%3F;new_language(i):string%20%3F;old_language(i):string%20%3F;new_datatype(i):string%20%3F;old_datatype(i):string%20%3F;id(i):string;type(i):string%20%3F;see_also(i):string%20%3F;pull_request(i):string%20%3F;creator(i):string%20%3F;change_date(i):string%20%3F;contributor(i):string%20%3F],[NodeAnnotationChange],[Node],[Change],[Activity])](https://yuml.me/diagram/nofunky;dir:TB/class/[NodeAnnotationChange]^-[NodeAnnotationReplacement&#124;annotation_property(i):string%20%3F;annotation_property_type(i):string%20%3F;about_node_representation(i):string%20%3F;language(i):language_tag%20%3F;old_value(i):string%20%3F;new_value(i):string%20%3F;old_value_type(i):string%20%3F;new_value_type(i):string%20%3F;new_language(i):string%20%3F;old_language(i):string%20%3F;new_datatype(i):string%20%3F;old_datatype(i):string%20%3F;id(i):string;type(i):string%20%3F;see_also(i):string%20%3F;pull_request(i):string%20%3F;creator(i):string%20%3F;change_date(i):string%20%3F;contributor(i):string%20%3F],[NodeAnnotationChange],[Node],[Change],[Activity])

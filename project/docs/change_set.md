@@ -4,7 +4,7 @@
 
 A collection of changes
 
-URI: [kgcl:change_set](http://w3id.org/kgcl_schema/change_set)
+URI: [kgcl:change_set](http://w3id.org/kgcl/change_set)
 
 
 ## Domain and Range

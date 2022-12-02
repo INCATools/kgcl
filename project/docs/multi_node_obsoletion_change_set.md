@@ -4,7 +4,7 @@
 
 A collection of changes
 
-URI: [kgcl:multi_node_obsoletion_change_set](http://w3id.org/kgcl_schema/multi_node_obsoletion_change_set)
+URI: [kgcl:multi_node_obsoletion_change_set](http://w3id.org/kgcl/multi_node_obsoletion_change_set)
 
 
 ## Domain and Range

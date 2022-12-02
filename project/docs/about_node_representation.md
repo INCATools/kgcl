@@ -4,7 +4,7 @@
 
 The representation of a node (URI, CURIE, label)
 
-URI: [kgcl:about_node_representation](http://w3id.org/kgcl_schema/about_node_representation)
+URI: [kgcl:about_node_representation](http://w3id.org/kgcl/about_node_representation)
 
 
 ## Domain and Range

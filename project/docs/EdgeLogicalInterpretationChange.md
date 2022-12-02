@@ -4,7 +4,7 @@
 
 An edge change where the subjet, object, and predicate are unchanged, but the logical interpretation changes
 
-URI: [kgcl:EdgeLogicalInterpretationChange](http://w3id.org/kgcl_schema/EdgeLogicalInterpretationChange)
+URI: [kgcl:EdgeLogicalInterpretationChange](http://w3id.org/kgcl/EdgeLogicalInterpretationChange)
 
 
 [![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Node],[EdgeChange]^-[EdgeLogicalInterpretationChange&#124;object_type(i):string%20%3F;language(i):language_tag%20%3F;datatype(i):string%20%3F;old_value(i):string%20%3F;new_value(i):string%20%3F;old_value_type(i):string%20%3F;new_value_type(i):string%20%3F;new_language(i):string%20%3F;old_language(i):string%20%3F;new_datatype(i):string%20%3F;old_datatype(i):string%20%3F;id(i):string;type(i):string%20%3F;see_also(i):string%20%3F;pull_request(i):string%20%3F;creator(i):string%20%3F;change_date(i):string%20%3F;contributor(i):string%20%3F],[EdgeChange],[Edge],[Change],[Activity])](https://yuml.me/diagram/nofunky;dir:TB/class/[Node],[EdgeChange]^-[EdgeLogicalInterpretationChange&#124;object_type(i):string%20%3F;language(i):language_tag%20%3F;datatype(i):string%20%3F;old_value(i):string%20%3F;new_value(i):string%20%3F;old_value_type(i):string%20%3F;new_value_type(i):string%20%3F;new_language(i):string%20%3F;old_language(i):string%20%3F;new_datatype(i):string%20%3F;old_datatype(i):string%20%3F;id(i):string;type(i):string%20%3F;see_also(i):string%20%3F;pull_request(i):string%20%3F;creator(i):string%20%3F;change_date(i):string%20%3F;contributor(i):string%20%3F],[EdgeChange],[Edge],[Change],[Activity])

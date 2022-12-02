@@ -4,7 +4,7 @@
 
 A node synonym change where a de-novo synonym is created
 
-URI: [kgcl:NewSynonym](http://w3id.org/kgcl_schema/NewSynonym)
+URI: [kgcl:NewSynonym](http://w3id.org/kgcl/NewSynonym)
 
 
 [![img](https://yuml.me/diagram/nofunky;dir:TB/class/[NodeSynonymChange],[Node],[NameBecomesSynonym]-%20change%202%200..1>[NewSynonym&#124;qualifier:string%20%3F;about_node_representation(i):string%20%3F;language(i):language_tag%20%3F;old_value(i):string%20%3F;new_value(i):string%20%3F;old_value_type(i):string%20%3F;new_value_type(i):string%20%3F;new_language(i):string%20%3F;old_language(i):string%20%3F;new_datatype(i):string%20%3F;old_datatype(i):string%20%3F;id(i):string;type(i):string%20%3F;see_also(i):string%20%3F;pull_request(i):string%20%3F;creator(i):string%20%3F;change_date(i):string%20%3F;contributor(i):string%20%3F],[NodeSynonymChange]^-[NewSynonym],[NameBecomesSynonym],[Change],[Activity])](https://yuml.me/diagram/nofunky;dir:TB/class/[NodeSynonymChange],[Node],[NameBecomesSynonym]-%20change%202%200..1>[NewSynonym&#124;qualifier:string%20%3F;about_node_representation(i):string%20%3F;language(i):language_tag%20%3F;old_value(i):string%20%3F;new_value(i):string%20%3F;old_value_type(i):string%20%3F;new_value_type(i):string%20%3F;new_language(i):string%20%3F;old_language(i):string%20%3F;new_datatype(i):string%20%3F;old_datatype(i):string%20%3F;id(i):string;type(i):string%20%3F;see_also(i):string%20%3F;pull_request(i):string%20%3F;creator(i):string%20%3F;change_date(i):string%20%3F;contributor(i):string%20%3F],[NodeSynonymChange]^-[NewSynonym],[NameBecomesSynonym],[Change],[Activity])

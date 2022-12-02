@@ -4,7 +4,7 @@
 
 Opposite operation of obsoletion. Rarely performed.
 
-URI: [kgcl:Unobsoletion](http://w3id.org/kgcl_schema/Unobsoletion)
+URI: [kgcl:Unobsoletion](http://w3id.org/kgcl/Unobsoletion)
 
 
 [![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Obsoletion]<has%20undo%200..1-++[Unobsoletion],[NodeUnobsoletion]uses%20-.->[Unobsoletion],[ChangeMixin]^-[Unobsoletion],[Obsoletion],[NodeUnobsoletion],[ChangeMixin])](https://yuml.me/diagram/nofunky;dir:TB/class/[Obsoletion]<has%20undo%200..1-++[Unobsoletion],[NodeUnobsoletion]uses%20-.->[Unobsoletion],[ChangeMixin]^-[Unobsoletion],[Obsoletion],[NodeUnobsoletion],[ChangeMixin])

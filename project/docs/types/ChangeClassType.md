@@ -4,7 +4,7 @@
 
 CURIE for a class within this datamodel. E.g. kgcl:NodeObsoletion
 
-URI: [kgcl:ChangeClassType](http://w3id.org/kgcl_schema/ChangeClassType)
+URI: [kgcl:ChangeClassType](http://w3id.org/kgcl/ChangeClassType)
 
 |  |  |  |
 | --- | --- | --- |

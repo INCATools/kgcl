@@ -4,7 +4,7 @@
 
 The element that is obsoleted by this change.
 
-URI: [kgcl:obsoletion_about](http://w3id.org/kgcl_schema/obsoletion_about)
+URI: [kgcl:obsoletion_about](http://w3id.org/kgcl/obsoletion_about)
 
 
 ## Domain and Range

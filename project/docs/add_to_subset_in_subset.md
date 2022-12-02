@@ -4,7 +4,7 @@
 
 subset that the element is being placed inside.
 
-URI: [kgcl:add_to_subset_in_subset](http://w3id.org/kgcl_schema/add_to_subset_in_subset)
+URI: [kgcl:add_to_subset_in_subset](http://w3id.org/kgcl/add_to_subset_in_subset)
 
 
 ## Domain and Range

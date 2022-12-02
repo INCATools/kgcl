@@ -4,7 +4,7 @@
 
 
 
-URI: [kgcl:predicate_representation](http://w3id.org/kgcl_schema/predicate_representation)
+URI: [kgcl:predicate_representation](http://w3id.org/kgcl/predicate_representation)
 
 
 ## Domain and Range

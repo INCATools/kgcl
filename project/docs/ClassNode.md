@@ -4,7 +4,7 @@
 
 A node that is a class
 
-URI: [kgcl:ClassNode](http://w3id.org/kgcl_schema/ClassNode)
+URI: [kgcl:ClassNode](http://w3id.org/kgcl/ClassNode)
 
 
 [![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Node],[Node]^-[ClassNode&#124;id(i):string;name(i):string%20%3F;owl_type(i):owl_type_enum%20%3F],[Annotation])](https://yuml.me/diagram/nofunky;dir:TB/class/[Node],[Node]^-[ClassNode&#124;id(i):string;name(i):string%20%3F;owl_type(i):owl_type_enum%20%3F],[Annotation])

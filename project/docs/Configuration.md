@@ -4,7 +4,7 @@
 
 The meaning of operations can be configured
 
-URI: [kgcl:Configuration](http://w3id.org/kgcl_schema/Configuration)
+URI: [kgcl:Configuration](http://w3id.org/kgcl/Configuration)
 
 
 [![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Configuration&#124;name_predicate:string%20%3F;definition_predicate:string%20%3F;main_synonym_predicate:string%20%3F;synonym_predicates:string%20%3F;creator_predicate:string%20%3F;contributor_predicate:string%20%3F;obsoletion_workflow:string%20%3F;obsoletion_policy:string%20%3F])](https://yuml.me/diagram/nofunky;dir:TB/class/[Configuration&#124;name_predicate:string%20%3F;definition_predicate:string%20%3F;main_synonym_predicate:string%20%3F;synonym_predicates:string%20%3F;creator_predicate:string%20%3F;contributor_predicate:string%20%3F;obsoletion_workflow:string%20%3F;obsoletion_policy:string%20%3F])

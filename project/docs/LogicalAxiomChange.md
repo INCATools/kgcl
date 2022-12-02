@@ -4,7 +4,7 @@
 
 A simple change where a logical axiom is changed, where the logical axiom cannot be represented as an edge
 
-URI: [kgcl:LogicalAxiomChange](http://w3id.org/kgcl_schema/LogicalAxiomChange)
+URI: [kgcl:LogicalAxiomChange](http://w3id.org/kgcl/LogicalAxiomChange)
 
 
 [![img](https://yuml.me/diagram/nofunky;dir:TB/class/[SimpleChange],[SimpleChange]^-[LogicalAxiomChange&#124;old_value(i):string%20%3F;new_value(i):string%20%3F;old_value_type(i):string%20%3F;new_value_type(i):string%20%3F;new_language(i):string%20%3F;old_language(i):string%20%3F;new_datatype(i):string%20%3F;old_datatype(i):string%20%3F;id(i):string;type(i):string%20%3F;see_also(i):string%20%3F;pull_request(i):string%20%3F;creator(i):string%20%3F;change_date(i):string%20%3F;contributor(i):string%20%3F],[Change],[Activity])](https://yuml.me/diagram/nofunky;dir:TB/class/[SimpleChange],[SimpleChange]^-[LogicalAxiomChange&#124;old_value(i):string%20%3F;new_value(i):string%20%3F;old_value_type(i):string%20%3F;new_value_type(i):string%20%3F;new_language(i):string%20%3F;old_language(i):string%20%3F;new_datatype(i):string%20%3F;old_datatype(i):string%20%3F;id(i):string;type(i):string%20%3F;see_also(i):string%20%3F;pull_request(i):string%20%3F;creator(i):string%20%3F;change_date(i):string%20%3F;contributor(i):string%20%3F],[Change],[Activity])

@@ -4,7 +4,7 @@
 
 A node change where the string value for the name is unchanged but the language tag is set
 
-URI: [kgcl:SetLanguageForName](http://w3id.org/kgcl_schema/SetLanguageForName)
+URI: [kgcl:SetLanguageForName](http://w3id.org/kgcl/SetLanguageForName)
 
 
 [![img](https://yuml.me/diagram/nofunky;dir:TB/class/[SetLanguageForName&#124;change_description:string%20%3F;about_node_representation(i):string%20%3F;language(i):language_tag%20%3F;old_value(i):string%20%3F;new_value(i):string%20%3F;old_value_type(i):string%20%3F;new_value_type(i):string%20%3F;new_language(i):string%20%3F;old_language(i):string%20%3F;new_datatype(i):string%20%3F;old_datatype(i):string%20%3F;id(i):string;type(i):string%20%3F;see_also(i):string%20%3F;pull_request(i):string%20%3F;creator(i):string%20%3F;change_date(i):string%20%3F;contributor(i):string%20%3F]uses%20-.->[LanguageTagChange],[NodeChange]^-[SetLanguageForName],[NodeChange],[Node],[LanguageTagChange],[Change],[Activity])](https://yuml.me/diagram/nofunky;dir:TB/class/[SetLanguageForName&#124;change_description:string%20%3F;about_node_representation(i):string%20%3F;language(i):language_tag%20%3F;old_value(i):string%20%3F;new_value(i):string%20%3F;old_value_type(i):string%20%3F;new_value_type(i):string%20%3F;new_language(i):string%20%3F;old_language(i):string%20%3F;new_datatype(i):string%20%3F;old_datatype(i):string%20%3F;id(i):string;type(i):string%20%3F;see_also(i):string%20%3F;pull_request(i):string%20%3F;creator(i):string%20%3F;change_date(i):string%20%3F;contributor(i):string%20%3F]uses%20-.->[LanguageTagChange],[NodeChange]^-[SetLanguageForName],[NodeChange],[Node],[LanguageTagChange],[Change],[Activity])

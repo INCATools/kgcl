@@ -4,7 +4,7 @@
 
 
 
-URI: [kgcl:was_associated_with](http://w3id.org/kgcl_schema/was_associated_with)
+URI: [kgcl:was_associated_with](http://w3id.org/kgcl/was_associated_with)
 
 
 ## Domain and Range

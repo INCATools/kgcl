@@ -4,7 +4,7 @@
 
 The new filler of an OWL restriction
 
-URI: [kgcl:new_filler](http://w3id.org/kgcl_schema/new_filler)
+URI: [kgcl:new_filler](http://w3id.org/kgcl/new_filler)
 
 
 ## Domain and Range

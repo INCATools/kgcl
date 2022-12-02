@@ -4,7 +4,7 @@
 
 A change that is is a composition of other changes
 
-URI: [kgcl:ComplexChange](http://w3id.org/kgcl_schema/ComplexChange)
+URI: [kgcl:ComplexChange](http://w3id.org/kgcl/ComplexChange)
 
 
 [![img](https://yuml.me/diagram/nofunky;dir:TB/class/[MultiNodeObsoletion],[Change]<change%20set%200..*-++[ComplexChange&#124;id(i):string;type(i):string%20%3F;see_also(i):string%20%3F;pull_request(i):string%20%3F;creator(i):string%20%3F;change_date(i):string%20%3F;contributor(i):string%20%3F],[ComplexChange]^-[MultiNodeObsoletion],[Change]^-[ComplexChange],[Change],[Activity])](https://yuml.me/diagram/nofunky;dir:TB/class/[MultiNodeObsoletion],[Change]<change%20set%200..*-++[ComplexChange&#124;id(i):string;type(i):string%20%3F;see_also(i):string%20%3F;pull_request(i):string%20%3F;creator(i):string%20%3F;change_date(i):string%20%3F;contributor(i):string%20%3F],[ComplexChange]^-[MultiNodeObsoletion],[Change]^-[ComplexChange],[Change],[Activity])

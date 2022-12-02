@@ -4,7 +4,7 @@
 
 subset that the element is being removed from
 
-URI: [kgcl:remove_from_subset_in_subset](http://w3id.org/kgcl_schema/remove_from_subset_in_subset)
+URI: [kgcl:remove_from_subset_in_subset](http://w3id.org/kgcl/remove_from_subset_in_subset)
 
 
 ## Domain and Range

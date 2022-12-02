@@ -4,7 +4,7 @@
 
 
 
-URI: [kgcl:OntologySubset](http://w3id.org/kgcl_schema/OntologySubset)
+URI: [kgcl:OntologySubset](http://w3id.org/kgcl/OntologySubset)
 
 
 [![img](https://yuml.me/diagram/nofunky;dir:TB/class/[RemoveFromSubset],[AddToSubset]++-%20in%20subset%200..1>[OntologySubset],[SubsetMembershipChange]++-%20in%20subset%200..1>[OntologySubset],[RemoveFromSubset]++-%20in%20subset%200..1>[OntologySubset],[OntologyElement]^-[OntologySubset],[SubsetMembershipChange],[OntologyElement],[AddToSubset])](https://yuml.me/diagram/nofunky;dir:TB/class/[RemoveFromSubset],[AddToSubset]++-%20in%20subset%200..1>[OntologySubset],[SubsetMembershipChange]++-%20in%20subset%200..1>[OntologySubset],[RemoveFromSubset]++-%20in%20subset%200..1>[OntologySubset],[OntologyElement]^-[OntologySubset],[SubsetMembershipChange],[OntologyElement],[AddToSubset])
