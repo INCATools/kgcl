@@ -4,7 +4,7 @@
 
 
 
-URI: [kgcl:name_becomes_synonym_change_2](http://w3id.org/kgcl/name_becomes_synonym_change_2)
+URI: [kgcl:name_becomes_synonym_change_2](http://w3id.org/kgcl_schema/name_becomes_synonym_change_2)
 
 
 ## Domain and Range

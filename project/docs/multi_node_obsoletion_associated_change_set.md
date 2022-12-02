@@ -6,7 +6,7 @@ All changes associated with a set of obsoletions. This change set is the compose
   `A subClassOf B subClassOf C subClassOf D`
 and we obsolete {B,C}, then the individual changes are `A moves from B to C` and `B moves from C to D`, but the composed change set is `A moves from B to D`
 
-URI: [kgcl:multi_node_obsoletion_associated_change_set](http://w3id.org/kgcl/multi_node_obsoletion_associated_change_set)
+URI: [kgcl:multi_node_obsoletion_associated_change_set](http://w3id.org/kgcl_schema/multi_node_obsoletion_associated_change_set)
 
 
 ## Domain and Range

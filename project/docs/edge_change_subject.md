@@ -4,7 +4,7 @@
 
 
 
-URI: [kgcl:edge_change_subject](http://w3id.org/kgcl/edge_change_subject)
+URI: [kgcl:edge_change_subject](http://w3id.org/kgcl_schema/edge_change_subject)
 
 
 ## Domain and Range

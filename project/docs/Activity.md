@@ -4,7 +4,7 @@
 
 a provence-generating activity
 
-URI: [kgcl:Activity](http://w3id.org/kgcl/Activity)
+URI: [kgcl:Activity](http://w3id.org/kgcl_schema/Activity)
 
 
 [![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Change],[Agent],[Agent]<was%20associated%20with%200..1-%20[Activity&#124;id:string;started_at_time:string%20%3F;ended_at_time:string%20%3F;used:string%20%3F;description:string%20%3F],[Activity]<was%20informed%20by%200..1-%20[Activity],[Session]++-%20activity%20set%200..*>[Activity],[Change]-%20was%20generated%20by%200..1>[Activity],[Change]-%20was%20generated%20by(i)%200..1>[Activity],[Session])](https://yuml.me/diagram/nofunky;dir:TB/class/[Change],[Agent],[Agent]<was%20associated%20with%200..1-%20[Activity&#124;id:string;started_at_time:string%20%3F;ended_at_time:string%20%3F;used:string%20%3F;description:string%20%3F],[Activity]<was%20informed%20by%200..1-%20[Activity],[Session]++-%20activity%20set%200..*>[Activity],[Change]-%20was%20generated%20by%200..1>[Activity],[Change]-%20was%20generated%20by(i)%200..1>[Activity],[Session])

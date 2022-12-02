@@ -4,7 +4,7 @@
 
 A string serialization of the change. This should be both human-readable, and parseable.
 
-URI: [kgcl:removed_node_from_subset_change_description](http://w3id.org/kgcl/removed_node_from_subset_change_description)
+URI: [kgcl:removed_node_from_subset_change_description](http://w3id.org/kgcl_schema/removed_node_from_subset_change_description)
 
 
 ## Domain and Range

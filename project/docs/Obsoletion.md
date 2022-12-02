@@ -4,7 +4,7 @@
 
 Obsoletion of an element deprecates usage of that element, but does not delete that element.
 
-URI: [kgcl:Obsoletion](http://w3id.org/kgcl/Obsoletion)
+URI: [kgcl:Obsoletion](http://w3id.org/kgcl_schema/Obsoletion)
 
 
 [![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Unobsoletion],[OntologyElement],[Obsoletion]<has%20undo%200..1-++[Obsoletion],[OntologyElement]<about%200..1-++[Obsoletion],[Unobsoletion]++-%20has%20undo%200..1>[Obsoletion],[NodeObsoletion]uses%20-.->[Obsoletion],[EdgeObsoletion]uses%20-.->[Obsoletion],[Obsoletion]^-[AllowsAutomaticReplacementOfEdges],[ChangeMixin]^-[Obsoletion],[NodeObsoletion],[EdgeObsoletion],[ChangeMixin],[AllowsAutomaticReplacementOfEdges])](https://yuml.me/diagram/nofunky;dir:TB/class/[Unobsoletion],[OntologyElement],[Obsoletion]<has%20undo%200..1-++[Obsoletion],[OntologyElement]<about%200..1-++[Obsoletion],[Unobsoletion]++-%20has%20undo%200..1>[Obsoletion],[NodeObsoletion]uses%20-.->[Obsoletion],[EdgeObsoletion]uses%20-.->[Obsoletion],[Obsoletion]^-[AllowsAutomaticReplacementOfEdges],[ChangeMixin]^-[Obsoletion],[NodeObsoletion],[EdgeObsoletion],[ChangeMixin],[AllowsAutomaticReplacementOfEdges])

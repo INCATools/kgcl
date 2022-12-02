@@ -4,7 +4,7 @@
 
 removing an element from a subset
 
-URI: [kgcl:RemoveFromSubset](http://w3id.org/kgcl/RemoveFromSubset)
+URI: [kgcl:RemoveFromSubset](http://w3id.org/kgcl_schema/RemoveFromSubset)
 
 
 [![img](https://yuml.me/diagram/nofunky;dir:TB/class/[SubsetMembershipChange],[AddToSubset]<has%20undo%200..1-++[RemoveFromSubset],[OntologySubset]<in%20subset%200..1-++[RemoveFromSubset],[RemovedNodeFromSubset]uses%20-.->[RemoveFromSubset],[SubsetMembershipChange]^-[RemoveFromSubset],[RemovedNodeFromSubset],[OntologySubset],[AddToSubset])](https://yuml.me/diagram/nofunky;dir:TB/class/[SubsetMembershipChange],[AddToSubset]<has%20undo%200..1-++[RemoveFromSubset],[OntologySubset]<in%20subset%200..1-++[RemoveFromSubset],[RemovedNodeFromSubset]uses%20-.->[RemoveFromSubset],[SubsetMembershipChange]^-[RemoveFromSubset],[RemovedNodeFromSubset],[OntologySubset],[AddToSubset])

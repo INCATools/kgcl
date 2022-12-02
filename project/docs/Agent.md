@@ -4,7 +4,7 @@
 
 a provence-generating agent
 
-URI: [kgcl:Agent](http://w3id.org/kgcl/Agent)
+URI: [kgcl:Agent](http://w3id.org/kgcl_schema/Agent)
 
 
 [![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Activity]<was%20informed%20by%200..1-%20[Agent&#124;id:string],[Agent]<acted%20on%20behalf%20of%200..1-%20[Agent],[Activity]-%20was%20associated%20with%200..1>[Agent],[Activity])](https://yuml.me/diagram/nofunky;dir:TB/class/[Activity]<was%20informed%20by%200..1-%20[Agent&#124;id:string],[Agent]<acted%20on%20behalf%20of%200..1-%20[Agent],[Activity]-%20was%20associated%20with%200..1>[Agent],[Activity])

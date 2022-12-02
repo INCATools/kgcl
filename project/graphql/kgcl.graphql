@@ -12,6 +12,7 @@ type Activity
 type AddNodeToSubset implements AddToSubset
   {
     id: String!
+    type: String
     wasGeneratedBy: Activity
     seeAlso: String
     pullRequest: String
@@ -63,6 +64,7 @@ type Annotation
 interface Change
   {
     id: String!
+    type: String
     wasGeneratedBy: Activity
     seeAlso: String
     pullRequest: String
@@ -86,6 +88,7 @@ type ChangeSetSummaryStatistic
 type ClassCreation
   {
     id: String!
+    type: String
     wasGeneratedBy: Activity
     seeAlso: String
     pullRequest: String
@@ -123,6 +126,7 @@ type ClassNode
 interface ComplexChange
   {
     id: String!
+    type: String
     wasGeneratedBy: Activity
     seeAlso: String
     pullRequest: String
@@ -176,6 +180,7 @@ type Edge
 interface EdgeChange
   {
     id: String!
+    type: String
     wasGeneratedBy: Activity
     seeAlso: String
     pullRequest: String
@@ -201,6 +206,7 @@ interface EdgeChange
 type EdgeCreation implements Creation
   {
     id: String!
+    type: String
     wasGeneratedBy: Activity
     seeAlso: String
     pullRequest: String
@@ -232,6 +238,7 @@ type EdgeCreation implements Creation
 type EdgeDeletion implements Deletion
   {
     id: String!
+    type: String
     wasGeneratedBy: Activity
     seeAlso: String
     pullRequest: String
@@ -263,6 +270,7 @@ type EdgeDeletion implements Deletion
 type EdgeLogicalInterpretationChange
   {
     id: String!
+    type: String
     wasGeneratedBy: Activity
     seeAlso: String
     pullRequest: String
@@ -288,6 +296,7 @@ type EdgeLogicalInterpretationChange
 type EdgeObsoletion implements Obsoletion
   {
     id: String!
+    type: String
     wasGeneratedBy: Activity
     seeAlso: String
     pullRequest: String
@@ -318,6 +327,7 @@ type EdgeObsoletion implements Obsoletion
 type EdgeRewiring
   {
     id: String!
+    type: String
     wasGeneratedBy: Activity
     seeAlso: String
     pullRequest: String
@@ -357,6 +367,7 @@ type LanguageTagChange
 type LogicalAxiomChange
   {
     id: String!
+    type: String
     wasGeneratedBy: Activity
     seeAlso: String
     pullRequest: String
@@ -381,6 +392,7 @@ type LogicalDefinition
 type MappingCreation implements Creation
   {
     id: String!
+    type: String
     wasGeneratedBy: Activity
     seeAlso: String
     pullRequest: String
@@ -412,6 +424,7 @@ type MappingCreation implements Creation
 type MultiNodeObsoletion
   {
     id: String!
+    type: String
     wasGeneratedBy: Activity
     seeAlso: String
     pullRequest: String
@@ -427,6 +440,7 @@ type MultiNodeObsoletion
 type NameBecomesSynonym
   {
     id: String!
+    type: String
     wasGeneratedBy: Activity
     seeAlso: String
     pullRequest: String
@@ -453,6 +467,7 @@ type NameBecomesSynonym
 type NewSynonym
   {
     id: String!
+    type: String
     wasGeneratedBy: Activity
     seeAlso: String
     pullRequest: String
@@ -477,6 +492,7 @@ type NewSynonym
 type NewTextDefinition
   {
     id: String!
+    type: String
     wasGeneratedBy: Activity
     seeAlso: String
     pullRequest: String
@@ -508,6 +524,7 @@ type Node
 type NodeAnnotationChange
   {
     id: String!
+    type: String
     wasGeneratedBy: Activity
     seeAlso: String
     pullRequest: String
@@ -533,6 +550,7 @@ type NodeAnnotationChange
 type NodeAnnotationReplacement
   {
     id: String!
+    type: String
     wasGeneratedBy: Activity
     seeAlso: String
     pullRequest: String
@@ -558,6 +576,7 @@ type NodeAnnotationReplacement
 interface NodeChange
   {
     id: String!
+    type: String
     wasGeneratedBy: Activity
     seeAlso: String
     pullRequest: String
@@ -581,6 +600,7 @@ interface NodeChange
 type NodeCreation implements Creation
   {
     id: String!
+    type: String
     wasGeneratedBy: Activity
     seeAlso: String
     pullRequest: String
@@ -609,6 +629,7 @@ type NodeCreation implements Creation
 type NodeDeepening
   {
     id: String!
+    type: String
     wasGeneratedBy: Activity
     seeAlso: String
     pullRequest: String
@@ -637,6 +658,7 @@ type NodeDeepening
 type NodeDeletion implements Deletion
   {
     id: String!
+    type: String
     wasGeneratedBy: Activity
     seeAlso: String
     pullRequest: String
@@ -661,6 +683,7 @@ type NodeDeletion implements Deletion
 type NodeDirectMerge implements AllowsAutomaticReplacementOfEdges
   {
     id: String!
+    type: String
     wasGeneratedBy: Activity
     seeAlso: String
     pullRequest: String
@@ -689,6 +712,7 @@ type NodeDirectMerge implements AllowsAutomaticReplacementOfEdges
 type NodeMove
   {
     id: String!
+    type: String
     wasGeneratedBy: Activity
     seeAlso: String
     pullRequest: String
@@ -717,6 +741,7 @@ type NodeMove
 type NodeObsoletion implements Obsoletion
   {
     id: String!
+    type: String
     wasGeneratedBy: Activity
     seeAlso: String
     pullRequest: String
@@ -745,6 +770,7 @@ type NodeObsoletion implements Obsoletion
 type NodeObsoletionWithDirectReplacement implements AllowsAutomaticReplacementOfEdges
   {
     id: String!
+    type: String
     wasGeneratedBy: Activity
     seeAlso: String
     pullRequest: String
@@ -773,6 +799,7 @@ type NodeObsoletionWithDirectReplacement implements AllowsAutomaticReplacementOf
 type NodeObsoletionWithNoDirectReplacement
   {
     id: String!
+    type: String
     wasGeneratedBy: Activity
     seeAlso: String
     pullRequest: String
@@ -801,6 +828,7 @@ type NodeObsoletionWithNoDirectReplacement
 type NodeRename
   {
     id: String!
+    type: String
     wasGeneratedBy: Activity
     seeAlso: String
     pullRequest: String
@@ -826,6 +854,7 @@ type NodeRename
 type NodeShallowing
   {
     id: String!
+    type: String
     wasGeneratedBy: Activity
     seeAlso: String
     pullRequest: String
@@ -854,6 +883,7 @@ type NodeShallowing
 type NodeSynonymChange
   {
     id: String!
+    type: String
     wasGeneratedBy: Activity
     seeAlso: String
     pullRequest: String
@@ -877,6 +907,7 @@ type NodeSynonymChange
 interface NodeTextDefinitionChange
   {
     id: String!
+    type: String
     wasGeneratedBy: Activity
     seeAlso: String
     pullRequest: String
@@ -900,6 +931,7 @@ interface NodeTextDefinitionChange
 type NodeUnobsoletion implements Unobsoletion
   {
     id: String!
+    type: String
     wasGeneratedBy: Activity
     seeAlso: String
     pullRequest: String
@@ -940,6 +972,7 @@ type OntologySubset
 type PlaceUnder
   {
     id: String!
+    type: String
     wasGeneratedBy: Activity
     seeAlso: String
     pullRequest: String
@@ -971,6 +1004,7 @@ type PlaceUnder
 type PredicateChange
   {
     id: String!
+    type: String
     wasGeneratedBy: Activity
     seeAlso: String
     pullRequest: String
@@ -1009,6 +1043,7 @@ interface RemoveFromSubset
 type RemoveSynonym
   {
     id: String!
+    type: String
     wasGeneratedBy: Activity
     seeAlso: String
     pullRequest: String
@@ -1032,6 +1067,7 @@ type RemoveSynonym
 type RemoveTextDefinition
   {
     id: String!
+    type: String
     wasGeneratedBy: Activity
     seeAlso: String
     pullRequest: String
@@ -1055,6 +1091,7 @@ type RemoveTextDefinition
 type RemoveUnder
   {
     id: String!
+    type: String
     wasGeneratedBy: Activity
     seeAlso: String
     pullRequest: String
@@ -1086,6 +1123,7 @@ type RemoveUnder
 type RemovedNodeFromSubset implements RemoveFromSubset
   {
     id: String!
+    type: String
     wasGeneratedBy: Activity
     seeAlso: String
     pullRequest: String
@@ -1118,6 +1156,7 @@ type Session
 type SetLanguageForName implements LanguageTagChange
   {
     id: String!
+    type: String
     wasGeneratedBy: Activity
     seeAlso: String
     pullRequest: String
@@ -1142,6 +1181,7 @@ type SetLanguageForName implements LanguageTagChange
 interface SimpleChange
   {
     id: String!
+    type: String
     wasGeneratedBy: Activity
     seeAlso: String
     pullRequest: String
@@ -1167,6 +1207,7 @@ interface SubsetMembershipChange
 type SynonymPredicateChange
   {
     id: String!
+    type: String
     wasGeneratedBy: Activity
     seeAlso: String
     pullRequest: String
@@ -1191,6 +1232,7 @@ type SynonymPredicateChange
 type SynonymReplacement
   {
     id: String!
+    type: String
     wasGeneratedBy: Activity
     seeAlso: String
     pullRequest: String
@@ -1215,6 +1257,7 @@ type SynonymReplacement
 type TextDefinitionReplacement
   {
     id: String!
+    type: String
     wasGeneratedBy: Activity
     seeAlso: String
     pullRequest: String
@@ -1243,6 +1286,7 @@ type TextualDiff
 type Transaction
   {
     id: String!
+    type: String
     wasGeneratedBy: Activity
     seeAlso: String
     pullRequest: String

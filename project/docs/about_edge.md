@@ -4,7 +4,7 @@
 
 
 
-URI: [kgcl:about_edge](http://w3id.org/kgcl/about_edge)
+URI: [kgcl:about_edge](http://w3id.org/kgcl_schema/about_edge)
 
 
 ## Domain and Range

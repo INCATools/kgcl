@@ -4,7 +4,7 @@
 
 
 
-URI: [kgcl:property_value_set](http://w3id.org/kgcl/property_value_set)
+URI: [kgcl:property_value_set](http://w3id.org/kgcl_schema/property_value_set)
 
 
 ## Domain and Range

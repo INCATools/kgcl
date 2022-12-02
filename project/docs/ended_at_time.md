@@ -4,7 +4,7 @@
 
 
 
-URI: [kgcl:ended_at_time](http://w3id.org/kgcl/ended_at_time)
+URI: [kgcl:ended_at_time](http://w3id.org/kgcl_schema/ended_at_time)
 
 
 ## Domain and Range

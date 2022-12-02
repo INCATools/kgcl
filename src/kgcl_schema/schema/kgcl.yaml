@@ -18,7 +18,7 @@ prefixes:
   xml: http://www.w3.org/XML/1998/namespace#
   linkml: https://w3id.org/linkml/
   
-default_prefix: kgcl_schema
+default_prefix: kgcl
 default_range: string
 
 imports:

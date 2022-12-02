@@ -4,7 +4,7 @@
 
 
 
-URI: [kgcl:LanguageTagChange](http://w3id.org/kgcl/LanguageTagChange)
+URI: [kgcl:LanguageTagChange](http://w3id.org/kgcl_schema/LanguageTagChange)
 
 
 [![img](https://yuml.me/diagram/nofunky;dir:TB/class/[SetLanguageForName]uses%20-.->[LanguageTagChange&#124;old_value:language_tag%20%3F;new_value:language_tag%20%3F],[DatatypeOrLanguageTagChange]^-[LanguageTagChange],[SetLanguageForName],[DatatypeOrLanguageTagChange])](https://yuml.me/diagram/nofunky;dir:TB/class/[SetLanguageForName]uses%20-.->[LanguageTagChange&#124;old_value:language_tag%20%3F;new_value:language_tag%20%3F],[DatatypeOrLanguageTagChange]^-[LanguageTagChange],[SetLanguageForName],[DatatypeOrLanguageTagChange])

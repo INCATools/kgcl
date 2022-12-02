@@ -4,7 +4,7 @@
 
 
 
-URI: [kgcl:owl_type_enum](http://w3id.org/kgcl/owl_type_enum)
+URI: [kgcl:owl_type_enum](http://w3id.org/kgcl_schema/owl_type_enum)
 
 
 ## Other properties

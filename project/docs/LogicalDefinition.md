@@ -4,7 +4,7 @@
 
 
 
-URI: [kgcl:LogicalDefinition](http://w3id.org/kgcl/LogicalDefinition)
+URI: [kgcl:LogicalDefinition](http://w3id.org/kgcl_schema/LogicalDefinition)
 
 
 [![img](https://yuml.me/diagram/nofunky;dir:TB/class/[OntologyElement],[OntologyElement]^-[LogicalDefinition])](https://yuml.me/diagram/nofunky;dir:TB/class/[OntologyElement],[OntologyElement]^-[LogicalDefinition])

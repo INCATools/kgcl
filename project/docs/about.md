@@ -4,7 +4,7 @@
 
 The 'focus' entity on which the change operates
 
-URI: [kgcl:about](http://w3id.org/kgcl/about)
+URI: [kgcl:about](http://w3id.org/kgcl_schema/about)
 
 
 ## Domain and Range

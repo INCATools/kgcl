@@ -4,7 +4,7 @@
 
 
 
-URI: [kgcl:agent_set](http://w3id.org/kgcl/agent_set)
+URI: [kgcl:agent_set](http://w3id.org/kgcl_schema/agent_set)
 
 
 ## Domain and Range

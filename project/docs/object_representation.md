@@ -4,7 +4,7 @@
 
 
 
-URI: [kgcl:object_representation](http://w3id.org/kgcl/object_representation)
+URI: [kgcl:object_representation](http://w3id.org/kgcl_schema/object_representation)
 
 
 ## Domain and Range

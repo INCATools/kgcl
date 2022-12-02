@@ -4,7 +4,7 @@
 
 The subclass of a subsumption axiom
 
-URI: [kgcl:subclass](http://w3id.org/kgcl/subclass)
+URI: [kgcl:subclass](http://w3id.org/kgcl_schema/subclass)
 
 
 ## Domain and Range

@@ -4,7 +4,7 @@
 
 The secondary entity on which the change operates
 
-URI: [kgcl:target](http://w3id.org/kgcl/target)
+URI: [kgcl:target](http://w3id.org/kgcl_schema/target)
 
 
 ## Domain and Range

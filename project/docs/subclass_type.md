@@ -1,10 +1,10 @@
 
-# Slot: subclass type
+# Slot: ~~subclass type~~ _(deprecated)_
 
 
 The type of a subclass
 
-URI: [kgcl:subclass_type](http://w3id.org/kgcl/subclass_type)
+URI: [kgcl:subclass_type](http://w3id.org/kgcl_schema/subclass_type)
 
 
 ## Domain and Range

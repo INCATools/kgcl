@@ -79,6 +79,7 @@ CREATE TABLE session (
 
 CREATE TABLE add_node_to_subset (
 	id TEXT NOT NULL, 
+	type TEXT, 
 	was_generated_by TEXT, 
 	see_also TEXT, 
 	pull_request TEXT, 
@@ -115,6 +116,7 @@ CREATE TABLE annotation (
 
 CREATE TABLE class_creation (
 	id TEXT NOT NULL, 
+	type TEXT, 
 	was_generated_by TEXT, 
 	see_also TEXT, 
 	pull_request TEXT, 
@@ -162,6 +164,7 @@ CREATE TABLE edge (
 
 CREATE TABLE edge_creation (
 	id TEXT NOT NULL, 
+	type TEXT, 
 	was_generated_by TEXT, 
 	see_also TEXT, 
 	pull_request TEXT, 
@@ -197,6 +200,7 @@ CREATE TABLE edge_creation (
 
 CREATE TABLE edge_deletion (
 	id TEXT NOT NULL, 
+	type TEXT, 
 	was_generated_by TEXT, 
 	see_also TEXT, 
 	pull_request TEXT, 
@@ -232,6 +236,7 @@ CREATE TABLE edge_deletion (
 
 CREATE TABLE edge_logical_interpretation_change (
 	id TEXT NOT NULL, 
+	type TEXT, 
 	was_generated_by TEXT, 
 	see_also TEXT, 
 	pull_request TEXT, 
@@ -259,6 +264,7 @@ CREATE TABLE edge_logical_interpretation_change (
 
 CREATE TABLE edge_obsoletion (
 	id TEXT NOT NULL, 
+	type TEXT, 
 	was_generated_by TEXT, 
 	see_also TEXT, 
 	pull_request TEXT, 
@@ -293,6 +299,7 @@ CREATE TABLE edge_obsoletion (
 
 CREATE TABLE edge_rewiring (
 	id TEXT NOT NULL, 
+	type TEXT, 
 	was_generated_by TEXT, 
 	see_also TEXT, 
 	pull_request TEXT, 
@@ -320,6 +327,7 @@ CREATE TABLE edge_rewiring (
 
 CREATE TABLE logical_axiom_change (
 	id TEXT NOT NULL, 
+	type TEXT, 
 	was_generated_by TEXT, 
 	see_also TEXT, 
 	pull_request TEXT, 
@@ -341,6 +349,7 @@ CREATE TABLE logical_axiom_change (
 
 CREATE TABLE mapping_creation (
 	id TEXT NOT NULL, 
+	type TEXT, 
 	was_generated_by TEXT, 
 	see_also TEXT, 
 	pull_request TEXT, 
@@ -376,6 +385,7 @@ CREATE TABLE mapping_creation (
 
 CREATE TABLE multi_node_obsoletion (
 	id TEXT NOT NULL, 
+	type TEXT, 
 	was_generated_by TEXT, 
 	see_also TEXT, 
 	pull_request TEXT, 
@@ -390,6 +400,7 @@ CREATE TABLE multi_node_obsoletion (
 
 CREATE TABLE new_synonym (
 	id TEXT NOT NULL, 
+	type TEXT, 
 	was_generated_by TEXT, 
 	see_also TEXT, 
 	pull_request TEXT, 
@@ -416,6 +427,7 @@ CREATE TABLE new_synonym (
 
 CREATE TABLE new_text_definition (
 	id TEXT NOT NULL, 
+	type TEXT, 
 	was_generated_by TEXT, 
 	see_also TEXT, 
 	pull_request TEXT, 
@@ -441,6 +453,7 @@ CREATE TABLE new_text_definition (
 
 CREATE TABLE node_annotation_change (
 	id TEXT NOT NULL, 
+	type TEXT, 
 	was_generated_by TEXT, 
 	see_also TEXT, 
 	pull_request TEXT, 
@@ -468,6 +481,7 @@ CREATE TABLE node_annotation_change (
 
 CREATE TABLE node_annotation_replacement (
 	id TEXT NOT NULL, 
+	type TEXT, 
 	was_generated_by TEXT, 
 	see_also TEXT, 
 	pull_request TEXT, 
@@ -495,6 +509,7 @@ CREATE TABLE node_annotation_replacement (
 
 CREATE TABLE node_creation (
 	id TEXT NOT NULL, 
+	type TEXT, 
 	was_generated_by TEXT, 
 	see_also TEXT, 
 	pull_request TEXT, 
@@ -526,6 +541,7 @@ CREATE TABLE node_creation (
 
 CREATE TABLE node_deepening (
 	id TEXT NOT NULL, 
+	type TEXT, 
 	was_generated_by TEXT, 
 	see_also TEXT, 
 	pull_request TEXT, 
@@ -556,6 +572,7 @@ CREATE TABLE node_deepening (
 
 CREATE TABLE node_deletion (
 	id TEXT NOT NULL, 
+	type TEXT, 
 	was_generated_by TEXT, 
 	see_also TEXT, 
 	pull_request TEXT, 
@@ -582,6 +599,7 @@ CREATE TABLE node_deletion (
 
 CREATE TABLE node_direct_merge (
 	id TEXT NOT NULL, 
+	type TEXT, 
 	was_generated_by TEXT, 
 	see_also TEXT, 
 	pull_request TEXT, 
@@ -612,6 +630,7 @@ CREATE TABLE node_direct_merge (
 
 CREATE TABLE node_move (
 	id TEXT NOT NULL, 
+	type TEXT, 
 	was_generated_by TEXT, 
 	see_also TEXT, 
 	pull_request TEXT, 
@@ -642,6 +661,7 @@ CREATE TABLE node_move (
 
 CREATE TABLE node_obsoletion_with_direct_replacement (
 	id TEXT NOT NULL, 
+	type TEXT, 
 	was_generated_by TEXT, 
 	see_also TEXT, 
 	pull_request TEXT, 
@@ -672,6 +692,7 @@ CREATE TABLE node_obsoletion_with_direct_replacement (
 
 CREATE TABLE node_obsoletion_with_no_direct_replacement (
 	id TEXT NOT NULL, 
+	type TEXT, 
 	was_generated_by TEXT, 
 	see_also TEXT, 
 	pull_request TEXT, 
@@ -702,6 +723,7 @@ CREATE TABLE node_obsoletion_with_no_direct_replacement (
 
 CREATE TABLE node_rename (
 	id TEXT NOT NULL, 
+	type TEXT, 
 	was_generated_by TEXT, 
 	see_also TEXT, 
 	pull_request TEXT, 
@@ -729,6 +751,7 @@ CREATE TABLE node_rename (
 
 CREATE TABLE node_shallowing (
 	id TEXT NOT NULL, 
+	type TEXT, 
 	was_generated_by TEXT, 
 	see_also TEXT, 
 	pull_request TEXT, 
@@ -759,6 +782,7 @@ CREATE TABLE node_shallowing (
 
 CREATE TABLE node_synonym_change (
 	id TEXT NOT NULL, 
+	type TEXT, 
 	was_generated_by TEXT, 
 	see_also TEXT, 
 	pull_request TEXT, 
@@ -784,6 +808,7 @@ CREATE TABLE node_synonym_change (
 
 CREATE TABLE node_unobsoletion (
 	id TEXT NOT NULL, 
+	type TEXT, 
 	was_generated_by TEXT, 
 	see_also TEXT, 
 	pull_request TEXT, 
@@ -814,6 +839,7 @@ CREATE TABLE node_unobsoletion (
 
 CREATE TABLE place_under (
 	id TEXT NOT NULL, 
+	type TEXT, 
 	was_generated_by TEXT, 
 	see_also TEXT, 
 	pull_request TEXT, 
@@ -849,6 +875,7 @@ CREATE TABLE place_under (
 
 CREATE TABLE predicate_change (
 	id TEXT NOT NULL, 
+	type TEXT, 
 	was_generated_by TEXT, 
 	see_also TEXT, 
 	pull_request TEXT, 
@@ -884,6 +911,7 @@ CREATE TABLE property_value (
 
 CREATE TABLE remove_synonym (
 	id TEXT NOT NULL, 
+	type TEXT, 
 	was_generated_by TEXT, 
 	see_also TEXT, 
 	pull_request TEXT, 
@@ -909,6 +937,7 @@ CREATE TABLE remove_synonym (
 
 CREATE TABLE remove_text_definition (
 	id TEXT NOT NULL, 
+	type TEXT, 
 	was_generated_by TEXT, 
 	see_also TEXT, 
 	pull_request TEXT, 
@@ -934,6 +963,7 @@ CREATE TABLE remove_text_definition (
 
 CREATE TABLE remove_under (
 	id TEXT NOT NULL, 
+	type TEXT, 
 	was_generated_by TEXT, 
 	see_also TEXT, 
 	pull_request TEXT, 
@@ -969,6 +999,7 @@ CREATE TABLE remove_under (
 
 CREATE TABLE removed_node_from_subset (
 	id TEXT NOT NULL, 
+	type TEXT, 
 	was_generated_by TEXT, 
 	see_also TEXT, 
 	pull_request TEXT, 
@@ -997,6 +1028,7 @@ CREATE TABLE removed_node_from_subset (
 
 CREATE TABLE set_language_for_name (
 	id TEXT NOT NULL, 
+	type TEXT, 
 	was_generated_by TEXT, 
 	see_also TEXT, 
 	pull_request TEXT, 
@@ -1023,6 +1055,7 @@ CREATE TABLE set_language_for_name (
 
 CREATE TABLE synonym_predicate_change (
 	id TEXT NOT NULL, 
+	type TEXT, 
 	was_generated_by TEXT, 
 	see_also TEXT, 
 	pull_request TEXT, 
@@ -1049,6 +1082,7 @@ CREATE TABLE synonym_predicate_change (
 
 CREATE TABLE synonym_replacement (
 	id TEXT NOT NULL, 
+	type TEXT, 
 	was_generated_by TEXT, 
 	see_also TEXT, 
 	pull_request TEXT, 
@@ -1075,6 +1109,7 @@ CREATE TABLE synonym_replacement (
 
 CREATE TABLE text_definition_replacement (
 	id TEXT NOT NULL, 
+	type TEXT, 
 	was_generated_by TEXT, 
 	see_also TEXT, 
 	pull_request TEXT, 
@@ -1101,6 +1136,7 @@ CREATE TABLE text_definition_replacement (
 
 CREATE TABLE "transaction" (
 	id TEXT NOT NULL, 
+	type TEXT, 
 	was_generated_by TEXT, 
 	see_also TEXT, 
 	pull_request TEXT, 
@@ -1114,6 +1150,7 @@ CREATE TABLE "transaction" (
 
 CREATE TABLE name_becomes_synonym (
 	id TEXT NOT NULL, 
+	type TEXT, 
 	was_generated_by TEXT, 
 	see_also TEXT, 
 	pull_request TEXT, 
@@ -1144,6 +1181,7 @@ CREATE TABLE name_becomes_synonym (
 
 CREATE TABLE node_obsoletion (
 	id TEXT NOT NULL, 
+	type TEXT, 
 	was_generated_by TEXT, 
 	see_also TEXT, 
 	pull_request TEXT, 

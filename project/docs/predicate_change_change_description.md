@@ -4,7 +4,7 @@
 
 A string serialization of the change. This should be both human-readable, and parseable.
 
-URI: [kgcl:predicate_change_change_description](http://w3id.org/kgcl/predicate_change_change_description)
+URI: [kgcl:predicate_change_change_description](http://w3id.org/kgcl_schema/predicate_change_change_description)
 
 
 ## Domain and Range

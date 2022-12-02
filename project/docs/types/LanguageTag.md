@@ -4,7 +4,7 @@
 
 
 
-URI: [basics:LanguageTag](https://w3id.org/kgcl/basics/LanguageTag)
+URI: [basics:LanguageTag](https://w3id.org/kgcl_schema/basics/LanguageTag)
 
 |  |  |  |
 | --- | --- | --- |

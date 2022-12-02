@@ -4,7 +4,7 @@
 
 An obsoletion replacement where it is NOT valid to automatically update annotations/edges pointing at the node with its direct replacement
 
-URI: [kgcl:has_nondirect_replacement](http://w3id.org/kgcl/has_nondirect_replacement)
+URI: [kgcl:has_nondirect_replacement](http://w3id.org/kgcl_schema/has_nondirect_replacement)
 
 
 ## Domain and Range

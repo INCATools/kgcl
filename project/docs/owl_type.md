@@ -4,7 +4,7 @@
 
 
 
-URI: [kgcl:owl_type](http://w3id.org/kgcl/owl_type)
+URI: [kgcl:owl_type](http://w3id.org/kgcl_schema/owl_type)
 
 
 ## Domain and Range

@@ -1,10 +1,10 @@
 
-# Slot: old value type
+# Slot: ~~old value type~~ _(deprecated)_
 
 
 The type (IRI or Literal) of an old value
 
-URI: [kgcl:old_value_type](http://w3id.org/kgcl/old_value_type)
+URI: [kgcl:old_value_type](http://w3id.org/kgcl_schema/old_value_type)
 
 
 ## Domain and Range

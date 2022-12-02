@@ -4,7 +4,7 @@
 
 Creation of an element.
 
-URI: [kgcl:Creation](http://w3id.org/kgcl/Creation)
+URI: [kgcl:Creation](http://w3id.org/kgcl_schema/Creation)
 
 
 [![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Deletion],[Deletion]<has%20undo%200..1-++[Creation],[NodeCreation]uses%20-.->[Creation],[MappingCreation]uses%20-.->[Creation],[EdgeCreation]uses%20-.->[Creation],[ChangeMixin]^-[Creation],[NodeCreation],[MappingCreation],[EdgeCreation],[ChangeMixin])](https://yuml.me/diagram/nofunky;dir:TB/class/[Deletion],[Deletion]<has%20undo%200..1-++[Creation],[NodeCreation]uses%20-.->[Creation],[MappingCreation]uses%20-.->[Creation],[EdgeCreation]uses%20-.->[Creation],[ChangeMixin]^-[Creation],[NodeCreation],[MappingCreation],[EdgeCreation],[ChangeMixin])

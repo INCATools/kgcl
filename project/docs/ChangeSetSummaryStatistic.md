@@ -4,7 +4,7 @@
 
 A summary statistic for a set of changes of the same type, grouped by zero or more node properties
 
-URI: [kgcl:ChangeSetSummaryStatistic](http://w3id.org/kgcl/ChangeSetSummaryStatistic)
+URI: [kgcl:ChangeSetSummaryStatistic](http://w3id.org/kgcl_schema/ChangeSetSummaryStatistic)
 
 
 [![img](https://yuml.me/diagram/nofunky;dir:TB/class/[PropertyValue],[PropertyValue]<property%20value%20set%200..*-++[ChangeSetSummaryStatistic&#124;change_type:change_class_type%20%3F;count:integer%20%3F])](https://yuml.me/diagram/nofunky;dir:TB/class/[PropertyValue],[PropertyValue]<property%20value%20set%200..*-++[ChangeSetSummaryStatistic&#124;change_type:change_class_type%20%3F;count:integer%20%3F])

@@ -1,10 +1,10 @@
 
-# Slot: annotation property type
+# Slot: ~~annotation property type~~ _(deprecated)_
 
 
 The type of a property (URI, CURIE, label)
 
-URI: [kgcl:annotation_property_type](http://w3id.org/kgcl/annotation_property_type)
+URI: [kgcl:annotation_property_type](http://w3id.org/kgcl_schema/annotation_property_type)
 
 
 ## Domain and Range

@@ -4,7 +4,7 @@
 
 This corresponds to predicate_id in SSSOM. The value of this is typically a predicate from SKOS
 
-URI: [kgcl:mapping_creation_predicate](http://w3id.org/kgcl/mapping_creation_predicate)
+URI: [kgcl:mapping_creation_predicate](http://w3id.org/kgcl_schema/mapping_creation_predicate)
 
 
 ## Domain and Range

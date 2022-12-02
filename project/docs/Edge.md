@@ -18,7 +18,7 @@ For example:
 
 Note that not all axioms are intended to map to edges. Axioms/triples where the object is a literal would be represented as node properties. Complex OWL axioms involving nesting would have their own dedicated construct, or may be represented generically. These are out of scope for the current version of KGCL
 
-URI: [kgcl:Edge](http://w3id.org/kgcl/Edge)
+URI: [kgcl:Edge](http://w3id.org/kgcl_schema/Edge)
 
 
 [![img](https://yuml.me/diagram/nofunky;dir:TB/class/[OntologyElement],[Node],[Annotation]<annotation%20set%200..1-++[Edge&#124;subject_representation:string%20%3F;predicate_representation:string%20%3F;object_representation:string%20%3F],[Node]<object%200..1-%20[Edge],[Node]<predicate%200..1-%20[Edge],[Node]<subject%200..1-%20[Edge],[EdgeChange]++-%20about%20edge%200..1>[Edge],[OntologyElement]^-[Edge],[EdgeChange],[Annotation])](https://yuml.me/diagram/nofunky;dir:TB/class/[OntologyElement],[Node],[Annotation]<annotation%20set%200..1-++[Edge&#124;subject_representation:string%20%3F;predicate_representation:string%20%3F;object_representation:string%20%3F],[Node]<object%200..1-%20[Edge],[Node]<predicate%200..1-%20[Edge],[Node]<subject%200..1-%20[Edge],[EdgeChange]++-%20about%20edge%200..1>[Edge],[OntologyElement]^-[Edge],[EdgeChange],[Annotation])

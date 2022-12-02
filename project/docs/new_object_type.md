@@ -1,10 +1,10 @@
 
-# Slot: new object type
+# Slot: ~~new object type~~ _(deprecated)_
 
 
 The type (IRI or Literal) of a new object
 
-URI: [kgcl:new_object_type](http://w3id.org/kgcl/new_object_type)
+URI: [kgcl:new_object_type](http://w3id.org/kgcl_schema/new_object_type)
 
 
 ## Domain and Range

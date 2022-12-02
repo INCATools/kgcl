@@ -4,7 +4,7 @@
 
 An annotation property
 
-URI: [kgcl:annotation_property](http://w3id.org/kgcl/annotation_property)
+URI: [kgcl:annotation_property](http://w3id.org/kgcl_schema/annotation_property)
 
 
 ## Domain and Range

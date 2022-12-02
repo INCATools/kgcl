@@ -4,7 +4,7 @@
 
 A change that reverses this change
 
-URI: [kgcl:obsoletion_has_undo](http://w3id.org/kgcl/obsoletion_has_undo)
+URI: [kgcl:obsoletion_has_undo](http://w3id.org/kgcl_schema/obsoletion_has_undo)
 
 
 ## Domain and Range

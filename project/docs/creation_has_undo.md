@@ -4,7 +4,7 @@
 
 A change that reverses this change
 
-URI: [kgcl:creation_has_undo](http://w3id.org/kgcl/creation_has_undo)
+URI: [kgcl:creation_has_undo](http://w3id.org/kgcl_schema/creation_has_undo)
 
 
 ## Domain and Range

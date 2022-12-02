@@ -4,7 +4,7 @@
 
 
 
-URI: [kgcl:annotation_set](http://w3id.org/kgcl/annotation_set)
+URI: [kgcl:annotation_set](http://w3id.org/kgcl_schema/annotation_set)
 
 
 ## Domain and Range

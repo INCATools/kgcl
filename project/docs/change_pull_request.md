@@ -4,7 +4,7 @@
 
 
 
-URI: [kgcl:change_pull_request](http://w3id.org/kgcl/change_pull_request)
+URI: [kgcl:change_pull_request](http://w3id.org/kgcl_schema/change_pull_request)
 
 
 ## Domain and Range

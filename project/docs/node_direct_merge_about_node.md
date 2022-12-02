@@ -4,7 +4,7 @@
 
 
 
-URI: [kgcl:node_direct_merge_about_node](http://w3id.org/kgcl/node_direct_merge_about_node)
+URI: [kgcl:node_direct_merge_about_node](http://w3id.org/kgcl_schema/node_direct_merge_about_node)
 
 
 ## Domain and Range

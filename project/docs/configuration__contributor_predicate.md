@@ -4,7 +4,7 @@
 
 
 
-URI: [kgcl:configuration__contributor_predicate](http://w3id.org/kgcl/configuration__contributor_predicate)
+URI: [kgcl:configuration__contributor_predicate](http://w3id.org/kgcl_schema/configuration__contributor_predicate)
 
 
 ## Domain and Range

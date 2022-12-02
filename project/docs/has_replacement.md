@@ -4,7 +4,7 @@
 
 A single node obsoletion event may be accompanied by one or more suggested replacement nodes
 
-URI: [kgcl:has_replacement](http://w3id.org/kgcl/has_replacement)
+URI: [kgcl:has_replacement](http://w3id.org/kgcl_schema/has_replacement)
 
 
 ## Domain and Range

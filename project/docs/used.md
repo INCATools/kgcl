@@ -4,7 +4,7 @@
 
 
 
-URI: [kgcl:used](http://w3id.org/kgcl/used)
+URI: [kgcl:used](http://w3id.org/kgcl_schema/used)
 
 
 ## Domain and Range

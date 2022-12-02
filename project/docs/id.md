@@ -4,7 +4,7 @@
 
 
 
-URI: [kgcl:id](http://w3id.org/kgcl/id)
+URI: [kgcl:id](http://w3id.org/kgcl_schema/id)
 
 
 ## Domain and Range
