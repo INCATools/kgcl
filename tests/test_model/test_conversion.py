@@ -56,5 +56,6 @@ class ConversionTestSuite(unittest.TestCase):
         with open(os.path.join(OUTPUT_DIR, "test.jsonld"), "w") as stream:
             stream.write(to_jsonld(session))
         with open(os.path.join(OUTPUT_DIR, "test.rdf"), "w") as stream:
-            stream.write(to_rdf(session, {'uuid': 'http://example.org/uuid/'}))
+            stream.write(to_rdf(session, {'ANAT': 'http://example.org/ANAT/',
+                                          'uuid': 'http://example.org/uuid/'}))
 

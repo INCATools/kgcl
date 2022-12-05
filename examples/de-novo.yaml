@@ -2,7 +2,7 @@
 ## we include a type field for all change objects, so the correct class can be instantiated
 activity_set:
 - {id: uuid:876aac6a6ef6, description: "my sane edits", was_associated_with: "https://orcid.org/0000-0002-6601-2165"}
-- {id: uuid:e887d3aac33f, description: "deliberate mistakes", was_associated_with: "OntologicalAnarchist"}
+- {id: uuid:e887d3aac33f, description: "deliberate mistakes", was_associated_with: "uuid:1234abcd"}
 change_set:
 - {type: ClassCreation, node_id: ANAT:BodyPart, name: "body part"}
 - {type: ClassCreation, node_id: ANAT:Limb, name: "limb"}  ## TODO: decide whether to use node_id or about
