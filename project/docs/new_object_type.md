@@ -1,5 +1,5 @@
 
-# Slot: new object type
+# Slot: ~~new object type~~ _(deprecated)_
 
 
 The type (IRI or Literal) of a new object

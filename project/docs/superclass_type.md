@@ -1,5 +1,5 @@
 
-# Slot: superclass type
+# Slot: ~~superclass type~~ _(deprecated)_
 
 
 The type of a superclass

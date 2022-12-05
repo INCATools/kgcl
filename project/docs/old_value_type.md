@@ -1,5 +1,5 @@
 
-# Slot: old value type
+# Slot: ~~old value type~~ _(deprecated)_
 
 
 The type (IRI or Literal) of an old value

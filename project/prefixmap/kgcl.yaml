@@ -2,7 +2,7 @@
    "IAO": "http://purl.obolibrary.org/obo/IAO_",
    "basics": "https://w3id.org/kgcl_schema/basics/",
    "dcterms": "http://purl.org/dc/terms/",
-   "kgcl": "http://w3id.org/kgcl_schema/",
+   "kgcl": "http://w3id.org/kgcl/",
    "linkml": "https://w3id.org/linkml/",
    "oio": "http://www.geneontology.org/formats/oboInOwl#",
    "om": "http://w3id.org/kgcl_schema/om/",
@@ -10,6 +10,7 @@
    "prov": "http://www.w3.org/ns/prov#",
    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+   "xml": "http://www.w3.org/XML/1998/namespace#",
    "Activity": {
       "@id": "prov:Activity"
    },
