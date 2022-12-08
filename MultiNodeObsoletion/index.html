@@ -239,17 +239,78 @@
 </li>
 </ul>
 <h2 id="slots">Slots</h2>
-<p>| Name | Cardinality and Range | Description | Inheritance |
-| ---  | --- | --- | --- || <a href="../see_also/">see_also</a> | 0..1 <br/> NONE |  | <a href="../Change/">Change</a> |
-| <a href="../has_undo/">has_undo</a> | 0..1 <br/> <a href="../Change/">Change</a> | A change that reverses this change | <a href="../Change/">Change</a> |
-| <a href="../change_date/">change_date</a> | 0..1 <br/> NONE |  | <a href="../Change/">Change</a> |
-| <a href="../type/">type</a> | 0..1 <br/> NONE |  | <a href="../Change/">Change</a> |
-| <a href="../was_generated_by/">was_generated_by</a> | 0..1 <br/> <a href="../Activity/">Activity</a> |  | <a href="../Change/">Change</a> |
-| <a href="../contributor/">contributor</a> | 0..1 <br/> NONE |  | <a href="../Change/">Change</a> |
-| <a href="../creator/">creator</a> | 0..1 <br/> NONE |  | <a href="../Change/">Change</a> |
-| <a href="../pull_request/">pull_request</a> | 0..1 <br/> NONE |  | <a href="../Change/">Change</a> |
-| <a href="../id/">id</a> | 1..1 <br/> NONE |  | <a href="../Change/">Change</a> |
-| <a href="../change_set/">change_set</a> | 0..* <br/> <a href="../Change/">Change</a> | A collection of changes | <a href="../ComplexChange/">ComplexChange</a> |</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Cardinality and Range</th>
+<th>Description</th>
+<th>Inheritance</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../contributor/">contributor</a></td>
+<td>0..1 <br/> NONE</td>
+<td></td>
+<td><a href="../Change/">Change</a></td>
+</tr>
+<tr>
+<td><a href="../has_undo/">has_undo</a></td>
+<td>0..1 <br/> <a href="../Change/">Change</a></td>
+<td>A change that reverses this change</td>
+<td><a href="../Change/">Change</a></td>
+</tr>
+<tr>
+<td><a href="../pull_request/">pull_request</a></td>
+<td>0..1 <br/> NONE</td>
+<td></td>
+<td><a href="../Change/">Change</a></td>
+</tr>
+<tr>
+<td><a href="../id/">id</a></td>
+<td>1..1 <br/> NONE</td>
+<td></td>
+<td><a href="../Change/">Change</a></td>
+</tr>
+<tr>
+<td><a href="../change_date/">change_date</a></td>
+<td>0..1 <br/> NONE</td>
+<td></td>
+<td><a href="../Change/">Change</a></td>
+</tr>
+<tr>
+<td><a href="../type/">type</a></td>
+<td>0..1 <br/> NONE</td>
+<td></td>
+<td><a href="../Change/">Change</a></td>
+</tr>
+<tr>
+<td><a href="../creator/">creator</a></td>
+<td>0..1 <br/> NONE</td>
+<td></td>
+<td><a href="../Change/">Change</a></td>
+</tr>
+<tr>
+<td><a href="../change_set/">change_set</a></td>
+<td>0..* <br/> <a href="../Change/">Change</a></td>
+<td>A collection of changes</td>
+<td><a href="../ComplexChange/">ComplexChange</a></td>
+</tr>
+<tr>
+<td><a href="../see_also/">see_also</a></td>
+<td>0..1 <br/> NONE</td>
+<td></td>
+<td><a href="../Change/">Change</a></td>
+</tr>
+<tr>
+<td><a href="../was_generated_by/">was_generated_by</a></td>
+<td>0..1 <br/> <a href="../Activity/">Activity</a></td>
+<td></td>
+<td><a href="../Change/">Change</a></td>
+</tr>
+</tbody>
+</table>
 <h2 id="aliases">Aliases</h2>
 <ul>
 <li>multi node deprecation</li>
