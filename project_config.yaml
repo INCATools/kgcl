@@ -1,0 +1,5 @@
+generator_args:
+  owl:
+      metaclasses: false
+      type_objects: false
+    

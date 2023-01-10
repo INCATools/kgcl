@@ -46,7 +46,7 @@ deploy: all mkd-gh-deploy
 
 # generates all project files
 gen-project: $(PYMODEL)
-	$(RUN) gen-project -d $(DEST) $(SOURCE_SCHEMA_PATH) && mv $(DEST)/*.py $(PYMODEL)
+	$(RUN) gen-project -d $(DEST) $(SOURCE_SCHEMA_PATH) --config-file project_config.yaml  && mv $(DEST)/*.py $(PYMODEL) 
 
 src/kgcl/datamodel/%.py: src/kgcl/schema/%.yaml
 	$(RUN) gen-python $< > $@.tmp && mv $@.tmp $@
