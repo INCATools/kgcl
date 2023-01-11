@@ -81,5 +81,3 @@ class TestCases(unittest.TestCase):
         self.assertEqual(len(patches), len(session.change_set))
         out = result.stdout
         self.assertEqual(0, result.exit_code)
-            
-
