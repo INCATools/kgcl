@@ -1,0 +1,164 @@
+Test_0:
+  id: CHANGE:001
+  type: NodeRename
+  old_value: '''nuclear envelope'''
+  new_value: '''foo bar'''
+  about_node: GO:0005635
+  about_node_representation: curie
+  command_with_curie: rename GO:0005635 from 'nuclear envelope' to 'foo bar'
+  command_with_uri: rename http://purl.obolibrary.org/obo/GO_0005635 from 'nuclear
+    envelope' to 'foo bar'
+Test_1:
+  id: CHANGE:001
+  type: NodeRename
+  old_value: nucleus
+  new_value: bar
+  about_node: GO:0005634
+  about_node_representation: curie
+  command_with_curie: rename GO:0005634 from 'nucleus' to 'bar'
+  command_with_uri: rename http://purl.obolibrary.org/obo/GO_0005634 from 'nucleus'
+    to 'bar'
+Test_2:
+  id: CHANGE:001
+  type: NodeObsoletion
+  about_node: GO:0005634
+  about_node_representation: curie
+  command_with_curie: obsolete GO:0005634
+Test_3:
+  id: CHANGE:001
+  type: NodeObsoletionWithDirectReplacement
+  about_node: GO:0005634
+  about_node_representation: curie
+  has_direct_replacement: GO:999
+  command_with_curie: obsolete GO:0005634 with replacement GO:999
+Test_4:
+  id: CHANGE:001
+  type: NewSynonym
+  new_value: foo
+  about_node: GO:0005634
+  about_node_representation: curie
+  qualifier: exact
+  command_with_curie: create exact synonym 'foo' for GO:0005634
+  command_with_uri: create exact synonym 'foo' for http://purl.obolibrary.org/obo/GO_0005634
+Test_5:
+  id: CHANGE:001
+  type: NewSynonym
+  new_value: foo
+  about_node: GO:0005634
+  about_node_representation: curie
+  language: en
+  qualifier: broad
+  command_with_curie: create broad synonym 'foo'@en for GO:0005634
+  command_with_uri: create broad synonym 'foo'@en for http://purl.obolibrary.org/obo/GO_0005634
+Test_6:
+  id: CHANGE:001
+  type: ClassCreation
+  about_node_representation: curie
+  node_id: GO:9999999
+  command_with_curie: create GO:9999999
+  command_with_uri: create http://purl.obolibrary.org/obo/GO_9999999
+Test_7:
+  id: CHANGE:001
+  type: NodeCreation
+  about_node: GO:9999999
+  about_node_representation: curie
+  node_id: GO:9999999
+  name: '''foo'''
+  command_with_curie: create node GO:9999999 'foo'
+  command_with_uri: TODO
+Test_8:
+  id: CHANGE:001
+  type: EdgeCreation
+  object_type: curie
+  subject: GO:0005634
+  predicate: BFO:0000050
+  object: GO:0009411
+  subject_type: curie
+  predicate_type: curie
+  command_with_curie: create edge GO:0005634 BFO:0000050 GO:0009411
+  command_with_uri: create edge http://purl.obolibrary.org/obo/GO_0005634 http://purl.obolibrary.org/obo/BFO_0000050
+    http://purl.obolibrary.org/obo/GO_0009411
+Test_9:
+  id: CHANGE:001
+  type: PlaceUnder
+  object_type: curie
+  subject: GO:0005634
+  predicate: rdfs:subClassOf
+  object: GO:0009411
+  subject_type: curie
+  predicate_type: curie
+  command_with_curie: create edge GO:0005634 rdfs:subClassOf GO:0009411
+  command_with_uri: create edge http://purl.obolibrary.org/obo/GO_0005634 http://www.w3.org/2000/01/rdf-schema#subClassOf
+    http://purl.obolibrary.org/obo/GO_0009411
+Test_10:
+  id: CHANGE:001
+  type: PredicateChange
+  old_value: BFO:0000050
+  new_value: rdfs:subClassOf
+  old_value_type: curie
+  new_value_type: curie
+  about_edge:
+    subject: GO:0005635
+    predicate: BFO:0000050
+    object: GO:0005634
+    subject_representation: curie
+    predicate_representation: curie
+    object_representation: curie
+  command_with_curie: change relationship between GO:0005635 and GO:0005634 from BFO:0000050
+    to rdfs:subClassOf
+Test_11:
+  id: CHANGE:001
+  type: PredicateChange
+  old_value: rdfs:subClassOf
+  new_value: BFO:0000050
+  old_value_type: curie
+  new_value_type: curie
+  about_edge:
+    subject: GO:0005634
+    predicate: rdfs:subClassOf
+    object: GO:0043231
+    subject_representation: curie
+    predicate_representation: curie
+    object_representation: curie
+  command_with_curie: change relationship between GO:0005634 and GO:0043231 from rdfs:subClassOf
+    to BFO:0000050
+  command_with_uri: change relationship between http://purl.obolibrary.org/obo/GO_0005634
+    and http://purl.obolibrary.org/obo/GO_0043231 from http://www.w3.org/2000/01/rdf-schema#subClassOf
+    to http://purl.obolibrary.org/obo/BFO_0000050
+Test_12:
+  id: CHANGE:001
+  type: RemoveUnder
+  object_type: curie
+  subject: GO:0005634
+  predicate: rdfs:subClassOf
+  object: GO:0043231
+  subject_type: curie
+  predicate_type: curie
+  command_with_curie: delete edge GO:0005634 rdfs:subClassOf GO:0043231
+  command_with_uri: delete edge http://purl.obolibrary.org/obo/GO_0005634 http://www.w3.org/2000/01/rdf-schema#subClassOf
+    http://purl.obolibrary.org/obo/GO_0043231
+Test_13:
+  id: CHANGE:001
+  type: EdgeDeletion
+  object_type: curie
+  subject: GO:0005635
+  predicate: BFO:0000050
+  object: GO:0005634
+  subject_type: curie
+  predicate_type: curie
+  command_with_curie: delete edge GO:0005635 BFO:0000050 GO:0005634
+  command_with_uri: TODO
+Test_14:
+  id: CHANGE:001
+  type: NodeDeepening
+  old_value: GO:0043231
+  new_value: GO:0005634
+  about_edge:
+    subject: GO:0005739
+    object: GO:0043231
+    subject_representation: curie
+    object_representation: curie
+  old_object_type: curie
+  new_object_type: curie
+  command_with_curie: deepen GO:0005739 from GO:0043231 to GO:0005634
+  command_with_uri: TODO
