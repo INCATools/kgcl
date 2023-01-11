@@ -57,8 +57,8 @@ CASES: List[CASE] = [
         f"rename {NUCLEUS} from 'nucleus' to 'bar'",
         f"rename {NUCLEUS_URI} from 'nucleus' to 'bar'",
         NodeRename(id=UID,
-                   old_value="nucleus",
-                   new_value="bar",
+                   old_value="'nucleus'",
+                   new_value="'bar'",
                    about_node=NUCLEUS,
                    about_node_representation='curie'),
         None
