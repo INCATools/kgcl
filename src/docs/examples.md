@@ -1,7 +1,7 @@
 # KGCL Commands.
 
 ## Example: Rename node.
-Class: [`NodeRename`](https://w3id.org/kgcl/NodeRename):
+Class: [`NodeRename`](https://w3id.org/kgcl/NodeRename)
 Command: `rename GO:0005635 from 'nuclear envelope' to 'foo bar'`
 YAML:
 ```
@@ -13,7 +13,7 @@ about_node_representation: curie
 
 ```
 ## Example: Obsolete node.
-Class: [`NodeObsoletion`](https://w3id.org/kgcl/NodeObsoletion):
+Class: [`NodeObsoletion`](https://w3id.org/kgcl/NodeObsoletion)
 Command: `obsolete GO:0005634`
 YAML:
 ```
@@ -23,7 +23,7 @@ about_node_representation: curie
 
 ```
 ## Example: Replacement of node after obsoletion.
-Class: [`NodeObsoletionWithDirectReplacement`](https://w3id.org/kgcl/NodeObsoletionWithDirectReplacement):
+Class: [`NodeObsoletionWithDirectReplacement`](https://w3id.org/kgcl/NodeObsoletionWithDirectReplacement)
 Command: `obsolete GO:0005634 with replacement GO:999`
 YAML:
 ```
@@ -34,7 +34,7 @@ has_direct_replacement: GO:999
 
 ```
 ## Example: Addition of a new synonym.
-Class: [`NewSynonym`](https://w3id.org/kgcl/NewSynonym):
+Class: [`NewSynonym`](https://w3id.org/kgcl/NewSynonym)
 Command: `create exact synonym 'foo' for GO:0005634`
 YAML:
 ```
@@ -46,7 +46,7 @@ qualifier: exact
 
 ```
 ## Example: Creation of new class.
-Class: [`ClassCreation`](https://w3id.org/kgcl/ClassCreation):
+Class: [`ClassCreation`](https://w3id.org/kgcl/ClassCreation)
 Command: `create GO:9999999`
 YAML:
 ```
@@ -56,7 +56,7 @@ node_id: GO:9999999
 
 ```
 ## Example: Creation of new node.
-Class: [`NodeCreation`](https://w3id.org/kgcl/NodeCreation):
+Class: [`NodeCreation`](https://w3id.org/kgcl/NodeCreation)
 Command: `create node GO:9999999 'foo'`
 YAML:
 ```
@@ -68,7 +68,7 @@ name: '''foo'''
 
 ```
 ## Example: Creation of new edge.
-Class: [`EdgeCreation`](https://w3id.org/kgcl/EdgeCreation):
+Class: [`EdgeCreation`](https://w3id.org/kgcl/EdgeCreation)
 Command: `create edge GO:0005634 BFO:0000050 GO:0009411`
 YAML:
 ```
@@ -82,7 +82,7 @@ predicate_type: curie
 
 ```
 ## Example: Place node under another node.
-Class: [`PlaceUnder`](https://w3id.org/kgcl/PlaceUnder):
+Class: [`PlaceUnder`](https://w3id.org/kgcl/PlaceUnder)
 Command: `create edge GO:0005634 rdfs:subClassOf GO:0009411`
 YAML:
 ```
@@ -96,7 +96,7 @@ predicate_type: curie
 
 ```
 ## Example: Change predicate.
-Class: [`PredicateChange`](https://w3id.org/kgcl/PredicateChange):
+Class: [`PredicateChange`](https://w3id.org/kgcl/PredicateChange)
 Command: `change relationship between GO:0005635 and GO:0005634 from BFO:0000050 to rdfs:subClassOf`
 YAML:
 ```
@@ -115,7 +115,7 @@ about_edge:
 
 ```
 ## Example: Remove node from under another node.
-Class: [`RemoveUnder`](https://w3id.org/kgcl/RemoveUnder):
+Class: [`RemoveUnder`](https://w3id.org/kgcl/RemoveUnder)
 Command: `delete edge GO:0005634 rdfs:subClassOf GO:0043231`
 YAML:
 ```
@@ -129,7 +129,7 @@ predicate_type: curie
 
 ```
 ## Example: Deletion of an edge.
-Class: [`EdgeDeletion`](https://w3id.org/kgcl/EdgeDeletion):
+Class: [`EdgeDeletion`](https://w3id.org/kgcl/EdgeDeletion)
 Command: `delete edge GO:0005635 BFO:0000050 GO:0005634`
 YAML:
 ```
@@ -143,7 +143,7 @@ predicate_type: curie
 
 ```
 ## Example: Deepening of a node.
-Class: [`NodeDeepening`](https://w3id.org/kgcl/NodeDeepening):
+Class: [`NodeDeepening`](https://w3id.org/kgcl/NodeDeepening)
 Command: `deepen GO:0005739 from GO:0043231 to GO:0005634`
 YAML:
 ```
