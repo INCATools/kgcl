@@ -31,6 +31,22 @@ MD_OUT_FN = "examples.md"
 YAML_OUT_FN = "examples.yaml"
 YAML_OUT_PATH = SRC_DIR / "data/examples" / YAML_OUT_FN
 MD_OUT_PATH = SRC_DIR / "docs" / MD_OUT_FN
+W3ID = "https://w3id.org/kgcl/"
+CLASS_DESCRIPTION ={
+    "NodeObsoletionWithDirectReplacement": "Replacement of node after obsoletion.",
+    "NodeRename": "Rename node.",
+    "NodeObsoletion": "Obsolete node.",
+    "NewSynonym": "Addition of a new synonym.",
+    "ClassCreation": "Creation of new class.",
+    "PredicateChange": "Change predicate.",
+    "Change": "Change node.",
+    "NodeCreation": "Creation of new node.",
+    "EdgeCreation": "Creation of new edge.",
+    "PlaceUnder": "Place node under another node.",
+    "RemoveUnder": "Remove node from under another node.",
+    "EdgeDeletion": "Deletion of an edge.",
+    "NodeDeepening": "Deepening of a node.",
+}
 
 def export_yaml_and_md():
     yaml_dict = {}
@@ -45,12 +61,10 @@ def export_yaml_and_md():
 
         if type(obj).__name__ not in used_type:
             used_type[type(obj).__name__] = 1
-            md += f"## `{type(obj).__name__}`:\n"
-            md += f"\tCommand using CURIEs: `{command_curie}`\n"
-            if command_uri and command_uri != "TODO":
-                md += f"\tCommand using URIs: `{command_uri}`\n\n"
-            else:
-                md += "\n"
+            md += f"## Example: {CLASS_DESCRIPTION[type(obj).__name__]}\n"
+            md += f"### [`{type(obj).__name__}`]({W3ID}{type(obj).__name__}):\n"
+            md += f"\tCommand: `{command_curie}`\n"
+            md += f"```\n{yaml_dumper.dumps(obj)}\n```\n"
 
         yaml_dumper.dump(yaml_dict, YAML_OUT_PATH)
         with open(MD_OUT_PATH, "w") as md_dump:
