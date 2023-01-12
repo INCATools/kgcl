@@ -32,7 +32,7 @@ YAML_OUT_FN = "examples.yaml"
 YAML_OUT_PATH = SRC_DIR / "data/examples" / YAML_OUT_FN
 MD_OUT_PATH = SRC_DIR / "docs" / MD_OUT_FN
 W3ID = "https://w3id.org/kgcl/"
-CLASS_DESCRIPTION ={
+CLASS_DESCRIPTION = {
     "NodeObsoletionWithDirectReplacement": "Replacement of node after obsoletion.",
     "NodeRename": "Rename node.",
     "NodeObsoletion": "Obsolete node.",
@@ -48,12 +48,13 @@ CLASS_DESCRIPTION ={
     "NodeDeepening": "Deepening of a node.",
 }
 
+
 def export_yaml_and_md():
     yaml_dict = {}
     used_type = {}
     md = "# KGCL Commands.\n\n"
     # Dump YAML file with test information.
-    for idx, (command_curie, command_uri, obj, _) in enumerate(CASES):            
+    for idx, (command_curie, command_uri, obj, _) in enumerate(CASES):
         yaml_dict[f"Test_{idx}"] = obj.__dict__.copy()
         yaml_dict[f"Test_{idx}"]["type"] = type(obj).__name__
         yaml_dict[f"Test_{idx}"]["command_with_curie"] = command_curie
@@ -70,6 +71,8 @@ def export_yaml_and_md():
         yaml_dumper.dump(yaml_dict, YAML_OUT_PATH)
         with open(MD_OUT_PATH, "w") as md_dump:
             md_dump.write(md)
+
+
 class TestCases(unittest.TestCase):
     def setUp(self) -> None:
         runner = CliRunner(mix_stderr=False)
