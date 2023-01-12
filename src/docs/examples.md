@@ -4,8 +4,8 @@
 Class: [`NodeRename`](https://w3id.org/kgcl/NodeRename) </br>Command: `rename GO:0005635 from 'nuclear envelope' to 'foo bar'`</br>YAML:
 ```
 id: CHANGE:001
-old_value: '''nuclear envelope'''
-new_value: '''foo bar'''
+old_value: nuclear envelope
+new_value: foo bar
 about_node: GO:0005635
 about_node_representation: curie
 
@@ -52,7 +52,7 @@ id: CHANGE:001
 about_node: GO:9999999
 about_node_representation: curie
 node_id: GO:9999999
-name: '''foo'''
+name: foo
 
 ```
 ## Example: Creation of new edge.
