@@ -63,7 +63,7 @@ def export_yaml_and_md():
             used_type[type(obj).__name__] = 1
             md += f"## Example: {CLASS_DESCRIPTION[type(obj).__name__]}\n"
             md += f"### [`{type(obj).__name__}`]({W3ID}{type(obj).__name__}):\n"
-            md += f"\tCommand: `{command_curie}`\n"
+            md += f"Command: `{command_curie}`\n"
             md += f"```\n{yaml_dumper.dumps(obj)}\n```\n"
 
         yaml_dumper.dump(yaml_dict, YAML_OUT_PATH)
