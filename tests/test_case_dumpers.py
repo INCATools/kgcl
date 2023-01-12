@@ -64,10 +64,10 @@ def export_yaml_and_md():
             used_type[type(obj).__name__] = 1
             yaml_block = yaml_dumper.dumps(obj).replace("'", "")
             md += f"## Example: {CLASS_DESCRIPTION[type(obj).__name__]}\n"
-            md += f"Class: [`{type(obj).__name__}`]({W3ID}{type(obj).__name__}) </br>"
-            md += f"Command: `{command_curie}`</br>"
+            md += f"Class: [`{type(obj).__name__}`]({W3ID}{type(obj).__name__}) </br></br>"
+            md += f"Command: `{command_curie}`</br></br>"
             md += f"YAML:\n"
-            md += f"```\n{yaml_block}\n```\n"
+            md += f"```\n{yaml_block}\n```</br></br>"
 
         yaml_dumper.dump(yaml_dict, YAML_OUT_PATH)
         with open(MD_OUT_PATH, "w") as md_dump:
