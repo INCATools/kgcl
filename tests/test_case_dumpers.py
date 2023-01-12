@@ -67,7 +67,7 @@ def export_yaml_and_md():
             md += f"Class: [`{type(obj).__name__}`]({W3ID}{type(obj).__name__}) </br></br>"
             md += f"Command: `{command_curie}`</br></br>"
             md += f"YAML:\n"
-            md += f"```\n{yaml_block}\n```</br></br>"
+            md += f"```\n{yaml_block}\n```\n"
 
         yaml_dumper.dump(yaml_dict, YAML_OUT_PATH)
         with open(MD_OUT_PATH, "w") as md_dump:
