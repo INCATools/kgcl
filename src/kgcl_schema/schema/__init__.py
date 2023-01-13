@@ -5,5 +5,5 @@ PATH = Path(__file__).parent
 
 
 def get_schemaview() -> SchemaView:
-    schema_root = str(PATH / 'kgcl.yaml')
+    schema_root = str(PATH / "kgcl.yaml")
     return SchemaView(schema_root)

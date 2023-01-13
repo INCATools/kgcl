@@ -1,8 +1,8 @@
 # Auto generated from kgcl.yaml by pythongen.py version: 0.9.0
-# Generation date: 2022-12-02T07:39:37
+# Generation date: 2023-01-10T17:19:50
 # Schema: kgcl_schema
 #
-# id: https://w3id.org/kgcl_schema
+# id: https://w3id.org/kgcl
 # description: A data model for describing change operations at a high level on an ontology or ontology-like
 #              artefact, such as a Knowledge Graph. * [Browse
 #              Schema](https://cmungall.github.io/knowledge-graph-change-language/) *
@@ -49,7 +49,7 @@ dataclasses._init_fn = dataclasses_init_fn_with_kwargs
 IAO = CurieNamespace("IAO", "http://purl.obolibrary.org/obo/IAO_")
 BASICS = CurieNamespace("basics", "https://w3id.org/kgcl_schema/basics/")
 DCTERMS = CurieNamespace("dcterms", "http://purl.org/dc/terms/")
-KGCL = CurieNamespace("kgcl", "http://w3id.org/kgcl_schema/")
+KGCL = CurieNamespace("kgcl", "http://w3id.org/kgcl/")
 LINKML = CurieNamespace("linkml", "https://w3id.org/linkml/")
 OIO = CurieNamespace("oio", "http://www.geneontology.org/formats/oboInOwl#")
 OM = CurieNamespace("om", "http://w3id.org/kgcl_schema/om/")

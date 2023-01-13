@@ -15,5 +15,3 @@ class OntologyModelTestSuite(unittest.TestCase):
         c = ClassNode(id="X:1", owl_type=OwlTypeEnum.CLASS)
         c2 = roundtrip(c)
         self.assertEqual(c, c2)
-
-

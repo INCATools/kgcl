@@ -7,15 +7,28 @@ from typing import List
 
 import click
 from bioregistry import parse_iri, get_preferred_prefix, curie_to_str
-from kgcl_schema.datamodel.kgcl import (Change, ClassCreation, EdgeCreation,
-                                        EdgeDeletion, NewSynonym,
-                                        NodeAnnotationChange, NodeCreation,
-                                        NodeDeepening, NodeDeletion, NodeMove,
-                                        NodeObsoletion, NodeObsoletionWithDirectReplacement,
-                                        NodeRename, NodeShallowing, NodeUnobsoletion,
-                                        PlaceUnder, PredicateChange,
-                                        RemovedNodeFromSubset, RemoveUnder,
-                                        Session)
+from kgcl_schema.datamodel.kgcl import (
+    Change,
+    ClassCreation,
+    EdgeCreation,
+    EdgeDeletion,
+    NewSynonym,
+    NodeAnnotationChange,
+    NodeCreation,
+    NodeDeepening,
+    NodeDeletion,
+    NodeMove,
+    NodeObsoletion,
+    NodeObsoletionWithDirectReplacement,
+    NodeRename,
+    NodeShallowing,
+    NodeUnobsoletion,
+    PlaceUnder,
+    PredicateChange,
+    RemovedNodeFromSubset,
+    RemoveUnder,
+    Session,
+)
 from kgcl_schema.datamodel.ontology_model import Edge
 from kgcl_schema.utils import to_json, to_rdf, to_yaml
 from lark import Lark, Token
@@ -181,12 +194,12 @@ def parse_create(tree, id):
     language_token = extract(tree, "language")
 
     entity, representation = get_entity_representation(term_id_token)
-    
+
     return NodeCreation(
         id=id,
         about_node=entity,
         about_node_representation=representation,
-        node_id=entity, # was term_id_token
+        node_id=entity,  # was term_id_token
         name=label_token,
         language=language_token,
     )
@@ -461,9 +474,7 @@ def parse_obsolete(tree, id):
         )
     else:
         return NodeObsoletion(
-            id=id,
-            about_node=entity,
-            about_node_representation=representation
+            id=id, about_node=entity, about_node_representation=representation
         )
 
 
@@ -523,7 +534,10 @@ def get_entity_representation(entity):
     first_character = entity[0]
     last_character = entity[-1:]
     if first_character == "<" and last_character == ">":
-        return contract_uri(entity.replace("<", "").replace(">","")), "curie"  # removing brackets
+        return (
+            contract_uri(entity.replace("<", "").replace(">", "")),
+            "curie",
+        )  # removing brackets
     if first_character == "'" and last_character == "'" and entity[1] != "'":
         return entity[1:-1], "label"
     if first_character == '"' and last_character == '"':
@@ -537,7 +551,8 @@ def get_entity_representation(entity):
     return contract_uri(str(entity)), "curie"
     # return entity, "error"
 
-def contract_uri(uri_or_curie:str):
+
+def contract_uri(uri_or_curie: str):
     if uri_or_curie.startswith("http://") or uri_or_curie.startswith("https://"):
         pref, i = parse_iri(uri_or_curie)
         pref = get_preferred_prefix(pref)
@@ -546,16 +561,12 @@ def contract_uri(uri_or_curie:str):
     else:
         return uri_or_curie
 
+
 @click.command()
-@click.option("--output",
-              "-o",
-              type=click.File(mode='w'),
-              default=sys.stdout)
-@click.option("--output-type",
-              "-O",
-              help="format for output")
+@click.option("--output", "-o", type=click.File(mode="w"), default=sys.stdout)
+@click.option("--output-type", "-O", help="format for output")
 @click.option("-v", "--verbose", count=True)
-@click.argument('patches', nargs=-1)
+@click.argument("patches", nargs=-1)
 def cli(patches, verbose: int, output, output_type):
     """
     Parse a patch or patches specified in KGCL DSL
@@ -573,15 +584,14 @@ def cli(patches, verbose: int, output, output_type):
         logging.info(f"Patch: {patch}")
         changes += parse(patch)
     session = Session(change_set=changes)
-    if output_type is None or output_type == 'yaml':
+    if output_type is None or output_type == "yaml":
         output.write(to_yaml(session))
-    elif output_type == 'json':
+    elif output_type == "json":
         output.write(to_json(session))
-    elif output_type == 'rdf':
+    elif output_type == "rdf":
         output.write(to_rdf(session))
     else:
         raise NotImplementedError(output_type)
-
 
 
 if __name__ == "__main__":
