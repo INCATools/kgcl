@@ -243,31 +243,25 @@
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../contributor/">contributor</a></td>
-<td>0..1 <br/> NONE</td>
-<td></td>
-<td><a href="../Change/">Change</a></td>
-</tr>
-<tr>
-<td><a href="../has_undo/">has_undo</a></td>
-<td>0..1 <br/> <a href="../Change/">Change</a></td>
-<td>A change that reverses this change</td>
-<td><a href="../Change/">Change</a></td>
-</tr>
-<tr>
-<td><a href="../pull_request/">pull_request</a></td>
-<td>0..1 <br/> NONE</td>
-<td></td>
-<td><a href="../Change/">Change</a></td>
-</tr>
-<tr>
 <td><a href="../id/">id</a></td>
 <td>1..1 <br/> NONE</td>
 <td></td>
 <td><a href="../Change/">Change</a></td>
 </tr>
 <tr>
+<td><a href="../contributor/">contributor</a></td>
+<td>0..1 <br/> NONE</td>
+<td></td>
+<td><a href="../Change/">Change</a></td>
+</tr>
+<tr>
 <td><a href="../change_date/">change_date</a></td>
+<td>0..1 <br/> NONE</td>
+<td></td>
+<td><a href="../Change/">Change</a></td>
+</tr>
+<tr>
+<td><a href="../pull_request/">pull_request</a></td>
 <td>0..1 <br/> NONE</td>
 <td></td>
 <td><a href="../Change/">Change</a></td>
@@ -279,13 +273,19 @@
 <td><a href="../Change/">Change</a></td>
 </tr>
 <tr>
-<td><a href="../creator/">creator</a></td>
+<td><a href="../has_undo/">has_undo</a></td>
+<td>0..1 <br/> <a href="../Change/">Change</a></td>
+<td>A change that reverses this change</td>
+<td><a href="../Change/">Change</a></td>
+</tr>
+<tr>
+<td><a href="../see_also/">see_also</a></td>
 <td>0..1 <br/> NONE</td>
 <td></td>
 <td><a href="../Change/">Change</a></td>
 </tr>
 <tr>
-<td><a href="../see_also/">see_also</a></td>
+<td><a href="../creator/">creator</a></td>
 <td>0..1 <br/> NONE</td>
 <td></td>
 <td><a href="../Change/">Change</a></td>
