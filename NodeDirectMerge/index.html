@@ -127,6 +127,11 @@
         About
       </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../examples/">
+        Examples
+      </a>
+</li>
 </ul>
 </nav>
 </div>
@@ -269,25 +274,31 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../id/">id</a></td>
-<td>1..1 <br/> NONE</td>
+<td><a href="../was_generated_by/">was_generated_by</a></td>
+<td>0..1 <br/> <a href="../Activity/">Activity</a></td>
 <td></td>
 <td><a href="../Change/">Change</a></td>
 </tr>
 <tr>
-<td><a href="../contributor/">contributor</a></td>
+<td><a href="../old_datatype/">old_datatype</a></td>
 <td>0..1 <br/> NONE</td>
-<td></td>
-<td><a href="../Change/">Change</a></td>
-</tr>
-<tr>
-<td><a href="../new_value_type/">new_value_type</a></td>
-<td>0..1 <br/> NONE</td>
-<td>The type (IRI or Literal) of a new value</td>
+<td>The old datatype of a literal</td>
 <td><a href="../SimpleChange/">SimpleChange</a></td>
 </tr>
 <tr>
-<td><a href="../change_date/">change_date</a></td>
+<td><a href="../has_undo/">has_undo</a></td>
+<td>0..1 <br/> <a href="../Change/">Change</a></td>
+<td>A change that reverses this change</td>
+<td><a href="../Change/">Change</a></td>
+</tr>
+<tr>
+<td><a href="../creator/">creator</a></td>
+<td>0..1 <br/> NONE</td>
+<td></td>
+<td><a href="../Change/">Change</a></td>
+</tr>
+<tr>
+<td><a href="../see_also/">see_also</a></td>
 <td>0..1 <br/> NONE</td>
 <td></td>
 <td><a href="../Change/">Change</a></td>
@@ -299,74 +310,8 @@
 <td><a href="../NodeChange/">NodeChange</a></td>
 </tr>
 <tr>
-<td><a href="../new_datatype/">new_datatype</a></td>
-<td>0..1 <br/> NONE</td>
-<td>The new datatype of a literal</td>
-<td><a href="../SimpleChange/">SimpleChange</a></td>
-</tr>
-<tr>
 <td><a href="../type/">type</a></td>
 <td>0..1 <br/> NONE</td>
-<td></td>
-<td><a href="../Change/">Change</a></td>
-</tr>
-<tr>
-<td><a href="../old_language/">old_language</a></td>
-<td>0..1 <br/> NONE</td>
-<td>The old language tag of a literal</td>
-<td><a href="../SimpleChange/">SimpleChange</a></td>
-</tr>
-<tr>
-<td><a href="../new_language/">new_language</a></td>
-<td>0..1 <br/> NONE</td>
-<td>The new language tag of a literal</td>
-<td><a href="../SimpleChange/">SimpleChange</a></td>
-</tr>
-<tr>
-<td><a href="../has_direct_replacement/">has_direct_replacement</a></td>
-<td>0..1 <br/> <a href="../Node/">Node</a></td>
-<td>An obsoletion replacement where it IS valid to automatically update annotatio...</td>
-<td><a href="../NodeObsoletion/">NodeObsoletion</a></td>
-</tr>
-<tr>
-<td><a href="../pull_request/">pull_request</a></td>
-<td>0..1 <br/> NONE</td>
-<td></td>
-<td><a href="../Change/">Change</a></td>
-</tr>
-<tr>
-<td><a href="../has_undo/">has_undo</a></td>
-<td>0..1 <br/> <a href="../Change/">Change</a></td>
-<td>A change that reverses this change</td>
-<td><a href="../Change/">Change</a></td>
-</tr>
-<tr>
-<td><a href="../old_value_type/">old_value_type</a></td>
-<td>0..1 <br/> NONE</td>
-<td>The type (IRI or Literal) of an old value</td>
-<td><a href="../SimpleChange/">SimpleChange</a></td>
-</tr>
-<tr>
-<td><a href="../old_datatype/">old_datatype</a></td>
-<td>0..1 <br/> NONE</td>
-<td>The old datatype of a literal</td>
-<td><a href="../SimpleChange/">SimpleChange</a></td>
-</tr>
-<tr>
-<td><a href="../see_also/">see_also</a></td>
-<td>0..1 <br/> NONE</td>
-<td></td>
-<td><a href="../Change/">Change</a></td>
-</tr>
-<tr>
-<td><a href="../creator/">creator</a></td>
-<td>0..1 <br/> NONE</td>
-<td></td>
-<td><a href="../Change/">Change</a></td>
-</tr>
-<tr>
-<td><a href="../was_generated_by/">was_generated_by</a></td>
-<td>0..1 <br/> <a href="../Activity/">Activity</a></td>
 <td></td>
 <td><a href="../Change/">Change</a></td>
 </tr>
@@ -377,9 +322,51 @@
 <td><a href="../SimpleChange/">SimpleChange</a></td>
 </tr>
 <tr>
-<td><a href="../old_value/">old_value</a></td>
+<td><a href="../has_direct_replacement/">has_direct_replacement</a></td>
+<td>0..1 <br/> <a href="../Node/">Node</a></td>
+<td>An obsoletion replacement where it IS valid to automatically update annotatio...</td>
+<td><a href="../NodeObsoletion/">NodeObsoletion</a></td>
+</tr>
+<tr>
+<td><a href="../new_language/">new_language</a></td>
 <td>0..1 <br/> NONE</td>
-<td>The value of a property held in the old instance of the ontology</td>
+<td>The new language tag of a literal</td>
+<td><a href="../SimpleChange/">SimpleChange</a></td>
+</tr>
+<tr>
+<td><a href="../old_language/">old_language</a></td>
+<td>0..1 <br/> NONE</td>
+<td>The old language tag of a literal</td>
+<td><a href="../SimpleChange/">SimpleChange</a></td>
+</tr>
+<tr>
+<td><a href="../pull_request/">pull_request</a></td>
+<td>0..1 <br/> NONE</td>
+<td></td>
+<td><a href="../Change/">Change</a></td>
+</tr>
+<tr>
+<td><a href="../old_value_type/">old_value_type</a></td>
+<td>0..1 <br/> NONE</td>
+<td>The type (IRI or Literal) of an old value</td>
+<td><a href="../SimpleChange/">SimpleChange</a></td>
+</tr>
+<tr>
+<td><a href="../new_datatype/">new_datatype</a></td>
+<td>0..1 <br/> NONE</td>
+<td>The new datatype of a literal</td>
+<td><a href="../SimpleChange/">SimpleChange</a></td>
+</tr>
+<tr>
+<td><a href="../change_date/">change_date</a></td>
+<td>0..1 <br/> NONE</td>
+<td></td>
+<td><a href="../Change/">Change</a></td>
+</tr>
+<tr>
+<td><a href="../new_value_type/">new_value_type</a></td>
+<td>0..1 <br/> NONE</td>
+<td>The type (IRI or Literal) of a new value</td>
 <td><a href="../SimpleChange/">SimpleChange</a></td>
 </tr>
 <tr>
@@ -389,16 +376,34 @@
 <td><a href="../NodeObsoletion/">NodeObsoletion</a></td>
 </tr>
 <tr>
+<td><a href="../about_node_representation/">about_node_representation</a></td>
+<td>0..1 <br/> NONE</td>
+<td>The representation of a node (URI, CURIE, label)</td>
+<td><a href="../NodeChange/">NodeChange</a></td>
+</tr>
+<tr>
+<td><a href="../id/">id</a></td>
+<td>1..1 <br/> NONE</td>
+<td></td>
+<td><a href="../Change/">Change</a></td>
+</tr>
+<tr>
 <td><a href="../about_node/">about_node</a></td>
 <td>0..1 <br/> <a href="../Node/">Node</a></td>
 <td></td>
 <td><a href="../NodeChange/">NodeChange</a></td>
 </tr>
 <tr>
-<td><a href="../about_node_representation/">about_node_representation</a></td>
+<td><a href="../contributor/">contributor</a></td>
 <td>0..1 <br/> NONE</td>
-<td>The representation of a node (URI, CURIE, label)</td>
-<td><a href="../NodeChange/">NodeChange</a></td>
+<td></td>
+<td><a href="../Change/">Change</a></td>
+</tr>
+<tr>
+<td><a href="../old_value/">old_value</a></td>
+<td>0..1 <br/> NONE</td>
+<td>The value of a property held in the old instance of the ontology</td>
+<td><a href="../SimpleChange/">SimpleChange</a></td>
 </tr>
 </tbody>
 </table>
