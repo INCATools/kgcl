@@ -4,7 +4,7 @@ from linkml_runtime.loaders import json_loader
 from linkml_runtime.utils.yamlutils import YAMLRoot
 
 
-def roundtrip(obj: YAMLRoot, format='json'):
+def roundtrip(obj: YAMLRoot, format="json"):
     dumper = json_dumper
     loader = json_loader
     serialization = dumper.dumps(obj)

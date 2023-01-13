@@ -29,7 +29,8 @@ from os.path import dirname, join
 
 # THIS_DIR = os.path.abspath(os.path.dirname(__file__))
 # LD = os.path.join(THIS_DIR, "../ldcontext/kgcl_schema.context.jsonld")
-LD = join(dirname(dirname(dirname(__file__))),"ldcontext/kgcl.context.jsonld")
+LD = join(dirname(dirname(dirname(__file__))), "ldcontext/kgcl.context.jsonld")
+
 
 def get_context() -> str:
     """Get JSON-LD context."""
@@ -69,7 +70,9 @@ def to_jsonld(session: Session) -> str:
 def to_rdf(session: Session, prefix_map: Dict[str, str] = None) -> str:
     """Convert a session object to an rdflib Graph string."""
     assign_types(session)
-    return rdflib_dumper.dumps(session, prefix_map=prefix_map, schemaview=get_schemaview())
+    return rdflib_dumper.dumps(
+        session, prefix_map=prefix_map, schemaview=get_schemaview()
+    )
 
 
 def from_json(filename: str) -> Session:

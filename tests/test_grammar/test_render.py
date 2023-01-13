@@ -11,7 +11,6 @@ def _first_word(command: str) -> str:
 
 
 class RenderTestSuite(unittest.TestCase):
-
     def test_render(self):
         """Test parsing KGCL DSL into objects."""
         for patch, _, _, _ in CASES:
@@ -24,4 +23,4 @@ class RenderTestSuite(unittest.TestCase):
             # - label tokens in rename broken
             self.assertEqual(patch, patch_roundtripped)
             # for now, we implement this much weaker test:
-            #self.assertEqual(_first_word(patch), _first_word(patch_roundtripped))
+            # self.assertEqual(_first_word(patch), _first_word(patch_roundtripped))

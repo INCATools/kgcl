@@ -3,16 +3,29 @@
 """KGCL RDF-related operations."""
 from deprecated.classic import deprecated
 from kgcl_schema.grammar.parser import parse
-from kgcl_schema.datamodel.kgcl import (ClassCreation, EdgeCreation, EdgeDeletion,
-                                        NewSynonym, NodeAnnotationChange, NodeCreation,
-                                        NodeDeepening, NodeDeletion, NodeMove,
-                                        NodeObsoletion, NodeRename, NodeShallowing,
-                                        NodeUnobsoletion, PlaceUnder, PredicateChange,
-                                        RemoveUnder)
+from kgcl_schema.datamodel.kgcl import (
+    ClassCreation,
+    EdgeCreation,
+    EdgeDeletion,
+    NewSynonym,
+    NodeAnnotationChange,
+    NodeCreation,
+    NodeDeepening,
+    NodeDeletion,
+    NodeMove,
+    NodeObsoletion,
+    NodeRename,
+    NodeShallowing,
+    NodeUnobsoletion,
+    PlaceUnder,
+    PredicateChange,
+    RemoveUnder,
+)
 
 # parse kgcl_schema to python data class
 # serialse puython data class to yaml
 # convert python data class to RDF
+
 
 @deprecated("Use builtin linkml yaml_dumper")
 def kgcl_2_yaml(kgcl_patch, output):

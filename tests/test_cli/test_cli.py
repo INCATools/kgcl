@@ -31,11 +31,8 @@ class CliTestSuite(unittest.TestCase):
         result = self.runner.invoke(kgcl_parser.cli, patches + ["-o", TMP_YAML])
         session: Session = from_yaml(TMP_YAML)
         self.assertEqual(len(patches), len(session.change_set))
-        #for ch in session.change_set:
+        # for ch in session.change_set:
         #    ch.id = UID
         #    self.assertIn(ch, objs)
         out = result.stdout
         self.assertEqual(0, result.exit_code)
-
-
-

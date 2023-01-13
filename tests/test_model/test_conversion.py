@@ -42,9 +42,9 @@ class ConversionTestSuite(unittest.TestCase):
         self.assertEqual(9, len(session.change_set))
         self.assertEqual(2, len(session.activity_set))
         tmap = group_by_type(session.change_set)
-        ch = tmap['set language for name'][0]
+        ch = tmap["set language for name"][0]
         if isinstance(ch, SetLanguageForName):
-            self.assertEqual('en', ch.new_value)
+            self.assertEqual("en", ch.new_value)
         else:
             raise ValueError(f"Unexpected type for {ch}")
         json = to_json(session)
@@ -56,6 +56,12 @@ class ConversionTestSuite(unittest.TestCase):
         with open(os.path.join(OUTPUT_DIR, "test.jsonld"), "w") as stream:
             stream.write(to_jsonld(session))
         with open(os.path.join(OUTPUT_DIR, "test.rdf"), "w") as stream:
-            stream.write(to_rdf(session, {'ANAT': 'http://example.org/ANAT/',
-                                          'uuid': 'http://example.org/uuid/'}))
-
+            stream.write(
+                to_rdf(
+                    session,
+                    {
+                        "ANAT": "http://example.org/ANAT/",
+                        "uuid": "http://example.org/uuid/",
+                    },
+                )
+            )

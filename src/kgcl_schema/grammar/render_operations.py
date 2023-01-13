@@ -1,11 +1,25 @@
 """Render operations."""
 # TODO: move this to grammar package
 
-from kgcl_schema.datamodel.kgcl import (ClassCreation, EdgeCreation, EdgeDeletion,
-                                        NewSynonym, NodeAnnotationChange, NodeCreation, NodeDeepening,
-                                        NodeDeletion, NodeMove, NodeObsoletion, NodeObsoletionWithDirectReplacement,
-                                        NodeRename, NodeUnobsoletion, PlaceUnder,
-                                        PredicateChange, RemoveUnder, Change)
+from kgcl_schema.datamodel.kgcl import (
+    ClassCreation,
+    EdgeCreation,
+    EdgeDeletion,
+    NewSynonym,
+    NodeAnnotationChange,
+    NodeCreation,
+    NodeDeepening,
+    NodeDeletion,
+    NodeMove,
+    NodeObsoletion,
+    NodeObsoletionWithDirectReplacement,
+    NodeRename,
+    NodeUnobsoletion,
+    PlaceUnder,
+    PredicateChange,
+    RemoveUnder,
+    Change,
+)
 from lark.lexer import Token
 
 
@@ -102,7 +116,10 @@ def render(kgcl_instance: Change) -> str:
             + new_object
         )
 
-    if type(kgcl_instance) is NodeObsoletion or type(kgcl_instance) is NodeObsoletionWithDirectReplacement:
+    if (
+        type(kgcl_instance) is NodeObsoletion
+        or type(kgcl_instance) is NodeObsoletionWithDirectReplacement
+    ):
         subject = render_entity(kgcl_instance.about_node, "uri")
         # TODO: type this correctly
         replacement = render_entity(kgcl_instance.has_direct_replacement, "uri")
@@ -143,9 +160,7 @@ def render(kgcl_instance: Change) -> str:
 
     if type(kgcl_instance) is PredicateChange:
         subject = render_entity(kgcl_instance.about_edge.subject, "uri")
-        object = render_entity(
-            kgcl_instance.about_edge.object, "uri"
-        )
+        object = render_entity(kgcl_instance.about_edge.object, "uri")
         new = render_entity(kgcl_instance.new_value, "uri")
         old = render_entity(kgcl_instance.old_value, "uri")
 
@@ -198,27 +213,13 @@ def render(kgcl_instance: Change) -> str:
         subclass = render_entity(kgcl_instance.subject, "uri")
         superclass = render_entity(kgcl_instance.object, "uri")
         predicate_type = render_entity(kgcl_instance.predicate, "uri")
-        return (
-            "create edge "
-            + subclass
-            + " "
-            + predicate_type
-            + " "
-            + superclass
-        )
+        return "create edge " + subclass + " " + predicate_type + " " + superclass
 
     if type(kgcl_instance) is RemoveUnder:
         subclass = render_entity(kgcl_instance.subject, "uri")
         superclass = render_entity(kgcl_instance.object, "uri")
         predicate_type = render_entity(kgcl_instance.predicate, "uri")
-        return (
-            "delete edge "
-            + subclass
-            + " "
-            + predicate_type
-            + " "
-            + superclass
-        )
+        return "delete edge " + subclass + " " + predicate_type + " " + superclass
 
     # TODO these need to be changed
     if type(kgcl_instance) is EdgeCreation:
@@ -237,4 +238,4 @@ def render(kgcl_instance: Change) -> str:
         subject = kgcl_instance.about_edge.subject
         old_value = kgcl_instance.old_value
         new_value = kgcl_instance.new_value
-        return "deepen "+ subject + " from " + old_value + " to " + new_value
+        return "deepen " + subject + " from " + old_value + " to " + new_value
