@@ -1,5 +1,5 @@
 # Auto generated from kgcl.yaml by pythongen.py version: 0.9.0
-# Generation date: 2023-02-01T17:20:42
+# Generation date: 2023-02-01T18:26:07
 # Schema: kgcl_schema
 #
 # id: https://w3id.org/kgcl
@@ -53,7 +53,7 @@ DEFAULT_ = KGCL
 
 # Types
 class ChangeClassType(Uriorcurie):
-    """ CURIE for a class within this datamodel. E.g. kgcl:NodeObsoletion """
+    """ CURIE for a class within this data model. E.g. kgcl:NodeObsoletion """
     type_class_uri = XSD.anyURI
     type_class_curie = "xsd:anyURI"
     type_name = "ChangeClassType"
@@ -268,6 +268,10 @@ class ClassCreationId(NodeCreationId):
     pass
 
 
+class ObjectPropertyCreationId(NodeCreationId):
+    pass
+
+
 class NodeDeletionId(NodeChangeId):
     pass
 
@@ -304,8 +308,20 @@ class AgentId(extended_str):
     pass
 
 
+class ChangeLanguageElement(YAMLRoot):
+    """
+    A broad grouping for all elements of the change language
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = KGCL.ChangeLanguageElement
+    class_class_curie: ClassVar[str] = "kgcl:ChangeLanguageElement"
+    class_name: ClassVar[str] = "ChangeLanguageElement"
+    class_model_uri: ClassVar[URIRef] = KGCL.ChangeLanguageElement
+
+
 @dataclass
-class Change(YAMLRoot):
+class Change(ChangeLanguageElement):
     """
     Any change perform on an ontology or knowledge graph
     """
@@ -325,6 +341,7 @@ class Change(YAMLRoot):
     change_date: Optional[str] = None
     contributor: Optional[str] = None
     has_undo: Optional[Union[str, ChangeId]] = None
+    term_tracker_issue: Optional[str] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
@@ -355,6 +372,9 @@ class Change(YAMLRoot):
 
         if self.has_undo is not None and not isinstance(self.has_undo, ChangeId):
             self.has_undo = ChangeId(self.has_undo)
+
+        if self.term_tracker_issue is not None and not isinstance(self.term_tracker_issue, str):
+            self.term_tracker_issue = str(self.term_tracker_issue)
 
         super().__post_init__(**kwargs)
 
@@ -491,7 +511,7 @@ class Transaction(Change):
 
 
 @dataclass
-class ChangeSetSummaryStatistic(YAMLRoot):
+class ChangeSetSummaryStatistic(ChangeLanguageElement):
     """
     A summary statistic for a set of changes of the same type, grouped by zero or more node properties
     """
@@ -1162,7 +1182,7 @@ class PredicateChange(EdgeChange):
 @dataclass
 class EdgeLogicalInterpretationChange(EdgeChange):
     """
-    An edge change where the subjet, object, and predicate are unchanged, but the logical interpretation changes
+    An edge change where the subject, object, and predicate are unchanged, but the logical interpretation changes
     """
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -2152,7 +2172,7 @@ class NodeCreation(NodeChange):
 @dataclass
 class ClassCreation(NodeCreation):
     """
-    A node creation where the owl type is 'class'
+    A node creation where the owl type is 'owl:Class'
     """
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -2173,6 +2193,33 @@ class ClassCreation(NodeCreation):
 
         if self.superclass is not None and not isinstance(self.superclass, NodeId):
             self.superclass = NodeId(self.superclass)
+
+        if self.change_description is not None and not isinstance(self.change_description, str):
+            self.change_description = str(self.change_description)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class ObjectPropertyCreation(NodeCreation):
+    """
+    A node creation where the owl type is 'ObjectProperty'
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = KGCL.ObjectPropertyCreation
+    class_class_curie: ClassVar[str] = "kgcl:ObjectPropertyCreation"
+    class_name: ClassVar[str] = "ObjectPropertyCreation"
+    class_model_uri: ClassVar[URIRef] = KGCL.ObjectPropertyCreation
+
+    id: Union[str, ObjectPropertyCreationId] = None
+    change_description: Optional[str] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, ObjectPropertyCreationId):
+            self.id = ObjectPropertyCreationId(self.id)
 
         if self.change_description is not None and not isinstance(self.change_description, str):
             self.change_description = str(self.change_description)
@@ -2314,7 +2361,7 @@ class NodeObsoletionWithNoDirectReplacement(NodeObsoletion):
         super().__post_init__(**kwargs)
 
 
-class TextualDiff(YAMLRoot):
+class TextualDiff(ChangeLanguageElement):
     """
     A summarizing of a change on a piece of text. This could be rendered in a number of different ways
     """
@@ -2327,7 +2374,7 @@ class TextualDiff(YAMLRoot):
 
 
 @dataclass
-class Configuration(YAMLRoot):
+class Configuration(ChangeLanguageElement):
     """
     The meaning of operations can be configured
     """
@@ -2347,6 +2394,7 @@ class Configuration(YAMLRoot):
     obsolete_node_label_prefix: Optional[str] = None
     obsoletion_workflow: Optional[str] = None
     obsoletion_policies: Optional[Union[Union[str, "ObsoletionPolicyEnum"], List[Union[str, "ObsoletionPolicyEnum"]]]] = empty_list()
+    obsolete_subclass_of_shadow_property: Optional[Union[str, URIorCURIE]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self.name_predicate is not None and not isinstance(self.name_predicate, str):
@@ -2377,11 +2425,14 @@ class Configuration(YAMLRoot):
             self.obsoletion_policies = [self.obsoletion_policies] if self.obsoletion_policies is not None else []
         self.obsoletion_policies = [v if isinstance(v, ObsoletionPolicyEnum) else ObsoletionPolicyEnum(v) for v in self.obsoletion_policies]
 
+        if self.obsolete_subclass_of_shadow_property is not None and not isinstance(self.obsolete_subclass_of_shadow_property, URIorCURIE):
+            self.obsolete_subclass_of_shadow_property = URIorCURIE(self.obsolete_subclass_of_shadow_property)
+
         super().__post_init__(**kwargs)
 
 
 @dataclass
-class Session(YAMLRoot):
+class Session(ChangeLanguageElement):
     """
     A session consists of a set of change sets bundled with the activities that generated those change sets
     """
@@ -2640,8 +2691,20 @@ class OntologySubset(OntologyElement):
     class_model_uri: ClassVar[URIRef] = KGCL.OntologySubset
 
 
+class ProvElement(YAMLRoot):
+    """
+    A grouping for prov elements
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = PROV.ProvElement
+    class_class_curie: ClassVar[str] = "prov:ProvElement"
+    class_name: ClassVar[str] = "ProvElement"
+    class_model_uri: ClassVar[URIRef] = KGCL.ProvElement
+
+
 @dataclass
-class Activity(YAMLRoot):
+class Activity(ProvElement):
     """
     a provence-generating activity
     """
@@ -2688,7 +2751,7 @@ class Activity(YAMLRoot):
 
 
 @dataclass
-class Agent(YAMLRoot):
+class Agent(ProvElement):
     """
     a provence-generating agent
     """
@@ -2723,6 +2786,8 @@ class ObsoletionPolicyEnum(EnumDefinitionImpl):
 
     NoLogicalAxiomsOnObsoletes = PermissibleValue(text="NoLogicalAxiomsOnObsoletes",
                                                                            description="The obsoletion policy is that there MUST NOT be logical axioms about an obsolete node")
+    ObsoleteLabelsArePrefixed = PermissibleValue(text="ObsoleteLabelsArePrefixed",
+                                                                         description="The obsoletion policy is that any label on an obsolete node MUST be prefixed with 'obsolete' or similar")
 
     _defn = EnumDefinition(
         name="ObsoletionPolicyEnum",
@@ -2997,6 +3062,12 @@ slots.configuration__obsoletion_workflow = Slot(uri=KGCL.obsoletion_workflow, na
 slots.configuration__obsoletion_policies = Slot(uri=KGCL.obsoletion_policies, name="configuration__obsoletion_policies", curie=KGCL.curie('obsoletion_policies'),
                    model_uri=KGCL.configuration__obsoletion_policies, domain=None, range=Optional[Union[Union[str, "ObsoletionPolicyEnum"], List[Union[str, "ObsoletionPolicyEnum"]]]])
 
+slots.configuration__obsolete_subclass_of_shadow_property = Slot(uri=KGCL.obsolete_subclass_of_shadow_property, name="configuration__obsolete_subclass_of_shadow_property", curie=KGCL.curie('obsolete_subclass_of_shadow_property'),
+                   model_uri=KGCL.configuration__obsolete_subclass_of_shadow_property, domain=None, range=Optional[Union[str, URIorCURIE]])
+
+slots.term_tracker_issue = Slot(uri=KGCL.term_tracker_issue, name="term_tracker_issue", curie=KGCL.curie('term_tracker_issue'),
+                   model_uri=KGCL.term_tracker_issue, domain=None, range=Optional[str])
+
 slots.associated_change_set = Slot(uri=KGCL.associated_change_set, name="associated change set", curie=KGCL.curie('associated_change_set'),
                    model_uri=KGCL.associated_change_set, domain=None, range=Optional[Union[Dict[Union[str, ChangeId], Union[dict, Change]], List[Union[dict, Change]]]])
 
@@ -3029,6 +3100,9 @@ slots.Change_see_also = Slot(uri=RDFS.seeAlso, name="Change_see_also", curie=RDF
 
 slots.Change_pull_request = Slot(uri=KGCL.pull_request, name="Change_pull_request", curie=KGCL.curie('pull_request'),
                    model_uri=KGCL.Change_pull_request, domain=Change, range=Optional[str])
+
+slots.Change_term_tracker_issue = Slot(uri=KGCL.term_tracker_issue, name="Change_term_tracker_issue", curie=KGCL.curie('term_tracker_issue'),
+                   model_uri=KGCL.Change_term_tracker_issue, domain=Change, range=Optional[str])
 
 slots.Change_creator = Slot(uri=DCTERMS.creator, name="Change_creator", curie=DCTERMS.curie('creator'),
                    model_uri=KGCL.Change_creator, domain=Change, range=Optional[str])
@@ -3167,6 +3241,9 @@ slots.NodeCreation_change_description = Slot(uri=KGCL.change_description, name="
 
 slots.ClassCreation_change_description = Slot(uri=KGCL.change_description, name="ClassCreation_change_description", curie=KGCL.curie('change_description'),
                    model_uri=KGCL.ClassCreation_change_description, domain=ClassCreation, range=Optional[str])
+
+slots.ObjectPropertyCreation_change_description = Slot(uri=KGCL.change_description, name="ObjectPropertyCreation_change_description", curie=KGCL.curie('change_description'),
+                   model_uri=KGCL.ObjectPropertyCreation_change_description, domain=ObjectPropertyCreation, range=Optional[str])
 
 slots.NodeDeletion_change_description = Slot(uri=KGCL.change_description, name="NodeDeletion_change_description", curie=KGCL.curie('change_description'),
                    model_uri=KGCL.NodeDeletion_change_description, domain=NodeDeletion, range=Optional[str])
