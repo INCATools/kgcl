@@ -4608,6 +4608,21 @@
     "$schema": "http://json-schema.org/draft-07/schema#",
     "additionalProperties": true,
     "metamodel_version": "1.7.0",
+    "properties": {
+        "activity_set": {
+            "items": {
+                "$ref": "#/$defs/Activity"
+            },
+            "type": "array"
+        },
+        "change_set": {
+            "description": "A collection of changes",
+            "items": {
+                "$ref": "#/$defs/Change"
+            },
+            "type": "array"
+        }
+    },
     "title": "kgcl_schema",
     "type": "object",
     "version": "0.0.1"

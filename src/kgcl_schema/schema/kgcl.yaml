@@ -769,6 +769,7 @@ classes:
     is_a: ChangeLanguageElement
     description: A session consists of a set of change sets bundled with the activities
       that generated those change sets
+    tree_root: true
     slots:
     - change_set
     - activity_set

@@ -5628,6 +5628,7 @@
       ],
       "slot_usage": {},
       "class_uri": "http://w3id.org/kgcl/Session",
+      "tree_root": true,
       "@type": "ClassDefinition"
     },
     {
@@ -5839,9 +5840,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "kgcl.yaml",
-  "source_file_date": "2023-02-01T18:08:15",
-  "source_file_size": 32060,
-  "generation_date": "2023-02-01T18:09:44",
+  "source_file_date": "2023-02-01T18:46:18",
+  "source_file_size": 32080,
+  "generation_date": "2023-02-01T18:48:33",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/kgcl.context.jsonld",
