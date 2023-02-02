@@ -28,7 +28,7 @@ None &#8594;  <sub>0..1</sub> [String](types/String.md)
  *  [node rename➞change description](node_rename_change_description.md)
  *  [node unobsoletion➞change description](node_unobsoletion_change_description.md)
  *  [predicate change➞change description](predicate_change_change_description.md)
- *  [removed node from subset➞change description](removed_node_from_subset_change_description.md)
+ *  [remove node from subset➞change description](remove_node_from_subset_change_description.md)
  *  [set language for name➞change description](set_language_for_name_change_description.md)
 
 ## Used by

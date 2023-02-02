@@ -1,5 +1,5 @@
 
-# Slot: definition predicate
+# Slot: definition_predicate
 
 
 

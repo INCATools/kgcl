@@ -1,5 +1,5 @@
 
-# Slot: main synonym predicate
+# Slot: main_synonym_predicate
 
 
 

@@ -1,5 +1,5 @@
 
-# Slot: contributor predicate
+# Slot: contributor_predicate
 
 
 

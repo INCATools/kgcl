@@ -177,8 +177,9 @@ om:ClassNode CLOSED {
           <synonym_predicates> @linkml:String ? ;
           <creator_predicate> @linkml:String ? ;
           <contributor_predicate> @linkml:String ? ;
+          <obsolete_node_label_prefix> @linkml:String ? ;
           <obsoletion_workflow> @linkml:String ? ;
-          <obsoletion_policy> @linkml:String ?
+          <obsoletion_policies> @<ObsoletionPolicyEnum> *
        ) ;
        rdf:type [ <Configuration> ] ?
     )
@@ -372,6 +373,38 @@ om:LogicalDefinition CLOSED {
     )
 }
 
+<MappingPredicateChange> CLOSED {
+    (  $<MappingPredicateChange_tes> (  &<NodeMappingChange_tes> ;
+          rdf:type [ <NodeMappingChange> ] ?
+       ) ;
+       rdf:type [ <MappingPredicateChange> ]
+    )
+}
+
+<MappingReplacement> CLOSED {
+    (  $<MappingReplacement_tes> (  &<NodeMappingChange_tes> ;
+          rdf:type [ <NodeMappingChange> ] ?
+       ) ;
+       rdf:type [ <MappingReplacement> ]
+    )
+}
+
+<MetadataAssertionPredicateChange> CLOSED {
+    (  $<MetadataAssertionPredicateChange_tes> (  &<NodeMetadataAssertionChange_tes> ;
+          rdf:type [ <NodeMetadataAssertionChange> ] ?
+       ) ;
+       rdf:type [ <MetadataAssertionPredicateChange> ]
+    )
+}
+
+<MetadataAssertionReplacement> CLOSED {
+    (  $<MetadataAssertionReplacement_tes> (  &<NodeMetadataAssertionChange_tes> ;
+          rdf:type [ <NodeMetadataAssertionChange> ] ?
+       ) ;
+       rdf:type [ <MetadataAssertionReplacement> ]
+    )
+}
+
 <MultiNodeObsoletion> CLOSED {
     (  $<MultiNodeObsoletion_tes> (  &<ComplexChange_tes> ;
           rdf:type [ <ComplexChange> ] ? ;
@@ -391,6 +424,26 @@ om:LogicalDefinition CLOSED {
           <change_description> @linkml:String ?
        ) ;
        rdf:type [ <NameBecomesSynonym> ]
+    )
+}
+
+<NewMapping> CLOSED {
+    (  $<NewMapping_tes> (  &<NodeMappingChange_tes> ;
+          rdf:type [ <NodeMappingChange> ] ? ;
+          om:object @om:Node ? ;
+          om:predicate @om:Node ?
+       ) ;
+       rdf:type [ <NewMapping> ]
+    )
+}
+
+<NewMetadataAssertion> CLOSED {
+    (  $<NewMetadataAssertion_tes> (  &<NodeMetadataAssertionChange_tes> ;
+          rdf:type [ <NodeMetadataAssertionChange> ] ? ;
+          om:object @om:Node ? ;
+          om:predicate @om:Node ?
+       ) ;
+       rdf:type [ <NewMetadataAssertion> ]
     )
 }
 
@@ -445,8 +498,9 @@ om:Node  (
 }
 
 <NodeChange>  (
-    @<AddNodeToSubset> OR @<NodeAnnotationChange> OR @<NodeCreation> OR @<NodeDeletion> OR @<NodeObsoletion> OR @<NodeRename> OR
-    @<NodeSynonymChange> OR @<NodeTextDefinitionChange> OR @<NodeUnobsoletion> OR @<RemovedNodeFromSubset> OR @<SetLanguageForName>
+    @<AddNodeToSubset> OR @<NodeAnnotationChange> OR @<NodeCreation> OR @<NodeDeletion> OR @<NodeMappingChange> OR
+    @<NodeMetadataAssertionChange> OR @<NodeObsoletion> OR @<NodeRename> OR @<NodeSynonymChange> OR @<NodeTextDefinitionChange> OR
+    @<NodeUnobsoletion> OR @<RemoveNodeFromSubset> OR @<SetLanguageForName>
 )
 
 <NodeChange_struct> {
@@ -509,6 +563,27 @@ om:Node  (
        rdf:type [ <NodeDirectMerge> ]
     )
 }
+
+<NodeMappingChange>  (
+    CLOSED {
+       (  $<NodeMappingChange_tes> (  &<NodeChange_tes> ;
+             rdf:type [ <NodeChange> ] ?
+          ) ;
+          rdf:type [ <NodeMappingChange> ]
+       )
+    } OR @<MappingPredicateChange> OR @<MappingReplacement> OR @<NewMapping> OR @<RemoveMapping>
+)
+
+<NodeMetadataAssertionChange>  (
+    CLOSED {
+       (  $<NodeMetadataAssertionChange_tes> (  &<NodeChange_tes> ;
+             rdf:type [ <NodeChange> ] ?
+          ) ;
+          rdf:type [ <NodeMetadataAssertionChange> ]
+       )
+    } OR @<MetadataAssertionPredicateChange> OR @<MetadataAssertionReplacement> OR @<NewMetadataAssertion> OR
+    @<RemoveMetadataAssertion>
+)
 
 <NodeMove>  (
     CLOSED {
@@ -685,6 +760,40 @@ om:PropertyValue  (
     )
 }
 
+<RemoveMapping> CLOSED {
+    (  $<RemoveMapping_tes> (  &<NodeMappingChange_tes> ;
+          rdf:type [ <NodeMappingChange> ] ? ;
+          om:object @om:Node ? ;
+          om:predicate @om:Node ?
+       ) ;
+       rdf:type [ <RemoveMapping> ]
+    )
+}
+
+<RemoveMetadataAssertion> CLOSED {
+    (  $<RemoveMetadataAssertion_tes> (  &<NodeMetadataAssertionChange_tes> ;
+          rdf:type [ <NodeMetadataAssertionChange> ] ? ;
+          om:object @om:Node ? ;
+          om:predicate @om:Node ?
+       ) ;
+       rdf:type [ <RemoveMetadataAssertion> ]
+    )
+}
+
+<RemoveNodeFromSubset> CLOSED {
+    (  $<RemoveNodeFromSubset_tes> (  &<NodeChange_tes> ;
+          rdf:type [ <NodeChange> ] ? ;
+          &<RemoveFromSubset_tes> ;
+          rdf:type [ <RemoveFromSubset> ] ? ;
+          <change_description> @linkml:String ? ;
+          <about_node> @om:Node ? ;
+          <subset> @linkml:String ? ;
+          <in_subset> @om:OntologySubset ?
+       ) ;
+       rdf:type [ <RemoveNodeFromSubset> ]
+    )
+}
+
 <RemoveSynonym> CLOSED {
     (  $<RemoveSynonym_tes> (  &<NodeSynonymChange_tes> ;
           rdf:type [ <NodeSynonymChange> ] ?
@@ -706,20 +815,6 @@ om:PropertyValue  (
           rdf:type [ <EdgeDeletion> ] ?
        ) ;
        rdf:type [ <RemoveUnder> ]
-    )
-}
-
-<RemovedNodeFromSubset> CLOSED {
-    (  $<RemovedNodeFromSubset_tes> (  &<NodeChange_tes> ;
-          rdf:type [ <NodeChange> ] ? ;
-          &<RemoveFromSubset_tes> ;
-          rdf:type [ <RemoveFromSubset> ] ? ;
-          <change_description> @linkml:String ? ;
-          <about_node> @om:Node ? ;
-          <subset> @linkml:String ? ;
-          <in_subset> @om:OntologySubset ?
-       ) ;
-       rdf:type [ <RemovedNodeFromSubset> ]
     )
 }
 

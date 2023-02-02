@@ -231,6 +231,17 @@
   ],
   "enums": [
     {
+      "name": "ObsoletionPolicyEnum",
+      "definition_uri": "http://w3id.org/kgcl/ObsoletionPolicyEnum",
+      "from_schema": "https://w3id.org/kgcl",
+      "permissible_values": [
+        {
+          "text": "NoLogicalAxiomsOnObsoletes",
+          "description": "The obsoletion policy is that there MUST NOT be logical axioms about an obsolete node"
+        }
+      ]
+    },
+    {
       "name": "owl_type_enum",
       "definition_uri": "http://w3id.org/kgcl_schema/om/OwlTypeEnum",
       "from_schema": "https://w3id.org/kgcl_schema/ontology",
@@ -494,6 +505,10 @@
         "RemoveSynonym",
         "SynonymReplacement",
         "SynonymPredicateChange",
+        "MappingReplacement",
+        "MappingPredicateChange",
+        "MetadataAssertionReplacement",
+        "MetadataAssertionPredicateChange",
         "RemoveTextDefinition",
         "TextDefinitionReplacement"
       ],
@@ -514,6 +529,10 @@
         "NewSynonym",
         "SynonymReplacement",
         "SynonymPredicateChange",
+        "MappingReplacement",
+        "MappingPredicateChange",
+        "MetadataAssertionReplacement",
+        "MetadataAssertionPredicateChange",
         "NewTextDefinition",
         "TextDefinitionReplacement"
       ],
@@ -983,6 +1002,10 @@
         "EdgeDeletion",
         "EdgeObsoletion",
         "MappingCreation",
+        "NewMapping",
+        "RemoveMapping",
+        "NewMetadataAssertion",
+        "RemoveMetadataAssertion",
         "Edge"
       ],
       "range": "Node",
@@ -999,6 +1022,10 @@
         "EdgeDeletion",
         "EdgeObsoletion",
         "MappingCreation",
+        "NewMapping",
+        "RemoveMapping",
+        "NewMetadataAssertion",
+        "RemoveMetadataAssertion",
         "Edge"
       ],
       "range": "Node",
@@ -1363,6 +1390,19 @@
       "@type": "SlotDefinition"
     },
     {
+      "name": "configuration__obsolete_node_label_prefix",
+      "description": "A prefix to add to the label of an obsolete node. This may include a space at the end.",
+      "from_schema": "https://w3id.org/kgcl",
+      "slot_uri": "http://w3id.org/kgcl/obsolete_node_label_prefix",
+      "alias": "obsolete_node_label_prefix",
+      "owner": "Configuration",
+      "domain_of": [
+        "Configuration"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
       "name": "configuration__obsoletion_workflow",
       "from_schema": "https://w3id.org/kgcl",
       "slot_uri": "http://w3id.org/kgcl/obsoletion_workflow",
@@ -1375,15 +1415,16 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "configuration__obsoletion_policy",
+      "name": "configuration__obsoletion_policies",
       "from_schema": "https://w3id.org/kgcl",
-      "slot_uri": "http://w3id.org/kgcl/obsoletion_policy",
-      "alias": "obsoletion_policy",
+      "slot_uri": "http://w3id.org/kgcl/obsoletion_policies",
+      "multivalued": true,
+      "alias": "obsoletion_policies",
       "owner": "Configuration",
       "domain_of": [
         "Configuration"
       ],
-      "range": "string",
+      "range": "ObsoletionPolicyEnum",
       "@type": "SlotDefinition"
     },
     {
@@ -2507,7 +2548,7 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "removed_node_from_subset_change_description",
+      "name": "remove_node_from_subset_change_description",
       "definition_uri": "http://w3id.org/kgcl/change_description",
       "description": "A string serialization of the change. This should be both human-readable, and parseable.",
       "comments": [
@@ -2539,12 +2580,12 @@
       "from_schema": "https://w3id.org/kgcl",
       "is_a": "change_description",
       "string_serialization": "removing {about node} from {subset}",
-      "domain": "RemovedNodeFromSubset",
+      "domain": "RemoveNodeFromSubset",
       "slot_uri": "http://w3id.org/kgcl/change_description",
       "alias": "change description",
-      "owner": "RemovedNodeFromSubset",
+      "owner": "RemoveNodeFromSubset",
       "domain_of": [
-        "RemovedNodeFromSubset"
+        "RemoveNodeFromSubset"
       ],
       "is_usage_slot": true,
       "usage_slot_name": "change description",
@@ -2552,17 +2593,17 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "removed_node_from_subset_about_node",
+      "name": "remove_node_from_subset_about_node",
       "definition_uri": "http://w3id.org/kgcl/about_node",
       "description": "The node that is removed from the subset",
       "from_schema": "https://w3id.org/kgcl",
       "is_a": "about_node",
-      "domain": "RemovedNodeFromSubset",
+      "domain": "RemoveNodeFromSubset",
       "slot_uri": "http://w3id.org/kgcl/about_node",
       "alias": "about node",
-      "owner": "RemovedNodeFromSubset",
+      "owner": "RemoveNodeFromSubset",
       "domain_of": [
-        "RemovedNodeFromSubset"
+        "RemoveNodeFromSubset"
       ],
       "is_usage_slot": true,
       "usage_slot_name": "about node",
@@ -2570,16 +2611,16 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "removed_node_from_subset_subset",
+      "name": "remove_node_from_subset_subset",
       "description": "The subset from which the node is to be removed",
       "from_schema": "https://w3id.org/kgcl",
       "is_a": "subset",
-      "domain": "RemovedNodeFromSubset",
+      "domain": "RemoveNodeFromSubset",
       "slot_uri": "http://w3id.org/kgcl/subset",
       "alias": "subset",
-      "owner": "RemovedNodeFromSubset",
+      "owner": "RemoveNodeFromSubset",
       "domain_of": [
-        "RemovedNodeFromSubset"
+        "RemoveNodeFromSubset"
       ],
       "is_usage_slot": true,
       "usage_slot_name": "subset",
@@ -3729,6 +3770,7 @@
       "name": "MappingCreation",
       "definition_uri": "http://w3id.org/kgcl/MappingCreation",
       "description": "A specific kind of edge creation in which the created edge is a mapping.",
+      "deprecated": "use NewMapping",
       "todos": [
         "decide whether to make a corresponding change to the datamodel"
       ],
@@ -3987,7 +4029,7 @@
     {
       "name": "LogicalAxiomChange",
       "definition_uri": "http://w3id.org/kgcl/LogicalAxiomChange",
-      "description": "A simple change where a logical axiom is changed, where the logical axiom cannot be represented as an edge\n\n  ",
+      "description": "A simple change where a logical axiom is changed, where the logical axiom cannot be represented as an edge",
       "from_schema": "https://w3id.org/kgcl",
       "is_a": "SimpleChange",
       "slots": [
@@ -4227,6 +4269,11 @@
       "definition_uri": "http://w3id.org/kgcl/NewSynonym",
       "description": "A node synonym change where a de-novo synonym is created",
       "from_schema": "https://w3id.org/kgcl",
+      "aliases": [
+        "new alias",
+        "create synonym",
+        "add synonym"
+      ],
       "is_a": "NodeSynonymChange",
       "slots": [
         "id",
@@ -4389,6 +4436,352 @@
       ],
       "slot_usage": {},
       "class_uri": "http://w3id.org/kgcl/SynonymPredicateChange",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "NodeMappingChange",
+      "definition_uri": "http://w3id.org/kgcl/NodeMappingChange",
+      "description": "A node change where the mappings for that node are altered",
+      "from_schema": "https://w3id.org/kgcl",
+      "aliases": [
+        "xref change"
+      ],
+      "is_a": "NodeChange",
+      "slots": [
+        "id",
+        "type",
+        "change_was_generated_by",
+        "change_see_also",
+        "change_pull_request",
+        "change_creator",
+        "change_change_date",
+        "contributor",
+        "has_undo",
+        "old_value",
+        "new_value",
+        "old_value_type",
+        "new_value_type",
+        "new_language",
+        "old_language",
+        "new_datatype",
+        "old_datatype",
+        "about_node",
+        "about_node_representation",
+        "language"
+      ],
+      "slot_usage": {},
+      "class_uri": "http://w3id.org/kgcl/NodeMappingChange",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "NewMapping",
+      "definition_uri": "http://w3id.org/kgcl/NewMapping",
+      "description": "A node mapping change where a mapping is added to a node",
+      "from_schema": "https://w3id.org/kgcl",
+      "aliases": [
+        "xref change"
+      ],
+      "is_a": "NodeMappingChange",
+      "slots": [
+        "id",
+        "type",
+        "change_was_generated_by",
+        "change_see_also",
+        "change_pull_request",
+        "change_creator",
+        "change_change_date",
+        "contributor",
+        "has_undo",
+        "old_value",
+        "new_value",
+        "old_value_type",
+        "new_value_type",
+        "new_language",
+        "old_language",
+        "new_datatype",
+        "old_datatype",
+        "about_node",
+        "about_node_representation",
+        "language",
+        "object",
+        "predicate"
+      ],
+      "slot_usage": {},
+      "class_uri": "http://w3id.org/kgcl/NewMapping",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "RemoveMapping",
+      "definition_uri": "http://w3id.org/kgcl/RemoveMapping",
+      "description": "A node mapping change where a mapping is deleted",
+      "from_schema": "https://w3id.org/kgcl",
+      "is_a": "NodeMappingChange",
+      "slots": [
+        "id",
+        "type",
+        "change_was_generated_by",
+        "change_see_also",
+        "change_pull_request",
+        "change_creator",
+        "change_change_date",
+        "contributor",
+        "has_undo",
+        "old_value",
+        "new_value",
+        "old_value_type",
+        "new_value_type",
+        "new_language",
+        "old_language",
+        "new_datatype",
+        "old_datatype",
+        "about_node",
+        "about_node_representation",
+        "language",
+        "object",
+        "predicate"
+      ],
+      "slot_usage": {},
+      "class_uri": "http://w3id.org/kgcl/RemoveMapping",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "MappingReplacement",
+      "definition_uri": "http://w3id.org/kgcl/MappingReplacement",
+      "description": "A node mapping change where the object of a mapping is changed",
+      "from_schema": "https://w3id.org/kgcl",
+      "is_a": "NodeMappingChange",
+      "slots": [
+        "id",
+        "type",
+        "change_was_generated_by",
+        "change_see_also",
+        "change_pull_request",
+        "change_creator",
+        "change_change_date",
+        "contributor",
+        "has_undo",
+        "old_value_type",
+        "new_value_type",
+        "new_language",
+        "old_language",
+        "new_datatype",
+        "old_datatype",
+        "about_node",
+        "about_node_representation",
+        "language",
+        "old_value",
+        "new_value"
+      ],
+      "slot_usage": {},
+      "class_uri": "http://w3id.org/kgcl/MappingReplacement",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "MappingPredicateChange",
+      "definition_uri": "http://w3id.org/kgcl/MappingPredicateChange",
+      "description": "A node mapping change where the predicate of a mapping is changed.",
+      "from_schema": "https://w3id.org/kgcl",
+      "aliases": [
+        "node scope change"
+      ],
+      "is_a": "NodeMappingChange",
+      "slots": [
+        "id",
+        "type",
+        "change_was_generated_by",
+        "change_see_also",
+        "change_pull_request",
+        "change_creator",
+        "change_change_date",
+        "contributor",
+        "has_undo",
+        "old_value_type",
+        "new_value_type",
+        "new_language",
+        "old_language",
+        "new_datatype",
+        "old_datatype",
+        "about_node",
+        "about_node_representation",
+        "language",
+        "old_value",
+        "new_value"
+      ],
+      "slot_usage": {},
+      "class_uri": "http://w3id.org/kgcl/MappingPredicateChange",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "NodeMetadataAssertionChange",
+      "definition_uri": "http://w3id.org/kgcl/NodeMetadataAssertionChange",
+      "description": "A node change where the metadata assertion (OWL annotations) for that node are altered",
+      "from_schema": "https://w3id.org/kgcl",
+      "aliases": [
+        "node annotation change"
+      ],
+      "is_a": "NodeChange",
+      "slots": [
+        "id",
+        "type",
+        "change_was_generated_by",
+        "change_see_also",
+        "change_pull_request",
+        "change_creator",
+        "change_change_date",
+        "contributor",
+        "has_undo",
+        "old_value",
+        "new_value",
+        "old_value_type",
+        "new_value_type",
+        "new_language",
+        "old_language",
+        "new_datatype",
+        "old_datatype",
+        "about_node",
+        "about_node_representation",
+        "language"
+      ],
+      "slot_usage": {},
+      "class_uri": "http://w3id.org/kgcl/NodeMetadataAssertionChange",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "NewMetadataAssertion",
+      "definition_uri": "http://w3id.org/kgcl/NewMetadataAssertion",
+      "description": "A node metadata assertion change where a metadata assertion is added to a node",
+      "from_schema": "https://w3id.org/kgcl",
+      "aliases": [
+        "xref change"
+      ],
+      "is_a": "NodeMetadataAssertionChange",
+      "slots": [
+        "id",
+        "type",
+        "change_was_generated_by",
+        "change_see_also",
+        "change_pull_request",
+        "change_creator",
+        "change_change_date",
+        "contributor",
+        "has_undo",
+        "old_value",
+        "new_value",
+        "old_value_type",
+        "new_value_type",
+        "new_language",
+        "old_language",
+        "new_datatype",
+        "old_datatype",
+        "about_node",
+        "about_node_representation",
+        "language",
+        "object",
+        "predicate"
+      ],
+      "slot_usage": {},
+      "class_uri": "http://w3id.org/kgcl/NewMetadataAssertion",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "RemoveMetadataAssertion",
+      "definition_uri": "http://w3id.org/kgcl/RemoveMetadataAssertion",
+      "description": "A node metadata assertion change where a metadata assertion is deleted",
+      "from_schema": "https://w3id.org/kgcl",
+      "is_a": "NodeMetadataAssertionChange",
+      "slots": [
+        "id",
+        "type",
+        "change_was_generated_by",
+        "change_see_also",
+        "change_pull_request",
+        "change_creator",
+        "change_change_date",
+        "contributor",
+        "has_undo",
+        "old_value",
+        "new_value",
+        "old_value_type",
+        "new_value_type",
+        "new_language",
+        "old_language",
+        "new_datatype",
+        "old_datatype",
+        "about_node",
+        "about_node_representation",
+        "language",
+        "object",
+        "predicate"
+      ],
+      "slot_usage": {},
+      "class_uri": "http://w3id.org/kgcl/RemoveMetadataAssertion",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "MetadataAssertionReplacement",
+      "definition_uri": "http://w3id.org/kgcl/MetadataAssertionReplacement",
+      "description": "A node metadata assertion change where the object of a metadata assertion is changed",
+      "from_schema": "https://w3id.org/kgcl",
+      "is_a": "NodeMetadataAssertionChange",
+      "slots": [
+        "id",
+        "type",
+        "change_was_generated_by",
+        "change_see_also",
+        "change_pull_request",
+        "change_creator",
+        "change_change_date",
+        "contributor",
+        "has_undo",
+        "old_value_type",
+        "new_value_type",
+        "new_language",
+        "old_language",
+        "new_datatype",
+        "old_datatype",
+        "about_node",
+        "about_node_representation",
+        "language",
+        "old_value",
+        "new_value"
+      ],
+      "slot_usage": {},
+      "class_uri": "http://w3id.org/kgcl/MetadataAssertionReplacement",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "MetadataAssertionPredicateChange",
+      "definition_uri": "http://w3id.org/kgcl/MetadataAssertionPredicateChange",
+      "description": "A node metadata assertion change where the predicate of a metadata assertion is changed.",
+      "from_schema": "https://w3id.org/kgcl",
+      "aliases": [
+        "node scope change"
+      ],
+      "is_a": "NodeMetadataAssertionChange",
+      "slots": [
+        "id",
+        "type",
+        "change_was_generated_by",
+        "change_see_also",
+        "change_pull_request",
+        "change_creator",
+        "change_change_date",
+        "contributor",
+        "has_undo",
+        "old_value_type",
+        "new_value_type",
+        "new_language",
+        "old_language",
+        "new_datatype",
+        "old_datatype",
+        "about_node",
+        "about_node_representation",
+        "language",
+        "old_value",
+        "new_value"
+      ],
+      "slot_usage": {},
+      "class_uri": "http://w3id.org/kgcl/MetadataAssertionPredicateChange",
       "@type": "ClassDefinition"
     },
     {
@@ -4564,8 +4957,8 @@
       "@type": "ClassDefinition"
     },
     {
-      "name": "RemovedNodeFromSubset",
-      "definition_uri": "http://w3id.org/kgcl/RemovedNodeFromSubset",
+      "name": "RemoveNodeFromSubset",
+      "definition_uri": "http://w3id.org/kgcl/RemoveNodeFromSubset",
       "description": "Removes a node from a subset, by removing an annotation",
       "from_schema": "https://w3id.org/kgcl",
       "aliases": [
@@ -4595,13 +4988,13 @@
         "old_datatype",
         "about_node_representation",
         "language",
-        "removed_node_from_subset_change_description",
-        "removed_node_from_subset_about_node",
-        "removed_node_from_subset_subset",
+        "remove_node_from_subset_change_description",
+        "remove_node_from_subset_about_node",
+        "remove_node_from_subset_subset",
         "remove_from_subset_in_subset"
       ],
       "slot_usage": {},
-      "class_uri": "http://w3id.org/kgcl/RemovedNodeFromSubset",
+      "class_uri": "http://w3id.org/kgcl/RemoveNodeFromSubset",
       "@type": "ClassDefinition"
     },
     {
@@ -4972,8 +5365,9 @@
         "configuration__synonym_predicates",
         "configuration__creator_predicate",
         "configuration__contributor_predicate",
+        "configuration__obsolete_node_label_prefix",
         "configuration__obsoletion_workflow",
-        "configuration__obsoletion_policy"
+        "configuration__obsoletion_policies"
       ],
       "slot_usage": {},
       "attributes": [
@@ -5002,11 +5396,19 @@
           "@type": "SlotDefinition"
         },
         {
+          "name": "obsolete_node_label_prefix",
+          "description": "A prefix to add to the label of an obsolete node. This may include a space at the end.",
+          "range": "string",
+          "@type": "SlotDefinition"
+        },
+        {
           "name": "obsoletion_workflow",
           "@type": "SlotDefinition"
         },
         {
-          "name": "obsoletion_policy",
+          "name": "obsoletion_policies",
+          "multivalued": true,
+          "range": "ObsoletionPolicyEnum",
           "@type": "SlotDefinition"
         }
       ],
@@ -5223,9 +5625,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "kgcl.yaml",
-  "source_file_date": "2023-01-10T10:36:29",
-  "source_file_size": 30064,
-  "generation_date": "2023-01-10T17:19:08",
+  "source_file_date": "2023-02-01T11:23:56",
+  "source_file_size": 33131,
+  "generation_date": "2023-02-01T11:26:10",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/kgcl.context.jsonld",
