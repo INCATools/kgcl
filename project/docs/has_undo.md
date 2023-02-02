@@ -1,5 +1,5 @@
 
-# Slot: has undo
+# Slot: has_undo
 
 
 A change that reverses this change
@@ -16,10 +16,10 @@ URI: [kgcl:has_undo](http://w3id.org/kgcl/has_undo)
 
 ## Children
 
- *  [creation➞has undo](creation_has_undo.md)
- *  [obsoletion➞has undo](obsoletion_has_undo.md)
- *  [remove from subset➞has undo](remove_from_subset_has_undo.md)
- *  [unobsoletion➞has undo](unobsoletion_has_undo.md)
+ *  [Creation➞has_undo](Creation_has_undo.md)
+ *  [Obsoletion➞has_undo](Obsoletion_has_undo.md)
+ *  [RemoveFromSubset➞has_undo](RemoveFromSubset_has_undo.md)
+ *  [Unobsoletion➞has_undo](Unobsoletion_has_undo.md)
 
 ## Used by
 
@@ -63,6 +63,7 @@ URI: [kgcl:has_undo](http://w3id.org/kgcl/has_undo)
  * [NodeSynonymChange](NodeSynonymChange.md)
  * [NodeTextDefinitionChange](NodeTextDefinitionChange.md)
  * [NodeUnobsoletion](NodeUnobsoletion.md)
+ * [ObjectPropertyCreation](ObjectPropertyCreation.md)
  * [PlaceUnder](PlaceUnder.md)
  * [PredicateChange](PredicateChange.md)
  * [RemoveMapping](RemoveMapping.md)

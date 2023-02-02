@@ -1,5 +1,5 @@
 
-# Slot: property value set
+# Slot: property_value_set
 
 
 
@@ -16,7 +16,7 @@ None &#8594;  <sub>0..\*</sub> [PropertyValue](PropertyValue.md)
 
 ## Children
 
- *  [change set summary statistic➞property value set](change_set_summary_statistic_property_value_set.md)
+ *  [ChangeSetSummaryStatistic➞property_value_set](ChangeSetSummaryStatistic_property_value_set.md)
 
 ## Used by
 

@@ -16,7 +16,7 @@ None &#8594;  <sub>0..1</sub> [ChangeClassType](types/ChangeClassType.md)
 
 ## Children
 
- *  [change set summary statistic➞change type](change_set_summary_statistic_change_type.md)
+ *  [ChangeSetSummaryStatistic➞change type](ChangeSetSummaryStatistic_change_type.md)
 
 ## Used by
 

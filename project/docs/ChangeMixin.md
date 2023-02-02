@@ -1,5 +1,5 @@
 
-# Class: change mixin
+# Class: ChangeMixin
 
 
 root class for all change mixins

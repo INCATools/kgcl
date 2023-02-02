@@ -46,7 +46,9 @@ linkml:Nodeidentifier NONLITERAL
 basics:LanguageTag xml1:lang
 
 prov:Activity CLOSED {
-    (  $prov:Activity_tes (  prov:startedAtTime @linkml:String ? ;
+    (  $prov:Activity_tes (  &prov:ProvElement_tes ;
+          rdf:type [ prov:ProvElement ] ? ;
+          prov:startedAtTime @linkml:String ? ;
           prov:endedAtTime @linkml:String ? ;
           prov:wasInformedBy @prov:Activity ? ;
           prov:wasAssociatedWith @prov:Agent ? ;
@@ -78,7 +80,9 @@ prov:Activity CLOSED {
 }
 
 prov:Agent CLOSED {
-    (  $prov:Agent_tes (  prov:actedOnBehalfOf @prov:Agent ? ;
+    (  $prov:Agent_tes (  &prov:ProvElement_tes ;
+          rdf:type [ prov:ProvElement ] ? ;
+          prov:actedOnBehalfOf @prov:Agent ? ;
           prov:wasInformedBy @prov:Activity ?
        ) ;
        rdf:type [ prov:Agent ]
@@ -109,16 +113,29 @@ om:Annotation CLOSED {
 )
 
 <Change_struct> {
-    (  $<Change_tes> (  rdf:type @linkml:String ? ;
+    (  $<Change_tes> (  &<ChangeLanguageElement_tes> ;
+          rdf:type [ <ChangeLanguageElement> ] ? ;
+          rdf:type @linkml:String ? ;
           prov:wasGeneratedBy @prov:Activity ? ;
           rdfs:seeAlso @linkml:String ? ;
           <pull_request> @linkml:String ? ;
           dc:creator @linkml:String ? ;
           dc:date @linkml:String ? ;
           dc:creator @linkml:String ? ;
-          <has_undo> @<Change> ?
+          <has_undo> @<Change> ? ;
+          <term_tracker_issue> @linkml:String ?
        ) ;
        rdf:type [ <Change> ]
+    )
+}
+
+<ChangeLanguageElement>  (
+    @<Change> OR @<ChangeSetSummaryStatistic> OR @<Configuration> OR @<Session> OR @<TextualDiff>
+)
+
+<ChangeLanguageElement_struct> {
+    (  $<ChangeLanguageElement_tes> rdf:type . * ;
+       rdf:type [ <ChangeLanguageElement> ] ?
     )
 }
 
@@ -133,7 +150,9 @@ om:Annotation CLOSED {
 }
 
 <ChangeSetSummaryStatistic> CLOSED {
-    (  $<ChangeSetSummaryStatistic_tes> (  <change_type> @<ChangeClassType> ? ;
+    (  $<ChangeSetSummaryStatistic_tes> (  &<ChangeLanguageElement_tes> ;
+          rdf:type [ <ChangeLanguageElement> ] ? ;
+          <change_type> @<ChangeClassType> ? ;
           <count> @linkml:Integer ? ;
           om:property_value_set @om:PropertyValue *
        ) ;
@@ -171,7 +190,9 @@ om:ClassNode CLOSED {
 )
 
 <Configuration> CLOSED {
-    (  $<Configuration_tes> (  <name_predicate> @linkml:String ? ;
+    (  $<Configuration_tes> (  &<ChangeLanguageElement_tes> ;
+          rdf:type [ <ChangeLanguageElement> ] ? ;
+          <name_predicate> @linkml:String ? ;
           <definition_predicate> @linkml:String ? ;
           <main_synonym_predicate> @linkml:String ? ;
           <synonym_predicates> @linkml:String ? ;
@@ -179,7 +200,8 @@ om:ClassNode CLOSED {
           <contributor_predicate> @linkml:String ? ;
           <obsolete_node_label_prefix> @linkml:String ? ;
           <obsoletion_workflow> @linkml:String ? ;
-          <obsoletion_policies> @<ObsoletionPolicyEnum> *
+          <obsoletion_policies> @<ObsoletionPolicyEnum> * ;
+          <obsolete_subclass_of_shadow_property> @linkml:Uriorcurie ?
        ) ;
        rdf:type [ <Configuration> ] ?
     )
@@ -528,7 +550,7 @@ om:Node  (
           ) ;
           rdf:type [ <NodeCreation> ]
        )
-    } OR @<ClassCreation>
+    } OR @<ClassCreation> OR @<ObjectPropertyCreation>
 )
 
 <NodeDeepening> CLOSED {
@@ -693,6 +715,15 @@ om:Node  (
     )
 }
 
+<ObjectPropertyCreation> CLOSED {
+    (  $<ObjectPropertyCreation_tes> (  &<NodeCreation_tes> ;
+          rdf:type [ <NodeCreation> ] ? ;
+          <change_description> @linkml:String ?
+       ) ;
+       rdf:type [ <ObjectPropertyCreation> ]
+    )
+}
+
 <Obsoletion>  (
     {
        (  $<Obsoletion_tes> (  &<ChangeMixin_tes> ;
@@ -749,6 +780,16 @@ om:PropertyValue  (
        )
     } OR @om:Annotation
 )
+
+prov:ProvElement  (
+    @prov:Activity OR @prov:Agent
+)
+
+prov:ProvElement_struct {
+    (  $prov:ProvElement_tes rdf:type . * ;
+       rdf:type [ prov:ProvElement ] ?
+    )
+}
 
 <RemoveFromSubset> {
     (  $<RemoveFromSubset_tes> (  &<SubsetMembershipChange_tes> ;
@@ -819,7 +860,9 @@ om:PropertyValue  (
 }
 
 <Session> CLOSED {
-    (  $<Session_tes> (  <change_set> @<Change> * ;
+    (  $<Session_tes> (  &<ChangeLanguageElement_tes> ;
+          rdf:type [ <ChangeLanguageElement> ] ? ;
+          <change_set> @<Change> * ;
           prov:activity_set @prov:Activity *
        ) ;
        rdf:type [ <Session> ] ?
@@ -898,7 +941,9 @@ om:PropertyValue  (
 }
 
 <TextualDiff> CLOSED {
-    (  $<TextualDiff_tes> rdf:type . * ;
+    (  $<TextualDiff_tes> (  &<ChangeLanguageElement_tes> ;
+          rdf:type [ <ChangeLanguageElement> ] ?
+       ) ;
        rdf:type [ <TextualDiff> ] ?
     )
 }

@@ -16,7 +16,7 @@ None &#8594;  <sub>0..1</sub> [Node](Node.md)
 
 ## Children
 
- *  [node unobsoletion➞replaced by](node_unobsoletion_replaced_by.md)
+ *  [NodeUnobsoletion➞replaced by](NodeUnobsoletion_replaced_by.md)
 
 ## Used by
 

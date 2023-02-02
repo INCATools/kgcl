@@ -1,5 +1,5 @@
 
-# Class: configuration
+# Class: Configuration
 
 
 The meaning of operations can be configured
@@ -7,7 +7,11 @@ The meaning of operations can be configured
 URI: [kgcl:Configuration](http://w3id.org/kgcl/Configuration)
 
 
-[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Configuration&#124;name_predicate:string%20%3F;definition_predicate:string%20%3F;main_synonym_predicate:string%20%3F;synonym_predicates:string%20%3F;creator_predicate:string%20%3F;contributor_predicate:string%20%3F;obsolete_node_label_prefix:string%20%3F;obsoletion_workflow:string%20%3F;obsoletion_policies:ObsoletionPolicyEnum%20*])](https://yuml.me/diagram/nofunky;dir:TB/class/[Configuration&#124;name_predicate:string%20%3F;definition_predicate:string%20%3F;main_synonym_predicate:string%20%3F;synonym_predicates:string%20%3F;creator_predicate:string%20%3F;contributor_predicate:string%20%3F;obsolete_node_label_prefix:string%20%3F;obsoletion_workflow:string%20%3F;obsoletion_policies:ObsoletionPolicyEnum%20*])
+[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[ChangeLanguageElement]^-[Configuration&#124;name_predicate:string%20%3F;definition_predicate:string%20%3F;main_synonym_predicate:string%20%3F;synonym_predicates:string%20%3F;creator_predicate:string%20%3F;contributor_predicate:string%20%3F;obsolete_node_label_prefix:string%20%3F;obsoletion_workflow:string%20%3F;obsoletion_policies:ObsoletionPolicyEnum%20*;obsolete_subclass_of_shadow_property:uriorcurie%20%3F],[ChangeLanguageElement])](https://yuml.me/diagram/nofunky;dir:TB/class/[ChangeLanguageElement]^-[Configuration&#124;name_predicate:string%20%3F;definition_predicate:string%20%3F;main_synonym_predicate:string%20%3F;synonym_predicates:string%20%3F;creator_predicate:string%20%3F;contributor_predicate:string%20%3F;obsolete_node_label_prefix:string%20%3F;obsoletion_workflow:string%20%3F;obsoletion_policies:ObsoletionPolicyEnum%20*;obsolete_subclass_of_shadow_property:uriorcurie%20%3F],[ChangeLanguageElement])
+
+## Parents
+
+ *  is_a: [ChangeLanguageElement](ChangeLanguageElement.md) - A broad grouping for all elements of the change language
 
 ## Attributes
 
@@ -33,3 +37,6 @@ URI: [kgcl:Configuration](http://w3id.org/kgcl/Configuration)
      * Range: [String](types/String.md)
  * [➞obsoletion_policies](configuration__obsoletion_policies.md)  <sub>0..\*</sub>
      * Range: [ObsoletionPolicyEnum](ObsoletionPolicyEnum.md)
+ * [➞obsolete_subclass_of_shadow_property](configuration__obsolete_subclass_of_shadow_property.md)  <sub>0..1</sub>
+     * Description: specifies the annotation property to be used to create a shadow annotation assertion triple when a subclass edge is deleted.
+     * Range: [Uriorcurie](types/Uriorcurie.md)

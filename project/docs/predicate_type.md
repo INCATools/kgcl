@@ -1,5 +1,5 @@
 
-# Slot: ~~predicate type~~ _(deprecated)_
+# Slot: ~~predicate_type~~ _(deprecated)_
 
 
 The type (IRI or Literal) of an edge's subject

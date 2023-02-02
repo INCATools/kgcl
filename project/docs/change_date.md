@@ -1,5 +1,5 @@
 
-# Slot: change date
+# Slot: change_date
 
 
 
@@ -16,7 +16,7 @@ None &#8594;  <sub>0..1</sub> [String](types/String.md)
 
 ## Children
 
- *  [change➞change date](change_change_date.md)
+ *  [Change➞change_date](Change_change_date.md)
 
 ## Used by
 

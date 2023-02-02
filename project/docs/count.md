@@ -16,7 +16,7 @@ None &#8594;  <sub>0..1</sub> [Integer](types/Integer.md)
 
 ## Children
 
- *  [change set summary statistic➞count](change_set_summary_statistic_count.md)
+ *  [ChangeSetSummaryStatistic➞count](ChangeSetSummaryStatistic_count.md)
 
 ## Used by
 

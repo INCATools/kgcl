@@ -25,7 +25,7 @@ from kgcl_schema.datamodel.kgcl import (
     NodeUnobsoletion,
     PlaceUnder,
     PredicateChange,
-    RemovedNodeFromSubset,
+    RemoveNodeFromSubset,
     RemoveUnder,
     Session,
 )

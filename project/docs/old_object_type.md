@@ -1,5 +1,5 @@
 
-# Slot: ~~old object type~~ _(deprecated)_
+# Slot: ~~old_object_type~~ _(deprecated)_
 
 
 The type (IRI or Literal) of an old object

@@ -1,5 +1,5 @@
 
-# Slot: see also
+# Slot: see_also
 
 
 
@@ -16,7 +16,7 @@ None &#8594;  <sub>0..1</sub> [String](types/String.md)
 
 ## Children
 
- *  [change➞see also](change_see_also.md)
+ *  [Change➞see_also](Change_see_also.md)
 
 ## Used by
 

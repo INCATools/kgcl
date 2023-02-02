@@ -1,5 +1,5 @@
 
-# Class: annotation
+# Class: Annotation
 
 
 owl annotations. Not to be confused with annotations sensu GO
@@ -7,7 +7,7 @@ owl annotations. Not to be confused with annotations sensu GO
 URI: [kgcl:Annotation](http://w3id.org/kgcl/Annotation)
 
 
-[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[PropertyValue],[Node],[Node]<property(i)%200..1-%20[Annotation&#124;property_type:string%20%3F;filler_type:string%20%3F;filler(i):string%20%3F],[Annotation]<annotation%20set%200..1-++[Annotation],[PropertyValue]^-[Annotation])](https://yuml.me/diagram/nofunky;dir:TB/class/[PropertyValue],[Node],[Node]<property(i)%200..1-%20[Annotation&#124;property_type:string%20%3F;filler_type:string%20%3F;filler(i):string%20%3F],[Annotation]<annotation%20set%200..1-++[Annotation],[PropertyValue]^-[Annotation])
+[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[PropertyValue],[Node],[Node]<property(i)%200..1-%20[Annotation&#124;property_type:string%20%3F;filler_type:string%20%3F;filler(i):string%20%3F],[Annotation]<annotation_set%200..1-++[Annotation],[PropertyValue]^-[Annotation])](https://yuml.me/diagram/nofunky;dir:TB/class/[PropertyValue],[Node],[Node]<property(i)%200..1-%20[Annotation&#124;property_type:string%20%3F;filler_type:string%20%3F;filler(i):string%20%3F],[Annotation]<annotation_set%200..1-++[Annotation],[PropertyValue]^-[Annotation])
 
 ## Parents
 
@@ -15,7 +15,7 @@ URI: [kgcl:Annotation](http://w3id.org/kgcl/Annotation)
 
 ## Referenced by Class
 
- *  **None** *[annotation set](annotation_set.md)*  <sub>0..1</sub>  **[Annotation](Annotation.md)**
+ *  **None** *[annotation_set](annotation_set.md)*  <sub>0..1</sub>  **[Annotation](Annotation.md)**
 
 ## Attributes
 
@@ -26,11 +26,11 @@ URI: [kgcl:Annotation](http://w3id.org/kgcl/Annotation)
      * Range: [Node](Node.md)
  * [filler](filler.md)  <sub>0..1</sub>
      * Range: [String](types/String.md)
- * [annotation set](annotation_set.md)  <sub>0..1</sub>
+ * [annotation_set](annotation_set.md)  <sub>0..1</sub>
      * Range: [Annotation](Annotation.md)
- * [property type](property_type.md)  <sub>0..1</sub>
+ * [property_type](property_type.md)  <sub>0..1</sub>
      * Range: [String](types/String.md)
- * [filler type](filler_type.md)  <sub>0..1</sub>
+ * [filler_type](filler_type.md)  <sub>0..1</sub>
      * Range: [String](types/String.md)
 
 ## Other properties

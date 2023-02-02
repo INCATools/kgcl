@@ -1,5 +1,5 @@
 
-# Slot: ~~subject representation~~ _(deprecated)_
+# Slot: ~~subject_representation~~ _(deprecated)_
 
 
 

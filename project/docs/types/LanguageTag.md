@@ -1,5 +1,5 @@
 
-# Type: language tag
+# Type: LanguageTag
 
 
 

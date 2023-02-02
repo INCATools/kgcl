@@ -1,5 +1,5 @@
 
-# Slot: has replacement
+# Slot: has_replacement
 
 
 A single node obsoletion event may be accompanied by one or more suggested replacement nodes

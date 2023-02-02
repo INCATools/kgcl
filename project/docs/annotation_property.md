@@ -1,5 +1,5 @@
 
-# Slot: annotation property
+# Slot: annotation_property
 
 
 An annotation property

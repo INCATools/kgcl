@@ -1,5 +1,5 @@
 
-# Class: change
+# Class: Change
 
 
 Any change perform on an ontology or knowledge graph
@@ -7,7 +7,11 @@ Any change perform on an ontology or knowledge graph
 URI: [kgcl:Change](http://w3id.org/kgcl/Change)
 
 
-[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Transaction],[SimpleChange],[NodeObsoletion],[MultiNodeObsoletion],[ComplexChange],[Change]<has%20undo%200..1-%20[Change&#124;id:string;type:string%20%3F;see_also:string%20%3F;pull_request:string%20%3F;creator:string%20%3F;change_date:string%20%3F;contributor:string%20%3F],[Activity]<was%20generated%20by%200..1-%20[Change],[ComplexChange]++-%20change%20set%200..*>[Change],[Transaction]++-%20change%20set%200..*>[Change],[Session]++-%20change%20set%200..*>[Change],[MultiNodeObsoletion]++-%20associated%20change%20set%200..*>[Change],[NodeObsoletion]++-%20associated%20change%20set%200..*>[Change],[Change]^-[Transaction],[Change]^-[SimpleChange],[Change]^-[ComplexChange],[Session],[Activity])](https://yuml.me/diagram/nofunky;dir:TB/class/[Transaction],[SimpleChange],[NodeObsoletion],[MultiNodeObsoletion],[ComplexChange],[Change]<has%20undo%200..1-%20[Change&#124;id:string;type:string%20%3F;see_also:string%20%3F;pull_request:string%20%3F;creator:string%20%3F;change_date:string%20%3F;contributor:string%20%3F],[Activity]<was%20generated%20by%200..1-%20[Change],[ComplexChange]++-%20change%20set%200..*>[Change],[Transaction]++-%20change%20set%200..*>[Change],[Session]++-%20change%20set%200..*>[Change],[MultiNodeObsoletion]++-%20associated%20change%20set%200..*>[Change],[NodeObsoletion]++-%20associated%20change%20set%200..*>[Change],[Change]^-[Transaction],[Change]^-[SimpleChange],[Change]^-[ComplexChange],[Session],[Activity])
+[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Transaction],[SimpleChange],[NodeObsoletion],[MultiNodeObsoletion],[ComplexChange],[ChangeLanguageElement],[Change]<has_undo%200..1-%20[Change&#124;id:string;type:string%20%3F;see_also:string%20%3F;pull_request:string%20%3F;creator:string%20%3F;change_date:string%20%3F;contributor:string%20%3F;term_tracker_issue:string%20%3F],[Activity]<was_generated_by%200..1-%20[Change],[MultiNodeObsoletion]++-%20associated%20change%20set%200..*>[Change],[NodeObsoletion]++-%20associated%20change%20set%200..*>[Change],[ComplexChange]++-%20change_set%200..*>[Change],[Transaction]++-%20change_set%200..*>[Change],[Session]++-%20change_set%200..*>[Change],[Change]^-[Transaction],[Change]^-[SimpleChange],[Change]^-[ComplexChange],[ChangeLanguageElement]^-[Change],[Session],[Activity])](https://yuml.me/diagram/nofunky;dir:TB/class/[Transaction],[SimpleChange],[NodeObsoletion],[MultiNodeObsoletion],[ComplexChange],[ChangeLanguageElement],[Change]<has_undo%200..1-%20[Change&#124;id:string;type:string%20%3F;see_also:string%20%3F;pull_request:string%20%3F;creator:string%20%3F;change_date:string%20%3F;contributor:string%20%3F;term_tracker_issue:string%20%3F],[Activity]<was_generated_by%200..1-%20[Change],[MultiNodeObsoletion]++-%20associated%20change%20set%200..*>[Change],[NodeObsoletion]++-%20associated%20change%20set%200..*>[Change],[ComplexChange]++-%20change_set%200..*>[Change],[Transaction]++-%20change_set%200..*>[Change],[Session]++-%20change_set%200..*>[Change],[Change]^-[Transaction],[Change]^-[SimpleChange],[Change]^-[ComplexChange],[ChangeLanguageElement]^-[Change],[Session],[Activity])
+
+## Parents
+
+ *  is_a: [ChangeLanguageElement](ChangeLanguageElement.md) - A broad grouping for all elements of the change language
 
 ## Children
 
@@ -17,11 +21,11 @@ URI: [kgcl:Change](http://w3id.org/kgcl/Change)
 
 ## Referenced by Class
 
+ *  **[MultiNodeObsoletion](MultiNodeObsoletion.md)** *[MultiNodeObsoletion➞associated change set](MultiNodeObsoletion_associated_change_set.md)*  <sub>0..\*</sub>  **[Change](Change.md)**
+ *  **[NodeObsoletion](NodeObsoletion.md)** *[NodeObsoletion➞associated change set](NodeObsoletion_associated_change_set.md)*  <sub>0..\*</sub>  **[Change](Change.md)**
  *  **None** *[associated change set](associated_change_set.md)*  <sub>0..\*</sub>  **[Change](Change.md)**
- *  **None** *[change set](change_set.md)*  <sub>0..\*</sub>  **[Change](Change.md)**
- *  **[Change](Change.md)** *[has undo](has_undo.md)*  <sub>0..1</sub>  **[Change](Change.md)**
- *  **[MultiNodeObsoletion](MultiNodeObsoletion.md)** *[multi node obsoletion➞associated change set](multi_node_obsoletion_associated_change_set.md)*  <sub>0..\*</sub>  **[Change](Change.md)**
- *  **[NodeObsoletion](NodeObsoletion.md)** *[node obsoletion➞associated change set](node_obsoletion_associated_change_set.md)*  <sub>0..\*</sub>  **[Change](Change.md)**
+ *  **None** *[change_set](change_set.md)*  <sub>0..\*</sub>  **[Change](Change.md)**
+ *  **[Change](Change.md)** *[has_undo](has_undo.md)*  <sub>0..1</sub>  **[Change](Change.md)**
 
 ## Attributes
 
@@ -32,18 +36,20 @@ URI: [kgcl:Change](http://w3id.org/kgcl/Change)
      * Range: [String](types/String.md)
  * [type](type.md)  <sub>0..1</sub>
      * Range: [String](types/String.md)
- * [change➞was generated by](change_was_generated_by.md)  <sub>0..1</sub>
+ * [Change➞was_generated_by](Change_was_generated_by.md)  <sub>0..1</sub>
      * Range: [Activity](Activity.md)
- * [change➞see also](change_see_also.md)  <sub>0..1</sub>
+ * [Change➞see_also](Change_see_also.md)  <sub>0..1</sub>
      * Range: [String](types/String.md)
- * [change➞pull request](change_pull_request.md)  <sub>0..1</sub>
+ * [Change➞pull_request](Change_pull_request.md)  <sub>0..1</sub>
      * Range: [String](types/String.md)
- * [change➞creator](change_creator.md)  <sub>0..1</sub>
+ * [Change➞creator](Change_creator.md)  <sub>0..1</sub>
      * Range: [String](types/String.md)
- * [change➞change date](change_change_date.md)  <sub>0..1</sub>
+ * [Change➞change_date](Change_change_date.md)  <sub>0..1</sub>
      * Range: [String](types/String.md)
  * [contributor](contributor.md)  <sub>0..1</sub>
      * Range: [String](types/String.md)
- * [has undo](has_undo.md)  <sub>0..1</sub>
+ * [has_undo](has_undo.md)  <sub>0..1</sub>
      * Description: A change that reverses this change
      * Range: [Change](Change.md)
+ * [Change➞term_tracker_issue](Change_term_tracker_issue.md)  <sub>0..1</sub>
+     * Range: [String](types/String.md)

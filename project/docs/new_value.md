@@ -1,5 +1,5 @@
 
-# Slot: new value
+# Slot: new_value
 
 
 The value of a property held in the new instance of the ontology
@@ -16,8 +16,8 @@ None &#8594;  <sub>0..1</sub> [String](types/String.md)
 
 ## Children
 
- *  [language tag change➞new value](language_tag_change_new_value.md)
- *  [node rename➞new value](node_rename_new_value.md)
+ *  [LanguageTagChange➞new_value](LanguageTagChange_new_value.md)
+ *  [NodeRename➞new_value](NodeRename_new_value.md)
 
 ## Used by
 
@@ -57,6 +57,7 @@ None &#8594;  <sub>0..1</sub> [String](types/String.md)
  * [NodeSynonymChange](NodeSynonymChange.md)
  * [NodeTextDefinitionChange](NodeTextDefinitionChange.md)
  * [NodeUnobsoletion](NodeUnobsoletion.md)
+ * [ObjectPropertyCreation](ObjectPropertyCreation.md)
  * [PlaceUnder](PlaceUnder.md)
  * [PredicateChange](PredicateChange.md)
  * [RemoveMapping](RemoveMapping.md)

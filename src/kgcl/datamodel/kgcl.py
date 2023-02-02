@@ -1,5 +1,5 @@
 # Auto generated from kgcl.yaml by pythongen.py version: 0.9.0
-# Generation date: 2023-02-01T11:26:47
+# Generation date: 2023-02-01T18:10:20
 # Schema: kgcl_schema
 #
 # id: https://w3id.org/kgcl
@@ -53,17 +53,17 @@ DEFAULT_ = KGCL
 
 # Types
 class ChangeClassType(Uriorcurie):
-    """ CURIE for a class within this datamodel. E.g. kgcl:NodeObsoletion """
+    """ CURIE for a class within this data model. E.g. kgcl:NodeObsoletion """
     type_class_uri = XSD.anyURI
     type_class_curie = "xsd:anyURI"
-    type_name = "change class type"
+    type_name = "ChangeClassType"
     type_model_uri = KGCL.ChangeClassType
 
 
 class LanguageTag(str):
     type_class_uri = XML.lang
     type_class_curie = "xml:lang"
-    type_name = "language tag"
+    type_name = "LanguageTag"
     type_model_uri = KGCL.LanguageTag
 
 
@@ -268,6 +268,10 @@ class ClassCreationId(NodeCreationId):
     pass
 
 
+class ObjectPropertyCreationId(NodeCreationId):
+    pass
+
+
 class NodeDeletionId(NodeChangeId):
     pass
 
@@ -304,8 +308,20 @@ class AgentId(extended_str):
     pass
 
 
+class ChangeLanguageElement(YAMLRoot):
+    """
+    A broad grouping for all elements of the change language
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = KGCL.ChangeLanguageElement
+    class_class_curie: ClassVar[str] = "kgcl:ChangeLanguageElement"
+    class_name: ClassVar[str] = "ChangeLanguageElement"
+    class_model_uri: ClassVar[URIRef] = KGCL.ChangeLanguageElement
+
+
 @dataclass
-class Change(YAMLRoot):
+class Change(ChangeLanguageElement):
     """
     Any change perform on an ontology or knowledge graph
     """
@@ -313,7 +329,7 @@ class Change(YAMLRoot):
 
     class_class_uri: ClassVar[URIRef] = KGCL.Change
     class_class_curie: ClassVar[str] = "kgcl:Change"
-    class_name: ClassVar[str] = "change"
+    class_name: ClassVar[str] = "Change"
     class_model_uri: ClassVar[URIRef] = KGCL.Change
 
     id: Union[str, ChangeId] = None
@@ -325,6 +341,7 @@ class Change(YAMLRoot):
     change_date: Optional[str] = None
     contributor: Optional[str] = None
     has_undo: Optional[Union[str, ChangeId]] = None
+    term_tracker_issue: Optional[str] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
@@ -356,6 +373,9 @@ class Change(YAMLRoot):
         if self.has_undo is not None and not isinstance(self.has_undo, ChangeId):
             self.has_undo = ChangeId(self.has_undo)
 
+        if self.term_tracker_issue is not None and not isinstance(self.term_tracker_issue, str):
+            self.term_tracker_issue = str(self.term_tracker_issue)
+
         super().__post_init__(**kwargs)
 
 
@@ -368,7 +388,7 @@ class SimpleChange(Change):
 
     class_class_uri: ClassVar[URIRef] = KGCL.SimpleChange
     class_class_curie: ClassVar[str] = "kgcl:SimpleChange"
-    class_name: ClassVar[str] = "simple change"
+    class_name: ClassVar[str] = "SimpleChange"
     class_model_uri: ClassVar[URIRef] = KGCL.SimpleChange
 
     id: Union[str, SimpleChangeId] = None
@@ -418,7 +438,7 @@ class ComplexChange(Change):
 
     class_class_uri: ClassVar[URIRef] = KGCL.ComplexChange
     class_class_curie: ClassVar[str] = "kgcl:ComplexChange"
-    class_name: ClassVar[str] = "complex change"
+    class_name: ClassVar[str] = "ComplexChange"
     class_model_uri: ClassVar[URIRef] = KGCL.ComplexChange
 
     id: Union[str, ComplexChangeId] = None
@@ -439,7 +459,7 @@ class MultiNodeObsoletion(ComplexChange):
 
     class_class_uri: ClassVar[URIRef] = KGCL.MultiNodeObsoletion
     class_class_curie: ClassVar[str] = "kgcl:MultiNodeObsoletion"
-    class_name: ClassVar[str] = "multi node obsoletion"
+    class_name: ClassVar[str] = "MultiNodeObsoletion"
     class_model_uri: ClassVar[URIRef] = KGCL.MultiNodeObsoletion
 
     id: Union[str, MultiNodeObsoletionId] = None
@@ -473,7 +493,7 @@ class Transaction(Change):
 
     class_class_uri: ClassVar[URIRef] = KGCL.Transaction
     class_class_curie: ClassVar[str] = "kgcl:Transaction"
-    class_name: ClassVar[str] = "transaction"
+    class_name: ClassVar[str] = "Transaction"
     class_model_uri: ClassVar[URIRef] = KGCL.Transaction
 
     id: Union[str, TransactionId] = None
@@ -491,7 +511,7 @@ class Transaction(Change):
 
 
 @dataclass
-class ChangeSetSummaryStatistic(YAMLRoot):
+class ChangeSetSummaryStatistic(ChangeLanguageElement):
     """
     A summary statistic for a set of changes of the same type, grouped by zero or more node properties
     """
@@ -499,7 +519,7 @@ class ChangeSetSummaryStatistic(YAMLRoot):
 
     class_class_uri: ClassVar[URIRef] = KGCL.ChangeSetSummaryStatistic
     class_class_curie: ClassVar[str] = "kgcl:ChangeSetSummaryStatistic"
-    class_name: ClassVar[str] = "change set summary statistic"
+    class_name: ClassVar[str] = "ChangeSetSummaryStatistic"
     class_model_uri: ClassVar[URIRef] = KGCL.ChangeSetSummaryStatistic
 
     change_type: Optional[Union[str, ChangeClassType]] = None
@@ -528,7 +548,7 @@ class ChangeMixin(YAMLRoot):
 
     class_class_uri: ClassVar[URIRef] = KGCL.ChangeMixin
     class_class_curie: ClassVar[str] = "kgcl:ChangeMixin"
-    class_name: ClassVar[str] = "change mixin"
+    class_name: ClassVar[str] = "ChangeMixin"
     class_model_uri: ClassVar[URIRef] = KGCL.ChangeMixin
 
 
@@ -541,7 +561,7 @@ class Obsoletion(ChangeMixin):
 
     class_class_uri: ClassVar[URIRef] = KGCL.Obsoletion
     class_class_curie: ClassVar[str] = "kgcl:Obsoletion"
-    class_name: ClassVar[str] = "obsoletion"
+    class_name: ClassVar[str] = "Obsoletion"
     class_model_uri: ClassVar[URIRef] = KGCL.Obsoletion
 
     about: Optional[Union[dict, "OntologyElement"]] = None
@@ -565,7 +585,7 @@ class DatatypeOrLanguageTagChange(ChangeMixin):
 
     class_class_uri: ClassVar[URIRef] = KGCL.DatatypeOrLanguageTagChange
     class_class_curie: ClassVar[str] = "kgcl:DatatypeOrLanguageTagChange"
-    class_name: ClassVar[str] = "datatype or language tag change"
+    class_name: ClassVar[str] = "DatatypeOrLanguageTagChange"
     class_model_uri: ClassVar[URIRef] = KGCL.DatatypeOrLanguageTagChange
 
 
@@ -575,7 +595,7 @@ class LanguageTagChange(DatatypeOrLanguageTagChange):
 
     class_class_uri: ClassVar[URIRef] = KGCL.LanguageTagChange
     class_class_curie: ClassVar[str] = "kgcl:LanguageTagChange"
-    class_name: ClassVar[str] = "language tag change"
+    class_name: ClassVar[str] = "LanguageTagChange"
     class_model_uri: ClassVar[URIRef] = KGCL.LanguageTagChange
 
     old_value: Optional[str] = None
@@ -596,7 +616,7 @@ class DatatypeChange(DatatypeOrLanguageTagChange):
 
     class_class_uri: ClassVar[URIRef] = KGCL.DatatypeChange
     class_class_curie: ClassVar[str] = "kgcl:DatatypeChange"
-    class_name: ClassVar[str] = "datatype change"
+    class_name: ClassVar[str] = "DatatypeChange"
     class_model_uri: ClassVar[URIRef] = KGCL.DatatypeChange
 
 
@@ -609,7 +629,7 @@ class AllowsAutomaticReplacementOfEdges(Obsoletion):
 
     class_class_uri: ClassVar[URIRef] = KGCL.AllowsAutomaticReplacementOfEdges
     class_class_curie: ClassVar[str] = "kgcl:AllowsAutomaticReplacementOfEdges"
-    class_name: ClassVar[str] = "allows automatic replacement of edges"
+    class_name: ClassVar[str] = "AllowsAutomaticReplacementOfEdges"
     class_model_uri: ClassVar[URIRef] = KGCL.AllowsAutomaticReplacementOfEdges
 
 
@@ -622,7 +642,7 @@ class Unobsoletion(ChangeMixin):
 
     class_class_uri: ClassVar[URIRef] = KGCL.Unobsoletion
     class_class_curie: ClassVar[str] = "kgcl:Unobsoletion"
-    class_name: ClassVar[str] = "unobsoletion"
+    class_name: ClassVar[str] = "Unobsoletion"
     class_model_uri: ClassVar[URIRef] = KGCL.Unobsoletion
 
     has_undo: Optional[Union[dict, Obsoletion]] = None
@@ -642,7 +662,7 @@ class Deletion(ChangeMixin):
 
     class_class_uri: ClassVar[URIRef] = KGCL.Deletion
     class_class_curie: ClassVar[str] = "kgcl:Deletion"
-    class_name: ClassVar[str] = "deletion"
+    class_name: ClassVar[str] = "Deletion"
     class_model_uri: ClassVar[URIRef] = KGCL.Deletion
 
 
@@ -655,7 +675,7 @@ class Creation(ChangeMixin):
 
     class_class_uri: ClassVar[URIRef] = KGCL.Creation
     class_class_curie: ClassVar[str] = "kgcl:Creation"
-    class_name: ClassVar[str] = "creation"
+    class_name: ClassVar[str] = "Creation"
     class_model_uri: ClassVar[URIRef] = KGCL.Creation
 
     has_undo: Optional[Union[dict, Deletion]] = None
@@ -676,7 +696,7 @@ class SubsetMembershipChange(ChangeMixin):
 
     class_class_uri: ClassVar[URIRef] = KGCL.SubsetMembershipChange
     class_class_curie: ClassVar[str] = "kgcl:SubsetMembershipChange"
-    class_name: ClassVar[str] = "subset membership change"
+    class_name: ClassVar[str] = "SubsetMembershipChange"
     class_model_uri: ClassVar[URIRef] = KGCL.SubsetMembershipChange
 
     in_subset: Optional[Union[dict, "OntologySubset"]] = None
@@ -697,7 +717,7 @@ class AddToSubset(SubsetMembershipChange):
 
     class_class_uri: ClassVar[URIRef] = KGCL.AddToSubset
     class_class_curie: ClassVar[str] = "kgcl:AddToSubset"
-    class_name: ClassVar[str] = "add to subset"
+    class_name: ClassVar[str] = "AddToSubset"
     class_model_uri: ClassVar[URIRef] = KGCL.AddToSubset
 
     in_subset: Optional[Union[dict, "OntologySubset"]] = None
@@ -718,7 +738,7 @@ class RemoveFromSubset(SubsetMembershipChange):
 
     class_class_uri: ClassVar[URIRef] = KGCL.RemoveFromSubset
     class_class_curie: ClassVar[str] = "kgcl:RemoveFromSubset"
-    class_name: ClassVar[str] = "remove from subset"
+    class_name: ClassVar[str] = "RemoveFromSubset"
     class_model_uri: ClassVar[URIRef] = KGCL.RemoveFromSubset
 
     in_subset: Optional[Union[dict, "OntologySubset"]] = None
@@ -743,7 +763,7 @@ class EdgeChange(SimpleChange):
 
     class_class_uri: ClassVar[URIRef] = KGCL.EdgeChange
     class_class_curie: ClassVar[str] = "kgcl:EdgeChange"
-    class_name: ClassVar[str] = "edge change"
+    class_name: ClassVar[str] = "EdgeChange"
     class_model_uri: ClassVar[URIRef] = KGCL.EdgeChange
 
     id: Union[str, EdgeChangeId] = None
@@ -781,7 +801,7 @@ class EdgeCreation(EdgeChange):
 
     class_class_uri: ClassVar[URIRef] = KGCL.EdgeCreation
     class_class_curie: ClassVar[str] = "kgcl:EdgeCreation"
-    class_name: ClassVar[str] = "edge creation"
+    class_name: ClassVar[str] = "EdgeCreation"
     class_model_uri: ClassVar[URIRef] = KGCL.EdgeCreation
 
     id: Union[str, EdgeCreationId] = None
@@ -836,7 +856,7 @@ class PlaceUnder(EdgeCreation):
 
     class_class_uri: ClassVar[URIRef] = KGCL.PlaceUnder
     class_class_curie: ClassVar[str] = "kgcl:PlaceUnder"
-    class_name: ClassVar[str] = "place under"
+    class_name: ClassVar[str] = "PlaceUnder"
     class_model_uri: ClassVar[URIRef] = KGCL.PlaceUnder
 
     id: Union[str, PlaceUnderId] = None
@@ -859,7 +879,7 @@ class EdgeDeletion(EdgeChange):
 
     class_class_uri: ClassVar[URIRef] = KGCL.EdgeDeletion
     class_class_curie: ClassVar[str] = "kgcl:EdgeDeletion"
-    class_name: ClassVar[str] = "edge deletion"
+    class_name: ClassVar[str] = "EdgeDeletion"
     class_model_uri: ClassVar[URIRef] = KGCL.EdgeDeletion
 
     id: Union[str, EdgeDeletionId] = None
@@ -914,7 +934,7 @@ class RemoveUnder(EdgeDeletion):
 
     class_class_uri: ClassVar[URIRef] = KGCL.RemoveUnder
     class_class_curie: ClassVar[str] = "kgcl:RemoveUnder"
-    class_name: ClassVar[str] = "remove under"
+    class_name: ClassVar[str] = "RemoveUnder"
     class_model_uri: ClassVar[URIRef] = KGCL.RemoveUnder
 
     id: Union[str, RemoveUnderId] = None
@@ -937,7 +957,7 @@ class EdgeObsoletion(EdgeChange):
 
     class_class_uri: ClassVar[URIRef] = KGCL.EdgeObsoletion
     class_class_curie: ClassVar[str] = "kgcl:EdgeObsoletion"
-    class_name: ClassVar[str] = "edge obsoletion"
+    class_name: ClassVar[str] = "EdgeObsoletion"
     class_model_uri: ClassVar[URIRef] = KGCL.EdgeObsoletion
 
     id: Union[str, EdgeObsoletionId] = None
@@ -984,7 +1004,7 @@ class EdgeRewiring(EdgeChange):
 
     class_class_uri: ClassVar[URIRef] = KGCL.EdgeRewiring
     class_class_curie: ClassVar[str] = "kgcl:EdgeRewiring"
-    class_name: ClassVar[str] = "edge rewiring"
+    class_name: ClassVar[str] = "EdgeRewiring"
     class_model_uri: ClassVar[URIRef] = KGCL.EdgeRewiring
 
     id: Union[str, EdgeRewiringId] = None
@@ -1007,7 +1027,7 @@ class MappingCreation(EdgeCreation):
 
     class_class_uri: ClassVar[URIRef] = KGCL.MappingCreation
     class_class_curie: ClassVar[str] = "kgcl:MappingCreation"
-    class_name: ClassVar[str] = "mapping creation"
+    class_name: ClassVar[str] = "MappingCreation"
     class_model_uri: ClassVar[URIRef] = KGCL.MappingCreation
 
     id: Union[str, MappingCreationId] = None
@@ -1051,7 +1071,7 @@ class NodeMove(EdgeChange):
 
     class_class_uri: ClassVar[URIRef] = KGCL.NodeMove
     class_class_curie: ClassVar[str] = "kgcl:NodeMove"
-    class_name: ClassVar[str] = "node move"
+    class_name: ClassVar[str] = "NodeMove"
     class_model_uri: ClassVar[URIRef] = KGCL.NodeMove
 
     id: Union[str, NodeMoveId] = None
@@ -1087,7 +1107,7 @@ class NodeDeepening(NodeMove):
 
     class_class_uri: ClassVar[URIRef] = KGCL.NodeDeepening
     class_class_curie: ClassVar[str] = "kgcl:NodeDeepening"
-    class_name: ClassVar[str] = "node deepening"
+    class_name: ClassVar[str] = "NodeDeepening"
     class_model_uri: ClassVar[URIRef] = KGCL.NodeDeepening
 
     id: Union[str, NodeDeepeningId] = None
@@ -1114,7 +1134,7 @@ class NodeShallowing(NodeMove):
 
     class_class_uri: ClassVar[URIRef] = KGCL.NodeShallowing
     class_class_curie: ClassVar[str] = "kgcl:NodeShallowing"
-    class_name: ClassVar[str] = "node shallowing"
+    class_name: ClassVar[str] = "NodeShallowing"
     class_model_uri: ClassVar[URIRef] = KGCL.NodeShallowing
 
     id: Union[str, NodeShallowingId] = None
@@ -1141,7 +1161,7 @@ class PredicateChange(EdgeChange):
 
     class_class_uri: ClassVar[URIRef] = KGCL.PredicateChange
     class_class_curie: ClassVar[str] = "kgcl:PredicateChange"
-    class_name: ClassVar[str] = "predicate change"
+    class_name: ClassVar[str] = "PredicateChange"
     class_model_uri: ClassVar[URIRef] = KGCL.PredicateChange
 
     id: Union[str, PredicateChangeId] = None
@@ -1162,13 +1182,13 @@ class PredicateChange(EdgeChange):
 @dataclass
 class EdgeLogicalInterpretationChange(EdgeChange):
     """
-    An edge change where the subjet, object, and predicate are unchanged, but the logical interpretation changes
+    An edge change where the subject, object, and predicate are unchanged, but the logical interpretation changes
     """
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = KGCL.EdgeLogicalInterpretationChange
     class_class_curie: ClassVar[str] = "kgcl:EdgeLogicalInterpretationChange"
-    class_name: ClassVar[str] = "edge logical interpretation change"
+    class_name: ClassVar[str] = "EdgeLogicalInterpretationChange"
     class_model_uri: ClassVar[URIRef] = KGCL.EdgeLogicalInterpretationChange
 
     id: Union[str, EdgeLogicalInterpretationChangeId] = None
@@ -1191,7 +1211,7 @@ class LogicalAxiomChange(SimpleChange):
 
     class_class_uri: ClassVar[URIRef] = KGCL.LogicalAxiomChange
     class_class_curie: ClassVar[str] = "kgcl:LogicalAxiomChange"
-    class_name: ClassVar[str] = "logical axiom change"
+    class_name: ClassVar[str] = "LogicalAxiomChange"
     class_model_uri: ClassVar[URIRef] = KGCL.LogicalAxiomChange
 
     id: Union[str, LogicalAxiomChangeId] = None
@@ -1214,7 +1234,7 @@ class NodeChange(SimpleChange):
 
     class_class_uri: ClassVar[URIRef] = KGCL.NodeChange
     class_class_curie: ClassVar[str] = "kgcl:NodeChange"
-    class_name: ClassVar[str] = "node change"
+    class_name: ClassVar[str] = "NodeChange"
     class_model_uri: ClassVar[URIRef] = KGCL.NodeChange
 
     id: Union[str, NodeChangeId] = None
@@ -1244,7 +1264,7 @@ class NodeRename(NodeChange):
 
     class_class_uri: ClassVar[URIRef] = KGCL.NodeRename
     class_class_curie: ClassVar[str] = "kgcl:NodeRename"
-    class_name: ClassVar[str] = "node rename"
+    class_name: ClassVar[str] = "NodeRename"
     class_model_uri: ClassVar[URIRef] = KGCL.NodeRename
 
     id: Union[str, NodeRenameId] = None
@@ -1291,7 +1311,7 @@ class SetLanguageForName(NodeChange):
 
     class_class_uri: ClassVar[URIRef] = KGCL.SetLanguageForName
     class_class_curie: ClassVar[str] = "kgcl:SetLanguageForName"
-    class_name: ClassVar[str] = "set language for name"
+    class_name: ClassVar[str] = "SetLanguageForName"
     class_model_uri: ClassVar[URIRef] = KGCL.SetLanguageForName
 
     id: Union[str, SetLanguageForNameId] = None
@@ -1326,7 +1346,7 @@ class NodeAnnotationChange(NodeChange):
 
     class_class_uri: ClassVar[URIRef] = KGCL.NodeAnnotationChange
     class_class_curie: ClassVar[str] = "kgcl:NodeAnnotationChange"
-    class_name: ClassVar[str] = "node annotation change"
+    class_name: ClassVar[str] = "NodeAnnotationChange"
     class_model_uri: ClassVar[URIRef] = KGCL.NodeAnnotationChange
 
     id: Union[str, NodeAnnotationChangeId] = None
@@ -1357,7 +1377,7 @@ class NodeAnnotationReplacement(NodeAnnotationChange):
 
     class_class_uri: ClassVar[URIRef] = KGCL.NodeAnnotationReplacement
     class_class_curie: ClassVar[str] = "kgcl:NodeAnnotationReplacement"
-    class_name: ClassVar[str] = "node annotation replacement"
+    class_name: ClassVar[str] = "NodeAnnotationReplacement"
     class_model_uri: ClassVar[URIRef] = KGCL.NodeAnnotationReplacement
 
     id: Union[str, NodeAnnotationReplacementId] = None
@@ -1377,7 +1397,7 @@ class NodeSynonymChange(NodeChange):
 
     class_class_uri: ClassVar[URIRef] = KGCL.NodeSynonymChange
     class_class_curie: ClassVar[str] = "kgcl:NodeSynonymChange"
-    class_name: ClassVar[str] = "node synonym change"
+    class_name: ClassVar[str] = "NodeSynonymChange"
     class_model_uri: ClassVar[URIRef] = KGCL.NodeSynonymChange
 
     id: Union[str, NodeSynonymChangeId] = None
@@ -1400,7 +1420,7 @@ class NewSynonym(NodeSynonymChange):
 
     class_class_uri: ClassVar[URIRef] = KGCL.NewSynonym
     class_class_curie: ClassVar[str] = "kgcl:NewSynonym"
-    class_name: ClassVar[str] = "new synonym"
+    class_name: ClassVar[str] = "NewSynonym"
     class_model_uri: ClassVar[URIRef] = KGCL.NewSynonym
 
     id: Union[str, NewSynonymId] = None
@@ -1436,7 +1456,7 @@ class NameBecomesSynonym(NodeSynonymChange):
 
     class_class_uri: ClassVar[URIRef] = KGCL.NameBecomesSynonym
     class_class_curie: ClassVar[str] = "kgcl:NameBecomesSynonym"
-    class_name: ClassVar[str] = "name becomes synonym"
+    class_name: ClassVar[str] = "NameBecomesSynonym"
     class_model_uri: ClassVar[URIRef] = KGCL.NameBecomesSynonym
 
     id: Union[str, NameBecomesSynonymId] = None
@@ -1471,7 +1491,7 @@ class RemoveSynonym(NodeSynonymChange):
 
     class_class_uri: ClassVar[URIRef] = KGCL.RemoveSynonym
     class_class_curie: ClassVar[str] = "kgcl:RemoveSynonym"
-    class_name: ClassVar[str] = "remove synonym"
+    class_name: ClassVar[str] = "RemoveSynonym"
     class_model_uri: ClassVar[URIRef] = KGCL.RemoveSynonym
 
     id: Union[str, RemoveSynonymId] = None
@@ -1498,7 +1518,7 @@ class SynonymReplacement(NodeSynonymChange):
 
     class_class_uri: ClassVar[URIRef] = KGCL.SynonymReplacement
     class_class_curie: ClassVar[str] = "kgcl:SynonymReplacement"
-    class_name: ClassVar[str] = "synonym replacement"
+    class_name: ClassVar[str] = "SynonymReplacement"
     class_model_uri: ClassVar[URIRef] = KGCL.SynonymReplacement
 
     id: Union[str, SynonymReplacementId] = None
@@ -1535,7 +1555,7 @@ class SynonymPredicateChange(NodeSynonymChange):
 
     class_class_uri: ClassVar[URIRef] = KGCL.SynonymPredicateChange
     class_class_curie: ClassVar[str] = "kgcl:SynonymPredicateChange"
-    class_name: ClassVar[str] = "synonym predicate change"
+    class_name: ClassVar[str] = "SynonymPredicateChange"
     class_model_uri: ClassVar[URIRef] = KGCL.SynonymPredicateChange
 
     id: Union[str, SynonymPredicateChangeId] = None
@@ -1570,7 +1590,7 @@ class NodeMappingChange(NodeChange):
 
     class_class_uri: ClassVar[URIRef] = KGCL.NodeMappingChange
     class_class_curie: ClassVar[str] = "kgcl:NodeMappingChange"
-    class_name: ClassVar[str] = "node mapping change"
+    class_name: ClassVar[str] = "NodeMappingChange"
     class_model_uri: ClassVar[URIRef] = KGCL.NodeMappingChange
 
     id: Union[str, NodeMappingChangeId] = None
@@ -1593,7 +1613,7 @@ class NewMapping(NodeMappingChange):
 
     class_class_uri: ClassVar[URIRef] = KGCL.NewMapping
     class_class_curie: ClassVar[str] = "kgcl:NewMapping"
-    class_name: ClassVar[str] = "new mapping"
+    class_name: ClassVar[str] = "NewMapping"
     class_model_uri: ClassVar[URIRef] = KGCL.NewMapping
 
     id: Union[str, NewMappingId] = None
@@ -1624,7 +1644,7 @@ class RemoveMapping(NodeMappingChange):
 
     class_class_uri: ClassVar[URIRef] = KGCL.RemoveMapping
     class_class_curie: ClassVar[str] = "kgcl:RemoveMapping"
-    class_name: ClassVar[str] = "remove mapping"
+    class_name: ClassVar[str] = "RemoveMapping"
     class_model_uri: ClassVar[URIRef] = KGCL.RemoveMapping
 
     id: Union[str, RemoveMappingId] = None
@@ -1655,7 +1675,7 @@ class MappingReplacement(NodeMappingChange):
 
     class_class_uri: ClassVar[URIRef] = KGCL.MappingReplacement
     class_class_curie: ClassVar[str] = "kgcl:MappingReplacement"
-    class_name: ClassVar[str] = "mapping replacement"
+    class_name: ClassVar[str] = "MappingReplacement"
     class_model_uri: ClassVar[URIRef] = KGCL.MappingReplacement
 
     id: Union[str, MappingReplacementId] = None
@@ -1686,7 +1706,7 @@ class MappingPredicateChange(NodeMappingChange):
 
     class_class_uri: ClassVar[URIRef] = KGCL.MappingPredicateChange
     class_class_curie: ClassVar[str] = "kgcl:MappingPredicateChange"
-    class_name: ClassVar[str] = "mapping predicate change"
+    class_name: ClassVar[str] = "MappingPredicateChange"
     class_model_uri: ClassVar[URIRef] = KGCL.MappingPredicateChange
 
     id: Union[str, MappingPredicateChangeId] = None
@@ -1717,7 +1737,7 @@ class NodeMetadataAssertionChange(NodeChange):
 
     class_class_uri: ClassVar[URIRef] = KGCL.NodeMetadataAssertionChange
     class_class_curie: ClassVar[str] = "kgcl:NodeMetadataAssertionChange"
-    class_name: ClassVar[str] = "node metadata assertion change"
+    class_name: ClassVar[str] = "NodeMetadataAssertionChange"
     class_model_uri: ClassVar[URIRef] = KGCL.NodeMetadataAssertionChange
 
     id: Union[str, NodeMetadataAssertionChangeId] = None
@@ -1740,7 +1760,7 @@ class NewMetadataAssertion(NodeMetadataAssertionChange):
 
     class_class_uri: ClassVar[URIRef] = KGCL.NewMetadataAssertion
     class_class_curie: ClassVar[str] = "kgcl:NewMetadataAssertion"
-    class_name: ClassVar[str] = "new metadata assertion"
+    class_name: ClassVar[str] = "NewMetadataAssertion"
     class_model_uri: ClassVar[URIRef] = KGCL.NewMetadataAssertion
 
     id: Union[str, NewMetadataAssertionId] = None
@@ -1771,7 +1791,7 @@ class RemoveMetadataAssertion(NodeMetadataAssertionChange):
 
     class_class_uri: ClassVar[URIRef] = KGCL.RemoveMetadataAssertion
     class_class_curie: ClassVar[str] = "kgcl:RemoveMetadataAssertion"
-    class_name: ClassVar[str] = "remove metadata assertion"
+    class_name: ClassVar[str] = "RemoveMetadataAssertion"
     class_model_uri: ClassVar[URIRef] = KGCL.RemoveMetadataAssertion
 
     id: Union[str, RemoveMetadataAssertionId] = None
@@ -1802,7 +1822,7 @@ class MetadataAssertionReplacement(NodeMetadataAssertionChange):
 
     class_class_uri: ClassVar[URIRef] = KGCL.MetadataAssertionReplacement
     class_class_curie: ClassVar[str] = "kgcl:MetadataAssertionReplacement"
-    class_name: ClassVar[str] = "metadata assertion replacement"
+    class_name: ClassVar[str] = "MetadataAssertionReplacement"
     class_model_uri: ClassVar[URIRef] = KGCL.MetadataAssertionReplacement
 
     id: Union[str, MetadataAssertionReplacementId] = None
@@ -1833,7 +1853,7 @@ class MetadataAssertionPredicateChange(NodeMetadataAssertionChange):
 
     class_class_uri: ClassVar[URIRef] = KGCL.MetadataAssertionPredicateChange
     class_class_curie: ClassVar[str] = "kgcl:MetadataAssertionPredicateChange"
-    class_name: ClassVar[str] = "metadata assertion predicate change"
+    class_name: ClassVar[str] = "MetadataAssertionPredicateChange"
     class_model_uri: ClassVar[URIRef] = KGCL.MetadataAssertionPredicateChange
 
     id: Union[str, MetadataAssertionPredicateChangeId] = None
@@ -1864,7 +1884,7 @@ class NodeTextDefinitionChange(NodeChange):
 
     class_class_uri: ClassVar[URIRef] = KGCL.NodeTextDefinitionChange
     class_class_curie: ClassVar[str] = "kgcl:NodeTextDefinitionChange"
-    class_name: ClassVar[str] = "node text definition change"
+    class_name: ClassVar[str] = "NodeTextDefinitionChange"
     class_model_uri: ClassVar[URIRef] = KGCL.NodeTextDefinitionChange
 
     id: Union[str, NodeTextDefinitionChangeId] = None
@@ -1878,7 +1898,7 @@ class NewTextDefinition(NodeTextDefinitionChange):
 
     class_class_uri: ClassVar[URIRef] = KGCL.NewTextDefinition
     class_class_curie: ClassVar[str] = "kgcl:NewTextDefinition"
-    class_name: ClassVar[str] = "new text definition"
+    class_name: ClassVar[str] = "NewTextDefinition"
     class_model_uri: ClassVar[URIRef] = KGCL.NewTextDefinition
 
     id: Union[str, NewTextDefinitionId] = None
@@ -1905,7 +1925,7 @@ class RemoveTextDefinition(NodeTextDefinitionChange):
 
     class_class_uri: ClassVar[URIRef] = KGCL.RemoveTextDefinition
     class_class_curie: ClassVar[str] = "kgcl:RemoveTextDefinition"
-    class_name: ClassVar[str] = "remove text definition"
+    class_name: ClassVar[str] = "RemoveTextDefinition"
     class_model_uri: ClassVar[URIRef] = KGCL.RemoveTextDefinition
 
     id: Union[str, RemoveTextDefinitionId] = None
@@ -1932,7 +1952,7 @@ class TextDefinitionReplacement(NodeTextDefinitionChange):
 
     class_class_uri: ClassVar[URIRef] = KGCL.TextDefinitionReplacement
     class_class_curie: ClassVar[str] = "kgcl:TextDefinitionReplacement"
-    class_name: ClassVar[str] = "text definition replacement"
+    class_name: ClassVar[str] = "TextDefinitionReplacement"
     class_model_uri: ClassVar[URIRef] = KGCL.TextDefinitionReplacement
 
     id: Union[str, TextDefinitionReplacementId] = None
@@ -1967,7 +1987,7 @@ class AddNodeToSubset(NodeChange):
 
     class_class_uri: ClassVar[URIRef] = KGCL.AddNodeToSubset
     class_class_curie: ClassVar[str] = "kgcl:AddNodeToSubset"
-    class_name: ClassVar[str] = "add node to subset"
+    class_name: ClassVar[str] = "AddNodeToSubset"
     class_model_uri: ClassVar[URIRef] = KGCL.AddNodeToSubset
 
     id: Union[str, AddNodeToSubsetId] = None
@@ -1994,7 +2014,7 @@ class RemoveNodeFromSubset(NodeChange):
 
     class_class_uri: ClassVar[URIRef] = KGCL.RemoveNodeFromSubset
     class_class_curie: ClassVar[str] = "kgcl:RemoveNodeFromSubset"
-    class_name: ClassVar[str] = "remove node from subset"
+    class_name: ClassVar[str] = "RemoveNodeFromSubset"
     class_model_uri: ClassVar[URIRef] = KGCL.RemoveNodeFromSubset
 
     id: Union[str, RemoveNodeFromSubsetId] = None
@@ -2033,7 +2053,7 @@ class NodeObsoletion(NodeChange):
 
     class_class_uri: ClassVar[URIRef] = KGCL.NodeObsoletion
     class_class_curie: ClassVar[str] = "kgcl:NodeObsoletion"
-    class_name: ClassVar[str] = "node obsoletion"
+    class_name: ClassVar[str] = "NodeObsoletion"
     class_model_uri: ClassVar[URIRef] = KGCL.NodeObsoletion
 
     id: Union[str, NodeObsoletionId] = None
@@ -2076,7 +2096,7 @@ class NodeUnobsoletion(NodeChange):
 
     class_class_uri: ClassVar[URIRef] = KGCL.NodeUnobsoletion
     class_class_curie: ClassVar[str] = "kgcl:NodeUnobsoletion"
-    class_name: ClassVar[str] = "node unobsoletion"
+    class_name: ClassVar[str] = "NodeUnobsoletion"
     class_model_uri: ClassVar[URIRef] = KGCL.NodeUnobsoletion
 
     id: Union[str, NodeUnobsoletionId] = None
@@ -2111,7 +2131,7 @@ class NodeCreation(NodeChange):
 
     class_class_uri: ClassVar[URIRef] = KGCL.NodeCreation
     class_class_curie: ClassVar[str] = "kgcl:NodeCreation"
-    class_name: ClassVar[str] = "node creation"
+    class_name: ClassVar[str] = "NodeCreation"
     class_model_uri: ClassVar[URIRef] = KGCL.NodeCreation
 
     id: Union[str, NodeCreationId] = None
@@ -2152,13 +2172,13 @@ class NodeCreation(NodeChange):
 @dataclass
 class ClassCreation(NodeCreation):
     """
-    A node creation where the owl type is 'class'
+    A node creation where the owl type is 'owl:Class'
     """
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = KGCL.ClassCreation
     class_class_curie: ClassVar[str] = "kgcl:ClassCreation"
-    class_name: ClassVar[str] = "class creation"
+    class_name: ClassVar[str] = "ClassCreation"
     class_model_uri: ClassVar[URIRef] = KGCL.ClassCreation
 
     id: Union[str, ClassCreationId] = None
@@ -2181,6 +2201,33 @@ class ClassCreation(NodeCreation):
 
 
 @dataclass
+class ObjectPropertyCreation(NodeCreation):
+    """
+    A node creation where the owl type is 'ObjectProperty'
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = KGCL.ObjectPropertyCreation
+    class_class_curie: ClassVar[str] = "kgcl:ObjectPropertyCreation"
+    class_name: ClassVar[str] = "ObjectPropertyCreation"
+    class_model_uri: ClassVar[URIRef] = KGCL.ObjectPropertyCreation
+
+    id: Union[str, ObjectPropertyCreationId] = None
+    change_description: Optional[str] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, ObjectPropertyCreationId):
+            self.id = ObjectPropertyCreationId(self.id)
+
+        if self.change_description is not None and not isinstance(self.change_description, str):
+            self.change_description = str(self.change_description)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
 class NodeDeletion(NodeChange):
     """
     Deletion of a node from the graph. Note it is recommended nodes are obsoleted and never merged, but this operation
@@ -2190,7 +2237,7 @@ class NodeDeletion(NodeChange):
 
     class_class_uri: ClassVar[URIRef] = KGCL.NodeDeletion
     class_class_curie: ClassVar[str] = "kgcl:NodeDeletion"
-    class_name: ClassVar[str] = "node deletion"
+    class_name: ClassVar[str] = "NodeDeletion"
     class_model_uri: ClassVar[URIRef] = KGCL.NodeDeletion
 
     id: Union[str, NodeDeletionId] = None
@@ -2218,7 +2265,7 @@ class NodeDirectMerge(NodeObsoletion):
 
     class_class_uri: ClassVar[URIRef] = KGCL.NodeDirectMerge
     class_class_curie: ClassVar[str] = "kgcl:NodeDirectMerge"
-    class_name: ClassVar[str] = "node direct merge"
+    class_name: ClassVar[str] = "NodeDirectMerge"
     class_model_uri: ClassVar[URIRef] = KGCL.NodeDirectMerge
 
     id: Union[str, NodeDirectMergeId] = None
@@ -2256,7 +2303,7 @@ class NodeObsoletionWithDirectReplacement(NodeObsoletion):
 
     class_class_uri: ClassVar[URIRef] = KGCL.NodeObsoletionWithDirectReplacement
     class_class_curie: ClassVar[str] = "kgcl:NodeObsoletionWithDirectReplacement"
-    class_name: ClassVar[str] = "node obsoletion with direct replacement"
+    class_name: ClassVar[str] = "NodeObsoletionWithDirectReplacement"
     class_model_uri: ClassVar[URIRef] = KGCL.NodeObsoletionWithDirectReplacement
 
     id: Union[str, NodeObsoletionWithDirectReplacementId] = None
@@ -2289,7 +2336,7 @@ class NodeObsoletionWithNoDirectReplacement(NodeObsoletion):
 
     class_class_uri: ClassVar[URIRef] = KGCL.NodeObsoletionWithNoDirectReplacement
     class_class_curie: ClassVar[str] = "kgcl:NodeObsoletionWithNoDirectReplacement"
-    class_name: ClassVar[str] = "node obsoletion with no direct replacement"
+    class_name: ClassVar[str] = "NodeObsoletionWithNoDirectReplacement"
     class_model_uri: ClassVar[URIRef] = KGCL.NodeObsoletionWithNoDirectReplacement
 
     id: Union[str, NodeObsoletionWithNoDirectReplacementId] = None
@@ -2314,7 +2361,7 @@ class NodeObsoletionWithNoDirectReplacement(NodeObsoletion):
         super().__post_init__(**kwargs)
 
 
-class TextualDiff(YAMLRoot):
+class TextualDiff(ChangeLanguageElement):
     """
     A summarizing of a change on a piece of text. This could be rendered in a number of different ways
     """
@@ -2322,12 +2369,12 @@ class TextualDiff(YAMLRoot):
 
     class_class_uri: ClassVar[URIRef] = KGCL.TextualDiff
     class_class_curie: ClassVar[str] = "kgcl:TextualDiff"
-    class_name: ClassVar[str] = "textual diff"
+    class_name: ClassVar[str] = "TextualDiff"
     class_model_uri: ClassVar[URIRef] = KGCL.TextualDiff
 
 
 @dataclass
-class Configuration(YAMLRoot):
+class Configuration(ChangeLanguageElement):
     """
     The meaning of operations can be configured
     """
@@ -2335,7 +2382,7 @@ class Configuration(YAMLRoot):
 
     class_class_uri: ClassVar[URIRef] = KGCL.Configuration
     class_class_curie: ClassVar[str] = "kgcl:Configuration"
-    class_name: ClassVar[str] = "configuration"
+    class_name: ClassVar[str] = "Configuration"
     class_model_uri: ClassVar[URIRef] = KGCL.Configuration
 
     name_predicate: Optional[str] = None
@@ -2347,6 +2394,7 @@ class Configuration(YAMLRoot):
     obsolete_node_label_prefix: Optional[str] = None
     obsoletion_workflow: Optional[str] = None
     obsoletion_policies: Optional[Union[Union[str, "ObsoletionPolicyEnum"], List[Union[str, "ObsoletionPolicyEnum"]]]] = empty_list()
+    obsolete_subclass_of_shadow_property: Optional[Union[str, URIorCURIE]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self.name_predicate is not None and not isinstance(self.name_predicate, str):
@@ -2377,11 +2425,14 @@ class Configuration(YAMLRoot):
             self.obsoletion_policies = [self.obsoletion_policies] if self.obsoletion_policies is not None else []
         self.obsoletion_policies = [v if isinstance(v, ObsoletionPolicyEnum) else ObsoletionPolicyEnum(v) for v in self.obsoletion_policies]
 
+        if self.obsolete_subclass_of_shadow_property is not None and not isinstance(self.obsolete_subclass_of_shadow_property, URIorCURIE):
+            self.obsolete_subclass_of_shadow_property = URIorCURIE(self.obsolete_subclass_of_shadow_property)
+
         super().__post_init__(**kwargs)
 
 
 @dataclass
-class Session(YAMLRoot):
+class Session(ChangeLanguageElement):
     """
     A session consists of a set of change sets bundled with the activities that generated those change sets
     """
@@ -2389,7 +2440,7 @@ class Session(YAMLRoot):
 
     class_class_uri: ClassVar[URIRef] = KGCL.Session
     class_class_curie: ClassVar[str] = "kgcl:Session"
-    class_name: ClassVar[str] = "session"
+    class_name: ClassVar[str] = "Session"
     class_model_uri: ClassVar[URIRef] = KGCL.Session
 
     change_set: Optional[Union[Dict[Union[str, ChangeId], Union[dict, Change]], List[Union[dict, Change]]]] = empty_dict()
@@ -2411,7 +2462,7 @@ class OntologyElement(YAMLRoot):
 
     class_class_uri: ClassVar[URIRef] = OM.OntologyElement
     class_class_curie: ClassVar[str] = "om:OntologyElement"
-    class_name: ClassVar[str] = "ontology element"
+    class_name: ClassVar[str] = "OntologyElement"
     class_model_uri: ClassVar[URIRef] = KGCL.OntologyElement
 
 
@@ -2424,7 +2475,7 @@ class PropertyValue(OntologyElement):
 
     class_class_uri: ClassVar[URIRef] = OM.PropertyValue
     class_class_curie: ClassVar[str] = "om:PropertyValue"
-    class_name: ClassVar[str] = "property value"
+    class_name: ClassVar[str] = "PropertyValue"
     class_model_uri: ClassVar[URIRef] = KGCL.PropertyValue
 
     property: Optional[Union[str, NodeId]] = None
@@ -2449,7 +2500,7 @@ class Annotation(PropertyValue):
 
     class_class_uri: ClassVar[URIRef] = OM.Annotation
     class_class_curie: ClassVar[str] = "om:Annotation"
-    class_name: ClassVar[str] = "annotation"
+    class_name: ClassVar[str] = "Annotation"
     class_model_uri: ClassVar[URIRef] = KGCL.Annotation
 
     property: Optional[Union[str, NodeId]] = None
@@ -2486,7 +2537,7 @@ class Node(OntologyElement):
 
     class_class_uri: ClassVar[URIRef] = OM.Node
     class_class_curie: ClassVar[str] = "om:Node"
-    class_name: ClassVar[str] = "node"
+    class_name: ClassVar[str] = "Node"
     class_model_uri: ClassVar[URIRef] = KGCL.Node
 
     id: Union[str, NodeId] = None
@@ -2521,7 +2572,7 @@ class ClassNode(Node):
 
     class_class_uri: ClassVar[URIRef] = OWL.Class
     class_class_curie: ClassVar[str] = "owl:Class"
-    class_name: ClassVar[str] = "class node"
+    class_name: ClassVar[str] = "ClassNode"
     class_model_uri: ClassVar[URIRef] = KGCL.ClassNode
 
     id: Union[str, ClassNodeId] = None
@@ -2544,7 +2595,7 @@ class InstanceNode(Node):
 
     class_class_uri: ClassVar[URIRef] = OWL.NamedIndividual
     class_class_curie: ClassVar[str] = "owl:NamedIndividual"
-    class_name: ClassVar[str] = "instance node"
+    class_name: ClassVar[str] = "InstanceNode"
     class_model_uri: ClassVar[URIRef] = KGCL.InstanceNode
 
     id: Union[str, InstanceNodeId] = None
@@ -2586,7 +2637,7 @@ class Edge(OntologyElement):
 
     class_class_uri: ClassVar[URIRef] = OM.Edge
     class_class_curie: ClassVar[str] = "om:Edge"
-    class_name: ClassVar[str] = "edge"
+    class_name: ClassVar[str] = "Edge"
     class_model_uri: ClassVar[URIRef] = KGCL.Edge
 
     subject: Optional[Union[str, NodeId]] = None
@@ -2627,7 +2678,7 @@ class LogicalDefinition(OntologyElement):
 
     class_class_uri: ClassVar[URIRef] = OM.LogicalDefinition
     class_class_curie: ClassVar[str] = "om:LogicalDefinition"
-    class_name: ClassVar[str] = "logical definition"
+    class_name: ClassVar[str] = "LogicalDefinition"
     class_model_uri: ClassVar[URIRef] = KGCL.LogicalDefinition
 
 
@@ -2636,12 +2687,24 @@ class OntologySubset(OntologyElement):
 
     class_class_uri: ClassVar[URIRef] = OM.OntologySubset
     class_class_curie: ClassVar[str] = "om:OntologySubset"
-    class_name: ClassVar[str] = "ontology subset"
+    class_name: ClassVar[str] = "OntologySubset"
     class_model_uri: ClassVar[URIRef] = KGCL.OntologySubset
 
 
+class ProvElement(YAMLRoot):
+    """
+    A grouping for prov elements
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = PROV.ProvElement
+    class_class_curie: ClassVar[str] = "prov:ProvElement"
+    class_name: ClassVar[str] = "ProvElement"
+    class_model_uri: ClassVar[URIRef] = KGCL.ProvElement
+
+
 @dataclass
-class Activity(YAMLRoot):
+class Activity(ProvElement):
     """
     a provence-generating activity
     """
@@ -2649,7 +2712,7 @@ class Activity(YAMLRoot):
 
     class_class_uri: ClassVar[URIRef] = PROV.Activity
     class_class_curie: ClassVar[str] = "prov:Activity"
-    class_name: ClassVar[str] = "activity"
+    class_name: ClassVar[str] = "Activity"
     class_model_uri: ClassVar[URIRef] = KGCL.Activity
 
     id: Union[str, ActivityId] = None
@@ -2688,7 +2751,7 @@ class Activity(YAMLRoot):
 
 
 @dataclass
-class Agent(YAMLRoot):
+class Agent(ProvElement):
     """
     a provence-generating agent
     """
@@ -2696,7 +2759,7 @@ class Agent(YAMLRoot):
 
     class_class_uri: ClassVar[URIRef] = PROV.Agent
     class_class_curie: ClassVar[str] = "prov:Agent"
-    class_name: ClassVar[str] = "agent"
+    class_name: ClassVar[str] = "Agent"
     class_model_uri: ClassVar[URIRef] = KGCL.Agent
 
     id: Union[str, AgentId] = None
@@ -2723,6 +2786,8 @@ class ObsoletionPolicyEnum(EnumDefinitionImpl):
 
     NoLogicalAxiomsOnObsoletes = PermissibleValue(text="NoLogicalAxiomsOnObsoletes",
                                                                            description="The obsoletion policy is that there MUST NOT be logical axioms about an obsolete node")
+    ObsoleteLabelsArePrefixed = PermissibleValue(text="ObsoleteLabelsArePrefixed",
+                                                                         description="The obsoletion policy is that any label on an obsolete node MUST be prefixed with 'obsolete' or similar")
 
     _defn = EnumDefinition(
         name="ObsoletionPolicyEnum",
@@ -2763,10 +2828,10 @@ class slots:
 slots.type = Slot(uri=RDF.type, name="type", curie=RDF.curie('type'),
                    model_uri=KGCL.type, domain=None, range=Optional[str])
 
-slots.pull_request = Slot(uri=KGCL.pull_request, name="pull request", curie=KGCL.curie('pull_request'),
+slots.pull_request = Slot(uri=KGCL.pull_request, name="pull_request", curie=KGCL.curie('pull_request'),
                    model_uri=KGCL.pull_request, domain=None, range=Optional[str])
 
-slots.see_also = Slot(uri=RDFS.seeAlso, name="see also", curie=RDFS.curie('seeAlso'),
+slots.see_also = Slot(uri=RDFS.seeAlso, name="see_also", curie=RDFS.curie('seeAlso'),
                    model_uri=KGCL.see_also, domain=None, range=Optional[str])
 
 slots.creator = Slot(uri=DCTERMS.creator, name="creator", curie=DCTERMS.curie('creator'),
@@ -2775,13 +2840,13 @@ slots.creator = Slot(uri=DCTERMS.creator, name="creator", curie=DCTERMS.curie('c
 slots.contributor = Slot(uri=DCTERMS.creator, name="contributor", curie=DCTERMS.curie('creator'),
                    model_uri=KGCL.contributor, domain=None, range=Optional[str])
 
-slots.change_date = Slot(uri=DCTERMS.date, name="change date", curie=DCTERMS.curie('date'),
+slots.change_date = Slot(uri=DCTERMS.date, name="change_date", curie=DCTERMS.curie('date'),
                    model_uri=KGCL.change_date, domain=None, range=Optional[str])
 
-slots.has_undo = Slot(uri=KGCL.has_undo, name="has undo", curie=KGCL.curie('has_undo'),
+slots.has_undo = Slot(uri=KGCL.has_undo, name="has_undo", curie=KGCL.curie('has_undo'),
                    model_uri=KGCL.has_undo, domain=Change, range=Optional[Union[str, ChangeId]])
 
-slots.node_id = Slot(uri=KGCL.node_id, name="node id", curie=KGCL.curie('node_id'),
+slots.node_id = Slot(uri=KGCL.node_id, name="node_id", curie=KGCL.curie('node_id'),
                    model_uri=KGCL.node_id, domain=None, range=Optional[Union[str, NodeId]])
 
 slots.superclass = Slot(uri=KGCL.superclass, name="superclass", curie=KGCL.curie('superclass'),
@@ -2793,37 +2858,37 @@ slots.language = Slot(uri=KGCL.language, name="language", curie=KGCL.curie('lang
 slots.about = Slot(uri=KGCL.about, name="about", curie=KGCL.curie('about'),
                    model_uri=KGCL.about, domain=None, range=Optional[Union[dict, OntologyElement]])
 
-slots.about_node = Slot(uri=KGCL.about_node, name="about node", curie=KGCL.curie('about_node'),
+slots.about_node = Slot(uri=KGCL.about_node, name="about_node", curie=KGCL.curie('about_node'),
                    model_uri=KGCL.about_node, domain=None, range=Optional[Union[str, NodeId]])
 
-slots.about_edge = Slot(uri=KGCL.about_edge, name="about edge", curie=KGCL.curie('about_edge'),
+slots.about_edge = Slot(uri=KGCL.about_edge, name="about_edge", curie=KGCL.curie('about_edge'),
                    model_uri=KGCL.about_edge, domain=None, range=Optional[Union[dict, Edge]])
 
-slots.about_node_representation = Slot(uri=KGCL.about_node_representation, name="about node representation", curie=KGCL.curie('about_node_representation'),
+slots.about_node_representation = Slot(uri=KGCL.about_node_representation, name="about_node_representation", curie=KGCL.curie('about_node_representation'),
                    model_uri=KGCL.about_node_representation, domain=None, range=Optional[str])
 
 slots.target = Slot(uri=KGCL.target, name="target", curie=KGCL.curie('target'),
                    model_uri=KGCL.target, domain=None, range=Optional[str])
 
-slots.old_value = Slot(uri=KGCL.old_value, name="old value", curie=KGCL.curie('old_value'),
+slots.old_value = Slot(uri=KGCL.old_value, name="old_value", curie=KGCL.curie('old_value'),
                    model_uri=KGCL.old_value, domain=None, range=Optional[str])
 
-slots.new_value = Slot(uri=KGCL.new_value, name="new value", curie=KGCL.curie('new_value'),
+slots.new_value = Slot(uri=KGCL.new_value, name="new_value", curie=KGCL.curie('new_value'),
                    model_uri=KGCL.new_value, domain=None, range=Optional[str])
 
 slots.datatype = Slot(uri=KGCL.datatype, name="datatype", curie=KGCL.curie('datatype'),
                    model_uri=KGCL.datatype, domain=None, range=Optional[str])
 
-slots.new_datatype = Slot(uri=KGCL.new_datatype, name="new datatype", curie=KGCL.curie('new_datatype'),
+slots.new_datatype = Slot(uri=KGCL.new_datatype, name="new_datatype", curie=KGCL.curie('new_datatype'),
                    model_uri=KGCL.new_datatype, domain=None, range=Optional[str])
 
-slots.old_datatype = Slot(uri=KGCL.old_datatype, name="old datatype", curie=KGCL.curie('old_datatype'),
+slots.old_datatype = Slot(uri=KGCL.old_datatype, name="old_datatype", curie=KGCL.curie('old_datatype'),
                    model_uri=KGCL.old_datatype, domain=None, range=Optional[str])
 
-slots.new_language = Slot(uri=KGCL.new_language, name="new language", curie=KGCL.curie('new_language'),
+slots.new_language = Slot(uri=KGCL.new_language, name="new_language", curie=KGCL.curie('new_language'),
                    model_uri=KGCL.new_language, domain=None, range=Optional[str])
 
-slots.old_language = Slot(uri=KGCL.old_language, name="old language", curie=KGCL.curie('old_language'),
+slots.old_language = Slot(uri=KGCL.old_language, name="old_language", curie=KGCL.curie('old_language'),
                    model_uri=KGCL.old_language, domain=None, range=Optional[str])
 
 slots.qualifier = Slot(uri=KGCL.qualifier, name="qualifier", curie=KGCL.curie('qualifier'),
@@ -2832,70 +2897,70 @@ slots.qualifier = Slot(uri=KGCL.qualifier, name="qualifier", curie=KGCL.curie('q
 slots.subclass = Slot(uri=KGCL.subclass, name="subclass", curie=KGCL.curie('subclass'),
                    model_uri=KGCL.subclass, domain=None, range=Optional[str])
 
-slots.new_subclass = Slot(uri=KGCL.new_subclass, name="new subclass", curie=KGCL.curie('new_subclass'),
+slots.new_subclass = Slot(uri=KGCL.new_subclass, name="new_subclass", curie=KGCL.curie('new_subclass'),
                    model_uri=KGCL.new_subclass, domain=None, range=Optional[str])
 
-slots.new_property = Slot(uri=KGCL.new_property, name="new property", curie=KGCL.curie('new_property'),
+slots.new_property = Slot(uri=KGCL.new_property, name="new_property", curie=KGCL.curie('new_property'),
                    model_uri=KGCL.new_property, domain=None, range=Optional[str])
 
-slots.new_filler = Slot(uri=KGCL.new_filler, name="new filler", curie=KGCL.curie('new_filler'),
+slots.new_filler = Slot(uri=KGCL.new_filler, name="new_filler", curie=KGCL.curie('new_filler'),
                    model_uri=KGCL.new_filler, domain=None, range=Optional[str])
 
-slots.object_type = Slot(uri=KGCL.object_type, name="object type", curie=KGCL.curie('object_type'),
+slots.object_type = Slot(uri=KGCL.object_type, name="object_type", curie=KGCL.curie('object_type'),
                    model_uri=KGCL.object_type, domain=None, range=Optional[str])
 
-slots.new_object_type = Slot(uri=KGCL.new_object_type, name="new object type", curie=KGCL.curie('new_object_type'),
+slots.new_object_type = Slot(uri=KGCL.new_object_type, name="new_object_type", curie=KGCL.curie('new_object_type'),
                    model_uri=KGCL.new_object_type, domain=None, range=Optional[str])
 
-slots.old_object_type = Slot(uri=KGCL.old_object_type, name="old object type", curie=KGCL.curie('old_object_type'),
+slots.old_object_type = Slot(uri=KGCL.old_object_type, name="old_object_type", curie=KGCL.curie('old_object_type'),
                    model_uri=KGCL.old_object_type, domain=None, range=Optional[str])
 
-slots.new_value_type = Slot(uri=KGCL.new_value_type, name="new value type", curie=KGCL.curie('new_value_type'),
+slots.new_value_type = Slot(uri=KGCL.new_value_type, name="new_value_type", curie=KGCL.curie('new_value_type'),
                    model_uri=KGCL.new_value_type, domain=None, range=Optional[str])
 
-slots.old_value_type = Slot(uri=KGCL.old_value_type, name="old value type", curie=KGCL.curie('old_value_type'),
+slots.old_value_type = Slot(uri=KGCL.old_value_type, name="old_value_type", curie=KGCL.curie('old_value_type'),
                    model_uri=KGCL.old_value_type, domain=None, range=Optional[str])
 
-slots.subject_type = Slot(uri=KGCL.subject_type, name="subject type", curie=KGCL.curie('subject_type'),
+slots.subject_type = Slot(uri=KGCL.subject_type, name="subject_type", curie=KGCL.curie('subject_type'),
                    model_uri=KGCL.subject_type, domain=None, range=Optional[str])
 
-slots.subclass_type = Slot(uri=KGCL.subclass_type, name="subclass type", curie=KGCL.curie('subclass_type'),
+slots.subclass_type = Slot(uri=KGCL.subclass_type, name="subclass_type", curie=KGCL.curie('subclass_type'),
                    model_uri=KGCL.subclass_type, domain=None, range=Optional[str])
 
-slots.superclass_type = Slot(uri=KGCL.superclass_type, name="superclass type", curie=KGCL.curie('superclass_type'),
+slots.superclass_type = Slot(uri=KGCL.superclass_type, name="superclass_type", curie=KGCL.curie('superclass_type'),
                    model_uri=KGCL.superclass_type, domain=None, range=Optional[str])
 
-slots.predicate_type = Slot(uri=KGCL.predicate_type, name="predicate type", curie=KGCL.curie('predicate_type'),
+slots.predicate_type = Slot(uri=KGCL.predicate_type, name="predicate_type", curie=KGCL.curie('predicate_type'),
                    model_uri=KGCL.predicate_type, domain=None, range=Optional[str])
 
-slots.in_subset = Slot(uri=KGCL.in_subset, name="in subset", curie=KGCL.curie('in_subset'),
+slots.in_subset = Slot(uri=KGCL.in_subset, name="in_subset", curie=KGCL.curie('in_subset'),
                    model_uri=KGCL.in_subset, domain=None, range=Optional[Union[dict, OntologySubset]])
 
-slots.annotation_property = Slot(uri=KGCL.annotation_property, name="annotation property", curie=KGCL.curie('annotation_property'),
+slots.annotation_property = Slot(uri=KGCL.annotation_property, name="annotation_property", curie=KGCL.curie('annotation_property'),
                    model_uri=KGCL.annotation_property, domain=None, range=Optional[str])
 
-slots.annotation_property_type = Slot(uri=KGCL.annotation_property_type, name="annotation property type", curie=KGCL.curie('annotation_property_type'),
+slots.annotation_property_type = Slot(uri=KGCL.annotation_property_type, name="annotation_property_type", curie=KGCL.curie('annotation_property_type'),
                    model_uri=KGCL.annotation_property_type, domain=None, range=Optional[str])
 
-slots.change_description = Slot(uri=KGCL.change_description, name="change description", curie=KGCL.curie('change_description'),
+slots.change_description = Slot(uri=KGCL.change_description, name="change_description", curie=KGCL.curie('change_description'),
                    model_uri=KGCL.change_description, domain=None, range=Optional[str])
 
-slots.has_textual_diff = Slot(uri=KGCL.has_textual_diff, name="has textual diff", curie=KGCL.curie('has_textual_diff'),
+slots.has_textual_diff = Slot(uri=KGCL.has_textual_diff, name="has_textual_diff", curie=KGCL.curie('has_textual_diff'),
                    model_uri=KGCL.has_textual_diff, domain=Change, range=Optional[Union[dict, "TextualDiff"]])
 
-slots.change_set = Slot(uri=KGCL.change_set, name="change set", curie=KGCL.curie('change_set'),
+slots.change_set = Slot(uri=KGCL.change_set, name="change_set", curie=KGCL.curie('change_set'),
                    model_uri=KGCL.change_set, domain=None, range=Optional[Union[Dict[Union[str, ChangeId], Union[dict, Change]], List[Union[dict, Change]]]])
 
-slots.has_replacement = Slot(uri=KGCL.has_replacement, name="has replacement", curie=KGCL.curie('has_replacement'),
+slots.has_replacement = Slot(uri=KGCL.has_replacement, name="has_replacement", curie=KGCL.curie('has_replacement'),
                    model_uri=KGCL.has_replacement, domain=NodeObsoletion, range=Optional[Union[str, NodeId]])
 
-slots.has_direct_replacement = Slot(uri=KGCL.has_direct_replacement, name="has direct replacement", curie=KGCL.curie('has_direct_replacement'),
+slots.has_direct_replacement = Slot(uri=KGCL.has_direct_replacement, name="has_direct_replacement", curie=KGCL.curie('has_direct_replacement'),
                    model_uri=KGCL.has_direct_replacement, domain=None, range=Optional[Union[str, NodeId]])
 
-slots.has_nondirect_replacement = Slot(uri=KGCL.has_nondirect_replacement, name="has nondirect replacement", curie=KGCL.curie('has_nondirect_replacement'),
+slots.has_nondirect_replacement = Slot(uri=KGCL.has_nondirect_replacement, name="has_nondirect_replacement", curie=KGCL.curie('has_nondirect_replacement'),
                    model_uri=KGCL.has_nondirect_replacement, domain=None, range=Optional[Union[Union[str, NodeId], List[Union[str, NodeId]]]])
 
-slots.owl_type = Slot(uri=OM.owl_type, name="owl type", curie=OM.curie('owl_type'),
+slots.owl_type = Slot(uri=OM.owl_type, name="owl_type", curie=OM.curie('owl_type'),
                    model_uri=KGCL.owl_type, domain=None, range=Optional[Union[str, "OwlTypeEnum"]])
 
 slots.name = Slot(uri=OM.name, name="name", curie=OM.curie('name'),
@@ -2910,7 +2975,7 @@ slots.object = Slot(uri=OM.object, name="object", curie=OM.curie('object'),
 slots.predicate = Slot(uri=OM.predicate, name="predicate", curie=OM.curie('predicate'),
                    model_uri=KGCL.predicate, domain=None, range=Optional[Union[str, NodeId]])
 
-slots.annotation_set = Slot(uri=OM.annotation_set, name="annotation set", curie=OM.curie('annotation_set'),
+slots.annotation_set = Slot(uri=OM.annotation_set, name="annotation_set", curie=OM.curie('annotation_set'),
                    model_uri=KGCL.annotation_set, domain=None, range=Optional[Union[dict, Annotation]])
 
 slots.property = Slot(uri=OM.property, name="property", curie=OM.curie('property'),
@@ -2919,49 +2984,49 @@ slots.property = Slot(uri=OM.property, name="property", curie=OM.curie('property
 slots.filler = Slot(uri=OM.filler, name="filler", curie=OM.curie('filler'),
                    model_uri=KGCL.filler, domain=None, range=Optional[str])
 
-slots.property_type = Slot(uri=OM.property_type, name="property type", curie=OM.curie('property_type'),
+slots.property_type = Slot(uri=OM.property_type, name="property_type", curie=OM.curie('property_type'),
                    model_uri=KGCL.property_type, domain=None, range=Optional[str])
 
-slots.filler_type = Slot(uri=OM.filler_type, name="filler type", curie=OM.curie('filler_type'),
+slots.filler_type = Slot(uri=OM.filler_type, name="filler_type", curie=OM.curie('filler_type'),
                    model_uri=KGCL.filler_type, domain=None, range=Optional[str])
 
-slots.subject_representation = Slot(uri=OM.subject_representation, name="subject representation", curie=OM.curie('subject_representation'),
+slots.subject_representation = Slot(uri=OM.subject_representation, name="subject_representation", curie=OM.curie('subject_representation'),
                    model_uri=KGCL.subject_representation, domain=None, range=Optional[str])
 
-slots.predicate_representation = Slot(uri=OM.predicate_representation, name="predicate representation", curie=OM.curie('predicate_representation'),
+slots.predicate_representation = Slot(uri=OM.predicate_representation, name="predicate_representation", curie=OM.curie('predicate_representation'),
                    model_uri=KGCL.predicate_representation, domain=None, range=Optional[str])
 
-slots.object_representation = Slot(uri=OM.object_representation, name="object representation", curie=OM.curie('object_representation'),
+slots.object_representation = Slot(uri=OM.object_representation, name="object_representation", curie=OM.curie('object_representation'),
                    model_uri=KGCL.object_representation, domain=None, range=Optional[str])
 
-slots.property_value_set = Slot(uri=OM.property_value_set, name="property value set", curie=OM.curie('property_value_set'),
+slots.property_value_set = Slot(uri=OM.property_value_set, name="property_value_set", curie=OM.curie('property_value_set'),
                    model_uri=KGCL.property_value_set, domain=None, range=Optional[Union[Union[dict, PropertyValue], List[Union[dict, PropertyValue]]]])
 
-slots.started_at_time = Slot(uri=PROV.startedAtTime, name="started at time", curie=PROV.curie('startedAtTime'),
+slots.started_at_time = Slot(uri=PROV.startedAtTime, name="started_at_time", curie=PROV.curie('startedAtTime'),
                    model_uri=KGCL.started_at_time, domain=None, range=Optional[str])
 
-slots.ended_at_time = Slot(uri=PROV.endedAtTime, name="ended at time", curie=PROV.curie('endedAtTime'),
+slots.ended_at_time = Slot(uri=PROV.endedAtTime, name="ended_at_time", curie=PROV.curie('endedAtTime'),
                    model_uri=KGCL.ended_at_time, domain=None, range=Optional[str])
 
-slots.was_informed_by = Slot(uri=PROV.wasInformedBy, name="was informed by", curie=PROV.curie('wasInformedBy'),
+slots.was_informed_by = Slot(uri=PROV.wasInformedBy, name="was_informed_by", curie=PROV.curie('wasInformedBy'),
                    model_uri=KGCL.was_informed_by, domain=None, range=Optional[Union[str, ActivityId]])
 
-slots.was_associated_with = Slot(uri=PROV.wasAssociatedWith, name="was associated with", curie=PROV.curie('wasAssociatedWith'),
+slots.was_associated_with = Slot(uri=PROV.wasAssociatedWith, name="was_associated_with", curie=PROV.curie('wasAssociatedWith'),
                    model_uri=KGCL.was_associated_with, domain=None, range=Optional[Union[str, AgentId]])
 
-slots.acted_on_behalf_of = Slot(uri=PROV.actedOnBehalfOf, name="acted on behalf of", curie=PROV.curie('actedOnBehalfOf'),
+slots.acted_on_behalf_of = Slot(uri=PROV.actedOnBehalfOf, name="acted_on_behalf_of", curie=PROV.curie('actedOnBehalfOf'),
                    model_uri=KGCL.acted_on_behalf_of, domain=None, range=Optional[Union[str, AgentId]])
 
-slots.was_generated_by = Slot(uri=PROV.wasGeneratedBy, name="was generated by", curie=PROV.curie('wasGeneratedBy'),
+slots.was_generated_by = Slot(uri=PROV.wasGeneratedBy, name="was_generated_by", curie=PROV.curie('wasGeneratedBy'),
                    model_uri=KGCL.was_generated_by, domain=None, range=Optional[Union[str, ActivityId]])
 
 slots.used = Slot(uri=PROV.used, name="used", curie=PROV.curie('used'),
                    model_uri=KGCL.used, domain=Activity, range=Optional[str])
 
-slots.activity_set = Slot(uri=PROV.activity_set, name="activity set", curie=PROV.curie('activity_set'),
+slots.activity_set = Slot(uri=PROV.activity_set, name="activity_set", curie=PROV.curie('activity_set'),
                    model_uri=KGCL.activity_set, domain=None, range=Optional[Union[Dict[Union[str, ActivityId], Union[dict, Activity]], List[Union[dict, Activity]]]])
 
-slots.agent_set = Slot(uri=PROV.agent_set, name="agent set", curie=PROV.curie('agent_set'),
+slots.agent_set = Slot(uri=PROV.agent_set, name="agent_set", curie=PROV.curie('agent_set'),
                    model_uri=KGCL.agent_set, domain=None, range=Optional[Union[Dict[Union[str, AgentId], Union[dict, Agent]], List[Union[dict, Agent]]]])
 
 slots.id = Slot(uri=BASICS.id, name="id", curie=BASICS.curie('id'),
@@ -2997,6 +3062,12 @@ slots.configuration__obsoletion_workflow = Slot(uri=KGCL.obsoletion_workflow, na
 slots.configuration__obsoletion_policies = Slot(uri=KGCL.obsoletion_policies, name="configuration__obsoletion_policies", curie=KGCL.curie('obsoletion_policies'),
                    model_uri=KGCL.configuration__obsoletion_policies, domain=None, range=Optional[Union[Union[str, "ObsoletionPolicyEnum"], List[Union[str, "ObsoletionPolicyEnum"]]]])
 
+slots.configuration__obsolete_subclass_of_shadow_property = Slot(uri=KGCL.obsolete_subclass_of_shadow_property, name="configuration__obsolete_subclass_of_shadow_property", curie=KGCL.curie('obsolete_subclass_of_shadow_property'),
+                   model_uri=KGCL.configuration__obsolete_subclass_of_shadow_property, domain=None, range=Optional[Union[str, URIorCURIE]])
+
+slots.term_tracker_issue = Slot(uri=KGCL.term_tracker_issue, name="term_tracker_issue", curie=KGCL.curie('term_tracker_issue'),
+                   model_uri=KGCL.term_tracker_issue, domain=None, range=Optional[str])
+
 slots.associated_change_set = Slot(uri=KGCL.associated_change_set, name="associated change set", curie=KGCL.curie('associated_change_set'),
                    model_uri=KGCL.associated_change_set, domain=None, range=Optional[Union[Dict[Union[str, ChangeId], Union[dict, Change]], List[Union[dict, Change]]]])
 
@@ -3021,173 +3092,179 @@ slots.replaced_by = Slot(uri=KGCL.replaced_by, name="replaced by", curie=KGCL.cu
 slots.consider = Slot(uri=KGCL.consider, name="consider", curie=KGCL.curie('consider'),
                    model_uri=KGCL.consider, domain=None, range=Optional[Union[str, NodeId]])
 
-slots.change_was_generated_by = Slot(uri=PROV.wasGeneratedBy, name="change_was generated by", curie=PROV.curie('wasGeneratedBy'),
-                   model_uri=KGCL.change_was_generated_by, domain=Change, range=Optional[Union[str, ActivityId]])
+slots.Change_was_generated_by = Slot(uri=PROV.wasGeneratedBy, name="Change_was_generated_by", curie=PROV.curie('wasGeneratedBy'),
+                   model_uri=KGCL.Change_was_generated_by, domain=Change, range=Optional[Union[str, ActivityId]])
 
-slots.change_see_also = Slot(uri=RDFS.seeAlso, name="change_see also", curie=RDFS.curie('seeAlso'),
-                   model_uri=KGCL.change_see_also, domain=Change, range=Optional[str])
+slots.Change_see_also = Slot(uri=RDFS.seeAlso, name="Change_see_also", curie=RDFS.curie('seeAlso'),
+                   model_uri=KGCL.Change_see_also, domain=Change, range=Optional[str])
 
-slots.change_pull_request = Slot(uri=KGCL.pull_request, name="change_pull request", curie=KGCL.curie('pull_request'),
-                   model_uri=KGCL.change_pull_request, domain=Change, range=Optional[str])
+slots.Change_pull_request = Slot(uri=KGCL.pull_request, name="Change_pull_request", curie=KGCL.curie('pull_request'),
+                   model_uri=KGCL.Change_pull_request, domain=Change, range=Optional[str])
 
-slots.change_creator = Slot(uri=DCTERMS.creator, name="change_creator", curie=DCTERMS.curie('creator'),
-                   model_uri=KGCL.change_creator, domain=Change, range=Optional[str])
+slots.Change_term_tracker_issue = Slot(uri=KGCL.term_tracker_issue, name="Change_term_tracker_issue", curie=KGCL.curie('term_tracker_issue'),
+                   model_uri=KGCL.Change_term_tracker_issue, domain=Change, range=Optional[str])
 
-slots.change_change_date = Slot(uri=DCTERMS.date, name="change_change date", curie=DCTERMS.curie('date'),
-                   model_uri=KGCL.change_change_date, domain=Change, range=Optional[str])
+slots.Change_creator = Slot(uri=DCTERMS.creator, name="Change_creator", curie=DCTERMS.curie('creator'),
+                   model_uri=KGCL.Change_creator, domain=Change, range=Optional[str])
 
-slots.multi_node_obsoletion_change_set = Slot(uri=KGCL.change_set, name="multi node obsoletion_change set", curie=KGCL.curie('change_set'),
-                   model_uri=KGCL.multi_node_obsoletion_change_set, domain=MultiNodeObsoletion, range=Optional[Union[Dict[Union[str, NodeObsoletionId], Union[dict, "NodeObsoletion"]], List[Union[dict, "NodeObsoletion"]]]])
+slots.Change_change_date = Slot(uri=DCTERMS.date, name="Change_change_date", curie=DCTERMS.curie('date'),
+                   model_uri=KGCL.Change_change_date, domain=Change, range=Optional[str])
 
-slots.multi_node_obsoletion_change_description = Slot(uri=KGCL.change_description, name="multi node obsoletion_change description", curie=KGCL.curie('change_description'),
-                   model_uri=KGCL.multi_node_obsoletion_change_description, domain=MultiNodeObsoletion, range=Optional[str])
+slots.MultiNodeObsoletion_change_set = Slot(uri=KGCL.change_set, name="MultiNodeObsoletion_change_set", curie=KGCL.curie('change_set'),
+                   model_uri=KGCL.MultiNodeObsoletion_change_set, domain=MultiNodeObsoletion, range=Optional[Union[Dict[Union[str, NodeObsoletionId], Union[dict, "NodeObsoletion"]], List[Union[dict, "NodeObsoletion"]]]])
 
-slots.multi_node_obsoletion_associated_change_set = Slot(uri=KGCL.associated_change_set, name="multi node obsoletion_associated change set", curie=KGCL.curie('associated_change_set'),
-                   model_uri=KGCL.multi_node_obsoletion_associated_change_set, domain=MultiNodeObsoletion, range=Optional[Union[Dict[Union[str, ChangeId], Union[dict, Change]], List[Union[dict, Change]]]])
+slots.MultiNodeObsoletion_change_description = Slot(uri=KGCL.change_description, name="MultiNodeObsoletion_change_description", curie=KGCL.curie('change_description'),
+                   model_uri=KGCL.MultiNodeObsoletion_change_description, domain=MultiNodeObsoletion, range=Optional[str])
 
-slots.change_set_summary_statistic_change_type = Slot(uri=KGCL.change_type, name="change set summary statistic_change type", curie=KGCL.curie('change_type'),
-                   model_uri=KGCL.change_set_summary_statistic_change_type, domain=ChangeSetSummaryStatistic, range=Optional[Union[str, ChangeClassType]])
+slots.MultiNodeObsoletion_associated_change_set = Slot(uri=KGCL.associated_change_set, name="MultiNodeObsoletion_associated change set", curie=KGCL.curie('associated_change_set'),
+                   model_uri=KGCL.MultiNodeObsoletion_associated_change_set, domain=MultiNodeObsoletion, range=Optional[Union[Dict[Union[str, ChangeId], Union[dict, Change]], List[Union[dict, Change]]]])
 
-slots.change_set_summary_statistic_count = Slot(uri=KGCL.count, name="change set summary statistic_count", curie=KGCL.curie('count'),
-                   model_uri=KGCL.change_set_summary_statistic_count, domain=ChangeSetSummaryStatistic, range=Optional[int])
+slots.ChangeSetSummaryStatistic_change_type = Slot(uri=KGCL.change_type, name="ChangeSetSummaryStatistic_change type", curie=KGCL.curie('change_type'),
+                   model_uri=KGCL.ChangeSetSummaryStatistic_change_type, domain=ChangeSetSummaryStatistic, range=Optional[Union[str, ChangeClassType]])
 
-slots.change_set_summary_statistic_property_value_set = Slot(uri=OM.property_value_set, name="change set summary statistic_property value set", curie=OM.curie('property_value_set'),
-                   model_uri=KGCL.change_set_summary_statistic_property_value_set, domain=ChangeSetSummaryStatistic, range=Optional[Union[Union[dict, "PropertyValue"], List[Union[dict, "PropertyValue"]]]])
+slots.ChangeSetSummaryStatistic_count = Slot(uri=KGCL.count, name="ChangeSetSummaryStatistic_count", curie=KGCL.curie('count'),
+                   model_uri=KGCL.ChangeSetSummaryStatistic_count, domain=ChangeSetSummaryStatistic, range=Optional[int])
 
-slots.obsoletion_about = Slot(uri=KGCL.about, name="obsoletion_about", curie=KGCL.curie('about'),
-                   model_uri=KGCL.obsoletion_about, domain=None, range=Optional[Union[dict, "OntologyElement"]])
+slots.ChangeSetSummaryStatistic_property_value_set = Slot(uri=OM.property_value_set, name="ChangeSetSummaryStatistic_property_value_set", curie=OM.curie('property_value_set'),
+                   model_uri=KGCL.ChangeSetSummaryStatistic_property_value_set, domain=ChangeSetSummaryStatistic, range=Optional[Union[Union[dict, "PropertyValue"], List[Union[dict, "PropertyValue"]]]])
 
-slots.obsoletion_has_undo = Slot(uri=KGCL.has_undo, name="obsoletion_has undo", curie=KGCL.curie('has_undo'),
-                   model_uri=KGCL.obsoletion_has_undo, domain=None, range=Optional[Union[dict, "Obsoletion"]])
+slots.Obsoletion_about = Slot(uri=KGCL.about, name="Obsoletion_about", curie=KGCL.curie('about'),
+                   model_uri=KGCL.Obsoletion_about, domain=None, range=Optional[Union[dict, "OntologyElement"]])
 
-slots.language_tag_change_old_value = Slot(uri=KGCL.old_value, name="language tag change_old value", curie=KGCL.curie('old_value'),
-                   model_uri=KGCL.language_tag_change_old_value, domain=LanguageTagChange, range=Optional[str])
+slots.Obsoletion_has_undo = Slot(uri=KGCL.has_undo, name="Obsoletion_has_undo", curie=KGCL.curie('has_undo'),
+                   model_uri=KGCL.Obsoletion_has_undo, domain=None, range=Optional[Union[dict, "Obsoletion"]])
 
-slots.language_tag_change_new_value = Slot(uri=KGCL.new_value, name="language tag change_new value", curie=KGCL.curie('new_value'),
-                   model_uri=KGCL.language_tag_change_new_value, domain=LanguageTagChange, range=Optional[str])
+slots.LanguageTagChange_old_value = Slot(uri=KGCL.old_value, name="LanguageTagChange_old_value", curie=KGCL.curie('old_value'),
+                   model_uri=KGCL.LanguageTagChange_old_value, domain=LanguageTagChange, range=Optional[str])
 
-slots.unobsoletion_has_undo = Slot(uri=KGCL.has_undo, name="unobsoletion_has undo", curie=KGCL.curie('has_undo'),
-                   model_uri=KGCL.unobsoletion_has_undo, domain=None, range=Optional[Union[dict, Obsoletion]])
+slots.LanguageTagChange_new_value = Slot(uri=KGCL.new_value, name="LanguageTagChange_new_value", curie=KGCL.curie('new_value'),
+                   model_uri=KGCL.LanguageTagChange_new_value, domain=LanguageTagChange, range=Optional[str])
 
-slots.creation_has_undo = Slot(uri=KGCL.has_undo, name="creation_has undo", curie=KGCL.curie('has_undo'),
-                   model_uri=KGCL.creation_has_undo, domain=None, range=Optional[Union[dict, Deletion]])
+slots.Unobsoletion_has_undo = Slot(uri=KGCL.has_undo, name="Unobsoletion_has_undo", curie=KGCL.curie('has_undo'),
+                   model_uri=KGCL.Unobsoletion_has_undo, domain=None, range=Optional[Union[dict, Obsoletion]])
 
-slots.add_to_subset_in_subset = Slot(uri=KGCL.in_subset, name="add to subset_in subset", curie=KGCL.curie('in_subset'),
-                   model_uri=KGCL.add_to_subset_in_subset, domain=None, range=Optional[Union[dict, "OntologySubset"]])
+slots.Creation_has_undo = Slot(uri=KGCL.has_undo, name="Creation_has_undo", curie=KGCL.curie('has_undo'),
+                   model_uri=KGCL.Creation_has_undo, domain=None, range=Optional[Union[dict, Deletion]])
 
-slots.remove_from_subset_in_subset = Slot(uri=KGCL.in_subset, name="remove from subset_in subset", curie=KGCL.curie('in_subset'),
-                   model_uri=KGCL.remove_from_subset_in_subset, domain=None, range=Optional[Union[dict, "OntologySubset"]])
+slots.AddToSubset_in_subset = Slot(uri=KGCL.in_subset, name="AddToSubset_in_subset", curie=KGCL.curie('in_subset'),
+                   model_uri=KGCL.AddToSubset_in_subset, domain=None, range=Optional[Union[dict, "OntologySubset"]])
 
-slots.remove_from_subset_has_undo = Slot(uri=KGCL.has_undo, name="remove from subset_has undo", curie=KGCL.curie('has_undo'),
-                   model_uri=KGCL.remove_from_subset_has_undo, domain=None, range=Optional[Union[dict, AddToSubset]])
+slots.RemoveFromSubset_in_subset = Slot(uri=KGCL.in_subset, name="RemoveFromSubset_in_subset", curie=KGCL.curie('in_subset'),
+                   model_uri=KGCL.RemoveFromSubset_in_subset, domain=None, range=Optional[Union[dict, "OntologySubset"]])
 
-slots.edge_change_subject = Slot(uri=OM.subject, name="edge change_subject", curie=OM.curie('subject'),
-                   model_uri=KGCL.edge_change_subject, domain=EdgeChange, range=Optional[Union[str, NodeId]])
+slots.RemoveFromSubset_has_undo = Slot(uri=KGCL.has_undo, name="RemoveFromSubset_has_undo", curie=KGCL.curie('has_undo'),
+                   model_uri=KGCL.RemoveFromSubset_has_undo, domain=None, range=Optional[Union[dict, AddToSubset]])
 
-slots.edge_creation_change_description = Slot(uri=KGCL.change_description, name="edge creation_change description", curie=KGCL.curie('change_description'),
-                   model_uri=KGCL.edge_creation_change_description, domain=EdgeCreation, range=Optional[str])
+slots.EdgeChange_subject = Slot(uri=OM.subject, name="EdgeChange_subject", curie=OM.curie('subject'),
+                   model_uri=KGCL.EdgeChange_subject, domain=EdgeChange, range=Optional[Union[str, NodeId]])
 
-slots.edge_deletion_change_description = Slot(uri=KGCL.change_description, name="edge deletion_change description", curie=KGCL.curie('change_description'),
-                   model_uri=KGCL.edge_deletion_change_description, domain=EdgeDeletion, range=Optional[str])
+slots.EdgeCreation_change_description = Slot(uri=KGCL.change_description, name="EdgeCreation_change_description", curie=KGCL.curie('change_description'),
+                   model_uri=KGCL.EdgeCreation_change_description, domain=EdgeCreation, range=Optional[str])
 
-slots.edge_obsoletion_change_description = Slot(uri=KGCL.change_description, name="edge obsoletion_change description", curie=KGCL.curie('change_description'),
-                   model_uri=KGCL.edge_obsoletion_change_description, domain=EdgeObsoletion, range=Optional[str])
+slots.EdgeDeletion_change_description = Slot(uri=KGCL.change_description, name="EdgeDeletion_change_description", curie=KGCL.curie('change_description'),
+                   model_uri=KGCL.EdgeDeletion_change_description, domain=EdgeDeletion, range=Optional[str])
 
-slots.mapping_creation_change_description = Slot(uri=KGCL.change_description, name="mapping creation_change description", curie=KGCL.curie('change_description'),
-                   model_uri=KGCL.mapping_creation_change_description, domain=MappingCreation, range=Optional[str])
+slots.EdgeObsoletion_change_description = Slot(uri=KGCL.change_description, name="EdgeObsoletion_change_description", curie=KGCL.curie('change_description'),
+                   model_uri=KGCL.EdgeObsoletion_change_description, domain=EdgeObsoletion, range=Optional[str])
 
-slots.mapping_creation_subject = Slot(uri=OM.subject, name="mapping creation_subject", curie=OM.curie('subject'),
-                   model_uri=KGCL.mapping_creation_subject, domain=MappingCreation, range=Optional[Union[str, NodeId]])
+slots.MappingCreation_change_description = Slot(uri=KGCL.change_description, name="MappingCreation_change_description", curie=KGCL.curie('change_description'),
+                   model_uri=KGCL.MappingCreation_change_description, domain=MappingCreation, range=Optional[str])
 
-slots.mapping_creation_predicate = Slot(uri=OM.predicate, name="mapping creation_predicate", curie=OM.curie('predicate'),
-                   model_uri=KGCL.mapping_creation_predicate, domain=MappingCreation, range=Optional[Union[str, NodeId]])
+slots.MappingCreation_subject = Slot(uri=OM.subject, name="MappingCreation_subject", curie=OM.curie('subject'),
+                   model_uri=KGCL.MappingCreation_subject, domain=MappingCreation, range=Optional[Union[str, NodeId]])
 
-slots.mapping_creation_object = Slot(uri=OM.object, name="mapping creation_object", curie=OM.curie('object'),
-                   model_uri=KGCL.mapping_creation_object, domain=MappingCreation, range=Optional[Union[str, NodeId]])
+slots.MappingCreation_predicate = Slot(uri=OM.predicate, name="MappingCreation_predicate", curie=OM.curie('predicate'),
+                   model_uri=KGCL.MappingCreation_predicate, domain=MappingCreation, range=Optional[Union[str, NodeId]])
 
-slots.node_move_change_description = Slot(uri=KGCL.change_description, name="node move_change description", curie=KGCL.curie('change_description'),
-                   model_uri=KGCL.node_move_change_description, domain=NodeMove, range=Optional[str])
+slots.MappingCreation_object = Slot(uri=OM.object, name="MappingCreation_object", curie=OM.curie('object'),
+                   model_uri=KGCL.MappingCreation_object, domain=MappingCreation, range=Optional[Union[str, NodeId]])
 
-slots.node_deepening_change_description = Slot(uri=KGCL.change_description, name="node deepening_change description", curie=KGCL.curie('change_description'),
-                   model_uri=KGCL.node_deepening_change_description, domain=NodeDeepening, range=Optional[str])
+slots.NodeMove_change_description = Slot(uri=KGCL.change_description, name="NodeMove_change_description", curie=KGCL.curie('change_description'),
+                   model_uri=KGCL.NodeMove_change_description, domain=NodeMove, range=Optional[str])
 
-slots.node_shallowing_change_description = Slot(uri=KGCL.change_description, name="node shallowing_change description", curie=KGCL.curie('change_description'),
-                   model_uri=KGCL.node_shallowing_change_description, domain=NodeShallowing, range=Optional[str])
+slots.NodeDeepening_change_description = Slot(uri=KGCL.change_description, name="NodeDeepening_change_description", curie=KGCL.curie('change_description'),
+                   model_uri=KGCL.NodeDeepening_change_description, domain=NodeDeepening, range=Optional[str])
 
-slots.predicate_change_change_description = Slot(uri=KGCL.change_description, name="predicate change_change description", curie=KGCL.curie('change_description'),
-                   model_uri=KGCL.predicate_change_change_description, domain=PredicateChange, range=Optional[str])
+slots.NodeShallowing_change_description = Slot(uri=KGCL.change_description, name="NodeShallowing_change_description", curie=KGCL.curie('change_description'),
+                   model_uri=KGCL.NodeShallowing_change_description, domain=NodeShallowing, range=Optional[str])
 
-slots.node_rename_old_value = Slot(uri=KGCL.old_value, name="node rename_old value", curie=KGCL.curie('old_value'),
-                   model_uri=KGCL.node_rename_old_value, domain=NodeRename, range=Optional[str])
+slots.PredicateChange_change_description = Slot(uri=KGCL.change_description, name="PredicateChange_change_description", curie=KGCL.curie('change_description'),
+                   model_uri=KGCL.PredicateChange_change_description, domain=PredicateChange, range=Optional[str])
 
-slots.node_rename_new_value = Slot(uri=KGCL.new_value, name="node rename_new value", curie=KGCL.curie('new_value'),
-                   model_uri=KGCL.node_rename_new_value, domain=NodeRename, range=Optional[str])
+slots.NodeRename_old_value = Slot(uri=KGCL.old_value, name="NodeRename_old_value", curie=KGCL.curie('old_value'),
+                   model_uri=KGCL.NodeRename_old_value, domain=NodeRename, range=Optional[str])
 
-slots.node_rename_change_description = Slot(uri=KGCL.change_description, name="node rename_change description", curie=KGCL.curie('change_description'),
-                   model_uri=KGCL.node_rename_change_description, domain=NodeRename, range=Optional[str])
+slots.NodeRename_new_value = Slot(uri=KGCL.new_value, name="NodeRename_new_value", curie=KGCL.curie('new_value'),
+                   model_uri=KGCL.NodeRename_new_value, domain=NodeRename, range=Optional[str])
 
-slots.set_language_for_name_change_description = Slot(uri=KGCL.change_description, name="set language for name_change description", curie=KGCL.curie('change_description'),
-                   model_uri=KGCL.set_language_for_name_change_description, domain=SetLanguageForName, range=Optional[str])
+slots.NodeRename_change_description = Slot(uri=KGCL.change_description, name="NodeRename_change_description", curie=KGCL.curie('change_description'),
+                   model_uri=KGCL.NodeRename_change_description, domain=NodeRename, range=Optional[str])
 
-slots.name_becomes_synonym_change_1 = Slot(uri=KGCL.change_1, name="name becomes synonym_change 1", curie=KGCL.curie('change_1'),
-                   model_uri=KGCL.name_becomes_synonym_change_1, domain=NameBecomesSynonym, range=Optional[Union[str, NodeRenameId]])
+slots.SetLanguageForName_change_description = Slot(uri=KGCL.change_description, name="SetLanguageForName_change_description", curie=KGCL.curie('change_description'),
+                   model_uri=KGCL.SetLanguageForName_change_description, domain=SetLanguageForName, range=Optional[str])
 
-slots.name_becomes_synonym_change_2 = Slot(uri=KGCL.change_2, name="name becomes synonym_change 2", curie=KGCL.curie('change_2'),
-                   model_uri=KGCL.name_becomes_synonym_change_2, domain=NameBecomesSynonym, range=Optional[Union[str, NewSynonymId]])
+slots.NameBecomesSynonym_change_1 = Slot(uri=KGCL.change_1, name="NameBecomesSynonym_change 1", curie=KGCL.curie('change_1'),
+                   model_uri=KGCL.NameBecomesSynonym_change_1, domain=NameBecomesSynonym, range=Optional[Union[str, NodeRenameId]])
 
-slots.name_becomes_synonym_change_description = Slot(uri=KGCL.change_description, name="name becomes synonym_change description", curie=KGCL.curie('change_description'),
-                   model_uri=KGCL.name_becomes_synonym_change_description, domain=NameBecomesSynonym, range=Optional[str])
+slots.NameBecomesSynonym_change_2 = Slot(uri=KGCL.change_2, name="NameBecomesSynonym_change 2", curie=KGCL.curie('change_2'),
+                   model_uri=KGCL.NameBecomesSynonym_change_2, domain=NameBecomesSynonym, range=Optional[Union[str, NewSynonymId]])
 
-slots.remove_node_from_subset_change_description = Slot(uri=KGCL.change_description, name="remove node from subset_change description", curie=KGCL.curie('change_description'),
-                   model_uri=KGCL.remove_node_from_subset_change_description, domain=RemoveNodeFromSubset, range=Optional[str])
+slots.NameBecomesSynonym_change_description = Slot(uri=KGCL.change_description, name="NameBecomesSynonym_change_description", curie=KGCL.curie('change_description'),
+                   model_uri=KGCL.NameBecomesSynonym_change_description, domain=NameBecomesSynonym, range=Optional[str])
 
-slots.remove_node_from_subset_about_node = Slot(uri=KGCL.about_node, name="remove node from subset_about node", curie=KGCL.curie('about_node'),
-                   model_uri=KGCL.remove_node_from_subset_about_node, domain=RemoveNodeFromSubset, range=Optional[Union[str, NodeId]])
+slots.RemoveNodeFromSubset_change_description = Slot(uri=KGCL.change_description, name="RemoveNodeFromSubset_change_description", curie=KGCL.curie('change_description'),
+                   model_uri=KGCL.RemoveNodeFromSubset_change_description, domain=RemoveNodeFromSubset, range=Optional[str])
 
-slots.remove_node_from_subset_subset = Slot(uri=KGCL.subset, name="remove node from subset_subset", curie=KGCL.curie('subset'),
-                   model_uri=KGCL.remove_node_from_subset_subset, domain=RemoveNodeFromSubset, range=Optional[str])
+slots.RemoveNodeFromSubset_about_node = Slot(uri=KGCL.about_node, name="RemoveNodeFromSubset_about_node", curie=KGCL.curie('about_node'),
+                   model_uri=KGCL.RemoveNodeFromSubset_about_node, domain=RemoveNodeFromSubset, range=Optional[Union[str, NodeId]])
 
-slots.node_obsoletion_change_description = Slot(uri=KGCL.change_description, name="node obsoletion_change description", curie=KGCL.curie('change_description'),
-                   model_uri=KGCL.node_obsoletion_change_description, domain=NodeObsoletion, range=Optional[str])
+slots.RemoveNodeFromSubset_subset = Slot(uri=KGCL.subset, name="RemoveNodeFromSubset_subset", curie=KGCL.curie('subset'),
+                   model_uri=KGCL.RemoveNodeFromSubset_subset, domain=RemoveNodeFromSubset, range=Optional[str])
 
-slots.node_obsoletion_associated_change_set = Slot(uri=KGCL.associated_change_set, name="node obsoletion_associated change set", curie=KGCL.curie('associated_change_set'),
-                   model_uri=KGCL.node_obsoletion_associated_change_set, domain=NodeObsoletion, range=Optional[Union[Dict[Union[str, ChangeId], Union[dict, Change]], List[Union[dict, Change]]]])
+slots.NodeObsoletion_change_description = Slot(uri=KGCL.change_description, name="NodeObsoletion_change_description", curie=KGCL.curie('change_description'),
+                   model_uri=KGCL.NodeObsoletion_change_description, domain=NodeObsoletion, range=Optional[str])
 
-slots.node_unobsoletion_change_description = Slot(uri=KGCL.change_description, name="node unobsoletion_change description", curie=KGCL.curie('change_description'),
-                   model_uri=KGCL.node_unobsoletion_change_description, domain=NodeUnobsoletion, range=Optional[str])
+slots.NodeObsoletion_associated_change_set = Slot(uri=KGCL.associated_change_set, name="NodeObsoletion_associated change set", curie=KGCL.curie('associated_change_set'),
+                   model_uri=KGCL.NodeObsoletion_associated_change_set, domain=NodeObsoletion, range=Optional[Union[Dict[Union[str, ChangeId], Union[dict, Change]], List[Union[dict, Change]]]])
 
-slots.node_unobsoletion_replaced_by = Slot(uri=KGCL.replaced_by, name="node unobsoletion_replaced by", curie=KGCL.curie('replaced_by'),
-                   model_uri=KGCL.node_unobsoletion_replaced_by, domain=NodeUnobsoletion, range=Optional[Union[str, NodeId]])
+slots.NodeUnobsoletion_change_description = Slot(uri=KGCL.change_description, name="NodeUnobsoletion_change_description", curie=KGCL.curie('change_description'),
+                   model_uri=KGCL.NodeUnobsoletion_change_description, domain=NodeUnobsoletion, range=Optional[str])
 
-slots.node_unobsoletion_consider = Slot(uri=KGCL.consider, name="node unobsoletion_consider", curie=KGCL.curie('consider'),
-                   model_uri=KGCL.node_unobsoletion_consider, domain=NodeUnobsoletion, range=Optional[Union[str, NodeId]])
+slots.NodeUnobsoletion_replaced_by = Slot(uri=KGCL.replaced_by, name="NodeUnobsoletion_replaced by", curie=KGCL.curie('replaced_by'),
+                   model_uri=KGCL.NodeUnobsoletion_replaced_by, domain=NodeUnobsoletion, range=Optional[Union[str, NodeId]])
 
-slots.node_creation_change_description = Slot(uri=KGCL.change_description, name="node creation_change description", curie=KGCL.curie('change_description'),
-                   model_uri=KGCL.node_creation_change_description, domain=NodeCreation, range=Optional[str])
+slots.NodeUnobsoletion_consider = Slot(uri=KGCL.consider, name="NodeUnobsoletion_consider", curie=KGCL.curie('consider'),
+                   model_uri=KGCL.NodeUnobsoletion_consider, domain=NodeUnobsoletion, range=Optional[Union[str, NodeId]])
 
-slots.class_creation_change_description = Slot(uri=KGCL.change_description, name="class creation_change description", curie=KGCL.curie('change_description'),
-                   model_uri=KGCL.class_creation_change_description, domain=ClassCreation, range=Optional[str])
+slots.NodeCreation_change_description = Slot(uri=KGCL.change_description, name="NodeCreation_change_description", curie=KGCL.curie('change_description'),
+                   model_uri=KGCL.NodeCreation_change_description, domain=NodeCreation, range=Optional[str])
 
-slots.node_deletion_change_description = Slot(uri=KGCL.change_description, name="node deletion_change description", curie=KGCL.curie('change_description'),
-                   model_uri=KGCL.node_deletion_change_description, domain=NodeDeletion, range=Optional[str])
+slots.ClassCreation_change_description = Slot(uri=KGCL.change_description, name="ClassCreation_change_description", curie=KGCL.curie('change_description'),
+                   model_uri=KGCL.ClassCreation_change_description, domain=ClassCreation, range=Optional[str])
 
-slots.node_direct_merge_has_direct_replacement = Slot(uri=KGCL.has_direct_replacement, name="node direct merge_has direct replacement", curie=KGCL.curie('has_direct_replacement'),
-                   model_uri=KGCL.node_direct_merge_has_direct_replacement, domain=NodeDirectMerge, range=Union[str, NodeId])
+slots.ObjectPropertyCreation_change_description = Slot(uri=KGCL.change_description, name="ObjectPropertyCreation_change_description", curie=KGCL.curie('change_description'),
+                   model_uri=KGCL.ObjectPropertyCreation_change_description, domain=ObjectPropertyCreation, range=Optional[str])
 
-slots.node_direct_merge_about_node = Slot(uri=KGCL.about_node, name="node direct merge_about node", curie=KGCL.curie('about_node'),
-                   model_uri=KGCL.node_direct_merge_about_node, domain=NodeDirectMerge, range=Optional[Union[str, NodeId]])
+slots.NodeDeletion_change_description = Slot(uri=KGCL.change_description, name="NodeDeletion_change_description", curie=KGCL.curie('change_description'),
+                   model_uri=KGCL.NodeDeletion_change_description, domain=NodeDeletion, range=Optional[str])
 
-slots.node_direct_merge_change_description = Slot(uri=KGCL.change_description, name="node direct merge_change description", curie=KGCL.curie('change_description'),
-                   model_uri=KGCL.node_direct_merge_change_description, domain=NodeDirectMerge, range=Optional[str])
+slots.NodeDirectMerge_has_direct_replacement = Slot(uri=KGCL.has_direct_replacement, name="NodeDirectMerge_has_direct_replacement", curie=KGCL.curie('has_direct_replacement'),
+                   model_uri=KGCL.NodeDirectMerge_has_direct_replacement, domain=NodeDirectMerge, range=Union[str, NodeId])
 
-slots.node_obsoletion_with_direct_replacement_has_direct_replacement = Slot(uri=KGCL.has_direct_replacement, name="node obsoletion with direct replacement_has direct replacement", curie=KGCL.curie('has_direct_replacement'),
-                   model_uri=KGCL.node_obsoletion_with_direct_replacement_has_direct_replacement, domain=NodeObsoletionWithDirectReplacement, range=Union[str, NodeId])
+slots.NodeDirectMerge_about_node = Slot(uri=KGCL.about_node, name="NodeDirectMerge_about_node", curie=KGCL.curie('about_node'),
+                   model_uri=KGCL.NodeDirectMerge_about_node, domain=NodeDirectMerge, range=Optional[Union[str, NodeId]])
 
-slots.node_obsoletion_with_direct_replacement_change_description = Slot(uri=KGCL.change_description, name="node obsoletion with direct replacement_change description", curie=KGCL.curie('change_description'),
-                   model_uri=KGCL.node_obsoletion_with_direct_replacement_change_description, domain=NodeObsoletionWithDirectReplacement, range=Optional[str])
+slots.NodeDirectMerge_change_description = Slot(uri=KGCL.change_description, name="NodeDirectMerge_change_description", curie=KGCL.curie('change_description'),
+                   model_uri=KGCL.NodeDirectMerge_change_description, domain=NodeDirectMerge, range=Optional[str])
 
-slots.node_obsoletion_with_no_direct_replacement_has_nondirect_replacement = Slot(uri=KGCL.has_nondirect_replacement, name="node obsoletion with no direct replacement_has nondirect replacement", curie=KGCL.curie('has_nondirect_replacement'),
-                   model_uri=KGCL.node_obsoletion_with_no_direct_replacement_has_nondirect_replacement, domain=NodeObsoletionWithNoDirectReplacement, range=Union[Union[str, NodeId], List[Union[str, NodeId]]])
+slots.NodeObsoletionWithDirectReplacement_has_direct_replacement = Slot(uri=KGCL.has_direct_replacement, name="NodeObsoletionWithDirectReplacement_has_direct_replacement", curie=KGCL.curie('has_direct_replacement'),
+                   model_uri=KGCL.NodeObsoletionWithDirectReplacement_has_direct_replacement, domain=NodeObsoletionWithDirectReplacement, range=Union[str, NodeId])
 
-slots.node_obsoletion_with_no_direct_replacement_change_description = Slot(uri=KGCL.change_description, name="node obsoletion with no direct replacement_change description", curie=KGCL.curie('change_description'),
-                   model_uri=KGCL.node_obsoletion_with_no_direct_replacement_change_description, domain=NodeObsoletionWithNoDirectReplacement, range=Optional[str])
+slots.NodeObsoletionWithDirectReplacement_change_description = Slot(uri=KGCL.change_description, name="NodeObsoletionWithDirectReplacement_change_description", curie=KGCL.curie('change_description'),
+                   model_uri=KGCL.NodeObsoletionWithDirectReplacement_change_description, domain=NodeObsoletionWithDirectReplacement, range=Optional[str])
+
+slots.NodeObsoletionWithNoDirectReplacement_has_nondirect_replacement = Slot(uri=KGCL.has_nondirect_replacement, name="NodeObsoletionWithNoDirectReplacement_has_nondirect_replacement", curie=KGCL.curie('has_nondirect_replacement'),
+                   model_uri=KGCL.NodeObsoletionWithNoDirectReplacement_has_nondirect_replacement, domain=NodeObsoletionWithNoDirectReplacement, range=Union[Union[str, NodeId], List[Union[str, NodeId]]])
+
+slots.NodeObsoletionWithNoDirectReplacement_change_description = Slot(uri=KGCL.change_description, name="NodeObsoletionWithNoDirectReplacement_change_description", curie=KGCL.curie('change_description'),
+                   model_uri=KGCL.NodeObsoletionWithNoDirectReplacement_change_description, domain=NodeObsoletionWithNoDirectReplacement, range=Optional[str])

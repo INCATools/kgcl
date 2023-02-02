@@ -1,5 +1,5 @@
 
-# Slot: change set
+# Slot: change_set
 
 
 A collection of changes
@@ -16,10 +16,10 @@ None &#8594;  <sub>0..\*</sub> [Change](Change.md)
 
 ## Children
 
+ *  [MultiNodeObsoletion➞associated change set](MultiNodeObsoletion_associated_change_set.md)
+ *  [MultiNodeObsoletion➞change_set](MultiNodeObsoletion_change_set.md)
+ *  [NodeObsoletion➞associated change set](NodeObsoletion_associated_change_set.md)
  *  [associated change set](associated_change_set.md)
- *  [multi node obsoletion➞associated change set](multi_node_obsoletion_associated_change_set.md)
- *  [multi node obsoletion➞change set](multi_node_obsoletion_change_set.md)
- *  [node obsoletion➞associated change set](node_obsoletion_associated_change_set.md)
 
 ## Used by
 

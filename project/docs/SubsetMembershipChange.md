@@ -1,5 +1,5 @@
 
-# Class: subset membership change
+# Class: SubsetMembershipChange
 
 
 A change in the membership status of a node with respect to a subset (view)
@@ -7,7 +7,7 @@ A change in the membership status of a node with respect to a subset (view)
 URI: [kgcl:SubsetMembershipChange](http://w3id.org/kgcl/SubsetMembershipChange)
 
 
-[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[OntologySubset]<in%20subset%200..1-++[SubsetMembershipChange],[SubsetMembershipChange]^-[RemoveFromSubset],[SubsetMembershipChange]^-[AddToSubset],[ChangeMixin]^-[SubsetMembershipChange],[RemoveFromSubset],[OntologySubset],[ChangeMixin],[AddToSubset])](https://yuml.me/diagram/nofunky;dir:TB/class/[OntologySubset]<in%20subset%200..1-++[SubsetMembershipChange],[SubsetMembershipChange]^-[RemoveFromSubset],[SubsetMembershipChange]^-[AddToSubset],[ChangeMixin]^-[SubsetMembershipChange],[RemoveFromSubset],[OntologySubset],[ChangeMixin],[AddToSubset])
+[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[OntologySubset]<in_subset%200..1-++[SubsetMembershipChange],[SubsetMembershipChange]^-[RemoveFromSubset],[SubsetMembershipChange]^-[AddToSubset],[ChangeMixin]^-[SubsetMembershipChange],[RemoveFromSubset],[OntologySubset],[ChangeMixin],[AddToSubset])](https://yuml.me/diagram/nofunky;dir:TB/class/[OntologySubset]<in_subset%200..1-++[SubsetMembershipChange],[SubsetMembershipChange]^-[RemoveFromSubset],[SubsetMembershipChange]^-[AddToSubset],[ChangeMixin]^-[SubsetMembershipChange],[RemoveFromSubset],[OntologySubset],[ChangeMixin],[AddToSubset])
 
 ## Parents
 
@@ -26,6 +26,6 @@ URI: [kgcl:SubsetMembershipChange](http://w3id.org/kgcl/SubsetMembershipChange)
 
 ### Own
 
- * [in subset](in_subset.md)  <sub>0..1</sub>
+ * [in_subset](in_subset.md)  <sub>0..1</sub>
      * Description: The subset that pertains to this change
      * Range: [OntologySubset](OntologySubset.md)

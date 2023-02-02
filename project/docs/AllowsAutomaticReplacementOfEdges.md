@@ -1,5 +1,5 @@
 
-# Class: allows automatic replacement of edges
+# Class: AllowsAutomaticReplacementOfEdges
 
 
 Applies to an obsoletion in which annotations or edges pointing at the obsoleted node can be automatically rewired to point to a target
@@ -24,11 +24,11 @@ URI: [kgcl:AllowsAutomaticReplacementOfEdges](http://w3id.org/kgcl/AllowsAutomat
 ## Attributes
 
 
-### Inherited from obsoletion:
+### Inherited from Obsoletion:
 
- * [obsoletion➞about](obsoletion_about.md)  <sub>0..1</sub>
+ * [Obsoletion➞about](Obsoletion_about.md)  <sub>0..1</sub>
      * Description: The element that is obsoleted by this change.
      * Range: [OntologyElement](OntologyElement.md)
- * [obsoletion➞has undo](obsoletion_has_undo.md)  <sub>0..1</sub>
+ * [Obsoletion➞has_undo](Obsoletion_has_undo.md)  <sub>0..1</sub>
      * Description: A change that reverses this change
      * Range: [Obsoletion](Obsoletion.md)

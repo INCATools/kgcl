@@ -1,5 +1,5 @@
 
-# Class: obsoletion
+# Class: Obsoletion
 
 
 Obsoletion of an element deprecates usage of that element, but does not delete that element.
@@ -7,7 +7,7 @@ Obsoletion of an element deprecates usage of that element, but does not delete t
 URI: [kgcl:Obsoletion](http://w3id.org/kgcl/Obsoletion)
 
 
-[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Unobsoletion],[OntologyElement],[Obsoletion]<has%20undo%200..1-++[Obsoletion],[OntologyElement]<about%200..1-++[Obsoletion],[Unobsoletion]++-%20has%20undo%200..1>[Obsoletion],[NodeObsoletion]uses%20-.->[Obsoletion],[EdgeObsoletion]uses%20-.->[Obsoletion],[Obsoletion]^-[AllowsAutomaticReplacementOfEdges],[ChangeMixin]^-[Obsoletion],[NodeObsoletion],[EdgeObsoletion],[ChangeMixin],[AllowsAutomaticReplacementOfEdges])](https://yuml.me/diagram/nofunky;dir:TB/class/[Unobsoletion],[OntologyElement],[Obsoletion]<has%20undo%200..1-++[Obsoletion],[OntologyElement]<about%200..1-++[Obsoletion],[Unobsoletion]++-%20has%20undo%200..1>[Obsoletion],[NodeObsoletion]uses%20-.->[Obsoletion],[EdgeObsoletion]uses%20-.->[Obsoletion],[Obsoletion]^-[AllowsAutomaticReplacementOfEdges],[ChangeMixin]^-[Obsoletion],[NodeObsoletion],[EdgeObsoletion],[ChangeMixin],[AllowsAutomaticReplacementOfEdges])
+[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Unobsoletion],[OntologyElement],[Obsoletion]<has_undo%200..1-++[Obsoletion],[OntologyElement]<about%200..1-++[Obsoletion],[Unobsoletion]++-%20has_undo%200..1>[Obsoletion],[NodeObsoletion]uses%20-.->[Obsoletion],[EdgeObsoletion]uses%20-.->[Obsoletion],[Obsoletion]^-[AllowsAutomaticReplacementOfEdges],[ChangeMixin]^-[Obsoletion],[NodeObsoletion],[EdgeObsoletion],[ChangeMixin],[AllowsAutomaticReplacementOfEdges])](https://yuml.me/diagram/nofunky;dir:TB/class/[Unobsoletion],[OntologyElement],[Obsoletion]<has_undo%200..1-++[Obsoletion],[OntologyElement]<about%200..1-++[Obsoletion],[Unobsoletion]++-%20has_undo%200..1>[Obsoletion],[NodeObsoletion]uses%20-.->[Obsoletion],[EdgeObsoletion]uses%20-.->[Obsoletion],[Obsoletion]^-[AllowsAutomaticReplacementOfEdges],[ChangeMixin]^-[Obsoletion],[NodeObsoletion],[EdgeObsoletion],[ChangeMixin],[AllowsAutomaticReplacementOfEdges])
 
 ## Parents
 
@@ -24,18 +24,18 @@ URI: [kgcl:Obsoletion](http://w3id.org/kgcl/Obsoletion)
 
 ## Referenced by Class
 
- *  **[Obsoletion](Obsoletion.md)** *[obsoletion➞has undo](obsoletion_has_undo.md)*  <sub>0..1</sub>  **[Obsoletion](Obsoletion.md)**
- *  **[Unobsoletion](Unobsoletion.md)** *[unobsoletion➞has undo](unobsoletion_has_undo.md)*  <sub>0..1</sub>  **[Obsoletion](Obsoletion.md)**
+ *  **[Obsoletion](Obsoletion.md)** *[Obsoletion➞has_undo](Obsoletion_has_undo.md)*  <sub>0..1</sub>  **[Obsoletion](Obsoletion.md)**
+ *  **[Unobsoletion](Unobsoletion.md)** *[Unobsoletion➞has_undo](Unobsoletion_has_undo.md)*  <sub>0..1</sub>  **[Obsoletion](Obsoletion.md)**
 
 ## Attributes
 
 
 ### Own
 
- * [obsoletion➞about](obsoletion_about.md)  <sub>0..1</sub>
+ * [Obsoletion➞about](Obsoletion_about.md)  <sub>0..1</sub>
      * Description: The element that is obsoleted by this change.
      * Range: [OntologyElement](OntologyElement.md)
- * [obsoletion➞has undo](obsoletion_has_undo.md)  <sub>0..1</sub>
+ * [Obsoletion➞has_undo](Obsoletion_has_undo.md)  <sub>0..1</sub>
      * Description: A change that reverses this change
      * Range: [Obsoletion](Obsoletion.md)
 

@@ -1,5 +1,5 @@
 
-# Class: deletion
+# Class: Deletion
 
 
 Removal of an element.
@@ -7,7 +7,7 @@ Removal of an element.
 URI: [kgcl:Deletion](http://w3id.org/kgcl/Deletion)
 
 
-[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Creation]++-%20has%20undo%200..1>[Deletion],[NodeDeletion]uses%20-.->[Deletion],[EdgeDeletion]uses%20-.->[Deletion],[ChangeMixin]^-[Deletion],[NodeDeletion],[EdgeDeletion],[Creation],[ChangeMixin])](https://yuml.me/diagram/nofunky;dir:TB/class/[Creation]++-%20has%20undo%200..1>[Deletion],[NodeDeletion]uses%20-.->[Deletion],[EdgeDeletion]uses%20-.->[Deletion],[ChangeMixin]^-[Deletion],[NodeDeletion],[EdgeDeletion],[Creation],[ChangeMixin])
+[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Creation]++-%20has_undo%200..1>[Deletion],[NodeDeletion]uses%20-.->[Deletion],[EdgeDeletion]uses%20-.->[Deletion],[ChangeMixin]^-[Deletion],[NodeDeletion],[EdgeDeletion],[Creation],[ChangeMixin])](https://yuml.me/diagram/nofunky;dir:TB/class/[Creation]++-%20has_undo%200..1>[Deletion],[NodeDeletion]uses%20-.->[Deletion],[EdgeDeletion]uses%20-.->[Deletion],[ChangeMixin]^-[Deletion],[NodeDeletion],[EdgeDeletion],[Creation],[ChangeMixin])
 
 ## Parents
 
@@ -20,7 +20,7 @@ URI: [kgcl:Deletion](http://w3id.org/kgcl/Deletion)
 
 ## Referenced by Class
 
- *  **[Creation](Creation.md)** *[creation➞has undo](creation_has_undo.md)*  <sub>0..1</sub>  **[Deletion](Deletion.md)**
+ *  **[Creation](Creation.md)** *[Creation➞has_undo](Creation_has_undo.md)*  <sub>0..1</sub>  **[Deletion](Deletion.md)**
 
 ## Attributes
 

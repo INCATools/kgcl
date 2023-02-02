@@ -16,7 +16,7 @@ None &#8594;  <sub>0..1</sub> [String](types/String.md)
 
 ## Children
 
- *  [remove node from subset➞subset](remove_node_from_subset_subset.md)
+ *  [RemoveNodeFromSubset➞subset](RemoveNodeFromSubset_subset.md)
 
 ## Used by
 

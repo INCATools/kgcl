@@ -1,5 +1,5 @@
 
-# Slot: was informed by
+# Slot: was_informed_by
 
 
 

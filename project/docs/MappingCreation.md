@@ -1,5 +1,5 @@
 
-# Class: ~~mapping creation~~ _(deprecated)_
+# Class: ~~MappingCreation~~ _(deprecated)_
 
 
 A specific kind of edge creation in which the created edge is a mapping.
@@ -7,7 +7,7 @@ A specific kind of edge creation in which the created edge is a mapping.
 URI: [kgcl:MappingCreation](http://w3id.org/kgcl/MappingCreation)
 
 
-[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Node],[Annotation]<annotation%20set(i)%200..1-++[MappingCreation&#124;change_description:string%20%3F;subject_type(i):string%20%3F;predicate_type(i):string%20%3F;object_type(i):string%20%3F;language(i):language_tag%20%3F;datatype(i):string%20%3F;old_value(i):string%20%3F;new_value(i):string%20%3F;old_value_type(i):string%20%3F;new_value_type(i):string%20%3F;new_language(i):string%20%3F;old_language(i):string%20%3F;new_datatype(i):string%20%3F;old_datatype(i):string%20%3F;id(i):string;type(i):string%20%3F;see_also(i):string%20%3F;pull_request(i):string%20%3F;creator(i):string%20%3F;change_date(i):string%20%3F;contributor(i):string%20%3F],[Node]<object%200..1-%20[MappingCreation],[Node]<predicate%200..1-%20[MappingCreation],[Node]<subject%200..1-%20[MappingCreation],[MappingCreation]uses%20-.->[Creation],[EdgeCreation]^-[MappingCreation],[EdgeCreation],[Edge],[Creation],[Change],[Annotation],[Activity])](https://yuml.me/diagram/nofunky;dir:TB/class/[Node],[Annotation]<annotation%20set(i)%200..1-++[MappingCreation&#124;change_description:string%20%3F;subject_type(i):string%20%3F;predicate_type(i):string%20%3F;object_type(i):string%20%3F;language(i):language_tag%20%3F;datatype(i):string%20%3F;old_value(i):string%20%3F;new_value(i):string%20%3F;old_value_type(i):string%20%3F;new_value_type(i):string%20%3F;new_language(i):string%20%3F;old_language(i):string%20%3F;new_datatype(i):string%20%3F;old_datatype(i):string%20%3F;id(i):string;type(i):string%20%3F;see_also(i):string%20%3F;pull_request(i):string%20%3F;creator(i):string%20%3F;change_date(i):string%20%3F;contributor(i):string%20%3F],[Node]<object%200..1-%20[MappingCreation],[Node]<predicate%200..1-%20[MappingCreation],[Node]<subject%200..1-%20[MappingCreation],[MappingCreation]uses%20-.->[Creation],[EdgeCreation]^-[MappingCreation],[EdgeCreation],[Edge],[Creation],[Change],[Annotation],[Activity])
+[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Node],[Annotation]<annotation_set(i)%200..1-++[MappingCreation&#124;change_description:string%20%3F;subject_type(i):string%20%3F;predicate_type(i):string%20%3F;object_type(i):string%20%3F;language(i):LanguageTag%20%3F;datatype(i):string%20%3F;old_value(i):string%20%3F;new_value(i):string%20%3F;old_value_type(i):string%20%3F;new_value_type(i):string%20%3F;new_language(i):string%20%3F;old_language(i):string%20%3F;new_datatype(i):string%20%3F;old_datatype(i):string%20%3F;id(i):string;type(i):string%20%3F;see_also(i):string%20%3F;pull_request(i):string%20%3F;creator(i):string%20%3F;change_date(i):string%20%3F;contributor(i):string%20%3F;term_tracker_issue(i):string%20%3F],[Node]<object%200..1-%20[MappingCreation],[Node]<predicate%200..1-%20[MappingCreation],[Node]<subject%200..1-%20[MappingCreation],[MappingCreation]uses%20-.->[Creation],[EdgeCreation]^-[MappingCreation],[EdgeCreation],[Edge],[Creation],[Change],[Annotation],[Activity])](https://yuml.me/diagram/nofunky;dir:TB/class/[Node],[Annotation]<annotation_set(i)%200..1-++[MappingCreation&#124;change_description:string%20%3F;subject_type(i):string%20%3F;predicate_type(i):string%20%3F;object_type(i):string%20%3F;language(i):LanguageTag%20%3F;datatype(i):string%20%3F;old_value(i):string%20%3F;new_value(i):string%20%3F;old_value_type(i):string%20%3F;new_value_type(i):string%20%3F;new_language(i):string%20%3F;old_language(i):string%20%3F;new_datatype(i):string%20%3F;old_datatype(i):string%20%3F;id(i):string;type(i):string%20%3F;see_also(i):string%20%3F;pull_request(i):string%20%3F;creator(i):string%20%3F;change_date(i):string%20%3F;contributor(i):string%20%3F;term_tracker_issue(i):string%20%3F],[Node]<object%200..1-%20[MappingCreation],[Node]<predicate%200..1-%20[MappingCreation],[Node]<subject%200..1-%20[MappingCreation],[MappingCreation]uses%20-.->[Creation],[EdgeCreation]^-[MappingCreation],[EdgeCreation],[Edge],[Creation],[Change],[Annotation],[Activity])
 
 ## Parents
 
@@ -25,18 +25,18 @@ URI: [kgcl:MappingCreation](http://w3id.org/kgcl/MappingCreation)
 
 ### Own
 
- * [mapping creation➞subject](mapping_creation_subject.md)  <sub>0..1</sub>
+ * [MappingCreation➞subject](MappingCreation_subject.md)  <sub>0..1</sub>
      * Description: This corresponds to subject_id in SSSOM
      * Range: [Node](Node.md)
- * [mapping creation➞predicate](mapping_creation_predicate.md)  <sub>0..1</sub>
+ * [MappingCreation➞predicate](MappingCreation_predicate.md)  <sub>0..1</sub>
      * Description: This corresponds to predicate_id in SSSOM. The value of this is typically a predicate from SKOS
      * Range: [Node](Node.md)
- * [mapping creation➞object](mapping_creation_object.md)  <sub>0..1</sub>
+ * [MappingCreation➞object](MappingCreation_object.md)  <sub>0..1</sub>
      * Description: This corresponds to object_id in SSSOM
      * Range: [Node](Node.md)
- * [annotation set](annotation_set.md)  <sub>0..1</sub>
+ * [annotation_set](annotation_set.md)  <sub>0..1</sub>
      * Range: [Annotation](Annotation.md)
- * [mapping creation➞change description](mapping_creation_change_description.md)  <sub>0..1</sub>
+ * [MappingCreation➞change_description](MappingCreation_change_description.md)  <sub>0..1</sub>
      * Description: A string serialization of the change. This should be both human-readable, and parseable.
      * Range: [String](types/String.md)
      * Example: rename UBERON:0002398 from 'manus' to 'hand' None
@@ -45,52 +45,54 @@ URI: [kgcl:MappingCreation](http://w3id.org/kgcl/MappingCreation)
      * Example: search and replace 'metabolic process' with 'metabolism' in all labels under 'biological process' None
      * Example: search and replace 'metabolic process' with 'metabolism' in all labels under 'biological process' retaining as 'exact synonym' None
 
-### Inherited from edge creation:
+### Inherited from EdgeCreation:
 
  * [id](id.md)  <sub>1..1</sub>
      * Range: [String](types/String.md)
  * [type](type.md)  <sub>0..1</sub>
      * Range: [String](types/String.md)
- * [change➞was generated by](change_was_generated_by.md)  <sub>0..1</sub>
+ * [Change➞was_generated_by](Change_was_generated_by.md)  <sub>0..1</sub>
      * Range: [Activity](Activity.md)
- * [change➞see also](change_see_also.md)  <sub>0..1</sub>
+ * [Change➞see_also](Change_see_also.md)  <sub>0..1</sub>
      * Range: [String](types/String.md)
- * [change➞pull request](change_pull_request.md)  <sub>0..1</sub>
+ * [Change➞pull_request](Change_pull_request.md)  <sub>0..1</sub>
      * Range: [String](types/String.md)
- * [change➞creator](change_creator.md)  <sub>0..1</sub>
+ * [Change➞creator](Change_creator.md)  <sub>0..1</sub>
      * Range: [String](types/String.md)
- * [change➞change date](change_change_date.md)  <sub>0..1</sub>
+ * [Change➞change_date](Change_change_date.md)  <sub>0..1</sub>
      * Range: [String](types/String.md)
  * [contributor](contributor.md)  <sub>0..1</sub>
      * Range: [String](types/String.md)
- * [has undo](has_undo.md)  <sub>0..1</sub>
+ * [has_undo](has_undo.md)  <sub>0..1</sub>
      * Description: A change that reverses this change
      * Range: [Change](Change.md)
- * [old value](old_value.md)  <sub>0..1</sub>
+ * [Change➞term_tracker_issue](Change_term_tracker_issue.md)  <sub>0..1</sub>
+     * Range: [String](types/String.md)
+ * [old_value](old_value.md)  <sub>0..1</sub>
      * Description: The value of a property held in the old instance of the ontology
      * Range: [String](types/String.md)
- * [new value](new_value.md)  <sub>0..1</sub>
+ * [new_value](new_value.md)  <sub>0..1</sub>
      * Description: The value of a property held in the new instance of the ontology
      * Range: [String](types/String.md)
- * [old value type](old_value_type.md)  <sub>0..1</sub>
+ * [old_value_type](old_value_type.md)  <sub>0..1</sub>
      * Description: The type (IRI or Literal) of an old value
      * Range: [String](types/String.md)
- * [new value type](new_value_type.md)  <sub>0..1</sub>
+ * [new_value_type](new_value_type.md)  <sub>0..1</sub>
      * Description: The type (IRI or Literal) of a new value
      * Range: [String](types/String.md)
- * [new language](new_language.md)  <sub>0..1</sub>
+ * [new_language](new_language.md)  <sub>0..1</sub>
      * Description: The new language tag of a literal
      * Range: [String](types/String.md)
- * [old language](old_language.md)  <sub>0..1</sub>
+ * [old_language](old_language.md)  <sub>0..1</sub>
      * Description: The old language tag of a literal
      * Range: [String](types/String.md)
- * [new datatype](new_datatype.md)  <sub>0..1</sub>
+ * [new_datatype](new_datatype.md)  <sub>0..1</sub>
      * Description: The new datatype of a literal
      * Range: [String](types/String.md)
- * [old datatype](old_datatype.md)  <sub>0..1</sub>
+ * [old_datatype](old_datatype.md)  <sub>0..1</sub>
      * Description: The old datatype of a literal
      * Range: [String](types/String.md)
- * [about edge](about_edge.md)  <sub>0..1</sub>
+ * [about_edge](about_edge.md)  <sub>0..1</sub>
      * Range: [Edge](Edge.md)
  * [language](language.md)  <sub>0..1</sub>
      * Description: The language tag of a literal
@@ -98,13 +100,13 @@ URI: [kgcl:MappingCreation](http://w3id.org/kgcl/MappingCreation)
  * [datatype](datatype.md)  <sub>0..1</sub>
      * Description: The datatype of a literal
      * Range: [String](types/String.md)
- * [subject type](subject_type.md)  <sub>0..1</sub>
+ * [subject_type](subject_type.md)  <sub>0..1</sub>
      * Description: The type (IRI or Literal) of an edge's subject
      * Range: [String](types/String.md)
- * [predicate type](predicate_type.md)  <sub>0..1</sub>
+ * [predicate_type](predicate_type.md)  <sub>0..1</sub>
      * Description: The type (IRI or Literal) of an edge's subject
      * Range: [String](types/String.md)
- * [object type](object_type.md)  <sub>0..1</sub>
+ * [object_type](object_type.md)  <sub>0..1</sub>
      * Description: The type (IRI or Literal) of an object
      * Range: [String](types/String.md)
 

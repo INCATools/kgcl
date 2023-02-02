@@ -1,5 +1,5 @@
 
-# Slot: about node
+# Slot: about_node
 
 
 
@@ -17,8 +17,8 @@ None &#8594;  <sub>0..1</sub> [Node](Node.md)
 
 ## Children
 
- *  [node direct merge➞about node](node_direct_merge_about_node.md)
- *  [remove node from subset➞about node](remove_node_from_subset_about_node.md)
+ *  [NodeDirectMerge➞about_node](NodeDirectMerge_about_node.md)
+ *  [RemoveNodeFromSubset➞about_node](RemoveNodeFromSubset_about_node.md)
 
 ## Used by
 
@@ -47,6 +47,7 @@ None &#8594;  <sub>0..1</sub> [Node](Node.md)
  * [NodeSynonymChange](NodeSynonymChange.md)
  * [NodeTextDefinitionChange](NodeTextDefinitionChange.md)
  * [NodeUnobsoletion](NodeUnobsoletion.md)
+ * [ObjectPropertyCreation](ObjectPropertyCreation.md)
  * [RemoveMapping](RemoveMapping.md)
  * [RemoveMetadataAssertion](RemoveMetadataAssertion.md)
  * [RemoveSynonym](RemoveSynonym.md)

@@ -1,5 +1,5 @@
 
-# Slot: new filler
+# Slot: new_filler
 
 
 The new filler of an OWL restriction

@@ -8,12 +8,8 @@ from typing import List, Dict
 from kgcl_schema.datamodel.kgcl import SetLanguageForName
 from linkml_runtime.linkml_model import ClassDefinitionName
 from linkml_runtime.utils.yamlutils import YAMLRoot
-from rdflib import Graph
 
 from kgcl_schema.utils import from_yaml, to_json, to_jsonld, to_rdf
-
-# from test import EXAMPLE_DIR
-from tests.util import roundtrip
 
 cwd = os.path.abspath(os.path.dirname(__file__))
 EXAMPLE_DIR = os.path.join(cwd, "../../examples")
@@ -42,7 +38,7 @@ class ConversionTestSuite(unittest.TestCase):
         self.assertEqual(9, len(session.change_set))
         self.assertEqual(2, len(session.activity_set))
         tmap = group_by_type(session.change_set)
-        ch = tmap["set language for name"][0]
+        ch = tmap["SetLanguageForName"][0]
         if isinstance(ch, SetLanguageForName):
             self.assertEqual("en", ch.new_value)
         else:

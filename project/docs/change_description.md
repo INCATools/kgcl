@@ -1,5 +1,5 @@
 
-# Slot: change description
+# Slot: change_description
 
 
 A string serialization of the change. This should be both human-readable, and parseable.
@@ -16,20 +16,20 @@ None &#8594;  <sub>0..1</sub> [String](types/String.md)
 
 ## Children
 
- *  [edge creation➞change description](edge_creation_change_description.md)
- *  [edge deletion➞change description](edge_deletion_change_description.md)
- *  [edge obsoletion➞change description](edge_obsoletion_change_description.md)
- *  [multi node obsoletion➞change description](multi_node_obsoletion_change_description.md)
- *  [name becomes synonym➞change description](name_becomes_synonym_change_description.md)
- *  [node creation➞change description](node_creation_change_description.md)
- *  [node deletion➞change description](node_deletion_change_description.md)
- *  [node move➞change description](node_move_change_description.md)
- *  [node obsoletion➞change description](node_obsoletion_change_description.md)
- *  [node rename➞change description](node_rename_change_description.md)
- *  [node unobsoletion➞change description](node_unobsoletion_change_description.md)
- *  [predicate change➞change description](predicate_change_change_description.md)
- *  [remove node from subset➞change description](remove_node_from_subset_change_description.md)
- *  [set language for name➞change description](set_language_for_name_change_description.md)
+ *  [EdgeCreation➞change_description](EdgeCreation_change_description.md)
+ *  [EdgeDeletion➞change_description](EdgeDeletion_change_description.md)
+ *  [EdgeObsoletion➞change_description](EdgeObsoletion_change_description.md)
+ *  [MultiNodeObsoletion➞change_description](MultiNodeObsoletion_change_description.md)
+ *  [NameBecomesSynonym➞change_description](NameBecomesSynonym_change_description.md)
+ *  [NodeCreation➞change_description](NodeCreation_change_description.md)
+ *  [NodeDeletion➞change_description](NodeDeletion_change_description.md)
+ *  [NodeMove➞change_description](NodeMove_change_description.md)
+ *  [NodeObsoletion➞change_description](NodeObsoletion_change_description.md)
+ *  [NodeRename➞change_description](NodeRename_change_description.md)
+ *  [NodeUnobsoletion➞change_description](NodeUnobsoletion_change_description.md)
+ *  [PredicateChange➞change_description](PredicateChange_change_description.md)
+ *  [RemoveNodeFromSubset➞change_description](RemoveNodeFromSubset_change_description.md)
+ *  [SetLanguageForName➞change_description](SetLanguageForName_change_description.md)
 
 ## Used by
 

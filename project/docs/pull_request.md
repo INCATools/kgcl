@@ -1,5 +1,5 @@
 
-# Slot: pull request
+# Slot: pull_request
 
 
 
@@ -16,7 +16,7 @@ None &#8594;  <sub>0..1</sub> [String](types/String.md)
 
 ## Children
 
- *  [change➞pull request](change_pull_request.md)
+ *  [Change➞pull_request](Change_pull_request.md)
 
 ## Used by
 

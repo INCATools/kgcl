@@ -1,5 +1,5 @@
 
-# Class: datatype or language tag change
+# Class: DatatypeOrLanguageTagChange
 
 
 A change in a value assertion where the value remain unchanged but either the datatype or language changes

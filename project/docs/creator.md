@@ -16,7 +16,7 @@ None &#8594;  <sub>0..1</sub> [String](types/String.md)
 
 ## Children
 
- *  [change➞creator](change_creator.md)
+ *  [Change➞creator](Change_creator.md)
 
 ## Used by
 

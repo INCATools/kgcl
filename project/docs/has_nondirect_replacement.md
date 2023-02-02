@@ -1,5 +1,5 @@
 
-# Slot: has nondirect replacement
+# Slot: has_nondirect_replacement
 
 
 An obsoletion replacement where it is NOT valid to automatically update annotations/edges pointing at the node with its direct replacement
@@ -16,7 +16,7 @@ None &#8594;  <sub>0..\*</sub> [Node](Node.md)
 
 ## Children
 
- *  [node obsoletion with no direct replacement➞has nondirect replacement](node_obsoletion_with_no_direct_replacement_has_nondirect_replacement.md)
+ *  [NodeObsoletionWithNoDirectReplacement➞has_nondirect_replacement](NodeObsoletionWithNoDirectReplacement_has_nondirect_replacement.md)
 
 ## Used by
 

@@ -1,5 +1,5 @@
 
-# Slot: ended at time
+# Slot: ended_at_time
 
 
 

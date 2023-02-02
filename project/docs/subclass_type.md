@@ -1,5 +1,5 @@
 
-# Slot: ~~subclass type~~ _(deprecated)_
+# Slot: ~~subclass_type~~ _(deprecated)_
 
 
 The type of a subclass

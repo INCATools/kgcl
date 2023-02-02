@@ -1,10 +1,10 @@
 
-# Slot: has undo
+# Slot: has_undo
 
 
 A change that reverses this change
 
-URI: [kgcl:creation_has_undo](http://w3id.org/kgcl/creation_has_undo)
+URI: [kgcl:Creation_has_undo](http://w3id.org/kgcl/Creation_has_undo)
 
 
 ## Domain and Range
@@ -13,7 +13,7 @@ URI: [kgcl:creation_has_undo](http://w3id.org/kgcl/creation_has_undo)
 
 ## Parents
 
- *  is_a: [has undo](has_undo.md)
+ *  is_a: [has_undo](has_undo.md)
 
 ## Children
 
