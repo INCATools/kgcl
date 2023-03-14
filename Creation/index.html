@@ -217,10 +217,10 @@
       ChangeMixin &lt;|-- Creation
 
 
-
       Creation &lt;|-- EdgeCreation
       Creation &lt;|-- MappingCreation
       Creation &lt;|-- NodeCreation
+
 
 
 </div>
@@ -310,6 +310,8 @@ mixin: true
 slot_usage:
   has undo:
     name: has undo
+    domain_of:
+    - change
     range: deletion
 
 </code></pre>
@@ -325,6 +327,8 @@ mixin: true
 slot_usage:
   has undo:
     name: has undo
+    domain_of:
+    - change
     range: deletion
 
 </code></pre>

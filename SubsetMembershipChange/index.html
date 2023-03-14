@@ -216,13 +216,15 @@
     class SubsetMembershipChange
       ChangeMixin &lt;|-- SubsetMembershipChange
 
-      SubsetMembershipChange : in_subset
-
 
       SubsetMembershipChange &lt;|-- AddToSubset
       SubsetMembershipChange &lt;|-- RemoveFromSubset
 
+
       SubsetMembershipChange : in_subset
+
+          SubsetMembershipChange ..&gt; ontology subset : in_subset
+
 
 </div>
 <h2 id="inheritance">Inheritance</h2>

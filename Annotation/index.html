@@ -211,16 +211,25 @@
 </a>
 <h1 id="class-annotation">Class: Annotation</h1>
 <p><em>owl annotations. Not to be confused with annotations sensu GO</em></p>
-<p>URI: <a href="om:Annotation">om:Annotation</a></p>
+<p>URI: <a href="http://w3id.org/kgcl/Annotation">kgcl:Annotation</a></p>
 <div class="mermaid"> classDiagram
     class Annotation
       PropertyValue &lt;|-- Annotation
 
       Annotation : annotation_set
+
+          Annotation ..&gt; annotation : annotation_set
+
       Annotation : filler
+
       Annotation : filler_type
+
       Annotation : property
+
+          Annotation ..&gt; node : property
+
       Annotation : property_type
+
 
 </div>
 <h2 id="inheritance">Inheritance</h2>
@@ -252,7 +261,7 @@
 </tr>
 <tr>
 <td><a href="../filler/">filler</a></td>
-<td>0..1 <br/> NONE</td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td></td>
 <td>direct</td>
 </tr>
@@ -264,13 +273,13 @@
 </tr>
 <tr>
 <td><a href="../property_type/">property_type</a></td>
-<td>0..1 <br/> NONE</td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td></td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../filler_type/">filler_type</a></td>
-<td>0..1 <br/> NONE</td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td></td>
 <td>direct</td>
 </tr>
@@ -370,7 +379,7 @@
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
 <ul>
-<li>from schema: https://w3id.org/kgcl_schema/ontology</li>
+<li>from schema: https://w3id.org/kgcl</li>
 </ul>
 <h2 id="mappings">Mappings</h2>
 <table>
@@ -383,11 +392,11 @@
 <tbody>
 <tr>
 <td>self</td>
-<td>om:Annotation</td>
+<td>kgcl:Annotation</td>
 </tr>
 <tr>
 <td>native</td>
-<td>om:Annotation</td>
+<td>kgcl:Annotation</td>
 </tr>
 <tr>
 <td>undefined</td>
@@ -401,7 +410,7 @@
 <details>
 <pre><code class="language-yaml">name: annotation
 description: owl annotations. Not to be confused with annotations sensu GO
-from_schema: https://w3id.org/kgcl_schema/ontology
+from_schema: https://w3id.org/kgcl
 mappings:
 - owl:Annotation
 rank: 1000
@@ -419,7 +428,7 @@ slots:
 <details>
 <pre><code class="language-yaml">name: annotation
 description: owl annotations. Not to be confused with annotations sensu GO
-from_schema: https://w3id.org/kgcl_schema/ontology
+from_schema: https://w3id.org/kgcl
 mappings:
 - owl:Annotation
 rank: 1000
@@ -427,7 +436,7 @@ is_a: property value
 attributes:
   property:
     name: property
-    from_schema: https://w3id.org/kgcl_schema/ontology
+    from_schema: https://w3id.org/kgcl
     rank: 1000
     alias: property
     owner: annotation
@@ -437,7 +446,7 @@ attributes:
     range: node
   filler:
     name: filler
-    from_schema: https://w3id.org/kgcl_schema/ontology
+    from_schema: https://w3id.org/kgcl
     rank: 1000
     alias: filler
     owner: annotation
@@ -447,7 +456,7 @@ attributes:
     range: string
   annotation set:
     name: annotation set
-    from_schema: https://w3id.org/kgcl_schema/ontology
+    from_schema: https://w3id.org/kgcl
     rank: 1000
     alias: annotation_set
     owner: annotation
@@ -464,7 +473,7 @@ attributes:
   property type:
     name: property type
     deprecated: no longer required
-    from_schema: https://w3id.org/kgcl_schema/ontology
+    from_schema: https://w3id.org/kgcl
     rank: 1000
     alias: property_type
     owner: annotation
@@ -474,7 +483,7 @@ attributes:
   filler type:
     name: filler type
     deprecated: no longer required
-    from_schema: https://w3id.org/kgcl_schema/ontology
+    from_schema: https://w3id.org/kgcl
     rank: 1000
     alias: filler_type
     owner: annotation

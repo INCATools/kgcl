@@ -205,7 +205,13 @@
 <div class="mermaid"> classDiagram
     class Session
       Session : activity_set
+
+          Session ..&gt; activity : activity_set
+
       Session : change_set
+
+          Session ..&gt; change : change_set
+
 
 </div>
 <!-- no inheritance hierarchy -->
@@ -298,7 +304,7 @@ attributes:
     inlined_as_list: true
   activity set:
     name: activity set
-    from_schema: https://w3id.org/kgcl_schema/prov
+    from_schema: https://w3id.org/kgcl
     rank: 1000
     multivalued: true
     alias: activity_set

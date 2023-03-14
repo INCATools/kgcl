@@ -206,16 +206,27 @@
 </a>
 <h1 id="class-activity">Class: Activity</h1>
 <p><em>a provence-generating activity</em></p>
-<p>URI: <a href="http://www.w3.org/ns/prov#Activity">prov:Activity</a></p>
+<p>URI: <a href="http://w3id.org/kgcl/Activity">kgcl:Activity</a></p>
 <div class="mermaid"> classDiagram
     class Activity
       Activity : description
+
       Activity : ended_at_time
+
       Activity : id
+
       Activity : started_at_time
+
       Activity : used
+
       Activity : was_associated_with
+
+          Activity ..&gt; agent : was_associated_with
+
       Activity : was_informed_by
+
+          Activity ..&gt; activity : was_informed_by
+
 
 </div>
 <!-- no inheritance hierarchy -->
@@ -232,19 +243,19 @@
 <tbody>
 <tr>
 <td><a href="../id/">id</a></td>
-<td>1..1 <br/> NONE</td>
+<td>1..1 <br/> <a href="../String/">String</a></td>
 <td></td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../started_at_time/">started_at_time</a></td>
-<td>0..1 <br/> NONE</td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td></td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../ended_at_time/">ended_at_time</a></td>
-<td>0..1 <br/> NONE</td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td></td>
 <td>direct</td>
 </tr>
@@ -262,13 +273,13 @@
 </tr>
 <tr>
 <td><a href="../used/">used</a></td>
-<td>0..1 <br/> NONE</td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td></td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../description/">description</a></td>
-<td>0..1 <br/> NONE</td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td></td>
 <td>direct</td>
 </tr>
@@ -578,7 +589,7 @@
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
 <ul>
-<li>from schema: https://w3id.org/kgcl_schema/prov</li>
+<li>from schema: https://w3id.org/kgcl</li>
 </ul>
 <h2 id="mappings">Mappings</h2>
 <table>
@@ -591,11 +602,11 @@
 <tbody>
 <tr>
 <td>self</td>
-<td>prov:Activity</td>
+<td>kgcl:Activity</td>
 </tr>
 <tr>
 <td>native</td>
-<td>prov:Activity</td>
+<td>kgcl:Activity</td>
 </tr>
 <tr>
 <td>undefined</td>
@@ -609,7 +620,7 @@
 <details>
 <pre><code class="language-yaml">name: activity
 description: a provence-generating activity
-from_schema: https://w3id.org/kgcl_schema/prov
+from_schema: https://w3id.org/kgcl
 mappings:
 - prov:Activity
 rank: 1000
@@ -628,14 +639,14 @@ slots:
 <details>
 <pre><code class="language-yaml">name: activity
 description: a provence-generating activity
-from_schema: https://w3id.org/kgcl_schema/prov
+from_schema: https://w3id.org/kgcl
 mappings:
 - prov:Activity
 rank: 1000
 attributes:
   id:
     name: id
-    from_schema: https://w3id.org/kgcl_schema/basics
+    from_schema: https://w3id.org/kgcl
     rank: 1000
     identifier: true
     alias: id
@@ -648,7 +659,7 @@ attributes:
     range: string
   started at time:
     name: started at time
-    from_schema: https://w3id.org/kgcl_schema/prov
+    from_schema: https://w3id.org/kgcl
     rank: 1000
     slot_uri: prov:startedAtTime
     alias: started_at_time
@@ -658,7 +669,7 @@ attributes:
     range: string
   ended at time:
     name: ended at time
-    from_schema: https://w3id.org/kgcl_schema/prov
+    from_schema: https://w3id.org/kgcl
     rank: 1000
     slot_uri: prov:endedAtTime
     alias: ended_at_time
@@ -668,7 +679,7 @@ attributes:
     range: string
   was informed by:
     name: was informed by
-    from_schema: https://w3id.org/kgcl_schema/prov
+    from_schema: https://w3id.org/kgcl
     rank: 1000
     slot_uri: prov:wasInformedBy
     alias: was_informed_by
@@ -679,7 +690,7 @@ attributes:
     range: activity
   was associated with:
     name: was associated with
-    from_schema: https://w3id.org/kgcl_schema/prov
+    from_schema: https://w3id.org/kgcl
     rank: 1000
     slot_uri: prov:wasAssociatedWith
     alias: was_associated_with
@@ -690,7 +701,7 @@ attributes:
     inlined: false
   used:
     name: used
-    from_schema: https://w3id.org/kgcl_schema/prov
+    from_schema: https://w3id.org/kgcl
     rank: 1000
     domain: activity
     slot_uri: prov:used
@@ -701,7 +712,7 @@ attributes:
     range: string
   description:
     name: description
-    from_schema: https://w3id.org/kgcl_schema/basics
+    from_schema: https://w3id.org/kgcl
     rank: 1000
     slot_uri: dcterms:description
     alias: description

@@ -210,8 +210,15 @@
 <div class="mermaid"> classDiagram
     class Agent
       Agent : acted_on_behalf_of
+
+          Agent ..&gt; agent : acted_on_behalf_of
+
       Agent : id
+
       Agent : was_informed_by
+
+          Agent ..&gt; activity : was_informed_by
+
 
 </div>
 <!-- no inheritance hierarchy -->
@@ -228,7 +235,7 @@
 <tbody>
 <tr>
 <td><a href="../id/">id</a></td>
-<td>1..1 <br/> NONE</td>
+<td>1..1 <br/> <a href="../String/">String</a></td>
 <td></td>
 <td>direct</td>
 </tr>
@@ -274,7 +281,7 @@
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
 <ul>
-<li>from schema: https://w3id.org/kgcl_schema/prov</li>
+<li>from schema: https://w3id.org/kgcl</li>
 </ul>
 <h2 id="mappings">Mappings</h2>
 <table>
@@ -291,7 +298,7 @@
 </tr>
 <tr>
 <td>native</td>
-<td>prov:Agent</td>
+<td>kgcl:Agent</td>
 </tr>
 </tbody>
 </table>
@@ -301,7 +308,7 @@
 <details>
 <pre><code class="language-yaml">name: agent
 description: a provence-generating agent
-from_schema: https://w3id.org/kgcl_schema/prov
+from_schema: https://w3id.org/kgcl
 rank: 1000
 slots:
 - id
@@ -315,12 +322,12 @@ class_uri: prov:Agent
 <details>
 <pre><code class="language-yaml">name: agent
 description: a provence-generating agent
-from_schema: https://w3id.org/kgcl_schema/prov
+from_schema: https://w3id.org/kgcl
 rank: 1000
 attributes:
   id:
     name: id
-    from_schema: https://w3id.org/kgcl_schema/basics
+    from_schema: https://w3id.org/kgcl
     rank: 1000
     identifier: true
     alias: id
@@ -333,7 +340,7 @@ attributes:
     range: string
   acted on behalf of:
     name: acted on behalf of
-    from_schema: https://w3id.org/kgcl_schema/prov
+    from_schema: https://w3id.org/kgcl
     rank: 1000
     slot_uri: prov:actedOnBehalfOf
     alias: acted_on_behalf_of
@@ -343,7 +350,7 @@ attributes:
     range: agent
   was informed by:
     name: was informed by
-    from_schema: https://w3id.org/kgcl_schema/prov
+    from_schema: https://w3id.org/kgcl
     rank: 1000
     slot_uri: prov:wasInformedBy
     alias: was_informed_by

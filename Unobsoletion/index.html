@@ -222,8 +222,8 @@
       ChangeMixin &lt;|-- Unobsoletion
 
 
-
       Unobsoletion &lt;|-- NodeUnobsoletion
+
 
 
 </div>
@@ -311,6 +311,8 @@ mixin: true
 slot_usage:
   has undo:
     name: has undo
+    domain_of:
+    - change
     range: obsoletion
 
 </code></pre>
@@ -328,6 +330,8 @@ mixin: true
 slot_usage:
   has undo:
     name: has undo
+    domain_of:
+    - change
     range: obsoletion
 
 </code></pre>

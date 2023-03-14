@@ -218,27 +218,59 @@
       NodeObsoletion &lt;|-- NodeObsoletionWithDirectReplacement
 
       NodeObsoletionWithDirectReplacement : about_node
+
+          NodeObsoletionWithDirectReplacement ..&gt; node : about_node
+
       NodeObsoletionWithDirectReplacement : about_node_representation
+
       NodeObsoletionWithDirectReplacement : change_date
+
       NodeObsoletionWithDirectReplacement : contributor
+
       NodeObsoletionWithDirectReplacement : creator
+
       NodeObsoletionWithDirectReplacement : has_direct_replacement
+
+          NodeObsoletionWithDirectReplacement ..&gt; node : has_direct_replacement
+
       NodeObsoletionWithDirectReplacement : has_nondirect_replacement
+
+          NodeObsoletionWithDirectReplacement ..&gt; node : has_nondirect_replacement
+
       NodeObsoletionWithDirectReplacement : has_undo
+
+          NodeObsoletionWithDirectReplacement ..&gt; obsoletion : has_undo
+
       NodeObsoletionWithDirectReplacement : id
+
       NodeObsoletionWithDirectReplacement : language
+
       NodeObsoletionWithDirectReplacement : new_datatype
+
       NodeObsoletionWithDirectReplacement : new_language
+
       NodeObsoletionWithDirectReplacement : new_value
+
       NodeObsoletionWithDirectReplacement : new_value_type
+
       NodeObsoletionWithDirectReplacement : old_datatype
+
       NodeObsoletionWithDirectReplacement : old_language
+
       NodeObsoletionWithDirectReplacement : old_value
+
       NodeObsoletionWithDirectReplacement : old_value_type
+
       NodeObsoletionWithDirectReplacement : pull_request
+
       NodeObsoletionWithDirectReplacement : see_also
+
       NodeObsoletionWithDirectReplacement : type
+
       NodeObsoletionWithDirectReplacement : was_generated_by
+
+          NodeObsoletionWithDirectReplacement ..&gt; activity : was_generated_by
+
 
 </div>
 <h2 id="inheritance">Inheritance</h2>
@@ -269,100 +301,10 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../was_generated_by/">was_generated_by</a></td>
-<td>0..1 <br/> <a href="../Activity/">Activity</a></td>
-<td></td>
-<td><a href="../Change/">Change</a></td>
-</tr>
-<tr>
-<td><a href="../old_datatype/">old_datatype</a></td>
-<td>0..1 <br/> NONE</td>
-<td>The old datatype of a literal</td>
-<td><a href="../SimpleChange/">SimpleChange</a></td>
-</tr>
-<tr>
-<td><a href="../has_undo/">has_undo</a></td>
-<td>0..1 <br/> <a href="../Change/">Change</a></td>
-<td>A change that reverses this change</td>
-<td><a href="../Change/">Change</a></td>
-</tr>
-<tr>
-<td><a href="../creator/">creator</a></td>
-<td>0..1 <br/> NONE</td>
-<td></td>
-<td><a href="../Change/">Change</a></td>
-</tr>
-<tr>
-<td><a href="../see_also/">see_also</a></td>
-<td>0..1 <br/> NONE</td>
-<td></td>
-<td><a href="../Change/">Change</a></td>
-</tr>
-<tr>
-<td><a href="../language/">language</a></td>
-<td>0..1 <br/> <a href="../LanguageTag/">LanguageTag</a></td>
-<td>The language tag of a literal</td>
-<td><a href="../NodeChange/">NodeChange</a></td>
-</tr>
-<tr>
-<td><a href="../type/">type</a></td>
-<td>0..1 <br/> NONE</td>
-<td></td>
-<td><a href="../Change/">Change</a></td>
-</tr>
-<tr>
-<td><a href="../new_value/">new_value</a></td>
-<td>0..1 <br/> NONE</td>
-<td>The value of a property held in the new instance of the ontology</td>
-<td><a href="../SimpleChange/">SimpleChange</a></td>
-</tr>
-<tr>
 <td><a href="../has_direct_replacement/">has_direct_replacement</a></td>
-<td>0..1 <br/> <a href="../Node/">Node</a></td>
+<td>1..1 <br/> <a href="../Node/">Node</a></td>
 <td>An obsoletion replacement where it IS valid to automatically update annotatio...</td>
 <td><a href="../NodeObsoletion/">NodeObsoletion</a></td>
-</tr>
-<tr>
-<td><a href="../new_language/">new_language</a></td>
-<td>0..1 <br/> NONE</td>
-<td>The new language tag of a literal</td>
-<td><a href="../SimpleChange/">SimpleChange</a></td>
-</tr>
-<tr>
-<td><a href="../old_language/">old_language</a></td>
-<td>0..1 <br/> NONE</td>
-<td>The old language tag of a literal</td>
-<td><a href="../SimpleChange/">SimpleChange</a></td>
-</tr>
-<tr>
-<td><a href="../pull_request/">pull_request</a></td>
-<td>0..1 <br/> NONE</td>
-<td></td>
-<td><a href="../Change/">Change</a></td>
-</tr>
-<tr>
-<td><a href="../old_value_type/">old_value_type</a></td>
-<td>0..1 <br/> NONE</td>
-<td>The type (IRI or Literal) of an old value</td>
-<td><a href="../SimpleChange/">SimpleChange</a></td>
-</tr>
-<tr>
-<td><a href="../new_datatype/">new_datatype</a></td>
-<td>0..1 <br/> NONE</td>
-<td>The new datatype of a literal</td>
-<td><a href="../SimpleChange/">SimpleChange</a></td>
-</tr>
-<tr>
-<td><a href="../change_date/">change_date</a></td>
-<td>0..1 <br/> NONE</td>
-<td></td>
-<td><a href="../Change/">Change</a></td>
-</tr>
-<tr>
-<td><a href="../new_value_type/">new_value_type</a></td>
-<td>0..1 <br/> NONE</td>
-<td>The type (IRI or Literal) of a new value</td>
-<td><a href="../SimpleChange/">SimpleChange</a></td>
 </tr>
 <tr>
 <td><a href="../has_nondirect_replacement/">has_nondirect_replacement</a></td>
@@ -371,34 +313,124 @@
 <td><a href="../NodeObsoletion/">NodeObsoletion</a></td>
 </tr>
 <tr>
-<td><a href="../about_node_representation/">about_node_representation</a></td>
-<td>0..1 <br/> NONE</td>
-<td>The representation of a node (URI, CURIE, label)</td>
-<td><a href="../NodeChange/">NodeChange</a></td>
-</tr>
-<tr>
-<td><a href="../id/">id</a></td>
-<td>1..1 <br/> NONE</td>
-<td></td>
-<td><a href="../Change/">Change</a></td>
-</tr>
-<tr>
 <td><a href="../about_node/">about_node</a></td>
 <td>0..1 <br/> <a href="../Node/">Node</a></td>
 <td></td>
 <td><a href="../NodeChange/">NodeChange</a></td>
 </tr>
 <tr>
-<td><a href="../contributor/">contributor</a></td>
-<td>0..1 <br/> NONE</td>
+<td><a href="../about_node_representation/">about_node_representation</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>The representation of a node (URI, CURIE, label)</td>
+<td><a href="../NodeChange/">NodeChange</a></td>
+</tr>
+<tr>
+<td><a href="../language/">language</a></td>
+<td>0..1 <br/> <a href="../LanguageTag/">LanguageTag</a></td>
+<td>The language tag of a literal</td>
+<td><a href="../NodeChange/">NodeChange</a></td>
+</tr>
+<tr>
+<td><a href="../old_value/">old_value</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>The value of a property held in the old instance of the ontology</td>
+<td><a href="../SimpleChange/">SimpleChange</a></td>
+</tr>
+<tr>
+<td><a href="../new_value/">new_value</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>The value of a property held in the new instance of the ontology</td>
+<td><a href="../SimpleChange/">SimpleChange</a></td>
+</tr>
+<tr>
+<td><a href="../old_value_type/">old_value_type</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>The type (IRI or Literal) of an old value</td>
+<td><a href="../SimpleChange/">SimpleChange</a></td>
+</tr>
+<tr>
+<td><a href="../new_value_type/">new_value_type</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>The type (IRI or Literal) of a new value</td>
+<td><a href="../SimpleChange/">SimpleChange</a></td>
+</tr>
+<tr>
+<td><a href="../new_language/">new_language</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>The new language tag of a literal</td>
+<td><a href="../SimpleChange/">SimpleChange</a></td>
+</tr>
+<tr>
+<td><a href="../old_language/">old_language</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>The old language tag of a literal</td>
+<td><a href="../SimpleChange/">SimpleChange</a></td>
+</tr>
+<tr>
+<td><a href="../new_datatype/">new_datatype</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>The new datatype of a literal</td>
+<td><a href="../SimpleChange/">SimpleChange</a></td>
+</tr>
+<tr>
+<td><a href="../old_datatype/">old_datatype</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>The old datatype of a literal</td>
+<td><a href="../SimpleChange/">SimpleChange</a></td>
+</tr>
+<tr>
+<td><a href="../id/">id</a></td>
+<td>1..1 <br/> <a href="../String/">String</a></td>
 <td></td>
 <td><a href="../Change/">Change</a></td>
 </tr>
 <tr>
-<td><a href="../old_value/">old_value</a></td>
-<td>0..1 <br/> NONE</td>
-<td>The value of a property held in the old instance of the ontology</td>
-<td><a href="../SimpleChange/">SimpleChange</a></td>
+<td><a href="../type/">type</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td></td>
+<td><a href="../Change/">Change</a></td>
+</tr>
+<tr>
+<td><a href="../was_generated_by/">was_generated_by</a></td>
+<td>0..1 <br/> <a href="../Activity/">Activity</a></td>
+<td></td>
+<td><a href="../Change/">Change</a></td>
+</tr>
+<tr>
+<td><a href="../see_also/">see_also</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td></td>
+<td><a href="../Change/">Change</a></td>
+</tr>
+<tr>
+<td><a href="../pull_request/">pull_request</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td></td>
+<td><a href="../Change/">Change</a></td>
+</tr>
+<tr>
+<td><a href="../creator/">creator</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td></td>
+<td><a href="../Change/">Change</a></td>
+</tr>
+<tr>
+<td><a href="../change_date/">change_date</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td></td>
+<td><a href="../Change/">Change</a></td>
+</tr>
+<tr>
+<td><a href="../contributor/">contributor</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td></td>
+<td><a href="../Change/">Change</a></td>
+</tr>
+<tr>
+<td><a href="../has_undo/">has_undo</a></td>
+<td>0..1 <br/> <a href="../Obsoletion/">Obsoletion</a></td>
+<td>A change that reverses this change</td>
+<td><a href="../Change/">Change</a></td>
 </tr>
 </tbody>
 </table>
@@ -452,8 +484,6 @@ slot_usage:
     name: has direct replacement
     domain_of:
     - node obsoletion
-    - node obsoletion
-    - node obsoletion
     required: true
   change description:
     name: change description
@@ -480,8 +510,6 @@ slot_usage:
     name: has direct replacement
     domain_of:
     - node obsoletion
-    - node obsoletion
-    - node obsoletion
     required: true
   change description:
     name: change description
@@ -497,7 +525,6 @@ attributes:
     alias: has_direct_replacement
     owner: node obsoletion with direct replacement
     domain_of:
-    - node obsoletion
     - node obsoletion
     range: node
     required: true
@@ -656,7 +683,7 @@ attributes:
     range: string
   id:
     name: id
-    from_schema: https://w3id.org/kgcl_schema/basics
+    from_schema: https://w3id.org/kgcl
     rank: 1000
     identifier: true
     alias: id
@@ -680,7 +707,9 @@ attributes:
     range: string
   was generated by:
     name: was generated by
-    from_schema: https://w3id.org/kgcl_schema/prov
+    comments:
+    - we use the PROV model to represent the agent making a change
+    from_schema: https://w3id.org/kgcl
     rank: 1000
     slot_uri: prov:wasGeneratedBy
     alias: was_generated_by
@@ -690,6 +719,9 @@ attributes:
     range: activity
   see also:
     name: see also
+    comments:
+    - If this change is in relationship to an issue on a system like github, include
+      the URL here
     from_schema: https://w3id.org/kgcl
     rank: 1000
     slot_uri: rdfs:seeAlso
@@ -700,6 +732,8 @@ attributes:
     range: string
   pull request:
     name: pull request
+    comments:
+    - If this change has a pull request on a system like github, include the URL here
     from_schema: https://w3id.org/kgcl
     rank: 1000
     alias: pull_request
@@ -709,6 +743,8 @@ attributes:
     range: string
   creator:
     name: creator
+    comments:
+    - This should be the composition of 'was generated by' and 'was associated with'
     from_schema: https://w3id.org/kgcl
     rank: 1000
     slot_uri: dcterms:creator
@@ -719,6 +755,8 @@ attributes:
     range: string
   change date:
     name: change date
+    comments:
+    - This should be the composition of 'was generated by' and 'ended at time'
     from_schema: https://w3id.org/kgcl
     rank: 1000
     slot_uri: dcterms:date

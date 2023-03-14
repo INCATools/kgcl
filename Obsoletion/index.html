@@ -237,10 +237,10 @@
       ChangeMixin &lt;|-- Obsoletion
 
 
-
       Obsoletion &lt;|-- AllowsAutomaticReplacementOfEdges
       Obsoletion &lt;|-- EdgeObsoletion
       Obsoletion &lt;|-- NodeObsoletion
+
 
 
 </div>
@@ -405,6 +405,8 @@ slot_usage:
     description: The element that is obsoleted by this change.
   has undo:
     name: has undo
+    domain_of:
+    - change
     range: obsoletion
 
 </code></pre>
@@ -433,6 +435,8 @@ slot_usage:
     description: The element that is obsoleted by this change.
   has undo:
     name: has undo
+    domain_of:
+    - change
     range: obsoletion
 
 </code></pre>

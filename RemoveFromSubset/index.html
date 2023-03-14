@@ -216,12 +216,14 @@
     class RemoveFromSubset
       SubsetMembershipChange &lt;|-- RemoveFromSubset
 
-      RemoveFromSubset : in_subset
-
 
       RemoveFromSubset &lt;|-- RemovedNodeFromSubset
 
+
       RemoveFromSubset : in_subset
+
+          RemoveFromSubset ..&gt; ontology subset : in_subset
+
 
 </div>
 <h2 id="inheritance">Inheritance</h2>
@@ -248,7 +250,7 @@
 <tr>
 <td><a href="../in_subset/">in_subset</a></td>
 <td>0..1 <br/> <a href="../OntologySubset/">OntologySubset</a></td>
-<td>The subset that pertains to this change</td>
+<td>subset that the element is being removed from</td>
 <td><a href="../SubsetMembershipChange/">SubsetMembershipChange</a></td>
 </tr>
 </tbody>
@@ -308,10 +310,10 @@ slot_usage:
     description: subset that the element is being removed from
     domain_of:
     - subset membership change
-    - subset membership change
-    - subset membership change
   has undo:
     name: has undo
+    domain_of:
+    - change
     range: add to subset
 
 </code></pre>
@@ -330,10 +332,10 @@ slot_usage:
     description: subset that the element is being removed from
     domain_of:
     - subset membership change
-    - subset membership change
-    - subset membership change
   has undo:
     name: has undo
+    domain_of:
+    - change
     range: add to subset
 attributes:
   in subset:
@@ -344,7 +346,6 @@ attributes:
     alias: in_subset
     owner: remove from subset
     domain_of:
-    - subset membership change
     - subset membership change
     range: ontology subset
 

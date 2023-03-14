@@ -211,8 +211,8 @@
       DatatypeOrLanguageTagChange &lt;|-- LanguageTagChange
 
 
-
       LanguageTagChange &lt;|-- SetLanguageForName
+
 
 
 </div>
@@ -281,10 +281,28 @@ slot_usage:
   old value:
     name: old value
     multivalued: false
+    domain_of:
+    - simple change
+    - node rename
+    - set language for name
+    - remove synonym
+    - synonym replacement
+    - synonym predicate change
+    - remove text definition
+    - text definition replacement
     range: language tag
   new value:
     name: new value
     multivalued: false
+    domain_of:
+    - simple change
+    - node rename
+    - set language for name
+    - new synonym
+    - synonym replacement
+    - synonym predicate change
+    - new text definition
+    - text definition replacement
     range: language tag
 
 </code></pre>
@@ -299,10 +317,28 @@ slot_usage:
   old value:
     name: old value
     multivalued: false
+    domain_of:
+    - simple change
+    - node rename
+    - set language for name
+    - remove synonym
+    - synonym replacement
+    - synonym predicate change
+    - remove text definition
+    - text definition replacement
     range: language tag
   new value:
     name: new value
     multivalued: false
+    domain_of:
+    - simple change
+    - node rename
+    - set language for name
+    - new synonym
+    - synonym replacement
+    - synonym predicate change
+    - new text definition
+    - text definition replacement
     range: language tag
 
 </code></pre>

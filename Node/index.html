@@ -216,24 +216,28 @@
 </a>
 <h1 id="class-node">Class: Node</h1>
 <p><em>Any named entity in an ontology. May be a class, individual, property</em></p>
-<p>URI: <a href="om:Node">om:Node</a></p>
+<p>URI: <a href="http://w3id.org/kgcl/Node">kgcl:Node</a></p>
 <div class="mermaid"> classDiagram
     class Node
       OntologyElement &lt;|-- Node
-
-      Node : annotation_set
-      Node : id
-      Node : name
-      Node : owl_type
 
 
       Node &lt;|-- ClassNode
       Node &lt;|-- InstanceNode
 
+
       Node : annotation_set
+
+          Node ..&gt; annotation : annotation_set
+
       Node : id
+
       Node : name
+
       Node : owl_type
+
+          Node ..&gt; owl_type_enum : owl_type
+
 
 </div>
 <h2 id="inheritance">Inheritance</h2>
@@ -260,13 +264,13 @@
 <tbody>
 <tr>
 <td><a href="../id/">id</a></td>
-<td>1..1 <br/> NONE</td>
+<td>1..1 <br/> <a href="../String/">String</a></td>
 <td></td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../name/">name</a></td>
-<td>0..1 <br/> NONE</td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td></td>
 <td>direct</td>
 </tr>
@@ -659,7 +663,7 @@
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
 <ul>
-<li>from schema: https://w3id.org/kgcl_schema/ontology</li>
+<li>from schema: https://w3id.org/kgcl</li>
 </ul>
 <h2 id="mappings">Mappings</h2>
 <table>
@@ -672,11 +676,11 @@
 <tbody>
 <tr>
 <td>self</td>
-<td>om:Node</td>
+<td>kgcl:Node</td>
 </tr>
 <tr>
 <td>native</td>
-<td>om:Node</td>
+<td>kgcl:Node</td>
 </tr>
 </tbody>
 </table>
@@ -686,7 +690,7 @@
 <details>
 <pre><code class="language-yaml">name: node
 description: Any named entity in an ontology. May be a class, individual, property
-from_schema: https://w3id.org/kgcl_schema/ontology
+from_schema: https://w3id.org/kgcl
 aliases:
 - entity
 - term
@@ -704,7 +708,7 @@ slots:
 <details>
 <pre><code class="language-yaml">name: node
 description: Any named entity in an ontology. May be a class, individual, property
-from_schema: https://w3id.org/kgcl_schema/ontology
+from_schema: https://w3id.org/kgcl
 aliases:
 - entity
 - term
@@ -713,7 +717,7 @@ is_a: ontology element
 attributes:
   id:
     name: id
-    from_schema: https://w3id.org/kgcl_schema/basics
+    from_schema: https://w3id.org/kgcl
     rank: 1000
     identifier: true
     alias: id
@@ -726,7 +730,7 @@ attributes:
     range: string
   name:
     name: name
-    from_schema: https://w3id.org/kgcl_schema/ontology
+    from_schema: https://w3id.org/kgcl
     rank: 1000
     alias: name
     owner: node
@@ -736,7 +740,7 @@ attributes:
     range: string
   annotation set:
     name: annotation set
-    from_schema: https://w3id.org/kgcl_schema/ontology
+    from_schema: https://w3id.org/kgcl
     rank: 1000
     alias: annotation_set
     owner: node
@@ -752,7 +756,7 @@ attributes:
     range: annotation
   owl type:
     name: owl type
-    from_schema: https://w3id.org/kgcl_schema/ontology
+    from_schema: https://w3id.org/kgcl
     rank: 1000
     alias: owl_type
     owner: node

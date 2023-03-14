@@ -217,9 +217,17 @@
       Node &lt;|-- ClassNode
 
       ClassNode : annotation_set
+
+          ClassNode ..&gt; annotation : annotation_set
+
       ClassNode : id
+
       ClassNode : name
+
       ClassNode : owl_type
+
+          ClassNode ..&gt; owl_type_enum : owl_type
+
 
 </div>
 <h2 id="inheritance">Inheritance</h2>
@@ -245,13 +253,13 @@
 <tbody>
 <tr>
 <td><a href="../id/">id</a></td>
-<td>1..1 <br/> NONE</td>
+<td>1..1 <br/> <a href="../String/">String</a></td>
 <td></td>
 <td><a href="../Node/">Node</a></td>
 </tr>
 <tr>
 <td><a href="../name/">name</a></td>
-<td>0..1 <br/> NONE</td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td></td>
 <td><a href="../Node/">Node</a></td>
 </tr>
@@ -276,7 +284,7 @@
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
 <ul>
-<li>from schema: https://w3id.org/kgcl_schema/ontology</li>
+<li>from schema: https://w3id.org/kgcl</li>
 </ul>
 <h2 id="mappings">Mappings</h2>
 <table>
@@ -293,7 +301,7 @@
 </tr>
 <tr>
 <td>native</td>
-<td>om:ClassNode</td>
+<td>kgcl:ClassNode</td>
 </tr>
 </tbody>
 </table>
@@ -303,7 +311,7 @@
 <details>
 <pre><code class="language-yaml">name: class node
 description: A node that is a class
-from_schema: https://w3id.org/kgcl_schema/ontology
+from_schema: https://w3id.org/kgcl
 aliases:
 - concept
 rank: 1000
@@ -316,7 +324,7 @@ class_uri: owl:Class
 <details>
 <pre><code class="language-yaml">name: class node
 description: A node that is a class
-from_schema: https://w3id.org/kgcl_schema/ontology
+from_schema: https://w3id.org/kgcl
 aliases:
 - concept
 rank: 1000
@@ -324,7 +332,7 @@ is_a: node
 attributes:
   id:
     name: id
-    from_schema: https://w3id.org/kgcl_schema/basics
+    from_schema: https://w3id.org/kgcl
     rank: 1000
     identifier: true
     alias: id
@@ -337,7 +345,7 @@ attributes:
     range: string
   name:
     name: name
-    from_schema: https://w3id.org/kgcl_schema/ontology
+    from_schema: https://w3id.org/kgcl
     rank: 1000
     alias: name
     owner: class node
@@ -347,7 +355,7 @@ attributes:
     range: string
   annotation set:
     name: annotation set
-    from_schema: https://w3id.org/kgcl_schema/ontology
+    from_schema: https://w3id.org/kgcl
     rank: 1000
     alias: annotation_set
     owner: class node
@@ -363,7 +371,7 @@ attributes:
     range: annotation
   owl type:
     name: owl type
-    from_schema: https://w3id.org/kgcl_schema/ontology
+    from_schema: https://w3id.org/kgcl
     rank: 1000
     alias: owl_type
     owner: class node

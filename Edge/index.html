@@ -228,18 +228,33 @@ For example:
  * <code>A subClassOf R only B &lt;==&gt; Edge(subject=A, predicate=P, object=B, interpretation=AllOnly)</code>
  * <code>A Annotation(P,B) &lt;==&gt; Edge(subject=A, predicate=P, object=B, interpretation=annotationAssertion)</code></p>
 <p>Note that not all axioms are intended to map to edges. Axioms/triples where the object is a literal would be represented as node properties. Complex OWL axioms involving nesting would have their own dedicated construct, or may be represented generically. These are out of scope for the current version of KGCL_</p>
-<p>URI: <a href="om:Edge">om:Edge</a></p>
+<p>URI: <a href="http://w3id.org/kgcl/Edge">kgcl:Edge</a></p>
 <div class="mermaid"> classDiagram
     class Edge
       OntologyElement &lt;|-- Edge
 
       Edge : annotation_set
+
+          Edge ..&gt; annotation : annotation_set
+
       Edge : object
+
+          Edge ..&gt; node : object
+
       Edge : object_representation
+
       Edge : predicate
+
+          Edge ..&gt; node : predicate
+
       Edge : predicate_representation
+
       Edge : subject
+
+          Edge ..&gt; node : subject
+
       Edge : subject_representation
+
 
 </div>
 <h2 id="inheritance">Inheritance</h2>
@@ -280,19 +295,19 @@ For example:
 </tr>
 <tr>
 <td><a href="../subject_representation/">subject_representation</a></td>
-<td>0..1 <br/> NONE</td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td></td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../predicate_representation/">predicate_representation</a></td>
-<td>0..1 <br/> NONE</td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td></td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../object_representation/">object_representation</a></td>
-<td>0..1 <br/> NONE</td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td></td>
 <td>direct</td>
 </tr>
@@ -404,7 +419,7 @@ For example:
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
 <ul>
-<li>from schema: https://w3id.org/kgcl_schema/ontology</li>
+<li>from schema: https://w3id.org/kgcl</li>
 </ul>
 <h2 id="mappings">Mappings</h2>
 <table>
@@ -417,11 +432,11 @@ For example:
 <tbody>
 <tr>
 <td>self</td>
-<td>om:Edge</td>
+<td>kgcl:Edge</td>
 </tr>
 <tr>
 <td>native</td>
-<td>om:Edge</td>
+<td>kgcl:Edge</td>
 </tr>
 <tr>
 <td>undefined</td>
@@ -449,7 +464,7 @@ description: "A relationship between two nodes.\nCurrently the only kinds of edg
   \ represented as node properties. Complex OWL axioms involving nesting would have\
   \ their own dedicated construct, or may be represented generically. These are out\
   \ of scope for the current version of KGCL"
-from_schema: https://w3id.org/kgcl_schema/ontology
+from_schema: https://w3id.org/kgcl
 aliases:
 - triple
 - axiom
@@ -488,7 +503,7 @@ description: "A relationship between two nodes.\nCurrently the only kinds of edg
   \ represented as node properties. Complex OWL axioms involving nesting would have\
   \ their own dedicated construct, or may be represented generically. These are out\
   \ of scope for the current version of KGCL"
-from_schema: https://w3id.org/kgcl_schema/ontology
+from_schema: https://w3id.org/kgcl
 aliases:
 - triple
 - axiom
@@ -501,7 +516,7 @@ is_a: ontology element
 attributes:
   subject:
     name: subject
-    from_schema: https://w3id.org/kgcl_schema/ontology
+    from_schema: https://w3id.org/kgcl
     rank: 1000
     alias: subject
     owner: edge
@@ -514,7 +529,7 @@ attributes:
     range: node
   predicate:
     name: predicate
-    from_schema: https://w3id.org/kgcl_schema/ontology
+    from_schema: https://w3id.org/kgcl
     rank: 1000
     alias: predicate
     owner: edge
@@ -527,7 +542,7 @@ attributes:
     range: node
   object:
     name: object
-    from_schema: https://w3id.org/kgcl_schema/ontology
+    from_schema: https://w3id.org/kgcl
     rank: 1000
     alias: object
     owner: edge
@@ -541,7 +556,7 @@ attributes:
   subject representation:
     name: subject representation
     deprecated: no longer required
-    from_schema: https://w3id.org/kgcl_schema/ontology
+    from_schema: https://w3id.org/kgcl
     rank: 1000
     alias: subject_representation
     owner: edge
@@ -551,7 +566,7 @@ attributes:
   predicate representation:
     name: predicate representation
     deprecated: no longer required
-    from_schema: https://w3id.org/kgcl_schema/ontology
+    from_schema: https://w3id.org/kgcl
     rank: 1000
     alias: predicate_representation
     owner: edge
@@ -561,7 +576,7 @@ attributes:
   object representation:
     name: object representation
     deprecated: no longer required
-    from_schema: https://w3id.org/kgcl_schema/ontology
+    from_schema: https://w3id.org/kgcl
     rank: 1000
     alias: object_representation
     owner: edge
@@ -570,7 +585,7 @@ attributes:
     range: string
   annotation set:
     name: annotation set
-    from_schema: https://w3id.org/kgcl_schema/ontology
+    from_schema: https://w3id.org/kgcl
     rank: 1000
     alias: annotation_set
     owner: edge

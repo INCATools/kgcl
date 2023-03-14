@@ -222,58 +222,70 @@
       Creation &lt;|-- NodeCreation
       NodeChange &lt;|-- NodeCreation
 
-      NodeCreation : about_node
-      NodeCreation : about_node_representation
-      NodeCreation : annotation_set
-      NodeCreation : change_date
-      NodeCreation : contributor
-      NodeCreation : creator
-      NodeCreation : has_undo
-      NodeCreation : id
-      NodeCreation : language
-      NodeCreation : name
-      NodeCreation : new_datatype
-      NodeCreation : new_language
-      NodeCreation : new_value
-      NodeCreation : new_value_type
-      NodeCreation : node_id
-      NodeCreation : old_datatype
-      NodeCreation : old_language
-      NodeCreation : old_value
-      NodeCreation : old_value_type
-      NodeCreation : owl_type
-      NodeCreation : pull_request
-      NodeCreation : see_also
-      NodeCreation : type
-      NodeCreation : was_generated_by
-
 
       NodeCreation &lt;|-- ClassCreation
 
+
       NodeCreation : about_node
+
+          NodeCreation ..&gt; node : about_node
+
       NodeCreation : about_node_representation
+
       NodeCreation : annotation_set
+
+          NodeCreation ..&gt; annotation : annotation_set
+
       NodeCreation : change_date
+
       NodeCreation : contributor
+
       NodeCreation : creator
+
       NodeCreation : has_undo
+
+          NodeCreation ..&gt; deletion : has_undo
+
       NodeCreation : id
+
       NodeCreation : language
+
       NodeCreation : name
+
       NodeCreation : new_datatype
+
       NodeCreation : new_language
+
       NodeCreation : new_value
+
       NodeCreation : new_value_type
+
       NodeCreation : node_id
+
+          NodeCreation ..&gt; node : node_id
+
       NodeCreation : old_datatype
+
       NodeCreation : old_language
+
       NodeCreation : old_value
+
       NodeCreation : old_value_type
+
       NodeCreation : owl_type
+
+          NodeCreation ..&gt; owl_type_enum : owl_type
+
       NodeCreation : pull_request
+
       NodeCreation : see_also
+
       NodeCreation : type
+
       NodeCreation : was_generated_by
+
+          NodeCreation ..&gt; activity : was_generated_by
+
 
 </div>
 <h2 id="inheritance">Inheritance</h2>
@@ -311,7 +323,7 @@
 </tr>
 <tr>
 <td><a href="../name/">name</a></td>
-<td>0..1 <br/> NONE</td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td></td>
 <td>direct</td>
 </tr>
@@ -334,118 +346,118 @@
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../was_generated_by/">was_generated_by</a></td>
-<td>0..1 <br/> <a href="../Activity/">Activity</a></td>
-<td></td>
-<td><a href="../Change/">Change</a></td>
-</tr>
-<tr>
-<td><a href="../old_datatype/">old_datatype</a></td>
-<td>0..1 <br/> NONE</td>
-<td>The old datatype of a literal</td>
-<td><a href="../SimpleChange/">SimpleChange</a></td>
-</tr>
-<tr>
-<td><a href="../has_undo/">has_undo</a></td>
-<td>0..1 <br/> <a href="../Change/">Change</a></td>
-<td>A change that reverses this change</td>
-<td><a href="../Change/">Change</a></td>
-</tr>
-<tr>
-<td><a href="../creator/">creator</a></td>
-<td>0..1 <br/> NONE</td>
-<td></td>
-<td><a href="../Change/">Change</a></td>
-</tr>
-<tr>
-<td><a href="../see_also/">see_also</a></td>
-<td>0..1 <br/> NONE</td>
-<td></td>
-<td><a href="../Change/">Change</a></td>
-</tr>
-<tr>
-<td><a href="../type/">type</a></td>
-<td>0..1 <br/> NONE</td>
-<td></td>
-<td><a href="../Change/">Change</a></td>
-</tr>
-<tr>
-<td><a href="../new_value/">new_value</a></td>
-<td>0..1 <br/> NONE</td>
-<td>The value of a property held in the new instance of the ontology</td>
-<td><a href="../SimpleChange/">SimpleChange</a></td>
-</tr>
-<tr>
-<td><a href="../new_language/">new_language</a></td>
-<td>0..1 <br/> NONE</td>
-<td>The new language tag of a literal</td>
-<td><a href="../SimpleChange/">SimpleChange</a></td>
-</tr>
-<tr>
-<td><a href="../old_language/">old_language</a></td>
-<td>0..1 <br/> NONE</td>
-<td>The old language tag of a literal</td>
-<td><a href="../SimpleChange/">SimpleChange</a></td>
-</tr>
-<tr>
-<td><a href="../pull_request/">pull_request</a></td>
-<td>0..1 <br/> NONE</td>
-<td></td>
-<td><a href="../Change/">Change</a></td>
-</tr>
-<tr>
-<td><a href="../old_value_type/">old_value_type</a></td>
-<td>0..1 <br/> NONE</td>
-<td>The type (IRI or Literal) of an old value</td>
-<td><a href="../SimpleChange/">SimpleChange</a></td>
-</tr>
-<tr>
-<td><a href="../new_datatype/">new_datatype</a></td>
-<td>0..1 <br/> NONE</td>
-<td>The new datatype of a literal</td>
-<td><a href="../SimpleChange/">SimpleChange</a></td>
-</tr>
-<tr>
-<td><a href="../change_date/">change_date</a></td>
-<td>0..1 <br/> NONE</td>
-<td></td>
-<td><a href="../Change/">Change</a></td>
-</tr>
-<tr>
-<td><a href="../new_value_type/">new_value_type</a></td>
-<td>0..1 <br/> NONE</td>
-<td>The type (IRI or Literal) of a new value</td>
-<td><a href="../SimpleChange/">SimpleChange</a></td>
-</tr>
-<tr>
-<td><a href="../about_node_representation/">about_node_representation</a></td>
-<td>0..1 <br/> NONE</td>
-<td>The representation of a node (URI, CURIE, label)</td>
-<td><a href="../NodeChange/">NodeChange</a></td>
-</tr>
-<tr>
-<td><a href="../id/">id</a></td>
-<td>1..1 <br/> NONE</td>
-<td></td>
-<td><a href="../Change/">Change</a></td>
-</tr>
-<tr>
 <td><a href="../about_node/">about_node</a></td>
 <td>0..1 <br/> <a href="../Node/">Node</a></td>
 <td></td>
 <td><a href="../NodeChange/">NodeChange</a></td>
 </tr>
 <tr>
-<td><a href="../contributor/">contributor</a></td>
-<td>0..1 <br/> NONE</td>
+<td><a href="../about_node_representation/">about_node_representation</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>The representation of a node (URI, CURIE, label)</td>
+<td><a href="../NodeChange/">NodeChange</a></td>
+</tr>
+<tr>
+<td><a href="../old_value/">old_value</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>The value of a property held in the old instance of the ontology</td>
+<td><a href="../SimpleChange/">SimpleChange</a></td>
+</tr>
+<tr>
+<td><a href="../new_value/">new_value</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>The value of a property held in the new instance of the ontology</td>
+<td><a href="../SimpleChange/">SimpleChange</a></td>
+</tr>
+<tr>
+<td><a href="../old_value_type/">old_value_type</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>The type (IRI or Literal) of an old value</td>
+<td><a href="../SimpleChange/">SimpleChange</a></td>
+</tr>
+<tr>
+<td><a href="../new_value_type/">new_value_type</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>The type (IRI or Literal) of a new value</td>
+<td><a href="../SimpleChange/">SimpleChange</a></td>
+</tr>
+<tr>
+<td><a href="../new_language/">new_language</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>The new language tag of a literal</td>
+<td><a href="../SimpleChange/">SimpleChange</a></td>
+</tr>
+<tr>
+<td><a href="../old_language/">old_language</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>The old language tag of a literal</td>
+<td><a href="../SimpleChange/">SimpleChange</a></td>
+</tr>
+<tr>
+<td><a href="../new_datatype/">new_datatype</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>The new datatype of a literal</td>
+<td><a href="../SimpleChange/">SimpleChange</a></td>
+</tr>
+<tr>
+<td><a href="../old_datatype/">old_datatype</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>The old datatype of a literal</td>
+<td><a href="../SimpleChange/">SimpleChange</a></td>
+</tr>
+<tr>
+<td><a href="../id/">id</a></td>
+<td>1..1 <br/> <a href="../String/">String</a></td>
 <td></td>
 <td><a href="../Change/">Change</a></td>
 </tr>
 <tr>
-<td><a href="../old_value/">old_value</a></td>
-<td>0..1 <br/> NONE</td>
-<td>The value of a property held in the old instance of the ontology</td>
-<td><a href="../SimpleChange/">SimpleChange</a></td>
+<td><a href="../type/">type</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td></td>
+<td><a href="../Change/">Change</a></td>
+</tr>
+<tr>
+<td><a href="../was_generated_by/">was_generated_by</a></td>
+<td>0..1 <br/> <a href="../Activity/">Activity</a></td>
+<td></td>
+<td><a href="../Change/">Change</a></td>
+</tr>
+<tr>
+<td><a href="../see_also/">see_also</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td></td>
+<td><a href="../Change/">Change</a></td>
+</tr>
+<tr>
+<td><a href="../pull_request/">pull_request</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td></td>
+<td><a href="../Change/">Change</a></td>
+</tr>
+<tr>
+<td><a href="../creator/">creator</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td></td>
+<td><a href="../Change/">Change</a></td>
+</tr>
+<tr>
+<td><a href="../change_date/">change_date</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td></td>
+<td><a href="../Change/">Change</a></td>
+</tr>
+<tr>
+<td><a href="../contributor/">contributor</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td></td>
+<td><a href="../Change/">Change</a></td>
+</tr>
+<tr>
+<td><a href="../has_undo/">has_undo</a></td>
+<td>0..1 <br/> <a href="../Deletion/">Deletion</a></td>
+<td>A change that reverses this change</td>
+<td><a href="../Change/">Change</a></td>
 </tr>
 </tbody>
 </table>
@@ -543,7 +555,7 @@ attributes:
     range: node
   name:
     name: name
-    from_schema: https://w3id.org/kgcl_schema/ontology
+    from_schema: https://w3id.org/kgcl
     rank: 1000
     alias: name
     owner: node creation
@@ -553,7 +565,7 @@ attributes:
     range: string
   owl type:
     name: owl type
-    from_schema: https://w3id.org/kgcl_schema/ontology
+    from_schema: https://w3id.org/kgcl
     rank: 1000
     alias: owl_type
     owner: node creation
@@ -563,7 +575,7 @@ attributes:
     range: owl_type_enum
   annotation set:
     name: annotation set
-    from_schema: https://w3id.org/kgcl_schema/ontology
+    from_schema: https://w3id.org/kgcl
     rank: 1000
     alias: annotation_set
     owner: node creation
@@ -712,7 +724,7 @@ attributes:
     range: string
   id:
     name: id
-    from_schema: https://w3id.org/kgcl_schema/basics
+    from_schema: https://w3id.org/kgcl
     rank: 1000
     identifier: true
     alias: id
@@ -736,7 +748,9 @@ attributes:
     range: string
   was generated by:
     name: was generated by
-    from_schema: https://w3id.org/kgcl_schema/prov
+    comments:
+    - we use the PROV model to represent the agent making a change
+    from_schema: https://w3id.org/kgcl
     rank: 1000
     slot_uri: prov:wasGeneratedBy
     alias: was_generated_by
@@ -746,6 +760,9 @@ attributes:
     range: activity
   see also:
     name: see also
+    comments:
+    - If this change is in relationship to an issue on a system like github, include
+      the URL here
     from_schema: https://w3id.org/kgcl
     rank: 1000
     slot_uri: rdfs:seeAlso
@@ -756,6 +773,8 @@ attributes:
     range: string
   pull request:
     name: pull request
+    comments:
+    - If this change has a pull request on a system like github, include the URL here
     from_schema: https://w3id.org/kgcl
     rank: 1000
     alias: pull_request
@@ -765,6 +784,8 @@ attributes:
     range: string
   creator:
     name: creator
+    comments:
+    - This should be the composition of 'was generated by' and 'was associated with'
     from_schema: https://w3id.org/kgcl
     rank: 1000
     slot_uri: dcterms:creator
@@ -775,6 +796,8 @@ attributes:
     range: string
   change date:
     name: change date
+    comments:
+    - This should be the composition of 'was generated by' and 'ended at time'
     from_schema: https://w3id.org/kgcl
     rank: 1000
     slot_uri: dcterms:date
