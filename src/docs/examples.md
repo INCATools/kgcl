@@ -37,6 +37,15 @@ about_node_representation: curie
 qualifier: exact
 
 ```
+## Example: Removal of a synonym.
+Class: [`RemoveSynonym`](https://w3id.org/kgcl/RemoveSynonym) </br></br>Command: `remove synonym 'foo' for GO:0005634`</br></br>YAML:
+```
+id: CHANGE:001
+old_value: foo
+about_node: GO:0005634
+about_node_representation: curie
+
+```
 ## Example: Creation of new class.
 Class: [`ClassCreation`](https://w3id.org/kgcl/ClassCreation) </br></br>Command: `create GO:9999999`</br></br>YAML:
 ```

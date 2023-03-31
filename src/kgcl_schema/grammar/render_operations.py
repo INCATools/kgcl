@@ -17,6 +17,7 @@ from kgcl_schema.datamodel.kgcl import (
     NodeUnobsoletion,
     PlaceUnder,
     PredicateChange,
+    RemoveSynonym,
     RemoveUnder,
     Change,
 )
@@ -208,6 +209,22 @@ def render(kgcl_instance: Change) -> str:
             )
         else:
             return "create synonym " + synonym + " for " + subject
+
+    if type(kgcl_instance) is RemoveSynonym:
+        subject = render_entity(kgcl_instance.about_node, "uri")
+        synonym = render_entity(kgcl_instance.old_value, "label")
+        # qualifier = kgcl_instance.qualifier
+        language = kgcl_instance.language
+
+        if language is not None:
+            synonym = synonym + "@" + language
+
+        # if qualifier is not None:
+        #     return (
+        #         "remove " + qualifier + " synonym" + " " + synonym + " for " + subject
+        #     )
+        # else:
+        return "remove synonym " + synonym + " for " + subject
 
     if type(kgcl_instance) is PlaceUnder:
         subclass = render_entity(kgcl_instance.subject, "uri")

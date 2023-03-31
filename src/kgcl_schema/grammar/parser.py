@@ -25,6 +25,7 @@ from kgcl_schema.datamodel.kgcl import (
     NodeUnobsoletion,
     PlaceUnder,
     PredicateChange,
+    RemoveSynonym,
     RemovedNodeFromSubset,
     RemoveUnder,
     Session,
@@ -116,6 +117,8 @@ def parse_statement(input: str) -> Change:
         return parse_create_synonym(tree, id)
     elif command == "remove_from_subset":
         return parse_remove_from_subset(tree, id)
+    elif command == "remove_synonym":
+        return parse_remove_synonym(tree, id)
     else:
         raise NotImplementedError("No implementation for KGCL command: " + command)
 
@@ -170,6 +173,27 @@ def parse_create_synonym(tree, id):
         about_node_representation=representation,
         new_value=synonym,
         qualifier=qualifier_token,
+        language=language_token,
+    )
+
+
+def parse_remove_synonym(tree, id):
+    """Remove a synonym."""
+    entity_token = extract(tree, "entity")
+    entity, representation = get_entity_representation(entity_token)
+
+    synonym_string_token = extract(tree, "synonym")
+    synonym, _ = get_entity_representation(synonym_string_token)
+
+    language_token = extract(tree, "language")
+    # qualifier_token = extract(tree, "synonym_qualifier")
+
+    return RemoveSynonym(
+        id=id,
+        old_value=synonym,
+        about_node=entity,
+        about_node_representation=representation,
+        # qualifier=qualifier_token,
         language=language_token,
     )
 

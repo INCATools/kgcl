@@ -37,6 +37,7 @@ CLASS_DESCRIPTION = {
     "NodeRename": "Rename node.",
     "NodeObsoletion": "Obsolete node.",
     "NewSynonym": "Addition of a new synonym.",
+    "RemoveSynonym": "Removal of a synonym.",
     "ClassCreation": "Creation of new class.",
     "PredicateChange": "Change predicate.",
     "Change": "Change node.",
