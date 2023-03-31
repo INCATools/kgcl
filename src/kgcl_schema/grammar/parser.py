@@ -179,10 +179,23 @@ def parse_create_synonym(tree, id):
 
 def parse_remove_synonym(tree, id):
     """Remove a synonym."""
+    entity_token = extract(tree, "entity")
+    entity, representation = get_entity_representation(entity_token)
+
     synonym_string_token = extract(tree, "synonym")
     synonym, _ = get_entity_representation(synonym_string_token)
 
-    return RemoveSynonym(id=id, old_value=synonym)
+    language_token = extract(tree, "language")
+    # qualifier_token = extract(tree, "synonym_qualifier")
+
+    return RemoveSynonym(
+        id=id,
+        old_value=synonym,
+        about_node=entity,
+        about_node_representation=representation,
+        # qualifier=qualifier_token,
+        language=language_token,
+    )
 
 
 def parse_create_class(tree, id):

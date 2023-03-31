@@ -137,6 +137,8 @@ CASES: List[CASE] = [
         f"remove synonym 'foo' for {NUCLEUS_URI}",
         RemoveSynonym(
             id=UID,
+            about_node=NUCLEUS,
+            about_node_representation="curie",
             old_value="foo",
         ),
         None,
