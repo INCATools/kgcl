@@ -11,6 +11,7 @@ from kgcl_schema.datamodel.kgcl import (
     NodeCreation,
     EdgeCreation,
     PlaceUnder,
+    RemoveSynonym,
     RemoveUnder,
     EdgeDeletion,
     NodeDeepening,
@@ -128,6 +129,15 @@ CASES: List[CASE] = [
             language="en",
             new_value="foo",
             qualifier="broad",
+        ),
+        None,
+    ),
+    (
+        f"remove synonym 'foo' for {NUCLEUS}",
+        f"remove synonym 'foo' for {NUCLEUS_URI}",
+        RemoveSynonym(
+            id=UID,
+            old_value="foo",
         ),
         None,
     ),

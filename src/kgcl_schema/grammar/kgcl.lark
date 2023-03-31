@@ -12,6 +12,7 @@
            | create_edge
            | delete_edge 
            | create_synonym 
+           | remove_synonym 
            | remove_from_subset
            | add_to_subset 
 
@@ -22,6 +23,8 @@ create_class: "create" _WS id
 
 create_synonym: "create" _WS [synonym_qualifier _WS] "synonym" _WS synonym ["@" language] _WS "for" _WS entity
 synonym_qualifier : /exact|narrow|broad|related/
+
+remove_synonym: "remove" _WS "synonym" _WS synonym ["@" language] _WS "for" _WS entity
 
 delete : "delete" _WS entity
 
