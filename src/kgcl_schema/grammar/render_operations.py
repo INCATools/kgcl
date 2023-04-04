@@ -269,6 +269,13 @@ def render(kgcl_instance: Change) -> str:
         new_definition = kgcl_instance.new_value
         if kgcl_instance.old_value:
             old_definition = kgcl_instance.old_value
-            return "change definition of " + subject + " from " + old_definition + " to " + new_definition
+            return (
+                "change definition of "
+                + subject
+                + " from "
+                + old_definition
+                + " to "
+                + new_definition
+            )
         else:
             return "change definition of " + subject + " to " + new_definition

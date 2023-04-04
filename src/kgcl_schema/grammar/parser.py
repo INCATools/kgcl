@@ -238,7 +238,7 @@ def parse_change_definition(tree, id):
         about_node=entity,
         about_node_representation=representation,
         new_value=new_value,
-        old_value=old_value
+        old_value=old_value,
     )
 
 
