@@ -13,6 +13,7 @@ from kgcl_schema.datamodel.kgcl import (
     EdgeCreation,
     EdgeDeletion,
     NewSynonym,
+    NewTextDefinition,
     NodeAnnotationChange,
     NodeCreation,
     NodeDeepening,
@@ -119,6 +120,8 @@ def parse_statement(input: str) -> Change:
         return parse_remove_from_subset(tree, id)
     elif command == "remove_synonym":
         return parse_remove_synonym(tree, id)
+    elif command == "add_definition":
+        return parse_add_definition(tree, id)
     else:
         raise NotImplementedError("No implementation for KGCL command: " + command)
 
@@ -205,6 +208,19 @@ def parse_create_class(tree, id):
 
     return ClassCreation(
         id=id, node_id=entity, about_node_representation=representation
+    )
+
+
+def parse_add_definition(tree, id):
+    """Add definition to class."""
+    entity_token = extract(tree, "entity")
+    new_value = extract(tree, "definition")
+    entity, representation = get_entity_representation(entity_token)
+    return NewTextDefinition(
+        id=id,
+        about_node=entity,
+        about_node_representation=representation,
+        new_value=new_value,
     )
 
 

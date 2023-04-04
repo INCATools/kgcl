@@ -144,3 +144,12 @@ old_object_type: curie
 new_object_type: curie
 
 ```
+## Example: New definition of a node.
+Class: [`NewTextDefinition`](https://w3id.org/kgcl/NewTextDefinition) </br></br>Command: `add definition 'this is dummy description' to GO:0005635`</br></br>YAML:
+```
+id: CHANGE:001
+new_value: this is dummy description
+about_node: GO:0005635
+about_node_representation: curie
+
+```

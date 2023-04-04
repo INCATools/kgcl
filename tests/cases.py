@@ -1,6 +1,7 @@
 from typing import Tuple, Optional, List, Union
 
 from kgcl_schema.datamodel.kgcl import (
+    NewTextDefinition,
     NodeObsoletionWithDirectReplacement,
     NodeRename,
     NodeObsoletion,
@@ -290,6 +291,17 @@ CASES: List[CASE] = [
                 subject_representation="curie",
                 object_representation="curie",
             ),
+        ),
+        None,
+    ),
+    (
+        f"add definition 'this is dummy description' to {NUCLEAR_ENVELOPE}",
+        f"add definition 'this is dummy description' to {NUCLEAR_ENVELOPE_URI}",
+        NewTextDefinition(
+            id=UID,
+            new_value="'this is dummy description'",
+            about_node="GO:0005635",
+            about_node_representation="curie",
         ),
         None,
     ),
