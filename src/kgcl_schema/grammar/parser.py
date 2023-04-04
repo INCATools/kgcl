@@ -216,7 +216,12 @@ def parse_add_definition(tree, id):
     entity_token = extract(tree, "entity")
     new_value = extract(tree, "definition")
     entity, representation = get_entity_representation(entity_token)
-    return NewTextDefinition(id=id, about_node=entity, about_node_representation=representation, new_value=new_value)
+    return NewTextDefinition(
+        id=id,
+        about_node=entity,
+        about_node_representation=representation,
+        new_value=new_value,
+    )
 
 
 # the KGCL model suggests the command

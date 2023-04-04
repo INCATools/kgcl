@@ -47,7 +47,7 @@ CLASS_DESCRIPTION = {
     "RemoveUnder": "Remove node from under another node.",
     "EdgeDeletion": "Deletion of an edge.",
     "NodeDeepening": "Deepening of a node.",
-    "NewTextDefinition": "New definition of a node."
+    "NewTextDefinition": "New definition of a node.",
 }
 
 
