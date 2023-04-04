@@ -308,7 +308,7 @@ CASES: List[CASE] = [
     ),
     (
         f"change definition of {NUCLEAR_ENVELOPE} to 'this is dummy description'",
-        f"add definition of {NUCLEAR_ENVELOPE_URI} to 'this is dummy description'",
+        f"change definition of {NUCLEAR_ENVELOPE_URI} to 'this is dummy description'",
         NodeTextDefinitionChange(
             id=UID,
             new_value="'this is dummy description'",
