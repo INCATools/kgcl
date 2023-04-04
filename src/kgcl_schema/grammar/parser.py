@@ -23,6 +23,7 @@ from kgcl_schema.datamodel.kgcl import (
     NodeObsoletionWithDirectReplacement,
     NodeRename,
     NodeShallowing,
+    NodeTextDefinitionChange,
     NodeUnobsoletion,
     PlaceUnder,
     PredicateChange,
@@ -122,6 +123,8 @@ def parse_statement(input: str) -> Change:
         return parse_remove_synonym(tree, id)
     elif command == "add_definition":
         return parse_add_definition(tree, id)
+    elif command == "change_definition":
+        return parse_change_definition(tree, id)
     else:
         raise NotImplementedError("No implementation for KGCL command: " + command)
 
@@ -214,13 +217,28 @@ def parse_create_class(tree, id):
 def parse_add_definition(tree, id):
     """Add definition to class."""
     entity_token = extract(tree, "entity")
-    new_value = extract(tree, "definition")
+    new_value = extract(tree, "new_definition")
     entity, representation = get_entity_representation(entity_token)
     return NewTextDefinition(
         id=id,
         about_node=entity,
         about_node_representation=representation,
         new_value=new_value,
+    )
+
+
+def parse_change_definition(tree, id):
+    """Change the definition of a class."""
+    entity_token = extract(tree, "entity")
+    old_value = extract(tree, "old_definition")
+    new_value = extract(tree, "new_definition")
+    entity, representation = get_entity_representation(entity_token)
+    return NodeTextDefinitionChange(
+        id=id,
+        about_node=entity,
+        about_node_representation=representation,
+        new_value=new_value,
+        old_value=old_value
     )
 
 
