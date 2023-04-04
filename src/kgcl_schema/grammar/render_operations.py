@@ -6,6 +6,7 @@ from kgcl_schema.datamodel.kgcl import (
     EdgeCreation,
     EdgeDeletion,
     NewSynonym,
+    NewTextDefinition,
     NodeAnnotationChange,
     NodeCreation,
     NodeDeepening,
@@ -256,3 +257,8 @@ def render(kgcl_instance: Change) -> str:
         old_value = kgcl_instance.old_value
         new_value = kgcl_instance.new_value
         return "deepen " + subject + " from " + old_value + " to " + new_value
+
+    if type(kgcl_instance) is NewTextDefinition:
+        subject = kgcl_instance.about_node
+        definition = kgcl_instance.new_value
+        return "add definition " + definition + " to " + subject

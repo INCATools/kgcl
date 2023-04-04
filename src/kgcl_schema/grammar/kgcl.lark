@@ -15,6 +15,7 @@
            | remove_synonym 
            | remove_from_subset
            | add_to_subset 
+           | add_definition
 
 rename : "rename" _WS [id _WS "from" _WS] old_label ["@" old_language] _WS ("to"|"as"|"->") _WS new_label ["@" new_language]
 
@@ -45,6 +46,7 @@ change_relationship: "change relationship between" _WS entity_subject _WS "and" 
 
 change_annotation: "change annotation of" _WS entity_subject _WS "with" _WS entity_predicate _WS "from" _WS old_entity_object _WS "to" _WS new_entity_object
 
+add_definition: "add definition" _WS definition _WS "to" _WS entity
 
 remove_from_subset :  "remove" _WS id _WS "from subset" _WS subset
 add_to_subset :  "add" _WS id _WS "to subset" _WS subset
@@ -64,6 +66,7 @@ filler: _entity
 label : SINGLE_QUOTE_LITERAL
 old_label : SINGLE_QUOTE_LITERAL
 new_label : SINGLE_QUOTE_LITERAL
+definition : SINGLE_QUOTE_LITERAL
 
 language: LANGUAGE_TAG
 old_language : LANGUAGE_TAG

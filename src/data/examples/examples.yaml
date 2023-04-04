@@ -170,3 +170,11 @@ Test_15:
   new_object_type: curie
   command_with_curie: deepen GO:0005739 from GO:0043231 to GO:0005634
   command_with_uri: TODO
+Test_16:
+  id: CHANGE:001
+  type: NewTextDefinition
+  new_value: '''this is dummy description'''
+  about_node: GO:0005635
+  about_node_representation: curie
+  command_with_curie: add definition 'this is dummy description' to GO:0005635
+  command_with_uri: add definition 'this is dummy description' to http://purl.obolibrary.org/obo/GO_0005635
