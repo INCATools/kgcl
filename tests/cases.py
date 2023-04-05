@@ -7,6 +7,7 @@ from kgcl_schema.datamodel.kgcl import (
     NodeObsoletion,
     NewSynonym,
     ClassCreation,
+    NodeTextDefinitionChange,
     PredicateChange,
     Change,
     NodeCreation,
@@ -298,6 +299,17 @@ CASES: List[CASE] = [
         f"add definition 'this is dummy description' to {NUCLEAR_ENVELOPE}",
         f"add definition 'this is dummy description' to {NUCLEAR_ENVELOPE_URI}",
         NewTextDefinition(
+            id=UID,
+            new_value="'this is dummy description'",
+            about_node="GO:0005635",
+            about_node_representation="curie",
+        ),
+        None,
+    ),
+    (
+        f"change definition of {NUCLEAR_ENVELOPE} to 'this is dummy description'",
+        f"change definition of {NUCLEAR_ENVELOPE_URI} to 'this is dummy description'",
+        NodeTextDefinitionChange(
             id=UID,
             new_value="'this is dummy description'",
             about_node="GO:0005635",

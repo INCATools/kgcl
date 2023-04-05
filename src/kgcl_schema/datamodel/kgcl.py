@@ -1681,6 +1681,18 @@ class NodeTextDefinitionChange(NodeChange):
 
     id: Union[str, NodeTextDefinitionChangeId] = None
 
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, NodeTextDefinitionChangeId):
+            self.id = NodeTextDefinitionChangeId(self.id)
+        if self.old_value is not None and not isinstance(self.old_value, str):
+            self.old_value = str(self.old_value)
+        if self.new_value is not None and not isinstance(self.new_value, str):
+            self.new_value = str(self.new_value)
+
+        super().__post_init__(**kwargs)
+
 
 @dataclass
 class NewTextDefinition(NodeTextDefinitionChange):

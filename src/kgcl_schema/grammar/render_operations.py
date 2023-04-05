@@ -15,6 +15,7 @@ from kgcl_schema.datamodel.kgcl import (
     NodeObsoletion,
     NodeObsoletionWithDirectReplacement,
     NodeRename,
+    NodeTextDefinitionChange,
     NodeUnobsoletion,
     PlaceUnder,
     PredicateChange,
@@ -262,3 +263,19 @@ def render(kgcl_instance: Change) -> str:
         subject = kgcl_instance.about_node
         definition = kgcl_instance.new_value
         return "add definition " + definition + " to " + subject
+
+    if type(kgcl_instance) is NodeTextDefinitionChange:
+        subject = kgcl_instance.about_node
+        new_definition = kgcl_instance.new_value
+        if kgcl_instance.old_value:
+            old_definition = kgcl_instance.old_value
+            return (
+                "change definition of "
+                + subject
+                + " from "
+                + old_definition
+                + " to "
+                + new_definition
+            )
+        else:
+            return "change definition of " + subject + " to " + new_definition

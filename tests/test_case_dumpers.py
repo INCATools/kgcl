@@ -48,6 +48,7 @@ CLASS_DESCRIPTION = {
     "EdgeDeletion": "Deletion of an edge.",
     "NodeDeepening": "Deepening of a node.",
     "NewTextDefinition": "New definition of a node.",
+    "NodeTextDefinitionChange": "Update defintion of a node.",
 }
 
 

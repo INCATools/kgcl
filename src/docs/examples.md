@@ -153,3 +153,12 @@ about_node: GO:0005635
 about_node_representation: curie
 
 ```
+## Example: Update defintion of a node.
+Class: [`NodeTextDefinitionChange`](https://w3id.org/kgcl/NodeTextDefinitionChange) </br></br>Command: `change definition of GO:0005635 to 'this is dummy description'`</br></br>YAML:
+```
+id: CHANGE:001
+new_value: this is dummy description
+about_node: GO:0005635
+about_node_representation: curie
+
+```

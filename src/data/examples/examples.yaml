@@ -178,3 +178,12 @@ Test_16:
   about_node_representation: curie
   command_with_curie: add definition 'this is dummy description' to GO:0005635
   command_with_uri: add definition 'this is dummy description' to http://purl.obolibrary.org/obo/GO_0005635
+Test_17:
+  id: CHANGE:001
+  type: NodeTextDefinitionChange
+  new_value: '''this is dummy description'''
+  about_node: GO:0005635
+  about_node_representation: curie
+  command_with_curie: change definition of GO:0005635 to 'this is dummy description'
+  command_with_uri: change definition of http://purl.obolibrary.org/obo/GO_0005635
+    to 'this is dummy description'
