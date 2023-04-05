@@ -368,6 +368,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#example-update-defintion-of-a-node" class="md-nav__link">
+    Example: Update defintion of a node.
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -496,6 +503,13 @@
         <li class="md-nav__item">
   <a href="#example-new-definition-of-a-node" class="md-nav__link">
     Example: New definition of a node.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-update-defintion-of-a-node" class="md-nav__link">
+    Example: Update defintion of a node.
   </a>
   
 </li>
@@ -654,6 +668,14 @@ new_object_type: curie
 </code></pre>
 <h2 id="example-new-definition-of-a-node">Example: New definition of a node.</h2>
 <p>Class: <a href="https://w3id.org/kgcl/NewTextDefinition"><code>NewTextDefinition</code></a> </br></br>Command: <code>add definition 'this is dummy description' to GO:0005635</code></br></br>YAML:</p>
+<pre><code>id: CHANGE:001
+new_value: this is dummy description
+about_node: GO:0005635
+about_node_representation: curie
+
+</code></pre>
+<h2 id="example-update-defintion-of-a-node">Example: Update defintion of a node.</h2>
+<p>Class: <a href="https://w3id.org/kgcl/NodeTextDefinitionChange"><code>NodeTextDefinitionChange</code></a> </br></br>Command: <code>change definition of GO:0005635 to 'this is dummy description'</code></br></br>YAML:</p>
 <pre><code>id: CHANGE:001
 new_value: this is dummy description
 about_node: GO:0005635
