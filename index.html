@@ -528,12 +528,36 @@ Name: kgcl_schema</p>
 <td>A specific kind of edge creation in which the created edge is a mapping</td>
 </tr>
 <tr>
+<td><a href="MappingPredicateChange/">MappingPredicateChange</a></td>
+<td>A node mapping change where the predicate of a mapping is changed</td>
+</tr>
+<tr>
+<td><a href="MappingReplacement/">MappingReplacement</a></td>
+<td>A node mapping change where the object of a mapping is changed</td>
+</tr>
+<tr>
+<td><a href="MetadataAssertionPredicateChange/">MetadataAssertionPredicateChange</a></td>
+<td>A node metadata assertion change where the predicate of a metadata assertion ...</td>
+</tr>
+<tr>
+<td><a href="MetadataAssertionReplacement/">MetadataAssertionReplacement</a></td>
+<td>A node metadata assertion change where the object of a metadata assertion is ...</td>
+</tr>
+<tr>
 <td><a href="MultiNodeObsoletion/">MultiNodeObsoletion</a></td>
 <td>A complex change consisting of multiple obsoletions</td>
 </tr>
 <tr>
 <td><a href="NameBecomesSynonym/">NameBecomesSynonym</a></td>
 <td>A node synonym where the name NAME of an node NODE moves to a synonym, and NO...</td>
+</tr>
+<tr>
+<td><a href="NewMapping/">NewMapping</a></td>
+<td>A node mapping change where a mapping is added to a node</td>
+</tr>
+<tr>
+<td><a href="NewMetadataAssertion/">NewMetadataAssertion</a></td>
+<td>A node metadata assertion change where a metadata assertion is added to a nod...</td>
 </tr>
 <tr>
 <td><a href="NewSynonym/">NewSynonym</a></td>
@@ -574,6 +598,14 @@ Name: kgcl_schema</p>
 <tr>
 <td><a href="NodeDirectMerge/">NodeDirectMerge</a></td>
 <td>An obsoletion change in which all metadata (including name/label) from the so...</td>
+</tr>
+<tr>
+<td><a href="NodeMappingChange/">NodeMappingChange</a></td>
+<td>A node change where the mappings for that node are altered</td>
+</tr>
+<tr>
+<td><a href="NodeMetadataAssertionChange/">NodeMetadataAssertionChange</a></td>
+<td>A node change where the metadata assertion (OWL annotations) for that node ar...</td>
 </tr>
 <tr>
 <td><a href="NodeMove/">NodeMove</a></td>
@@ -640,6 +672,18 @@ Name: kgcl_schema</p>
 <td>removing an element from a subset</td>
 </tr>
 <tr>
+<td><a href="RemoveMapping/">RemoveMapping</a></td>
+<td>A node mapping change where a mapping is deleted</td>
+</tr>
+<tr>
+<td><a href="RemoveMetadataAssertion/">RemoveMetadataAssertion</a></td>
+<td>A node metadata assertion change where a metadata assertion is deleted</td>
+</tr>
+<tr>
+<td><a href="RemoveNodeFromSubset/">RemoveNodeFromSubset</a></td>
+<td>Removes a node from a subset, by removing an annotation</td>
+</tr>
+<tr>
 <td><a href="RemoveSynonym/">RemoveSynonym</a></td>
 <td>A node synonym change where a synonym is deleted</td>
 </tr>
@@ -650,10 +694,6 @@ Name: kgcl_schema</p>
 <tr>
 <td><a href="RemoveUnder/">RemoveUnder</a></td>
 <td>An edge deletion where the predicate is owl:subClassOf</td>
-</tr>
-<tr>
-<td><a href="RemovedNodeFromSubset/">RemovedNodeFromSubset</a></td>
-<td>Removes a node from a subset, by removing an annotation</td>
 </tr>
 <tr>
 <td><a href="Session/">Session</a></td>
@@ -891,7 +931,11 @@ Name: kgcl_schema</p>
 <td>The type (IRI or Literal) of an object</td>
 </tr>
 <tr>
-<td><a href="obsoletion_policy/">obsoletion_policy</a></td>
+<td><a href="obsolete_node_label_prefix/">obsolete_node_label_prefix</a></td>
+<td>A prefix to add to the label of an obsolete node</td>
+</tr>
+<tr>
+<td><a href="obsoletion_policies/">obsoletion_policies</a></td>
 <td></td>
 </tr>
 <tr>
@@ -1029,6 +1073,10 @@ Name: kgcl_schema</p>
 </tr>
 </thead>
 <tbody>
+<tr>
+<td><a href="ObsoletionPolicyEnum/">ObsoletionPolicyEnum</a></td>
+<td></td>
+</tr>
 <tr>
 <td><a href="OwlTypeEnum/">OwlTypeEnum</a></td>
 <td></td>

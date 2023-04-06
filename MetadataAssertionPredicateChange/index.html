@@ -5,10 +5,10 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
-<link href="https://incatools.github.io/kgcl_schema/RemovedNodeFromSubset/" rel="canonical"/>
+<link href="https://incatools.github.io/kgcl_schema/MetadataAssertionPredicateChange/" rel="canonical"/>
 <link href="../assets/images/favicon.png" rel="icon"/>
 <meta content="mkdocs-1.4.2, mkdocs-material-8.5.10" name="generator"/>
-<title>Class: RemovedNodeFromSubset - KGCL</title>
+<title>Class: MetadataAssertionPredicateChange - KGCL</title>
 <link href="../assets/stylesheets/main.975780f9.min.css" rel="stylesheet"/>
 <link href="../assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -21,7 +21,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#class-removednodefromsubset">
+<a class="md-skip" href="#class-metadataassertionpredicatechange">
           Skip to content
         </a>
 </div>
@@ -45,7 +45,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              Class: RemovedNodeFromSubset
+              Class: MetadataAssertionPredicateChange
             
           </span>
 </div>
@@ -206,66 +206,61 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<a class="md-content__button md-icon" href="https://github.com/INCATools/kgcl_schema/edit/master/docs/RemovedNodeFromSubset.md" title="Edit this page">
+<a class="md-content__button md-icon" href="https://github.com/INCATools/kgcl_schema/edit/master/docs/MetadataAssertionPredicateChange.md" title="Edit this page">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"></path></svg>
 </a>
-<h1 id="class-removednodefromsubset">Class: RemovedNodeFromSubset</h1>
-<p><em>Removes a node from a subset, by removing an annotation</em></p>
-<p>URI: <a href="http://w3id.org/kgcl/RemovedNodeFromSubset">kgcl:RemovedNodeFromSubset</a></p>
+<h1 id="class-metadataassertionpredicatechange">Class: MetadataAssertionPredicateChange</h1>
+<p><em>A node metadata assertion change where the predicate of a metadata assertion is changed.</em></p>
+<p>URI: <a href="http://w3id.org/kgcl/MetadataAssertionPredicateChange">kgcl:MetadataAssertionPredicateChange</a></p>
 <div class="mermaid"> classDiagram
-    class RemovedNodeFromSubset
-      RemoveFromSubset &lt;|-- RemovedNodeFromSubset
-      NodeChange &lt;|-- RemovedNodeFromSubset
+    class MetadataAssertionPredicateChange
+      NodeMetadataAssertionChange &lt;|-- MetadataAssertionPredicateChange
 
-      RemovedNodeFromSubset : about_node
+      MetadataAssertionPredicateChange : about_node
 
-          RemovedNodeFromSubset ..&gt; node : about_node
+          MetadataAssertionPredicateChange ..&gt; node : about_node
 
-      RemovedNodeFromSubset : about_node_representation
+      MetadataAssertionPredicateChange : about_node_representation
 
-      RemovedNodeFromSubset : change_date
+      MetadataAssertionPredicateChange : change_date
 
-      RemovedNodeFromSubset : contributor
+      MetadataAssertionPredicateChange : contributor
 
-      RemovedNodeFromSubset : creator
+      MetadataAssertionPredicateChange : creator
 
-      RemovedNodeFromSubset : has_undo
+      MetadataAssertionPredicateChange : has_undo
 
-          RemovedNodeFromSubset ..&gt; add to subset : has_undo
+          MetadataAssertionPredicateChange ..&gt; change : has_undo
 
-      RemovedNodeFromSubset : id
+      MetadataAssertionPredicateChange : id
 
-      RemovedNodeFromSubset : in_subset
+      MetadataAssertionPredicateChange : language
 
-          RemovedNodeFromSubset ..&gt; ontology subset : in_subset
+      MetadataAssertionPredicateChange : new_datatype
 
-      RemovedNodeFromSubset : language
+      MetadataAssertionPredicateChange : new_language
 
-      RemovedNodeFromSubset : new_datatype
+      MetadataAssertionPredicateChange : new_value
 
-      RemovedNodeFromSubset : new_language
+      MetadataAssertionPredicateChange : new_value_type
 
-      RemovedNodeFromSubset : new_value
+      MetadataAssertionPredicateChange : old_datatype
 
-      RemovedNodeFromSubset : new_value_type
+      MetadataAssertionPredicateChange : old_language
 
-      RemovedNodeFromSubset : old_datatype
+      MetadataAssertionPredicateChange : old_value
 
-      RemovedNodeFromSubset : old_language
+      MetadataAssertionPredicateChange : old_value_type
 
-      RemovedNodeFromSubset : old_value
+      MetadataAssertionPredicateChange : pull_request
 
-      RemovedNodeFromSubset : old_value_type
+      MetadataAssertionPredicateChange : see_also
 
-      RemovedNodeFromSubset : pull_request
+      MetadataAssertionPredicateChange : type
 
-      RemovedNodeFromSubset : see_also
+      MetadataAssertionPredicateChange : was_generated_by
 
-      RemovedNodeFromSubset : type
-
-      RemovedNodeFromSubset : was_generated_by
-
-          RemovedNodeFromSubset ..&gt; activity : was_generated_by
+          MetadataAssertionPredicateChange ..&gt; activity : was_generated_by
 
 
 </div>
@@ -274,7 +269,10 @@
 <li><a href="../Change/">Change</a><ul>
 <li><a href="../SimpleChange/">SimpleChange</a><ul>
 <li><a href="../NodeChange/">NodeChange</a><ul>
-<li><strong>RemovedNodeFromSubset</strong> [ <a href="../RemoveFromSubset/">RemoveFromSubset</a>]</li>
+<li><a href="../NodeMetadataAssertionChange/">NodeMetadataAssertionChange</a><ul>
+<li><strong>MetadataAssertionPredicateChange</strong></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -294,9 +292,21 @@
 </thead>
 <tbody>
 <tr>
+<td><a href="../old_value/">old_value</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>The value of a property held in the old instance of the ontology</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../new_value/">new_value</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>The value of a property held in the new instance of the ontology</td>
+<td>direct</td>
+</tr>
+<tr>
 <td><a href="../about_node/">about_node</a></td>
 <td>0..1 <br/> <a href="../Node/">Node</a></td>
-<td>The node that is removed from the subset</td>
+<td></td>
 <td><a href="../NodeChange/">NodeChange</a></td>
 </tr>
 <tr>
@@ -310,18 +320,6 @@
 <td>0..1 <br/> <a href="../LanguageTag/">LanguageTag</a></td>
 <td>The language tag of a literal</td>
 <td><a href="../NodeChange/">NodeChange</a></td>
-</tr>
-<tr>
-<td><a href="../old_value/">old_value</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
-<td>The value of a property held in the old instance of the ontology</td>
-<td><a href="../SimpleChange/">SimpleChange</a></td>
-</tr>
-<tr>
-<td><a href="../new_value/">new_value</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
-<td>The value of a property held in the new instance of the ontology</td>
-<td><a href="../SimpleChange/">SimpleChange</a></td>
 </tr>
 <tr>
 <td><a href="../old_value_type/">old_value_type</a></td>
@@ -409,21 +407,15 @@
 </tr>
 <tr>
 <td><a href="../has_undo/">has_undo</a></td>
-<td>0..1 <br/> <a href="../AddToSubset/">AddToSubset</a></td>
+<td>0..1 <br/> <a href="../Change/">Change</a></td>
 <td>A change that reverses this change</td>
 <td><a href="../Change/">Change</a></td>
-</tr>
-<tr>
-<td><a href="../in_subset/">in_subset</a></td>
-<td>0..1 <br/> <a href="../OntologySubset/">OntologySubset</a></td>
-<td>subset that the element is being removed from</td>
-<td><a href="../SubsetMembershipChange/">SubsetMembershipChange</a></td>
 </tr>
 </tbody>
 </table>
 <h2 id="aliases">Aliases</h2>
 <ul>
-<li>remove term from slim</li>
+<li>node scope change</li>
 </ul>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
@@ -441,11 +433,11 @@
 <tbody>
 <tr>
 <td>self</td>
-<td>kgcl:RemovedNodeFromSubset</td>
+<td>kgcl:MetadataAssertionPredicateChange</td>
 </tr>
 <tr>
 <td>native</td>
-<td>kgcl:RemovedNodeFromSubset</td>
+<td>kgcl:MetadataAssertionPredicateChange</td>
 </tr>
 </tbody>
 </table>
@@ -453,63 +445,81 @@
 <!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
 <h3 id="direct">Direct</h3>
 <details>
-<pre><code class="language-yaml">name: removed node from subset
-description: Removes a node from a subset, by removing an annotation
+<pre><code class="language-yaml">name: metadata assertion predicate change
+description: A node metadata assertion change where the predicate of a metadata assertion
+  is changed.
 from_schema: https://w3id.org/kgcl
 aliases:
-- remove term from slim
+- node scope change
 rank: 1000
-is_a: node change
-mixins:
-- remove from subset
-slot_usage:
-  change description:
-    name: change description
-    string_serialization: removing {about node} from {subset}
-  about node:
-    name: about node
-    description: The node that is removed from the subset
-    domain_of:
-    - node change
-  subset:
-    name: subset
-    description: The subset from which the node is to be removed
+is_a: node metadata assertion change
+slots:
+- old value
+- new value
 
 </code></pre>
 </details>
 <h3 id="induced">Induced</h3>
 <details>
-<pre><code class="language-yaml">name: removed node from subset
-description: Removes a node from a subset, by removing an annotation
+<pre><code class="language-yaml">name: metadata assertion predicate change
+description: A node metadata assertion change where the predicate of a metadata assertion
+  is changed.
 from_schema: https://w3id.org/kgcl
 aliases:
-- remove term from slim
+- node scope change
 rank: 1000
-is_a: node change
-mixins:
-- remove from subset
-slot_usage:
-  change description:
-    name: change description
-    string_serialization: removing {about node} from {subset}
-  about node:
-    name: about node
-    description: The node that is removed from the subset
-    domain_of:
-    - node change
-  subset:
-    name: subset
-    description: The subset from which the node is to be removed
+is_a: node metadata assertion change
 attributes:
+  old value:
+    name: old value
+    description: The value of a property held in the old instance of the ontology
+    from_schema: https://w3id.org/kgcl
+    rank: 1000
+    alias: old_value
+    owner: metadata assertion predicate change
+    domain_of:
+    - simple change
+    - node rename
+    - set language for name
+    - remove synonym
+    - synonym replacement
+    - synonym predicate change
+    - mapping replacement
+    - mapping predicate change
+    - metadata assertion replacement
+    - metadata assertion predicate change
+    - remove text definition
+    - text definition replacement
+    range: string
+  new value:
+    name: new value
+    description: The value of a property held in the new instance of the ontology
+    from_schema: https://w3id.org/kgcl
+    rank: 1000
+    alias: new_value
+    owner: metadata assertion predicate change
+    domain_of:
+    - simple change
+    - node rename
+    - set language for name
+    - new synonym
+    - synonym replacement
+    - synonym predicate change
+    - mapping replacement
+    - mapping predicate change
+    - metadata assertion replacement
+    - metadata assertion predicate change
+    - new text definition
+    - text definition replacement
+    range: string
   about node:
     name: about node
-    description: The node that is removed from the subset
     from_schema: https://w3id.org/kgcl
     rank: 1000
     is_a: about
     multivalued: false
     alias: about_node
-    owner: removed node from subset
+    owner: metadata assertion predicate change
     domain_of:
     - node change
     range: node
@@ -520,7 +530,7 @@ attributes:
     from_schema: https://w3id.org/kgcl
     rank: 1000
     alias: about_node_representation
-    owner: removed node from subset
+    owner: metadata assertion predicate change
     domain_of:
     - node change
     range: string
@@ -530,47 +540,13 @@ attributes:
     from_schema: https://w3id.org/kgcl
     rank: 1000
     alias: language
-    owner: removed node from subset
+    owner: metadata assertion predicate change
     domain_of:
     - edge change
     - node change
     - new synonym
     - node creation
     range: language tag
-  old value:
-    name: old value
-    description: The value of a property held in the old instance of the ontology
-    from_schema: https://w3id.org/kgcl
-    rank: 1000
-    alias: old_value
-    owner: removed node from subset
-    domain_of:
-    - simple change
-    - node rename
-    - set language for name
-    - remove synonym
-    - synonym replacement
-    - synonym predicate change
-    - remove text definition
-    - text definition replacement
-    range: string
-  new value:
-    name: new value
-    description: The value of a property held in the new instance of the ontology
-    from_schema: https://w3id.org/kgcl
-    rank: 1000
-    alias: new_value
-    owner: removed node from subset
-    domain_of:
-    - simple change
-    - node rename
-    - set language for name
-    - new synonym
-    - synonym replacement
-    - synonym predicate change
-    - new text definition
-    - text definition replacement
-    range: string
   old value type:
     name: old value type
     description: The type (IRI or Literal) of an old value
@@ -578,7 +554,7 @@ attributes:
     from_schema: https://w3id.org/kgcl
     rank: 1000
     alias: old_value_type
-    owner: removed node from subset
+    owner: metadata assertion predicate change
     domain_of:
     - simple change
     range: string
@@ -589,7 +565,7 @@ attributes:
     from_schema: https://w3id.org/kgcl
     rank: 1000
     alias: new_value_type
-    owner: removed node from subset
+    owner: metadata assertion predicate change
     domain_of:
     - simple change
     range: string
@@ -599,7 +575,7 @@ attributes:
     from_schema: https://w3id.org/kgcl
     rank: 1000
     alias: new_language
-    owner: removed node from subset
+    owner: metadata assertion predicate change
     domain_of:
     - simple change
     - node rename
@@ -610,7 +586,7 @@ attributes:
     from_schema: https://w3id.org/kgcl
     rank: 1000
     alias: old_language
-    owner: removed node from subset
+    owner: metadata assertion predicate change
     domain_of:
     - simple change
     - node rename
@@ -621,7 +597,7 @@ attributes:
     from_schema: https://w3id.org/kgcl
     rank: 1000
     alias: new_datatype
-    owner: removed node from subset
+    owner: metadata assertion predicate change
     domain_of:
     - simple change
     range: string
@@ -631,7 +607,7 @@ attributes:
     from_schema: https://w3id.org/kgcl
     rank: 1000
     alias: old_datatype
-    owner: removed node from subset
+    owner: metadata assertion predicate change
     domain_of:
     - simple change
     range: string
@@ -641,7 +617,7 @@ attributes:
     rank: 1000
     identifier: true
     alias: id
-    owner: removed node from subset
+    owner: metadata assertion predicate change
     domain_of:
     - change
     - activity
@@ -655,7 +631,7 @@ attributes:
     slot_uri: rdf:type
     designates_type: true
     alias: type
-    owner: removed node from subset
+    owner: metadata assertion predicate change
     domain_of:
     - change
     range: string
@@ -667,7 +643,7 @@ attributes:
     rank: 1000
     slot_uri: prov:wasGeneratedBy
     alias: was_generated_by
-    owner: removed node from subset
+    owner: metadata assertion predicate change
     domain_of:
     - change
     range: activity
@@ -680,7 +656,7 @@ attributes:
     rank: 1000
     slot_uri: rdfs:seeAlso
     alias: see_also
-    owner: removed node from subset
+    owner: metadata assertion predicate change
     domain_of:
     - change
     range: string
@@ -691,7 +667,7 @@ attributes:
     from_schema: https://w3id.org/kgcl
     rank: 1000
     alias: pull_request
-    owner: removed node from subset
+    owner: metadata assertion predicate change
     domain_of:
     - change
     range: string
@@ -703,7 +679,7 @@ attributes:
     rank: 1000
     slot_uri: dcterms:creator
     alias: creator
-    owner: removed node from subset
+    owner: metadata assertion predicate change
     domain_of:
     - change
     range: string
@@ -715,7 +691,7 @@ attributes:
     rank: 1000
     slot_uri: dcterms:date
     alias: change_date
-    owner: removed node from subset
+    owner: metadata assertion predicate change
     domain_of:
     - change
     range: string
@@ -725,7 +701,7 @@ attributes:
     rank: 1000
     slot_uri: dcterms:creator
     alias: contributor
-    owner: removed node from subset
+    owner: metadata assertion predicate change
     domain_of:
     - change
     range: string
@@ -737,20 +713,10 @@ attributes:
     domain: change
     multivalued: false
     alias: has_undo
-    owner: removed node from subset
+    owner: metadata assertion predicate change
     domain_of:
     - change
-    range: add to subset
-  in subset:
-    name: in subset
-    description: subset that the element is being removed from
-    from_schema: https://w3id.org/kgcl
-    rank: 1000
-    alias: in_subset
-    owner: removed node from subset
-    domain_of:
-    - subset membership change
-    range: ontology subset
+    range: change
 
 </code></pre>
 </details>

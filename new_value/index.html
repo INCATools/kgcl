@@ -370,6 +370,22 @@
 <td>A node synonym change where the predicate of a synonym is changed</td>
 </tr>
 <tr>
+<td><a href="../MappingReplacement/">MappingReplacement</a></td>
+<td>A node mapping change where the object of a mapping is changed</td>
+</tr>
+<tr>
+<td><a href="../MappingPredicateChange/">MappingPredicateChange</a></td>
+<td>A node mapping change where the predicate of a mapping is changed</td>
+</tr>
+<tr>
+<td><a href="../MetadataAssertionReplacement/">MetadataAssertionReplacement</a></td>
+<td>A node metadata assertion change where the object of a metadata assertion is ...</td>
+</tr>
+<tr>
+<td><a href="../MetadataAssertionPredicateChange/">MetadataAssertionPredicateChange</a></td>
+<td>A node metadata assertion change where the predicate of a metadata assertion ...</td>
+</tr>
+<tr>
 <td><a href="../NewTextDefinition/">NewTextDefinition</a></td>
 <td>A node change where a de-novo text definition is created</td>
 </tr>
@@ -458,6 +474,30 @@
 <td>A node synonym change where a synonym is deleted</td>
 </tr>
 <tr>
+<td><a href="../NodeMappingChange/">NodeMappingChange</a></td>
+<td>A node change where the mappings for that node are altered</td>
+</tr>
+<tr>
+<td><a href="../NewMapping/">NewMapping</a></td>
+<td>A node mapping change where a mapping is added to a node</td>
+</tr>
+<tr>
+<td><a href="../RemoveMapping/">RemoveMapping</a></td>
+<td>A node mapping change where a mapping is deleted</td>
+</tr>
+<tr>
+<td><a href="../NodeMetadataAssertionChange/">NodeMetadataAssertionChange</a></td>
+<td>A node change where the metadata assertion (OWL annotations) for that node ar...</td>
+</tr>
+<tr>
+<td><a href="../NewMetadataAssertion/">NewMetadataAssertion</a></td>
+<td>A node metadata assertion change where a metadata assertion is added to a nod...</td>
+</tr>
+<tr>
+<td><a href="../RemoveMetadataAssertion/">RemoveMetadataAssertion</a></td>
+<td>A node metadata assertion change where a metadata assertion is deleted</td>
+</tr>
+<tr>
 <td><a href="../NodeTextDefinitionChange/">NodeTextDefinitionChange</a></td>
 <td>A node change where the text definition is changed</td>
 </tr>
@@ -470,7 +510,7 @@
 <td>Places a node inside a subset, by annotating that node</td>
 </tr>
 <tr>
-<td><a href="../RemovedNodeFromSubset/">RemovedNodeFromSubset</a></td>
+<td><a href="../RemoveNodeFromSubset/">RemoveNodeFromSubset</a></td>
 <td>Removes a node from a subset, by removing an annotation</td>
 </tr>
 <tr>
@@ -531,6 +571,10 @@ domain_of:
 - new synonym
 - synonym replacement
 - synonym predicate change
+- mapping replacement
+- mapping predicate change
+- metadata assertion replacement
+- metadata assertion predicate change
 - new text definition
 - text definition replacement
 range: string

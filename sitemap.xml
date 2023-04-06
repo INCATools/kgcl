@@ -201,6 +201,26 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://incatools.github.io/kgcl_schema/MappingPredicateChange/</loc>
+         <lastmod>2023-04-06</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://incatools.github.io/kgcl_schema/MappingReplacement/</loc>
+         <lastmod>2023-04-06</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://incatools.github.io/kgcl_schema/MetadataAssertionPredicateChange/</loc>
+         <lastmod>2023-04-06</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://incatools.github.io/kgcl_schema/MetadataAssertionReplacement/</loc>
+         <lastmod>2023-04-06</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://incatools.github.io/kgcl_schema/MultiNodeObsoletion/</loc>
          <lastmod>2023-04-06</lastmod>
          <changefreq>daily</changefreq>
@@ -212,6 +232,16 @@
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl_schema/Ncname/</loc>
+         <lastmod>2023-04-06</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://incatools.github.io/kgcl_schema/NewMapping/</loc>
+         <lastmod>2023-04-06</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://incatools.github.io/kgcl_schema/NewMetadataAssertion/</loc>
          <lastmod>2023-04-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -262,6 +292,16 @@
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl_schema/NodeDirectMerge/</loc>
+         <lastmod>2023-04-06</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://incatools.github.io/kgcl_schema/NodeMappingChange/</loc>
+         <lastmod>2023-04-06</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://incatools.github.io/kgcl_schema/NodeMetadataAssertionChange/</loc>
          <lastmod>2023-04-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -326,6 +366,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://incatools.github.io/kgcl_schema/ObsoletionPolicyEnum/</loc>
+         <lastmod>2023-04-06</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://incatools.github.io/kgcl_schema/OntologyElement/</loc>
          <lastmod>2023-04-06</lastmod>
          <changefreq>daily</changefreq>
@@ -361,6 +406,21 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://incatools.github.io/kgcl_schema/RemoveMapping/</loc>
+         <lastmod>2023-04-06</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://incatools.github.io/kgcl_schema/RemoveMetadataAssertion/</loc>
+         <lastmod>2023-04-06</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://incatools.github.io/kgcl_schema/RemoveNodeFromSubset/</loc>
+         <lastmod>2023-04-06</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://incatools.github.io/kgcl_schema/RemoveSynonym/</loc>
          <lastmod>2023-04-06</lastmod>
          <changefreq>daily</changefreq>
@@ -372,11 +432,6 @@
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl_schema/RemoveUnder/</loc>
-         <lastmod>2023-04-06</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://incatools.github.io/kgcl_schema/RemovedNodeFromSubset/</loc>
          <lastmod>2023-04-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -696,7 +751,12 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://incatools.github.io/kgcl_schema/obsoletion_policy/</loc>
+         <loc>https://incatools.github.io/kgcl_schema/obsolete_node_label_prefix/</loc>
+         <lastmod>2023-04-06</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://incatools.github.io/kgcl_schema/obsoletion_policies/</loc>
          <lastmod>2023-04-06</lastmod>
          <changefreq>daily</changefreq>
     </url>

@@ -219,9 +219,11 @@
       NodeChange &lt;|-- SetLanguageForName
       NodeChange &lt;|-- NodeAnnotationChange
       NodeChange &lt;|-- NodeSynonymChange
+      NodeChange &lt;|-- NodeMappingChange
+      NodeChange &lt;|-- NodeMetadataAssertionChange
       NodeChange &lt;|-- NodeTextDefinitionChange
       NodeChange &lt;|-- AddNodeToSubset
-      NodeChange &lt;|-- RemovedNodeFromSubset
+      NodeChange &lt;|-- RemoveNodeFromSubset
       NodeChange &lt;|-- NodeObsoletion
       NodeChange &lt;|-- NodeUnobsoletion
       NodeChange &lt;|-- NodeCreation
@@ -285,9 +287,11 @@
 <li><a href="../SetLanguageForName/">SetLanguageForName</a> [ <a href="../LanguageTagChange/">LanguageTagChange</a>]</li>
 <li><a href="../NodeAnnotationChange/">NodeAnnotationChange</a></li>
 <li><a href="../NodeSynonymChange/">NodeSynonymChange</a></li>
+<li><a href="../NodeMappingChange/">NodeMappingChange</a></li>
+<li><a href="../NodeMetadataAssertionChange/">NodeMetadataAssertionChange</a></li>
 <li><a href="../NodeTextDefinitionChange/">NodeTextDefinitionChange</a></li>
 <li><a href="../AddNodeToSubset/">AddNodeToSubset</a> [ <a href="../AddToSubset/">AddToSubset</a>]</li>
-<li><a href="../RemovedNodeFromSubset/">RemovedNodeFromSubset</a> [ <a href="../RemoveFromSubset/">RemoveFromSubset</a>]</li>
+<li><a href="../RemoveNodeFromSubset/">RemoveNodeFromSubset</a> [ <a href="../RemoveFromSubset/">RemoveFromSubset</a>]</li>
 <li><a href="../NodeObsoletion/">NodeObsoletion</a> [ <a href="../Obsoletion/">Obsoletion</a>]</li>
 <li><a href="../NodeUnobsoletion/">NodeUnobsoletion</a> [ <a href="../Unobsoletion/">Unobsoletion</a>]</li>
 <li><a href="../NodeCreation/">NodeCreation</a> [ <a href="../Creation/">Creation</a>]</li>
@@ -531,6 +535,10 @@ attributes:
     - remove synonym
     - synonym replacement
     - synonym predicate change
+    - mapping replacement
+    - mapping predicate change
+    - metadata assertion replacement
+    - metadata assertion predicate change
     - remove text definition
     - text definition replacement
     range: string
@@ -548,6 +556,10 @@ attributes:
     - new synonym
     - synonym replacement
     - synonym predicate change
+    - mapping replacement
+    - mapping predicate change
+    - metadata assertion replacement
+    - metadata assertion predicate change
     - new text definition
     - text definition replacement
     range: string

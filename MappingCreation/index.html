@@ -521,6 +521,7 @@
 <details>
 <pre><code class="language-yaml">name: mapping creation
 description: A specific kind of edge creation in which the created edge is a mapping.
+deprecated: use NewMapping
 todos:
 - decide whether to make a corresponding change to the datamodel
 from_schema: https://w3id.org/kgcl
@@ -557,6 +558,10 @@ slot_usage:
     - edge deletion
     - edge obsoletion
     - mapping creation
+    - new mapping
+    - remove mapping
+    - new metadata assertion
+    - remove metadata assertion
     - edge
   object:
     name: object
@@ -566,6 +571,10 @@ slot_usage:
     - edge deletion
     - edge obsoletion
     - mapping creation
+    - new mapping
+    - remove mapping
+    - new metadata assertion
+    - remove metadata assertion
     - edge
 
 </code></pre>
@@ -574,6 +583,7 @@ slot_usage:
 <details>
 <pre><code class="language-yaml">name: mapping creation
 description: A specific kind of edge creation in which the created edge is a mapping.
+deprecated: use NewMapping
 todos:
 - decide whether to make a corresponding change to the datamodel
 from_schema: https://w3id.org/kgcl
@@ -605,6 +615,10 @@ slot_usage:
     - edge deletion
     - edge obsoletion
     - mapping creation
+    - new mapping
+    - remove mapping
+    - new metadata assertion
+    - remove metadata assertion
     - edge
   object:
     name: object
@@ -614,6 +628,10 @@ slot_usage:
     - edge deletion
     - edge obsoletion
     - mapping creation
+    - new mapping
+    - remove mapping
+    - new metadata assertion
+    - remove metadata assertion
     - edge
 attributes:
   subject:
@@ -643,6 +661,10 @@ attributes:
     - edge deletion
     - edge obsoletion
     - mapping creation
+    - new mapping
+    - remove mapping
+    - new metadata assertion
+    - remove metadata assertion
     - edge
     range: node
   object:
@@ -657,6 +679,10 @@ attributes:
     - edge deletion
     - edge obsoletion
     - mapping creation
+    - new mapping
+    - remove mapping
+    - new metadata assertion
+    - remove metadata assertion
     - edge
     range: node
   annotation set:
@@ -760,6 +786,10 @@ attributes:
     - remove synonym
     - synonym replacement
     - synonym predicate change
+    - mapping replacement
+    - mapping predicate change
+    - metadata assertion replacement
+    - metadata assertion predicate change
     - remove text definition
     - text definition replacement
     range: string
@@ -777,6 +807,10 @@ attributes:
     - new synonym
     - synonym replacement
     - synonym predicate change
+    - mapping replacement
+    - mapping predicate change
+    - metadata assertion replacement
+    - metadata assertion predicate change
     - new text definition
     - text definition replacement
     range: string

@@ -214,7 +214,11 @@
 
       Configuration : name_predicate
 
-      Configuration : obsoletion_policy
+      Configuration : obsolete_node_label_prefix
+
+      Configuration : obsoletion_policies
+
+          Configuration ..&gt; ObsoletionPolicyEnum : obsoletion_policies
 
       Configuration : obsoletion_workflow
 
@@ -271,14 +275,20 @@
 <td>direct</td>
 </tr>
 <tr>
+<td><a href="../obsolete_node_label_prefix/">obsolete_node_label_prefix</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>A prefix to add to the label of an obsolete node</td>
+<td>direct</td>
+</tr>
+<tr>
 <td><a href="../obsoletion_workflow/">obsoletion_workflow</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
 <td></td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../obsoletion_policy/">obsoletion_policy</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
+<td><a href="../obsoletion_policies/">obsoletion_policies</a></td>
+<td>0..* <br/> <a href="../ObsoletionPolicyEnum/">ObsoletionPolicyEnum</a></td>
 <td></td>
 <td>direct</td>
 </tr>
@@ -317,38 +327,47 @@ description: The meaning of operations can be configured
 from_schema: https://w3id.org/kgcl
 rank: 1000
 attributes:
-  name predicate:
-    name: name predicate
+  name_predicate:
+    name: name_predicate
     from_schema: https://w3id.org/kgcl
     rank: 1000
-  definition predicate:
-    name: definition predicate
+  definition_predicate:
+    name: definition_predicate
     from_schema: https://w3id.org/kgcl
     rank: 1000
-  main synonym predicate:
-    name: main synonym predicate
+  main_synonym_predicate:
+    name: main_synonym_predicate
     from_schema: https://w3id.org/kgcl
     rank: 1000
-  synonym predicates:
-    name: synonym predicates
+  synonym_predicates:
+    name: synonym_predicates
     from_schema: https://w3id.org/kgcl
     rank: 1000
-  creator predicate:
-    name: creator predicate
+  creator_predicate:
+    name: creator_predicate
     from_schema: https://w3id.org/kgcl
     rank: 1000
-  contributor predicate:
-    name: contributor predicate
+  contributor_predicate:
+    name: contributor_predicate
     from_schema: https://w3id.org/kgcl
     rank: 1000
-  obsoletion workflow:
-    name: obsoletion workflow
+  obsolete_node_label_prefix:
+    name: obsolete_node_label_prefix
+    description: A prefix to add to the label of an obsolete node. This may include
+      a space at the end.
     from_schema: https://w3id.org/kgcl
     rank: 1000
-  obsoletion policy:
-    name: obsoletion policy
+    range: string
+  obsoletion_workflow:
+    name: obsoletion_workflow
     from_schema: https://w3id.org/kgcl
     rank: 1000
+  obsoletion_policies:
+    name: obsoletion_policies
+    from_schema: https://w3id.org/kgcl
+    rank: 1000
+    multivalued: true
+    range: ObsoletionPolicyEnum
 
 </code></pre>
 </details>
@@ -359,8 +378,8 @@ description: The meaning of operations can be configured
 from_schema: https://w3id.org/kgcl
 rank: 1000
 attributes:
-  name predicate:
-    name: name predicate
+  name_predicate:
+    name: name_predicate
     from_schema: https://w3id.org/kgcl
     rank: 1000
     alias: name_predicate
@@ -368,8 +387,8 @@ attributes:
     domain_of:
     - configuration
     range: string
-  definition predicate:
-    name: definition predicate
+  definition_predicate:
+    name: definition_predicate
     from_schema: https://w3id.org/kgcl
     rank: 1000
     alias: definition_predicate
@@ -377,8 +396,8 @@ attributes:
     domain_of:
     - configuration
     range: string
-  main synonym predicate:
-    name: main synonym predicate
+  main_synonym_predicate:
+    name: main_synonym_predicate
     from_schema: https://w3id.org/kgcl
     rank: 1000
     alias: main_synonym_predicate
@@ -386,8 +405,8 @@ attributes:
     domain_of:
     - configuration
     range: string
-  synonym predicates:
-    name: synonym predicates
+  synonym_predicates:
+    name: synonym_predicates
     from_schema: https://w3id.org/kgcl
     rank: 1000
     alias: synonym_predicates
@@ -395,8 +414,8 @@ attributes:
     domain_of:
     - configuration
     range: string
-  creator predicate:
-    name: creator predicate
+  creator_predicate:
+    name: creator_predicate
     from_schema: https://w3id.org/kgcl
     rank: 1000
     alias: creator_predicate
@@ -404,8 +423,8 @@ attributes:
     domain_of:
     - configuration
     range: string
-  contributor predicate:
-    name: contributor predicate
+  contributor_predicate:
+    name: contributor_predicate
     from_schema: https://w3id.org/kgcl
     rank: 1000
     alias: contributor_predicate
@@ -413,8 +432,19 @@ attributes:
     domain_of:
     - configuration
     range: string
-  obsoletion workflow:
-    name: obsoletion workflow
+  obsolete_node_label_prefix:
+    name: obsolete_node_label_prefix
+    description: A prefix to add to the label of an obsolete node. This may include
+      a space at the end.
+    from_schema: https://w3id.org/kgcl
+    rank: 1000
+    alias: obsolete_node_label_prefix
+    owner: configuration
+    domain_of:
+    - configuration
+    range: string
+  obsoletion_workflow:
+    name: obsoletion_workflow
     from_schema: https://w3id.org/kgcl
     rank: 1000
     alias: obsoletion_workflow
@@ -422,15 +452,16 @@ attributes:
     domain_of:
     - configuration
     range: string
-  obsoletion policy:
-    name: obsoletion policy
+  obsoletion_policies:
+    name: obsoletion_policies
     from_schema: https://w3id.org/kgcl
     rank: 1000
-    alias: obsoletion_policy
+    multivalued: true
+    alias: obsoletion_policies
     owner: configuration
     domain_of:
     - configuration
-    range: string
+    range: ObsoletionPolicyEnum
 
 </code></pre>
 </details>
