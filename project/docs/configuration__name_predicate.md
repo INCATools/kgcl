@@ -1,5 +1,5 @@
 
-# Slot: name predicate
+# Slot: name_predicate
 
 
 

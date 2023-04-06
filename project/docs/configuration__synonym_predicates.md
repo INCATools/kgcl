@@ -1,5 +1,5 @@
 
-# Slot: synonym predicates
+# Slot: synonym_predicates
 
 
 

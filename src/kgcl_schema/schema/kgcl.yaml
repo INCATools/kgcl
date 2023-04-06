@@ -145,7 +145,12 @@ classes:
       property value set:
         description: >-
           Summary statistic is grouped by these constraints
-      
+
+  # -----------
+  # Mixins
+  # -----------
+  # Generic patterns that can be used for multiple change types
+
   change mixin:
     mixin: true
     description: >-
@@ -190,8 +195,6 @@ classes:
 
   datatype change:
     is_a: datatype or language tag change
-
-
 
   allows automatic replacement of edges:
     is_a: obsoletion
@@ -257,7 +260,9 @@ classes:
       has undo:
         range: add to subset
 
-  ## -- EDGE CHANGES --
+  # -----------
+  # Edge Changes
+  # -----------
         
   edge change:
     abstract: true
@@ -363,6 +368,7 @@ classes:
       - value: changing G1 annotated-to T1 to G1 annotated-to T2, after obsoletion of T1 and replacement with T2
 
   mapping creation:
+    deprecated: use NewMapping
     aliases:
       - xref creation
     is_a: edge creation
@@ -443,7 +449,10 @@ classes:
     description: >-
       A simple change where a logical axiom is changed, where the logical axiom cannot be represented as an edge
 
-        
+  # -----------
+  # Node Changes
+  # -----------
+
   node change:
     abstract: true
     is_a: simple change
@@ -453,6 +462,8 @@ classes:
       - about node
       - about node representation
       - language
+
+  # Names
 
   node rename:
     is_a: node change
@@ -489,6 +500,8 @@ classes:
       change description:
         string_serialization: "changed {about node} name language from {old value} to {new value}"
 
+  # Annotations/metadata
+
   node annotation change:
     description: >-
       A node change where the change alters node properties/annotations. TODO
@@ -502,6 +515,8 @@ classes:
     description: >-
       A node annotation change where the change replaces a particular property value. TODO
 
+  # Synonyms
+
   node synonym change:
     is_a: node change
     
@@ -513,6 +528,10 @@ classes:
       - new value
       - language
       - qualifier
+    aliases:
+      - new alias
+      - create synonym
+      - add synonym
 
   name becomes synonym:
     is_a: node synonym change
@@ -526,8 +545,7 @@ classes:
         description: >-
       change description:
         string_serialization: "synonym {synonym} becomes new name of {about node}, and name {name} becomes a synonym"
-          
-      
+
   remove synonym:
     description: >-
       A node synonym change where a synonym is deleted
@@ -556,6 +574,98 @@ classes:
       - old value
       - new value
       - has textual diff
+
+  # Mappings
+
+  node mapping change:
+    description: >-
+      A node change where the mappings for that node are altered
+    is_a: node change
+    aliases:
+      - xref change
+
+  new mapping:
+    description: >-
+      A node mapping change where a mapping is added to a node
+    is_a: node mapping change
+    slots:
+      - object
+      - predicate
+    aliases:
+      - xref change
+
+  remove mapping:
+    description: >-
+      A node mapping change where a mapping is deleted
+    is_a: node mapping change
+    slots:
+      - object
+      - predicate
+
+  mapping replacement:
+    description: >-
+      A node mapping change where the object of a mapping is changed
+    is_a: node mapping change
+    slots:
+      - old value
+      - new value
+
+  mapping predicate change:
+    aliases:
+      - node scope change
+    description: >-
+      A node mapping change where the predicate of a mapping is changed.
+    is_a: node mapping change
+    slots:
+      - old value
+      - new value
+
+  # Metadata
+
+  node metadata assertion change:
+    description: >-
+      A node change where the metadata assertion (OWL annotations) for that node are altered
+    is_a: node change
+    aliases:
+      - node annotation change
+
+  new metadata assertion:
+    description: >-
+      A node metadata assertion change where a metadata assertion is added to a node
+    is_a: node metadata assertion change
+    slots:
+      - object
+      - predicate
+    aliases:
+      - xref change
+
+  remove metadata assertion:
+    description: >-
+      A node metadata assertion change where a metadata assertion is deleted
+    is_a: node metadata assertion change
+    slots:
+      - object
+      - predicate
+
+  metadata assertion replacement:
+    description: >-
+      A node metadata assertion change where the object of a metadata assertion is changed
+    is_a: node metadata assertion change
+    slots:
+      - old value
+      - new value
+
+  metadata assertion predicate change:
+    aliases:
+      - node scope change
+    description: >-
+      A node metadata assertion change where the predicate of a metadata assertion is changed.
+    is_a: node metadata assertion change
+    slots:
+      - old value
+      - new value
+
+  # Definitions
 
   node text definition change:
     abstract: true
@@ -586,6 +696,8 @@ classes:
       - new value
       - has textual diff
 
+  # Subsets (slims)
+
   add node to subset:
     aliases:
       - add term to slim
@@ -597,7 +709,7 @@ classes:
     see_also:
       - http://wiki.geneontology.org/index.php/Adding_a_Term_to_a_GO_Subset_(Slim)
 
-  removed node from subset:
+  remove node from subset:
     aliases:
       - remove term from slim
     is_a: node change
@@ -614,6 +726,8 @@ classes:
       subset:
         description: >-
           The subset from which the node is to be removed
+
+  # Obsoletion/Deprecation
 
   node obsoletion:
     aliases:
@@ -665,7 +779,9 @@ classes:
         range: node
     see_also:
       - http://wiki.geneontology.org/index.php/Restoring_an_Obsolete_Ontology_Term
-        
+
+  # Node creation/deletion
+
   node creation:
     is_a: node change
     mixins:
@@ -754,6 +870,10 @@ classes:
       change description:
         string_serialization: "obsoleting {about node} considering {has nondirect replacement}"
 
+  # ---
+  # Non-change objects
+  # ---
+
   textual diff:
     description: >-
       A summarizing of a change on a piece of text. This could be rendered in a number of different ways
@@ -762,14 +882,20 @@ classes:
     description: >-
       The meaning of operations can be configured
     attributes:
-      name predicate:
-      definition predicate:
-      main synonym predicate:
-      synonym predicates:
-      creator predicate:
-      contributor predicate:
-      obsoletion workflow:
-      obsoletion policy:
+      name_predicate:
+      definition_predicate:
+      main_synonym_predicate:
+      synonym_predicates:
+      creator_predicate:
+      contributor_predicate:
+      obsolete_node_label_prefix:
+        range: string
+        description: >-
+          A prefix to add to the label of an obsolete node. This may include a space at the end.
+      obsoletion_workflow:
+      obsoletion_policies:
+        multivalued: true
+        range: ObsoletionPolicyEnum
 
   session:
     description: >-
@@ -1017,3 +1143,10 @@ slots:
       - if a node obsoletion C, C about N1, and C has direct replacement N2, and there exists an edge with an edge property referencing N1, it is possible to replace with N2
       - if a node obsoletion C C about N1, and Chas direct replacement N2, then N1 oio:consider N2
     
+enums:
+
+  ObsoletionPolicyEnum:
+    permissible_values:
+      NoLogicalAxiomsOnObsoletes:
+        description: >-
+          The obsoletion policy is that there MUST NOT be logical axioms about an obsolete node

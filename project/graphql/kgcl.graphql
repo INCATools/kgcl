@@ -145,8 +145,9 @@ type Configuration
     synonymPredicates: String
     creatorPredicate: String
     contributorPredicate: String
+    obsoleteNodeLabelPrefix: String
     obsoletionWorkflow: String
-    obsoletionPolicy: String
+    obsoletionPolicies: [ObsoletionPolicyEnum]
   }
 
 interface Creation
@@ -421,6 +422,102 @@ type MappingCreation implements Creation
     changeDescription: String
   }
 
+type MappingPredicateChange
+  {
+    id: String!
+    type: String
+    wasGeneratedBy: Activity
+    seeAlso: String
+    pullRequest: String
+    creator: String
+    changeDate: String
+    contributor: String
+    hasUndo: Change
+    oldValueType: String
+    newValueType: String
+    newLanguage: String
+    oldLanguage: String
+    newDatatype: String
+    oldDatatype: String
+    aboutNode: Node
+    aboutNodeRepresentation: String
+    language: LanguageTag
+    oldValue: String
+    newValue: String
+  }
+
+type MappingReplacement
+  {
+    id: String!
+    type: String
+    wasGeneratedBy: Activity
+    seeAlso: String
+    pullRequest: String
+    creator: String
+    changeDate: String
+    contributor: String
+    hasUndo: Change
+    oldValueType: String
+    newValueType: String
+    newLanguage: String
+    oldLanguage: String
+    newDatatype: String
+    oldDatatype: String
+    aboutNode: Node
+    aboutNodeRepresentation: String
+    language: LanguageTag
+    oldValue: String
+    newValue: String
+  }
+
+type MetadataAssertionPredicateChange
+  {
+    id: String!
+    type: String
+    wasGeneratedBy: Activity
+    seeAlso: String
+    pullRequest: String
+    creator: String
+    changeDate: String
+    contributor: String
+    hasUndo: Change
+    oldValueType: String
+    newValueType: String
+    newLanguage: String
+    oldLanguage: String
+    newDatatype: String
+    oldDatatype: String
+    aboutNode: Node
+    aboutNodeRepresentation: String
+    language: LanguageTag
+    oldValue: String
+    newValue: String
+  }
+
+type MetadataAssertionReplacement
+  {
+    id: String!
+    type: String
+    wasGeneratedBy: Activity
+    seeAlso: String
+    pullRequest: String
+    creator: String
+    changeDate: String
+    contributor: String
+    hasUndo: Change
+    oldValueType: String
+    newValueType: String
+    newLanguage: String
+    oldLanguage: String
+    newDatatype: String
+    oldDatatype: String
+    aboutNode: Node
+    aboutNodeRepresentation: String
+    language: LanguageTag
+    oldValue: String
+    newValue: String
+  }
+
 type MultiNodeObsoletion
   {
     id: String!
@@ -462,6 +559,58 @@ type NameBecomesSynonym
     change1: NodeRename
     change2: NewSynonym
     changeDescription: String
+  }
+
+type NewMapping
+  {
+    id: String!
+    type: String
+    wasGeneratedBy: Activity
+    seeAlso: String
+    pullRequest: String
+    creator: String
+    changeDate: String
+    contributor: String
+    hasUndo: Change
+    oldValue: String
+    newValue: String
+    oldValueType: String
+    newValueType: String
+    newLanguage: String
+    oldLanguage: String
+    newDatatype: String
+    oldDatatype: String
+    aboutNode: Node
+    aboutNodeRepresentation: String
+    language: LanguageTag
+    object: Node
+    predicate: Node
+  }
+
+type NewMetadataAssertion
+  {
+    id: String!
+    type: String
+    wasGeneratedBy: Activity
+    seeAlso: String
+    pullRequest: String
+    creator: String
+    changeDate: String
+    contributor: String
+    hasUndo: Change
+    oldValue: String
+    newValue: String
+    oldValueType: String
+    newValueType: String
+    newLanguage: String
+    oldLanguage: String
+    newDatatype: String
+    oldDatatype: String
+    aboutNode: Node
+    aboutNodeRepresentation: String
+    language: LanguageTag
+    object: Node
+    predicate: Node
   }
 
 type NewSynonym
@@ -707,6 +856,54 @@ type NodeDirectMerge implements AllowsAutomaticReplacementOfEdges
     hasDirectReplacement: Node!
     aboutNode: Node
     changeDescription: String
+  }
+
+type NodeMappingChange
+  {
+    id: String!
+    type: String
+    wasGeneratedBy: Activity
+    seeAlso: String
+    pullRequest: String
+    creator: String
+    changeDate: String
+    contributor: String
+    hasUndo: Change
+    oldValue: String
+    newValue: String
+    oldValueType: String
+    newValueType: String
+    newLanguage: String
+    oldLanguage: String
+    newDatatype: String
+    oldDatatype: String
+    aboutNode: Node
+    aboutNodeRepresentation: String
+    language: LanguageTag
+  }
+
+type NodeMetadataAssertionChange
+  {
+    id: String!
+    type: String
+    wasGeneratedBy: Activity
+    seeAlso: String
+    pullRequest: String
+    creator: String
+    changeDate: String
+    contributor: String
+    hasUndo: Change
+    oldValue: String
+    newValue: String
+    oldValueType: String
+    newValueType: String
+    newLanguage: String
+    oldLanguage: String
+    newDatatype: String
+    oldDatatype: String
+    aboutNode: Node
+    aboutNodeRepresentation: String
+    language: LanguageTag
   }
 
 type NodeMove
@@ -1040,6 +1237,85 @@ interface RemoveFromSubset
     hasUndo: AddToSubset
   }
 
+type RemoveMapping
+  {
+    id: String!
+    type: String
+    wasGeneratedBy: Activity
+    seeAlso: String
+    pullRequest: String
+    creator: String
+    changeDate: String
+    contributor: String
+    hasUndo: Change
+    oldValue: String
+    newValue: String
+    oldValueType: String
+    newValueType: String
+    newLanguage: String
+    oldLanguage: String
+    newDatatype: String
+    oldDatatype: String
+    aboutNode: Node
+    aboutNodeRepresentation: String
+    language: LanguageTag
+    object: Node
+    predicate: Node
+  }
+
+type RemoveMetadataAssertion
+  {
+    id: String!
+    type: String
+    wasGeneratedBy: Activity
+    seeAlso: String
+    pullRequest: String
+    creator: String
+    changeDate: String
+    contributor: String
+    hasUndo: Change
+    oldValue: String
+    newValue: String
+    oldValueType: String
+    newValueType: String
+    newLanguage: String
+    oldLanguage: String
+    newDatatype: String
+    oldDatatype: String
+    aboutNode: Node
+    aboutNodeRepresentation: String
+    language: LanguageTag
+    object: Node
+    predicate: Node
+  }
+
+type RemoveNodeFromSubset implements RemoveFromSubset
+  {
+    id: String!
+    type: String
+    wasGeneratedBy: Activity
+    seeAlso: String
+    pullRequest: String
+    creator: String
+    changeDate: String
+    contributor: String
+    hasUndo: Change
+    oldValue: String
+    newValue: String
+    oldValueType: String
+    newValueType: String
+    newLanguage: String
+    oldLanguage: String
+    newDatatype: String
+    oldDatatype: String
+    aboutNodeRepresentation: String
+    language: LanguageTag
+    changeDescription: String
+    aboutNode: Node
+    subset: String
+    inSubset: OntologySubset
+  }
+
 type RemoveSynonym
   {
     id: String!
@@ -1118,33 +1394,6 @@ type RemoveUnder
     objectType: String
     annotationSet: Annotation
     changeDescription: String
-  }
-
-type RemovedNodeFromSubset implements RemoveFromSubset
-  {
-    id: String!
-    type: String
-    wasGeneratedBy: Activity
-    seeAlso: String
-    pullRequest: String
-    creator: String
-    changeDate: String
-    contributor: String
-    hasUndo: Change
-    oldValue: String
-    newValue: String
-    oldValueType: String
-    newValueType: String
-    newLanguage: String
-    oldLanguage: String
-    newDatatype: String
-    oldDatatype: String
-    aboutNodeRepresentation: String
-    language: LanguageTag
-    changeDescription: String
-    aboutNode: Node
-    subset: String
-    inSubset: OntologySubset
   }
 
 type Session

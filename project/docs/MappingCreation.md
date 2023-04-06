@@ -1,5 +1,5 @@
 
-# Class: mapping creation
+# Class: ~~mapping creation~~ _(deprecated)_
 
 
 A specific kind of edge creation in which the created edge is a mapping.

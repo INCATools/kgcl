@@ -42,6 +42,16 @@ A data model for describing change operations at a high level on an ontology or 
              * [NodeCreation](NodeCreation.md) - a node change in which a new node is created
                  * [ClassCreation](ClassCreation.md) - A node creation where the owl type is 'class'
              * [NodeDeletion](NodeDeletion.md) - Deletion of a node from the graph. Note it is recommended nodes are obsoleted and never merged, but this operation exists to represent deletions in ontologies, accidental or otherwise
+             * [NodeMappingChange](NodeMappingChange.md) - A node change where the mappings for that node are altered
+                 * [MappingPredicateChange](MappingPredicateChange.md) - A node mapping change where the predicate of a mapping is changed.
+                 * [MappingReplacement](MappingReplacement.md) - A node mapping change where the object of a mapping is changed
+                 * [NewMapping](NewMapping.md) - A node mapping change where a mapping is added to a node
+                 * [RemoveMapping](RemoveMapping.md) - A node mapping change where a mapping is deleted
+             * [NodeMetadataAssertionChange](NodeMetadataAssertionChange.md) - A node change where the metadata assertion (OWL annotations) for that node are altered
+                 * [MetadataAssertionPredicateChange](MetadataAssertionPredicateChange.md) - A node metadata assertion change where the predicate of a metadata assertion is changed.
+                 * [MetadataAssertionReplacement](MetadataAssertionReplacement.md) - A node metadata assertion change where the object of a metadata assertion is changed
+                 * [NewMetadataAssertion](NewMetadataAssertion.md) - A node metadata assertion change where a metadata assertion is added to a node
+                 * [RemoveMetadataAssertion](RemoveMetadataAssertion.md) - A node metadata assertion change where a metadata assertion is deleted
              * [NodeObsoletion](NodeObsoletion.md) - Obsoletion of a node deprecates usage of that node, but does not delete it.
                  * [NodeDirectMerge](NodeDirectMerge.md) - An obsoletion change in which all metadata (including name/label) from the source node is deleted and added to the target node, and edges can automatically be rewired to point to the target node
                  * [NodeObsoletionWithDirectReplacement](NodeObsoletionWithDirectReplacement.md) - An obsoletion change in which information from the obsoleted node is selectively copied to a single target, and edges can automatically be rewired to point to the target node
@@ -58,7 +68,7 @@ A data model for describing change operations at a high level on an ontology or 
                  * [RemoveTextDefinition](RemoveTextDefinition.md) - A node change where a text definition is deleted
                  * [TextDefinitionReplacement](TextDefinitionReplacement.md) - A node change where a text definition is modified
              * [NodeUnobsoletion](NodeUnobsoletion.md) - unobsoletion of a node deprecates usage of that node. Rarely applied.
-             * [RemovedNodeFromSubset](RemovedNodeFromSubset.md) - Removes a node from a subset, by removing an annotation
+             * [RemoveNodeFromSubset](RemoveNodeFromSubset.md) - Removes a node from a subset, by removing an annotation
              * [SetLanguageForName](SetLanguageForName.md) - A node change where the string value for the name is unchanged but the language tag is set
      * [Transaction](Transaction.md) - A change that is a composition of a set of changes, where those changes are treated as a single unit. Could be a single change, or the results of an ontology diff
  * [ChangeSetSummaryStatistic](ChangeSetSummaryStatistic.md) - A summary statistic for a set of changes of the same type, grouped by zero or more node properties
@@ -110,7 +120,7 @@ A data model for describing change operations at a high level on an ontology or 
      * [about edge](about_edge.md)
      * [about node](about_node.md)
          * [node direct merge➞about node](node_direct_merge_about_node.md)
-         * [removed node from subset➞about node](removed_node_from_subset_about_node.md) - The node that is removed from the subset
+         * [remove node from subset➞about node](remove_node_from_subset_about_node.md) - The node that is removed from the subset
      * [obsoletion➞about](obsoletion_about.md) - The element that is obsoleted by this change.
  * [about node representation](about_node_representation.md) - The representation of a node (URI, CURIE, label) 
  * [acted on behalf of](acted_on_behalf_of.md)
@@ -145,7 +155,7 @@ A data model for describing change operations at a high level on an ontology or 
      * [node rename➞change description](node_rename_change_description.md)
      * [node unobsoletion➞change description](node_unobsoletion_change_description.md)
      * [predicate change➞change description](predicate_change_change_description.md)
-     * [removed node from subset➞change description](removed_node_from_subset_change_description.md)
+     * [remove node from subset➞change description](remove_node_from_subset_change_description.md)
      * [set language for name➞change description](set_language_for_name_change_description.md)
  * [change set](change_set.md) - A collection of changes
      * [associated change set](associated_change_set.md) - All changes associated with a set of obsoletions. This change set is the composed change set rather than the set of individual changes. For example, if previous state is:
@@ -154,14 +164,15 @@ A data model for describing change operations at a high level on an ontology or 
      * [node obsoletion➞associated change set](node_obsoletion_associated_change_set.md) - All changes forced as a result of this obsoletion. For example, starting with `A subClassOf B subClassOf C`, if we obsolete node B, then we may decide to bundle in a node move change of A from B to C. Note: this change set is not considered a part of the obsoletion, as obsoletion is considered atomic/simple. Instead this is a reference to a change set that may exist elsewhere
  * [change type](change_type.md)
      * [change set summary statistic➞change type](change_set_summary_statistic_change_type.md)
- * [➞contributor predicate](configuration__contributor_predicate.md)
- * [➞creator predicate](configuration__creator_predicate.md)
- * [➞definition predicate](configuration__definition_predicate.md)
- * [➞main synonym predicate](configuration__main_synonym_predicate.md)
- * [➞name predicate](configuration__name_predicate.md)
- * [➞obsoletion policy](configuration__obsoletion_policy.md)
- * [➞obsoletion workflow](configuration__obsoletion_workflow.md)
- * [➞synonym predicates](configuration__synonym_predicates.md)
+ * [➞contributor_predicate](configuration__contributor_predicate.md)
+ * [➞creator_predicate](configuration__creator_predicate.md)
+ * [➞definition_predicate](configuration__definition_predicate.md)
+ * [➞main_synonym_predicate](configuration__main_synonym_predicate.md)
+ * [➞name_predicate](configuration__name_predicate.md)
+ * [➞obsolete_node_label_prefix](configuration__obsolete_node_label_prefix.md) - A prefix to add to the label of an obsolete node. This may include a space at the end.
+ * [➞obsoletion_policies](configuration__obsoletion_policies.md)
+ * [➞obsoletion_workflow](configuration__obsoletion_workflow.md)
+ * [➞synonym_predicates](configuration__synonym_predicates.md)
  * [consider](consider.md)
      * [node unobsoletion➞consider](node_unobsoletion_consider.md)
  * [contributor](contributor.md)
@@ -238,7 +249,7 @@ A data model for describing change operations at a high level on an ontology or 
  * [subject representation](subject_representation.md)
  * [subject type](subject_type.md) - The type (IRI or Literal) of an edge's subject
  * [subset](subset.md) - The subset from which the node is to be removed
-     * [removed node from subset➞subset](removed_node_from_subset_subset.md)
+     * [remove node from subset➞subset](remove_node_from_subset_subset.md)
  * [superclass](superclass.md)
  * [superclass type](superclass_type.md) - The type of a superclass
  * [target](target.md) - The secondary entity on which the change operates
@@ -252,6 +263,7 @@ A data model for describing change operations at a high level on an ontology or 
 
 ### Enums
 
+ * [ObsoletionPolicyEnum](ObsoletionPolicyEnum.md)
  * [owl_type_enum](owl_type_enum.md)
  * [synonym_scope_enum](synonym_scope_enum.md)
 

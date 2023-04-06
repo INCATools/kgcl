@@ -80,3 +80,12 @@ URI: [kgcl:NewSynonym](http://w3id.org/kgcl/NewSynonym)
  * [about node representation](about_node_representation.md)  <sub>0..1</sub>
      * Description: The representation of a node (URI, CURIE, label) 
      * Range: [String](types/String.md)
+
+## Other properties
+
+|  |  |  |
+| --- | --- | --- |
+| **Aliases:** | | new alias |
+|  | | create synonym |
+|  | | add synonym |
+

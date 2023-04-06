@@ -1,5 +1,5 @@
 
-# Slot: obsoletion workflow
+# Slot: obsoletion_workflow
 
 
 
