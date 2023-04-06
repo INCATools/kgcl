@@ -86,6 +86,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://incatools.github.io/kgcl_schema/Curie/</loc>
+         <lastmod>2023-04-06</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://incatools.github.io/kgcl_schema/DatatypeChange/</loc>
          <lastmod>2023-04-06</lastmod>
          <changefreq>daily</changefreq>
