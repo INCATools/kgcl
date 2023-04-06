@@ -49,6 +49,7 @@ CLASS_DESCRIPTION = {
     "NodeDeepening": "Deepening of a node.",
     "NewTextDefinition": "New definition of a node.",
     "NodeTextDefinitionChange": "Update defintion of a node.",
+    "RemoveTextDefinition": "Remove definition of a node.",
 }
 
 

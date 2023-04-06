@@ -187,3 +187,10 @@ Test_17:
   command_with_curie: change definition of GO:0005635 to 'this is dummy description'
   command_with_uri: change definition of http://purl.obolibrary.org/obo/GO_0005635
     to 'this is dummy description'
+Test_18:
+  id: CHANGE:001
+  type: RemoveTextDefinition
+  about_node: GO:0005634
+  about_node_representation: curie
+  command_with_curie: remove definition for GO:0005634
+  command_with_uri: remove definition for http://purl.obolibrary.org/obo/GO_0005634
