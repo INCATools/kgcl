@@ -21,4 +21,4 @@ URI: [kgcl:remove_from_subset_in_subset](http://w3id.org/kgcl/remove_from_subset
 ## Used by
 
  * [RemoveFromSubset](RemoveFromSubset.md)
- * [RemovedNodeFromSubset](RemovedNodeFromSubset.md)
+ * [RemoveNodeFromSubset](RemoveNodeFromSubset.md)

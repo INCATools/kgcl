@@ -22,6 +22,9 @@ pytest = "^7.1.2"
 mkdocs-material = "^8.2.8"
 mkdocs-mermaid2-plugin = "^0.6.0"
 
+[tool.poetry.group.dev.dependencies]
+linkml = "^1.4.3"
+
 [build-system]
 requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"

@@ -44,9 +44,10 @@ CREATE TABLE configuration (
 	synonym_predicates TEXT, 
 	creator_predicate TEXT, 
 	contributor_predicate TEXT, 
+	obsolete_node_label_prefix TEXT, 
 	obsoletion_workflow TEXT, 
-	obsoletion_policy TEXT, 
-	PRIMARY KEY (name_predicate, definition_predicate, main_synonym_predicate, synonym_predicates, creator_predicate, contributor_predicate, obsoletion_workflow, obsoletion_policy)
+	obsoletion_policies VARCHAR(26), 
+	PRIMARY KEY (name_predicate, definition_predicate, main_synonym_predicate, synonym_predicates, creator_predicate, contributor_predicate, obsolete_node_label_prefix, obsoletion_workflow, obsoletion_policies)
 );
 
 CREATE TABLE instance_node (
@@ -383,6 +384,110 @@ CREATE TABLE mapping_creation (
 	FOREIGN KEY(object) REFERENCES node (id)
 );
 
+CREATE TABLE mapping_predicate_change (
+	id TEXT NOT NULL, 
+	type TEXT, 
+	was_generated_by TEXT, 
+	see_also TEXT, 
+	pull_request TEXT, 
+	creator TEXT, 
+	change_date TEXT, 
+	contributor TEXT, 
+	has_undo TEXT, 
+	old_value_type TEXT, 
+	new_value_type TEXT, 
+	new_language TEXT, 
+	old_language TEXT, 
+	new_datatype TEXT, 
+	old_datatype TEXT, 
+	about_node TEXT, 
+	about_node_representation TEXT, 
+	language TEXT, 
+	old_value TEXT, 
+	new_value TEXT, 
+	PRIMARY KEY (id), 
+	FOREIGN KEY(was_generated_by) REFERENCES activity (id), 
+	FOREIGN KEY(about_node) REFERENCES node (id)
+);
+
+CREATE TABLE mapping_replacement (
+	id TEXT NOT NULL, 
+	type TEXT, 
+	was_generated_by TEXT, 
+	see_also TEXT, 
+	pull_request TEXT, 
+	creator TEXT, 
+	change_date TEXT, 
+	contributor TEXT, 
+	has_undo TEXT, 
+	old_value_type TEXT, 
+	new_value_type TEXT, 
+	new_language TEXT, 
+	old_language TEXT, 
+	new_datatype TEXT, 
+	old_datatype TEXT, 
+	about_node TEXT, 
+	about_node_representation TEXT, 
+	language TEXT, 
+	old_value TEXT, 
+	new_value TEXT, 
+	PRIMARY KEY (id), 
+	FOREIGN KEY(was_generated_by) REFERENCES activity (id), 
+	FOREIGN KEY(about_node) REFERENCES node (id)
+);
+
+CREATE TABLE metadata_assertion_predicate_change (
+	id TEXT NOT NULL, 
+	type TEXT, 
+	was_generated_by TEXT, 
+	see_also TEXT, 
+	pull_request TEXT, 
+	creator TEXT, 
+	change_date TEXT, 
+	contributor TEXT, 
+	has_undo TEXT, 
+	old_value_type TEXT, 
+	new_value_type TEXT, 
+	new_language TEXT, 
+	old_language TEXT, 
+	new_datatype TEXT, 
+	old_datatype TEXT, 
+	about_node TEXT, 
+	about_node_representation TEXT, 
+	language TEXT, 
+	old_value TEXT, 
+	new_value TEXT, 
+	PRIMARY KEY (id), 
+	FOREIGN KEY(was_generated_by) REFERENCES activity (id), 
+	FOREIGN KEY(about_node) REFERENCES node (id)
+);
+
+CREATE TABLE metadata_assertion_replacement (
+	id TEXT NOT NULL, 
+	type TEXT, 
+	was_generated_by TEXT, 
+	see_also TEXT, 
+	pull_request TEXT, 
+	creator TEXT, 
+	change_date TEXT, 
+	contributor TEXT, 
+	has_undo TEXT, 
+	old_value_type TEXT, 
+	new_value_type TEXT, 
+	new_language TEXT, 
+	old_language TEXT, 
+	new_datatype TEXT, 
+	old_datatype TEXT, 
+	about_node TEXT, 
+	about_node_representation TEXT, 
+	language TEXT, 
+	old_value TEXT, 
+	new_value TEXT, 
+	PRIMARY KEY (id), 
+	FOREIGN KEY(was_generated_by) REFERENCES activity (id), 
+	FOREIGN KEY(about_node) REFERENCES node (id)
+);
+
 CREATE TABLE multi_node_obsoletion (
 	id TEXT NOT NULL, 
 	type TEXT, 
@@ -396,6 +501,66 @@ CREATE TABLE multi_node_obsoletion (
 	change_description TEXT, 
 	PRIMARY KEY (id), 
 	FOREIGN KEY(was_generated_by) REFERENCES activity (id)
+);
+
+CREATE TABLE new_mapping (
+	id TEXT NOT NULL, 
+	type TEXT, 
+	was_generated_by TEXT, 
+	see_also TEXT, 
+	pull_request TEXT, 
+	creator TEXT, 
+	change_date TEXT, 
+	contributor TEXT, 
+	has_undo TEXT, 
+	old_value TEXT, 
+	new_value TEXT, 
+	old_value_type TEXT, 
+	new_value_type TEXT, 
+	new_language TEXT, 
+	old_language TEXT, 
+	new_datatype TEXT, 
+	old_datatype TEXT, 
+	about_node TEXT, 
+	about_node_representation TEXT, 
+	language TEXT, 
+	object TEXT, 
+	predicate TEXT, 
+	PRIMARY KEY (id), 
+	FOREIGN KEY(was_generated_by) REFERENCES activity (id), 
+	FOREIGN KEY(about_node) REFERENCES node (id), 
+	FOREIGN KEY(object) REFERENCES node (id), 
+	FOREIGN KEY(predicate) REFERENCES node (id)
+);
+
+CREATE TABLE new_metadata_assertion (
+	id TEXT NOT NULL, 
+	type TEXT, 
+	was_generated_by TEXT, 
+	see_also TEXT, 
+	pull_request TEXT, 
+	creator TEXT, 
+	change_date TEXT, 
+	contributor TEXT, 
+	has_undo TEXT, 
+	old_value TEXT, 
+	new_value TEXT, 
+	old_value_type TEXT, 
+	new_value_type TEXT, 
+	new_language TEXT, 
+	old_language TEXT, 
+	new_datatype TEXT, 
+	old_datatype TEXT, 
+	about_node TEXT, 
+	about_node_representation TEXT, 
+	language TEXT, 
+	object TEXT, 
+	predicate TEXT, 
+	PRIMARY KEY (id), 
+	FOREIGN KEY(was_generated_by) REFERENCES activity (id), 
+	FOREIGN KEY(about_node) REFERENCES node (id), 
+	FOREIGN KEY(object) REFERENCES node (id), 
+	FOREIGN KEY(predicate) REFERENCES node (id)
 );
 
 CREATE TABLE new_synonym (
@@ -625,6 +790,58 @@ CREATE TABLE node_direct_merge (
 	PRIMARY KEY (id), 
 	FOREIGN KEY(was_generated_by) REFERENCES activity (id), 
 	FOREIGN KEY(has_direct_replacement) REFERENCES node (id), 
+	FOREIGN KEY(about_node) REFERENCES node (id)
+);
+
+CREATE TABLE node_mapping_change (
+	id TEXT NOT NULL, 
+	type TEXT, 
+	was_generated_by TEXT, 
+	see_also TEXT, 
+	pull_request TEXT, 
+	creator TEXT, 
+	change_date TEXT, 
+	contributor TEXT, 
+	has_undo TEXT, 
+	old_value TEXT, 
+	new_value TEXT, 
+	old_value_type TEXT, 
+	new_value_type TEXT, 
+	new_language TEXT, 
+	old_language TEXT, 
+	new_datatype TEXT, 
+	old_datatype TEXT, 
+	about_node TEXT, 
+	about_node_representation TEXT, 
+	language TEXT, 
+	PRIMARY KEY (id), 
+	FOREIGN KEY(was_generated_by) REFERENCES activity (id), 
+	FOREIGN KEY(about_node) REFERENCES node (id)
+);
+
+CREATE TABLE node_metadata_assertion_change (
+	id TEXT NOT NULL, 
+	type TEXT, 
+	was_generated_by TEXT, 
+	see_also TEXT, 
+	pull_request TEXT, 
+	creator TEXT, 
+	change_date TEXT, 
+	contributor TEXT, 
+	has_undo TEXT, 
+	old_value TEXT, 
+	new_value TEXT, 
+	old_value_type TEXT, 
+	new_value_type TEXT, 
+	new_language TEXT, 
+	old_language TEXT, 
+	new_datatype TEXT, 
+	old_datatype TEXT, 
+	about_node TEXT, 
+	about_node_representation TEXT, 
+	language TEXT, 
+	PRIMARY KEY (id), 
+	FOREIGN KEY(was_generated_by) REFERENCES activity (id), 
 	FOREIGN KEY(about_node) REFERENCES node (id)
 );
 
@@ -909,6 +1126,95 @@ CREATE TABLE property_value (
 	FOREIGN KEY(property) REFERENCES node (id)
 );
 
+CREATE TABLE remove_mapping (
+	id TEXT NOT NULL, 
+	type TEXT, 
+	was_generated_by TEXT, 
+	see_also TEXT, 
+	pull_request TEXT, 
+	creator TEXT, 
+	change_date TEXT, 
+	contributor TEXT, 
+	has_undo TEXT, 
+	old_value TEXT, 
+	new_value TEXT, 
+	old_value_type TEXT, 
+	new_value_type TEXT, 
+	new_language TEXT, 
+	old_language TEXT, 
+	new_datatype TEXT, 
+	old_datatype TEXT, 
+	about_node TEXT, 
+	about_node_representation TEXT, 
+	language TEXT, 
+	object TEXT, 
+	predicate TEXT, 
+	PRIMARY KEY (id), 
+	FOREIGN KEY(was_generated_by) REFERENCES activity (id), 
+	FOREIGN KEY(about_node) REFERENCES node (id), 
+	FOREIGN KEY(object) REFERENCES node (id), 
+	FOREIGN KEY(predicate) REFERENCES node (id)
+);
+
+CREATE TABLE remove_metadata_assertion (
+	id TEXT NOT NULL, 
+	type TEXT, 
+	was_generated_by TEXT, 
+	see_also TEXT, 
+	pull_request TEXT, 
+	creator TEXT, 
+	change_date TEXT, 
+	contributor TEXT, 
+	has_undo TEXT, 
+	old_value TEXT, 
+	new_value TEXT, 
+	old_value_type TEXT, 
+	new_value_type TEXT, 
+	new_language TEXT, 
+	old_language TEXT, 
+	new_datatype TEXT, 
+	old_datatype TEXT, 
+	about_node TEXT, 
+	about_node_representation TEXT, 
+	language TEXT, 
+	object TEXT, 
+	predicate TEXT, 
+	PRIMARY KEY (id), 
+	FOREIGN KEY(was_generated_by) REFERENCES activity (id), 
+	FOREIGN KEY(about_node) REFERENCES node (id), 
+	FOREIGN KEY(object) REFERENCES node (id), 
+	FOREIGN KEY(predicate) REFERENCES node (id)
+);
+
+CREATE TABLE remove_node_from_subset (
+	id TEXT NOT NULL, 
+	type TEXT, 
+	was_generated_by TEXT, 
+	see_also TEXT, 
+	pull_request TEXT, 
+	creator TEXT, 
+	change_date TEXT, 
+	contributor TEXT, 
+	has_undo TEXT, 
+	old_value TEXT, 
+	new_value TEXT, 
+	old_value_type TEXT, 
+	new_value_type TEXT, 
+	new_language TEXT, 
+	old_language TEXT, 
+	new_datatype TEXT, 
+	old_datatype TEXT, 
+	about_node_representation TEXT, 
+	language TEXT, 
+	change_description TEXT, 
+	about_node TEXT, 
+	subset TEXT, 
+	in_subset TEXT, 
+	PRIMARY KEY (id), 
+	FOREIGN KEY(was_generated_by) REFERENCES activity (id), 
+	FOREIGN KEY(about_node) REFERENCES node (id)
+);
+
 CREATE TABLE remove_synonym (
 	id TEXT NOT NULL, 
 	type TEXT, 
@@ -995,35 +1301,6 @@ CREATE TABLE remove_under (
 	FOREIGN KEY(subject) REFERENCES node (id), 
 	FOREIGN KEY(predicate) REFERENCES node (id), 
 	FOREIGN KEY(object) REFERENCES node (id)
-);
-
-CREATE TABLE removed_node_from_subset (
-	id TEXT NOT NULL, 
-	type TEXT, 
-	was_generated_by TEXT, 
-	see_also TEXT, 
-	pull_request TEXT, 
-	creator TEXT, 
-	change_date TEXT, 
-	contributor TEXT, 
-	has_undo TEXT, 
-	old_value TEXT, 
-	new_value TEXT, 
-	old_value_type TEXT, 
-	new_value_type TEXT, 
-	new_language TEXT, 
-	old_language TEXT, 
-	new_datatype TEXT, 
-	old_datatype TEXT, 
-	about_node_representation TEXT, 
-	language TEXT, 
-	change_description TEXT, 
-	about_node TEXT, 
-	subset TEXT, 
-	in_subset TEXT, 
-	PRIMARY KEY (id), 
-	FOREIGN KEY(was_generated_by) REFERENCES activity (id), 
-	FOREIGN KEY(about_node) REFERENCES node (id)
 );
 
 CREATE TABLE set_language_for_name (

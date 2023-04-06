@@ -7,7 +7,7 @@ removing an element from a subset
 URI: [kgcl:RemoveFromSubset](http://w3id.org/kgcl/RemoveFromSubset)
 
 
-[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[SubsetMembershipChange],[AddToSubset]<has%20undo%200..1-++[RemoveFromSubset],[OntologySubset]<in%20subset%200..1-++[RemoveFromSubset],[RemovedNodeFromSubset]uses%20-.->[RemoveFromSubset],[SubsetMembershipChange]^-[RemoveFromSubset],[RemovedNodeFromSubset],[OntologySubset],[AddToSubset])](https://yuml.me/diagram/nofunky;dir:TB/class/[SubsetMembershipChange],[AddToSubset]<has%20undo%200..1-++[RemoveFromSubset],[OntologySubset]<in%20subset%200..1-++[RemoveFromSubset],[RemovedNodeFromSubset]uses%20-.->[RemoveFromSubset],[SubsetMembershipChange]^-[RemoveFromSubset],[RemovedNodeFromSubset],[OntologySubset],[AddToSubset])
+[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[SubsetMembershipChange],[AddToSubset]<has%20undo%200..1-++[RemoveFromSubset],[OntologySubset]<in%20subset%200..1-++[RemoveFromSubset],[RemoveNodeFromSubset]uses%20-.->[RemoveFromSubset],[SubsetMembershipChange]^-[RemoveFromSubset],[RemoveNodeFromSubset],[OntologySubset],[AddToSubset])](https://yuml.me/diagram/nofunky;dir:TB/class/[SubsetMembershipChange],[AddToSubset]<has%20undo%200..1-++[RemoveFromSubset],[OntologySubset]<in%20subset%200..1-++[RemoveFromSubset],[RemoveNodeFromSubset]uses%20-.->[RemoveFromSubset],[SubsetMembershipChange]^-[RemoveFromSubset],[RemoveNodeFromSubset],[OntologySubset],[AddToSubset])
 
 ## Parents
 
@@ -15,7 +15,7 @@ URI: [kgcl:RemoveFromSubset](http://w3id.org/kgcl/RemoveFromSubset)
 
 ## Mixin for
 
- * [RemovedNodeFromSubset](RemovedNodeFromSubset.md) (mixin)  - Removes a node from a subset, by removing an annotation
+ * [RemoveNodeFromSubset](RemoveNodeFromSubset.md) (mixin)  - Removes a node from a subset, by removing an annotation
 
 ## Referenced by Class
 

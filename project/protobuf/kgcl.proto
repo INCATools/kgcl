@@ -104,8 +104,9 @@ message Configuration
   string synonymPredicates = 0
   string creatorPredicate = 0
   string contributorPredicate = 0
+  string obsoleteNodeLabelPrefix = 0
   string obsoletionWorkflow = 0
-  string obsoletionPolicy = 0
+ repeated  obsoletionPolicyEnum obsoletionPolicies = 0
  }
 // A relationship between two nodes.
 // Currently the only kinds of edges supported in KGCL:
@@ -293,8 +294,6 @@ message LanguageTagChange
   languageTag newValue = 0
  }
 // A simple change where a logical axiom is changed, where the logical axiom cannot be represented as an edge
-// 
-//   
 message LogicalAxiomChange
  {
   string id = 0
@@ -347,6 +346,102 @@ message MappingCreation
   annotation annotationSet = 0
   string changeDescription = 0
  }
+// A node mapping change where the predicate of a mapping is changed.
+message MappingPredicateChange
+ {
+  string id = 0
+  string type = 0
+  activity wasGeneratedBy = 0
+  string seeAlso = 0
+  string pullRequest = 0
+  string creator = 0
+  string changeDate = 0
+  string contributor = 0
+  change hasUndo = 0
+  string oldValueType = 0
+  string newValueType = 0
+  string newLanguage = 0
+  string oldLanguage = 0
+  string newDatatype = 0
+  string oldDatatype = 0
+  node aboutNode = 0
+  string aboutNodeRepresentation = 0
+  languageTag language = 0
+  string oldValue = 0
+  string newValue = 0
+ }
+// A node mapping change where the object of a mapping is changed
+message MappingReplacement
+ {
+  string id = 0
+  string type = 0
+  activity wasGeneratedBy = 0
+  string seeAlso = 0
+  string pullRequest = 0
+  string creator = 0
+  string changeDate = 0
+  string contributor = 0
+  change hasUndo = 0
+  string oldValueType = 0
+  string newValueType = 0
+  string newLanguage = 0
+  string oldLanguage = 0
+  string newDatatype = 0
+  string oldDatatype = 0
+  node aboutNode = 0
+  string aboutNodeRepresentation = 0
+  languageTag language = 0
+  string oldValue = 0
+  string newValue = 0
+ }
+// A node metadata assertion change where the predicate of a metadata assertion is changed.
+message MetadataAssertionPredicateChange
+ {
+  string id = 0
+  string type = 0
+  activity wasGeneratedBy = 0
+  string seeAlso = 0
+  string pullRequest = 0
+  string creator = 0
+  string changeDate = 0
+  string contributor = 0
+  change hasUndo = 0
+  string oldValueType = 0
+  string newValueType = 0
+  string newLanguage = 0
+  string oldLanguage = 0
+  string newDatatype = 0
+  string oldDatatype = 0
+  node aboutNode = 0
+  string aboutNodeRepresentation = 0
+  languageTag language = 0
+  string oldValue = 0
+  string newValue = 0
+ }
+// A node metadata assertion change where the object of a metadata assertion is changed
+message MetadataAssertionReplacement
+ {
+  string id = 0
+  string type = 0
+  activity wasGeneratedBy = 0
+  string seeAlso = 0
+  string pullRequest = 0
+  string creator = 0
+  string changeDate = 0
+  string contributor = 0
+  change hasUndo = 0
+  string oldValueType = 0
+  string newValueType = 0
+  string newLanguage = 0
+  string oldLanguage = 0
+  string newDatatype = 0
+  string oldDatatype = 0
+  node aboutNode = 0
+  string aboutNodeRepresentation = 0
+  languageTag language = 0
+  string oldValue = 0
+  string newValue = 0
+ }
 // A complex change consisting of multiple obsoletions.
 message MultiNodeObsoletion
  {
@@ -389,6 +484,58 @@ message NameBecomesSynonym
   nodeRename change1 = 0
   newSynonym change2 = 0
   string changeDescription = 0
+ }
+// A node mapping change where a mapping is added to a node
+message NewMapping
+ {
+  string id = 0
+  string type = 0
+  activity wasGeneratedBy = 0
+  string seeAlso = 0
+  string pullRequest = 0
+  string creator = 0
+  string changeDate = 0
+  string contributor = 0
+  change hasUndo = 0
+  string oldValue = 0
+  string newValue = 0
+  string oldValueType = 0
+  string newValueType = 0
+  string newLanguage = 0
+  string oldLanguage = 0
+  string newDatatype = 0
+  string oldDatatype = 0
+  node aboutNode = 0
+  string aboutNodeRepresentation = 0
+  languageTag language = 0
+  node object = 0
+  node predicate = 0
+ }
+// A node metadata assertion change where a metadata assertion is added to a node
+message NewMetadataAssertion
+ {
+  string id = 0
+  string type = 0
+  activity wasGeneratedBy = 0
+  string seeAlso = 0
+  string pullRequest = 0
+  string creator = 0
+  string changeDate = 0
+  string contributor = 0
+  change hasUndo = 0
+  string oldValue = 0
+  string newValue = 0
+  string oldValueType = 0
+  string newValueType = 0
+  string newLanguage = 0
+  string oldLanguage = 0
+  string newDatatype = 0
+  string oldDatatype = 0
+  node aboutNode = 0
+  string aboutNodeRepresentation = 0
+  languageTag language = 0
+  node object = 0
+  node predicate = 0
  }
 // A node synonym change where a de-novo synonym is created
 message NewSynonym
@@ -610,6 +757,54 @@ message NodeDirectMerge
   node hasDirectReplacement = 0
   node aboutNode = 0
   string changeDescription = 0
+ }
+// A node change where the mappings for that node are altered
+message NodeMappingChange
+ {
+  string id = 0
+  string type = 0
+  activity wasGeneratedBy = 0
+  string seeAlso = 0
+  string pullRequest = 0
+  string creator = 0
+  string changeDate = 0
+  string contributor = 0
+  change hasUndo = 0
+  string oldValue = 0
+  string newValue = 0
+  string oldValueType = 0
+  string newValueType = 0
+  string newLanguage = 0
+  string oldLanguage = 0
+  string newDatatype = 0
+  string oldDatatype = 0
+  node aboutNode = 0
+  string aboutNodeRepresentation = 0
+  languageTag language = 0
+ }
+// A node change where the metadata assertion (OWL annotations) for that node are altered
+message NodeMetadataAssertionChange
+ {
+  string id = 0
+  string type = 0
+  activity wasGeneratedBy = 0
+  string seeAlso = 0
+  string pullRequest = 0
+  string creator = 0
+  string changeDate = 0
+  string contributor = 0
+  change hasUndo = 0
+  string oldValue = 0
+  string newValue = 0
+  string oldValueType = 0
+  string newValueType = 0
+  string newLanguage = 0
+  string oldLanguage = 0
+  string newDatatype = 0
+  string oldDatatype = 0
+  node aboutNode = 0
+  string aboutNodeRepresentation = 0
+  languageTag language = 0
  }
 // A node move is a combination of deleting a parent edge and adding a parent edge, where the predicate is preserved and the object/parent node changes
 message NodeMove
@@ -897,6 +1092,85 @@ message PropertyValue
   node property = 0
   string filler = 0
  }
+// A node mapping change where a mapping is deleted
+message RemoveMapping
+ {
+  string id = 0
+  string type = 0
+  activity wasGeneratedBy = 0
+  string seeAlso = 0
+  string pullRequest = 0
+  string creator = 0
+  string changeDate = 0
+  string contributor = 0
+  change hasUndo = 0
+  string oldValue = 0
+  string newValue = 0
+  string oldValueType = 0
+  string newValueType = 0
+  string newLanguage = 0
+  string oldLanguage = 0
+  string newDatatype = 0
+  string oldDatatype = 0
+  node aboutNode = 0
+  string aboutNodeRepresentation = 0
+  languageTag language = 0
+  node object = 0
+  node predicate = 0
+ }
+// A node metadata assertion change where a metadata assertion is deleted
+message RemoveMetadataAssertion
+ {
+  string id = 0
+  string type = 0
+  activity wasGeneratedBy = 0
+  string seeAlso = 0
+  string pullRequest = 0
+  string creator = 0
+  string changeDate = 0
+  string contributor = 0
+  change hasUndo = 0
+  string oldValue = 0
+  string newValue = 0
+  string oldValueType = 0
+  string newValueType = 0
+  string newLanguage = 0
+  string oldLanguage = 0
+  string newDatatype = 0
+  string oldDatatype = 0
+  node aboutNode = 0
+  string aboutNodeRepresentation = 0
+  languageTag language = 0
+  node object = 0
+  node predicate = 0
+ }
+// Removes a node from a subset, by removing an annotation
+message RemoveNodeFromSubset
+ {
+  string id = 0
+  string type = 0
+  activity wasGeneratedBy = 0
+  string seeAlso = 0
+  string pullRequest = 0
+  string creator = 0
+  string changeDate = 0
+  string contributor = 0
+  change hasUndo = 0
+  string oldValue = 0
+  string newValue = 0
+  string oldValueType = 0
+  string newValueType = 0
+  string newLanguage = 0
+  string oldLanguage = 0
+  string newDatatype = 0
+  string oldDatatype = 0
+  string aboutNodeRepresentation = 0
+  languageTag language = 0
+  string changeDescription = 0
+  node aboutNode = 0
+  string subset = 0
+  ontologySubset inSubset = 0
+ }
 // A node synonym change where a synonym is deleted
 message RemoveSynonym
  {
@@ -977,33 +1251,6 @@ message RemoveUnder
   string objectType = 0
   annotation annotationSet = 0
   string changeDescription = 0
- }
-// Removes a node from a subset, by removing an annotation
-message RemovedNodeFromSubset
- {
-  string id = 0
-  string type = 0
-  activity wasGeneratedBy = 0
-  string seeAlso = 0
-  string pullRequest = 0
-  string creator = 0
-  string changeDate = 0
-  string contributor = 0
-  change hasUndo = 0
-  string oldValue = 0
-  string newValue = 0
-  string oldValueType = 0
-  string newValueType = 0
-  string newLanguage = 0
-  string oldLanguage = 0
-  string newDatatype = 0
-  string oldDatatype = 0
-  string aboutNodeRepresentation = 0
-  languageTag language = 0
-  string changeDescription = 0
-  node aboutNode = 0
-  string subset = 0
-  ontologySubset inSubset = 0
  }
 // A session consists of a set of change sets bundled with the activities that generated those change sets
 message Session
