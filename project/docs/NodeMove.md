@@ -104,5 +104,5 @@ URI: [kgcl:NodeMove](http://w3id.org/kgcl/NodeMove)
 
 |  |  |  |
 | --- | --- | --- |
-| **Examples:** | | Example(value='changing a is-a b to a is-a c', description=None) |
+| **Examples:** | | Example(value='changing a is-a b to a is-a c', description=None, object=None) |
 

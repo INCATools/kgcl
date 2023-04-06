@@ -93,5 +93,5 @@ URI: [kgcl:PredicateChange](http://w3id.org/kgcl/PredicateChange)
 
 |  |  |  |
 | --- | --- | --- |
-| **Examples:** | | Example(value='changing a is-a b to a part-of b', description=None) |
+| **Examples:** | | Example(value='changing a is-a b to a part-of b', description=None, object=None) |
 

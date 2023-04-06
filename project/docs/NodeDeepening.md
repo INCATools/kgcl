@@ -99,5 +99,5 @@ URI: [kgcl:NodeDeepening](http://w3id.org/kgcl/NodeDeepening)
 
 |  |  |  |
 | --- | --- | --- |
-| **Examples:** | | Example(value='changing a is-a b to a is-a c, where c is a subclass of b', description=None) |
+| **Examples:** | | Example(value='changing a is-a b to a is-a c, where c is a subclass of b', description=None, object=None) |
 

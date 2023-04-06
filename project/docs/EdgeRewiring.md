@@ -79,5 +79,5 @@ URI: [kgcl:EdgeRewiring](http://w3id.org/kgcl/EdgeRewiring)
 
 |  |  |  |
 | --- | --- | --- |
-| **Examples:** | | Example(value='changing G1 annotated-to T1 to G1 annotated-to T2, after obsoletion of T1 and replacement with T2', description=None) |
+| **Examples:** | | Example(value='changing G1 annotated-to T1 to G1 annotated-to T2, after obsoletion of T1 and replacement with T2', description=None, object=None) |
 

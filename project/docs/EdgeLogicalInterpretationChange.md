@@ -79,5 +79,5 @@ URI: [kgcl:EdgeLogicalInterpretationChange](http://w3id.org/kgcl/EdgeLogicalInte
 
 |  |  |  |
 | --- | --- | --- |
-| **Examples:** | | Example(value='changing a SubClassOf r some b to a subClassOf r only b', description=None) |
+| **Examples:** | | Example(value='changing a SubClassOf r some b to a subClassOf r only b', description=None, object=None) |
 

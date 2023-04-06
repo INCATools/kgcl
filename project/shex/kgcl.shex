@@ -1,4 +1,5 @@
 BASE <http://w3id.org/kgcl/>
+PREFIX prov: <http://www.w3.org/ns/prov#>
 PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -6,8 +7,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 PREFIX xml1: <http://www.w3.org/XML/1998/namespace#>
 PREFIX linkml: <https://w3id.org/linkml/>
 PREFIX om: <http://w3id.org/kgcl_schema/om/>
-PREFIX prov: <http://www.w3.org/ns/prov#>
-PREFIX dc: <http://purl.org/dc/terms/>
+PREFIX dc1: <http://purl.org/dc/terms/>
 PREFIX basics: <https://w3id.org/kgcl_schema/basics/>
 
 
@@ -35,6 +35,8 @@ linkml:DateOrDatetime linkml:DateOrDatetime
 
 linkml:Uriorcurie IRI
 
+linkml:Curie xsd:string
+
 linkml:Uri IRI
 
 linkml:Ncname xsd:string
@@ -51,7 +53,7 @@ prov:Activity CLOSED {
           prov:wasInformedBy @prov:Activity ? ;
           prov:wasAssociatedWith @prov:Agent ? ;
           prov:used @linkml:String ? ;
-          dc:description @linkml:String ?
+          dc1:description @linkml:String ?
        ) ;
        rdf:type [ prov:Activity ]
     )
@@ -113,9 +115,9 @@ om:Annotation CLOSED {
           prov:wasGeneratedBy @prov:Activity ? ;
           rdfs:seeAlso @linkml:String ? ;
           <pull_request> @linkml:String ? ;
-          dc:creator @linkml:String ? ;
-          dc:date @linkml:String ? ;
-          dc:creator @linkml:String ? ;
+          dc1:creator @linkml:String ? ;
+          dc1:date @linkml:String ? ;
+          dc1:creator @linkml:String ? ;
           <has_undo> @<Change> ?
        ) ;
        rdf:type [ <Change> ]

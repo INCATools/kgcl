@@ -93,5 +93,5 @@ URI: [kgcl:NodeRename](http://w3id.org/kgcl/NodeRename)
 
 |  |  |  |
 | --- | --- | --- |
-| **Examples:** | | Example(value="rename UBERON:0002398 from 'manus' to 'hand'", description="replacing the rdfs:label of 'manus' on an uberon class with the rdfs:label 'hand'") |
+| **Examples:** | | Example(value="rename UBERON:0002398 from 'manus' to 'hand'", description="replacing the rdfs:label of 'manus' on an uberon class with the rdfs:label 'hand'", object=None) |
 

@@ -264,6 +264,7 @@ A data model for describing change operations at a high level on an ontology or 
 #### Built in
 
  * **Bool**
+ * **Curie**
  * **Decimal**
  * **ElementIdentifier**
  * **NCName**
@@ -281,6 +282,7 @@ A data model for describing change operations at a high level on an ontology or 
 
  * [Boolean](types/Boolean.md)  (**Bool**)  - A binary (true or false) value
  * [ChangeClassType](types/ChangeClassType.md)  ([Uriorcurie](types/Uriorcurie.md))  - CURIE for a class within this datamodel. E.g. kgcl:NodeObsoletion
+ * [Curie](types/Curie.md)  (**Curie**)  - a compact URI
  * [Date](types/Date.md)  (**XSDDate**)  - a date (year, month and day) in an idealized calendar
  * [DateOrDatetime](types/DateOrDatetime.md)  (**str**)  - Either a date or a datetime
  * [Datetime](types/Datetime.md)  (**XSDDateTime**)  - The combination of a date and time

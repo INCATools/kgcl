@@ -99,5 +99,5 @@ URI: [kgcl:NodeShallowing](http://w3id.org/kgcl/NodeShallowing)
 
 |  |  |  |
 | --- | --- | --- |
-| **Examples:** | | Example(value='changing a is-a c to a is-a b, where c is a subclass of b', description=None) |
+| **Examples:** | | Example(value='changing a is-a c to a is-a b, where c is a subclass of b', description=None, object=None) |
 
