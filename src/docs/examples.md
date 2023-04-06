@@ -162,3 +162,11 @@ about_node: GO:0005635
 about_node_representation: curie
 
 ```
+## Example: Remove definition of a node.
+Class: [`RemoveTextDefinition`](https://w3id.org/kgcl/RemoveTextDefinition) </br></br>Command: `remove definition for GO:0005634`</br></br>YAML:
+```
+id: CHANGE:001
+about_node: GO:0005634
+about_node_representation: curie
+
+```

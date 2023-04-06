@@ -20,6 +20,7 @@ from kgcl_schema.datamodel.kgcl import (
     PlaceUnder,
     PredicateChange,
     RemoveSynonym,
+    RemoveTextDefinition,
     RemoveUnder,
     Change,
 )
@@ -279,3 +280,7 @@ def render(kgcl_instance: Change) -> str:
             )
         else:
             return "change definition of " + subject + " to " + new_definition
+
+    if type(kgcl_instance) is RemoveTextDefinition:
+        subject = render_entity(kgcl_instance.about_node, "uri")
+        return "remove definition for " + subject

@@ -31,6 +31,7 @@ from kgcl_schema.datamodel.kgcl import (
     RemovedNodeFromSubset,
     RemoveUnder,
     Session,
+    RemoveTextDefinition,
 )
 from kgcl_schema.datamodel.ontology_model import Edge
 from kgcl_schema.utils import to_json, to_rdf, to_yaml
@@ -125,6 +126,8 @@ def parse_statement(input: str) -> Change:
         return parse_add_definition(tree, id)
     elif command == "change_definition":
         return parse_change_definition(tree, id)
+    elif command == "remove_definition":
+        return parse_remove_definition(tree, id)
     else:
         raise NotImplementedError("No implementation for KGCL command: " + command)
 
@@ -239,6 +242,18 @@ def parse_change_definition(tree, id):
         about_node_representation=representation,
         new_value=new_value,
         old_value=old_value,
+    )
+
+
+def parse_remove_definition(tree, id):
+    """Remove definition for a given entity."""
+    entity_token = extract(tree, "entity")
+    entity, representation = get_entity_representation(entity_token)
+
+    return RemoveTextDefinition(
+        id=id,
+        about_node=entity,
+        about_node_representation=representation,
     )
 
 

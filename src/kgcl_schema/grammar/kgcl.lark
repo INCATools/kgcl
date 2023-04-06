@@ -17,6 +17,7 @@
            | add_to_subset 
            | add_definition
            | change_definition
+           | remove_definition
 
 rename : "rename" _WS [id _WS "from" _WS] old_label ["@" old_language] _WS ("to"|"as"|"->") _WS new_label ["@" new_language]
 
@@ -50,6 +51,7 @@ change_annotation: "change annotation of" _WS entity_subject _WS "with" _WS enti
 change_definition: "change definition of" _WS entity _WS "to" _WS new_definition
                  | "change definition of" _WS entity _WS "from" _WS old_definition _WS "to" _WS new_definition
 add_definition: "add definition" _WS new_definition _WS "to" _WS entity
+remove_definition: "remove definition for" _WS entity
 
 remove_from_subset :  "remove" _WS id _WS "from subset" _WS subset
 add_to_subset :  "add" _WS id _WS "to subset" _WS subset
