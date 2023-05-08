@@ -42,7 +42,7 @@ class ConversionTestSuite(unittest.TestCase):
         self.assertEqual(9, len(session.change_set))
         self.assertEqual(2, len(session.activity_set))
         tmap = group_by_type(session.change_set)
-        ch = tmap["set language for name"][0]
+        ch = tmap["SetLanguageForName"][0]
         if isinstance(ch, SetLanguageForName):
             self.assertEqual("en", ch.new_value)
         else:
