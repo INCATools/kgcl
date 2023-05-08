@@ -194,3 +194,19 @@ Test_18:
   about_node_representation: curie
   command_with_curie: remove definition for GO:0005634
   command_with_uri: remove definition for http://purl.obolibrary.org/obo/GO_0005634
+Test_19:
+  id: CHANGE:001
+  type: NodeObsoletion
+  about_node: GO:0005634
+  about_node_representation: curie
+  command_with_curie: obsolete GO:0005634
+  command_with_uri: obsolete http://purl.obolibrary.org/obo/GO_0005634
+Test_20:
+  id: CHANGE:001
+  type: NodeObsoletionWithDirectReplacement
+  about_node: GO:0005634
+  about_node_representation: curie
+  has_direct_replacement: GO:9999999
+  command_with_curie: obsolete GO:0005634 with replacement GO:9999999
+  command_with_uri: obsolete http://purl.obolibrary.org/obo/GO_0005634 with replacement
+    http://purl.obolibrary.org/obo/GO_9999999

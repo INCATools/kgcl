@@ -328,4 +328,25 @@ CASES: List[CASE] = [
         ),
         None,
     ),
+    (
+        f"obsolete {NUCLEUS}",
+        f"obsolete {NUCLEUS_URI}",
+        NodeObsoletion(
+            id=UID,
+            about_node=NUCLEUS,
+            about_node_representation="curie",
+        ),
+        None,
+    ),
+    (
+        f"obsolete {NUCLEUS} with replacement {NEW_TERM}",
+        f"obsolete {NUCLEUS_URI} with replacement {NEW_TERM_URI}",
+        NodeObsoletionWithDirectReplacement(
+            id=UID,
+            about_node=NUCLEUS,
+            about_node_representation="curie",
+            has_direct_replacement=NEW_TERM
+        ),
+        None,
+    ),
 ]
