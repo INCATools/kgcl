@@ -16,7 +16,6 @@ site_dir: mkdocs_html
 nav:
 #  - Home: home.md
   - Index: index.md
-  - About: about.md
   - Examples: examples.md
 site_url: https://incatools.github.io/kgcl_schema/
 repo_url: https://github.com/INCATools/kgcl_schema
