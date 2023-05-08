@@ -66,10 +66,9 @@ jobs:
     # - name: Install library
     #   run: poetry install --no-interaction
 
-    - name: Create local docs
+    - name: Build and deploy documentation
       run: |
         mkdir docs
         touch docs/.nojekyll
-        cp -r src/docs/* docs/
-        poetry run gen-doc -d docs src/kgcl_schema/schema/kgcl.yaml
-        poetry run mkdocs gh-deploy
+        make gendoc
+        make mkd-gh-deploy
