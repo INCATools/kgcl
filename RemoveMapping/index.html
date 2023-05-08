@@ -7,7 +7,7 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <link href="https://incatools.github.io/kgcl_schema/RemoveMapping/" rel="canonical"/>
 <link href="../assets/images/favicon.png" rel="icon"/>
-<meta content="mkdocs-1.4.2, mkdocs-material-8.5.10" name="generator"/>
+<meta content="mkdocs-1.4.3, mkdocs-material-8.5.10" name="generator"/>
 <title>Class: RemoveMapping - KGCL</title>
 <link href="../assets/stylesheets/main.975780f9.min.css" rel="stylesheet"/>
 <link href="../assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
@@ -213,7 +213,7 @@
 
       RemoveMapping : about_node
 
-          RemoveMapping ..&gt; node : about_node
+          RemoveMapping --|&gt; node : about_node
 
       RemoveMapping : about_node_representation
 
@@ -225,7 +225,7 @@
 
       RemoveMapping : has_undo
 
-          RemoveMapping ..&gt; change : has_undo
+          RemoveMapping --|&gt; change : has_undo
 
       RemoveMapping : id
 
@@ -241,7 +241,7 @@
 
       RemoveMapping : object
 
-          RemoveMapping ..&gt; node : object
+          RemoveMapping --|&gt; node : object
 
       RemoveMapping : old_datatype
 
@@ -253,7 +253,7 @@
 
       RemoveMapping : predicate
 
-          RemoveMapping ..&gt; node : predicate
+          RemoveMapping --|&gt; node : predicate
 
       RemoveMapping : pull_request
 
@@ -263,7 +263,7 @@
 
       RemoveMapping : was_generated_by
 
-          RemoveMapping ..&gt; activity : was_generated_by
+          RemoveMapping --|&gt; activity : was_generated_by
 
 
 </div>
@@ -663,6 +663,7 @@ attributes:
     - agent
     - node
     range: string
+    required: true
   type:
     name: type
     from_schema: https://w3id.org/kgcl

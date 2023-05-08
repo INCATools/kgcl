@@ -7,7 +7,7 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <link href="https://incatools.github.io/kgcl_schema/SetLanguageForName/" rel="canonical"/>
 <link href="../assets/images/favicon.png" rel="icon"/>
-<meta content="mkdocs-1.4.2, mkdocs-material-8.5.10" name="generator"/>
+<meta content="mkdocs-1.4.3, mkdocs-material-8.5.10" name="generator"/>
 <title>Class: SetLanguageForName - KGCL</title>
 <link href="../assets/stylesheets/main.975780f9.min.css" rel="stylesheet"/>
 <link href="../assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
@@ -214,7 +214,7 @@
 
       SetLanguageForName : about_node
 
-          SetLanguageForName ..&gt; node : about_node
+          SetLanguageForName --|&gt; node : about_node
 
       SetLanguageForName : about_node_representation
 
@@ -226,7 +226,7 @@
 
       SetLanguageForName : has_undo
 
-          SetLanguageForName ..&gt; change : has_undo
+          SetLanguageForName --|&gt; change : has_undo
 
       SetLanguageForName : id
 
@@ -256,7 +256,7 @@
 
       SetLanguageForName : was_generated_by
 
-          SetLanguageForName ..&gt; activity : was_generated_by
+          SetLanguageForName --|&gt; activity : was_generated_by
 
 
 </div>
@@ -286,13 +286,13 @@
 <tbody>
 <tr>
 <td><a href="../old_value/">old_value</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../LanguageTag/">LanguageTag</a></td>
 <td>The value of a property held in the old instance of the ontology</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../new_value/">new_value</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../LanguageTag/">LanguageTag</a></td>
 <td>The value of a property held in the new instance of the ontology</td>
 <td>direct</td>
 </tr>
@@ -625,6 +625,7 @@ attributes:
     - agent
     - node
     range: string
+    required: true
   type:
     name: type
     from_schema: https://w3id.org/kgcl

@@ -7,7 +7,7 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <link href="https://incatools.github.io/kgcl_schema/TextDefinitionReplacement/" rel="canonical"/>
 <link href="../assets/images/favicon.png" rel="icon"/>
-<meta content="mkdocs-1.4.2, mkdocs-material-8.5.10" name="generator"/>
+<meta content="mkdocs-1.4.3, mkdocs-material-8.5.10" name="generator"/>
 <title>Class: TextDefinitionReplacement - KGCL</title>
 <link href="../assets/stylesheets/main.975780f9.min.css" rel="stylesheet"/>
 <link href="../assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
@@ -213,7 +213,7 @@
 
       TextDefinitionReplacement : about_node
 
-          TextDefinitionReplacement ..&gt; node : about_node
+          TextDefinitionReplacement --|&gt; node : about_node
 
       TextDefinitionReplacement : about_node_representation
 
@@ -225,11 +225,11 @@
 
       TextDefinitionReplacement : has_textual_diff
 
-          TextDefinitionReplacement ..&gt; textual diff : has_textual_diff
+          TextDefinitionReplacement --|&gt; textual diff : has_textual_diff
 
       TextDefinitionReplacement : has_undo
 
-          TextDefinitionReplacement ..&gt; change : has_undo
+          TextDefinitionReplacement --|&gt; change : has_undo
 
       TextDefinitionReplacement : id
 
@@ -259,7 +259,7 @@
 
       TextDefinitionReplacement : was_generated_by
 
-          TextDefinitionReplacement ..&gt; activity : was_generated_by
+          TextDefinitionReplacement --|&gt; activity : was_generated_by
 
 
 </div>
@@ -638,6 +638,7 @@ attributes:
     - agent
     - node
     range: string
+    required: true
   type:
     name: type
     from_schema: https://w3id.org/kgcl

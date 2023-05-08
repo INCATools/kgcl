@@ -7,7 +7,7 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <link href="https://incatools.github.io/kgcl_schema/ComplexChange/" rel="canonical"/>
 <link href="../assets/images/favicon.png" rel="icon"/>
-<meta content="mkdocs-1.4.2, mkdocs-material-8.5.10" name="generator"/>
+<meta content="mkdocs-1.4.3, mkdocs-material-8.5.10" name="generator"/>
 <title>Class: ComplexChange - KGCL</title>
 <link href="../assets/stylesheets/main.975780f9.min.css" rel="stylesheet"/>
 <link href="../assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
@@ -222,7 +222,7 @@
 
       ComplexChange : change_set
 
-          ComplexChange ..&gt; change : change_set
+          ComplexChange --|&gt; change : change_set
 
       ComplexChange : contributor
 
@@ -230,7 +230,7 @@
 
       ComplexChange : has_undo
 
-          ComplexChange ..&gt; change : has_undo
+          ComplexChange --|&gt; change : has_undo
 
       ComplexChange : id
 
@@ -242,7 +242,7 @@
 
       ComplexChange : was_generated_by
 
-          ComplexChange ..&gt; activity : was_generated_by
+          ComplexChange --|&gt; activity : was_generated_by
 
 
 </div>
@@ -405,6 +405,7 @@ attributes:
     - agent
     - node
     range: string
+    required: true
   type:
     name: type
     from_schema: https://w3id.org/kgcl

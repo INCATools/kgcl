@@ -7,7 +7,7 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <link href="https://incatools.github.io/kgcl_schema/NodeCreation/" rel="canonical"/>
 <link href="../assets/images/favicon.png" rel="icon"/>
-<meta content="mkdocs-1.4.2, mkdocs-material-8.5.10" name="generator"/>
+<meta content="mkdocs-1.4.3, mkdocs-material-8.5.10" name="generator"/>
 <title>Class: NodeCreation - KGCL</title>
 <link href="../assets/stylesheets/main.975780f9.min.css" rel="stylesheet"/>
 <link href="../assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
@@ -228,13 +228,13 @@
 
       NodeCreation : about_node
 
-          NodeCreation ..&gt; node : about_node
+          NodeCreation --|&gt; node : about_node
 
       NodeCreation : about_node_representation
 
       NodeCreation : annotation_set
 
-          NodeCreation ..&gt; annotation : annotation_set
+          NodeCreation --|&gt; annotation : annotation_set
 
       NodeCreation : change_date
 
@@ -244,7 +244,7 @@
 
       NodeCreation : has_undo
 
-          NodeCreation ..&gt; deletion : has_undo
+          NodeCreation --|&gt; deletion : has_undo
 
       NodeCreation : id
 
@@ -262,7 +262,7 @@
 
       NodeCreation : node_id
 
-          NodeCreation ..&gt; node : node_id
+          NodeCreation --|&gt; node : node_id
 
       NodeCreation : old_datatype
 
@@ -274,7 +274,7 @@
 
       NodeCreation : owl_type
 
-          NodeCreation ..&gt; owl_type_enum : owl_type
+          NodeCreation --|&gt; owl_type_enum : owl_type
 
       NodeCreation : pull_request
 
@@ -284,7 +284,7 @@
 
       NodeCreation : was_generated_by
 
-          NodeCreation ..&gt; activity : was_generated_by
+          NodeCreation --|&gt; activity : was_generated_by
 
 
 </div>
@@ -743,6 +743,7 @@ attributes:
     - agent
     - node
     range: string
+    required: true
   type:
     name: type
     from_schema: https://w3id.org/kgcl

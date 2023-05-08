@@ -7,7 +7,7 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <link href="https://incatools.github.io/kgcl_schema/EdgeDeletion/" rel="canonical"/>
 <link href="../assets/images/favicon.png" rel="icon"/>
-<meta content="mkdocs-1.4.2, mkdocs-material-8.5.10" name="generator"/>
+<meta content="mkdocs-1.4.3, mkdocs-material-8.5.10" name="generator"/>
 <title>Class: EdgeDeletion - KGCL</title>
 <link href="../assets/stylesheets/main.975780f9.min.css" rel="stylesheet"/>
 <link href="../assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
@@ -223,11 +223,11 @@
 
       EdgeDeletion : about_edge
 
-          EdgeDeletion ..&gt; edge : about_edge
+          EdgeDeletion --|&gt; edge : about_edge
 
       EdgeDeletion : annotation_set
 
-          EdgeDeletion ..&gt; annotation : annotation_set
+          EdgeDeletion --|&gt; annotation : annotation_set
 
       EdgeDeletion : change_date
 
@@ -239,7 +239,7 @@
 
       EdgeDeletion : has_undo
 
-          EdgeDeletion ..&gt; change : has_undo
+          EdgeDeletion --|&gt; change : has_undo
 
       EdgeDeletion : id
 
@@ -255,7 +255,7 @@
 
       EdgeDeletion : object
 
-          EdgeDeletion ..&gt; node : object
+          EdgeDeletion --|&gt; node : object
 
       EdgeDeletion : object_type
 
@@ -269,7 +269,7 @@
 
       EdgeDeletion : predicate
 
-          EdgeDeletion ..&gt; node : predicate
+          EdgeDeletion --|&gt; node : predicate
 
       EdgeDeletion : predicate_type
 
@@ -279,7 +279,7 @@
 
       EdgeDeletion : subject
 
-          EdgeDeletion ..&gt; node : subject
+          EdgeDeletion --|&gt; node : subject
 
       EdgeDeletion : subject_type
 
@@ -287,7 +287,7 @@
 
       EdgeDeletion : was_generated_by
 
-          EdgeDeletion ..&gt; activity : was_generated_by
+          EdgeDeletion --|&gt; activity : was_generated_by
 
 
 </div>
@@ -811,6 +811,7 @@ attributes:
     - agent
     - node
     range: string
+    required: true
   type:
     name: type
     from_schema: https://w3id.org/kgcl

@@ -7,7 +7,7 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <link href="https://incatools.github.io/kgcl_schema/NewMetadataAssertion/" rel="canonical"/>
 <link href="../assets/images/favicon.png" rel="icon"/>
-<meta content="mkdocs-1.4.2, mkdocs-material-8.5.10" name="generator"/>
+<meta content="mkdocs-1.4.3, mkdocs-material-8.5.10" name="generator"/>
 <title>Class: NewMetadataAssertion - KGCL</title>
 <link href="../assets/stylesheets/main.975780f9.min.css" rel="stylesheet"/>
 <link href="../assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
@@ -218,7 +218,7 @@
 
       NewMetadataAssertion : about_node
 
-          NewMetadataAssertion ..&gt; node : about_node
+          NewMetadataAssertion --|&gt; node : about_node
 
       NewMetadataAssertion : about_node_representation
 
@@ -230,7 +230,7 @@
 
       NewMetadataAssertion : has_undo
 
-          NewMetadataAssertion ..&gt; change : has_undo
+          NewMetadataAssertion --|&gt; change : has_undo
 
       NewMetadataAssertion : id
 
@@ -246,7 +246,7 @@
 
       NewMetadataAssertion : object
 
-          NewMetadataAssertion ..&gt; node : object
+          NewMetadataAssertion --|&gt; node : object
 
       NewMetadataAssertion : old_datatype
 
@@ -258,7 +258,7 @@
 
       NewMetadataAssertion : predicate
 
-          NewMetadataAssertion ..&gt; node : predicate
+          NewMetadataAssertion --|&gt; node : predicate
 
       NewMetadataAssertion : pull_request
 
@@ -268,7 +268,7 @@
 
       NewMetadataAssertion : was_generated_by
 
-          NewMetadataAssertion ..&gt; activity : was_generated_by
+          NewMetadataAssertion --|&gt; activity : was_generated_by
 
 
 </div>
@@ -678,6 +678,7 @@ attributes:
     - agent
     - node
     range: string
+    required: true
   type:
     name: type
     from_schema: https://w3id.org/kgcl

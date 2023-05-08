@@ -7,7 +7,7 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <link href="https://incatools.github.io/kgcl_schema/PlaceUnder/" rel="canonical"/>
 <link href="../assets/images/favicon.png" rel="icon"/>
-<meta content="mkdocs-1.4.2, mkdocs-material-8.5.10" name="generator"/>
+<meta content="mkdocs-1.4.3, mkdocs-material-8.5.10" name="generator"/>
 <title>Class: PlaceUnder - KGCL</title>
 <link href="../assets/stylesheets/main.975780f9.min.css" rel="stylesheet"/>
 <link href="../assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
@@ -213,11 +213,11 @@
 
       PlaceUnder : about_edge
 
-          PlaceUnder ..&gt; edge : about_edge
+          PlaceUnder --|&gt; edge : about_edge
 
       PlaceUnder : annotation_set
 
-          PlaceUnder ..&gt; annotation : annotation_set
+          PlaceUnder --|&gt; annotation : annotation_set
 
       PlaceUnder : change_date
 
@@ -229,7 +229,7 @@
 
       PlaceUnder : has_undo
 
-          PlaceUnder ..&gt; deletion : has_undo
+          PlaceUnder --|&gt; deletion : has_undo
 
       PlaceUnder : id
 
@@ -245,7 +245,7 @@
 
       PlaceUnder : object
 
-          PlaceUnder ..&gt; node : object
+          PlaceUnder --|&gt; node : object
 
       PlaceUnder : object_type
 
@@ -259,7 +259,7 @@
 
       PlaceUnder : predicate
 
-          PlaceUnder ..&gt; node : predicate
+          PlaceUnder --|&gt; node : predicate
 
       PlaceUnder : predicate_type
 
@@ -269,7 +269,7 @@
 
       PlaceUnder : subject
 
-          PlaceUnder ..&gt; node : subject
+          PlaceUnder --|&gt; node : subject
 
       PlaceUnder : subject_type
 
@@ -277,7 +277,7 @@
 
       PlaceUnder : was_generated_by
 
-          PlaceUnder ..&gt; activity : was_generated_by
+          PlaceUnder --|&gt; activity : was_generated_by
 
 
 </div>
@@ -771,6 +771,7 @@ attributes:
     - agent
     - node
     range: string
+    required: true
   type:
     name: type
     from_schema: https://w3id.org/kgcl

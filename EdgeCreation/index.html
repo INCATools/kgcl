@@ -7,7 +7,7 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <link href="https://incatools.github.io/kgcl_schema/EdgeCreation/" rel="canonical"/>
 <link href="../assets/images/favicon.png" rel="icon"/>
-<meta content="mkdocs-1.4.2, mkdocs-material-8.5.10" name="generator"/>
+<meta content="mkdocs-1.4.3, mkdocs-material-8.5.10" name="generator"/>
 <title>Class: EdgeCreation - KGCL</title>
 <link href="../assets/stylesheets/main.975780f9.min.css" rel="stylesheet"/>
 <link href="../assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
@@ -229,11 +229,11 @@
 
       EdgeCreation : about_edge
 
-          EdgeCreation ..&gt; edge : about_edge
+          EdgeCreation --|&gt; edge : about_edge
 
       EdgeCreation : annotation_set
 
-          EdgeCreation ..&gt; annotation : annotation_set
+          EdgeCreation --|&gt; annotation : annotation_set
 
       EdgeCreation : change_date
 
@@ -245,7 +245,7 @@
 
       EdgeCreation : has_undo
 
-          EdgeCreation ..&gt; deletion : has_undo
+          EdgeCreation --|&gt; deletion : has_undo
 
       EdgeCreation : id
 
@@ -261,7 +261,7 @@
 
       EdgeCreation : object
 
-          EdgeCreation ..&gt; node : object
+          EdgeCreation --|&gt; node : object
 
       EdgeCreation : object_type
 
@@ -275,7 +275,7 @@
 
       EdgeCreation : predicate
 
-          EdgeCreation ..&gt; node : predicate
+          EdgeCreation --|&gt; node : predicate
 
       EdgeCreation : predicate_type
 
@@ -285,7 +285,7 @@
 
       EdgeCreation : subject
 
-          EdgeCreation ..&gt; node : subject
+          EdgeCreation --|&gt; node : subject
 
       EdgeCreation : subject_type
 
@@ -293,7 +293,7 @@
 
       EdgeCreation : was_generated_by
 
-          EdgeCreation ..&gt; activity : was_generated_by
+          EdgeCreation --|&gt; activity : was_generated_by
 
 
 </div>
@@ -826,6 +826,7 @@ attributes:
     - agent
     - node
     range: string
+    required: true
   type:
     name: type
     from_schema: https://w3id.org/kgcl

@@ -7,7 +7,7 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <link href="https://incatools.github.io/kgcl_schema/Edge/" rel="canonical"/>
 <link href="../assets/images/favicon.png" rel="icon"/>
-<meta content="mkdocs-1.4.2, mkdocs-material-8.5.10" name="generator"/>
+<meta content="mkdocs-1.4.3, mkdocs-material-8.5.10" name="generator"/>
 <title>Class: Edge - KGCL</title>
 <link href="../assets/stylesheets/main.975780f9.min.css" rel="stylesheet"/>
 <link href="../assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
@@ -215,19 +215,21 @@
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"></path></svg>
 </a>
 <h1 id="class-edge">Class: Edge</h1>
-<p>_A relationship between two nodes.
-Currently the only kinds of edges supported in KGCL:</p>
-<ul>
-<li>A subClassOf B &lt;==&gt; Edge(subject=A, predicate=owl:subClassOf, object=B)</li>
-<li>A subClassOf P some B &lt;==&gt; Edge(subject=A, predicate=P, object=B)</li>
-<li>P subPropertyOf Q &lt;==&gt; Edge(subject=P, predicate=owl:subPropertyOf, object=Q)</li>
-</ul>
-<p>These represent the most common kind of pairwise relationship between classes, and classes are the dominant node type in ontologies.</p>
-<p>In future a wider variety of OWL axiom types will be supportedn through the use of an additional edge property/slot to indicate the interpretation of the axiom, following owlstar (https://github.com/cmungall/owlstar).
-For example:
- * <code>A subClassOf R only B &lt;==&gt; Edge(subject=A, predicate=P, object=B, interpretation=AllOnly)</code>
- * <code>A Annotation(P,B) &lt;==&gt; Edge(subject=A, predicate=P, object=B, interpretation=annotationAssertion)</code></p>
-<p>Note that not all axioms are intended to map to edges. Axioms/triples where the object is a literal would be represented as node properties. Complex OWL axioms involving nesting would have their own dedicated construct, or may be represented generically. These are out of scope for the current version of KGCL_</p>
+<p><em>A relationship between two nodes.</em></p>
+<p><em>Currently the only kinds of edges supported in KGCL:</em></p>
+<p>__</p>
+<p>_  * A subClassOf B &lt;==&gt; Edge(subject=A, predicate=owl:subClassOf, object=B)_</p>
+<p>_  * A subClassOf P some B &lt;==&gt; Edge(subject=A, predicate=P, object=B)_</p>
+<p>_  * P subPropertyOf Q &lt;==&gt; Edge(subject=P, predicate=owl:subPropertyOf, object=Q)_</p>
+<p>__</p>
+<p><em>These represent the most common kind of pairwise relationship between classes, and classes are the dominant node type in ontologies.</em></p>
+<p>_  _</p>
+<p><em>In future a wider variety of OWL axiom types will be supportedn through the use of an additional edge property/slot to indicate the interpretation of the axiom, following owlstar (https://github.com/cmungall/owlstar).</em></p>
+<p><em>For example:</em></p>
+<p>_ * <code>A subClassOf R only B &lt;==&gt; Edge(subject=A, predicate=P, object=B, interpretation=AllOnly)</code>_</p>
+<p>_ * <code>A Annotation(P,B) &lt;==&gt; Edge(subject=A, predicate=P, object=B, interpretation=annotationAssertion)</code>_</p>
+<p>__</p>
+<p><em>Note that not all axioms are intended to map to edges. Axioms/triples where the object is a literal would be represented as node properties. Complex OWL axioms involving nesting would have their own dedicated construct, or may be represented generically. These are out of scope for the current version of KGCL</em></p>
 <p>URI: <a href="http://w3id.org/kgcl/Edge">kgcl:Edge</a></p>
 <div class="mermaid"> classDiagram
     class Edge
@@ -235,23 +237,23 @@ For example:
 
       Edge : annotation_set
 
-          Edge ..&gt; annotation : annotation_set
+          Edge --|&gt; annotation : annotation_set
 
       Edge : object
 
-          Edge ..&gt; node : object
+          Edge --|&gt; node : object
 
       Edge : object_representation
 
       Edge : predicate
 
-          Edge ..&gt; node : predicate
+          Edge --|&gt; node : predicate
 
       Edge : predicate_representation
 
       Edge : subject
 
-          Edge ..&gt; node : subject
+          Edge --|&gt; node : subject
 
       Edge : subject_representation
 

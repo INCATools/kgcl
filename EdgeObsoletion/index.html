@@ -7,7 +7,7 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <link href="https://incatools.github.io/kgcl_schema/EdgeObsoletion/" rel="canonical"/>
 <link href="../assets/images/favicon.png" rel="icon"/>
-<meta content="mkdocs-1.4.2, mkdocs-material-8.5.10" name="generator"/>
+<meta content="mkdocs-1.4.3, mkdocs-material-8.5.10" name="generator"/>
 <title>Class: EdgeObsoletion - KGCL</title>
 <link href="../assets/stylesheets/main.975780f9.min.css" rel="stylesheet"/>
 <link href="../assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
@@ -229,11 +229,11 @@
 
       EdgeObsoletion : about_edge
 
-          EdgeObsoletion ..&gt; edge : about_edge
+          EdgeObsoletion --|&gt; edge : about_edge
 
       EdgeObsoletion : annotation_set
 
-          EdgeObsoletion ..&gt; annotation : annotation_set
+          EdgeObsoletion --|&gt; annotation : annotation_set
 
       EdgeObsoletion : change_date
 
@@ -245,7 +245,7 @@
 
       EdgeObsoletion : has_undo
 
-          EdgeObsoletion ..&gt; obsoletion : has_undo
+          EdgeObsoletion --|&gt; obsoletion : has_undo
 
       EdgeObsoletion : id
 
@@ -261,7 +261,7 @@
 
       EdgeObsoletion : object
 
-          EdgeObsoletion ..&gt; node : object
+          EdgeObsoletion --|&gt; node : object
 
       EdgeObsoletion : object_type
 
@@ -275,7 +275,7 @@
 
       EdgeObsoletion : predicate
 
-          EdgeObsoletion ..&gt; node : predicate
+          EdgeObsoletion --|&gt; node : predicate
 
       EdgeObsoletion : pull_request
 
@@ -283,13 +283,13 @@
 
       EdgeObsoletion : subject
 
-          EdgeObsoletion ..&gt; node : subject
+          EdgeObsoletion --|&gt; node : subject
 
       EdgeObsoletion : type
 
       EdgeObsoletion : was_generated_by
 
-          EdgeObsoletion ..&gt; activity : was_generated_by
+          EdgeObsoletion --|&gt; activity : was_generated_by
 
 
 </div>
@@ -793,6 +793,7 @@ attributes:
     - agent
     - node
     range: string
+    required: true
   type:
     name: type
     from_schema: https://w3id.org/kgcl

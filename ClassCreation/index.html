@@ -7,7 +7,7 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <link href="https://incatools.github.io/kgcl_schema/ClassCreation/" rel="canonical"/>
 <link href="../assets/images/favicon.png" rel="icon"/>
-<meta content="mkdocs-1.4.2, mkdocs-material-8.5.10" name="generator"/>
+<meta content="mkdocs-1.4.3, mkdocs-material-8.5.10" name="generator"/>
 <title>Class: ClassCreation - KGCL</title>
 <link href="../assets/stylesheets/main.975780f9.min.css" rel="stylesheet"/>
 <link href="../assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
@@ -218,13 +218,13 @@
 
       ClassCreation : about_node
 
-          ClassCreation ..&gt; node : about_node
+          ClassCreation --|&gt; node : about_node
 
       ClassCreation : about_node_representation
 
       ClassCreation : annotation_set
 
-          ClassCreation ..&gt; annotation : annotation_set
+          ClassCreation --|&gt; annotation : annotation_set
 
       ClassCreation : change_date
 
@@ -234,7 +234,7 @@
 
       ClassCreation : has_undo
 
-          ClassCreation ..&gt; deletion : has_undo
+          ClassCreation --|&gt; deletion : has_undo
 
       ClassCreation : id
 
@@ -252,7 +252,7 @@
 
       ClassCreation : node_id
 
-          ClassCreation ..&gt; node : node_id
+          ClassCreation --|&gt; node : node_id
 
       ClassCreation : old_datatype
 
@@ -264,7 +264,7 @@
 
       ClassCreation : owl_type
 
-          ClassCreation ..&gt; owl_type_enum : owl_type
+          ClassCreation --|&gt; owl_type_enum : owl_type
 
       ClassCreation : pull_request
 
@@ -272,13 +272,13 @@
 
       ClassCreation : superclass
 
-          ClassCreation ..&gt; node : superclass
+          ClassCreation --|&gt; node : superclass
 
       ClassCreation : type
 
       ClassCreation : was_generated_by
 
-          ClassCreation ..&gt; activity : was_generated_by
+          ClassCreation --|&gt; activity : was_generated_by
 
 
 </div>
@@ -343,7 +343,7 @@
 <td><a href="../language/">language</a></td>
 <td>0..1 <br/> <a href="../LanguageTag/">LanguageTag</a></td>
 <td>The language tag of a literal</td>
-<td><a href="../NodeCreation/">NodeCreation</a>, <a href="../NodeChange/">NodeChange</a></td>
+<td><a href="../NodeChange/">NodeChange</a>, <a href="../NodeCreation/">NodeCreation</a></td>
 </tr>
 <tr>
 <td><a href="../about_node/">about_node</a></td>
@@ -734,6 +734,7 @@ attributes:
     - agent
     - node
     range: string
+    required: true
   type:
     name: type
     from_schema: https://w3id.org/kgcl

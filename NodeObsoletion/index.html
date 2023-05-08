@@ -7,7 +7,7 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <link href="https://incatools.github.io/kgcl_schema/NodeObsoletion/" rel="canonical"/>
 <link href="../assets/images/favicon.png" rel="icon"/>
-<meta content="mkdocs-1.4.2, mkdocs-material-8.5.10" name="generator"/>
+<meta content="mkdocs-1.4.3, mkdocs-material-8.5.10" name="generator"/>
 <title>Class: NodeObsoletion - KGCL</title>
 <link href="../assets/stylesheets/main.975780f9.min.css" rel="stylesheet"/>
 <link href="../assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
@@ -235,7 +235,7 @@
 
       NodeObsoletion : about_node
 
-          NodeObsoletion ..&gt; node : about_node
+          NodeObsoletion --|&gt; node : about_node
 
       NodeObsoletion : about_node_representation
 
@@ -247,15 +247,15 @@
 
       NodeObsoletion : has_direct_replacement
 
-          NodeObsoletion ..&gt; node : has_direct_replacement
+          NodeObsoletion --|&gt; node : has_direct_replacement
 
       NodeObsoletion : has_nondirect_replacement
 
-          NodeObsoletion ..&gt; node : has_nondirect_replacement
+          NodeObsoletion --|&gt; node : has_nondirect_replacement
 
       NodeObsoletion : has_undo
 
-          NodeObsoletion ..&gt; obsoletion : has_undo
+          NodeObsoletion --|&gt; obsoletion : has_undo
 
       NodeObsoletion : id
 
@@ -285,7 +285,7 @@
 
       NodeObsoletion : was_generated_by
 
-          NodeObsoletion ..&gt; activity : was_generated_by
+          NodeObsoletion --|&gt; activity : was_generated_by
 
 
 </div>
@@ -767,6 +767,7 @@ attributes:
     - agent
     - node
     range: string
+    required: true
   type:
     name: type
     from_schema: https://w3id.org/kgcl

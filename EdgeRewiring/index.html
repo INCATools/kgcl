@@ -7,7 +7,7 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <link href="https://incatools.github.io/kgcl_schema/EdgeRewiring/" rel="canonical"/>
 <link href="../assets/images/favicon.png" rel="icon"/>
-<meta content="mkdocs-1.4.2, mkdocs-material-8.5.10" name="generator"/>
+<meta content="mkdocs-1.4.3, mkdocs-material-8.5.10" name="generator"/>
 <title>Class: EdgeRewiring - KGCL</title>
 <link href="../assets/stylesheets/main.975780f9.min.css" rel="stylesheet"/>
 <link href="../assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
@@ -218,7 +218,7 @@
 
       EdgeRewiring : about_edge
 
-          EdgeRewiring ..&gt; edge : about_edge
+          EdgeRewiring --|&gt; edge : about_edge
 
       EdgeRewiring : change_date
 
@@ -230,7 +230,7 @@
 
       EdgeRewiring : has_undo
 
-          EdgeRewiring ..&gt; change : has_undo
+          EdgeRewiring --|&gt; change : has_undo
 
       EdgeRewiring : id
 
@@ -262,7 +262,7 @@
 
       EdgeRewiring : was_generated_by
 
-          EdgeRewiring ..&gt; activity : was_generated_by
+          EdgeRewiring --|&gt; activity : was_generated_by
 
 
 </div>
@@ -649,6 +649,7 @@ attributes:
     - agent
     - node
     range: string
+    required: true
   type:
     name: type
     from_schema: https://w3id.org/kgcl

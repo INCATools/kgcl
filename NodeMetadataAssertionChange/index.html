@@ -7,7 +7,7 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <link href="https://incatools.github.io/kgcl_schema/NodeMetadataAssertionChange/" rel="canonical"/>
 <link href="../assets/images/favicon.png" rel="icon"/>
-<meta content="mkdocs-1.4.2, mkdocs-material-8.5.10" name="generator"/>
+<meta content="mkdocs-1.4.3, mkdocs-material-8.5.10" name="generator"/>
 <title>Class: NodeMetadataAssertionChange - KGCL</title>
 <link href="../assets/stylesheets/main.975780f9.min.css" rel="stylesheet"/>
 <link href="../assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
@@ -225,7 +225,7 @@
 
       NodeMetadataAssertionChange : about_node
 
-          NodeMetadataAssertionChange ..&gt; node : about_node
+          NodeMetadataAssertionChange --|&gt; node : about_node
 
       NodeMetadataAssertionChange : about_node_representation
 
@@ -237,7 +237,7 @@
 
       NodeMetadataAssertionChange : has_undo
 
-          NodeMetadataAssertionChange ..&gt; change : has_undo
+          NodeMetadataAssertionChange --|&gt; change : has_undo
 
       NodeMetadataAssertionChange : id
 
@@ -267,7 +267,7 @@
 
       NodeMetadataAssertionChange : was_generated_by
 
-          NodeMetadataAssertionChange ..&gt; activity : was_generated_by
+          NodeMetadataAssertionChange --|&gt; activity : was_generated_by
 
 
 </div>
@@ -631,6 +631,7 @@ attributes:
     - agent
     - node
     range: string
+    required: true
   type:
     name: type
     from_schema: https://w3id.org/kgcl
