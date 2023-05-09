@@ -418,7 +418,7 @@
 </tr>
 <tr>
 <td><a href="../EdgeLogicalInterpretationChange/">EdgeLogicalInterpretationChange</a></td>
-<td>An edge change where the subjet, object, and predicate are unchanged, but the...</td>
+<td>An edge change where the subject, object, and predicate are unchanged, but th...</td>
 <td>no</td>
 </tr>
 <tr>
@@ -578,7 +578,12 @@
 </tr>
 <tr>
 <td><a href="../ClassCreation/">ClassCreation</a></td>
-<td>A node creation where the owl type is 'class'</td>
+<td>A node creation where the owl type is 'owl:Class'</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../ObjectPropertyCreation/">ObjectPropertyCreation</a></td>
+<td>A node creation where the owl type is 'ObjectProperty'</td>
 <td>no</td>
 </tr>
 <tr>
@@ -615,16 +620,16 @@
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 
-<pre><code class="language-yaml">name: has undo
+<pre><code class="language-yaml">name: has_undo
 description: A change that reverses this change
 from_schema: https://w3id.org/kgcl
 rank: 1000
-domain: change
+domain: Change
 multivalued: false
 alias: has_undo
 domain_of:
-- change
-range: change
+- Change
+range: Change
 
 </code></pre>
 

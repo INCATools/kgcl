@@ -376,7 +376,7 @@
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 
-<pre><code class="language-yaml">name: has textual diff
+<pre><code class="language-yaml">name: has_textual_diff
 description: A representation of character-level changes on a textual literal property.
   For example, if a text definition may change by only a single character such as
   addition of a period, it is useful to be able to see this visually.
@@ -384,14 +384,14 @@ comments:
 - this is NOT for representing the diff of the change as a whole.
 from_schema: https://w3id.org/kgcl
 rank: 1000
-domain: change
+domain: Change
 alias: has_textual_diff
 domain_of:
-- node rename
-- synonym replacement
-- synonym predicate change
-- text definition replacement
-range: textual diff
+- NodeRename
+- SynonymReplacement
+- SynonymPredicateChange
+- TextDefinitionReplacement
+range: TextualDiff
 
 </code></pre>
 

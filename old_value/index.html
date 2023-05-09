@@ -453,7 +453,7 @@
 </tr>
 <tr>
 <td><a href="../EdgeLogicalInterpretationChange/">EdgeLogicalInterpretationChange</a></td>
-<td>An edge change where the subjet, object, and predicate are unchanged, but the...</td>
+<td>An edge change where the subject, object, and predicate are unchanged, but th...</td>
 <td>no</td>
 </tr>
 <tr>
@@ -558,7 +558,12 @@
 </tr>
 <tr>
 <td><a href="../ClassCreation/">ClassCreation</a></td>
-<td>A node creation where the owl type is 'class'</td>
+<td>A node creation where the owl type is 'owl:Class'</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../ObjectPropertyCreation/">ObjectPropertyCreation</a></td>
+<td>A node creation where the owl type is 'ObjectProperty'</td>
 <td>no</td>
 </tr>
 <tr>
@@ -595,24 +600,24 @@
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 
-<pre><code class="language-yaml">name: old value
+<pre><code class="language-yaml">name: old_value
 description: The value of a property held in the old instance of the ontology
 from_schema: https://w3id.org/kgcl
 rank: 1000
 alias: old_value
 domain_of:
-- simple change
-- node rename
-- set language for name
-- remove synonym
-- synonym replacement
-- synonym predicate change
-- mapping replacement
-- mapping predicate change
-- metadata assertion replacement
-- metadata assertion predicate change
-- remove text definition
-- text definition replacement
+- SimpleChange
+- NodeRename
+- SetLanguageForName
+- RemoveSynonym
+- SynonymReplacement
+- SynonymPredicateChange
+- MappingReplacement
+- MappingPredicateChange
+- MetadataAssertionReplacement
+- MetadataAssertionPredicateChange
+- RemoveTextDefinition
+- TextDefinitionReplacement
 range: string
 
 </code></pre>

@@ -213,7 +213,7 @@
 
       ClassNode : annotation_set
 
-          ClassNode --|&gt; annotation : annotation_set
+          ClassNode --|&gt; Annotation : annotation_set
 
       ClassNode : id
 
@@ -221,7 +221,7 @@
 
       ClassNode : owl_type
 
-          ClassNode --|&gt; owl_type_enum : owl_type
+          ClassNode --|&gt; OwlTypeEnum : owl_type
 
 
 </div>
@@ -304,24 +304,24 @@
 <!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
 <h3 id="direct">Direct</h3>
 <details>
-<pre><code class="language-yaml">name: class node
+<pre><code class="language-yaml">name: ClassNode
 description: A node that is a class
 from_schema: https://w3id.org/kgcl
 aliases:
 - concept
-is_a: node
+is_a: Node
 class_uri: owl:Class
 
 </code></pre>
 </details>
 <h3 id="induced">Induced</h3>
 <details>
-<pre><code class="language-yaml">name: class node
+<pre><code class="language-yaml">name: ClassNode
 description: A node that is a class
 from_schema: https://w3id.org/kgcl
 aliases:
 - concept
-is_a: node
+is_a: Node
 attributes:
   id:
     name: id
@@ -329,12 +329,12 @@ attributes:
     rank: 1000
     identifier: true
     alias: id
-    owner: class node
+    owner: ClassNode
     domain_of:
-    - change
-    - activity
-    - agent
-    - node
+    - Change
+    - Activity
+    - Agent
+    - Node
     range: string
     required: true
   name:
@@ -342,37 +342,37 @@ attributes:
     from_schema: https://w3id.org/kgcl
     rank: 1000
     alias: name
-    owner: class node
+    owner: ClassNode
     domain_of:
-    - node creation
-    - node
+    - NodeCreation
+    - Node
     range: string
-  annotation set:
-    name: annotation set
+  annotation_set:
+    name: annotation_set
     from_schema: https://w3id.org/kgcl
     rank: 1000
     alias: annotation_set
-    owner: class node
+    owner: ClassNode
     domain_of:
-    - edge creation
-    - edge deletion
-    - edge obsoletion
-    - mapping creation
-    - node creation
-    - annotation
-    - node
-    - edge
-    range: annotation
-  owl type:
-    name: owl type
+    - EdgeCreation
+    - EdgeDeletion
+    - EdgeObsoletion
+    - MappingCreation
+    - NodeCreation
+    - Annotation
+    - Node
+    - Edge
+    range: Annotation
+  owl_type:
+    name: owl_type
     from_schema: https://w3id.org/kgcl
     rank: 1000
     alias: owl_type
-    owner: class node
+    owner: ClassNode
     domain_of:
-    - node creation
-    - node
-    range: owl_type_enum
+    - NodeCreation
+    - Node
+    range: OwlTypeEnum
 class_uri: owl:Class
 
 </code></pre>

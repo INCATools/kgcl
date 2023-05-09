@@ -393,7 +393,7 @@
 </tr>
 <tr>
 <td><a href="../EdgeLogicalInterpretationChange/">EdgeLogicalInterpretationChange</a></td>
-<td>An edge change where the subjet, object, and predicate are unchanged, but the...</td>
+<td>An edge change where the subject, object, and predicate are unchanged, but th...</td>
 <td>no</td>
 </tr>
 </tbody>
@@ -410,16 +410,16 @@
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 
-<pre><code class="language-yaml">name: object type
+<pre><code class="language-yaml">name: object_type
 description: The type (IRI or Literal) of an object
 deprecated: no longer required
 from_schema: https://w3id.org/kgcl
 rank: 1000
 alias: object_type
 domain_of:
-- edge change
-- edge creation
-- edge deletion
+- EdgeChange
+- EdgeCreation
+- EdgeDeletion
 range: string
 
 </code></pre>

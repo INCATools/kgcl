@@ -218,7 +218,7 @@
 
       SubsetMembershipChange : in_subset
 
-          SubsetMembershipChange --|&gt; ontology subset : in_subset
+          SubsetMembershipChange --|&gt; OntologySubset : in_subset
 
 
 </div>
@@ -295,36 +295,36 @@
 <!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
 <h3 id="direct">Direct</h3>
 <details>
-<pre><code class="language-yaml">name: subset membership change
+<pre><code class="language-yaml">name: SubsetMembershipChange
 description: A change in the membership status of a node with respect to a subset
   (view)
 from_schema: https://w3id.org/kgcl
-is_a: change mixin
+is_a: ChangeMixin
 mixin: true
 slots:
-- in subset
+- in_subset
 
 </code></pre>
 </details>
 <h3 id="induced">Induced</h3>
 <details>
-<pre><code class="language-yaml">name: subset membership change
+<pre><code class="language-yaml">name: SubsetMembershipChange
 description: A change in the membership status of a node with respect to a subset
   (view)
 from_schema: https://w3id.org/kgcl
-is_a: change mixin
+is_a: ChangeMixin
 mixin: true
 attributes:
-  in subset:
-    name: in subset
+  in_subset:
+    name: in_subset
     description: The subset that pertains to this change
     from_schema: https://w3id.org/kgcl
     rank: 1000
     alias: in_subset
-    owner: subset membership change
+    owner: SubsetMembershipChange
     domain_of:
-    - subset membership change
-    range: ontology subset
+    - SubsetMembershipChange
+    range: OntologySubset
 
 </code></pre>
 </details>

@@ -213,7 +213,7 @@
 
       Annotation : annotation_set
 
-          Annotation --|&gt; annotation : annotation_set
+          Annotation --|&gt; Annotation : annotation_set
 
       Annotation : filler
 
@@ -221,7 +221,7 @@
 
       Annotation : property
 
-          Annotation --|&gt; node : property
+          Annotation --|&gt; Node : property
 
       Annotation : property_type
 
@@ -340,6 +340,12 @@
 <td><a href="./">Annotation</a></td>
 </tr>
 <tr>
+<td><a href="../ObjectPropertyCreation/">ObjectPropertyCreation</a></td>
+<td><a href="../annotation_set/">annotation_set</a></td>
+<td>range</td>
+<td><a href="./">Annotation</a></td>
+</tr>
+<tr>
 <td><a href="./">Annotation</a></td>
 <td><a href="../annotation_set/">annotation_set</a></td>
 <td>range</td>
@@ -403,85 +409,85 @@
 <!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
 <h3 id="direct">Direct</h3>
 <details>
-<pre><code class="language-yaml">name: annotation
+<pre><code class="language-yaml">name: Annotation
 description: owl annotations. Not to be confused with annotations sensu GO
 from_schema: https://w3id.org/kgcl
 mappings:
 - owl:Annotation
-is_a: property value
+is_a: PropertyValue
 slots:
 - property
 - filler
-- annotation set
-- property type
-- filler type
+- annotation_set
+- property_type
+- filler_type
 
 </code></pre>
 </details>
 <h3 id="induced">Induced</h3>
 <details>
-<pre><code class="language-yaml">name: annotation
+<pre><code class="language-yaml">name: Annotation
 description: owl annotations. Not to be confused with annotations sensu GO
 from_schema: https://w3id.org/kgcl
 mappings:
 - owl:Annotation
-is_a: property value
+is_a: PropertyValue
 attributes:
   property:
     name: property
     from_schema: https://w3id.org/kgcl
     rank: 1000
     alias: property
-    owner: annotation
+    owner: Annotation
     domain_of:
-    - property value
-    - annotation
-    range: node
+    - PropertyValue
+    - Annotation
+    range: Node
   filler:
     name: filler
     from_schema: https://w3id.org/kgcl
     rank: 1000
     alias: filler
-    owner: annotation
+    owner: Annotation
     domain_of:
-    - property value
-    - annotation
+    - PropertyValue
+    - Annotation
     range: string
-  annotation set:
-    name: annotation set
+  annotation_set:
+    name: annotation_set
     from_schema: https://w3id.org/kgcl
     rank: 1000
     alias: annotation_set
-    owner: annotation
+    owner: Annotation
     domain_of:
-    - edge creation
-    - edge deletion
-    - edge obsoletion
-    - mapping creation
-    - node creation
-    - annotation
-    - node
-    - edge
-    range: annotation
-  property type:
-    name: property type
+    - EdgeCreation
+    - EdgeDeletion
+    - EdgeObsoletion
+    - MappingCreation
+    - NodeCreation
+    - Annotation
+    - Node
+    - Edge
+    range: Annotation
+  property_type:
+    name: property_type
     deprecated: no longer required
     from_schema: https://w3id.org/kgcl
     rank: 1000
     alias: property_type
-    owner: annotation
+    owner: Annotation
     domain_of:
-    - annotation
+    - Annotation
     range: string
-  filler type:
-    name: filler type
+  filler_type:
+    name: filler_type
     deprecated: no longer required
     from_schema: https://w3id.org/kgcl
     rank: 1000
     alias: filler_type
-    owner: annotation
+    owner: Annotation
     domain_of:
-    - annotation
+    - Annotation
     range: string
 
 </code></pre>

@@ -220,7 +220,7 @@
 
       MultiNodeObsoletion : change_set
 
-          MultiNodeObsoletion --|&gt; node obsoletion : change_set
+          MultiNodeObsoletion --|&gt; NodeObsoletion : change_set
 
       MultiNodeObsoletion : contributor
 
@@ -228,7 +228,7 @@
 
       MultiNodeObsoletion : has_undo
 
-          MultiNodeObsoletion --|&gt; change : has_undo
+          MultiNodeObsoletion --|&gt; Change : has_undo
 
       MultiNodeObsoletion : id
 
@@ -240,15 +240,18 @@
 
       MultiNodeObsoletion : was_generated_by
 
-          MultiNodeObsoletion --|&gt; activity : was_generated_by
+          MultiNodeObsoletion --|&gt; Activity : was_generated_by
 
 
 </div>
 <h2 id="inheritance">Inheritance</h2>
 <ul>
+<li><a href="../ChangeLanguageElement/">ChangeLanguageElement</a><ul>
 <li><a href="../Change/">Change</a><ul>
 <li><a href="../ComplexChange/">ComplexChange</a><ul>
 <li><strong>MultiNodeObsoletion</strong></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -366,7 +369,7 @@
 <!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
 <h3 id="direct">Direct</h3>
 <details>
-<pre><code class="language-yaml">name: multi node obsoletion
+<pre><code class="language-yaml">name: MultiNodeObsoletion
 description: A complex change consisting of multiple obsoletions.
 from_schema: https://w3id.org/kgcl
 see_also:
@@ -376,33 +379,32 @@ aliases:
 - multi class obsoletion
 - multi term obsoletion
 - multi concept obsoletion
-is_a: complex change
+is_a: ComplexChange
 slot_usage:
-  change set:
-    name: change set
+  change_set:
+    name: change_set
     domain_of:
-    - complex change
-    - transaction
-    - session
-    range: node obsoletion
-  change description:
-    name: change description
-    string_serialization: a multi node obsoletion consisting of {change set}
+    - ComplexChange
+    - Transaction
+    - Session
+    range: NodeObsoletion
+  change_description:
+    name: change_description
+    string_serialization: obsolete multiple {change set}
   associated change set:
     name: associated change set
-    description: "All changes associated with a set of obsoletions. This change set\
-      \ is the composed change set rather than the set of individual changes. For\
-      \ example, if previous state is:\n  `A subClassOf B subClassOf C subClassOf\
-      \ D`\nand we obsolete {B,C}, then the individual changes are `A moves from B\
-      \ to C` and `B moves from C to D`, but the composed change set is `A moves from\
-      \ B to D`"
-    is_a: change set
+    description: All changes associated with a set of obsoletions. This change set
+      is the composed change set rather than the set of individual changes. For example,
+      if previous state is:\n  `A subClassOf B subClassOf C subClassOf D` and we obsolete
+      {B,C}, then the individual changes are `A moves from B to C` and `B moves from
+      C to D`, but the composed change set is `A moves from B to D`"
+    is_a: change_set
 
 </code></pre>
 </details>
 <h3 id="induced">Induced</h3>
 <details>
-<pre><code class="language-yaml">name: multi node obsoletion
+<pre><code class="language-yaml">name: MultiNodeObsoletion
 description: A complex change consisting of multiple obsoletions.
 from_schema: https://w3id.org/kgcl
 see_also:
@@ -412,41 +414,40 @@ aliases:
 - multi class obsoletion
 - multi term obsoletion
 - multi concept obsoletion
-is_a: complex change
+is_a: ComplexChange
 slot_usage:
-  change set:
-    name: change set
+  change_set:
+    name: change_set
     domain_of:
-    - complex change
-    - transaction
-    - session
-    range: node obsoletion
-  change description:
-    name: change description
-    string_serialization: a multi node obsoletion consisting of {change set}
+    - ComplexChange
+    - Transaction
+    - Session
+    range: NodeObsoletion
+  change_description:
+    name: change_description
+    string_serialization: obsolete multiple {change set}
   associated change set:
     name: associated change set
-    description: "All changes associated with a set of obsoletions. This change set\
-      \ is the composed change set rather than the set of individual changes. For\
-      \ example, if previous state is:\n  `A subClassOf B subClassOf C subClassOf\
-      \ D`\nand we obsolete {B,C}, then the individual changes are `A moves from B\
-      \ to C` and `B moves from C to D`, but the composed change set is `A moves from\
-      \ B to D`"
-    is_a: change set
+    description: All changes associated with a set of obsoletions. This change set
+      is the composed change set rather than the set of individual changes. For example,
+      if previous state is:\n  `A subClassOf B subClassOf C subClassOf D` and we obsolete
+      {B,C}, then the individual changes are `A moves from B to C` and `B moves from
+      C to D`, but the composed change set is `A moves from B to D`"
+    is_a: change_set
 attributes:
-  change set:
-    name: change set
+  change_set:
+    name: change_set
     description: A collection of changes
     from_schema: https://w3id.org/kgcl
     rank: 1000
     multivalued: true
     alias: change_set
-    owner: multi node obsoletion
+    owner: MultiNodeObsoletion
     domain_of:
-    - complex change
-    - transaction
-    - session
-    range: node obsoletion
+    - ComplexChange
+    - Transaction
+    - Session
+    range: NodeObsoletion
     inlined: true
     inlined_as_list: true
   id:
@@ -455,12 +456,12 @@ attributes:
     rank: 1000
     identifier: true
     alias: id
-    owner: multi node obsoletion
+    owner: MultiNodeObsoletion
     domain_of:
-    - change
-    - activity
-    - agent
-    - node
+    - Change
+    - Activity
+    - Agent
+    - Node
     range: string
     required: true
   type:
@@ -470,24 +471,24 @@ attributes:
     slot_uri: rdf:type
     designates_type: true
     alias: type
-    owner: multi node obsoletion
+    owner: MultiNodeObsoletion
     domain_of:
-    - change
+    - Change
     range: string
-  was generated by:
-    name: was generated by
+  was_generated_by:
+    name: was_generated_by
     comments:
     - we use the PROV model to represent the agent making a change
     from_schema: https://w3id.org/kgcl
     rank: 1000
     slot_uri: prov:wasGeneratedBy
     alias: was_generated_by
-    owner: multi node obsoletion
+    owner: MultiNodeObsoletion
     domain_of:
-    - change
-    range: activity
-  see also:
-    name: see also
+    - Change
+    range: Activity
+  see_also:
+    name: see_also
     comments:
     - If this change is in relationship to an issue on a system like github, include
       the URL here
@@ -495,20 +496,20 @@ attributes:
     rank: 1000
     slot_uri: rdfs:seeAlso
     alias: see_also
-    owner: multi node obsoletion
+    owner: MultiNodeObsoletion
     domain_of:
-    - change
+    - Change
     range: string
-  pull request:
-    name: pull request
+  pull_request:
+    name: pull_request
     comments:
     - If this change has a pull request on a system like github, include the URL here
     from_schema: https://w3id.org/kgcl
     rank: 1000
     alias: pull_request
-    owner: multi node obsoletion
+    owner: MultiNodeObsoletion
     domain_of:
-    - change
+    - Change
     range: string
   creator:
     name: creator
@@ -518,21 +519,21 @@ attributes:
     rank: 1000
     slot_uri: dcterms:creator
     alias: creator
-    owner: multi node obsoletion
+    owner: MultiNodeObsoletion
     domain_of:
-    - change
+    - Change
     range: string
-  change date:
-    name: change date
+  change_date:
+    name: change_date
     comments:
     - This should be the composition of 'was generated by' and 'ended at time'
     from_schema: https://w3id.org/kgcl
     rank: 1000
     slot_uri: dcterms:date
     alias: change_date
-    owner: multi node obsoletion
+    owner: MultiNodeObsoletion
     domain_of:
-    - change
+    - Change
     range: string
   contributor:
     name: contributor
@@ -540,22 +541,22 @@ attributes:
     rank: 1000
     slot_uri: dcterms:creator
     alias: contributor
-    owner: multi node obsoletion
+    owner: MultiNodeObsoletion
     domain_of:
-    - change
+    - Change
     range: string
-  has undo:
-    name: has undo
+  has_undo:
+    name: has_undo
     description: A change that reverses this change
     from_schema: https://w3id.org/kgcl
     rank: 1000
-    domain: change
+    domain: Change
     multivalued: false
     alias: has_undo
-    owner: multi node obsoletion
+    owner: MultiNodeObsoletion
     domain_of:
-    - change
-    range: change
+    - Change
+    range: Change
 
 </code></pre>
 </details>

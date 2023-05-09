@@ -142,6 +142,11 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
+<a class="md-nav__link" href="#inheritance">
+    Inheritance
+  </a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#slots">
     Slots
   </a>
@@ -199,9 +204,17 @@
 <p>URI: <a href="http://w3id.org/kgcl/ChangeSetSummaryStatistic">kgcl:ChangeSetSummaryStatistic</a></p>
 <div class="mermaid"> classDiagram
     class ChangeSetSummaryStatistic
+      ChangeLanguageElement &lt;|-- ChangeSetSummaryStatistic
+
 
 </div>
-<!-- no inheritance hierarchy -->
+<h2 id="inheritance">Inheritance</h2>
+<ul>
+<li><a href="../ChangeLanguageElement/">ChangeLanguageElement</a><ul>
+<li><strong>ChangeSetSummaryStatistic</strong></li>
+</ul>
+</li>
+</ul>
 <h2 id="slots">Slots</h2>
 <table>
 <thead>
@@ -249,38 +262,40 @@
 <!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
 <h3 id="direct">Direct</h3>
 <details>
-<pre><code class="language-yaml">name: change set summary statistic
+<pre><code class="language-yaml">name: ChangeSetSummaryStatistic
 description: A summary statistic for a set of changes of the same type, grouped by
   zero or more node properties
 from_schema: https://w3id.org/kgcl
+is_a: ChangeLanguageElement
 slot_usage:
   change type:
     name: change type
-    range: change class type
+    range: ChangeClassType
   count:
     name: count
     range: integer
-  property value set:
-    name: property value set
+  property_value_set:
+    name: property_value_set
     description: Summary statistic is grouped by these constraints
 
 </code></pre>
 </details>
 <h3 id="induced">Induced</h3>
 <details>
-<pre><code class="language-yaml">name: change set summary statistic
+<pre><code class="language-yaml">name: ChangeSetSummaryStatistic
 description: A summary statistic for a set of changes of the same type, grouped by
   zero or more node properties
 from_schema: https://w3id.org/kgcl
+is_a: ChangeLanguageElement
 slot_usage:
   change type:
     name: change type
-    range: change class type
+    range: ChangeClassType
   count:
     name: count
     range: integer
-  property value set:
-    name: property value set
+  property_value_set:
+    name: property_value_set
     description: Summary statistic is grouped by these constraints
 
 </code></pre>

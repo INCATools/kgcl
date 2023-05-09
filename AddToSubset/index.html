@@ -222,7 +222,7 @@
 
       AddToSubset : in_subset
 
-          AddToSubset --|&gt; ontology subset : in_subset
+          AddToSubset --|&gt; OntologySubset : in_subset
 
 
 </div>
@@ -317,44 +317,44 @@
 <!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
 <h3 id="direct">Direct</h3>
 <details>
-<pre><code class="language-yaml">name: add to subset
+<pre><code class="language-yaml">name: AddToSubset
 description: placing an element inside a subset
 from_schema: https://w3id.org/kgcl
-is_a: subset membership change
+is_a: SubsetMembershipChange
 mixin: true
 slot_usage:
-  in subset:
-    name: in subset
+  in_subset:
+    name: in_subset
     description: subset that the element is being placed inside.
     domain_of:
-    - subset membership change
+    - SubsetMembershipChange
 
 </code></pre>
 </details>
 <h3 id="induced">Induced</h3>
 <details>
-<pre><code class="language-yaml">name: add to subset
+<pre><code class="language-yaml">name: AddToSubset
 description: placing an element inside a subset
 from_schema: https://w3id.org/kgcl
-is_a: subset membership change
+is_a: SubsetMembershipChange
 mixin: true
 slot_usage:
-  in subset:
-    name: in subset
+  in_subset:
+    name: in_subset
     description: subset that the element is being placed inside.
     domain_of:
-    - subset membership change
+    - SubsetMembershipChange
 attributes:
-  in subset:
-    name: in subset
+  in_subset:
+    name: in_subset
     description: subset that the element is being placed inside.
     from_schema: https://w3id.org/kgcl
     rank: 1000
     alias: in_subset
-    owner: add to subset
+    owner: AddToSubset
     domain_of:
-    - subset membership change
-    range: ontology subset
+    - SubsetMembershipChange
+    range: OntologySubset
 
 </code></pre>
 </details>

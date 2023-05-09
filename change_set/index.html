@@ -370,17 +370,17 @@
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 
-<pre><code class="language-yaml">name: change set
+<pre><code class="language-yaml">name: change_set
 description: A collection of changes
 from_schema: https://w3id.org/kgcl
 rank: 1000
 multivalued: true
 alias: change_set
 domain_of:
-- complex change
-- transaction
-- session
-range: change
+- ComplexChange
+- Transaction
+- Session
+range: Change
 inlined: true
 inlined_as_list: true
 

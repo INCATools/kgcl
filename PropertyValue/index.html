@@ -214,7 +214,7 @@
 
       PropertyValue : property
 
-          PropertyValue --|&gt; node : property
+          PropertyValue --|&gt; Node : property
 
 
 </div>
@@ -281,10 +281,10 @@
 <!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
 <h3 id="direct">Direct</h3>
 <details>
-<pre><code class="language-yaml">name: property value
+<pre><code class="language-yaml">name: PropertyValue
 description: a property-value pair
 from_schema: https://w3id.org/kgcl
-is_a: ontology element
+is_a: OntologyElement
 slots:
 - property
 - filler
@@ -293,30 +293,30 @@ slots:
 </details>
 <h3 id="induced">Induced</h3>
 <details>
-<pre><code class="language-yaml">name: property value
+<pre><code class="language-yaml">name: PropertyValue
 description: a property-value pair
 from_schema: https://w3id.org/kgcl
-is_a: ontology element
+is_a: OntologyElement
 attributes:
   property:
     name: property
     from_schema: https://w3id.org/kgcl
     rank: 1000
     alias: property
-    owner: property value
+    owner: PropertyValue
     domain_of:
-    - property value
-    - annotation
-    range: node
+    - PropertyValue
+    - Annotation
+    range: Node
   filler:
     name: filler
     from_schema: https://w3id.org/kgcl
     rank: 1000
     alias: filler
-    owner: property value
+    owner: PropertyValue
     domain_of:
-    - property value
-    - annotation
+    - PropertyValue
+    - Annotation
     range: string
 
 </code></pre>

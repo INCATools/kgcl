@@ -483,7 +483,12 @@
 </tr>
 <tr>
 <td><a href="../ClassCreation/">ClassCreation</a></td>
-<td>A node creation where the owl type is 'class'</td>
+<td>A node creation where the owl type is 'owl:Class'</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../ObjectPropertyCreation/">ObjectPropertyCreation</a></td>
+<td>A node creation where the owl type is 'ObjectProperty'</td>
 <td>no</td>
 </tr>
 <tr>
@@ -520,14 +525,14 @@
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 
-<pre><code class="language-yaml">name: about node representation
+<pre><code class="language-yaml">name: about_node_representation
 description: 'The representation of a node (URI, CURIE, label) '
 deprecated: no longer required
 from_schema: https://w3id.org/kgcl
 rank: 1000
 alias: about_node_representation
 domain_of:
-- node change
+- NodeChange
 range: string
 
 </code></pre>

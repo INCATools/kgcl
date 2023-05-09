@@ -142,6 +142,11 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
+<a class="md-nav__link" href="#inheritance">
+    Inheritance
+  </a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#slots">
     Slots
   </a>
@@ -204,6 +209,8 @@
 <p>URI: <a href="http://w3id.org/kgcl/Activity">kgcl:Activity</a></p>
 <div class="mermaid"> classDiagram
     class Activity
+      ProvElement &lt;|-- Activity
+
       Activity : description
 
       Activity : ended_at_time
@@ -216,15 +223,21 @@
 
       Activity : was_associated_with
 
-          Activity --|&gt; agent : was_associated_with
+          Activity --|&gt; Agent : was_associated_with
 
       Activity : was_informed_by
 
-          Activity --|&gt; activity : was_informed_by
+          Activity --|&gt; Activity : was_informed_by
 
 
 </div>
-<!-- no inheritance hierarchy -->
+<h2 id="inheritance">Inheritance</h2>
+<ul>
+<li><a href="../ProvElement/">ProvElement</a><ul>
+<li><strong>Activity</strong></li>
+</ul>
+</li>
+</ul>
 <h2 id="slots">Slots</h2>
 <table>
 <thead>
@@ -592,6 +605,12 @@
 <td><a href="./">Activity</a></td>
 </tr>
 <tr>
+<td><a href="../ObjectPropertyCreation/">ObjectPropertyCreation</a></td>
+<td><a href="../was_generated_by/">was_generated_by</a></td>
+<td>range</td>
+<td><a href="./">Activity</a></td>
+</tr>
+<tr>
 <td><a href="../NodeDeletion/">NodeDeletion</a></td>
 <td><a href="../was_generated_by/">was_generated_by</a></td>
 <td>range</td>
@@ -673,17 +692,18 @@
 <!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
 <h3 id="direct">Direct</h3>
 <details>
-<pre><code class="language-yaml">name: activity
+<pre><code class="language-yaml">name: Activity
 description: a provence-generating activity
 from_schema: https://w3id.org/kgcl
 mappings:
 - prov:Activity
+is_a: ProvElement
 slots:
 - id
-- started at time
-- ended at time
-- was informed by
-- was associated with
+- started_at_time
+- ended_at_time
+- was_informed_by
+- was_associated_with
 - used
 - description
 
@@ -691,11 +711,12 @@ slots:
 </details>
 <h3 id="induced">Induced</h3>
 <details>
-<pre><code class="language-yaml">name: activity
+<pre><code class="language-yaml">name: Activity
 description: a provence-generating activity
 from_schema: https://w3id.org/kgcl
 mappings:
 - prov:Activity
+is_a: ProvElement
 attributes:
   id:
     name: id
@@ -703,66 +724,66 @@ attributes:
     rank: 1000
     identifier: true
     alias: id
-    owner: activity
+    owner: Activity
     domain_of:
-    - change
-    - activity
-    - agent
-    - node
+    - Change
+    - Activity
+    - Agent
+    - Node
     range: string
     required: true
-  started at time:
-    name: started at time
+  started_at_time:
+    name: started_at_time
     from_schema: https://w3id.org/kgcl
     rank: 1000
     slot_uri: prov:startedAtTime
     alias: started_at_time
-    owner: activity
+    owner: Activity
     domain_of:
-    - activity
+    - Activity
     range: string
-  ended at time:
-    name: ended at time
+  ended_at_time:
+    name: ended_at_time
     from_schema: https://w3id.org/kgcl
     rank: 1000
     slot_uri: prov:endedAtTime
     alias: ended_at_time
-    owner: activity
+    owner: Activity
     domain_of:
-    - activity
+    - Activity
     range: string
-  was informed by:
-    name: was informed by
+  was_informed_by:
+    name: was_informed_by
     from_schema: https://w3id.org/kgcl
     rank: 1000
     slot_uri: prov:wasInformedBy
     alias: was_informed_by
-    owner: activity
+    owner: Activity
     domain_of:
-    - activity
-    - agent
-    range: activity
-  was associated with:
-    name: was associated with
+    - Activity
+    - Agent
+    range: Activity
+  was_associated_with:
+    name: was_associated_with
     from_schema: https://w3id.org/kgcl
     rank: 1000
     slot_uri: prov:wasAssociatedWith
     alias: was_associated_with
-    owner: activity
+    owner: Activity
     domain_of:
-    - activity
-    range: agent
+    - Activity
+    range: Agent
     inlined: false
   used:
     name: used
     from_schema: https://w3id.org/kgcl
     rank: 1000
-    domain: activity
+    domain: Activity
     slot_uri: prov:used
     alias: used
-    owner: activity
+    owner: Activity
     domain_of:
-    - activity
+    - Activity
     range: string
   description:
     name: description
@@ -770,9 +791,9 @@ attributes:
     rank: 1000
     slot_uri: dcterms:description
     alias: description
-    owner: activity
+    owner: Activity
     domain_of:
-    - activity
+    - Activity
     range: string
 
 </code></pre>

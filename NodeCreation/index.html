@@ -219,17 +219,18 @@
 
 
       NodeCreation &lt;|-- ClassCreation
+      NodeCreation &lt;|-- ObjectPropertyCreation
 
 
       NodeCreation : about_node
 
-          NodeCreation --|&gt; node : about_node
+          NodeCreation --|&gt; Node : about_node
 
       NodeCreation : about_node_representation
 
       NodeCreation : annotation_set
 
-          NodeCreation --|&gt; annotation : annotation_set
+          NodeCreation --|&gt; Annotation : annotation_set
 
       NodeCreation : change_date
 
@@ -239,7 +240,7 @@
 
       NodeCreation : has_undo
 
-          NodeCreation --|&gt; deletion : has_undo
+          NodeCreation --|&gt; Deletion : has_undo
 
       NodeCreation : id
 
@@ -257,7 +258,7 @@
 
       NodeCreation : node_id
 
-          NodeCreation --|&gt; node : node_id
+          NodeCreation --|&gt; Node : node_id
 
       NodeCreation : old_datatype
 
@@ -269,7 +270,7 @@
 
       NodeCreation : owl_type
 
-          NodeCreation --|&gt; owl_type_enum : owl_type
+          NodeCreation --|&gt; OwlTypeEnum : owl_type
 
       NodeCreation : pull_request
 
@@ -279,17 +280,21 @@
 
       NodeCreation : was_generated_by
 
-          NodeCreation --|&gt; activity : was_generated_by
+          NodeCreation --|&gt; Activity : was_generated_by
 
 
 </div>
 <h2 id="inheritance">Inheritance</h2>
 <ul>
+<li><a href="../ChangeLanguageElement/">ChangeLanguageElement</a><ul>
 <li><a href="../Change/">Change</a><ul>
 <li><a href="../SimpleChange/">SimpleChange</a><ul>
 <li><a href="../NodeChange/">NodeChange</a><ul>
 <li><strong>NodeCreation</strong> [ <a href="../Creation/">Creation</a>]<ul>
 <li><a href="../ClassCreation/">ClassCreation</a></li>
+<li><a href="../ObjectPropertyCreation/">ObjectPropertyCreation</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -492,7 +497,7 @@
 <!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
 <h3 id="direct">Direct</h3>
 <details>
-<pre><code class="language-yaml">name: node creation
+<pre><code class="language-yaml">name: NodeCreation
 description: a node change in which a new node is created
 todos:
 - allow this for the creation of an instance from a class. This may include metaclasses
@@ -500,25 +505,25 @@ todos:
 from_schema: https://w3id.org/kgcl
 see_also:
 - http://wiki.geneontology.org/index.php/Guidelines_for_creating_a_GO_term
-is_a: node change
+is_a: NodeChange
 mixins:
-- creation
+- Creation
 slots:
-- node id
+- node_id
 - name
-- owl type
-- annotation set
+- owl_type
+- annotation_set
 - language
 slot_usage:
-  change description:
-    name: change description
+  change_description:
+    name: change_description
     string_serialization: creating node {id} {label} with {annotation set}
 
 </code></pre>
 </details>
 <h3 id="induced">Induced</h3>
 <details>
-<pre><code class="language-yaml">name: node creation
+<pre><code class="language-yaml">name: NodeCreation
 description: a node change in which a new node is created
 todos:
 - allow this for the creation of an instance from a class. This may include metaclasses
@@ -526,202 +531,202 @@ todos:
 from_schema: https://w3id.org/kgcl
 see_also:
 - http://wiki.geneontology.org/index.php/Guidelines_for_creating_a_GO_term
-is_a: node change
+is_a: NodeChange
 mixins:
-- creation
+- Creation
 slot_usage:
-  change description:
-    name: change description
+  change_description:
+    name: change_description
     string_serialization: creating node {id} {label} with {annotation set}
 attributes:
-  node id:
-    name: node id
+  node_id:
+    name: node_id
     description: id of a node to be created
     todos:
     - consider using 'about' instead
     from_schema: https://w3id.org/kgcl
     rank: 1000
     alias: node_id
-    owner: node creation
+    owner: NodeCreation
     domain_of:
-    - node creation
-    range: node
+    - NodeCreation
+    range: Node
   name:
     name: name
     from_schema: https://w3id.org/kgcl
     rank: 1000
     alias: name
-    owner: node creation
+    owner: NodeCreation
     domain_of:
-    - node creation
-    - node
+    - NodeCreation
+    - Node
     range: string
-  owl type:
-    name: owl type
+  owl_type:
+    name: owl_type
     from_schema: https://w3id.org/kgcl
     rank: 1000
     alias: owl_type
-    owner: node creation
+    owner: NodeCreation
     domain_of:
-    - node creation
-    - node
-    range: owl_type_enum
-  annotation set:
-    name: annotation set
+    - NodeCreation
+    - Node
+    range: OwlTypeEnum
+  annotation_set:
+    name: annotation_set
     from_schema: https://w3id.org/kgcl
     rank: 1000
     alias: annotation_set
-    owner: node creation
+    owner: NodeCreation
     domain_of:
-    - edge creation
-    - edge deletion
-    - edge obsoletion
-    - mapping creation
-    - node creation
-    - annotation
-    - node
-    - edge
-    range: annotation
+    - EdgeCreation
+    - EdgeDeletion
+    - EdgeObsoletion
+    - MappingCreation
+    - NodeCreation
+    - Annotation
+    - Node
+    - Edge
+    range: Annotation
   language:
     name: language
     description: The language tag of a literal
     from_schema: https://w3id.org/kgcl
     rank: 1000
     alias: language
-    owner: node creation
+    owner: NodeCreation
     domain_of:
-    - edge change
-    - node change
-    - new synonym
-    - node creation
-    range: language tag
-  about node:
-    name: about node
+    - EdgeChange
+    - NodeChange
+    - NewSynonym
+    - NodeCreation
+    range: LanguageTag
+  about_node:
+    name: about_node
     from_schema: https://w3id.org/kgcl
     rank: 1000
     is_a: about
     multivalued: false
     alias: about_node
-    owner: node creation
+    owner: NodeCreation
     domain_of:
-    - node change
-    range: node
-  about node representation:
-    name: about node representation
+    - NodeChange
+    range: Node
+  about_node_representation:
+    name: about_node_representation
     description: 'The representation of a node (URI, CURIE, label) '
     deprecated: no longer required
     from_schema: https://w3id.org/kgcl
     rank: 1000
     alias: about_node_representation
-    owner: node creation
+    owner: NodeCreation
     domain_of:
-    - node change
+    - NodeChange
     range: string
-  old value:
-    name: old value
+  old_value:
+    name: old_value
     description: The value of a property held in the old instance of the ontology
     from_schema: https://w3id.org/kgcl
     rank: 1000
     alias: old_value
-    owner: node creation
+    owner: NodeCreation
     domain_of:
-    - simple change
-    - node rename
-    - set language for name
-    - remove synonym
-    - synonym replacement
-    - synonym predicate change
-    - mapping replacement
-    - mapping predicate change
-    - metadata assertion replacement
-    - metadata assertion predicate change
-    - remove text definition
-    - text definition replacement
+    - SimpleChange
+    - NodeRename
+    - SetLanguageForName
+    - RemoveSynonym
+    - SynonymReplacement
+    - SynonymPredicateChange
+    - MappingReplacement
+    - MappingPredicateChange
+    - MetadataAssertionReplacement
+    - MetadataAssertionPredicateChange
+    - RemoveTextDefinition
+    - TextDefinitionReplacement
     range: string
-  new value:
-    name: new value
+  new_value:
+    name: new_value
     description: The value of a property held in the new instance of the ontology
     from_schema: https://w3id.org/kgcl
     rank: 1000
     alias: new_value
-    owner: node creation
+    owner: NodeCreation
     domain_of:
-    - simple change
-    - node rename
-    - set language for name
-    - new synonym
-    - synonym replacement
-    - synonym predicate change
-    - mapping replacement
-    - mapping predicate change
-    - metadata assertion replacement
-    - metadata assertion predicate change
-    - new text definition
-    - text definition replacement
+    - SimpleChange
+    - NodeRename
+    - SetLanguageForName
+    - NewSynonym
+    - SynonymReplacement
+    - SynonymPredicateChange
+    - MappingReplacement
+    - MappingPredicateChange
+    - MetadataAssertionReplacement
+    - MetadataAssertionPredicateChange
+    - NewTextDefinition
+    - TextDefinitionReplacement
     range: string
-  old value type:
-    name: old value type
+  old_value_type:
+    name: old_value_type
     description: The type (IRI or Literal) of an old value
     deprecated: no longer required
     from_schema: https://w3id.org/kgcl
     rank: 1000
     alias: old_value_type
-    owner: node creation
+    owner: NodeCreation
     domain_of:
-    - simple change
+    - SimpleChange
     range: string
-  new value type:
-    name: new value type
+  new_value_type:
+    name: new_value_type
     description: The type (IRI or Literal) of a new value
     deprecated: no longer required
     from_schema: https://w3id.org/kgcl
     rank: 1000
     alias: new_value_type
-    owner: node creation
+    owner: NodeCreation
     domain_of:
-    - simple change
+    - SimpleChange
     range: string
-  new language:
-    name: new language
+  new_language:
+    name: new_language
     description: The new language tag of a literal
     from_schema: https://w3id.org/kgcl
     rank: 1000
     alias: new_language
-    owner: node creation
+    owner: NodeCreation
     domain_of:
-    - simple change
-    - node rename
+    - SimpleChange
+    - NodeRename
     range: string
-  old language:
-    name: old language
+  old_language:
+    name: old_language
     description: The old language tag of a literal
     from_schema: https://w3id.org/kgcl
     rank: 1000
     alias: old_language
-    owner: node creation
+    owner: NodeCreation
     domain_of:
-    - simple change
-    - node rename
+    - SimpleChange
+    - NodeRename
     range: string
-  new datatype:
-    name: new datatype
+  new_datatype:
+    name: new_datatype
     description: The new datatype of a literal
     from_schema: https://w3id.org/kgcl
     rank: 1000
     alias: new_datatype
-    owner: node creation
+    owner: NodeCreation
     domain_of:
-    - simple change
+    - SimpleChange
     range: string
-  old datatype:
-    name: old datatype
+  old_datatype:
+    name: old_datatype
     description: The old datatype of a literal
     from_schema: https://w3id.org/kgcl
     rank: 1000
     alias: old_datatype
-    owner: node creation
+    owner: NodeCreation
     domain_of:
-    - simple change
+    - SimpleChange
     range: string
   id:
     name: id
@@ -729,12 +734,12 @@ attributes:
     rank: 1000
     identifier: true
     alias: id
-    owner: node creation
+    owner: NodeCreation
     domain_of:
-    - change
-    - activity
-    - agent
-    - node
+    - Change
+    - Activity
+    - Agent
+    - Node
     range: string
     required: true
   type:
@@ -744,24 +749,24 @@ attributes:
     slot_uri: rdf:type
     designates_type: true
     alias: type
-    owner: node creation
+    owner: NodeCreation
     domain_of:
-    - change
+    - Change
     range: string
-  was generated by:
-    name: was generated by
+  was_generated_by:
+    name: was_generated_by
     comments:
     - we use the PROV model to represent the agent making a change
     from_schema: https://w3id.org/kgcl
     rank: 1000
     slot_uri: prov:wasGeneratedBy
     alias: was_generated_by
-    owner: node creation
+    owner: NodeCreation
     domain_of:
-    - change
-    range: activity
-  see also:
-    name: see also
+    - Change
+    range: Activity
+  see_also:
+    name: see_also
     comments:
     - If this change is in relationship to an issue on a system like github, include
       the URL here
@@ -769,20 +774,20 @@ attributes:
     rank: 1000
     slot_uri: rdfs:seeAlso
     alias: see_also
-    owner: node creation
+    owner: NodeCreation
     domain_of:
-    - change
+    - Change
     range: string
-  pull request:
-    name: pull request
+  pull_request:
+    name: pull_request
     comments:
     - If this change has a pull request on a system like github, include the URL here
     from_schema: https://w3id.org/kgcl
     rank: 1000
     alias: pull_request
-    owner: node creation
+    owner: NodeCreation
     domain_of:
-    - change
+    - Change
     range: string
   creator:
     name: creator
@@ -792,21 +797,21 @@ attributes:
     rank: 1000
     slot_uri: dcterms:creator
     alias: creator
-    owner: node creation
+    owner: NodeCreation
     domain_of:
-    - change
+    - Change
     range: string
-  change date:
-    name: change date
+  change_date:
+    name: change_date
     comments:
     - This should be the composition of 'was generated by' and 'ended at time'
     from_schema: https://w3id.org/kgcl
     rank: 1000
     slot_uri: dcterms:date
     alias: change_date
-    owner: node creation
+    owner: NodeCreation
     domain_of:
-    - change
+    - Change
     range: string
   contributor:
     name: contributor
@@ -814,22 +819,22 @@ attributes:
     rank: 1000
     slot_uri: dcterms:creator
     alias: contributor
-    owner: node creation
+    owner: NodeCreation
     domain_of:
-    - change
+    - Change
     range: string
-  has undo:
-    name: has undo
+  has_undo:
+    name: has_undo
     description: A change that reverses this change
     from_schema: https://w3id.org/kgcl
     rank: 1000
-    domain: change
+    domain: Change
     multivalued: false
     alias: has_undo
-    owner: node creation
+    owner: NodeCreation
     domain_of:
-    - change
-    range: deletion
+    - Change
+    range: Deletion
 
 </code></pre>
 </details>

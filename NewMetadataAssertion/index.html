@@ -213,7 +213,7 @@
 
       NewMetadataAssertion : about_node
 
-          NewMetadataAssertion --|&gt; node : about_node
+          NewMetadataAssertion --|&gt; Node : about_node
 
       NewMetadataAssertion : about_node_representation
 
@@ -225,7 +225,7 @@
 
       NewMetadataAssertion : has_undo
 
-          NewMetadataAssertion --|&gt; change : has_undo
+          NewMetadataAssertion --|&gt; Change : has_undo
 
       NewMetadataAssertion : id
 
@@ -241,7 +241,7 @@
 
       NewMetadataAssertion : object
 
-          NewMetadataAssertion --|&gt; node : object
+          NewMetadataAssertion --|&gt; Node : object
 
       NewMetadataAssertion : old_datatype
 
@@ -253,7 +253,7 @@
 
       NewMetadataAssertion : predicate
 
-          NewMetadataAssertion --|&gt; node : predicate
+          NewMetadataAssertion --|&gt; Node : predicate
 
       NewMetadataAssertion : pull_request
 
@@ -263,17 +263,20 @@
 
       NewMetadataAssertion : was_generated_by
 
-          NewMetadataAssertion --|&gt; activity : was_generated_by
+          NewMetadataAssertion --|&gt; Activity : was_generated_by
 
 
 </div>
 <h2 id="inheritance">Inheritance</h2>
 <ul>
+<li><a href="../ChangeLanguageElement/">ChangeLanguageElement</a><ul>
 <li><a href="../Change/">Change</a><ul>
 <li><a href="../SimpleChange/">SimpleChange</a><ul>
 <li><a href="../NodeChange/">NodeChange</a><ul>
 <li><a href="../NodeMetadataAssertionChange/">NodeMetadataAssertionChange</a><ul>
 <li><strong>NewMetadataAssertion</strong></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -460,13 +463,13 @@
 <!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
 <h3 id="direct">Direct</h3>
 <details>
-<pre><code class="language-yaml">name: new metadata assertion
+<pre><code class="language-yaml">name: NewMetadataAssertion
 description: A node metadata assertion change where a metadata assertion is added
   to a node
 from_schema: https://w3id.org/kgcl
 aliases:
 - xref change
-is_a: node metadata assertion change
+is_a: NodeMetadataAssertionChange
 slots:
 - object
 - predicate
@@ -475,69 +478,69 @@ slots:
 </details>
 <h3 id="induced">Induced</h3>
 <details>
-<pre><code class="language-yaml">name: new metadata assertion
+<pre><code class="language-yaml">name: NewMetadataAssertion
 description: A node metadata assertion change where a metadata assertion is added
   to a node
 from_schema: https://w3id.org/kgcl
 aliases:
 - xref change
-is_a: node metadata assertion change
+is_a: NodeMetadataAssertionChange
 attributes:
   object:
     name: object
     from_schema: https://w3id.org/kgcl
     rank: 1000
     alias: object
-    owner: new metadata assertion
+    owner: NewMetadataAssertion
     domain_of:
-    - edge creation
-    - edge deletion
-    - edge obsoletion
-    - mapping creation
-    - new mapping
-    - remove mapping
-    - new metadata assertion
-    - remove metadata assertion
-    - edge
-    range: node
+    - EdgeCreation
+    - EdgeDeletion
+    - EdgeObsoletion
+    - MappingCreation
+    - NewMapping
+    - RemoveMapping
+    - NewMetadataAssertion
+    - RemoveMetadataAssertion
+    - Edge
+    range: Node
   predicate:
     name: predicate
     from_schema: https://w3id.org/kgcl
     rank: 1000
     alias: predicate
-    owner: new metadata assertion
+    owner: NewMetadataAssertion
     domain_of:
-    - edge creation
-    - edge deletion
-    - edge obsoletion
-    - mapping creation
-    - new mapping
-    - remove mapping
-    - new metadata assertion
-    - remove metadata assertion
-    - edge
-    range: node
-  about node:
-    name: about node
+    - EdgeCreation
+    - EdgeDeletion
+    - EdgeObsoletion
+    - MappingCreation
+    - NewMapping
+    - RemoveMapping
+    - NewMetadataAssertion
+    - RemoveMetadataAssertion
+    - Edge
+    range: Node
+  about_node:
+    name: about_node
     from_schema: https://w3id.org/kgcl
     rank: 1000
     is_a: about
     multivalued: false
     alias: about_node
-    owner: new metadata assertion
+    owner: NewMetadataAssertion
     domain_of:
-    - node change
-    range: node
-  about node representation:
-    name: about node representation
+    - NodeChange
+    range: Node
+  about_node_representation:
+    name: about_node_representation
     description: 'The representation of a node (URI, CURIE, label) '
     deprecated: no longer required
     from_schema: https://w3id.org/kgcl
     rank: 1000
     alias: about_node_representation
-    owner: new metadata assertion
+    owner: NewMetadataAssertion
     domain_of:
-    - node change
+    - NodeChange
     range: string
   language:
     name: language
@@ -545,118 +548,118 @@ attributes:
     from_schema: https://w3id.org/kgcl
     rank: 1000
     alias: language
-    owner: new metadata assertion
+    owner: NewMetadataAssertion
     domain_of:
-    - edge change
-    - node change
-    - new synonym
-    - node creation
-    range: language tag
-  old value:
-    name: old value
+    - EdgeChange
+    - NodeChange
+    - NewSynonym
+    - NodeCreation
+    range: LanguageTag
+  old_value:
+    name: old_value
     description: The value of a property held in the old instance of the ontology
     from_schema: https://w3id.org/kgcl
     rank: 1000
     alias: old_value
-    owner: new metadata assertion
+    owner: NewMetadataAssertion
     domain_of:
-    - simple change
-    - node rename
-    - set language for name
-    - remove synonym
-    - synonym replacement
-    - synonym predicate change
-    - mapping replacement
-    - mapping predicate change
-    - metadata assertion replacement
-    - metadata assertion predicate change
-    - remove text definition
-    - text definition replacement
+    - SimpleChange
+    - NodeRename
+    - SetLanguageForName
+    - RemoveSynonym
+    - SynonymReplacement
+    - SynonymPredicateChange
+    - MappingReplacement
+    - MappingPredicateChange
+    - MetadataAssertionReplacement
+    - MetadataAssertionPredicateChange
+    - RemoveTextDefinition
+    - TextDefinitionReplacement
     range: string
-  new value:
-    name: new value
+  new_value:
+    name: new_value
     description: The value of a property held in the new instance of the ontology
     from_schema: https://w3id.org/kgcl
     rank: 1000
     alias: new_value
-    owner: new metadata assertion
+    owner: NewMetadataAssertion
     domain_of:
-    - simple change
-    - node rename
-    - set language for name
-    - new synonym
-    - synonym replacement
-    - synonym predicate change
-    - mapping replacement
-    - mapping predicate change
-    - metadata assertion replacement
-    - metadata assertion predicate change
-    - new text definition
-    - text definition replacement
+    - SimpleChange
+    - NodeRename
+    - SetLanguageForName
+    - NewSynonym
+    - SynonymReplacement
+    - SynonymPredicateChange
+    - MappingReplacement
+    - MappingPredicateChange
+    - MetadataAssertionReplacement
+    - MetadataAssertionPredicateChange
+    - NewTextDefinition
+    - TextDefinitionReplacement
     range: string
-  old value type:
-    name: old value type
+  old_value_type:
+    name: old_value_type
     description: The type (IRI or Literal) of an old value
     deprecated: no longer required
     from_schema: https://w3id.org/kgcl
     rank: 1000
     alias: old_value_type
-    owner: new metadata assertion
+    owner: NewMetadataAssertion
     domain_of:
-    - simple change
+    - SimpleChange
     range: string
-  new value type:
-    name: new value type
+  new_value_type:
+    name: new_value_type
     description: The type (IRI or Literal) of a new value
     deprecated: no longer required
     from_schema: https://w3id.org/kgcl
     rank: 1000
     alias: new_value_type
-    owner: new metadata assertion
+    owner: NewMetadataAssertion
     domain_of:
-    - simple change
+    - SimpleChange
     range: string
-  new language:
-    name: new language
+  new_language:
+    name: new_language
     description: The new language tag of a literal
     from_schema: https://w3id.org/kgcl
     rank: 1000
     alias: new_language
-    owner: new metadata assertion
+    owner: NewMetadataAssertion
     domain_of:
-    - simple change
-    - node rename
+    - SimpleChange
+    - NodeRename
     range: string
-  old language:
-    name: old language
+  old_language:
+    name: old_language
     description: The old language tag of a literal
     from_schema: https://w3id.org/kgcl
     rank: 1000
     alias: old_language
-    owner: new metadata assertion
+    owner: NewMetadataAssertion
     domain_of:
-    - simple change
-    - node rename
+    - SimpleChange
+    - NodeRename
     range: string
-  new datatype:
-    name: new datatype
+  new_datatype:
+    name: new_datatype
     description: The new datatype of a literal
     from_schema: https://w3id.org/kgcl
     rank: 1000
     alias: new_datatype
-    owner: new metadata assertion
+    owner: NewMetadataAssertion
     domain_of:
-    - simple change
+    - SimpleChange
     range: string
-  old datatype:
-    name: old datatype
+  old_datatype:
+    name: old_datatype
     description: The old datatype of a literal
     from_schema: https://w3id.org/kgcl
     rank: 1000
     alias: old_datatype
-    owner: new metadata assertion
+    owner: NewMetadataAssertion
     domain_of:
-    - simple change
+    - SimpleChange
     range: string
   id:
     name: id
@@ -664,12 +667,12 @@ attributes:
     rank: 1000
     identifier: true
     alias: id
-    owner: new metadata assertion
+    owner: NewMetadataAssertion
     domain_of:
-    - change
-    - activity
-    - agent
-    - node
+    - Change
+    - Activity
+    - Agent
+    - Node
     range: string
     required: true
   type:
@@ -679,24 +682,24 @@ attributes:
     slot_uri: rdf:type
     designates_type: true
     alias: type
-    owner: new metadata assertion
+    owner: NewMetadataAssertion
     domain_of:
-    - change
+    - Change
     range: string
-  was generated by:
-    name: was generated by
+  was_generated_by:
+    name: was_generated_by
     comments:
     - we use the PROV model to represent the agent making a change
     from_schema: https://w3id.org/kgcl
     rank: 1000
     slot_uri: prov:wasGeneratedBy
     alias: was_generated_by
-    owner: new metadata assertion
+    owner: NewMetadataAssertion
     domain_of:
-    - change
-    range: activity
-  see also:
-    name: see also
+    - Change
+    range: Activity
+  see_also:
+    name: see_also
     comments:
     - If this change is in relationship to an issue on a system like github, include
       the URL here
@@ -704,20 +707,20 @@ attributes:
     rank: 1000
     slot_uri: rdfs:seeAlso
     alias: see_also
-    owner: new metadata assertion
+    owner: NewMetadataAssertion
     domain_of:
-    - change
+    - Change
     range: string
-  pull request:
-    name: pull request
+  pull_request:
+    name: pull_request
     comments:
     - If this change has a pull request on a system like github, include the URL here
     from_schema: https://w3id.org/kgcl
     rank: 1000
     alias: pull_request
-    owner: new metadata assertion
+    owner: NewMetadataAssertion
     domain_of:
-    - change
+    - Change
     range: string
   creator:
     name: creator
@@ -727,21 +730,21 @@ attributes:
     rank: 1000
     slot_uri: dcterms:creator
     alias: creator
-    owner: new metadata assertion
+    owner: NewMetadataAssertion
     domain_of:
-    - change
+    - Change
     range: string
-  change date:
-    name: change date
+  change_date:
+    name: change_date
     comments:
     - This should be the composition of 'was generated by' and 'ended at time'
     from_schema: https://w3id.org/kgcl
     rank: 1000
     slot_uri: dcterms:date
     alias: change_date
-    owner: new metadata assertion
+    owner: NewMetadataAssertion
     domain_of:
-    - change
+    - Change
     range: string
   contributor:
     name: contributor
@@ -749,22 +752,22 @@ attributes:
     rank: 1000
     slot_uri: dcterms:creator
     alias: contributor
-    owner: new metadata assertion
+    owner: NewMetadataAssertion
     domain_of:
-    - change
+    - Change
     range: string
-  has undo:
-    name: has undo
+  has_undo:
+    name: has_undo
     description: A change that reverses this change
     from_schema: https://w3id.org/kgcl
     rank: 1000
-    domain: change
+    domain: Change
     multivalued: false
     alias: has_undo
-    owner: new metadata assertion
+    owner: NewMetadataAssertion
     domain_of:
-    - change
-    range: change
+    - Change
+    range: Change
 
 </code></pre>
 </details>

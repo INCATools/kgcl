@@ -342,7 +342,12 @@
 </tr>
 <tr>
 <td><a href="../ClassCreation/">ClassCreation</a></td>
-<td>A node creation where the owl type is 'class'</td>
+<td>A node creation where the owl type is 'owl:Class'</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../ObjectPropertyCreation/">ObjectPropertyCreation</a></td>
+<td>A node creation where the owl type is 'ObjectProperty'</td>
 <td>no</td>
 </tr>
 <tr>
@@ -369,14 +374,14 @@
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 
-<pre><code class="language-yaml">name: owl type
+<pre><code class="language-yaml">name: owl_type
 from_schema: https://w3id.org/kgcl
 rank: 1000
 alias: owl_type
 domain_of:
-- node creation
-- node
-range: owl_type_enum
+- NodeCreation
+- Node
+range: OwlTypeEnum
 
 </code></pre>
 

@@ -382,7 +382,12 @@
 </tr>
 <tr>
 <td><a href="../ClassCreation/">ClassCreation</a></td>
-<td>A node creation where the owl type is 'class'</td>
+<td>A node creation where the owl type is 'owl:Class'</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../ObjectPropertyCreation/">ObjectPropertyCreation</a></td>
+<td>A node creation where the owl type is 'ObjectProperty'</td>
 <td>no</td>
 </tr>
 <tr>
@@ -409,20 +414,20 @@
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 
-<pre><code class="language-yaml">name: annotation set
+<pre><code class="language-yaml">name: annotation_set
 from_schema: https://w3id.org/kgcl
 rank: 1000
 alias: annotation_set
 domain_of:
-- edge creation
-- edge deletion
-- edge obsoletion
-- mapping creation
-- node creation
-- annotation
-- node
-- edge
-range: annotation
+- EdgeCreation
+- EdgeDeletion
+- EdgeObsoletion
+- MappingCreation
+- NodeCreation
+- Annotation
+- Node
+- Edge
+range: Annotation
 
 </code></pre>
 

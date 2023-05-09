@@ -230,7 +230,7 @@
 
       NodeObsoletion : about_node
 
-          NodeObsoletion --|&gt; node : about_node
+          NodeObsoletion --|&gt; Node : about_node
 
       NodeObsoletion : about_node_representation
 
@@ -242,15 +242,15 @@
 
       NodeObsoletion : has_direct_replacement
 
-          NodeObsoletion --|&gt; node : has_direct_replacement
+          NodeObsoletion --|&gt; Node : has_direct_replacement
 
       NodeObsoletion : has_nondirect_replacement
 
-          NodeObsoletion --|&gt; node : has_nondirect_replacement
+          NodeObsoletion --|&gt; Node : has_nondirect_replacement
 
       NodeObsoletion : has_undo
 
-          NodeObsoletion --|&gt; obsoletion : has_undo
+          NodeObsoletion --|&gt; Obsoletion : has_undo
 
       NodeObsoletion : id
 
@@ -280,12 +280,13 @@
 
       NodeObsoletion : was_generated_by
 
-          NodeObsoletion --|&gt; activity : was_generated_by
+          NodeObsoletion --|&gt; Activity : was_generated_by
 
 
 </div>
 <h2 id="inheritance">Inheritance</h2>
 <ul>
+<li><a href="../ChangeLanguageElement/">ChangeLanguageElement</a><ul>
 <li><a href="../Change/">Change</a><ul>
 <li><a href="../SimpleChange/">SimpleChange</a><ul>
 <li><a href="../NodeChange/">NodeChange</a><ul>
@@ -293,6 +294,8 @@
 <li><a href="../NodeDirectMerge/">NodeDirectMerge</a> [ <a href="../AllowsAutomaticReplacementOfEdges/">AllowsAutomaticReplacementOfEdges</a>]</li>
 <li><a href="../NodeObsoletionWithDirectReplacement/">NodeObsoletionWithDirectReplacement</a> [ <a href="../AllowsAutomaticReplacementOfEdges/">AllowsAutomaticReplacementOfEdges</a>]</li>
 <li><a href="../NodeObsoletionWithNoDirectReplacement/">NodeObsoletionWithNoDirectReplacement</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -505,7 +508,7 @@
 <!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
 <h3 id="direct">Direct</h3>
 <details>
-<pre><code class="language-yaml">name: node obsoletion
+<pre><code class="language-yaml">name: NodeObsoletion
 description: Obsoletion of a node deprecates usage of that node, but does not delete
   it.
 from_schema: https://w3id.org/kgcl
@@ -516,16 +519,16 @@ aliases:
 - class obsoletion
 - term obsoletion
 - concept obsoletion
-is_a: node change
+is_a: NodeChange
 mixins:
-- obsoletion
+- Obsoletion
 slots:
-- has direct replacement
-- has nondirect replacement
+- has_direct_replacement
+- has_nondirect_replacement
 slot_usage:
-  change description:
-    name: change description
-    string_serialization: obsoleting {about node}
+  change_description:
+    name: change_description
+    string_serialization: obsoleting {about_node}
   associated change set:
     name: associated change set
     description: 'All changes forced as a result of this obsoletion. For example,
@@ -533,13 +536,13 @@ slot_usage:
       may decide to bundle in a node move change of A from B to C. Note: this change
       set is not considered a part of the obsoletion, as obsoletion is considered
       atomic/simple. Instead this is a reference to a change set that may exist elsewhere'
-    is_a: change set
+    is_a: change_set
 
 </code></pre>
 </details>
 <h3 id="induced">Induced</h3>
 <details>
-<pre><code class="language-yaml">name: node obsoletion
+<pre><code class="language-yaml">name: NodeObsoletion
 description: Obsoletion of a node deprecates usage of that node, but does not delete
   it.
 from_schema: https://w3id.org/kgcl
@@ -550,13 +553,13 @@ aliases:
 - class obsoletion
 - term obsoletion
 - concept obsoletion
-is_a: node change
+is_a: NodeChange
 mixins:
-- obsoletion
+- Obsoletion
 slot_usage:
-  change description:
-    name: change description
-    string_serialization: obsoleting {about node}
+  change_description:
+    name: change_description
+    string_serialization: obsoleting {about_node}
   associated change set:
     name: associated change set
     description: 'All changes forced as a result of this obsoletion. For example,
@@ -564,10 +567,10 @@ slot_usage:
       may decide to bundle in a node move change of A from B to C. Note: this change
       set is not considered a part of the obsoletion, as obsoletion is considered
       atomic/simple. Instead this is a reference to a change set that may exist elsewhere'
-    is_a: change set
+    is_a: change_set
 attributes:
-  has direct replacement:
-    name: has direct replacement
+  has_direct_replacement:
+    name: has_direct_replacement
     description: An obsoletion replacement where it IS valid to automatically update
       annotations/edges pointing at the node with its direct replacement
     comments:
@@ -582,12 +585,12 @@ attributes:
     rank: 1000
     multivalued: false
     alias: has_direct_replacement
-    owner: node obsoletion
+    owner: NodeObsoletion
     domain_of:
-    - node obsoletion
-    range: node
-  has nondirect replacement:
-    name: has nondirect replacement
+    - NodeObsoletion
+    range: Node
+  has_nondirect_replacement:
+    name: has_nondirect_replacement
     description: An obsoletion replacement where it is NOT valid to automatically
       update annotations/edges pointing at the node with its direct replacement
     comments:
@@ -602,31 +605,31 @@ attributes:
     rank: 1000
     multivalued: true
     alias: has_nondirect_replacement
-    owner: node obsoletion
+    owner: NodeObsoletion
     domain_of:
-    - node obsoletion
-    range: node
-  about node:
-    name: about node
+    - NodeObsoletion
+    range: Node
+  about_node:
+    name: about_node
     from_schema: https://w3id.org/kgcl
     rank: 1000
     is_a: about
     multivalued: false
     alias: about_node
-    owner: node obsoletion
+    owner: NodeObsoletion
     domain_of:
-    - node change
-    range: node
-  about node representation:
-    name: about node representation
+    - NodeChange
+    range: Node
+  about_node_representation:
+    name: about_node_representation
     description: 'The representation of a node (URI, CURIE, label) '
     deprecated: no longer required
     from_schema: https://w3id.org/kgcl
     rank: 1000
     alias: about_node_representation
-    owner: node obsoletion
+    owner: NodeObsoletion
     domain_of:
-    - node change
+    - NodeChange
     range: string
   language:
     name: language
@@ -634,118 +637,118 @@ attributes:
     from_schema: https://w3id.org/kgcl
     rank: 1000
     alias: language
-    owner: node obsoletion
+    owner: NodeObsoletion
     domain_of:
-    - edge change
-    - node change
-    - new synonym
-    - node creation
-    range: language tag
-  old value:
-    name: old value
+    - EdgeChange
+    - NodeChange
+    - NewSynonym
+    - NodeCreation
+    range: LanguageTag
+  old_value:
+    name: old_value
     description: The value of a property held in the old instance of the ontology
     from_schema: https://w3id.org/kgcl
     rank: 1000
     alias: old_value
-    owner: node obsoletion
+    owner: NodeObsoletion
     domain_of:
-    - simple change
-    - node rename
-    - set language for name
-    - remove synonym
-    - synonym replacement
-    - synonym predicate change
-    - mapping replacement
-    - mapping predicate change
-    - metadata assertion replacement
-    - metadata assertion predicate change
-    - remove text definition
-    - text definition replacement
+    - SimpleChange
+    - NodeRename
+    - SetLanguageForName
+    - RemoveSynonym
+    - SynonymReplacement
+    - SynonymPredicateChange
+    - MappingReplacement
+    - MappingPredicateChange
+    - MetadataAssertionReplacement
+    - MetadataAssertionPredicateChange
+    - RemoveTextDefinition
+    - TextDefinitionReplacement
     range: string
-  new value:
-    name: new value
+  new_value:
+    name: new_value
     description: The value of a property held in the new instance of the ontology
     from_schema: https://w3id.org/kgcl
     rank: 1000
     alias: new_value
-    owner: node obsoletion
+    owner: NodeObsoletion
     domain_of:
-    - simple change
-    - node rename
-    - set language for name
-    - new synonym
-    - synonym replacement
-    - synonym predicate change
-    - mapping replacement
-    - mapping predicate change
-    - metadata assertion replacement
-    - metadata assertion predicate change
-    - new text definition
-    - text definition replacement
+    - SimpleChange
+    - NodeRename
+    - SetLanguageForName
+    - NewSynonym
+    - SynonymReplacement
+    - SynonymPredicateChange
+    - MappingReplacement
+    - MappingPredicateChange
+    - MetadataAssertionReplacement
+    - MetadataAssertionPredicateChange
+    - NewTextDefinition
+    - TextDefinitionReplacement
     range: string
-  old value type:
-    name: old value type
+  old_value_type:
+    name: old_value_type
     description: The type (IRI or Literal) of an old value
     deprecated: no longer required
     from_schema: https://w3id.org/kgcl
     rank: 1000
     alias: old_value_type
-    owner: node obsoletion
+    owner: NodeObsoletion
     domain_of:
-    - simple change
+    - SimpleChange
     range: string
-  new value type:
-    name: new value type
+  new_value_type:
+    name: new_value_type
     description: The type (IRI or Literal) of a new value
     deprecated: no longer required
     from_schema: https://w3id.org/kgcl
     rank: 1000
     alias: new_value_type
-    owner: node obsoletion
+    owner: NodeObsoletion
     domain_of:
-    - simple change
+    - SimpleChange
     range: string
-  new language:
-    name: new language
+  new_language:
+    name: new_language
     description: The new language tag of a literal
     from_schema: https://w3id.org/kgcl
     rank: 1000
     alias: new_language
-    owner: node obsoletion
+    owner: NodeObsoletion
     domain_of:
-    - simple change
-    - node rename
+    - SimpleChange
+    - NodeRename
     range: string
-  old language:
-    name: old language
+  old_language:
+    name: old_language
     description: The old language tag of a literal
     from_schema: https://w3id.org/kgcl
     rank: 1000
     alias: old_language
-    owner: node obsoletion
+    owner: NodeObsoletion
     domain_of:
-    - simple change
-    - node rename
+    - SimpleChange
+    - NodeRename
     range: string
-  new datatype:
-    name: new datatype
+  new_datatype:
+    name: new_datatype
     description: The new datatype of a literal
     from_schema: https://w3id.org/kgcl
     rank: 1000
     alias: new_datatype
-    owner: node obsoletion
+    owner: NodeObsoletion
     domain_of:
-    - simple change
+    - SimpleChange
     range: string
-  old datatype:
-    name: old datatype
+  old_datatype:
+    name: old_datatype
     description: The old datatype of a literal
     from_schema: https://w3id.org/kgcl
     rank: 1000
     alias: old_datatype
-    owner: node obsoletion
+    owner: NodeObsoletion
     domain_of:
-    - simple change
+    - SimpleChange
     range: string
   id:
     name: id
@@ -753,12 +756,12 @@ attributes:
     rank: 1000
     identifier: true
     alias: id
-    owner: node obsoletion
+    owner: NodeObsoletion
     domain_of:
-    - change
-    - activity
-    - agent
-    - node
+    - Change
+    - Activity
+    - Agent
+    - Node
     range: string
     required: true
   type:
@@ -768,24 +771,24 @@ attributes:
     slot_uri: rdf:type
     designates_type: true
     alias: type
-    owner: node obsoletion
+    owner: NodeObsoletion
     domain_of:
-    - change
+    - Change
     range: string
-  was generated by:
-    name: was generated by
+  was_generated_by:
+    name: was_generated_by
     comments:
     - we use the PROV model to represent the agent making a change
     from_schema: https://w3id.org/kgcl
     rank: 1000
     slot_uri: prov:wasGeneratedBy
     alias: was_generated_by
-    owner: node obsoletion
+    owner: NodeObsoletion
     domain_of:
-    - change
-    range: activity
-  see also:
-    name: see also
+    - Change
+    range: Activity
+  see_also:
+    name: see_also
     comments:
     - If this change is in relationship to an issue on a system like github, include
       the URL here
@@ -793,20 +796,20 @@ attributes:
     rank: 1000
     slot_uri: rdfs:seeAlso
     alias: see_also
-    owner: node obsoletion
+    owner: NodeObsoletion
     domain_of:
-    - change
+    - Change
     range: string
-  pull request:
-    name: pull request
+  pull_request:
+    name: pull_request
     comments:
     - If this change has a pull request on a system like github, include the URL here
     from_schema: https://w3id.org/kgcl
     rank: 1000
     alias: pull_request
-    owner: node obsoletion
+    owner: NodeObsoletion
     domain_of:
-    - change
+    - Change
     range: string
   creator:
     name: creator
@@ -816,21 +819,21 @@ attributes:
     rank: 1000
     slot_uri: dcterms:creator
     alias: creator
-    owner: node obsoletion
+    owner: NodeObsoletion
     domain_of:
-    - change
+    - Change
     range: string
-  change date:
-    name: change date
+  change_date:
+    name: change_date
     comments:
     - This should be the composition of 'was generated by' and 'ended at time'
     from_schema: https://w3id.org/kgcl
     rank: 1000
     slot_uri: dcterms:date
     alias: change_date
-    owner: node obsoletion
+    owner: NodeObsoletion
     domain_of:
-    - change
+    - Change
     range: string
   contributor:
     name: contributor
@@ -838,22 +841,22 @@ attributes:
     rank: 1000
     slot_uri: dcterms:creator
     alias: contributor
-    owner: node obsoletion
+    owner: NodeObsoletion
     domain_of:
-    - change
+    - Change
     range: string
-  has undo:
-    name: has undo
+  has_undo:
+    name: has_undo
     description: A change that reverses this change
     from_schema: https://w3id.org/kgcl
     rank: 1000
-    domain: change
+    domain: Change
     multivalued: false
     alias: has_undo
-    owner: node obsoletion
+    owner: NodeObsoletion
     domain_of:
-    - change
-    range: obsoletion
+    - Change
+    range: Obsoletion
 
 </code></pre>
 </details>

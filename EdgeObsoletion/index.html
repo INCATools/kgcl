@@ -224,11 +224,11 @@
 
       EdgeObsoletion : about_edge
 
-          EdgeObsoletion --|&gt; edge : about_edge
+          EdgeObsoletion --|&gt; Edge : about_edge
 
       EdgeObsoletion : annotation_set
 
-          EdgeObsoletion --|&gt; annotation : annotation_set
+          EdgeObsoletion --|&gt; Annotation : annotation_set
 
       EdgeObsoletion : change_date
 
@@ -240,7 +240,7 @@
 
       EdgeObsoletion : has_undo
 
-          EdgeObsoletion --|&gt; obsoletion : has_undo
+          EdgeObsoletion --|&gt; Obsoletion : has_undo
 
       EdgeObsoletion : id
 
@@ -256,7 +256,7 @@
 
       EdgeObsoletion : object
 
-          EdgeObsoletion --|&gt; node : object
+          EdgeObsoletion --|&gt; Node : object
 
       EdgeObsoletion : object_type
 
@@ -270,7 +270,7 @@
 
       EdgeObsoletion : predicate
 
-          EdgeObsoletion --|&gt; node : predicate
+          EdgeObsoletion --|&gt; Node : predicate
 
       EdgeObsoletion : pull_request
 
@@ -278,22 +278,25 @@
 
       EdgeObsoletion : subject
 
-          EdgeObsoletion --|&gt; node : subject
+          EdgeObsoletion --|&gt; Node : subject
 
       EdgeObsoletion : type
 
       EdgeObsoletion : was_generated_by
 
-          EdgeObsoletion --|&gt; activity : was_generated_by
+          EdgeObsoletion --|&gt; Activity : was_generated_by
 
 
 </div>
 <h2 id="inheritance">Inheritance</h2>
 <ul>
+<li><a href="../ChangeLanguageElement/">ChangeLanguageElement</a><ul>
 <li><a href="../Change/">Change</a><ul>
 <li><a href="../SimpleChange/">SimpleChange</a><ul>
 <li><a href="../EdgeChange/">EdgeChange</a><ul>
 <li><strong>EdgeObsoletion</strong> [ <a href="../Obsoletion/">Obsoletion</a>]</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -504,7 +507,7 @@
 <!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
 <h3 id="direct">Direct</h3>
 <details>
-<pre><code class="language-yaml">name: edge obsoletion
+<pre><code class="language-yaml">name: EdgeObsoletion
 description: An edge change in which an edge is obsoleted.
 comments:
 - Note there is not yet consensus in how this should be done in rdf/owl implementations.
@@ -517,24 +520,24 @@ see_also:
 - https://mondo.readthedocs.io/en/latest/editors-guide/g-logical-axioms/#excluded-subclassof
 aliases:
 - relationship obsoletion
-is_a: edge change
+is_a: EdgeChange
 mixins:
-- obsoletion
+- Obsoletion
 slots:
 - subject
 - predicate
 - object
-- annotation set
+- annotation_set
 slot_usage:
-  change description:
-    name: change description
-    string_serialization: obsoleting edge {edge}
+  change_description:
+    name: change_description
+    string_serialization: obsolete edge {edge.subject} {edge.predicate} {edge.object}
 
 </code></pre>
 </details>
 <h3 id="induced">Induced</h3>
 <details>
-<pre><code class="language-yaml">name: edge obsoletion
+<pre><code class="language-yaml">name: EdgeObsoletion
 description: An edge change in which an edge is obsoleted.
 comments:
 - Note there is not yet consensus in how this should be done in rdf/owl implementations.
@@ -547,13 +550,13 @@ see_also:
 - https://mondo.readthedocs.io/en/latest/editors-guide/g-logical-axioms/#excluded-subclassof
 aliases:
 - relationship obsoletion
-is_a: edge change
+is_a: EdgeChange
 mixins:
-- obsoletion
+- Obsoletion
 slot_usage:
-  change description:
-    name: change description
-    string_serialization: obsoleting edge {edge}
+  change_description:
+    name: change_description
+    string_serialization: obsolete edge {edge.subject} {edge.predicate} {edge.object}
 attributes:
   subject:
     name: subject
@@ -562,87 +565,87 @@ attributes:
     from_schema: https://w3id.org/kgcl
     rank: 1000
     alias: subject
-    owner: edge obsoletion
+    owner: EdgeObsoletion
     domain_of:
-    - edge creation
-    - edge deletion
-    - edge obsoletion
-    - mapping creation
-    - edge
-    range: node
+    - EdgeCreation
+    - EdgeDeletion
+    - EdgeObsoletion
+    - MappingCreation
+    - Edge
+    range: Node
   predicate:
     name: predicate
     from_schema: https://w3id.org/kgcl
     rank: 1000
     alias: predicate
-    owner: edge obsoletion
+    owner: EdgeObsoletion
     domain_of:
-    - edge creation
-    - edge deletion
-    - edge obsoletion
-    - mapping creation
-    - new mapping
-    - remove mapping
-    - new metadata assertion
-    - remove metadata assertion
-    - edge
-    range: node
+    - EdgeCreation
+    - EdgeDeletion
+    - EdgeObsoletion
+    - MappingCreation
+    - NewMapping
+    - RemoveMapping
+    - NewMetadataAssertion
+    - RemoveMetadataAssertion
+    - Edge
+    range: Node
   object:
     name: object
     from_schema: https://w3id.org/kgcl
     rank: 1000
     alias: object
-    owner: edge obsoletion
+    owner: EdgeObsoletion
     domain_of:
-    - edge creation
-    - edge deletion
-    - edge obsoletion
-    - mapping creation
-    - new mapping
-    - remove mapping
-    - new metadata assertion
-    - remove metadata assertion
-    - edge
-    range: node
-  annotation set:
-    name: annotation set
+    - EdgeCreation
+    - EdgeDeletion
+    - EdgeObsoletion
+    - MappingCreation
+    - NewMapping
+    - RemoveMapping
+    - NewMetadataAssertion
+    - RemoveMetadataAssertion
+    - Edge
+    range: Node
+  annotation_set:
+    name: annotation_set
     from_schema: https://w3id.org/kgcl
     rank: 1000
     alias: annotation_set
-    owner: edge obsoletion
+    owner: EdgeObsoletion
     domain_of:
-    - edge creation
-    - edge deletion
-    - edge obsoletion
-    - mapping creation
-    - node creation
-    - annotation
-    - node
-    - edge
-    range: annotation
-  about edge:
-    name: about edge
+    - EdgeCreation
+    - EdgeDeletion
+    - EdgeObsoletion
+    - MappingCreation
+    - NodeCreation
+    - Annotation
+    - Node
+    - Edge
+    range: Annotation
+  about_edge:
+    name: about_edge
     from_schema: https://w3id.org/kgcl
     rank: 1000
     is_a: about
     multivalued: false
     alias: about_edge
-    owner: edge obsoletion
+    owner: EdgeObsoletion
     domain_of:
-    - edge change
-    range: edge
-  object type:
-    name: object type
+    - EdgeChange
+    range: Edge
+  object_type:
+    name: object_type
     description: The type (IRI or Literal) of an object
     deprecated: no longer required
     from_schema: https://w3id.org/kgcl
     rank: 1000
     alias: object_type
-    owner: edge obsoletion
+    owner: EdgeObsoletion
     domain_of:
-    - edge change
-    - edge creation
-    - edge deletion
+    - EdgeChange
+    - EdgeCreation
+    - EdgeDeletion
     range: string
   language:
     name: language
@@ -650,128 +653,128 @@ attributes:
     from_schema: https://w3id.org/kgcl
     rank: 1000
     alias: language
-    owner: edge obsoletion
+    owner: EdgeObsoletion
     domain_of:
-    - edge change
-    - node change
-    - new synonym
-    - node creation
-    range: language tag
+    - EdgeChange
+    - NodeChange
+    - NewSynonym
+    - NodeCreation
+    range: LanguageTag
   datatype:
     name: datatype
     description: The datatype of a literal
     from_schema: https://w3id.org/kgcl
     rank: 1000
     alias: datatype
-    owner: edge obsoletion
+    owner: EdgeObsoletion
     domain_of:
-    - edge change
+    - EdgeChange
     range: string
-  old value:
-    name: old value
+  old_value:
+    name: old_value
     description: The value of a property held in the old instance of the ontology
     from_schema: https://w3id.org/kgcl
     rank: 1000
     alias: old_value
-    owner: edge obsoletion
+    owner: EdgeObsoletion
     domain_of:
-    - simple change
-    - node rename
-    - set language for name
-    - remove synonym
-    - synonym replacement
-    - synonym predicate change
-    - mapping replacement
-    - mapping predicate change
-    - metadata assertion replacement
-    - metadata assertion predicate change
-    - remove text definition
-    - text definition replacement
+    - SimpleChange
+    - NodeRename
+    - SetLanguageForName
+    - RemoveSynonym
+    - SynonymReplacement
+    - SynonymPredicateChange
+    - MappingReplacement
+    - MappingPredicateChange
+    - MetadataAssertionReplacement
+    - MetadataAssertionPredicateChange
+    - RemoveTextDefinition
+    - TextDefinitionReplacement
     range: string
-  new value:
-    name: new value
+  new_value:
+    name: new_value
     description: The value of a property held in the new instance of the ontology
     from_schema: https://w3id.org/kgcl
     rank: 1000
     alias: new_value
-    owner: edge obsoletion
+    owner: EdgeObsoletion
     domain_of:
-    - simple change
-    - node rename
-    - set language for name
-    - new synonym
-    - synonym replacement
-    - synonym predicate change
-    - mapping replacement
-    - mapping predicate change
-    - metadata assertion replacement
-    - metadata assertion predicate change
-    - new text definition
-    - text definition replacement
+    - SimpleChange
+    - NodeRename
+    - SetLanguageForName
+    - NewSynonym
+    - SynonymReplacement
+    - SynonymPredicateChange
+    - MappingReplacement
+    - MappingPredicateChange
+    - MetadataAssertionReplacement
+    - MetadataAssertionPredicateChange
+    - NewTextDefinition
+    - TextDefinitionReplacement
     range: string
-  old value type:
-    name: old value type
+  old_value_type:
+    name: old_value_type
     description: The type (IRI or Literal) of an old value
     deprecated: no longer required
     from_schema: https://w3id.org/kgcl
     rank: 1000
     alias: old_value_type
-    owner: edge obsoletion
+    owner: EdgeObsoletion
     domain_of:
-    - simple change
+    - SimpleChange
     range: string
-  new value type:
-    name: new value type
+  new_value_type:
+    name: new_value_type
     description: The type (IRI or Literal) of a new value
     deprecated: no longer required
     from_schema: https://w3id.org/kgcl
     rank: 1000
     alias: new_value_type
-    owner: edge obsoletion
+    owner: EdgeObsoletion
     domain_of:
-    - simple change
+    - SimpleChange
     range: string
-  new language:
-    name: new language
+  new_language:
+    name: new_language
     description: The new language tag of a literal
     from_schema: https://w3id.org/kgcl
     rank: 1000
     alias: new_language
-    owner: edge obsoletion
+    owner: EdgeObsoletion
     domain_of:
-    - simple change
-    - node rename
+    - SimpleChange
+    - NodeRename
     range: string
-  old language:
-    name: old language
+  old_language:
+    name: old_language
     description: The old language tag of a literal
     from_schema: https://w3id.org/kgcl
     rank: 1000
     alias: old_language
-    owner: edge obsoletion
+    owner: EdgeObsoletion
     domain_of:
-    - simple change
-    - node rename
+    - SimpleChange
+    - NodeRename
     range: string
-  new datatype:
-    name: new datatype
+  new_datatype:
+    name: new_datatype
     description: The new datatype of a literal
     from_schema: https://w3id.org/kgcl
     rank: 1000
     alias: new_datatype
-    owner: edge obsoletion
+    owner: EdgeObsoletion
     domain_of:
-    - simple change
+    - SimpleChange
     range: string
-  old datatype:
-    name: old datatype
+  old_datatype:
+    name: old_datatype
     description: The old datatype of a literal
     from_schema: https://w3id.org/kgcl
     rank: 1000
     alias: old_datatype
-    owner: edge obsoletion
+    owner: EdgeObsoletion
     domain_of:
-    - simple change
+    - SimpleChange
     range: string
   id:
     name: id
@@ -779,12 +782,12 @@ attributes:
     rank: 1000
     identifier: true
     alias: id
-    owner: edge obsoletion
+    owner: EdgeObsoletion
     domain_of:
-    - change
-    - activity
-    - agent
-    - node
+    - Change
+    - Activity
+    - Agent
+    - Node
     range: string
     required: true
   type:
@@ -794,24 +797,24 @@ attributes:
     slot_uri: rdf:type
     designates_type: true
     alias: type
-    owner: edge obsoletion
+    owner: EdgeObsoletion
     domain_of:
-    - change
+    - Change
     range: string
-  was generated by:
-    name: was generated by
+  was_generated_by:
+    name: was_generated_by
     comments:
     - we use the PROV model to represent the agent making a change
     from_schema: https://w3id.org/kgcl
     rank: 1000
     slot_uri: prov:wasGeneratedBy
     alias: was_generated_by
-    owner: edge obsoletion
+    owner: EdgeObsoletion
     domain_of:
-    - change
-    range: activity
-  see also:
-    name: see also
+    - Change
+    range: Activity
+  see_also:
+    name: see_also
     comments:
     - If this change is in relationship to an issue on a system like github, include
       the URL here
@@ -819,20 +822,20 @@ attributes:
     rank: 1000
     slot_uri: rdfs:seeAlso
     alias: see_also
-    owner: edge obsoletion
+    owner: EdgeObsoletion
     domain_of:
-    - change
+    - Change
     range: string
-  pull request:
-    name: pull request
+  pull_request:
+    name: pull_request
     comments:
     - If this change has a pull request on a system like github, include the URL here
     from_schema: https://w3id.org/kgcl
     rank: 1000
     alias: pull_request
-    owner: edge obsoletion
+    owner: EdgeObsoletion
     domain_of:
-    - change
+    - Change
     range: string
   creator:
     name: creator
@@ -842,21 +845,21 @@ attributes:
     rank: 1000
     slot_uri: dcterms:creator
     alias: creator
-    owner: edge obsoletion
+    owner: EdgeObsoletion
     domain_of:
-    - change
+    - Change
     range: string
-  change date:
-    name: change date
+  change_date:
+    name: change_date
     comments:
     - This should be the composition of 'was generated by' and 'ended at time'
     from_schema: https://w3id.org/kgcl
     rank: 1000
     slot_uri: dcterms:date
     alias: change_date
-    owner: edge obsoletion
+    owner: EdgeObsoletion
     domain_of:
-    - change
+    - Change
     range: string
   contributor:
     name: contributor
@@ -864,22 +867,22 @@ attributes:
     rank: 1000
     slot_uri: dcterms:creator
     alias: contributor
-    owner: edge obsoletion
+    owner: EdgeObsoletion
     domain_of:
-    - change
+    - Change
     range: string
-  has undo:
-    name: has undo
+  has_undo:
+    name: has_undo
     description: A change that reverses this change
     from_schema: https://w3id.org/kgcl
     rank: 1000
-    domain: change
+    domain: Change
     multivalued: false
     alias: has_undo
-    owner: edge obsoletion
+    owner: EdgeObsoletion
     domain_of:
-    - change
-    range: obsoletion
+    - Change
+    range: Obsoletion
 
 </code></pre>
 </details>

@@ -218,7 +218,6 @@
 <p>_  * P subPropertyOf Q &lt;==&gt; Edge(subject=P, predicate=owl:subPropertyOf, object=Q)_</p>
 <p>__</p>
 <p><em>These represent the most common kind of pairwise relationship between classes, and classes are the dominant node type in ontologies.</em></p>
-<p>_  _</p>
 <p><em>In future a wider variety of OWL axiom types will be supportedn through the use of an additional edge property/slot to indicate the interpretation of the axiom, following owlstar (https://github.com/cmungall/owlstar).</em></p>
 <p><em>For example:</em></p>
 <p>_ * <code>A subClassOf R only B &lt;==&gt; Edge(subject=A, predicate=P, object=B, interpretation=AllOnly)</code>_</p>
@@ -232,23 +231,23 @@
 
       Edge : annotation_set
 
-          Edge --|&gt; annotation : annotation_set
+          Edge --|&gt; Annotation : annotation_set
 
       Edge : object
 
-          Edge --|&gt; node : object
+          Edge --|&gt; Node : object
 
       Edge : object_representation
 
       Edge : predicate
 
-          Edge --|&gt; node : predicate
+          Edge --|&gt; Node : predicate
 
       Edge : predicate_representation
 
       Edge : subject
 
-          Edge --|&gt; node : subject
+          Edge --|&gt; Node : subject
 
       Edge : subject_representation
 
@@ -445,13 +444,13 @@
 <!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
 <h3 id="direct">Direct</h3>
 <details>
-<pre><code class="language-yaml">name: edge
+<pre><code class="language-yaml">name: Edge
 description: "A relationship between two nodes.\nCurrently the only kinds of edges\
   \ supported in KGCL:\n\n  * A subClassOf B &lt;==&gt; Edge(subject=A, predicate=owl:subClassOf,\
   \ object=B)\n  * A subClassOf P some B &lt;==&gt; Edge(subject=A, predicate=P, object=B)\n\
   \  * P subPropertyOf Q &lt;==&gt; Edge(subject=P, predicate=owl:subPropertyOf, object=Q)\n\
   \nThese represent the most common kind of pairwise relationship between classes,\
-  \ and classes are the dominant node type in ontologies.\n  \nIn future a wider variety\
+  \ and classes are the dominant node type in ontologies.\nIn future a wider variety\
   \ of OWL axiom types will be supportedn through the use of an additional edge property/slot\
   \ to indicate the interpretation of the axiom, following owlstar (https://github.com/cmungall/owlstar).\n\
   For example:\n * `A subClassOf R only B &lt;==&gt; Edge(subject=A, predicate=P, object=B,\
@@ -469,27 +468,27 @@ aliases:
 mappings:
 - owl:Axiom
 - rdf:Statement
-is_a: ontology element
+is_a: OntologyElement
 slots:
 - subject
 - predicate
 - object
-- subject representation
-- predicate representation
-- object representation
-- annotation set
+- subject_representation
+- predicate_representation
+- object_representation
+- annotation_set
 
 </code></pre>
 </details>
 <h3 id="induced">Induced</h3>
 <details>
-<pre><code class="language-yaml">name: edge
+<pre><code class="language-yaml">name: Edge
 description: "A relationship between two nodes.\nCurrently the only kinds of edges\
   \ supported in KGCL:\n\n  * A subClassOf B &lt;==&gt; Edge(subject=A, predicate=owl:subClassOf,\
   \ object=B)\n  * A subClassOf P some B &lt;==&gt; Edge(subject=A, predicate=P, object=B)\n\
   \  * P subPropertyOf Q &lt;==&gt; Edge(subject=P, predicate=owl:subPropertyOf, object=Q)\n\
   \nThese represent the most common kind of pairwise relationship between classes,\
-  \ and classes are the dominant node type in ontologies.\n  \nIn future a wider variety\
+  \ and classes are the dominant node type in ontologies.\nIn future a wider variety\
   \ of OWL axiom types will be supportedn through the use of an additional edge property/slot\
   \ to indicate the interpretation of the axiom, following owlstar (https://github.com/cmungall/owlstar).\n\
   For example:\n * `A subClassOf R only B &lt;==&gt; Edge(subject=A, predicate=P, object=B,\
@@ -507,101 +506,101 @@ aliases:
 mappings:
 - owl:Axiom
 - rdf:Statement
-is_a: ontology element
+is_a: OntologyElement
 attributes:
   subject:
     name: subject
     from_schema: https://w3id.org/kgcl
     rank: 1000
     alias: subject
-    owner: edge
+    owner: Edge
     domain_of:
-    - edge creation
-    - edge deletion
-    - edge obsoletion
-    - mapping creation
-    - edge
-    range: node
+    - EdgeCreation
+    - EdgeDeletion
+    - EdgeObsoletion
+    - MappingCreation
+    - Edge
+    range: Node
   predicate:
     name: predicate
     from_schema: https://w3id.org/kgcl
     rank: 1000
     alias: predicate
-    owner: edge
+    owner: Edge
     domain_of:
-    - edge creation
-    - edge deletion
-    - edge obsoletion
-    - mapping creation
-    - new mapping
-    - remove mapping
-    - new metadata assertion
-    - remove metadata assertion
-    - edge
-    range: node
+    - EdgeCreation
+    - EdgeDeletion
+    - EdgeObsoletion
+    - MappingCreation
+    - NewMapping
+    - RemoveMapping
+    - NewMetadataAssertion
+    - RemoveMetadataAssertion
+    - Edge
+    range: Node
   object:
     name: object
     from_schema: https://w3id.org/kgcl
     rank: 1000
     alias: object
-    owner: edge
+    owner: Edge
     domain_of:
-    - edge creation
-    - edge deletion
-    - edge obsoletion
-    - mapping creation
-    - new mapping
-    - remove mapping
-    - new metadata assertion
-    - remove metadata assertion
-    - edge
-    range: node
-  subject representation:
-    name: subject representation
+    - EdgeCreation
+    - EdgeDeletion
+    - EdgeObsoletion
+    - MappingCreation
+    - NewMapping
+    - RemoveMapping
+    - NewMetadataAssertion
+    - RemoveMetadataAssertion
+    - Edge
+    range: Node
+  subject_representation:
+    name: subject_representation
     deprecated: no longer required
     from_schema: https://w3id.org/kgcl
     rank: 1000
     alias: subject_representation
-    owner: edge
+    owner: Edge
     domain_of:
-    - edge
+    - Edge
     range: string
-  predicate representation:
-    name: predicate representation
+  predicate_representation:
+    name: predicate_representation
     deprecated: no longer required
     from_schema: https://w3id.org/kgcl
     rank: 1000
     alias: predicate_representation
-    owner: edge
+    owner: Edge
     domain_of:
-    - edge
+    - Edge
     range: string
-  object representation:
-    name: object representation
+  object_representation:
+    name: object_representation
     deprecated: no longer required
     from_schema: https://w3id.org/kgcl
     rank: 1000
     alias: object_representation
-    owner: edge
+    owner: Edge
     domain_of:
-    - edge
+    - Edge
     range: string
-  annotation set:
-    name: annotation set
+  annotation_set:
+    name: annotation_set
     from_schema: https://w3id.org/kgcl
     rank: 1000
     alias: annotation_set
-    owner: edge
+    owner: Edge
     domain_of:
-    - edge creation
-    - edge deletion
-    - edge obsoletion
-    - mapping creation
-    - node creation
-    - annotation
-    - node
-    - edge
-    range: annotation
+    - EdgeCreation
+    - EdgeDeletion
+    - EdgeObsoletion
+    - MappingCreation
+    - NodeCreation
+    - Annotation
+    - Node
+    - Edge
+    range: Annotation
 
 </code></pre>
 </details>

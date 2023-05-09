@@ -314,6 +314,12 @@
 <td>range</td>
 <td><a href="./">Deletion</a></td>
 </tr>
+<tr>
+<td><a href="../ObjectPropertyCreation/">ObjectPropertyCreation</a></td>
+<td><a href="../has_undo/">has_undo</a></td>
+<td>range</td>
+<td><a href="./">Deletion</a></td>
+</tr>
 </tbody>
 </table>
 <h2 id="comments">Comments</h2>
@@ -348,26 +354,26 @@
 <!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
 <h3 id="direct">Direct</h3>
 <details>
-<pre><code class="language-yaml">name: deletion
+<pre><code class="language-yaml">name: Deletion
 description: Removal of an element.
 comments:
 - In general, for OBO ontologies, node elements should never be deleted, always obsolete.
   However, edge deletion is more common.
 from_schema: https://w3id.org/kgcl
-is_a: change mixin
+is_a: ChangeMixin
 mixin: true
 
 </code></pre>
 </details>
 <h3 id="induced">Induced</h3>
 <details>
-<pre><code class="language-yaml">name: deletion
+<pre><code class="language-yaml">name: Deletion
 description: Removal of an element.
 comments:
 - In general, for OBO ontologies, node elements should never be deleted, always obsolete.
   However, edge deletion is more common.
 from_schema: https://w3id.org/kgcl
-is_a: change mixin
+is_a: ChangeMixin
 mixin: true
 
 </code></pre>
