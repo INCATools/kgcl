@@ -28,7 +28,7 @@ from kgcl_schema.datamodel.kgcl import (
     PlaceUnder,
     PredicateChange,
     RemoveSynonym,
-    RemovedNodeFromSubset,
+    RemoveNodeFromSubset,
     RemoveUnder,
     Session,
     RemoveTextDefinition,
