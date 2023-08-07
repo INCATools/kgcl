@@ -1,12 +1,13 @@
 """KGCL parser."""
 import logging
-import re
 import sys
+from functools import lru_cache
 from pathlib import Path
 from typing import List
 
 import click
-from bioregistry import parse_iri, get_preferred_prefix, curie_to_str
+from prefixmaps.io.parser import load_multi_context
+from curies import Converter
 from kgcl_schema.datamodel.kgcl import (
     Change,
     ClassCreation,
@@ -37,6 +38,12 @@ from kgcl_schema.datamodel.ontology_model import Edge
 from kgcl_schema.utils import to_json, to_rdf, to_yaml
 from lark import Lark, Token
 
+
+@lru_cache()
+def get_curie_converter() -> Converter:
+    context = load_multi_context(["obo", "bioregistry.upper", "linked_data"])
+    extended_prefix_map = context.as_extended_prefix_map()
+    return Converter.from_extended_prefix_map(extended_prefix_map)
 
 def id_generator():
     """Return a new ID for KGCL change operations."""
@@ -626,11 +633,9 @@ def get_entity_representation(entity):
 
 
 def contract_uri(uri_or_curie: str):
+    converter = get_curie_converter()
     if uri_or_curie.startswith("http://") or uri_or_curie.startswith("https://"):
-        pref, i = parse_iri(uri_or_curie)
-        pref = get_preferred_prefix(pref)
-        curie = curie_to_str(pref, i)
-        return curie
+        return converter.compress(uri_or_curie)
     else:
         return uri_or_curie
 
