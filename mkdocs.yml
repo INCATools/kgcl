@@ -17,5 +17,5 @@ nav:
 #  - Home: home.md
   - Index: index.md
   - Examples: examples.md
-site_url: https://incatools.github.io/kgcl_schema/
-repo_url: https://github.com/INCATools/kgcl_schema
+site_url: https://incatools.github.io/kgcl/
+repo_url: https://github.com/INCATools/kgcl
