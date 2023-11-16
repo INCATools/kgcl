@@ -15,7 +15,7 @@ python = "^3.8"
 linkml-runtime = ">=1.1.24"
 lark = ">=1.1.2"
 prefixmaps = "^0.1.5"
-curies = "^0.6.0"
+curies = ">=0.6.0"
 
 [tool.poetry.dev-dependencies]
 linkml = ">=1.5.2"
