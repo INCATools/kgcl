@@ -2,942 +2,957 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://incatools.github.io/kgcl/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/Activity/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/AddNodeToSubset/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/AddToSubset/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/Agent/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/AllowsAutomaticReplacementOfEdges/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/Annotation/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/Boolean/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/Change/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/ChangeClassType/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/ChangeLanguageElement/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/ChangeMixin/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/ChangeSetSummaryStatistic/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/ClassCreation/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/ClassNode/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/ComplexChange/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/Configuration/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/Creation/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/Curie/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/DatatypeChange/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/DatatypeOrLanguageTagChange/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/Date/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/DateOrDatetime/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/Datetime/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/Decimal/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/Deletion/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/Double/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/Edge/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/EdgeChange/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/EdgeCreation/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/EdgeDeletion/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/EdgeLogicalInterpretationChange/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/EdgeObsoletion/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/EdgeRewiring/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/Float/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/InstanceNode/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/Integer/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://incatools.github.io/kgcl/Jsonpath/</loc>
+         <lastmod>2023-11-16</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://incatools.github.io/kgcl/Jsonpointer/</loc>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/LanguageTag/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/LanguageTagChange/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/LogicalAxiomChange/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/LogicalDefinition/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/MappingCreation/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/MappingPredicateChange/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/MappingReplacement/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/MetadataAssertionPredicateChange/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/MetadataAssertionReplacement/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/MultiNodeObsoletion/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/NameBecomesSynonym/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/Ncname/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/NewMapping/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/NewMetadataAssertion/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/NewSynonym/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/NewTextDefinition/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/Node/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/NodeAnnotationChange/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/NodeAnnotationReplacement/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/NodeChange/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/NodeCreation/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/NodeDeepening/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/NodeDeletion/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/NodeDirectMerge/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/NodeMappingChange/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/NodeMetadataAssertionChange/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/NodeMove/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/NodeObsoletion/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/NodeObsoletionWithDirectReplacement/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/NodeObsoletionWithNoDirectReplacement/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/NodeRename/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/NodeShallowing/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/NodeSynonymChange/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/NodeTextDefinitionChange/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/NodeUnobsoletion/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/Nodeidentifier/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/ObjectPropertyCreation/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/Objectidentifier/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/Obsoletion/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/ObsoletionPolicyEnum/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/OntologyElement/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/OntologySubset/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/OwlTypeEnum/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/PlaceUnder/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/PredicateChange/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/PropertyValue/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/ProvElement/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/RemoveFromSubset/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/RemoveMapping/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/RemoveMetadataAssertion/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/RemoveNodeFromSubset/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/RemoveSynonym/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/RemoveTextDefinition/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/RemoveUnder/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/Session/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/SetLanguageForName/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/SimpleChange/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://incatools.github.io/kgcl/Sparqlpath/</loc>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/String/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/SubsetMembershipChange/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/SynonymPredicateChange/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/SynonymReplacement/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/SynonymScopeEnum/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/TextDefinitionReplacement/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/TextualDiff/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/Time/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/Transaction/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/Unobsoletion/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/Uri/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/Uriorcurie/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/about/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/about_edge/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/about_node/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/about_node_representation/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/acted_on_behalf_of/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/activity_set/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/agent_set/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/annotation_property/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/annotation_property_type/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/annotation_set/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/change_date/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/change_description/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/change_set/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/contributor/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/contributor_predicate/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/creator/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/creator_predicate/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/datatype/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/definition_predicate/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/description/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/ended_at_time/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/examples/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/filler/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/filler_type/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/has_direct_replacement/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/has_nondirect_replacement/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/has_replacement/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/has_textual_diff/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/has_undo/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/id/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/in_subset/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/kgcl_schema/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/language/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/main_synonym_predicate/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/name/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/name_predicate/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/new_datatype/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/new_filler/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/new_language/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/new_object_type/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/new_property/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/new_subclass/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/new_value/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/new_value_type/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/node_id/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/object/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/object_representation/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/object_type/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/obsolete_node_label_prefix/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/obsolete_subclass_of_shadow_property/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/obsoletion_policies/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/obsoletion_workflow/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/old_datatype/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/old_language/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/old_object_type/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/old_value/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/old_value_type/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/owl_type/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/predicate/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/predicate_representation/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/predicate_type/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/property/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/property_type/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/property_value_set/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/pull_request/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/qualifier/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/see_also/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/started_at_time/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/subclass/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/subclass_type/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/subject/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/subject_representation/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/subject_type/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/superclass/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/superclass_type/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/synonym_predicates/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/target/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/type/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/used/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/was_associated_with/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/was_generated_by/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://incatools.github.io/kgcl/was_informed_by/</loc>
-         <lastmod>2023-11-06</lastmod>
+         <lastmod>2023-11-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>
