@@ -6,7 +6,7 @@ from pathlib import Path
 from typing import List
 
 import click
-from prefixmaps.io.parser import load_multi_context
+from prefixmaps import load_converter
 from curies import Converter
 from kgcl_schema.datamodel.kgcl import (
     Change,
@@ -41,9 +41,7 @@ from lark import Lark, Token
 
 @lru_cache()
 def get_curie_converter() -> Converter:
-    context = load_multi_context(["obo", "bioregistry.upper", "linked_data"])
-    extended_prefix_map = context.as_extended_prefix_map()
-    return Converter.from_extended_prefix_map(extended_prefix_map)
+    return load_converter(["obo", "bioregistry.upper", "linked_data"])
 
 def id_generator():
     """Return a new ID for KGCL change operations."""

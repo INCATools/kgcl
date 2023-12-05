@@ -11,10 +11,10 @@ readme = "README.md"
 
 
 [tool.poetry.dependencies]
-python = "^3.8"
+python = "^3.9"
 linkml-runtime = ">=1.1.24"
 lark = ">=1.1.2"
-prefixmaps = "^0.1.5"
+prefixmaps = "^0.2.0"
 curies = ">=0.6.0"
 
 [tool.poetry.dev-dependencies]
