@@ -1,10 +1,10 @@
 
-# Slot: see also
+# Slot: see_also
 
 
 
 
-URI: [kgcl:change_see_also](http://w3id.org/kgcl/change_see_also)
+URI: [kgcl:Change_see_also](http://w3id.org/kgcl/Change_see_also)
 
 
 ## Domain and Range
@@ -13,7 +13,7 @@ URI: [kgcl:change_see_also](http://w3id.org/kgcl/change_see_also)
 
 ## Parents
 
- *  is_a: [see also](see_also.md)
+ *  is_a: [see_also](see_also.md)
 
 ## Children
 
@@ -60,6 +60,7 @@ URI: [kgcl:change_see_also](http://w3id.org/kgcl/change_see_also)
  * [NodeSynonymChange](NodeSynonymChange.md)
  * [NodeTextDefinitionChange](NodeTextDefinitionChange.md)
  * [NodeUnobsoletion](NodeUnobsoletion.md)
+ * [ObjectPropertyCreation](ObjectPropertyCreation.md)
  * [PlaceUnder](PlaceUnder.md)
  * [PredicateChange](PredicateChange.md)
  * [RemoveMapping](RemoveMapping.md)

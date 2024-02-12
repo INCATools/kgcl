@@ -4,7 +4,7 @@
 
 
 
-URI: [kgcl:change_creator](http://w3id.org/kgcl/change_creator)
+URI: [kgcl:Change_creator](http://w3id.org/kgcl/Change_creator)
 
 
 ## Domain and Range
@@ -60,6 +60,7 @@ URI: [kgcl:change_creator](http://w3id.org/kgcl/change_creator)
  * [NodeSynonymChange](NodeSynonymChange.md)
  * [NodeTextDefinitionChange](NodeTextDefinitionChange.md)
  * [NodeUnobsoletion](NodeUnobsoletion.md)
+ * [ObjectPropertyCreation](ObjectPropertyCreation.md)
  * [PlaceUnder](PlaceUnder.md)
  * [PredicateChange](PredicateChange.md)
  * [RemoveMapping](RemoveMapping.md)

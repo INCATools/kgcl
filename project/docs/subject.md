@@ -16,8 +16,8 @@ None &#8594;  <sub>0..1</sub> [Node](Node.md)
 
 ## Children
 
- *  [edge change➞subject](edge_change_subject.md)
- *  [mapping creation➞subject](mapping_creation_subject.md)
+ *  [EdgeChange➞subject](EdgeChange_subject.md)
+ *  [MappingCreation➞subject](MappingCreation_subject.md)
 
 ## Used by
 

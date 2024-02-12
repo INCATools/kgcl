@@ -16,9 +16,9 @@ None &#8594;  <sub>0..1</sub> [OntologyElement](OntologyElement.md)
 
 ## Children
 
- *  [about edge](about_edge.md)
- *  [about node](about_node.md)
- *  [obsoletion➞about](obsoletion_about.md)
+ *  [Obsoletion➞about](Obsoletion_about.md)
+ *  [about_edge](about_edge.md)
+ *  [about_node](about_node.md)
 
 ## Used by
 

@@ -1,5 +1,5 @@
 
-# Class: ontology element
+# Class: OntologyElement
 
 
 Any component of an ontology or knowledge graph
@@ -19,8 +19,8 @@ URI: [kgcl:OntologyElement](http://w3id.org/kgcl/OntologyElement)
 
 ## Referenced by Class
 
+ *  **[Obsoletion](Obsoletion.md)** *[Obsoletion➞about](Obsoletion_about.md)*  <sub>0..1</sub>  **[OntologyElement](OntologyElement.md)**
  *  **None** *[about](about.md)*  <sub>0..1</sub>  **[OntologyElement](OntologyElement.md)**
- *  **[Obsoletion](Obsoletion.md)** *[obsoletion➞about](obsoletion_about.md)*  <sub>0..1</sub>  **[OntologyElement](OntologyElement.md)**
 
 ## Attributes
 

@@ -1,5 +1,5 @@
 
-# Class: unobsoletion
+# Class: Unobsoletion
 
 
 Opposite operation of obsoletion. Rarely performed.
@@ -7,7 +7,7 @@ Opposite operation of obsoletion. Rarely performed.
 URI: [kgcl:Unobsoletion](http://w3id.org/kgcl/Unobsoletion)
 
 
-[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Obsoletion]<has%20undo%200..1-++[Unobsoletion],[NodeUnobsoletion]uses%20-.->[Unobsoletion],[ChangeMixin]^-[Unobsoletion],[Obsoletion],[NodeUnobsoletion],[ChangeMixin])](https://yuml.me/diagram/nofunky;dir:TB/class/[Obsoletion]<has%20undo%200..1-++[Unobsoletion],[NodeUnobsoletion]uses%20-.->[Unobsoletion],[ChangeMixin]^-[Unobsoletion],[Obsoletion],[NodeUnobsoletion],[ChangeMixin])
+[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Obsoletion]<has_undo%200..1-++[Unobsoletion],[NodeUnobsoletion]uses%20-.->[Unobsoletion],[ChangeMixin]^-[Unobsoletion],[Obsoletion],[NodeUnobsoletion],[ChangeMixin])](https://yuml.me/diagram/nofunky;dir:TB/class/[Obsoletion]<has_undo%200..1-++[Unobsoletion],[NodeUnobsoletion]uses%20-.->[Unobsoletion],[ChangeMixin]^-[Unobsoletion],[Obsoletion],[NodeUnobsoletion],[ChangeMixin])
 
 ## Parents
 
@@ -25,7 +25,7 @@ URI: [kgcl:Unobsoletion](http://w3id.org/kgcl/Unobsoletion)
 
 ### Own
 
- * [unobsoletion➞has undo](unobsoletion_has_undo.md)  <sub>0..1</sub>
+ * [Unobsoletion➞has_undo](Unobsoletion_has_undo.md)  <sub>0..1</sub>
      * Description: A change that reverses this change
      * Range: [Obsoletion](Obsoletion.md)
 

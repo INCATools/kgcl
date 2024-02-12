@@ -1,5 +1,5 @@
 
-# Class: edge
+# Class: Edge
 
 
 A relationship between two nodes.
@@ -10,7 +10,6 @@ Currently the only kinds of edges supported in KGCL:
   * P subPropertyOf Q <==> Edge(subject=P, predicate=owl:subPropertyOf, object=Q)
 
 These represent the most common kind of pairwise relationship between classes, and classes are the dominant node type in ontologies.
-  
 In future a wider variety of OWL axiom types will be supportedn through the use of an additional edge property/slot to indicate the interpretation of the axiom, following owlstar (https://github.com/cmungall/owlstar).
 For example:
  * `A subClassOf R only B <==> Edge(subject=A, predicate=P, object=B, interpretation=AllOnly)`
@@ -21,7 +20,7 @@ Note that not all axioms are intended to map to edges. Axioms/triples where the 
 URI: [kgcl:Edge](http://w3id.org/kgcl/Edge)
 
 
-[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[OntologyElement],[Node],[Annotation]<annotation%20set%200..1-++[Edge&#124;subject_representation:string%20%3F;predicate_representation:string%20%3F;object_representation:string%20%3F],[Node]<object%200..1-%20[Edge],[Node]<predicate%200..1-%20[Edge],[Node]<subject%200..1-%20[Edge],[EdgeChange]++-%20about%20edge%200..1>[Edge],[OntologyElement]^-[Edge],[EdgeChange],[Annotation])](https://yuml.me/diagram/nofunky;dir:TB/class/[OntologyElement],[Node],[Annotation]<annotation%20set%200..1-++[Edge&#124;subject_representation:string%20%3F;predicate_representation:string%20%3F;object_representation:string%20%3F],[Node]<object%200..1-%20[Edge],[Node]<predicate%200..1-%20[Edge],[Node]<subject%200..1-%20[Edge],[EdgeChange]++-%20about%20edge%200..1>[Edge],[OntologyElement]^-[Edge],[EdgeChange],[Annotation])
+[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[OntologyElement],[Node],[Annotation]<annotation_set%200..1-++[Edge&#124;subject_representation:string%20%3F;predicate_representation:string%20%3F;object_representation:string%20%3F],[Node]<object%200..1-%20[Edge],[Node]<predicate%200..1-%20[Edge],[Node]<subject%200..1-%20[Edge],[EdgeChange]++-%20about_edge%200..1>[Edge],[OntologyElement]^-[Edge],[EdgeChange],[Annotation])](https://yuml.me/diagram/nofunky;dir:TB/class/[OntologyElement],[Node],[Annotation]<annotation_set%200..1-++[Edge&#124;subject_representation:string%20%3F;predicate_representation:string%20%3F;object_representation:string%20%3F],[Node]<object%200..1-%20[Edge],[Node]<predicate%200..1-%20[Edge],[Node]<subject%200..1-%20[Edge],[EdgeChange]++-%20about_edge%200..1>[Edge],[OntologyElement]^-[Edge],[EdgeChange],[Annotation])
 
 ## Parents
 
@@ -29,7 +28,7 @@ URI: [kgcl:Edge](http://w3id.org/kgcl/Edge)
 
 ## Referenced by Class
 
- *  **None** *[about edge](about_edge.md)*  <sub>0..1</sub>  **[Edge](Edge.md)**
+ *  **None** *[about_edge](about_edge.md)*  <sub>0..1</sub>  **[Edge](Edge.md)**
 
 ## Attributes
 
@@ -42,13 +41,13 @@ URI: [kgcl:Edge](http://w3id.org/kgcl/Edge)
      * Range: [Node](Node.md)
  * [object](object.md)  <sub>0..1</sub>
      * Range: [Node](Node.md)
- * [subject representation](subject_representation.md)  <sub>0..1</sub>
+ * [subject_representation](subject_representation.md)  <sub>0..1</sub>
      * Range: [String](types/String.md)
- * [predicate representation](predicate_representation.md)  <sub>0..1</sub>
+ * [predicate_representation](predicate_representation.md)  <sub>0..1</sub>
      * Range: [String](types/String.md)
- * [object representation](object_representation.md)  <sub>0..1</sub>
+ * [object_representation](object_representation.md)  <sub>0..1</sub>
      * Range: [String](types/String.md)
- * [annotation set](annotation_set.md)  <sub>0..1</sub>
+ * [annotation_set](annotation_set.md)  <sub>0..1</sub>
      * Range: [Annotation](Annotation.md)
 
 ## Other properties

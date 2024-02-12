@@ -1,5 +1,5 @@
 
-# Class: node move
+# Class: NodeMove
 
 
 A node move is a combination of deleting a parent edge and adding a parent edge, where the predicate is preserved and the object/parent node changes
@@ -7,7 +7,7 @@ A node move is a combination of deleting a parent edge and adding a parent edge,
 URI: [kgcl:NodeMove](http://w3id.org/kgcl/NodeMove)
 
 
-[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[NodeShallowing],[NodeMove&#124;old_object_type:string%20%3F;new_object_type:string%20%3F;change_description:string%20%3F;object_type(i):string%20%3F;language(i):language_tag%20%3F;datatype(i):string%20%3F;old_value(i):string%20%3F;new_value(i):string%20%3F;old_value_type(i):string%20%3F;new_value_type(i):string%20%3F;new_language(i):string%20%3F;old_language(i):string%20%3F;new_datatype(i):string%20%3F;old_datatype(i):string%20%3F;id(i):string;type(i):string%20%3F;see_also(i):string%20%3F;pull_request(i):string%20%3F;creator(i):string%20%3F;change_date(i):string%20%3F;contributor(i):string%20%3F]^-[NodeShallowing],[NodeMove]^-[NodeDeepening],[EdgeChange]^-[NodeMove],[NodeDeepening],[Node],[EdgeChange],[Edge],[Change],[Activity])](https://yuml.me/diagram/nofunky;dir:TB/class/[NodeShallowing],[NodeMove&#124;old_object_type:string%20%3F;new_object_type:string%20%3F;change_description:string%20%3F;object_type(i):string%20%3F;language(i):language_tag%20%3F;datatype(i):string%20%3F;old_value(i):string%20%3F;new_value(i):string%20%3F;old_value_type(i):string%20%3F;new_value_type(i):string%20%3F;new_language(i):string%20%3F;old_language(i):string%20%3F;new_datatype(i):string%20%3F;old_datatype(i):string%20%3F;id(i):string;type(i):string%20%3F;see_also(i):string%20%3F;pull_request(i):string%20%3F;creator(i):string%20%3F;change_date(i):string%20%3F;contributor(i):string%20%3F]^-[NodeShallowing],[NodeMove]^-[NodeDeepening],[EdgeChange]^-[NodeMove],[NodeDeepening],[Node],[EdgeChange],[Edge],[Change],[Activity])
+[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[NodeShallowing],[NodeMove&#124;old_object_type:string%20%3F;new_object_type:string%20%3F;change_description:string%20%3F;object_type(i):string%20%3F;language(i):LanguageTag%20%3F;datatype(i):string%20%3F;old_value(i):string%20%3F;new_value(i):string%20%3F;old_value_type(i):string%20%3F;new_value_type(i):string%20%3F;new_language(i):string%20%3F;old_language(i):string%20%3F;new_datatype(i):string%20%3F;old_datatype(i):string%20%3F;id(i):string;type(i):string%20%3F;see_also(i):string%20%3F;pull_request(i):string%20%3F;creator(i):string%20%3F;change_date(i):string%20%3F;contributor(i):string%20%3F;term_tracker_issue(i):string%20%3F]^-[NodeShallowing],[NodeMove]^-[NodeDeepening],[EdgeChange]^-[NodeMove],[NodeDeepening],[Node],[EdgeChange],[Edge],[Change],[Activity])](https://yuml.me/diagram/nofunky;dir:TB/class/[NodeShallowing],[NodeMove&#124;old_object_type:string%20%3F;new_object_type:string%20%3F;change_description:string%20%3F;object_type(i):string%20%3F;language(i):LanguageTag%20%3F;datatype(i):string%20%3F;old_value(i):string%20%3F;new_value(i):string%20%3F;old_value_type(i):string%20%3F;new_value_type(i):string%20%3F;new_language(i):string%20%3F;old_language(i):string%20%3F;new_datatype(i):string%20%3F;old_datatype(i):string%20%3F;id(i):string;type(i):string%20%3F;see_also(i):string%20%3F;pull_request(i):string%20%3F;creator(i):string%20%3F;change_date(i):string%20%3F;contributor(i):string%20%3F;term_tracker_issue(i):string%20%3F]^-[NodeShallowing],[NodeMove]^-[NodeDeepening],[EdgeChange]^-[NodeMove],[NodeDeepening],[Node],[EdgeChange],[Edge],[Change],[Activity])
 
 ## Parents
 
@@ -26,13 +26,13 @@ URI: [kgcl:NodeMove](http://w3id.org/kgcl/NodeMove)
 
 ### Own
 
- * [old object type](old_object_type.md)  <sub>0..1</sub>
+ * [old_object_type](old_object_type.md)  <sub>0..1</sub>
      * Description: The type (IRI or Literal) of an old object
      * Range: [String](types/String.md)
- * [new object type](new_object_type.md)  <sub>0..1</sub>
+ * [new_object_type](new_object_type.md)  <sub>0..1</sub>
      * Description: The type (IRI or Literal) of a new object
      * Range: [String](types/String.md)
- * [node move➞change description](node_move_change_description.md)  <sub>0..1</sub>
+ * [NodeMove➞change_description](NodeMove_change_description.md)  <sub>0..1</sub>
      * Description: A string serialization of the change. This should be both human-readable, and parseable.
      * Range: [String](types/String.md)
      * Example: rename UBERON:0002398 from 'manus' to 'hand' None
@@ -41,54 +41,56 @@ URI: [kgcl:NodeMove](http://w3id.org/kgcl/NodeMove)
      * Example: search and replace 'metabolic process' with 'metabolism' in all labels under 'biological process' None
      * Example: search and replace 'metabolic process' with 'metabolism' in all labels under 'biological process' retaining as 'exact synonym' None
 
-### Inherited from edge change:
+### Inherited from EdgeChange:
 
  * [id](id.md)  <sub>1..1</sub>
      * Range: [String](types/String.md)
  * [type](type.md)  <sub>0..1</sub>
      * Range: [String](types/String.md)
- * [change➞was generated by](change_was_generated_by.md)  <sub>0..1</sub>
+ * [Change➞was_generated_by](Change_was_generated_by.md)  <sub>0..1</sub>
      * Range: [Activity](Activity.md)
- * [change➞see also](change_see_also.md)  <sub>0..1</sub>
+ * [Change➞see_also](Change_see_also.md)  <sub>0..1</sub>
      * Range: [String](types/String.md)
- * [change➞pull request](change_pull_request.md)  <sub>0..1</sub>
+ * [Change➞pull_request](Change_pull_request.md)  <sub>0..1</sub>
      * Range: [String](types/String.md)
- * [change➞creator](change_creator.md)  <sub>0..1</sub>
+ * [Change➞creator](Change_creator.md)  <sub>0..1</sub>
      * Range: [String](types/String.md)
- * [change➞change date](change_change_date.md)  <sub>0..1</sub>
+ * [Change➞change_date](Change_change_date.md)  <sub>0..1</sub>
      * Range: [String](types/String.md)
  * [contributor](contributor.md)  <sub>0..1</sub>
      * Range: [String](types/String.md)
- * [has undo](has_undo.md)  <sub>0..1</sub>
+ * [has_undo](has_undo.md)  <sub>0..1</sub>
      * Description: A change that reverses this change
      * Range: [Change](Change.md)
- * [old value](old_value.md)  <sub>0..1</sub>
+ * [Change➞term_tracker_issue](Change_term_tracker_issue.md)  <sub>0..1</sub>
+     * Range: [String](types/String.md)
+ * [old_value](old_value.md)  <sub>0..1</sub>
      * Description: The value of a property held in the old instance of the ontology
      * Range: [String](types/String.md)
- * [new value](new_value.md)  <sub>0..1</sub>
+ * [new_value](new_value.md)  <sub>0..1</sub>
      * Description: The value of a property held in the new instance of the ontology
      * Range: [String](types/String.md)
- * [old value type](old_value_type.md)  <sub>0..1</sub>
+ * [old_value_type](old_value_type.md)  <sub>0..1</sub>
      * Description: The type (IRI or Literal) of an old value
      * Range: [String](types/String.md)
- * [new value type](new_value_type.md)  <sub>0..1</sub>
+ * [new_value_type](new_value_type.md)  <sub>0..1</sub>
      * Description: The type (IRI or Literal) of a new value
      * Range: [String](types/String.md)
- * [new language](new_language.md)  <sub>0..1</sub>
+ * [new_language](new_language.md)  <sub>0..1</sub>
      * Description: The new language tag of a literal
      * Range: [String](types/String.md)
- * [old language](old_language.md)  <sub>0..1</sub>
+ * [old_language](old_language.md)  <sub>0..1</sub>
      * Description: The old language tag of a literal
      * Range: [String](types/String.md)
- * [new datatype](new_datatype.md)  <sub>0..1</sub>
+ * [new_datatype](new_datatype.md)  <sub>0..1</sub>
      * Description: The new datatype of a literal
      * Range: [String](types/String.md)
- * [old datatype](old_datatype.md)  <sub>0..1</sub>
+ * [old_datatype](old_datatype.md)  <sub>0..1</sub>
      * Description: The old datatype of a literal
      * Range: [String](types/String.md)
- * [about edge](about_edge.md)  <sub>0..1</sub>
+ * [about_edge](about_edge.md)  <sub>0..1</sub>
      * Range: [Edge](Edge.md)
- * [object type](object_type.md)  <sub>0..1</sub>
+ * [object_type](object_type.md)  <sub>0..1</sub>
      * Description: The type (IRI or Literal) of an object
      * Range: [String](types/String.md)
  * [language](language.md)  <sub>0..1</sub>
@@ -97,12 +99,12 @@ URI: [kgcl:NodeMove](http://w3id.org/kgcl/NodeMove)
  * [datatype](datatype.md)  <sub>0..1</sub>
      * Description: The datatype of a literal
      * Range: [String](types/String.md)
- * [edge change➞subject](edge_change_subject.md)  <sub>0..1</sub>
+ * [EdgeChange➞subject](EdgeChange_subject.md)  <sub>0..1</sub>
      * Range: [Node](Node.md)
 
 ## Other properties
 
 |  |  |  |
 | --- | --- | --- |
-| **Examples:** | | Example(value='changing a is-a b to a is-a c', description=None) |
+| **Examples:** | | Example(value='changing a is-a b to a is-a c', description=None, object=None) |
 

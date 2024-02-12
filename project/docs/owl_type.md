@@ -1,5 +1,5 @@
 
-# Slot: owl type
+# Slot: owl_type
 
 
 
@@ -9,7 +9,7 @@ URI: [kgcl:owl_type](http://w3id.org/kgcl/owl_type)
 
 ## Domain and Range
 
-None &#8594;  <sub>0..1</sub> [owl_type_enum](owl_type_enum.md)
+None &#8594;  <sub>0..1</sub> [OwlTypeEnum](OwlTypeEnum.md)
 
 ## Parents
 
@@ -24,3 +24,4 @@ None &#8594;  <sub>0..1</sub> [owl_type_enum](owl_type_enum.md)
  * [InstanceNode](InstanceNode.md)
  * [Node](Node.md)
  * [NodeCreation](NodeCreation.md)
+ * [ObjectPropertyCreation](ObjectPropertyCreation.md)

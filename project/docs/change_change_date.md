@@ -1,10 +1,10 @@
 
-# Slot: change date
+# Slot: change_date
 
 
 
 
-URI: [kgcl:change_change_date](http://w3id.org/kgcl/change_change_date)
+URI: [kgcl:Change_change_date](http://w3id.org/kgcl/Change_change_date)
 
 
 ## Domain and Range
@@ -13,7 +13,7 @@ URI: [kgcl:change_change_date](http://w3id.org/kgcl/change_change_date)
 
 ## Parents
 
- *  is_a: [change date](change_date.md)
+ *  is_a: [change_date](change_date.md)
 
 ## Children
 
@@ -60,6 +60,7 @@ URI: [kgcl:change_change_date](http://w3id.org/kgcl/change_change_date)
  * [NodeSynonymChange](NodeSynonymChange.md)
  * [NodeTextDefinitionChange](NodeTextDefinitionChange.md)
  * [NodeUnobsoletion](NodeUnobsoletion.md)
+ * [ObjectPropertyCreation](ObjectPropertyCreation.md)
  * [PlaceUnder](PlaceUnder.md)
  * [PredicateChange](PredicateChange.md)
  * [RemoveMapping](RemoveMapping.md)

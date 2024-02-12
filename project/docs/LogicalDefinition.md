@@ -1,5 +1,5 @@
 
-# Class: logical definition
+# Class: LogicalDefinition
 
 
 

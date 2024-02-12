@@ -1,5 +1,5 @@
 
-# Slot: ~~property type~~ _(deprecated)_
+# Slot: ~~property_type~~ _(deprecated)_
 
 
 

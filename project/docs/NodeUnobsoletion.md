@@ -1,5 +1,5 @@
 
-# Class: node unobsoletion
+# Class: NodeUnobsoletion
 
 
 unobsoletion of a node deprecates usage of that node. Rarely applied.
@@ -7,7 +7,7 @@ unobsoletion of a node deprecates usage of that node. Rarely applied.
 URI: [kgcl:NodeUnobsoletion](http://w3id.org/kgcl/NodeUnobsoletion)
 
 
-[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Unobsoletion],[Node]<consider%200..1-%20[NodeUnobsoletion&#124;change_description:string%20%3F;about_node_representation(i):string%20%3F;language(i):language_tag%20%3F;old_value(i):string%20%3F;new_value(i):string%20%3F;old_value_type(i):string%20%3F;new_value_type(i):string%20%3F;new_language(i):string%20%3F;old_language(i):string%20%3F;new_datatype(i):string%20%3F;old_datatype(i):string%20%3F;id(i):string;type(i):string%20%3F;see_also(i):string%20%3F;pull_request(i):string%20%3F;creator(i):string%20%3F;change_date(i):string%20%3F;contributor(i):string%20%3F],[Node]<replaced%20by%200..1-%20[NodeUnobsoletion],[NodeUnobsoletion]uses%20-.->[Unobsoletion],[NodeChange]^-[NodeUnobsoletion],[NodeChange],[Node],[Change],[Activity])](https://yuml.me/diagram/nofunky;dir:TB/class/[Unobsoletion],[Node]<consider%200..1-%20[NodeUnobsoletion&#124;change_description:string%20%3F;about_node_representation(i):string%20%3F;language(i):language_tag%20%3F;old_value(i):string%20%3F;new_value(i):string%20%3F;old_value_type(i):string%20%3F;new_value_type(i):string%20%3F;new_language(i):string%20%3F;old_language(i):string%20%3F;new_datatype(i):string%20%3F;old_datatype(i):string%20%3F;id(i):string;type(i):string%20%3F;see_also(i):string%20%3F;pull_request(i):string%20%3F;creator(i):string%20%3F;change_date(i):string%20%3F;contributor(i):string%20%3F],[Node]<replaced%20by%200..1-%20[NodeUnobsoletion],[NodeUnobsoletion]uses%20-.->[Unobsoletion],[NodeChange]^-[NodeUnobsoletion],[NodeChange],[Node],[Change],[Activity])
+[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Unobsoletion],[Node]<consider%200..1-%20[NodeUnobsoletion&#124;change_description:string%20%3F;about_node_representation(i):string%20%3F;language(i):LanguageTag%20%3F;old_value(i):string%20%3F;new_value(i):string%20%3F;old_value_type(i):string%20%3F;new_value_type(i):string%20%3F;new_language(i):string%20%3F;old_language(i):string%20%3F;new_datatype(i):string%20%3F;old_datatype(i):string%20%3F;id(i):string;type(i):string%20%3F;see_also(i):string%20%3F;pull_request(i):string%20%3F;creator(i):string%20%3F;change_date(i):string%20%3F;contributor(i):string%20%3F;term_tracker_issue(i):string%20%3F],[Node]<replaced%20by%200..1-%20[NodeUnobsoletion],[NodeUnobsoletion]uses%20-.->[Unobsoletion],[NodeChange]^-[NodeUnobsoletion],[NodeChange],[Node],[Change],[Activity])](https://yuml.me/diagram/nofunky;dir:TB/class/[Unobsoletion],[Node]<consider%200..1-%20[NodeUnobsoletion&#124;change_description:string%20%3F;about_node_representation(i):string%20%3F;language(i):LanguageTag%20%3F;old_value(i):string%20%3F;new_value(i):string%20%3F;old_value_type(i):string%20%3F;new_value_type(i):string%20%3F;new_language(i):string%20%3F;old_language(i):string%20%3F;new_datatype(i):string%20%3F;old_datatype(i):string%20%3F;id(i):string;type(i):string%20%3F;see_also(i):string%20%3F;pull_request(i):string%20%3F;creator(i):string%20%3F;change_date(i):string%20%3F;contributor(i):string%20%3F;term_tracker_issue(i):string%20%3F],[Node]<replaced%20by%200..1-%20[NodeUnobsoletion],[NodeUnobsoletion]uses%20-.->[Unobsoletion],[NodeChange]^-[NodeUnobsoletion],[NodeChange],[Node],[Change],[Activity])
 
 ## Parents
 
@@ -25,7 +25,7 @@ URI: [kgcl:NodeUnobsoletion](http://w3id.org/kgcl/NodeUnobsoletion)
 
 ### Own
 
- * [node unobsoletion➞change description](node_unobsoletion_change_description.md)  <sub>0..1</sub>
+ * [NodeUnobsoletion➞change_description](NodeUnobsoletion_change_description.md)  <sub>0..1</sub>
      * Description: A string serialization of the change. This should be both human-readable, and parseable.
      * Range: [String](types/String.md)
      * Example: rename UBERON:0002398 from 'manus' to 'hand' None
@@ -33,59 +33,61 @@ URI: [kgcl:NodeUnobsoletion](http://w3id.org/kgcl/NodeUnobsoletion)
      * Example: merge 'cellular metabolic process' into 'metabolic process' None
      * Example: search and replace 'metabolic process' with 'metabolism' in all labels under 'biological process' None
      * Example: search and replace 'metabolic process' with 'metabolism' in all labels under 'biological process' retaining as 'exact synonym' None
- * [node unobsoletion➞replaced by](node_unobsoletion_replaced_by.md)  <sub>0..1</sub>
+ * [NodeUnobsoletion➞replaced by](NodeUnobsoletion_replaced_by.md)  <sub>0..1</sub>
      * Range: [Node](Node.md)
- * [node unobsoletion➞consider](node_unobsoletion_consider.md)  <sub>0..1</sub>
+ * [NodeUnobsoletion➞consider](NodeUnobsoletion_consider.md)  <sub>0..1</sub>
      * Range: [Node](Node.md)
 
-### Inherited from node change:
+### Inherited from NodeChange:
 
  * [id](id.md)  <sub>1..1</sub>
      * Range: [String](types/String.md)
  * [type](type.md)  <sub>0..1</sub>
      * Range: [String](types/String.md)
- * [change➞was generated by](change_was_generated_by.md)  <sub>0..1</sub>
+ * [Change➞was_generated_by](Change_was_generated_by.md)  <sub>0..1</sub>
      * Range: [Activity](Activity.md)
- * [change➞see also](change_see_also.md)  <sub>0..1</sub>
+ * [Change➞see_also](Change_see_also.md)  <sub>0..1</sub>
      * Range: [String](types/String.md)
- * [change➞pull request](change_pull_request.md)  <sub>0..1</sub>
+ * [Change➞pull_request](Change_pull_request.md)  <sub>0..1</sub>
      * Range: [String](types/String.md)
- * [change➞creator](change_creator.md)  <sub>0..1</sub>
+ * [Change➞creator](Change_creator.md)  <sub>0..1</sub>
      * Range: [String](types/String.md)
- * [change➞change date](change_change_date.md)  <sub>0..1</sub>
+ * [Change➞change_date](Change_change_date.md)  <sub>0..1</sub>
      * Range: [String](types/String.md)
  * [contributor](contributor.md)  <sub>0..1</sub>
      * Range: [String](types/String.md)
- * [has undo](has_undo.md)  <sub>0..1</sub>
+ * [has_undo](has_undo.md)  <sub>0..1</sub>
      * Description: A change that reverses this change
      * Range: [Change](Change.md)
- * [old value](old_value.md)  <sub>0..1</sub>
+ * [Change➞term_tracker_issue](Change_term_tracker_issue.md)  <sub>0..1</sub>
+     * Range: [String](types/String.md)
+ * [old_value](old_value.md)  <sub>0..1</sub>
      * Description: The value of a property held in the old instance of the ontology
      * Range: [String](types/String.md)
- * [new value](new_value.md)  <sub>0..1</sub>
+ * [new_value](new_value.md)  <sub>0..1</sub>
      * Description: The value of a property held in the new instance of the ontology
      * Range: [String](types/String.md)
- * [old value type](old_value_type.md)  <sub>0..1</sub>
+ * [old_value_type](old_value_type.md)  <sub>0..1</sub>
      * Description: The type (IRI or Literal) of an old value
      * Range: [String](types/String.md)
- * [new value type](new_value_type.md)  <sub>0..1</sub>
+ * [new_value_type](new_value_type.md)  <sub>0..1</sub>
      * Description: The type (IRI or Literal) of a new value
      * Range: [String](types/String.md)
- * [new language](new_language.md)  <sub>0..1</sub>
+ * [new_language](new_language.md)  <sub>0..1</sub>
      * Description: The new language tag of a literal
      * Range: [String](types/String.md)
- * [old language](old_language.md)  <sub>0..1</sub>
+ * [old_language](old_language.md)  <sub>0..1</sub>
      * Description: The old language tag of a literal
      * Range: [String](types/String.md)
- * [new datatype](new_datatype.md)  <sub>0..1</sub>
+ * [new_datatype](new_datatype.md)  <sub>0..1</sub>
      * Description: The new datatype of a literal
      * Range: [String](types/String.md)
- * [old datatype](old_datatype.md)  <sub>0..1</sub>
+ * [old_datatype](old_datatype.md)  <sub>0..1</sub>
      * Description: The old datatype of a literal
      * Range: [String](types/String.md)
- * [about node](about_node.md)  <sub>0..1</sub>
+ * [about_node](about_node.md)  <sub>0..1</sub>
      * Range: [Node](Node.md)
- * [about node representation](about_node_representation.md)  <sub>0..1</sub>
+ * [about_node_representation](about_node_representation.md)  <sub>0..1</sub>
      * Description: The representation of a node (URI, CURIE, label) 
      * Range: [String](types/String.md)
  * [language](language.md)  <sub>0..1</sub>

@@ -16,7 +16,7 @@ None &#8594;  <sub>0..1</sub> [Node](Node.md)
 
 ## Children
 
- *  [mapping creation➞predicate](mapping_creation_predicate.md)
+ *  [MappingCreation➞predicate](MappingCreation_predicate.md)
 
 ## Used by
 

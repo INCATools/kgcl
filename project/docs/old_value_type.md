@@ -1,5 +1,5 @@
 
-# Slot: ~~old value type~~ _(deprecated)_
+# Slot: ~~old_value_type~~ _(deprecated)_
 
 
 The type (IRI or Literal) of an old value
@@ -56,6 +56,7 @@ None &#8594;  <sub>0..1</sub> [String](types/String.md)
  * [NodeSynonymChange](NodeSynonymChange.md)
  * [NodeTextDefinitionChange](NodeTextDefinitionChange.md)
  * [NodeUnobsoletion](NodeUnobsoletion.md)
+ * [ObjectPropertyCreation](ObjectPropertyCreation.md)
  * [PlaceUnder](PlaceUnder.md)
  * [PredicateChange](PredicateChange.md)
  * [RemoveMapping](RemoveMapping.md)

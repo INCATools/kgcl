@@ -1,5 +1,5 @@
 
-# Class: language tag change
+# Class: LanguageTagChange
 
 
 
@@ -7,7 +7,7 @@
 URI: [kgcl:LanguageTagChange](http://w3id.org/kgcl/LanguageTagChange)
 
 
-[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[SetLanguageForName]uses%20-.->[LanguageTagChange&#124;old_value:language_tag%20%3F;new_value:language_tag%20%3F],[DatatypeOrLanguageTagChange]^-[LanguageTagChange],[SetLanguageForName],[DatatypeOrLanguageTagChange])](https://yuml.me/diagram/nofunky;dir:TB/class/[SetLanguageForName]uses%20-.->[LanguageTagChange&#124;old_value:language_tag%20%3F;new_value:language_tag%20%3F],[DatatypeOrLanguageTagChange]^-[LanguageTagChange],[SetLanguageForName],[DatatypeOrLanguageTagChange])
+[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[SetLanguageForName]uses%20-.->[LanguageTagChange&#124;old_value:LanguageTag%20%3F;new_value:LanguageTag%20%3F],[DatatypeOrLanguageTagChange]^-[LanguageTagChange],[SetLanguageForName],[DatatypeOrLanguageTagChange])](https://yuml.me/diagram/nofunky;dir:TB/class/[SetLanguageForName]uses%20-.->[LanguageTagChange&#124;old_value:LanguageTag%20%3F;new_value:LanguageTag%20%3F],[DatatypeOrLanguageTagChange]^-[LanguageTagChange],[SetLanguageForName],[DatatypeOrLanguageTagChange])
 
 ## Parents
 
@@ -25,9 +25,9 @@ URI: [kgcl:LanguageTagChange](http://w3id.org/kgcl/LanguageTagChange)
 
 ### Own
 
- * [language tag change➞old value](language_tag_change_old_value.md)  <sub>0..1</sub>
+ * [LanguageTagChange➞old_value](LanguageTagChange_old_value.md)  <sub>0..1</sub>
      * Description: The value of a property held in the old instance of the ontology
      * Range: [LanguageTag](types/LanguageTag.md)
- * [language tag change➞new value](language_tag_change_new_value.md)  <sub>0..1</sub>
+ * [LanguageTagChange➞new_value](LanguageTagChange_new_value.md)  <sub>0..1</sub>
      * Description: The value of a property held in the new instance of the ontology
      * Range: [LanguageTag](types/LanguageTag.md)

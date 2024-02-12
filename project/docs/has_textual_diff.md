@@ -1,5 +1,5 @@
 
-# Slot: has textual diff
+# Slot: has_textual_diff
 
 
 A representation of character-level changes on a textual literal property. For example, if a text definition may change by only a single character such as addition of a period, it is useful to be able to see this visually.

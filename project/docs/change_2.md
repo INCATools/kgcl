@@ -16,7 +16,7 @@ None &#8594;  <sub>0..1</sub> [NewSynonym](NewSynonym.md)
 
 ## Children
 
- *  [name becomes synonym➞change 2](name_becomes_synonym_change_2.md)
+ *  [NameBecomesSynonym➞change 2](NameBecomesSynonym_change_2.md)
 
 ## Used by
 

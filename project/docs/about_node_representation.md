@@ -1,5 +1,5 @@
 
-# Slot: ~~about node representation~~ _(deprecated)_
+# Slot: ~~about_node_representation~~ _(deprecated)_
 
 
 The representation of a node (URI, CURIE, label)
@@ -45,6 +45,7 @@ None &#8594;  <sub>0..1</sub> [String](types/String.md)
  * [NodeSynonymChange](NodeSynonymChange.md)
  * [NodeTextDefinitionChange](NodeTextDefinitionChange.md)
  * [NodeUnobsoletion](NodeUnobsoletion.md)
+ * [ObjectPropertyCreation](ObjectPropertyCreation.md)
  * [RemoveMapping](RemoveMapping.md)
  * [RemoveMetadataAssertion](RemoveMetadataAssertion.md)
  * [RemoveNodeFromSubset](RemoveNodeFromSubset.md)

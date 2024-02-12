@@ -1,5 +1,5 @@
 
-# Slot: ~~annotation property type~~ _(deprecated)_
+# Slot: ~~annotation_property_type~~ _(deprecated)_
 
 
 The type of a property (URI, CURIE, label)

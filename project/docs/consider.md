@@ -16,7 +16,7 @@ None &#8594;  <sub>0..1</sub> [Node](Node.md)
 
 ## Children
 
- *  [node unobsoletion➞consider](node_unobsoletion_consider.md)
+ *  [NodeUnobsoletion➞consider](NodeUnobsoletion_consider.md)
 
 ## Used by
 

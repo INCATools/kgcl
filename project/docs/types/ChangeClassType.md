@@ -1,8 +1,8 @@
 
-# Type: change class type
+# Type: ChangeClassType
 
 
-CURIE for a class within this datamodel. E.g. kgcl:NodeObsoletion
+CURIE for a class within this data model. E.g. kgcl:NodeObsoletion
 
 URI: [kgcl:ChangeClassType](http://w3id.org/kgcl/ChangeClassType)
 

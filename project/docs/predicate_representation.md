@@ -1,5 +1,5 @@
 
-# Slot: ~~predicate representation~~ _(deprecated)_
+# Slot: ~~predicate_representation~~ _(deprecated)_
 
 
 

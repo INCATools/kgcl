@@ -16,7 +16,7 @@ None &#8594;  <sub>0..1</sub> [NodeRename](NodeRename.md)
 
 ## Children
 
- *  [name becomes synonym➞change 1](name_becomes_synonym_change_1.md)
+ *  [NameBecomesSynonym➞change 1](NameBecomesSynonym_change_1.md)
 
 ## Used by
 

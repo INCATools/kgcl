@@ -16,7 +16,7 @@ None &#8594;  <sub>0..1</sub> [Node](Node.md)
 
 ## Children
 
- *  [mapping creation➞object](mapping_creation_object.md)
+ *  [MappingCreation➞object](MappingCreation_object.md)
 
 ## Used by
 

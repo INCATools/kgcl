@@ -1,5 +1,5 @@
 
-# Slot: new subclass
+# Slot: new_subclass
 
 
 The new subclass of a subsumption axiom

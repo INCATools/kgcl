@@ -1,5 +1,5 @@
 
-# Slot: in subset
+# Slot: in_subset
 
 
 The subset that pertains to this change
@@ -16,8 +16,8 @@ None &#8594;  <sub>0..1</sub> [OntologySubset](OntologySubset.md)
 
 ## Children
 
- *  [add to subset➞in subset](add_to_subset_in_subset.md)
- *  [remove from subset➞in subset](remove_from_subset_in_subset.md)
+ *  [AddToSubset➞in_subset](AddToSubset_in_subset.md)
+ *  [RemoveFromSubset➞in_subset](RemoveFromSubset_in_subset.md)
 
 ## Used by
 

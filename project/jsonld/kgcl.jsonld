@@ -1,6 +1,6 @@
 {
   "name": "kgcl_schema",
-  "description": "A data model for describing change operations at a high level on an ontology or ontology-like artefact, such as a Knowledge Graph.\n\n* [Browse Schema](https://cmungall.github.io/knowledge-graph-change-language/)\n* [GitHub](https://github.com/cmungall/knowledge-graph-change-language)",
+  "description": "A data model for describing change operations at a high level on an ontology or ontology-like artefact, such as a Knowledge Graph.\n* [Browse Schema](https://cmungall.github.io/knowledge-graph-change-language/)\n* [GitHub](https://github.com/cmungall/knowledge-graph-change-language)",
   "title": "Knowledge Graph Change Language",
   "id": "https://w3id.org/kgcl",
   "version": "0.0.1",
@@ -41,9 +41,9 @@
   "default_range": "string",
   "types": [
     {
-      "name": "change_class_type",
+      "name": "ChangeClassType",
       "definition_uri": "http://w3id.org/kgcl/ChangeClassType",
-      "description": "CURIE for a class within this datamodel. E.g. kgcl:NodeObsoletion",
+      "description": "CURIE for a class within this data model. E.g. kgcl:NodeObsoletion",
       "from_schema": "https://w3id.org/kgcl",
       "typeof": "uriorcurie",
       "base": "URIorCURIE",
@@ -55,8 +55,14 @@
       "name": "string",
       "definition_uri": "https://w3id.org/linkml/String",
       "description": "A character string",
+      "notes": [
+        "In RDF serializations, a slot with range of string is treated as a literal or type xsd:string.   If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"string\"."
+      ],
       "from_schema": "https://w3id.org/linkml/types",
       "imported_from": "linkml:types",
+      "exact_mappings": [
+        "schema:Text"
+      ],
       "base": "str",
       "uri": "http://www.w3.org/2001/XMLSchema#string",
       "@type": "TypeDefinition"
@@ -65,8 +71,14 @@
       "name": "integer",
       "definition_uri": "https://w3id.org/linkml/Integer",
       "description": "An integer",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"integer\"."
+      ],
       "from_schema": "https://w3id.org/linkml/types",
       "imported_from": "linkml:types",
+      "exact_mappings": [
+        "schema:Integer"
+      ],
       "base": "int",
       "uri": "http://www.w3.org/2001/XMLSchema#integer",
       "@type": "TypeDefinition"
@@ -75,8 +87,14 @@
       "name": "boolean",
       "definition_uri": "https://w3id.org/linkml/Boolean",
       "description": "A binary (true or false) value",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"boolean\"."
+      ],
       "from_schema": "https://w3id.org/linkml/types",
       "imported_from": "linkml:types",
+      "exact_mappings": [
+        "schema:Boolean"
+      ],
       "base": "Bool",
       "uri": "http://www.w3.org/2001/XMLSchema#boolean",
       "repr": "bool",
@@ -86,8 +104,14 @@
       "name": "float",
       "definition_uri": "https://w3id.org/linkml/Float",
       "description": "A real number that conforms to the xsd:float specification",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"float\"."
+      ],
       "from_schema": "https://w3id.org/linkml/types",
       "imported_from": "linkml:types",
+      "exact_mappings": [
+        "schema:Float"
+      ],
       "base": "float",
       "uri": "http://www.w3.org/2001/XMLSchema#float",
       "@type": "TypeDefinition"
@@ -96,8 +120,14 @@
       "name": "double",
       "definition_uri": "https://w3id.org/linkml/Double",
       "description": "A real number that conforms to the xsd:double specification",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"double\"."
+      ],
       "from_schema": "https://w3id.org/linkml/types",
       "imported_from": "linkml:types",
+      "close_mappings": [
+        "schema:Float"
+      ],
       "base": "float",
       "uri": "http://www.w3.org/2001/XMLSchema#double",
       "@type": "TypeDefinition"
@@ -106,8 +136,14 @@
       "name": "decimal",
       "definition_uri": "https://w3id.org/linkml/Decimal",
       "description": "A real number with arbitrary precision that conforms to the xsd:decimal specification",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"decimal\"."
+      ],
       "from_schema": "https://w3id.org/linkml/types",
       "imported_from": "linkml:types",
+      "broad_mappings": [
+        "schema:Number"
+      ],
       "base": "Decimal",
       "uri": "http://www.w3.org/2001/XMLSchema#decimal",
       "@type": "TypeDefinition"
@@ -117,12 +153,16 @@
       "definition_uri": "https://w3id.org/linkml/Time",
       "description": "A time object represents a (local) time of day, independent of any particular day",
       "notes": [
-        "URI is dateTime because OWL reasoners do not work with straight date or time"
+        "URI is dateTime because OWL reasoners do not work with straight date or time",
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"time\"."
       ],
       "from_schema": "https://w3id.org/linkml/types",
       "imported_from": "linkml:types",
+      "exact_mappings": [
+        "schema:Time"
+      ],
       "base": "XSDTime",
-      "uri": "http://www.w3.org/2001/XMLSchema#dateTime",
+      "uri": "http://www.w3.org/2001/XMLSchema#time",
       "repr": "str",
       "@type": "TypeDefinition"
     },
@@ -131,10 +171,14 @@
       "definition_uri": "https://w3id.org/linkml/Date",
       "description": "a date (year, month and day) in an idealized calendar",
       "notes": [
-        "URI is dateTime because OWL reasoners don't work with straight date or time"
+        "URI is dateTime because OWL reasoners don't work with straight date or time",
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"date\"."
       ],
       "from_schema": "https://w3id.org/linkml/types",
       "imported_from": "linkml:types",
+      "exact_mappings": [
+        "schema:Date"
+      ],
       "base": "XSDDate",
       "uri": "http://www.w3.org/2001/XMLSchema#date",
       "repr": "str",
@@ -144,8 +188,14 @@
       "name": "datetime",
       "definition_uri": "https://w3id.org/linkml/Datetime",
       "description": "The combination of a date and time",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"datetime\"."
+      ],
       "from_schema": "https://w3id.org/linkml/types",
       "imported_from": "linkml:types",
+      "exact_mappings": [
+        "schema:DateTime"
+      ],
       "base": "XSDDateTime",
       "uri": "http://www.w3.org/2001/XMLSchema#dateTime",
       "repr": "str",
@@ -155,6 +205,9 @@
       "name": "date_or_datetime",
       "definition_uri": "https://w3id.org/linkml/DateOrDatetime",
       "description": "Either a date or a datetime",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"date_or_datetime\"."
+      ],
       "from_schema": "https://w3id.org/linkml/types",
       "imported_from": "linkml:types",
       "base": "str",
@@ -166,6 +219,9 @@
       "name": "uriorcurie",
       "definition_uri": "https://w3id.org/linkml/Uriorcurie",
       "description": "a URI or a CURIE",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"uriorcurie\"."
+      ],
       "from_schema": "https://w3id.org/linkml/types",
       "imported_from": "linkml:types",
       "base": "URIorCURIE",
@@ -174,11 +230,40 @@
       "@type": "TypeDefinition"
     },
     {
-      "name": "uri",
-      "definition_uri": "https://w3id.org/linkml/Uri",
-      "description": "a complete URI",
+      "name": "curie",
+      "definition_uri": "https://w3id.org/linkml/Curie",
+      "conforms_to": "https://www.w3.org/TR/curie/",
+      "description": "a compact URI",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"curie\"."
+      ],
+      "comments": [
+        "in RDF serializations this MUST be expanded to a URI",
+        "in non-RDF serializations MAY be serialized as the compact representation"
+      ],
       "from_schema": "https://w3id.org/linkml/types",
       "imported_from": "linkml:types",
+      "base": "Curie",
+      "uri": "http://www.w3.org/2001/XMLSchema#string",
+      "repr": "str",
+      "@type": "TypeDefinition"
+    },
+    {
+      "name": "uri",
+      "definition_uri": "https://w3id.org/linkml/Uri",
+      "conforms_to": "https://www.ietf.org/rfc/rfc3987.txt",
+      "description": "a complete URI",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"uri\"."
+      ],
+      "comments": [
+        "in RDF serializations a slot with range of uri is treated as a literal or type xsd:anyURI unless it is an identifier or a reference to an identifier, in which case it is translated directly to a node"
+      ],
+      "from_schema": "https://w3id.org/linkml/types",
+      "imported_from": "linkml:types",
+      "close_mappings": [
+        "schema:URL"
+      ],
       "base": "URI",
       "uri": "http://www.w3.org/2001/XMLSchema#anyURI",
       "repr": "str",
@@ -188,6 +273,9 @@
       "name": "ncname",
       "definition_uri": "https://w3id.org/linkml/Ncname",
       "description": "Prefix part of CURIE",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"ncname\"."
+      ],
       "from_schema": "https://w3id.org/linkml/types",
       "imported_from": "linkml:types",
       "base": "NCName",
@@ -199,8 +287,11 @@
       "name": "objectidentifier",
       "definition_uri": "https://w3id.org/linkml/Objectidentifier",
       "description": "A URI or CURIE that represents an object in the model.",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"objectidentifier\"."
+      ],
       "comments": [
-        "Used for inheritence and type checking"
+        "Used for inheritance and type checking"
       ],
       "from_schema": "https://w3id.org/linkml/types",
       "imported_from": "linkml:types",
@@ -213,6 +304,9 @@
       "name": "nodeidentifier",
       "definition_uri": "https://w3id.org/linkml/Nodeidentifier",
       "description": "A URI, CURIE or BNODE that represents a node in a model.",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"nodeidentifier\"."
+      ],
       "from_schema": "https://w3id.org/linkml/types",
       "imported_from": "linkml:types",
       "base": "NodeIdentifier",
@@ -221,7 +315,52 @@
       "@type": "TypeDefinition"
     },
     {
-      "name": "language_tag",
+      "name": "jsonpointer",
+      "definition_uri": "https://w3id.org/linkml/Jsonpointer",
+      "conforms_to": "https://datatracker.ietf.org/doc/html/rfc6901",
+      "description": "A string encoding a JSON Pointer. The value of the string MUST conform to JSON Point syntax and SHOULD dereference to a valid object within the current instance document when encoded in tree form.",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"jsonpointer\"."
+      ],
+      "from_schema": "https://w3id.org/linkml/types",
+      "imported_from": "linkml:types",
+      "base": "str",
+      "uri": "http://www.w3.org/2001/XMLSchema#string",
+      "repr": "str",
+      "@type": "TypeDefinition"
+    },
+    {
+      "name": "jsonpath",
+      "definition_uri": "https://w3id.org/linkml/Jsonpath",
+      "conforms_to": "https://www.ietf.org/archive/id/draft-goessner-dispatch-jsonpath-00.html",
+      "description": "A string encoding a JSON Path. The value of the string MUST conform to JSON Point syntax and SHOULD dereference to zero or more valid objects within the current instance document when encoded in tree form.",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"jsonpath\"."
+      ],
+      "from_schema": "https://w3id.org/linkml/types",
+      "imported_from": "linkml:types",
+      "base": "str",
+      "uri": "http://www.w3.org/2001/XMLSchema#string",
+      "repr": "str",
+      "@type": "TypeDefinition"
+    },
+    {
+      "name": "sparqlpath",
+      "definition_uri": "https://w3id.org/linkml/Sparqlpath",
+      "conforms_to": "https://www.w3.org/TR/sparql11-query/#propertypaths",
+      "description": "A string encoding a SPARQL Property Path. The value of the string MUST conform to SPARQL syntax and SHOULD dereference to zero or more valid objects within the current instance document when encoded as RDF.",
+      "notes": [
+        "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"sparqlpath\"."
+      ],
+      "from_schema": "https://w3id.org/linkml/types",
+      "imported_from": "linkml:types",
+      "base": "str",
+      "uri": "http://www.w3.org/2001/XMLSchema#string",
+      "repr": "str",
+      "@type": "TypeDefinition"
+    },
+    {
+      "name": "LanguageTag",
       "definition_uri": "https://w3id.org/kgcl_schema/basics/LanguageTag",
       "from_schema": "https://w3id.org/kgcl_schema/basics",
       "base": "str",
@@ -238,11 +377,15 @@
         {
           "text": "NoLogicalAxiomsOnObsoletes",
           "description": "The obsoletion policy is that there MUST NOT be logical axioms about an obsolete node"
+        },
+        {
+          "text": "ObsoleteLabelsArePrefixed",
+          "description": "The obsoletion policy is that any label on an obsolete node MUST be prefixed with 'obsolete' or similar"
         }
       ]
     },
     {
-      "name": "owl_type_enum",
+      "name": "OwlTypeEnum",
       "definition_uri": "http://w3id.org/kgcl_schema/om/OwlTypeEnum",
       "from_schema": "https://w3id.org/kgcl_schema/ontology",
       "permissible_values": [
@@ -261,7 +404,7 @@
       ]
     },
     {
-      "name": "synonym_scope_enum",
+      "name": "SynonymScopeEnum",
       "definition_uri": "http://w3id.org/kgcl_schema/om/SynonymScopeEnum",
       "from_schema": "https://w3id.org/kgcl_schema/ontology",
       "permissible_values": [
@@ -428,7 +571,7 @@
         "NewSynonym",
         "NodeCreation"
       ],
-      "range": "language_tag",
+      "range": "LanguageTag",
       "@type": "SlotDefinition"
     },
     {
@@ -959,7 +1102,7 @@
         "NodeCreation",
         "Node"
       ],
-      "range": "owl_type_enum",
+      "range": "OwlTypeEnum",
       "@type": "SlotDefinition"
     },
     {
@@ -1428,8 +1571,31 @@
       "@type": "SlotDefinition"
     },
     {
+      "name": "configuration__obsolete_subclass_of_shadow_property",
+      "description": "specifies the annotation property to be used to create a shadow annotation assertion triple when a subclass edge is deleted.",
+      "from_schema": "https://w3id.org/kgcl",
+      "slot_uri": "http://w3id.org/kgcl/obsolete_subclass_of_shadow_property",
+      "alias": "obsolete_subclass_of_shadow_property",
+      "owner": "Configuration",
+      "domain_of": [
+        "Configuration"
+      ],
+      "range": "uriorcurie",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "term_tracker_issue",
+      "comments": [
+        "If this change has an issue on a system like github, include the URL here"
+      ],
+      "from_schema": "https://w3id.org/kgcl",
+      "slot_uri": "http://w3id.org/kgcl/term_tracker_issue",
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
       "name": "associated_change_set",
-      "description": "All changes associated with a set of obsoletions. This change set is the composed change set rather than the set of individual changes. For example, if previous state is:\n  `A subClassOf B subClassOf C subClassOf D`\nand we obsolete {B,C}, then the individual changes are `A moves from B to C` and `B moves from C to D`, but the composed change set is `A moves from B to D`",
+      "description": "All changes associated with a set of obsoletions. This change set is the composed change set rather than the set of individual changes. For example, if previous state is:\\n  `A subClassOf B subClassOf C subClassOf D` and we obsolete {B,C}, then the individual changes are `A moves from B to C` and `B moves from C to D`, but the composed change set is `A moves from B to D`\"",
       "from_schema": "https://w3id.org/kgcl",
       "is_a": "change_set",
       "slot_uri": "http://w3id.org/kgcl/associated_change_set",
@@ -1443,7 +1609,7 @@
       "name": "change_type",
       "from_schema": "https://w3id.org/kgcl",
       "slot_uri": "http://w3id.org/kgcl/change_type",
-      "range": "change_class_type",
+      "range": "ChangeClassType",
       "@type": "SlotDefinition"
     },
     {
@@ -1491,7 +1657,7 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "change_was_generated_by",
+      "name": "Change_was_generated_by",
       "definition_uri": "http://www.w3.org/ns/prov#was_generated_by",
       "comments": [
         "we use the PROV model to represent the agent making a change"
@@ -1503,18 +1669,18 @@
       "is_a": "was_generated_by",
       "domain": "Change",
       "slot_uri": "http://www.w3.org/ns/prov#wasGeneratedBy",
-      "alias": "was generated by",
+      "alias": "was_generated_by",
       "owner": "Change",
       "domain_of": [
         "Change"
       ],
       "is_usage_slot": true,
-      "usage_slot_name": "was generated by",
+      "usage_slot_name": "was_generated_by",
       "range": "Activity",
       "@type": "SlotDefinition"
     },
     {
-      "name": "change_see_also",
+      "name": "Change_see_also",
       "definition_uri": "http://w3id.org/kgcl/see_also",
       "comments": [
         "If this change is in relationship to an issue on a system like github, include the URL here"
@@ -1526,18 +1692,18 @@
       "is_a": "see_also",
       "domain": "Change",
       "slot_uri": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
-      "alias": "see also",
+      "alias": "see_also",
       "owner": "Change",
       "domain_of": [
         "Change"
       ],
       "is_usage_slot": true,
-      "usage_slot_name": "see also",
+      "usage_slot_name": "see_also",
       "range": "string",
       "@type": "SlotDefinition"
     },
     {
-      "name": "change_pull_request",
+      "name": "Change_pull_request",
       "definition_uri": "http://w3id.org/kgcl/pull_request",
       "comments": [
         "If this change has a pull request on a system like github, include the URL here"
@@ -1546,18 +1712,37 @@
       "is_a": "pull_request",
       "domain": "Change",
       "slot_uri": "http://w3id.org/kgcl/pull_request",
-      "alias": "pull request",
+      "alias": "pull_request",
       "owner": "Change",
       "domain_of": [
         "Change"
       ],
       "is_usage_slot": true,
-      "usage_slot_name": "pull request",
+      "usage_slot_name": "pull_request",
       "range": "string",
       "@type": "SlotDefinition"
     },
     {
-      "name": "change_creator",
+      "name": "Change_term_tracker_issue",
+      "comments": [
+        "If this change has an issue on a system like github, include the URL here"
+      ],
+      "from_schema": "https://w3id.org/kgcl",
+      "is_a": "term_tracker_issue",
+      "domain": "Change",
+      "slot_uri": "http://w3id.org/kgcl/term_tracker_issue",
+      "alias": "term_tracker_issue",
+      "owner": "Change",
+      "domain_of": [
+        "Change"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "term_tracker_issue",
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "Change_creator",
       "definition_uri": "http://w3id.org/kgcl/creator",
       "comments": [
         "This should be the composition of 'was generated by' and 'was associated with'"
@@ -1580,7 +1765,7 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "change_change_date",
+      "name": "Change_change_date",
       "definition_uri": "http://w3id.org/kgcl/change_date",
       "comments": [
         "This should be the composition of 'was generated by' and 'ended at time'"
@@ -1592,18 +1777,18 @@
       "is_a": "change_date",
       "domain": "Change",
       "slot_uri": "http://purl.org/dc/terms/date",
-      "alias": "change date",
+      "alias": "change_date",
       "owner": "Change",
       "domain_of": [
         "Change"
       ],
       "is_usage_slot": true,
-      "usage_slot_name": "change date",
+      "usage_slot_name": "change_date",
       "range": "string",
       "@type": "SlotDefinition"
     },
     {
-      "name": "multi_node_obsoletion_change_set",
+      "name": "MultiNodeObsoletion_change_set",
       "definition_uri": "http://w3id.org/kgcl/change_set",
       "description": "A collection of changes",
       "from_schema": "https://w3id.org/kgcl",
@@ -1611,20 +1796,20 @@
       "domain": "MultiNodeObsoletion",
       "slot_uri": "http://w3id.org/kgcl/change_set",
       "multivalued": true,
-      "alias": "change set",
+      "alias": "change_set",
       "owner": "MultiNodeObsoletion",
       "domain_of": [
         "MultiNodeObsoletion"
       ],
       "is_usage_slot": true,
-      "usage_slot_name": "change set",
+      "usage_slot_name": "change_set",
       "range": "NodeObsoletion",
       "inlined": true,
       "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
-      "name": "multi_node_obsoletion_change_description",
+      "name": "MultiNodeObsoletion_change_description",
       "definition_uri": "http://w3id.org/kgcl/change_description",
       "description": "A string serialization of the change. This should be both human-readable, and parseable.",
       "comments": [
@@ -1655,22 +1840,22 @@
       ],
       "from_schema": "https://w3id.org/kgcl",
       "is_a": "change_description",
-      "string_serialization": "a multi node obsoletion consisting of {change set}",
+      "string_serialization": "obsolete multiple {change set}",
       "domain": "MultiNodeObsoletion",
       "slot_uri": "http://w3id.org/kgcl/change_description",
-      "alias": "change description",
+      "alias": "change_description",
       "owner": "MultiNodeObsoletion",
       "domain_of": [
         "MultiNodeObsoletion"
       ],
       "is_usage_slot": true,
-      "usage_slot_name": "change description",
+      "usage_slot_name": "change_description",
       "range": "string",
       "@type": "SlotDefinition"
     },
     {
-      "name": "multi_node_obsoletion_associated_change_set",
-      "description": "All changes associated with a set of obsoletions. This change set is the composed change set rather than the set of individual changes. For example, if previous state is:\n  `A subClassOf B subClassOf C subClassOf D`\nand we obsolete {B,C}, then the individual changes are `A moves from B to C` and `B moves from C to D`, but the composed change set is `A moves from B to D`",
+      "name": "MultiNodeObsoletion_associated_change_set",
+      "description": "All changes associated with a set of obsoletions. This change set is the composed change set rather than the set of individual changes. For example, if previous state is:\\n  `A subClassOf B subClassOf C subClassOf D` and we obsolete {B,C}, then the individual changes are `A moves from B to C` and `B moves from C to D`, but the composed change set is `A moves from B to D`\"",
       "from_schema": "https://w3id.org/kgcl",
       "is_a": "change_set",
       "domain": "MultiNodeObsoletion",
@@ -1689,7 +1874,7 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "change_set_summary_statistic_change_type",
+      "name": "ChangeSetSummaryStatistic_change_type",
       "from_schema": "https://w3id.org/kgcl",
       "is_a": "change_type",
       "domain": "ChangeSetSummaryStatistic",
@@ -1701,11 +1886,11 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "change type",
-      "range": "change_class_type",
+      "range": "ChangeClassType",
       "@type": "SlotDefinition"
     },
     {
-      "name": "change_set_summary_statistic_count",
+      "name": "ChangeSetSummaryStatistic_count",
       "from_schema": "https://w3id.org/kgcl",
       "is_a": "count",
       "domain": "ChangeSetSummaryStatistic",
@@ -1721,7 +1906,7 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "change_set_summary_statistic_property_value_set",
+      "name": "ChangeSetSummaryStatistic_property_value_set",
       "definition_uri": "http://w3id.org/kgcl_schema/om/property_value_set",
       "description": "Summary statistic is grouped by these constraints",
       "from_schema": "https://w3id.org/kgcl_schema/ontology",
@@ -1729,19 +1914,19 @@
       "domain": "ChangeSetSummaryStatistic",
       "slot_uri": "http://w3id.org/kgcl_schema/om/property_value_set",
       "multivalued": true,
-      "alias": "property value set",
+      "alias": "property_value_set",
       "owner": "ChangeSetSummaryStatistic",
       "domain_of": [
         "ChangeSetSummaryStatistic"
       ],
       "is_usage_slot": true,
-      "usage_slot_name": "property value set",
+      "usage_slot_name": "property_value_set",
       "range": "PropertyValue",
       "inlined": true,
       "@type": "SlotDefinition"
     },
     {
-      "name": "obsoletion_about",
+      "name": "Obsoletion_about",
       "definition_uri": "http://w3id.org/kgcl/about",
       "description": "The element that is obsoleted by this change.",
       "from_schema": "https://w3id.org/kgcl",
@@ -1760,157 +1945,157 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "obsoletion_has_undo",
+      "name": "Obsoletion_has_undo",
       "definition_uri": "http://w3id.org/kgcl/has_undo",
       "description": "A change that reverses this change",
       "from_schema": "https://w3id.org/kgcl",
       "is_a": "has_undo",
       "domain": "Obsoletion",
       "slot_uri": "http://w3id.org/kgcl/has_undo",
-      "alias": "has undo",
+      "alias": "has_undo",
       "owner": "Obsoletion",
       "domain_of": [
         "Obsoletion"
       ],
       "is_usage_slot": true,
-      "usage_slot_name": "has undo",
+      "usage_slot_name": "has_undo",
       "range": "Obsoletion",
       "inlined": true,
       "@type": "SlotDefinition"
     },
     {
-      "name": "language_tag_change_old_value",
+      "name": "LanguageTagChange_old_value",
       "definition_uri": "http://w3id.org/kgcl/old_value",
       "description": "The value of a property held in the old instance of the ontology",
       "from_schema": "https://w3id.org/kgcl",
       "is_a": "old_value",
       "domain": "LanguageTagChange",
       "slot_uri": "http://w3id.org/kgcl/old_value",
-      "alias": "old value",
+      "alias": "old_value",
       "owner": "LanguageTagChange",
       "domain_of": [
         "LanguageTagChange"
       ],
       "is_usage_slot": true,
-      "usage_slot_name": "old value",
-      "range": "language_tag",
+      "usage_slot_name": "old_value",
+      "range": "LanguageTag",
       "@type": "SlotDefinition"
     },
     {
-      "name": "language_tag_change_new_value",
+      "name": "LanguageTagChange_new_value",
       "definition_uri": "http://w3id.org/kgcl/new_value",
       "description": "The value of a property held in the new instance of the ontology",
       "from_schema": "https://w3id.org/kgcl",
       "is_a": "new_value",
       "domain": "LanguageTagChange",
       "slot_uri": "http://w3id.org/kgcl/new_value",
-      "alias": "new value",
+      "alias": "new_value",
       "owner": "LanguageTagChange",
       "domain_of": [
         "LanguageTagChange"
       ],
       "is_usage_slot": true,
-      "usage_slot_name": "new value",
-      "range": "language_tag",
+      "usage_slot_name": "new_value",
+      "range": "LanguageTag",
       "@type": "SlotDefinition"
     },
     {
-      "name": "unobsoletion_has_undo",
+      "name": "Unobsoletion_has_undo",
       "definition_uri": "http://w3id.org/kgcl/has_undo",
       "description": "A change that reverses this change",
       "from_schema": "https://w3id.org/kgcl",
       "is_a": "has_undo",
       "domain": "Unobsoletion",
       "slot_uri": "http://w3id.org/kgcl/has_undo",
-      "alias": "has undo",
+      "alias": "has_undo",
       "owner": "Unobsoletion",
       "domain_of": [
         "Unobsoletion"
       ],
       "is_usage_slot": true,
-      "usage_slot_name": "has undo",
+      "usage_slot_name": "has_undo",
       "range": "Obsoletion",
       "inlined": true,
       "@type": "SlotDefinition"
     },
     {
-      "name": "creation_has_undo",
+      "name": "Creation_has_undo",
       "definition_uri": "http://w3id.org/kgcl/has_undo",
       "description": "A change that reverses this change",
       "from_schema": "https://w3id.org/kgcl",
       "is_a": "has_undo",
       "domain": "Creation",
       "slot_uri": "http://w3id.org/kgcl/has_undo",
-      "alias": "has undo",
+      "alias": "has_undo",
       "owner": "Creation",
       "domain_of": [
         "Creation"
       ],
       "is_usage_slot": true,
-      "usage_slot_name": "has undo",
+      "usage_slot_name": "has_undo",
       "range": "Deletion",
       "inlined": true,
       "@type": "SlotDefinition"
     },
     {
-      "name": "add_to_subset_in_subset",
+      "name": "AddToSubset_in_subset",
       "definition_uri": "http://w3id.org/kgcl/in_subset",
       "description": "subset that the element is being placed inside.",
       "from_schema": "https://w3id.org/kgcl",
       "is_a": "in_subset",
       "domain": "AddToSubset",
       "slot_uri": "http://w3id.org/kgcl/in_subset",
-      "alias": "in subset",
+      "alias": "in_subset",
       "owner": "AddToSubset",
       "domain_of": [
         "AddToSubset"
       ],
       "is_usage_slot": true,
-      "usage_slot_name": "in subset",
+      "usage_slot_name": "in_subset",
       "range": "OntologySubset",
       "inlined": true,
       "@type": "SlotDefinition"
     },
     {
-      "name": "remove_from_subset_in_subset",
+      "name": "RemoveFromSubset_in_subset",
       "definition_uri": "http://w3id.org/kgcl/in_subset",
       "description": "subset that the element is being removed from",
       "from_schema": "https://w3id.org/kgcl",
       "is_a": "in_subset",
       "domain": "RemoveFromSubset",
       "slot_uri": "http://w3id.org/kgcl/in_subset",
-      "alias": "in subset",
+      "alias": "in_subset",
       "owner": "RemoveFromSubset",
       "domain_of": [
         "RemoveFromSubset"
       ],
       "is_usage_slot": true,
-      "usage_slot_name": "in subset",
+      "usage_slot_name": "in_subset",
       "range": "OntologySubset",
       "inlined": true,
       "@type": "SlotDefinition"
     },
     {
-      "name": "remove_from_subset_has_undo",
+      "name": "RemoveFromSubset_has_undo",
       "definition_uri": "http://w3id.org/kgcl/has_undo",
       "description": "A change that reverses this change",
       "from_schema": "https://w3id.org/kgcl",
       "is_a": "has_undo",
       "domain": "RemoveFromSubset",
       "slot_uri": "http://w3id.org/kgcl/has_undo",
-      "alias": "has undo",
+      "alias": "has_undo",
       "owner": "RemoveFromSubset",
       "domain_of": [
         "RemoveFromSubset"
       ],
       "is_usage_slot": true,
-      "usage_slot_name": "has undo",
+      "usage_slot_name": "has_undo",
       "range": "AddToSubset",
       "inlined": true,
       "@type": "SlotDefinition"
     },
     {
-      "name": "edge_change_subject",
+      "name": "EdgeChange_subject",
       "definition_uri": "http://w3id.org/kgcl_schema/om/subject",
       "comments": [
         "if subject is empty, use the about field of the last node change"
@@ -1930,7 +2115,7 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "edge_creation_change_description",
+      "name": "EdgeCreation_change_description",
       "definition_uri": "http://w3id.org/kgcl/change_description",
       "description": "A string serialization of the change. This should be both human-readable, and parseable.",
       "comments": [
@@ -1961,21 +2146,21 @@
       ],
       "from_schema": "https://w3id.org/kgcl",
       "is_a": "change_description",
-      "string_serialization": "creating edge {edge}",
+      "string_serialization": "create edge {edge.subject} {edge.predicate} {edge.object}",
       "domain": "EdgeCreation",
       "slot_uri": "http://w3id.org/kgcl/change_description",
-      "alias": "change description",
+      "alias": "change_description",
       "owner": "EdgeCreation",
       "domain_of": [
         "EdgeCreation"
       ],
       "is_usage_slot": true,
-      "usage_slot_name": "change description",
+      "usage_slot_name": "change_description",
       "range": "string",
       "@type": "SlotDefinition"
     },
     {
-      "name": "edge_deletion_change_description",
+      "name": "EdgeDeletion_change_description",
       "definition_uri": "http://w3id.org/kgcl/change_description",
       "description": "A string serialization of the change. This should be both human-readable, and parseable.",
       "comments": [
@@ -2006,21 +2191,21 @@
       ],
       "from_schema": "https://w3id.org/kgcl",
       "is_a": "change_description",
-      "string_serialization": "deleting edge {edge}",
+      "string_serialization": "delete edge {edge.subject} {edge.predicate} {edge.object}",
       "domain": "EdgeDeletion",
       "slot_uri": "http://w3id.org/kgcl/change_description",
-      "alias": "change description",
+      "alias": "change_description",
       "owner": "EdgeDeletion",
       "domain_of": [
         "EdgeDeletion"
       ],
       "is_usage_slot": true,
-      "usage_slot_name": "change description",
+      "usage_slot_name": "change_description",
       "range": "string",
       "@type": "SlotDefinition"
     },
     {
-      "name": "edge_obsoletion_change_description",
+      "name": "EdgeObsoletion_change_description",
       "definition_uri": "http://w3id.org/kgcl/change_description",
       "description": "A string serialization of the change. This should be both human-readable, and parseable.",
       "comments": [
@@ -2051,21 +2236,21 @@
       ],
       "from_schema": "https://w3id.org/kgcl",
       "is_a": "change_description",
-      "string_serialization": "obsoleting edge {edge}",
+      "string_serialization": "obsolete edge {edge.subject} {edge.predicate} {edge.object}",
       "domain": "EdgeObsoletion",
       "slot_uri": "http://w3id.org/kgcl/change_description",
-      "alias": "change description",
+      "alias": "change_description",
       "owner": "EdgeObsoletion",
       "domain_of": [
         "EdgeObsoletion"
       ],
       "is_usage_slot": true,
-      "usage_slot_name": "change description",
+      "usage_slot_name": "change_description",
       "range": "string",
       "@type": "SlotDefinition"
     },
     {
-      "name": "mapping_creation_change_description",
+      "name": "MappingCreation_change_description",
       "definition_uri": "http://w3id.org/kgcl/change_description",
       "description": "A string serialization of the change. This should be both human-readable, and parseable.",
       "comments": [
@@ -2095,22 +2280,22 @@
         }
       ],
       "from_schema": "https://w3id.org/kgcl",
-      "is_a": "edge_creation_change_description",
-      "string_serialization": "creating mapping {edge}",
+      "is_a": "EdgeCreation_change_description",
+      "string_serialization": "create mapping {subject} {predicate} {object}",
       "domain": "MappingCreation",
       "slot_uri": "http://w3id.org/kgcl/change_description",
-      "alias": "change description",
+      "alias": "change_description",
       "owner": "MappingCreation",
       "domain_of": [
         "MappingCreation"
       ],
       "is_usage_slot": true,
-      "usage_slot_name": "change description",
+      "usage_slot_name": "change_description",
       "range": "string",
       "@type": "SlotDefinition"
     },
     {
-      "name": "mapping_creation_subject",
+      "name": "MappingCreation_subject",
       "definition_uri": "http://w3id.org/kgcl_schema/om/subject",
       "description": "This corresponds to subject_id in SSSOM",
       "from_schema": "https://w3id.org/kgcl_schema/ontology",
@@ -2128,7 +2313,7 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "mapping_creation_predicate",
+      "name": "MappingCreation_predicate",
       "definition_uri": "http://w3id.org/kgcl_schema/om/predicate",
       "description": "This corresponds to predicate_id in SSSOM. The value of this is typically a predicate from SKOS",
       "from_schema": "https://w3id.org/kgcl_schema/ontology",
@@ -2146,7 +2331,7 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "mapping_creation_object",
+      "name": "MappingCreation_object",
       "definition_uri": "http://w3id.org/kgcl_schema/om/object",
       "description": "This corresponds to object_id in SSSOM",
       "from_schema": "https://w3id.org/kgcl_schema/ontology",
@@ -2164,7 +2349,7 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "node_move_change_description",
+      "name": "NodeMove_change_description",
       "definition_uri": "http://w3id.org/kgcl/change_description",
       "description": "A string serialization of the change. This should be both human-readable, and parseable.",
       "comments": [
@@ -2195,21 +2380,21 @@
       ],
       "from_schema": "https://w3id.org/kgcl",
       "is_a": "change_description",
-      "string_serialization": "move {about edge} from {old value} to {new value}",
+      "string_serialization": "move {about_edge.subject} {about_edge.predicate} {about_edge.object} from {old_value} to {new_value}",
       "domain": "NodeMove",
       "slot_uri": "http://w3id.org/kgcl/change_description",
-      "alias": "change description",
+      "alias": "change_description",
       "owner": "NodeMove",
       "domain_of": [
         "NodeMove"
       ],
       "is_usage_slot": true,
-      "usage_slot_name": "change description",
+      "usage_slot_name": "change_description",
       "range": "string",
       "@type": "SlotDefinition"
     },
     {
-      "name": "node_deepening_change_description",
+      "name": "NodeDeepening_change_description",
       "definition_uri": "http://w3id.org/kgcl/change_description",
       "description": "A string serialization of the change. This should be both human-readable, and parseable.",
       "comments": [
@@ -2239,22 +2424,22 @@
         }
       ],
       "from_schema": "https://w3id.org/kgcl",
-      "is_a": "node_move_change_description",
-      "string_serialization": "deepened {about edge} from {old value} to {new value}",
+      "is_a": "NodeMove_change_description",
+      "string_serialization": "deepen {about_edge.subject} {about_edge.predicate} {about_edge.object} from {old_value} to {new_value}",
       "domain": "NodeDeepening",
       "slot_uri": "http://w3id.org/kgcl/change_description",
-      "alias": "change description",
+      "alias": "change_description",
       "owner": "NodeDeepening",
       "domain_of": [
         "NodeDeepening"
       ],
       "is_usage_slot": true,
-      "usage_slot_name": "change description",
+      "usage_slot_name": "change_description",
       "range": "string",
       "@type": "SlotDefinition"
     },
     {
-      "name": "node_shallowing_change_description",
+      "name": "NodeShallowing_change_description",
       "definition_uri": "http://w3id.org/kgcl/change_description",
       "description": "A string serialization of the change. This should be both human-readable, and parseable.",
       "comments": [
@@ -2284,22 +2469,22 @@
         }
       ],
       "from_schema": "https://w3id.org/kgcl",
-      "is_a": "node_move_change_description",
-      "string_serialization": "shallowed {about node} from {old value} to {new value}",
+      "is_a": "NodeMove_change_description",
+      "string_serialization": "lift {about_node} from {old_value} to {new_value}",
       "domain": "NodeShallowing",
       "slot_uri": "http://w3id.org/kgcl/change_description",
-      "alias": "change description",
+      "alias": "change_description",
       "owner": "NodeShallowing",
       "domain_of": [
         "NodeShallowing"
       ],
       "is_usage_slot": true,
-      "usage_slot_name": "change description",
+      "usage_slot_name": "change_description",
       "range": "string",
       "@type": "SlotDefinition"
     },
     {
-      "name": "predicate_change_change_description",
+      "name": "PredicateChange_change_description",
       "definition_uri": "http://w3id.org/kgcl/change_description",
       "description": "A string serialization of the change. This should be both human-readable, and parseable.",
       "comments": [
@@ -2330,57 +2515,57 @@
       ],
       "from_schema": "https://w3id.org/kgcl",
       "is_a": "change_description",
-      "string_serialization": "changing relationship between {about.subject} and {about.object} from {old value} to {new value}",
+      "string_serialization": "change edge type between {about.subject} and {about.object} from {old_value} to {new_value}",
       "domain": "PredicateChange",
       "slot_uri": "http://w3id.org/kgcl/change_description",
-      "alias": "change description",
+      "alias": "change_description",
       "owner": "PredicateChange",
       "domain_of": [
         "PredicateChange"
       ],
       "is_usage_slot": true,
-      "usage_slot_name": "change description",
+      "usage_slot_name": "change_description",
       "range": "string",
       "@type": "SlotDefinition"
     },
     {
-      "name": "node_rename_old_value",
+      "name": "NodeRename_old_value",
       "definition_uri": "http://w3id.org/kgcl/old_value",
       "description": "The value of a property held in the old instance of the ontology",
       "from_schema": "https://w3id.org/kgcl",
       "is_a": "old_value",
       "domain": "NodeRename",
       "slot_uri": "http://w3id.org/kgcl/old_value",
-      "alias": "old value",
+      "alias": "old_value",
       "owner": "NodeRename",
       "domain_of": [
         "NodeRename"
       ],
       "is_usage_slot": true,
-      "usage_slot_name": "old value",
+      "usage_slot_name": "old_value",
       "range": "string",
       "@type": "SlotDefinition"
     },
     {
-      "name": "node_rename_new_value",
+      "name": "NodeRename_new_value",
       "definition_uri": "http://w3id.org/kgcl/new_value",
       "description": "The value of a property held in the new instance of the ontology",
       "from_schema": "https://w3id.org/kgcl",
       "is_a": "new_value",
       "domain": "NodeRename",
       "slot_uri": "http://w3id.org/kgcl/new_value",
-      "alias": "new value",
+      "alias": "new_value",
       "owner": "NodeRename",
       "domain_of": [
         "NodeRename"
       ],
       "is_usage_slot": true,
-      "usage_slot_name": "new value",
+      "usage_slot_name": "new_value",
       "range": "string",
       "@type": "SlotDefinition"
     },
     {
-      "name": "node_rename_change_description",
+      "name": "NodeRename_change_description",
       "definition_uri": "http://w3id.org/kgcl/change_description",
       "description": "A string serialization of the change. This should be both human-readable, and parseable.",
       "comments": [
@@ -2411,21 +2596,21 @@
       ],
       "from_schema": "https://w3id.org/kgcl",
       "is_a": "change_description",
-      "string_serialization": "rename {about node} from {old value} to {new value}",
+      "string_serialization": "rename {about_node} from {old_value} to {new_value}",
       "domain": "NodeRename",
       "slot_uri": "http://w3id.org/kgcl/change_description",
-      "alias": "change description",
+      "alias": "change_description",
       "owner": "NodeRename",
       "domain_of": [
         "NodeRename"
       ],
       "is_usage_slot": true,
-      "usage_slot_name": "change description",
+      "usage_slot_name": "change_description",
       "range": "string",
       "@type": "SlotDefinition"
     },
     {
-      "name": "set_language_for_name_change_description",
+      "name": "SetLanguageForName_change_description",
       "definition_uri": "http://w3id.org/kgcl/change_description",
       "description": "A string serialization of the change. This should be both human-readable, and parseable.",
       "comments": [
@@ -2456,21 +2641,21 @@
       ],
       "from_schema": "https://w3id.org/kgcl",
       "is_a": "change_description",
-      "string_serialization": "changed {about node} name language from {old value} to {new value}",
+      "string_serialization": "changed {about_node} name language from {old_value} to {new_value}",
       "domain": "SetLanguageForName",
       "slot_uri": "http://w3id.org/kgcl/change_description",
-      "alias": "change description",
+      "alias": "change_description",
       "owner": "SetLanguageForName",
       "domain_of": [
         "SetLanguageForName"
       ],
       "is_usage_slot": true,
-      "usage_slot_name": "change description",
+      "usage_slot_name": "change_description",
       "range": "string",
       "@type": "SlotDefinition"
     },
     {
-      "name": "name_becomes_synonym_change_1",
+      "name": "NameBecomesSynonym_change_1",
       "from_schema": "https://w3id.org/kgcl",
       "is_a": "change_1",
       "domain": "NameBecomesSynonym",
@@ -2486,7 +2671,7 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "name_becomes_synonym_change_2",
+      "name": "NameBecomesSynonym_change_2",
       "description": "",
       "from_schema": "https://w3id.org/kgcl",
       "is_a": "change_2",
@@ -2503,7 +2688,7 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "name_becomes_synonym_change_description",
+      "name": "NameBecomesSynonym_change_description",
       "definition_uri": "http://w3id.org/kgcl/change_description",
       "description": "A string serialization of the change. This should be both human-readable, and parseable.",
       "comments": [
@@ -2534,21 +2719,21 @@
       ],
       "from_schema": "https://w3id.org/kgcl",
       "is_a": "change_description",
-      "string_serialization": "synonym {synonym} becomes new name of {about node}, and name {name} becomes a synonym",
+      "string_serialization": "synonym {synonym} becomes new name of {about_node}, and name {name} becomes a synonym",
       "domain": "NameBecomesSynonym",
       "slot_uri": "http://w3id.org/kgcl/change_description",
-      "alias": "change description",
+      "alias": "change_description",
       "owner": "NameBecomesSynonym",
       "domain_of": [
         "NameBecomesSynonym"
       ],
       "is_usage_slot": true,
-      "usage_slot_name": "change description",
+      "usage_slot_name": "change_description",
       "range": "string",
       "@type": "SlotDefinition"
     },
     {
-      "name": "remove_node_from_subset_change_description",
+      "name": "RemoveNodeFromSubset_change_description",
       "definition_uri": "http://w3id.org/kgcl/change_description",
       "description": "A string serialization of the change. This should be both human-readable, and parseable.",
       "comments": [
@@ -2579,39 +2764,39 @@
       ],
       "from_schema": "https://w3id.org/kgcl",
       "is_a": "change_description",
-      "string_serialization": "removing {about node} from {subset}",
+      "string_serialization": "removing {about_node} from {subset}",
       "domain": "RemoveNodeFromSubset",
       "slot_uri": "http://w3id.org/kgcl/change_description",
-      "alias": "change description",
+      "alias": "change_description",
       "owner": "RemoveNodeFromSubset",
       "domain_of": [
         "RemoveNodeFromSubset"
       ],
       "is_usage_slot": true,
-      "usage_slot_name": "change description",
+      "usage_slot_name": "change_description",
       "range": "string",
       "@type": "SlotDefinition"
     },
     {
-      "name": "remove_node_from_subset_about_node",
+      "name": "RemoveNodeFromSubset_about_node",
       "definition_uri": "http://w3id.org/kgcl/about_node",
       "description": "The node that is removed from the subset",
       "from_schema": "https://w3id.org/kgcl",
       "is_a": "about_node",
       "domain": "RemoveNodeFromSubset",
       "slot_uri": "http://w3id.org/kgcl/about_node",
-      "alias": "about node",
+      "alias": "about_node",
       "owner": "RemoveNodeFromSubset",
       "domain_of": [
         "RemoveNodeFromSubset"
       ],
       "is_usage_slot": true,
-      "usage_slot_name": "about node",
+      "usage_slot_name": "about_node",
       "range": "Node",
       "@type": "SlotDefinition"
     },
     {
-      "name": "remove_node_from_subset_subset",
+      "name": "RemoveNodeFromSubset_subset",
       "description": "The subset from which the node is to be removed",
       "from_schema": "https://w3id.org/kgcl",
       "is_a": "subset",
@@ -2628,7 +2813,7 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "node_obsoletion_change_description",
+      "name": "NodeObsoletion_change_description",
       "definition_uri": "http://w3id.org/kgcl/change_description",
       "description": "A string serialization of the change. This should be both human-readable, and parseable.",
       "comments": [
@@ -2659,21 +2844,21 @@
       ],
       "from_schema": "https://w3id.org/kgcl",
       "is_a": "change_description",
-      "string_serialization": "obsoleting {about node}",
+      "string_serialization": "obsoleting {about_node}",
       "domain": "NodeObsoletion",
       "slot_uri": "http://w3id.org/kgcl/change_description",
-      "alias": "change description",
+      "alias": "change_description",
       "owner": "NodeObsoletion",
       "domain_of": [
         "NodeObsoletion"
       ],
       "is_usage_slot": true,
-      "usage_slot_name": "change description",
+      "usage_slot_name": "change_description",
       "range": "string",
       "@type": "SlotDefinition"
     },
     {
-      "name": "node_obsoletion_associated_change_set",
+      "name": "NodeObsoletion_associated_change_set",
       "description": "All changes forced as a result of this obsoletion. For example, starting with `A subClassOf B subClassOf C`, if we obsolete node B, then we may decide to bundle in a node move change of A from B to C. Note: this change set is not considered a part of the obsoletion, as obsoletion is considered atomic/simple. Instead this is a reference to a change set that may exist elsewhere",
       "from_schema": "https://w3id.org/kgcl",
       "is_a": "change_set",
@@ -2693,7 +2878,7 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "node_unobsoletion_change_description",
+      "name": "NodeUnobsoletion_change_description",
       "definition_uri": "http://w3id.org/kgcl/change_description",
       "description": "A string serialization of the change. This should be both human-readable, and parseable.",
       "comments": [
@@ -2724,21 +2909,21 @@
       ],
       "from_schema": "https://w3id.org/kgcl",
       "is_a": "change_description",
-      "string_serialization": "unobsoleting {about node}",
+      "string_serialization": "unobsoleting {about_node}",
       "domain": "NodeUnobsoletion",
       "slot_uri": "http://w3id.org/kgcl/change_description",
-      "alias": "change description",
+      "alias": "change_description",
       "owner": "NodeUnobsoletion",
       "domain_of": [
         "NodeUnobsoletion"
       ],
       "is_usage_slot": true,
-      "usage_slot_name": "change description",
+      "usage_slot_name": "change_description",
       "range": "string",
       "@type": "SlotDefinition"
     },
     {
-      "name": "node_unobsoletion_replaced_by",
+      "name": "NodeUnobsoletion_replaced_by",
       "from_schema": "https://w3id.org/kgcl",
       "is_a": "replaced_by",
       "domain": "NodeUnobsoletion",
@@ -2754,7 +2939,7 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "node_unobsoletion_consider",
+      "name": "NodeUnobsoletion_consider",
       "from_schema": "https://w3id.org/kgcl",
       "is_a": "consider",
       "domain": "NodeUnobsoletion",
@@ -2770,7 +2955,7 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "node_creation_change_description",
+      "name": "NodeCreation_change_description",
       "definition_uri": "http://w3id.org/kgcl/change_description",
       "description": "A string serialization of the change. This should be both human-readable, and parseable.",
       "comments": [
@@ -2804,18 +2989,18 @@
       "string_serialization": "creating node {id} {label} with {annotation set}",
       "domain": "NodeCreation",
       "slot_uri": "http://w3id.org/kgcl/change_description",
-      "alias": "change description",
+      "alias": "change_description",
       "owner": "NodeCreation",
       "domain_of": [
         "NodeCreation"
       ],
       "is_usage_slot": true,
-      "usage_slot_name": "change description",
+      "usage_slot_name": "change_description",
       "range": "string",
       "@type": "SlotDefinition"
     },
     {
-      "name": "class_creation_change_description",
+      "name": "ClassCreation_change_description",
       "definition_uri": "http://w3id.org/kgcl/change_description",
       "description": "A string serialization of the change. This should be both human-readable, and parseable.",
       "comments": [
@@ -2845,22 +3030,67 @@
         }
       ],
       "from_schema": "https://w3id.org/kgcl",
-      "is_a": "node_creation_change_description",
-      "string_serialization": "creating {about node}",
+      "is_a": "NodeCreation_change_description",
+      "string_serialization": "create class {about_node}",
       "domain": "ClassCreation",
       "slot_uri": "http://w3id.org/kgcl/change_description",
-      "alias": "change description",
+      "alias": "change_description",
       "owner": "ClassCreation",
       "domain_of": [
         "ClassCreation"
       ],
       "is_usage_slot": true,
-      "usage_slot_name": "change description",
+      "usage_slot_name": "change_description",
       "range": "string",
       "@type": "SlotDefinition"
     },
     {
-      "name": "node_deletion_change_description",
+      "name": "ObjectPropertyCreation_change_description",
+      "definition_uri": "http://w3id.org/kgcl/change_description",
+      "description": "A string serialization of the change. This should be both human-readable, and parseable.",
+      "comments": [
+        "{'Form 1': 'IRIs are denoted by CURIEs, optionally followed by label in parenthesis'}",
+        "{'Form 2': \"IRIs are denoted by the rdfs:label in single quotes, e.g. 'nervous system'\"}"
+      ],
+      "examples": [
+        {
+          "value": "rename UBERON:0002398 from 'manus' to 'hand'",
+          "@type": "Example"
+        },
+        {
+          "value": "move 'hand' from 'part of' 'hindlimb' to 'part of' 'forelimb'",
+          "@type": "Example"
+        },
+        {
+          "value": "merge 'cellular metabolic process' into 'metabolic process'",
+          "@type": "Example"
+        },
+        {
+          "value": "search and replace 'metabolic process' with 'metabolism' in all labels under 'biological process'",
+          "@type": "Example"
+        },
+        {
+          "value": "search and replace 'metabolic process' with 'metabolism' in all labels under 'biological process' retaining as 'exact synonym'",
+          "@type": "Example"
+        }
+      ],
+      "from_schema": "https://w3id.org/kgcl",
+      "is_a": "NodeCreation_change_description",
+      "string_serialization": "create object property {about_node}",
+      "domain": "ObjectPropertyCreation",
+      "slot_uri": "http://w3id.org/kgcl/change_description",
+      "alias": "change_description",
+      "owner": "ObjectPropertyCreation",
+      "domain_of": [
+        "ObjectPropertyCreation"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "change_description",
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "NodeDeletion_change_description",
       "definition_uri": "http://w3id.org/kgcl/change_description",
       "description": "A string serialization of the change. This should be both human-readable, and parseable.",
       "comments": [
@@ -2891,21 +3121,21 @@
       ],
       "from_schema": "https://w3id.org/kgcl",
       "is_a": "change_description",
-      "string_serialization": "deleting {about node}",
+      "string_serialization": "delete {about_node}",
       "domain": "NodeDeletion",
       "slot_uri": "http://w3id.org/kgcl/change_description",
-      "alias": "change description",
+      "alias": "change_description",
       "owner": "NodeDeletion",
       "domain_of": [
         "NodeDeletion"
       ],
       "is_usage_slot": true,
-      "usage_slot_name": "change description",
+      "usage_slot_name": "change_description",
       "range": "string",
       "@type": "SlotDefinition"
     },
     {
-      "name": "node_direct_merge_has_direct_replacement",
+      "name": "NodeDirectMerge_has_direct_replacement",
       "definition_uri": "http://w3id.org/kgcl/has_direct_replacement",
       "description": "An obsoletion replacement where it IS valid to automatically update annotations/edges pointing at the node with its direct replacement",
       "comments": [
@@ -2919,19 +3149,19 @@
       "is_a": "has_direct_replacement",
       "domain": "NodeDirectMerge",
       "slot_uri": "http://w3id.org/kgcl/has_direct_replacement",
-      "alias": "has direct replacement",
+      "alias": "has_direct_replacement",
       "owner": "NodeDirectMerge",
       "domain_of": [
         "NodeDirectMerge"
       ],
       "is_usage_slot": true,
-      "usage_slot_name": "has direct replacement",
+      "usage_slot_name": "has_direct_replacement",
       "range": "Node",
       "required": true,
       "@type": "SlotDefinition"
     },
     {
-      "name": "node_direct_merge_about_node",
+      "name": "NodeDirectMerge_about_node",
       "definition_uri": "http://w3id.org/kgcl/about_node",
       "from_schema": "https://w3id.org/kgcl",
       "aliases": [
@@ -2940,18 +3170,18 @@
       "is_a": "about_node",
       "domain": "NodeDirectMerge",
       "slot_uri": "http://w3id.org/kgcl/about_node",
-      "alias": "about node",
+      "alias": "about_node",
       "owner": "NodeDirectMerge",
       "domain_of": [
         "NodeDirectMerge"
       ],
       "is_usage_slot": true,
-      "usage_slot_name": "about node",
+      "usage_slot_name": "about_node",
       "range": "Node",
       "@type": "SlotDefinition"
     },
     {
-      "name": "node_direct_merge_change_description",
+      "name": "NodeDirectMerge_change_description",
       "definition_uri": "http://w3id.org/kgcl/change_description",
       "description": "A string serialization of the change. This should be both human-readable, and parseable.",
       "comments": [
@@ -2981,22 +3211,22 @@
         }
       ],
       "from_schema": "https://w3id.org/kgcl",
-      "is_a": "node_obsoletion_change_description",
-      "string_serialization": "obsoleting {about node} and merging into {has direct replacement}",
+      "is_a": "NodeObsoletion_change_description",
+      "string_serialization": "merge {about_node} into {has_direct_replacement}",
       "domain": "NodeDirectMerge",
       "slot_uri": "http://w3id.org/kgcl/change_description",
-      "alias": "change description",
+      "alias": "change_description",
       "owner": "NodeDirectMerge",
       "domain_of": [
         "NodeDirectMerge"
       ],
       "is_usage_slot": true,
-      "usage_slot_name": "change description",
+      "usage_slot_name": "change_description",
       "range": "string",
       "@type": "SlotDefinition"
     },
     {
-      "name": "node_obsoletion_with_direct_replacement_has_direct_replacement",
+      "name": "NodeObsoletionWithDirectReplacement_has_direct_replacement",
       "definition_uri": "http://w3id.org/kgcl/has_direct_replacement",
       "description": "An obsoletion replacement where it IS valid to automatically update annotations/edges pointing at the node with its direct replacement",
       "comments": [
@@ -3010,19 +3240,19 @@
       "is_a": "has_direct_replacement",
       "domain": "NodeObsoletionWithDirectReplacement",
       "slot_uri": "http://w3id.org/kgcl/has_direct_replacement",
-      "alias": "has direct replacement",
+      "alias": "has_direct_replacement",
       "owner": "NodeObsoletionWithDirectReplacement",
       "domain_of": [
         "NodeObsoletionWithDirectReplacement"
       ],
       "is_usage_slot": true,
-      "usage_slot_name": "has direct replacement",
+      "usage_slot_name": "has_direct_replacement",
       "range": "Node",
       "required": true,
       "@type": "SlotDefinition"
     },
     {
-      "name": "node_obsoletion_with_direct_replacement_change_description",
+      "name": "NodeObsoletionWithDirectReplacement_change_description",
       "definition_uri": "http://w3id.org/kgcl/change_description",
       "description": "A string serialization of the change. This should be both human-readable, and parseable.",
       "comments": [
@@ -3052,22 +3282,22 @@
         }
       ],
       "from_schema": "https://w3id.org/kgcl",
-      "is_a": "node_obsoletion_change_description",
-      "string_serialization": "obsoleting {about node} and replacing with {has direct replacement}",
+      "is_a": "NodeObsoletion_change_description",
+      "string_serialization": "obsolete {about_node} with replacement {has_direct_replacement}",
       "domain": "NodeObsoletionWithDirectReplacement",
       "slot_uri": "http://w3id.org/kgcl/change_description",
-      "alias": "change description",
+      "alias": "change_description",
       "owner": "NodeObsoletionWithDirectReplacement",
       "domain_of": [
         "NodeObsoletionWithDirectReplacement"
       ],
       "is_usage_slot": true,
-      "usage_slot_name": "change description",
+      "usage_slot_name": "change_description",
       "range": "string",
       "@type": "SlotDefinition"
     },
     {
-      "name": "node_obsoletion_with_no_direct_replacement_has_nondirect_replacement",
+      "name": "NodeObsoletionWithNoDirectReplacement_has_nondirect_replacement",
       "definition_uri": "http://w3id.org/kgcl/has_nondirect_replacement",
       "description": "An obsoletion replacement where it is NOT valid to automatically update annotations/edges pointing at the node with its direct replacement",
       "comments": [
@@ -3082,19 +3312,19 @@
       "domain": "NodeObsoletionWithNoDirectReplacement",
       "slot_uri": "http://w3id.org/kgcl/has_nondirect_replacement",
       "multivalued": true,
-      "alias": "has nondirect replacement",
+      "alias": "has_nondirect_replacement",
       "owner": "NodeObsoletionWithNoDirectReplacement",
       "domain_of": [
         "NodeObsoletionWithNoDirectReplacement"
       ],
       "is_usage_slot": true,
-      "usage_slot_name": "has nondirect replacement",
+      "usage_slot_name": "has_nondirect_replacement",
       "range": "Node",
       "required": true,
       "@type": "SlotDefinition"
     },
     {
-      "name": "node_obsoletion_with_no_direct_replacement_change_description",
+      "name": "NodeObsoletionWithNoDirectReplacement_change_description",
       "definition_uri": "http://w3id.org/kgcl/change_description",
       "description": "A string serialization of the change. This should be both human-readable, and parseable.",
       "comments": [
@@ -3124,38 +3354,50 @@
         }
       ],
       "from_schema": "https://w3id.org/kgcl",
-      "is_a": "node_obsoletion_change_description",
-      "string_serialization": "obsoleting {about node} considering {has nondirect replacement}",
+      "is_a": "NodeObsoletion_change_description",
+      "string_serialization": "obsolete {about_node} with alternative {has_nondirect_replacement}",
       "domain": "NodeObsoletionWithNoDirectReplacement",
       "slot_uri": "http://w3id.org/kgcl/change_description",
-      "alias": "change description",
+      "alias": "change_description",
       "owner": "NodeObsoletionWithNoDirectReplacement",
       "domain_of": [
         "NodeObsoletionWithNoDirectReplacement"
       ],
       "is_usage_slot": true,
-      "usage_slot_name": "change description",
+      "usage_slot_name": "change_description",
       "range": "string",
       "@type": "SlotDefinition"
     }
   ],
   "classes": [
     {
+      "name": "ChangeLanguageElement",
+      "definition_uri": "http://w3id.org/kgcl/ChangeLanguageElement",
+      "description": "A broad grouping for all elements of the change language",
+      "from_schema": "https://w3id.org/kgcl",
+      "abstract": true,
+      "slot_usage": {},
+      "class_uri": "http://w3id.org/kgcl/ChangeLanguageElement",
+      "@type": "ClassDefinition"
+    },
+    {
       "name": "Change",
       "definition_uri": "http://w3id.org/kgcl/Change",
       "description": "Any change perform on an ontology or knowledge graph",
       "from_schema": "https://w3id.org/kgcl",
+      "is_a": "ChangeLanguageElement",
       "abstract": true,
       "slots": [
         "id",
         "type",
-        "change_was_generated_by",
-        "change_see_also",
-        "change_pull_request",
-        "change_creator",
-        "change_change_date",
+        "Change_was_generated_by",
+        "Change_see_also",
+        "Change_pull_request",
+        "Change_creator",
+        "Change_change_date",
         "contributor",
-        "has_undo"
+        "has_undo",
+        "Change_term_tracker_issue"
       ],
       "slot_usage": {},
       "class_uri": "http://w3id.org/kgcl/Change",
@@ -3174,13 +3416,14 @@
       "slots": [
         "id",
         "type",
-        "change_was_generated_by",
-        "change_see_also",
-        "change_pull_request",
-        "change_creator",
-        "change_change_date",
+        "Change_was_generated_by",
+        "Change_see_also",
+        "Change_pull_request",
+        "Change_creator",
+        "Change_change_date",
         "contributor",
         "has_undo",
+        "Change_term_tracker_issue",
         "old_value",
         "new_value",
         "old_value_type",
@@ -3204,13 +3447,14 @@
       "slots": [
         "id",
         "type",
-        "change_was_generated_by",
-        "change_see_also",
-        "change_pull_request",
-        "change_creator",
-        "change_change_date",
+        "Change_was_generated_by",
+        "Change_see_also",
+        "Change_pull_request",
+        "Change_creator",
+        "Change_change_date",
         "contributor",
         "has_undo",
+        "Change_term_tracker_issue",
         "change_set"
       ],
       "slot_usage": {},
@@ -3235,16 +3479,17 @@
       "slots": [
         "id",
         "type",
-        "change_was_generated_by",
-        "change_see_also",
-        "change_pull_request",
-        "change_creator",
-        "change_change_date",
+        "Change_was_generated_by",
+        "Change_see_also",
+        "Change_pull_request",
+        "Change_creator",
+        "Change_change_date",
         "contributor",
         "has_undo",
-        "multi_node_obsoletion_change_set",
-        "multi_node_obsoletion_change_description",
-        "multi_node_obsoletion_associated_change_set"
+        "Change_term_tracker_issue",
+        "MultiNodeObsoletion_change_set",
+        "MultiNodeObsoletion_change_description",
+        "MultiNodeObsoletion_associated_change_set"
       ],
       "slot_usage": {},
       "class_uri": "http://w3id.org/kgcl/MultiNodeObsoletion",
@@ -3259,13 +3504,14 @@
       "slots": [
         "id",
         "type",
-        "change_was_generated_by",
-        "change_see_also",
-        "change_pull_request",
-        "change_creator",
-        "change_change_date",
+        "Change_was_generated_by",
+        "Change_see_also",
+        "Change_pull_request",
+        "Change_creator",
+        "Change_change_date",
         "contributor",
         "has_undo",
+        "Change_term_tracker_issue",
         "change_set"
       ],
       "slot_usage": {},
@@ -3277,10 +3523,11 @@
       "definition_uri": "http://w3id.org/kgcl/ChangeSetSummaryStatistic",
       "description": "A summary statistic for a set of changes of the same type, grouped by zero or more node properties",
       "from_schema": "https://w3id.org/kgcl",
+      "is_a": "ChangeLanguageElement",
       "slots": [
-        "change_set_summary_statistic_change_type",
-        "change_set_summary_statistic_count",
-        "change_set_summary_statistic_property_value_set"
+        "ChangeSetSummaryStatistic_change_type",
+        "ChangeSetSummaryStatistic_count",
+        "ChangeSetSummaryStatistic_property_value_set"
       ],
       "slot_usage": {},
       "class_uri": "http://w3id.org/kgcl/ChangeSetSummaryStatistic",
@@ -3315,8 +3562,8 @@
       "is_a": "ChangeMixin",
       "mixin": true,
       "slots": [
-        "obsoletion_about",
-        "obsoletion_has_undo"
+        "Obsoletion_about",
+        "Obsoletion_has_undo"
       ],
       "slot_usage": {},
       "class_uri": "http://w3id.org/kgcl/Obsoletion",
@@ -3339,8 +3586,8 @@
       "from_schema": "https://w3id.org/kgcl",
       "is_a": "DatatypeOrLanguageTagChange",
       "slots": [
-        "language_tag_change_old_value",
-        "language_tag_change_new_value"
+        "LanguageTagChange_old_value",
+        "LanguageTagChange_new_value"
       ],
       "slot_usage": {},
       "class_uri": "http://w3id.org/kgcl/LanguageTagChange",
@@ -3363,8 +3610,8 @@
       "is_a": "Obsoletion",
       "mixin": true,
       "slots": [
-        "obsoletion_about",
-        "obsoletion_has_undo"
+        "Obsoletion_about",
+        "Obsoletion_has_undo"
       ],
       "slot_usage": {},
       "class_uri": "http://w3id.org/kgcl/AllowsAutomaticReplacementOfEdges",
@@ -3381,7 +3628,7 @@
       "is_a": "ChangeMixin",
       "mixin": true,
       "slots": [
-        "unobsoletion_has_undo"
+        "Unobsoletion_has_undo"
       ],
       "slot_usage": {},
       "class_uri": "http://w3id.org/kgcl/Unobsoletion",
@@ -3409,7 +3656,7 @@
       "is_a": "ChangeMixin",
       "mixin": true,
       "slots": [
-        "creation_has_undo"
+        "Creation_has_undo"
       ],
       "slot_usage": {},
       "class_uri": "http://w3id.org/kgcl/Creation",
@@ -3437,7 +3684,7 @@
       "is_a": "SubsetMembershipChange",
       "mixin": true,
       "slots": [
-        "add_to_subset_in_subset"
+        "AddToSubset_in_subset"
       ],
       "slot_usage": {},
       "class_uri": "http://w3id.org/kgcl/AddToSubset",
@@ -3451,8 +3698,8 @@
       "is_a": "SubsetMembershipChange",
       "mixin": true,
       "slots": [
-        "remove_from_subset_in_subset",
-        "remove_from_subset_has_undo"
+        "RemoveFromSubset_in_subset",
+        "RemoveFromSubset_has_undo"
       ],
       "slot_usage": {},
       "class_uri": "http://w3id.org/kgcl/RemoveFromSubset",
@@ -3475,13 +3722,14 @@
       "slots": [
         "id",
         "type",
-        "change_was_generated_by",
-        "change_see_also",
-        "change_pull_request",
-        "change_creator",
-        "change_change_date",
+        "Change_was_generated_by",
+        "Change_see_also",
+        "Change_pull_request",
+        "Change_creator",
+        "Change_change_date",
         "contributor",
         "has_undo",
+        "Change_term_tracker_issue",
         "old_value",
         "new_value",
         "old_value_type",
@@ -3494,7 +3742,7 @@
         "object_type",
         "language",
         "datatype",
-        "edge_change_subject"
+        "EdgeChange_subject"
       ],
       "slot_usage": {},
       "class_uri": "http://w3id.org/kgcl/EdgeChange",
@@ -3518,13 +3766,14 @@
       "slots": [
         "id",
         "type",
-        "change_was_generated_by",
-        "change_see_also",
-        "change_pull_request",
-        "change_creator",
-        "change_change_date",
+        "Change_was_generated_by",
+        "Change_see_also",
+        "Change_pull_request",
+        "Change_creator",
+        "Change_change_date",
         "contributor",
         "has_undo",
+        "Change_term_tracker_issue",
         "old_value",
         "new_value",
         "old_value_type",
@@ -3543,7 +3792,7 @@
         "predicate_type",
         "object_type",
         "annotation_set",
-        "edge_creation_change_description"
+        "EdgeCreation_change_description"
       ],
       "slot_usage": {},
       "class_uri": "http://w3id.org/kgcl/EdgeCreation",
@@ -3558,13 +3807,14 @@
       "slots": [
         "id",
         "type",
-        "change_was_generated_by",
-        "change_see_also",
-        "change_pull_request",
-        "change_creator",
-        "change_change_date",
+        "Change_was_generated_by",
+        "Change_see_also",
+        "Change_pull_request",
+        "Change_creator",
+        "Change_change_date",
         "contributor",
         "has_undo",
+        "Change_term_tracker_issue",
         "old_value",
         "new_value",
         "old_value_type",
@@ -3583,7 +3833,7 @@
         "predicate_type",
         "object_type",
         "annotation_set",
-        "edge_creation_change_description"
+        "EdgeCreation_change_description"
       ],
       "slot_usage": {},
       "class_uri": "http://w3id.org/kgcl/PlaceUnder",
@@ -3604,13 +3854,14 @@
       "slots": [
         "id",
         "type",
-        "change_was_generated_by",
-        "change_see_also",
-        "change_pull_request",
-        "change_creator",
-        "change_change_date",
+        "Change_was_generated_by",
+        "Change_see_also",
+        "Change_pull_request",
+        "Change_creator",
+        "Change_change_date",
         "contributor",
         "has_undo",
+        "Change_term_tracker_issue",
         "old_value",
         "new_value",
         "old_value_type",
@@ -3629,7 +3880,7 @@
         "predicate_type",
         "object_type",
         "annotation_set",
-        "edge_deletion_change_description"
+        "EdgeDeletion_change_description"
       ],
       "slot_usage": {},
       "class_uri": "http://w3id.org/kgcl/EdgeDeletion",
@@ -3644,13 +3895,14 @@
       "slots": [
         "id",
         "type",
-        "change_was_generated_by",
-        "change_see_also",
-        "change_pull_request",
-        "change_creator",
-        "change_change_date",
+        "Change_was_generated_by",
+        "Change_see_also",
+        "Change_pull_request",
+        "Change_creator",
+        "Change_change_date",
         "contributor",
         "has_undo",
+        "Change_term_tracker_issue",
         "old_value",
         "new_value",
         "old_value_type",
@@ -3669,7 +3921,7 @@
         "predicate_type",
         "object_type",
         "annotation_set",
-        "edge_deletion_change_description"
+        "EdgeDeletion_change_description"
       ],
       "slot_usage": {},
       "class_uri": "http://w3id.org/kgcl/RemoveUnder",
@@ -3696,13 +3948,14 @@
       "slots": [
         "id",
         "type",
-        "change_was_generated_by",
-        "change_see_also",
-        "change_pull_request",
-        "change_creator",
-        "change_change_date",
+        "Change_was_generated_by",
+        "Change_see_also",
+        "Change_pull_request",
+        "Change_creator",
+        "Change_change_date",
         "contributor",
         "has_undo",
+        "Change_term_tracker_issue",
         "old_value",
         "new_value",
         "old_value_type",
@@ -3719,8 +3972,8 @@
         "predicate",
         "object",
         "annotation_set",
-        "edge_obsoletion_change_description",
-        "obsoletion_about"
+        "EdgeObsoletion_change_description",
+        "Obsoletion_about"
       ],
       "slot_usage": {},
       "class_uri": "http://w3id.org/kgcl/EdgeObsoletion",
@@ -3741,13 +3994,14 @@
       "slots": [
         "id",
         "type",
-        "change_was_generated_by",
-        "change_see_also",
-        "change_pull_request",
-        "change_creator",
-        "change_change_date",
+        "Change_was_generated_by",
+        "Change_see_also",
+        "Change_pull_request",
+        "Change_creator",
+        "Change_change_date",
         "contributor",
         "has_undo",
+        "Change_term_tracker_issue",
         "old_value",
         "new_value",
         "old_value_type",
@@ -3760,7 +4014,7 @@
         "object_type",
         "language",
         "datatype",
-        "edge_change_subject"
+        "EdgeChange_subject"
       ],
       "slot_usage": {},
       "class_uri": "http://w3id.org/kgcl/EdgeRewiring",
@@ -3785,13 +4039,14 @@
       "slots": [
         "id",
         "type",
-        "change_was_generated_by",
-        "change_see_also",
-        "change_pull_request",
-        "change_creator",
-        "change_change_date",
+        "Change_was_generated_by",
+        "Change_see_also",
+        "Change_pull_request",
+        "Change_creator",
+        "Change_change_date",
         "contributor",
         "has_undo",
+        "Change_term_tracker_issue",
         "old_value",
         "new_value",
         "old_value_type",
@@ -3806,11 +4061,11 @@
         "subject_type",
         "predicate_type",
         "object_type",
-        "mapping_creation_subject",
-        "mapping_creation_predicate",
-        "mapping_creation_object",
+        "MappingCreation_subject",
+        "MappingCreation_predicate",
+        "MappingCreation_object",
         "annotation_set",
-        "mapping_creation_change_description"
+        "MappingCreation_change_description"
       ],
       "slot_usage": {},
       "class_uri": "http://w3id.org/kgcl/MappingCreation",
@@ -3831,13 +4086,14 @@
       "slots": [
         "id",
         "type",
-        "change_was_generated_by",
-        "change_see_also",
-        "change_pull_request",
-        "change_creator",
-        "change_change_date",
+        "Change_was_generated_by",
+        "Change_see_also",
+        "Change_pull_request",
+        "Change_creator",
+        "Change_change_date",
         "contributor",
         "has_undo",
+        "Change_term_tracker_issue",
         "old_value",
         "new_value",
         "old_value_type",
@@ -3850,10 +4106,10 @@
         "object_type",
         "language",
         "datatype",
-        "edge_change_subject",
+        "EdgeChange_subject",
         "old_object_type",
         "new_object_type",
-        "node_move_change_description"
+        "NodeMove_change_description"
       ],
       "slot_usage": {},
       "class_uri": "http://w3id.org/kgcl/NodeMove",
@@ -3874,13 +4130,14 @@
       "slots": [
         "id",
         "type",
-        "change_was_generated_by",
-        "change_see_also",
-        "change_pull_request",
-        "change_creator",
-        "change_change_date",
+        "Change_was_generated_by",
+        "Change_see_also",
+        "Change_pull_request",
+        "Change_creator",
+        "Change_change_date",
         "contributor",
         "has_undo",
+        "Change_term_tracker_issue",
         "old_value",
         "new_value",
         "old_value_type",
@@ -3893,10 +4150,10 @@
         "object_type",
         "language",
         "datatype",
-        "edge_change_subject",
+        "EdgeChange_subject",
         "old_object_type",
         "new_object_type",
-        "node_deepening_change_description"
+        "NodeDeepening_change_description"
       ],
       "slot_usage": {},
       "class_uri": "http://w3id.org/kgcl/NodeDeepening",
@@ -3917,13 +4174,14 @@
       "slots": [
         "id",
         "type",
-        "change_was_generated_by",
-        "change_see_also",
-        "change_pull_request",
-        "change_creator",
-        "change_change_date",
+        "Change_was_generated_by",
+        "Change_see_also",
+        "Change_pull_request",
+        "Change_creator",
+        "Change_change_date",
         "contributor",
         "has_undo",
+        "Change_term_tracker_issue",
         "old_value",
         "new_value",
         "old_value_type",
@@ -3936,10 +4194,10 @@
         "object_type",
         "language",
         "datatype",
-        "edge_change_subject",
+        "EdgeChange_subject",
         "old_object_type",
         "new_object_type",
-        "node_shallowing_change_description"
+        "NodeShallowing_change_description"
       ],
       "slot_usage": {},
       "class_uri": "http://w3id.org/kgcl/NodeShallowing",
@@ -3960,13 +4218,14 @@
       "slots": [
         "id",
         "type",
-        "change_was_generated_by",
-        "change_see_also",
-        "change_pull_request",
-        "change_creator",
-        "change_change_date",
+        "Change_was_generated_by",
+        "Change_see_also",
+        "Change_pull_request",
+        "Change_creator",
+        "Change_change_date",
         "contributor",
         "has_undo",
+        "Change_term_tracker_issue",
         "old_value",
         "new_value",
         "old_value_type",
@@ -3979,8 +4238,8 @@
         "object_type",
         "language",
         "datatype",
-        "edge_change_subject",
-        "predicate_change_change_description"
+        "EdgeChange_subject",
+        "PredicateChange_change_description"
       ],
       "slot_usage": {},
       "class_uri": "http://w3id.org/kgcl/PredicateChange",
@@ -3989,7 +4248,7 @@
     {
       "name": "EdgeLogicalInterpretationChange",
       "definition_uri": "http://w3id.org/kgcl/EdgeLogicalInterpretationChange",
-      "description": "An edge change where the subjet, object, and predicate are unchanged, but the logical interpretation changes",
+      "description": "An edge change where the subject, object, and predicate are unchanged, but the logical interpretation changes",
       "examples": [
         {
           "value": "changing a SubClassOf r some b to a subClassOf r only b",
@@ -4001,13 +4260,14 @@
       "slots": [
         "id",
         "type",
-        "change_was_generated_by",
-        "change_see_also",
-        "change_pull_request",
-        "change_creator",
-        "change_change_date",
+        "Change_was_generated_by",
+        "Change_see_also",
+        "Change_pull_request",
+        "Change_creator",
+        "Change_change_date",
         "contributor",
         "has_undo",
+        "Change_term_tracker_issue",
         "old_value",
         "new_value",
         "old_value_type",
@@ -4020,7 +4280,7 @@
         "object_type",
         "language",
         "datatype",
-        "edge_change_subject"
+        "EdgeChange_subject"
       ],
       "slot_usage": {},
       "class_uri": "http://w3id.org/kgcl/EdgeLogicalInterpretationChange",
@@ -4035,13 +4295,14 @@
       "slots": [
         "id",
         "type",
-        "change_was_generated_by",
-        "change_see_also",
-        "change_pull_request",
-        "change_creator",
-        "change_change_date",
+        "Change_was_generated_by",
+        "Change_see_also",
+        "Change_pull_request",
+        "Change_creator",
+        "Change_change_date",
         "contributor",
         "has_undo",
+        "Change_term_tracker_issue",
         "old_value",
         "new_value",
         "old_value_type",
@@ -4065,13 +4326,14 @@
       "slots": [
         "id",
         "type",
-        "change_was_generated_by",
-        "change_see_also",
-        "change_pull_request",
-        "change_creator",
-        "change_change_date",
+        "Change_was_generated_by",
+        "Change_see_also",
+        "Change_pull_request",
+        "Change_creator",
+        "Change_change_date",
         "contributor",
         "has_undo",
+        "Change_term_tracker_issue",
         "old_value",
         "new_value",
         "old_value_type",
@@ -4104,13 +4366,14 @@
       "slots": [
         "id",
         "type",
-        "change_was_generated_by",
-        "change_see_also",
-        "change_pull_request",
-        "change_creator",
-        "change_change_date",
+        "Change_was_generated_by",
+        "Change_see_also",
+        "Change_pull_request",
+        "Change_creator",
+        "Change_change_date",
         "contributor",
         "has_undo",
+        "Change_term_tracker_issue",
         "old_value_type",
         "new_value_type",
         "new_datatype",
@@ -4118,12 +4381,12 @@
         "about_node",
         "about_node_representation",
         "language",
-        "node_rename_old_value",
-        "node_rename_new_value",
+        "NodeRename_old_value",
+        "NodeRename_new_value",
         "has_textual_diff",
         "new_language",
         "old_language",
-        "node_rename_change_description"
+        "NodeRename_change_description"
       ],
       "slot_usage": {},
       "class_uri": "http://w3id.org/kgcl/NodeRename",
@@ -4141,13 +4404,14 @@
       "slots": [
         "id",
         "type",
-        "change_was_generated_by",
-        "change_see_also",
-        "change_pull_request",
-        "change_creator",
-        "change_change_date",
+        "Change_was_generated_by",
+        "Change_see_also",
+        "Change_pull_request",
+        "Change_creator",
+        "Change_change_date",
         "contributor",
         "has_undo",
+        "Change_term_tracker_issue",
         "old_value_type",
         "new_value_type",
         "new_language",
@@ -4159,7 +4423,7 @@
         "language",
         "old_value",
         "new_value",
-        "set_language_for_name_change_description"
+        "SetLanguageForName_change_description"
       ],
       "slot_usage": {},
       "class_uri": "http://w3id.org/kgcl/SetLanguageForName",
@@ -4174,13 +4438,14 @@
       "slots": [
         "id",
         "type",
-        "change_was_generated_by",
-        "change_see_also",
-        "change_pull_request",
-        "change_creator",
-        "change_change_date",
+        "Change_was_generated_by",
+        "Change_see_also",
+        "Change_pull_request",
+        "Change_creator",
+        "Change_change_date",
         "contributor",
         "has_undo",
+        "Change_term_tracker_issue",
         "old_value",
         "new_value",
         "old_value_type",
@@ -4208,13 +4473,14 @@
       "slots": [
         "id",
         "type",
-        "change_was_generated_by",
-        "change_see_also",
-        "change_pull_request",
-        "change_creator",
-        "change_change_date",
+        "Change_was_generated_by",
+        "Change_see_also",
+        "Change_pull_request",
+        "Change_creator",
+        "Change_change_date",
         "contributor",
         "has_undo",
+        "Change_term_tracker_issue",
         "old_value",
         "new_value",
         "old_value_type",
@@ -4241,13 +4507,14 @@
       "slots": [
         "id",
         "type",
-        "change_was_generated_by",
-        "change_see_also",
-        "change_pull_request",
-        "change_creator",
-        "change_change_date",
+        "Change_was_generated_by",
+        "Change_see_also",
+        "Change_pull_request",
+        "Change_creator",
+        "Change_change_date",
         "contributor",
         "has_undo",
+        "Change_term_tracker_issue",
         "old_value",
         "new_value",
         "old_value_type",
@@ -4278,13 +4545,14 @@
       "slots": [
         "id",
         "type",
-        "change_was_generated_by",
-        "change_see_also",
-        "change_pull_request",
-        "change_creator",
-        "change_change_date",
+        "Change_was_generated_by",
+        "Change_see_also",
+        "Change_pull_request",
+        "Change_creator",
+        "Change_change_date",
         "contributor",
         "has_undo",
+        "Change_term_tracker_issue",
         "old_value",
         "old_value_type",
         "new_value_type",
@@ -4311,13 +4579,14 @@
       "slots": [
         "id",
         "type",
-        "change_was_generated_by",
-        "change_see_also",
-        "change_pull_request",
-        "change_creator",
-        "change_change_date",
+        "Change_was_generated_by",
+        "Change_see_also",
+        "Change_pull_request",
+        "Change_creator",
+        "Change_change_date",
         "contributor",
         "has_undo",
+        "Change_term_tracker_issue",
         "old_value",
         "new_value",
         "old_value_type",
@@ -4329,9 +4598,9 @@
         "about_node",
         "about_node_representation",
         "language",
-        "name_becomes_synonym_change_1",
-        "name_becomes_synonym_change_2",
-        "name_becomes_synonym_change_description"
+        "NameBecomesSynonym_change_1",
+        "NameBecomesSynonym_change_2",
+        "NameBecomesSynonym_change_description"
       ],
       "slot_usage": {},
       "class_uri": "http://w3id.org/kgcl/NameBecomesSynonym",
@@ -4346,13 +4615,14 @@
       "slots": [
         "id",
         "type",
-        "change_was_generated_by",
-        "change_see_also",
-        "change_pull_request",
-        "change_creator",
-        "change_change_date",
+        "Change_was_generated_by",
+        "Change_see_also",
+        "Change_pull_request",
+        "Change_creator",
+        "Change_change_date",
         "contributor",
         "has_undo",
+        "Change_term_tracker_issue",
         "new_value",
         "old_value_type",
         "new_value_type",
@@ -4378,13 +4648,14 @@
       "slots": [
         "id",
         "type",
-        "change_was_generated_by",
-        "change_see_also",
-        "change_pull_request",
-        "change_creator",
-        "change_change_date",
+        "Change_was_generated_by",
+        "Change_see_also",
+        "Change_pull_request",
+        "Change_creator",
+        "Change_change_date",
         "contributor",
         "has_undo",
+        "Change_term_tracker_issue",
         "old_value_type",
         "new_value_type",
         "new_language",
@@ -4414,13 +4685,14 @@
       "slots": [
         "id",
         "type",
-        "change_was_generated_by",
-        "change_see_also",
-        "change_pull_request",
-        "change_creator",
-        "change_change_date",
+        "Change_was_generated_by",
+        "Change_see_also",
+        "Change_pull_request",
+        "Change_creator",
+        "Change_change_date",
         "contributor",
         "has_undo",
+        "Change_term_tracker_issue",
         "old_value_type",
         "new_value_type",
         "new_language",
@@ -4450,13 +4722,14 @@
       "slots": [
         "id",
         "type",
-        "change_was_generated_by",
-        "change_see_also",
-        "change_pull_request",
-        "change_creator",
-        "change_change_date",
+        "Change_was_generated_by",
+        "Change_see_also",
+        "Change_pull_request",
+        "Change_creator",
+        "Change_change_date",
         "contributor",
         "has_undo",
+        "Change_term_tracker_issue",
         "old_value",
         "new_value",
         "old_value_type",
@@ -4485,13 +4758,14 @@
       "slots": [
         "id",
         "type",
-        "change_was_generated_by",
-        "change_see_also",
-        "change_pull_request",
-        "change_creator",
-        "change_change_date",
+        "Change_was_generated_by",
+        "Change_see_also",
+        "Change_pull_request",
+        "Change_creator",
+        "Change_change_date",
         "contributor",
         "has_undo",
+        "Change_term_tracker_issue",
         "old_value",
         "new_value",
         "old_value_type",
@@ -4519,13 +4793,14 @@
       "slots": [
         "id",
         "type",
-        "change_was_generated_by",
-        "change_see_also",
-        "change_pull_request",
-        "change_creator",
-        "change_change_date",
+        "Change_was_generated_by",
+        "Change_see_also",
+        "Change_pull_request",
+        "Change_creator",
+        "Change_change_date",
         "contributor",
         "has_undo",
+        "Change_term_tracker_issue",
         "old_value",
         "new_value",
         "old_value_type",
@@ -4553,13 +4828,14 @@
       "slots": [
         "id",
         "type",
-        "change_was_generated_by",
-        "change_see_also",
-        "change_pull_request",
-        "change_creator",
-        "change_change_date",
+        "Change_was_generated_by",
+        "Change_see_also",
+        "Change_pull_request",
+        "Change_creator",
+        "Change_change_date",
         "contributor",
         "has_undo",
+        "Change_term_tracker_issue",
         "old_value_type",
         "new_value_type",
         "new_language",
@@ -4588,13 +4864,14 @@
       "slots": [
         "id",
         "type",
-        "change_was_generated_by",
-        "change_see_also",
-        "change_pull_request",
-        "change_creator",
-        "change_change_date",
+        "Change_was_generated_by",
+        "Change_see_also",
+        "Change_pull_request",
+        "Change_creator",
+        "Change_change_date",
         "contributor",
         "has_undo",
+        "Change_term_tracker_issue",
         "old_value_type",
         "new_value_type",
         "new_language",
@@ -4617,19 +4894,20 @@
       "description": "A node change where the metadata assertion (OWL annotations) for that node are altered",
       "from_schema": "https://w3id.org/kgcl",
       "aliases": [
-        "node annotation change"
+        "NodeAnnotationChange"
       ],
       "is_a": "NodeChange",
       "slots": [
         "id",
         "type",
-        "change_was_generated_by",
-        "change_see_also",
-        "change_pull_request",
-        "change_creator",
-        "change_change_date",
+        "Change_was_generated_by",
+        "Change_see_also",
+        "Change_pull_request",
+        "Change_creator",
+        "Change_change_date",
         "contributor",
         "has_undo",
+        "Change_term_tracker_issue",
         "old_value",
         "new_value",
         "old_value_type",
@@ -4658,13 +4936,14 @@
       "slots": [
         "id",
         "type",
-        "change_was_generated_by",
-        "change_see_also",
-        "change_pull_request",
-        "change_creator",
-        "change_change_date",
+        "Change_was_generated_by",
+        "Change_see_also",
+        "Change_pull_request",
+        "Change_creator",
+        "Change_change_date",
         "contributor",
         "has_undo",
+        "Change_term_tracker_issue",
         "old_value",
         "new_value",
         "old_value_type",
@@ -4692,13 +4971,14 @@
       "slots": [
         "id",
         "type",
-        "change_was_generated_by",
-        "change_see_also",
-        "change_pull_request",
-        "change_creator",
-        "change_change_date",
+        "Change_was_generated_by",
+        "Change_see_also",
+        "Change_pull_request",
+        "Change_creator",
+        "Change_change_date",
         "contributor",
         "has_undo",
+        "Change_term_tracker_issue",
         "old_value",
         "new_value",
         "old_value_type",
@@ -4726,13 +5006,14 @@
       "slots": [
         "id",
         "type",
-        "change_was_generated_by",
-        "change_see_also",
-        "change_pull_request",
-        "change_creator",
-        "change_change_date",
+        "Change_was_generated_by",
+        "Change_see_also",
+        "Change_pull_request",
+        "Change_creator",
+        "Change_change_date",
         "contributor",
         "has_undo",
+        "Change_term_tracker_issue",
         "old_value_type",
         "new_value_type",
         "new_language",
@@ -4761,13 +5042,14 @@
       "slots": [
         "id",
         "type",
-        "change_was_generated_by",
-        "change_see_also",
-        "change_pull_request",
-        "change_creator",
-        "change_change_date",
+        "Change_was_generated_by",
+        "Change_see_also",
+        "Change_pull_request",
+        "Change_creator",
+        "Change_change_date",
         "contributor",
         "has_undo",
+        "Change_term_tracker_issue",
         "old_value_type",
         "new_value_type",
         "new_language",
@@ -4794,13 +5076,14 @@
       "slots": [
         "id",
         "type",
-        "change_was_generated_by",
-        "change_see_also",
-        "change_pull_request",
-        "change_creator",
-        "change_change_date",
+        "Change_was_generated_by",
+        "Change_see_also",
+        "Change_pull_request",
+        "Change_creator",
+        "Change_change_date",
         "contributor",
         "has_undo",
+        "Change_term_tracker_issue",
         "old_value",
         "new_value",
         "old_value_type",
@@ -4826,13 +5109,14 @@
       "slots": [
         "id",
         "type",
-        "change_was_generated_by",
-        "change_see_also",
-        "change_pull_request",
-        "change_creator",
-        "change_change_date",
+        "Change_was_generated_by",
+        "Change_see_also",
+        "Change_pull_request",
+        "Change_creator",
+        "Change_change_date",
         "contributor",
         "has_undo",
+        "Change_term_tracker_issue",
         "old_value",
         "old_value_type",
         "new_value_type",
@@ -4858,13 +5142,14 @@
       "slots": [
         "id",
         "type",
-        "change_was_generated_by",
-        "change_see_also",
-        "change_pull_request",
-        "change_creator",
-        "change_change_date",
+        "Change_was_generated_by",
+        "Change_see_also",
+        "Change_pull_request",
+        "Change_creator",
+        "Change_change_date",
         "contributor",
         "has_undo",
+        "Change_term_tracker_issue",
         "new_value",
         "old_value_type",
         "new_value_type",
@@ -4890,13 +5175,14 @@
       "slots": [
         "id",
         "type",
-        "change_was_generated_by",
-        "change_see_also",
-        "change_pull_request",
-        "change_creator",
-        "change_change_date",
+        "Change_was_generated_by",
+        "Change_see_also",
+        "Change_pull_request",
+        "Change_creator",
+        "Change_change_date",
         "contributor",
         "has_undo",
+        "Change_term_tracker_issue",
         "old_value_type",
         "new_value_type",
         "new_language",
@@ -4932,13 +5218,14 @@
       "slots": [
         "id",
         "type",
-        "change_was_generated_by",
-        "change_see_also",
-        "change_pull_request",
-        "change_creator",
-        "change_change_date",
+        "Change_was_generated_by",
+        "Change_see_also",
+        "Change_pull_request",
+        "Change_creator",
+        "Change_change_date",
         "contributor",
         "has_undo",
+        "Change_term_tracker_issue",
         "old_value",
         "new_value",
         "old_value_type",
@@ -4950,7 +5237,7 @@
         "about_node",
         "about_node_representation",
         "language",
-        "add_to_subset_in_subset"
+        "AddToSubset_in_subset"
       ],
       "slot_usage": {},
       "class_uri": "http://w3id.org/kgcl/AddNodeToSubset",
@@ -4971,13 +5258,14 @@
       "slots": [
         "id",
         "type",
-        "change_was_generated_by",
-        "change_see_also",
-        "change_pull_request",
-        "change_creator",
-        "change_change_date",
+        "Change_was_generated_by",
+        "Change_see_also",
+        "Change_pull_request",
+        "Change_creator",
+        "Change_change_date",
         "contributor",
         "has_undo",
+        "Change_term_tracker_issue",
         "old_value",
         "new_value",
         "old_value_type",
@@ -4988,10 +5276,10 @@
         "old_datatype",
         "about_node_representation",
         "language",
-        "remove_node_from_subset_change_description",
-        "remove_node_from_subset_about_node",
-        "remove_node_from_subset_subset",
-        "remove_from_subset_in_subset"
+        "RemoveNodeFromSubset_change_description",
+        "RemoveNodeFromSubset_about_node",
+        "RemoveNodeFromSubset_subset",
+        "RemoveFromSubset_in_subset"
       ],
       "slot_usage": {},
       "class_uri": "http://w3id.org/kgcl/RemoveNodeFromSubset",
@@ -5018,13 +5306,14 @@
       "slots": [
         "id",
         "type",
-        "change_was_generated_by",
-        "change_see_also",
-        "change_pull_request",
-        "change_creator",
-        "change_change_date",
+        "Change_was_generated_by",
+        "Change_see_also",
+        "Change_pull_request",
+        "Change_creator",
+        "Change_change_date",
         "contributor",
         "has_undo",
+        "Change_term_tracker_issue",
         "old_value",
         "new_value",
         "old_value_type",
@@ -5038,9 +5327,9 @@
         "language",
         "has_direct_replacement",
         "has_nondirect_replacement",
-        "node_obsoletion_change_description",
-        "node_obsoletion_associated_change_set",
-        "obsoletion_about"
+        "NodeObsoletion_change_description",
+        "NodeObsoletion_associated_change_set",
+        "Obsoletion_about"
       ],
       "slot_usage": {},
       "class_uri": "http://w3id.org/kgcl/NodeObsoletion",
@@ -5067,13 +5356,14 @@
       "slots": [
         "id",
         "type",
-        "change_was_generated_by",
-        "change_see_also",
-        "change_pull_request",
-        "change_creator",
-        "change_change_date",
+        "Change_was_generated_by",
+        "Change_see_also",
+        "Change_pull_request",
+        "Change_creator",
+        "Change_change_date",
         "contributor",
         "has_undo",
+        "Change_term_tracker_issue",
         "old_value",
         "new_value",
         "old_value_type",
@@ -5085,9 +5375,9 @@
         "about_node",
         "about_node_representation",
         "language",
-        "node_unobsoletion_change_description",
-        "node_unobsoletion_replaced_by",
-        "node_unobsoletion_consider"
+        "NodeUnobsoletion_change_description",
+        "NodeUnobsoletion_replaced_by",
+        "NodeUnobsoletion_consider"
       ],
       "slot_usage": {},
       "class_uri": "http://w3id.org/kgcl/NodeUnobsoletion",
@@ -5111,13 +5401,14 @@
       "slots": [
         "id",
         "type",
-        "change_was_generated_by",
-        "change_see_also",
-        "change_pull_request",
-        "change_creator",
-        "change_change_date",
+        "Change_was_generated_by",
+        "Change_see_also",
+        "Change_pull_request",
+        "Change_creator",
+        "Change_change_date",
         "contributor",
         "has_undo",
+        "Change_term_tracker_issue",
         "old_value",
         "new_value",
         "old_value_type",
@@ -5133,7 +5424,7 @@
         "owl_type",
         "annotation_set",
         "language",
-        "node_creation_change_description"
+        "NodeCreation_change_description"
       ],
       "slot_usage": {},
       "class_uri": "http://w3id.org/kgcl/NodeCreation",
@@ -5142,22 +5433,20 @@
     {
       "name": "ClassCreation",
       "definition_uri": "http://w3id.org/kgcl/ClassCreation",
-      "description": "A node creation where the owl type is 'class'",
-      "todos": [
-        "restrict owltype value"
-      ],
+      "description": "A node creation where the owl type is 'owl:Class'",
       "from_schema": "https://w3id.org/kgcl",
       "is_a": "NodeCreation",
       "slots": [
         "id",
         "type",
-        "change_was_generated_by",
-        "change_see_also",
-        "change_pull_request",
-        "change_creator",
-        "change_change_date",
+        "Change_was_generated_by",
+        "Change_see_also",
+        "Change_pull_request",
+        "Change_creator",
+        "Change_change_date",
         "contributor",
         "has_undo",
+        "Change_term_tracker_issue",
         "old_value",
         "new_value",
         "old_value_type",
@@ -5174,10 +5463,48 @@
         "annotation_set",
         "language",
         "superclass",
-        "class_creation_change_description"
+        "ClassCreation_change_description"
       ],
       "slot_usage": {},
       "class_uri": "http://w3id.org/kgcl/ClassCreation",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "ObjectPropertyCreation",
+      "definition_uri": "http://w3id.org/kgcl/ObjectPropertyCreation",
+      "description": "A node creation where the owl type is 'ObjectProperty'",
+      "from_schema": "https://w3id.org/kgcl",
+      "is_a": "NodeCreation",
+      "slots": [
+        "id",
+        "type",
+        "Change_was_generated_by",
+        "Change_see_also",
+        "Change_pull_request",
+        "Change_creator",
+        "Change_change_date",
+        "contributor",
+        "has_undo",
+        "Change_term_tracker_issue",
+        "old_value",
+        "new_value",
+        "old_value_type",
+        "new_value_type",
+        "new_language",
+        "old_language",
+        "new_datatype",
+        "old_datatype",
+        "about_node",
+        "about_node_representation",
+        "node_id",
+        "name",
+        "owl_type",
+        "annotation_set",
+        "language",
+        "ObjectPropertyCreation_change_description"
+      ],
+      "slot_usage": {},
+      "class_uri": "http://w3id.org/kgcl/ObjectPropertyCreation",
       "@type": "ClassDefinition"
     },
     {
@@ -5192,13 +5519,14 @@
       "slots": [
         "id",
         "type",
-        "change_was_generated_by",
-        "change_see_also",
-        "change_pull_request",
-        "change_creator",
-        "change_change_date",
+        "Change_was_generated_by",
+        "Change_see_also",
+        "Change_pull_request",
+        "Change_creator",
+        "Change_change_date",
         "contributor",
         "has_undo",
+        "Change_term_tracker_issue",
         "old_value",
         "new_value",
         "old_value_type",
@@ -5210,7 +5538,7 @@
         "about_node",
         "about_node_representation",
         "language",
-        "node_deletion_change_description"
+        "NodeDeletion_change_description"
       ],
       "slot_usage": {},
       "class_uri": "http://w3id.org/kgcl/NodeDeletion",
@@ -5235,13 +5563,14 @@
       "slots": [
         "id",
         "type",
-        "change_was_generated_by",
-        "change_see_also",
-        "change_pull_request",
-        "change_creator",
-        "change_change_date",
+        "Change_was_generated_by",
+        "Change_see_also",
+        "Change_pull_request",
+        "Change_creator",
+        "Change_change_date",
         "contributor",
         "has_undo",
+        "Change_term_tracker_issue",
         "old_value",
         "new_value",
         "old_value_type",
@@ -5253,11 +5582,11 @@
         "about_node_representation",
         "language",
         "has_nondirect_replacement",
-        "node_obsoletion_associated_change_set",
-        "obsoletion_about",
-        "node_direct_merge_has_direct_replacement",
-        "node_direct_merge_about_node",
-        "node_direct_merge_change_description"
+        "NodeObsoletion_associated_change_set",
+        "Obsoletion_about",
+        "NodeDirectMerge_has_direct_replacement",
+        "NodeDirectMerge_about_node",
+        "NodeDirectMerge_change_description"
       ],
       "slot_usage": {},
       "class_uri": "http://w3id.org/kgcl/NodeDirectMerge",
@@ -5279,13 +5608,14 @@
       "slots": [
         "id",
         "type",
-        "change_was_generated_by",
-        "change_see_also",
-        "change_pull_request",
-        "change_creator",
-        "change_change_date",
+        "Change_was_generated_by",
+        "Change_see_also",
+        "Change_pull_request",
+        "Change_creator",
+        "Change_change_date",
         "contributor",
         "has_undo",
+        "Change_term_tracker_issue",
         "old_value",
         "new_value",
         "old_value_type",
@@ -5298,10 +5628,10 @@
         "about_node_representation",
         "language",
         "has_nondirect_replacement",
-        "node_obsoletion_associated_change_set",
-        "obsoletion_about",
-        "node_obsoletion_with_direct_replacement_has_direct_replacement",
-        "node_obsoletion_with_direct_replacement_change_description"
+        "NodeObsoletion_associated_change_set",
+        "Obsoletion_about",
+        "NodeObsoletionWithDirectReplacement_has_direct_replacement",
+        "NodeObsoletionWithDirectReplacement_change_description"
       ],
       "slot_usage": {},
       "class_uri": "http://w3id.org/kgcl/NodeObsoletionWithDirectReplacement",
@@ -5316,13 +5646,14 @@
       "slots": [
         "id",
         "type",
-        "change_was_generated_by",
-        "change_see_also",
-        "change_pull_request",
-        "change_creator",
-        "change_change_date",
+        "Change_was_generated_by",
+        "Change_see_also",
+        "Change_pull_request",
+        "Change_creator",
+        "Change_change_date",
         "contributor",
         "has_undo",
+        "Change_term_tracker_issue",
         "old_value",
         "new_value",
         "old_value_type",
@@ -5335,10 +5666,10 @@
         "about_node_representation",
         "language",
         "has_direct_replacement",
-        "node_obsoletion_associated_change_set",
-        "obsoletion_about",
-        "node_obsoletion_with_no_direct_replacement_has_nondirect_replacement",
-        "node_obsoletion_with_no_direct_replacement_change_description"
+        "NodeObsoletion_associated_change_set",
+        "Obsoletion_about",
+        "NodeObsoletionWithNoDirectReplacement_has_nondirect_replacement",
+        "NodeObsoletionWithNoDirectReplacement_change_description"
       ],
       "slot_usage": {},
       "class_uri": "http://w3id.org/kgcl/NodeObsoletionWithNoDirectReplacement",
@@ -5349,6 +5680,7 @@
       "definition_uri": "http://w3id.org/kgcl/TextualDiff",
       "description": "A summarizing of a change on a piece of text. This could be rendered in a number of different ways",
       "from_schema": "https://w3id.org/kgcl",
+      "is_a": "ChangeLanguageElement",
       "slot_usage": {},
       "class_uri": "http://w3id.org/kgcl/TextualDiff",
       "@type": "ClassDefinition"
@@ -5358,6 +5690,7 @@
       "definition_uri": "http://w3id.org/kgcl/Configuration",
       "description": "The meaning of operations can be configured",
       "from_schema": "https://w3id.org/kgcl",
+      "is_a": "ChangeLanguageElement",
       "slots": [
         "configuration__name_predicate",
         "configuration__definition_predicate",
@@ -5367,7 +5700,8 @@
         "configuration__contributor_predicate",
         "configuration__obsolete_node_label_prefix",
         "configuration__obsoletion_workflow",
-        "configuration__obsoletion_policies"
+        "configuration__obsoletion_policies",
+        "configuration__obsolete_subclass_of_shadow_property"
       ],
       "slot_usage": {},
       "attributes": [
@@ -5410,6 +5744,12 @@
           "multivalued": true,
           "range": "ObsoletionPolicyEnum",
           "@type": "SlotDefinition"
+        },
+        {
+          "name": "obsolete_subclass_of_shadow_property",
+          "description": "specifies the annotation property to be used to create a shadow annotation assertion triple when a subclass edge is deleted.",
+          "range": "uriorcurie",
+          "@type": "SlotDefinition"
         }
       ],
       "class_uri": "http://w3id.org/kgcl/Configuration",
@@ -5420,12 +5760,14 @@
       "definition_uri": "http://w3id.org/kgcl/Session",
       "description": "A session consists of a set of change sets bundled with the activities that generated those change sets",
       "from_schema": "https://w3id.org/kgcl",
+      "is_a": "ChangeLanguageElement",
       "slots": [
         "change_set",
         "activity_set"
       ],
       "slot_usage": {},
       "class_uri": "http://w3id.org/kgcl/Session",
+      "tree_root": true,
       "@type": "ClassDefinition"
     },
     {
@@ -5541,7 +5883,7 @@
     {
       "name": "Edge",
       "definition_uri": "http://w3id.org/kgcl_schema/om/Edge",
-      "description": "A relationship between two nodes.\nCurrently the only kinds of edges supported in KGCL:\n\n  * A subClassOf B <==> Edge(subject=A, predicate=owl:subClassOf, object=B)\n  * A subClassOf P some B <==> Edge(subject=A, predicate=P, object=B)\n  * P subPropertyOf Q <==> Edge(subject=P, predicate=owl:subPropertyOf, object=Q)\n\nThese represent the most common kind of pairwise relationship between classes, and classes are the dominant node type in ontologies.\n  \nIn future a wider variety of OWL axiom types will be supportedn through the use of an additional edge property/slot to indicate the interpretation of the axiom, following owlstar (https://github.com/cmungall/owlstar).\nFor example:\n * `A subClassOf R only B <==> Edge(subject=A, predicate=P, object=B, interpretation=AllOnly)`\n * `A Annotation(P,B) <==> Edge(subject=A, predicate=P, object=B, interpretation=annotationAssertion)`\n\nNote that not all axioms are intended to map to edges. Axioms/triples where the object is a literal would be represented as node properties. Complex OWL axioms involving nesting would have their own dedicated construct, or may be represented generically. These are out of scope for the current version of KGCL",
+      "description": "A relationship between two nodes.\nCurrently the only kinds of edges supported in KGCL:\n\n  * A subClassOf B <==> Edge(subject=A, predicate=owl:subClassOf, object=B)\n  * A subClassOf P some B <==> Edge(subject=A, predicate=P, object=B)\n  * P subPropertyOf Q <==> Edge(subject=P, predicate=owl:subPropertyOf, object=Q)\n\nThese represent the most common kind of pairwise relationship between classes, and classes are the dominant node type in ontologies.\nIn future a wider variety of OWL axiom types will be supportedn through the use of an additional edge property/slot to indicate the interpretation of the axiom, following owlstar (https://github.com/cmungall/owlstar).\nFor example:\n * `A subClassOf R only B <==> Edge(subject=A, predicate=P, object=B, interpretation=AllOnly)`\n * `A Annotation(P,B) <==> Edge(subject=A, predicate=P, object=B, interpretation=annotationAssertion)`\n\nNote that not all axioms are intended to map to edges. Axioms/triples where the object is a literal would be represented as node properties. Complex OWL axioms involving nesting would have their own dedicated construct, or may be represented generically. These are out of scope for the current version of KGCL",
       "from_schema": "https://w3id.org/kgcl_schema/ontology",
       "aliases": [
         "triple",
@@ -5585,6 +5927,16 @@
       "@type": "ClassDefinition"
     },
     {
+      "name": "ProvElement",
+      "definition_uri": "http://www.w3.org/ns/prov#ProvElement",
+      "description": "A grouping for prov elements",
+      "from_schema": "https://w3id.org/kgcl_schema/prov",
+      "abstract": true,
+      "slot_usage": {},
+      "class_uri": "http://www.w3.org/ns/prov#ProvElement",
+      "@type": "ClassDefinition"
+    },
+    {
       "name": "Activity",
       "definition_uri": "http://www.w3.org/ns/prov#Activity",
       "description": "a provence-generating activity",
@@ -5592,6 +5944,7 @@
       "mappings": [
         "prov:Activity"
       ],
+      "is_a": "ProvElement",
       "slots": [
         "id",
         "started_at_time",
@@ -5613,6 +5966,7 @@
       "mappings": [
         "prov:Agent"
       ],
+      "is_a": "ProvElement",
       "slots": [
         "id",
         "acted_on_behalf_of",
@@ -5625,9 +5979,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "kgcl.yaml",
-  "source_file_date": "2023-02-01T11:23:56",
-  "source_file_size": 33131,
-  "generation_date": "2023-02-01T11:26:10",
+  "source_file_date": "2023-08-30T14:17:55",
+  "source_file_size": 32080,
+  "generation_date": "2024-02-12T15:41:00",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/kgcl.context.jsonld",

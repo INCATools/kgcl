@@ -1,5 +1,5 @@
 
-# Class: creation
+# Class: Creation
 
 
 Creation of an element.
@@ -7,7 +7,7 @@ Creation of an element.
 URI: [kgcl:Creation](http://w3id.org/kgcl/Creation)
 
 
-[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Deletion],[Deletion]<has%20undo%200..1-++[Creation],[NodeCreation]uses%20-.->[Creation],[MappingCreation]uses%20-.->[Creation],[EdgeCreation]uses%20-.->[Creation],[ChangeMixin]^-[Creation],[NodeCreation],[MappingCreation],[EdgeCreation],[ChangeMixin])](https://yuml.me/diagram/nofunky;dir:TB/class/[Deletion],[Deletion]<has%20undo%200..1-++[Creation],[NodeCreation]uses%20-.->[Creation],[MappingCreation]uses%20-.->[Creation],[EdgeCreation]uses%20-.->[Creation],[ChangeMixin]^-[Creation],[NodeCreation],[MappingCreation],[EdgeCreation],[ChangeMixin])
+[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Deletion],[Deletion]<has_undo%200..1-++[Creation],[NodeCreation]uses%20-.->[Creation],[MappingCreation]uses%20-.->[Creation],[EdgeCreation]uses%20-.->[Creation],[ChangeMixin]^-[Creation],[NodeCreation],[MappingCreation],[EdgeCreation],[ChangeMixin])](https://yuml.me/diagram/nofunky;dir:TB/class/[Deletion],[Deletion]<has_undo%200..1-++[Creation],[NodeCreation]uses%20-.->[Creation],[MappingCreation]uses%20-.->[Creation],[EdgeCreation]uses%20-.->[Creation],[ChangeMixin]^-[Creation],[NodeCreation],[MappingCreation],[EdgeCreation],[ChangeMixin])
 
 ## Parents
 
@@ -27,6 +27,6 @@ URI: [kgcl:Creation](http://w3id.org/kgcl/Creation)
 
 ### Own
 
- * [creation➞has undo](creation_has_undo.md)  <sub>0..1</sub>
+ * [Creation➞has_undo](Creation_has_undo.md)  <sub>0..1</sub>
      * Description: A change that reverses this change
      * Range: [Deletion](Deletion.md)

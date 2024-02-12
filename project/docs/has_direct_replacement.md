@@ -1,5 +1,5 @@
 
-# Slot: has direct replacement
+# Slot: has_direct_replacement
 
 
 An obsoletion replacement where it IS valid to automatically update annotations/edges pointing at the node with its direct replacement
@@ -16,8 +16,8 @@ None &#8594;  <sub>0..1</sub> [Node](Node.md)
 
 ## Children
 
- *  [node direct merge➞has direct replacement](node_direct_merge_has_direct_replacement.md)
- *  [node obsoletion with direct replacement➞has direct replacement](node_obsoletion_with_direct_replacement_has_direct_replacement.md)
+ *  [NodeDirectMerge➞has_direct_replacement](NodeDirectMerge_has_direct_replacement.md)
+ *  [NodeObsoletionWithDirectReplacement➞has_direct_replacement](NodeObsoletionWithDirectReplacement_has_direct_replacement.md)
 
 ## Used by
 

@@ -21,6 +21,7 @@ message AddNodeToSubset
   string changeDate = 0
   string contributor = 0
   change hasUndo = 0
+  string termTrackerIssue = 0
   string oldValue = 0
   string newValue = 0
   string oldValueType = 0
@@ -57,7 +58,7 @@ message ChangeSetSummaryStatistic
   integer count = 0
  repeated  propertyValue propertyValueSet = 0
  }
-// A node creation where the owl type is 'class'
+// A node creation where the owl type is 'owl:Class'
 message ClassCreation
  {
   string id = 0
@@ -69,6 +70,7 @@ message ClassCreation
   string changeDate = 0
   string contributor = 0
   change hasUndo = 0
+  string termTrackerIssue = 0
   string oldValue = 0
   string newValue = 0
   string oldValueType = 0
@@ -107,6 +109,7 @@ message Configuration
   string obsoleteNodeLabelPrefix = 0
   string obsoletionWorkflow = 0
  repeated  obsoletionPolicyEnum obsoletionPolicies = 0
+  uriorcurie obsoleteSubclassOfShadowProperty = 0
  }
 // A relationship between two nodes.
 // Currently the only kinds of edges supported in KGCL:
@@ -116,7 +119,6 @@ message Configuration
 //   * P subPropertyOf Q <==> Edge(subject=P, predicate=owl:subPropertyOf, object=Q)
 // 
 // These represent the most common kind of pairwise relationship between classes, and classes are the dominant node type in ontologies.
-//   
 // In future a wider variety of OWL axiom types will be supportedn through the use of an additional edge property/slot to indicate the interpretation of the axiom, following owlstar (https://github.com/cmungall/owlstar).
 // For example:
 //  * `A subClassOf R only B <==> Edge(subject=A, predicate=P, object=B, interpretation=AllOnly)`
@@ -145,6 +147,7 @@ message EdgeCreation
   string changeDate = 0
   string contributor = 0
   change hasUndo = 0
+  string termTrackerIssue = 0
   string oldValue = 0
   string newValue = 0
   string oldValueType = 0
@@ -177,6 +180,7 @@ message EdgeDeletion
   string changeDate = 0
   string contributor = 0
   change hasUndo = 0
+  string termTrackerIssue = 0
   string oldValue = 0
   string newValue = 0
   string oldValueType = 0
@@ -197,7 +201,7 @@ message EdgeDeletion
   annotation annotationSet = 0
   string changeDescription = 0
  }
-// An edge change where the subjet, object, and predicate are unchanged, but the logical interpretation changes
+// An edge change where the subject, object, and predicate are unchanged, but the logical interpretation changes
 message EdgeLogicalInterpretationChange
  {
   string id = 0
@@ -209,6 +213,7 @@ message EdgeLogicalInterpretationChange
   string changeDate = 0
   string contributor = 0
   change hasUndo = 0
+  string termTrackerIssue = 0
   string oldValue = 0
   string newValue = 0
   string oldValueType = 0
@@ -235,6 +240,7 @@ message EdgeObsoletion
   string changeDate = 0
   string contributor = 0
   change hasUndo = 0
+  string termTrackerIssue = 0
   string oldValue = 0
   string newValue = 0
   string oldValueType = 0
@@ -266,6 +272,7 @@ message EdgeRewiring
   string changeDate = 0
   string contributor = 0
   change hasUndo = 0
+  string termTrackerIssue = 0
   string oldValue = 0
   string newValue = 0
   string oldValueType = 0
@@ -305,6 +312,7 @@ message LogicalAxiomChange
   string changeDate = 0
   string contributor = 0
   change hasUndo = 0
+  string termTrackerIssue = 0
   string oldValue = 0
   string newValue = 0
   string oldValueType = 0
@@ -326,6 +334,7 @@ message MappingCreation
   string changeDate = 0
   string contributor = 0
   change hasUndo = 0
+  string termTrackerIssue = 0
   string oldValue = 0
   string newValue = 0
   string oldValueType = 0
@@ -358,6 +367,7 @@ message MappingPredicateChange
   string changeDate = 0
   string contributor = 0
   change hasUndo = 0
+  string termTrackerIssue = 0
   string oldValueType = 0
   string newValueType = 0
   string newLanguage = 0
@@ -382,6 +392,7 @@ message MappingReplacement
   string changeDate = 0
   string contributor = 0
   change hasUndo = 0
+  string termTrackerIssue = 0
   string oldValueType = 0
   string newValueType = 0
   string newLanguage = 0
@@ -406,6 +417,7 @@ message MetadataAssertionPredicateChange
   string changeDate = 0
   string contributor = 0
   change hasUndo = 0
+  string termTrackerIssue = 0
   string oldValueType = 0
   string newValueType = 0
   string newLanguage = 0
@@ -430,6 +442,7 @@ message MetadataAssertionReplacement
   string changeDate = 0
   string contributor = 0
   change hasUndo = 0
+  string termTrackerIssue = 0
   string oldValueType = 0
   string newValueType = 0
   string newLanguage = 0
@@ -454,6 +467,7 @@ message MultiNodeObsoletion
   string changeDate = 0
   string contributor = 0
   change hasUndo = 0
+  string termTrackerIssue = 0
  repeated  nodeObsoletion changeSet = 0
   string changeDescription = 0
  repeated  change associatedChangeSet = 0
@@ -470,6 +484,7 @@ message NameBecomesSynonym
   string changeDate = 0
   string contributor = 0
   change hasUndo = 0
+  string termTrackerIssue = 0
   string oldValue = 0
   string newValue = 0
   string oldValueType = 0
@@ -497,6 +512,7 @@ message NewMapping
   string changeDate = 0
   string contributor = 0
   change hasUndo = 0
+  string termTrackerIssue = 0
   string oldValue = 0
   string newValue = 0
   string oldValueType = 0
@@ -523,6 +539,7 @@ message NewMetadataAssertion
   string changeDate = 0
   string contributor = 0
   change hasUndo = 0
+  string termTrackerIssue = 0
   string oldValue = 0
   string newValue = 0
   string oldValueType = 0
@@ -549,6 +566,7 @@ message NewSynonym
   string changeDate = 0
   string contributor = 0
   change hasUndo = 0
+  string termTrackerIssue = 0
   string oldValue = 0
   string oldValueType = 0
   string newValueType = 0
@@ -574,6 +592,7 @@ message NewTextDefinition
   string changeDate = 0
   string contributor = 0
   change hasUndo = 0
+  string termTrackerIssue = 0
   string oldValue = 0
   string oldValueType = 0
   string newValueType = 0
@@ -606,6 +625,7 @@ message NodeAnnotationChange
   string changeDate = 0
   string contributor = 0
   change hasUndo = 0
+  string termTrackerIssue = 0
   string oldValue = 0
   string newValue = 0
   string oldValueType = 0
@@ -632,6 +652,7 @@ message NodeAnnotationReplacement
   string changeDate = 0
   string contributor = 0
   change hasUndo = 0
+  string termTrackerIssue = 0
   string oldValue = 0
   string newValue = 0
   string oldValueType = 0
@@ -658,6 +679,7 @@ message NodeCreation
   string changeDate = 0
   string contributor = 0
   change hasUndo = 0
+  string termTrackerIssue = 0
   string oldValue = 0
   string newValue = 0
   string oldValueType = 0
@@ -687,6 +709,7 @@ message NodeDeepening
   string changeDate = 0
   string contributor = 0
   change hasUndo = 0
+  string termTrackerIssue = 0
   string oldValue = 0
   string newValue = 0
   string oldValueType = 0
@@ -716,6 +739,7 @@ message NodeDeletion
   string changeDate = 0
   string contributor = 0
   change hasUndo = 0
+  string termTrackerIssue = 0
   string oldValue = 0
   string newValue = 0
   string oldValueType = 0
@@ -741,6 +765,7 @@ message NodeDirectMerge
   string changeDate = 0
   string contributor = 0
   change hasUndo = 0
+  string termTrackerIssue = 0
   string oldValue = 0
   string newValue = 0
   string oldValueType = 0
@@ -770,6 +795,7 @@ message NodeMappingChange
   string changeDate = 0
   string contributor = 0
   change hasUndo = 0
+  string termTrackerIssue = 0
   string oldValue = 0
   string newValue = 0
   string oldValueType = 0
@@ -794,6 +820,7 @@ message NodeMetadataAssertionChange
   string changeDate = 0
   string contributor = 0
   change hasUndo = 0
+  string termTrackerIssue = 0
   string oldValue = 0
   string newValue = 0
   string oldValueType = 0
@@ -818,6 +845,7 @@ message NodeMove
   string changeDate = 0
   string contributor = 0
   change hasUndo = 0
+  string termTrackerIssue = 0
   string oldValue = 0
   string newValue = 0
   string oldValueType = 0
@@ -847,6 +875,7 @@ message NodeObsoletion
   string changeDate = 0
   string contributor = 0
   change hasUndo = 0
+  string termTrackerIssue = 0
   string oldValue = 0
   string newValue = 0
   string oldValueType = 0
@@ -876,6 +905,7 @@ message NodeObsoletionWithDirectReplacement
   string changeDate = 0
   string contributor = 0
   change hasUndo = 0
+  string termTrackerIssue = 0
   string oldValue = 0
   string newValue = 0
   string oldValueType = 0
@@ -905,6 +935,7 @@ message NodeObsoletionWithNoDirectReplacement
   string changeDate = 0
   string contributor = 0
   change hasUndo = 0
+  string termTrackerIssue = 0
   string oldValue = 0
   string newValue = 0
   string oldValueType = 0
@@ -934,6 +965,7 @@ message NodeRename
   string changeDate = 0
   string contributor = 0
   change hasUndo = 0
+  string termTrackerIssue = 0
   string oldValueType = 0
   string newValueType = 0
   string newDatatype = 0
@@ -960,6 +992,7 @@ message NodeShallowing
   string changeDate = 0
   string contributor = 0
   change hasUndo = 0
+  string termTrackerIssue = 0
   string oldValue = 0
   string newValue = 0
   string oldValueType = 0
@@ -988,6 +1021,7 @@ message NodeSynonymChange
   string changeDate = 0
   string contributor = 0
   change hasUndo = 0
+  string termTrackerIssue = 0
   string oldValue = 0
   string newValue = 0
   string oldValueType = 0
@@ -1012,6 +1046,7 @@ message NodeUnobsoletion
   string changeDate = 0
   string contributor = 0
   change hasUndo = 0
+  string termTrackerIssue = 0
   string oldValue = 0
   string newValue = 0
   string oldValueType = 0
@@ -1027,6 +1062,36 @@ message NodeUnobsoletion
   node replacedBy = 0
   node consider = 0
  }
+// A node creation where the owl type is 'ObjectProperty'
+message ObjectPropertyCreation
+ {
+  string id = 0
+  string type = 0
+  activity wasGeneratedBy = 0
+  string seeAlso = 0
+  string pullRequest = 0
+  string creator = 0
+  string changeDate = 0
+  string contributor = 0
+  change hasUndo = 0
+  string termTrackerIssue = 0
+  string oldValue = 0
+  string newValue = 0
+  string oldValueType = 0
+  string newValueType = 0
+  string newLanguage = 0
+  string oldLanguage = 0
+  string newDatatype = 0
+  string oldDatatype = 0
+  node aboutNode = 0
+  string aboutNodeRepresentation = 0
+  node nodeId = 0
+  string name = 0
+  owlTypeEnum owlType = 0
+  annotation annotationSet = 0
+  languageTag language = 0
+  string changeDescription = 0
+ }
 // An edge creation where the predicate is owl:subClassOf
 message PlaceUnder
  {
@@ -1039,6 +1104,7 @@ message PlaceUnder
   string changeDate = 0
   string contributor = 0
   change hasUndo = 0
+  string termTrackerIssue = 0
   string oldValue = 0
   string newValue = 0
   string oldValueType = 0
@@ -1071,6 +1137,7 @@ message PredicateChange
   string changeDate = 0
   string contributor = 0
   change hasUndo = 0
+  string termTrackerIssue = 0
   string oldValue = 0
   string newValue = 0
   string oldValueType = 0
@@ -1104,6 +1171,7 @@ message RemoveMapping
   string changeDate = 0
   string contributor = 0
   change hasUndo = 0
+  string termTrackerIssue = 0
   string oldValue = 0
   string newValue = 0
   string oldValueType = 0
@@ -1130,6 +1198,7 @@ message RemoveMetadataAssertion
   string changeDate = 0
   string contributor = 0
   change hasUndo = 0
+  string termTrackerIssue = 0
   string oldValue = 0
   string newValue = 0
   string oldValueType = 0
@@ -1156,6 +1225,7 @@ message RemoveNodeFromSubset
   string changeDate = 0
   string contributor = 0
   change hasUndo = 0
+  string termTrackerIssue = 0
   string oldValue = 0
   string newValue = 0
   string oldValueType = 0
@@ -1183,6 +1253,7 @@ message RemoveSynonym
   string changeDate = 0
   string contributor = 0
   change hasUndo = 0
+  string termTrackerIssue = 0
   string newValue = 0
   string oldValueType = 0
   string newValueType = 0
@@ -1207,6 +1278,7 @@ message RemoveTextDefinition
   string changeDate = 0
   string contributor = 0
   change hasUndo = 0
+  string termTrackerIssue = 0
   string newValue = 0
   string oldValueType = 0
   string newValueType = 0
@@ -1232,6 +1304,7 @@ message RemoveUnder
   string changeDate = 0
   string contributor = 0
   change hasUndo = 0
+  string termTrackerIssue = 0
   string oldValue = 0
   string newValue = 0
   string oldValueType = 0
@@ -1270,6 +1343,7 @@ message SetLanguageForName
   string changeDate = 0
   string contributor = 0
   change hasUndo = 0
+  string termTrackerIssue = 0
   string oldValueType = 0
   string newValueType = 0
   string newLanguage = 0
@@ -1295,6 +1369,7 @@ message SynonymPredicateChange
   string changeDate = 0
   string contributor = 0
   change hasUndo = 0
+  string termTrackerIssue = 0
   string oldValueType = 0
   string newValueType = 0
   string newLanguage = 0
@@ -1320,6 +1395,7 @@ message SynonymReplacement
   string changeDate = 0
   string contributor = 0
   change hasUndo = 0
+  string termTrackerIssue = 0
   string oldValueType = 0
   string newValueType = 0
   string newLanguage = 0
@@ -1345,6 +1421,7 @@ message TextDefinitionReplacement
   string changeDate = 0
   string contributor = 0
   change hasUndo = 0
+  string termTrackerIssue = 0
   string oldValueType = 0
   string newValueType = 0
   string newLanguage = 0
@@ -1370,5 +1447,6 @@ message Transaction
   string changeDate = 0
   string contributor = 0
   change hasUndo = 0
+  string termTrackerIssue = 0
  repeated  change changeSet = 0
  }

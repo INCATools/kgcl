@@ -1,5 +1,5 @@
 
-# Slot: new property
+# Slot: new_property
 
 
 The new property of an OWL restriction

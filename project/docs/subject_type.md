@@ -1,5 +1,5 @@
 
-# Slot: ~~subject type~~ _(deprecated)_
+# Slot: ~~subject_type~~ _(deprecated)_
 
 
 The type (IRI or Literal) of an edge's subject

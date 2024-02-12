@@ -1,5 +1,5 @@
 
-# Slot: ~~filler type~~ _(deprecated)_
+# Slot: ~~filler_type~~ _(deprecated)_
 
 
 
