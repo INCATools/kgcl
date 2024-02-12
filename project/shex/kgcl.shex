@@ -208,7 +208,8 @@ om:ClassNode CLOSED {
           <contributor_predicate> @linkml:String ? ;
           <obsolete_node_label_prefix> @linkml:String ? ;
           <obsoletion_workflow> @linkml:String ? ;
-          <obsoletion_policies> @<ObsoletionPolicyEnum> * ;
+          <obsoletion_policies> [ <http://w3id.org/kgcl/ObsoletionPolicyEnum#NoLogicalAxiomsOnObsoletes>
+             <http://w3id.org/kgcl/ObsoletionPolicyEnum#ObsoleteLabelsArePrefixed> ] * ;
           <obsolete_subclass_of_shadow_property> @linkml:Uriorcurie ?
        ) ;
        rdf:type [ <Configuration> ] ?
@@ -500,7 +501,7 @@ om:Node  (
              rdf:type [ om:OntologyElement ] ? ;
              om:name @linkml:String ? ;
              om:annotation_set @om:Annotation ? ;
-             om:owl_type @om:OwlTypeEnum ?
+             om:owl_type [ owl:Class owl:ObjectProperty owl:NamedIndividual ] ?
           ) ;
           rdf:type [ om:Node ]
        )
@@ -552,7 +553,7 @@ om:Node  (
              rdf:type [ <Creation> ] ? ;
              <node_id> @om:Node ? ;
              om:name @linkml:String ? ;
-             om:owl_type @om:OwlTypeEnum ? ;
+             om:owl_type [ owl:Class owl:ObjectProperty owl:NamedIndividual ] ? ;
              om:annotation_set @om:Annotation ? ;
              <change_description> @linkml:String ?
           ) ;

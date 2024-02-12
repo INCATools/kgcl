@@ -1,5 +1,5 @@
 # Auto generated from kgcl.yaml by pythongen.py version: 0.0.1
-# Generation date: 2024-02-12T15:41:10
+# Generation date: 2024-02-12T15:48:06
 # Schema: kgcl_schema
 #
 # id: https://w3id.org/kgcl
@@ -2340,6 +2340,7 @@ class NodeDirectMerge(NodeObsoletion):
 
     id: Union[str, NodeDirectMergeId] = None
     has_direct_replacement: Union[str, NodeId] = None
+    about: Optional[Union[dict, "OntologyElement"]] = None
     about_node: Optional[Union[str, NodeId]] = None
     change_description: Optional[str] = None
 
@@ -2353,6 +2354,9 @@ class NodeDirectMerge(NodeObsoletion):
             self.MissingRequiredField("has_direct_replacement")
         if not isinstance(self.has_direct_replacement, NodeId):
             self.has_direct_replacement = NodeId(self.has_direct_replacement)
+
+        if self.about is not None and not isinstance(self.about, OntologyElement):
+            self.about = OntologyElement()
 
         if self.about_node is not None and not isinstance(self.about_node, NodeId):
             self.about_node = NodeId(self.about_node)
@@ -2379,6 +2383,7 @@ class NodeObsoletionWithDirectReplacement(NodeObsoletion):
 
     id: Union[str, NodeObsoletionWithDirectReplacementId] = None
     has_direct_replacement: Union[str, NodeId] = None
+    about: Optional[Union[dict, "OntologyElement"]] = None
     change_description: Optional[str] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
@@ -2391,6 +2396,9 @@ class NodeObsoletionWithDirectReplacement(NodeObsoletion):
             self.MissingRequiredField("has_direct_replacement")
         if not isinstance(self.has_direct_replacement, NodeId):
             self.has_direct_replacement = NodeId(self.has_direct_replacement)
+
+        if self.about is not None and not isinstance(self.about, OntologyElement):
+            self.about = OntologyElement()
 
         if self.change_description is not None and not isinstance(self.change_description, str):
             self.change_description = str(self.change_description)
