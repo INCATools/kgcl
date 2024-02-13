@@ -217,7 +217,7 @@
 
       ComplexChange : change_set
 
-          ComplexChange --|&gt; Change : change_set
+          ComplexChange --&gt; Change : change_set
 
       ComplexChange : contributor
 
@@ -225,7 +225,7 @@
 
       ComplexChange : has_undo
 
-          ComplexChange --|&gt; Change : has_undo
+          ComplexChange --&gt; Change : has_undo
 
       ComplexChange : id
 
@@ -237,7 +237,7 @@
 
       ComplexChange : was_generated_by
 
-          ComplexChange --|&gt; Activity : was_generated_by
+          ComplexChange --&gt; Activity : was_generated_by
 
 
 </div>

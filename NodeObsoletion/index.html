@@ -230,7 +230,7 @@
 
       NodeObsoletion : about_node
 
-          NodeObsoletion --|&gt; Node : about_node
+          NodeObsoletion --&gt; Node : about_node
 
       NodeObsoletion : about_node_representation
 
@@ -242,15 +242,15 @@
 
       NodeObsoletion : has_direct_replacement
 
-          NodeObsoletion --|&gt; Node : has_direct_replacement
+          NodeObsoletion --&gt; Node : has_direct_replacement
 
       NodeObsoletion : has_nondirect_replacement
 
-          NodeObsoletion --|&gt; Node : has_nondirect_replacement
+          NodeObsoletion --&gt; Node : has_nondirect_replacement
 
       NodeObsoletion : has_undo
 
-          NodeObsoletion --|&gt; Obsoletion : has_undo
+          NodeObsoletion --&gt; Obsoletion : has_undo
 
       NodeObsoletion : id
 
@@ -280,7 +280,7 @@
 
       NodeObsoletion : was_generated_by
 
-          NodeObsoletion --|&gt; Activity : was_generated_by
+          NodeObsoletion --&gt; Activity : was_generated_by
 
 
 </div>

@@ -214,7 +214,7 @@
 
       RemoveNodeFromSubset : about_node
 
-          RemoveNodeFromSubset --|&gt; Node : about_node
+          RemoveNodeFromSubset --&gt; Node : about_node
 
       RemoveNodeFromSubset : about_node_representation
 
@@ -226,13 +226,13 @@
 
       RemoveNodeFromSubset : has_undo
 
-          RemoveNodeFromSubset --|&gt; AddToSubset : has_undo
+          RemoveNodeFromSubset --&gt; AddToSubset : has_undo
 
       RemoveNodeFromSubset : id
 
       RemoveNodeFromSubset : in_subset
 
-          RemoveNodeFromSubset --|&gt; OntologySubset : in_subset
+          RemoveNodeFromSubset --&gt; OntologySubset : in_subset
 
       RemoveNodeFromSubset : language
 
@@ -260,7 +260,7 @@
 
       RemoveNodeFromSubset : was_generated_by
 
-          RemoveNodeFromSubset --|&gt; Activity : was_generated_by
+          RemoveNodeFromSubset --&gt; Activity : was_generated_by
 
 
 </div>

@@ -224,13 +224,13 @@
 
       NodeCreation : about_node
 
-          NodeCreation --|&gt; Node : about_node
+          NodeCreation --&gt; Node : about_node
 
       NodeCreation : about_node_representation
 
       NodeCreation : annotation_set
 
-          NodeCreation --|&gt; Annotation : annotation_set
+          NodeCreation --&gt; Annotation : annotation_set
 
       NodeCreation : change_date
 
@@ -240,7 +240,7 @@
 
       NodeCreation : has_undo
 
-          NodeCreation --|&gt; Deletion : has_undo
+          NodeCreation --&gt; Deletion : has_undo
 
       NodeCreation : id
 
@@ -258,7 +258,7 @@
 
       NodeCreation : node_id
 
-          NodeCreation --|&gt; Node : node_id
+          NodeCreation --&gt; Node : node_id
 
       NodeCreation : old_datatype
 
@@ -270,7 +270,7 @@
 
       NodeCreation : owl_type
 
-          NodeCreation --|&gt; OwlTypeEnum : owl_type
+          NodeCreation --&gt; OwlTypeEnum : owl_type
 
       NodeCreation : pull_request
 
@@ -280,7 +280,7 @@
 
       NodeCreation : was_generated_by
 
-          NodeCreation --|&gt; Activity : was_generated_by
+          NodeCreation --&gt; Activity : was_generated_by
 
 
 </div>

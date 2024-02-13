@@ -219,7 +219,7 @@
 
       NodeDirectMerge : about_node
 
-          NodeDirectMerge --|&gt; Node : about_node
+          NodeDirectMerge --&gt; Node : about_node
 
       NodeDirectMerge : about_node_representation
 
@@ -231,15 +231,15 @@
 
       NodeDirectMerge : has_direct_replacement
 
-          NodeDirectMerge --|&gt; Node : has_direct_replacement
+          NodeDirectMerge --&gt; Node : has_direct_replacement
 
       NodeDirectMerge : has_nondirect_replacement
 
-          NodeDirectMerge --|&gt; Node : has_nondirect_replacement
+          NodeDirectMerge --&gt; Node : has_nondirect_replacement
 
       NodeDirectMerge : has_undo
 
-          NodeDirectMerge --|&gt; Obsoletion : has_undo
+          NodeDirectMerge --&gt; Obsoletion : has_undo
 
       NodeDirectMerge : id
 
@@ -269,7 +269,7 @@
 
       NodeDirectMerge : was_generated_by
 
-          NodeDirectMerge --|&gt; Activity : was_generated_by
+          NodeDirectMerge --&gt; Activity : was_generated_by
 
 
 </div>

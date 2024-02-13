@@ -208,11 +208,11 @@
 
       PlaceUnder : about_edge
 
-          PlaceUnder --|&gt; Edge : about_edge
+          PlaceUnder --&gt; Edge : about_edge
 
       PlaceUnder : annotation_set
 
-          PlaceUnder --|&gt; Annotation : annotation_set
+          PlaceUnder --&gt; Annotation : annotation_set
 
       PlaceUnder : change_date
 
@@ -224,7 +224,7 @@
 
       PlaceUnder : has_undo
 
-          PlaceUnder --|&gt; Deletion : has_undo
+          PlaceUnder --&gt; Deletion : has_undo
 
       PlaceUnder : id
 
@@ -240,7 +240,7 @@
 
       PlaceUnder : object
 
-          PlaceUnder --|&gt; Node : object
+          PlaceUnder --&gt; Node : object
 
       PlaceUnder : object_type
 
@@ -254,7 +254,7 @@
 
       PlaceUnder : predicate
 
-          PlaceUnder --|&gt; Node : predicate
+          PlaceUnder --&gt; Node : predicate
 
       PlaceUnder : predicate_type
 
@@ -264,7 +264,7 @@
 
       PlaceUnder : subject
 
-          PlaceUnder --|&gt; Node : subject
+          PlaceUnder --&gt; Node : subject
 
       PlaceUnder : subject_type
 
@@ -272,7 +272,7 @@
 
       PlaceUnder : was_generated_by
 
-          PlaceUnder --|&gt; Activity : was_generated_by
+          PlaceUnder --&gt; Activity : was_generated_by
 
 
 </div>

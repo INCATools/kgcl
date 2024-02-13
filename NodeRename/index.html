@@ -213,7 +213,7 @@
 
       NodeRename : about_node
 
-          NodeRename --|&gt; Node : about_node
+          NodeRename --&gt; Node : about_node
 
       NodeRename : about_node_representation
 
@@ -225,11 +225,11 @@
 
       NodeRename : has_textual_diff
 
-          NodeRename --|&gt; TextualDiff : has_textual_diff
+          NodeRename --&gt; TextualDiff : has_textual_diff
 
       NodeRename : has_undo
 
-          NodeRename --|&gt; Change : has_undo
+          NodeRename --&gt; Change : has_undo
 
       NodeRename : id
 
@@ -259,7 +259,7 @@
 
       NodeRename : was_generated_by
 
-          NodeRename --|&gt; Activity : was_generated_by
+          NodeRename --&gt; Activity : was_generated_by
 
 
 </div>

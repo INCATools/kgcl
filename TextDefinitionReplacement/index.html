@@ -208,7 +208,7 @@
 
       TextDefinitionReplacement : about_node
 
-          TextDefinitionReplacement --|&gt; Node : about_node
+          TextDefinitionReplacement --&gt; Node : about_node
 
       TextDefinitionReplacement : about_node_representation
 
@@ -220,11 +220,11 @@
 
       TextDefinitionReplacement : has_textual_diff
 
-          TextDefinitionReplacement --|&gt; TextualDiff : has_textual_diff
+          TextDefinitionReplacement --&gt; TextualDiff : has_textual_diff
 
       TextDefinitionReplacement : has_undo
 
-          TextDefinitionReplacement --|&gt; Change : has_undo
+          TextDefinitionReplacement --&gt; Change : has_undo
 
       TextDefinitionReplacement : id
 
@@ -254,7 +254,7 @@
 
       TextDefinitionReplacement : was_generated_by
 
-          TextDefinitionReplacement --|&gt; Activity : was_generated_by
+          TextDefinitionReplacement --&gt; Activity : was_generated_by
 
 
 </div>

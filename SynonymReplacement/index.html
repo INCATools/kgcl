@@ -208,7 +208,7 @@
 
       SynonymReplacement : about_node
 
-          SynonymReplacement --|&gt; Node : about_node
+          SynonymReplacement --&gt; Node : about_node
 
       SynonymReplacement : about_node_representation
 
@@ -220,11 +220,11 @@
 
       SynonymReplacement : has_textual_diff
 
-          SynonymReplacement --|&gt; TextualDiff : has_textual_diff
+          SynonymReplacement --&gt; TextualDiff : has_textual_diff
 
       SynonymReplacement : has_undo
 
-          SynonymReplacement --|&gt; Change : has_undo
+          SynonymReplacement --&gt; Change : has_undo
 
       SynonymReplacement : id
 
@@ -254,7 +254,7 @@
 
       SynonymReplacement : was_generated_by
 
-          SynonymReplacement --|&gt; Activity : was_generated_by
+          SynonymReplacement --&gt; Activity : was_generated_by
 
 
 </div>

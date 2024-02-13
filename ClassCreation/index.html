@@ -208,13 +208,13 @@
 
       ClassCreation : about_node
 
-          ClassCreation --|&gt; Node : about_node
+          ClassCreation --&gt; Node : about_node
 
       ClassCreation : about_node_representation
 
       ClassCreation : annotation_set
 
-          ClassCreation --|&gt; Annotation : annotation_set
+          ClassCreation --&gt; Annotation : annotation_set
 
       ClassCreation : change_date
 
@@ -224,7 +224,7 @@
 
       ClassCreation : has_undo
 
-          ClassCreation --|&gt; Deletion : has_undo
+          ClassCreation --&gt; Deletion : has_undo
 
       ClassCreation : id
 
@@ -242,7 +242,7 @@
 
       ClassCreation : node_id
 
-          ClassCreation --|&gt; Node : node_id
+          ClassCreation --&gt; Node : node_id
 
       ClassCreation : old_datatype
 
@@ -254,7 +254,7 @@
 
       ClassCreation : owl_type
 
-          ClassCreation --|&gt; OwlTypeEnum : owl_type
+          ClassCreation --&gt; OwlTypeEnum : owl_type
 
       ClassCreation : pull_request
 
@@ -262,13 +262,13 @@
 
       ClassCreation : superclass
 
-          ClassCreation --|&gt; Node : superclass
+          ClassCreation --&gt; Node : superclass
 
       ClassCreation : type
 
       ClassCreation : was_generated_by
 
-          ClassCreation --|&gt; Activity : was_generated_by
+          ClassCreation --&gt; Activity : was_generated_by
 
 
 </div>

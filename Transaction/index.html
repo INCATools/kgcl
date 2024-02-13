@@ -210,7 +210,7 @@
 
       Transaction : change_set
 
-          Transaction --|&gt; Change : change_set
+          Transaction --&gt; Change : change_set
 
       Transaction : contributor
 
@@ -218,7 +218,7 @@
 
       Transaction : has_undo
 
-          Transaction --|&gt; Change : has_undo
+          Transaction --&gt; Change : has_undo
 
       Transaction : id
 
@@ -230,7 +230,7 @@
 
       Transaction : was_generated_by
 
-          Transaction --|&gt; Activity : was_generated_by
+          Transaction --&gt; Activity : was_generated_by
 
 
 </div>

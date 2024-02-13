@@ -213,7 +213,7 @@
 
       SynonymPredicateChange : about_node
 
-          SynonymPredicateChange --|&gt; Node : about_node
+          SynonymPredicateChange --&gt; Node : about_node
 
       SynonymPredicateChange : about_node_representation
 
@@ -225,11 +225,11 @@
 
       SynonymPredicateChange : has_textual_diff
 
-          SynonymPredicateChange --|&gt; TextualDiff : has_textual_diff
+          SynonymPredicateChange --&gt; TextualDiff : has_textual_diff
 
       SynonymPredicateChange : has_undo
 
-          SynonymPredicateChange --|&gt; Change : has_undo
+          SynonymPredicateChange --&gt; Change : has_undo
 
       SynonymPredicateChange : id
 
@@ -259,7 +259,7 @@
 
       SynonymPredicateChange : was_generated_by
 
-          SynonymPredicateChange --|&gt; Activity : was_generated_by
+          SynonymPredicateChange --&gt; Activity : was_generated_by
 
 
 </div>

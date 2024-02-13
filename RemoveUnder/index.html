@@ -209,11 +209,11 @@
 
       RemoveUnder : about_edge
 
-          RemoveUnder --|&gt; Edge : about_edge
+          RemoveUnder --&gt; Edge : about_edge
 
       RemoveUnder : annotation_set
 
-          RemoveUnder --|&gt; Annotation : annotation_set
+          RemoveUnder --&gt; Annotation : annotation_set
 
       RemoveUnder : change_date
 
@@ -225,7 +225,7 @@
 
       RemoveUnder : has_undo
 
-          RemoveUnder --|&gt; Change : has_undo
+          RemoveUnder --&gt; Change : has_undo
 
       RemoveUnder : id
 
@@ -241,7 +241,7 @@
 
       RemoveUnder : object
 
-          RemoveUnder --|&gt; Node : object
+          RemoveUnder --&gt; Node : object
 
       RemoveUnder : object_type
 
@@ -255,7 +255,7 @@
 
       RemoveUnder : predicate
 
-          RemoveUnder --|&gt; Node : predicate
+          RemoveUnder --&gt; Node : predicate
 
       RemoveUnder : predicate_type
 
@@ -265,7 +265,7 @@
 
       RemoveUnder : subject
 
-          RemoveUnder --|&gt; Node : subject
+          RemoveUnder --&gt; Node : subject
 
       RemoveUnder : subject_type
 
@@ -273,7 +273,7 @@
 
       RemoveUnder : was_generated_by
 
-          RemoveUnder --|&gt; Activity : was_generated_by
+          RemoveUnder --&gt; Activity : was_generated_by
 
 
 </div>
@@ -341,7 +341,7 @@
 <td><a href="../object_type/">object_type</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
 <td>The type (IRI or Literal) of an object</td>
-<td><a href="../EdgeDeletion/">EdgeDeletion</a>, <a href="../EdgeChange/">EdgeChange</a></td>
+<td><a href="../EdgeChange/">EdgeChange</a>, <a href="../EdgeDeletion/">EdgeDeletion</a></td>
 </tr>
 <tr>
 <td><a href="../annotation_set/">annotation_set</a></td>
