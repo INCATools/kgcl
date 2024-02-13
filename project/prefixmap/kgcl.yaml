@@ -43,5 +43,8 @@
    },
    "PropertyValue": {
       "@id": "om:PropertyValue"
+   },
+   "ProvElement": {
+      "@id": "prov:ProvElement"
    }
 }

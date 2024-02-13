@@ -1,6 +1,6 @@
 
 
-CREATE TABLE activity (
+CREATE TABLE "Activity" (
 	id TEXT NOT NULL, 
 	started_at_time TEXT, 
 	ended_at_time TEXT, 
@@ -9,27 +9,27 @@ CREATE TABLE activity (
 	used TEXT, 
 	description TEXT, 
 	PRIMARY KEY (id), 
-	FOREIGN KEY(was_informed_by) REFERENCES activity (id), 
-	FOREIGN KEY(was_associated_with) REFERENCES agent (id)
+	FOREIGN KEY(was_informed_by) REFERENCES "Activity" (id), 
+	FOREIGN KEY(was_associated_with) REFERENCES "Agent" (id)
 );
 
-CREATE TABLE agent (
+CREATE TABLE "Agent" (
 	id TEXT NOT NULL, 
 	acted_on_behalf_of TEXT, 
 	was_informed_by TEXT, 
 	PRIMARY KEY (id), 
-	FOREIGN KEY(acted_on_behalf_of) REFERENCES agent (id), 
-	FOREIGN KEY(was_informed_by) REFERENCES activity (id)
+	FOREIGN KEY(acted_on_behalf_of) REFERENCES "Agent" (id), 
+	FOREIGN KEY(was_informed_by) REFERENCES "Activity" (id)
 );
 
-CREATE TABLE change_set_summary_statistic (
+CREATE TABLE "ChangeSetSummaryStatistic" (
 	change_type TEXT, 
 	count INTEGER, 
 	property_value_set TEXT, 
 	PRIMARY KEY (change_type, count, property_value_set)
 );
 
-CREATE TABLE class_node (
+CREATE TABLE "ClassNode" (
 	id TEXT NOT NULL, 
 	name TEXT, 
 	annotation_set TEXT, 
@@ -37,7 +37,7 @@ CREATE TABLE class_node (
 	PRIMARY KEY (id)
 );
 
-CREATE TABLE configuration (
+CREATE TABLE "Configuration" (
 	name_predicate TEXT, 
 	definition_predicate TEXT, 
 	main_synonym_predicate TEXT, 
@@ -47,10 +47,11 @@ CREATE TABLE configuration (
 	obsolete_node_label_prefix TEXT, 
 	obsoletion_workflow TEXT, 
 	obsoletion_policies VARCHAR(26), 
-	PRIMARY KEY (name_predicate, definition_predicate, main_synonym_predicate, synonym_predicates, creator_predicate, contributor_predicate, obsolete_node_label_prefix, obsoletion_workflow, obsoletion_policies)
+	obsolete_subclass_of_shadow_property TEXT, 
+	PRIMARY KEY (name_predicate, definition_predicate, main_synonym_predicate, synonym_predicates, creator_predicate, contributor_predicate, obsolete_node_label_prefix, obsoletion_workflow, obsoletion_policies, obsolete_subclass_of_shadow_property)
 );
 
-CREATE TABLE instance_node (
+CREATE TABLE "InstanceNode" (
 	id TEXT NOT NULL, 
 	name TEXT, 
 	annotation_set TEXT, 
@@ -58,13 +59,13 @@ CREATE TABLE instance_node (
 	PRIMARY KEY (id)
 );
 
-CREATE TABLE language_tag_change (
+CREATE TABLE "LanguageTagChange" (
 	old_value TEXT, 
 	new_value TEXT, 
 	PRIMARY KEY (old_value, new_value)
 );
 
-CREATE TABLE node (
+CREATE TABLE "Node" (
 	id TEXT NOT NULL, 
 	name TEXT, 
 	annotation_set TEXT, 
@@ -72,13 +73,13 @@ CREATE TABLE node (
 	PRIMARY KEY (id)
 );
 
-CREATE TABLE session (
+CREATE TABLE "Session" (
 	change_set TEXT, 
 	activity_set TEXT, 
 	PRIMARY KEY (change_set, activity_set)
 );
 
-CREATE TABLE add_node_to_subset (
+CREATE TABLE "AddNodeToSubset" (
 	id TEXT NOT NULL, 
 	type TEXT, 
 	was_generated_by TEXT, 
@@ -88,6 +89,7 @@ CREATE TABLE add_node_to_subset (
 	change_date TEXT, 
 	contributor TEXT, 
 	has_undo TEXT, 
+	term_tracker_issue TEXT, 
 	old_value TEXT, 
 	new_value TEXT, 
 	old_value_type TEXT, 
@@ -101,21 +103,21 @@ CREATE TABLE add_node_to_subset (
 	language TEXT, 
 	in_subset TEXT, 
 	PRIMARY KEY (id), 
-	FOREIGN KEY(was_generated_by) REFERENCES activity (id), 
-	FOREIGN KEY(about_node) REFERENCES node (id)
+	FOREIGN KEY(was_generated_by) REFERENCES "Activity" (id), 
+	FOREIGN KEY(about_node) REFERENCES "Node" (id)
 );
 
-CREATE TABLE annotation (
+CREATE TABLE "Annotation" (
 	property TEXT, 
 	filler TEXT, 
 	annotation_set TEXT, 
 	property_type TEXT, 
 	filler_type TEXT, 
 	PRIMARY KEY (property, filler, annotation_set, property_type, filler_type), 
-	FOREIGN KEY(property) REFERENCES node (id)
+	FOREIGN KEY(property) REFERENCES "Node" (id)
 );
 
-CREATE TABLE class_creation (
+CREATE TABLE "ClassCreation" (
 	id TEXT NOT NULL, 
 	type TEXT, 
 	was_generated_by TEXT, 
@@ -125,6 +127,7 @@ CREATE TABLE class_creation (
 	change_date TEXT, 
 	contributor TEXT, 
 	has_undo TEXT, 
+	term_tracker_issue TEXT, 
 	old_value TEXT, 
 	new_value TEXT, 
 	old_value_type TEXT, 
@@ -143,13 +146,13 @@ CREATE TABLE class_creation (
 	superclass TEXT, 
 	change_description TEXT, 
 	PRIMARY KEY (id), 
-	FOREIGN KEY(was_generated_by) REFERENCES activity (id), 
-	FOREIGN KEY(about_node) REFERENCES node (id), 
-	FOREIGN KEY(node_id) REFERENCES node (id), 
-	FOREIGN KEY(superclass) REFERENCES node (id)
+	FOREIGN KEY(was_generated_by) REFERENCES "Activity" (id), 
+	FOREIGN KEY(about_node) REFERENCES "Node" (id), 
+	FOREIGN KEY(node_id) REFERENCES "Node" (id), 
+	FOREIGN KEY(superclass) REFERENCES "Node" (id)
 );
 
-CREATE TABLE edge (
+CREATE TABLE "Edge" (
 	subject TEXT, 
 	predicate TEXT, 
 	object TEXT, 
@@ -158,12 +161,12 @@ CREATE TABLE edge (
 	object_representation TEXT, 
 	annotation_set TEXT, 
 	PRIMARY KEY (subject, predicate, object, subject_representation, predicate_representation, object_representation, annotation_set), 
-	FOREIGN KEY(subject) REFERENCES node (id), 
-	FOREIGN KEY(predicate) REFERENCES node (id), 
-	FOREIGN KEY(object) REFERENCES node (id)
+	FOREIGN KEY(subject) REFERENCES "Node" (id), 
+	FOREIGN KEY(predicate) REFERENCES "Node" (id), 
+	FOREIGN KEY(object) REFERENCES "Node" (id)
 );
 
-CREATE TABLE edge_creation (
+CREATE TABLE "EdgeCreation" (
 	id TEXT NOT NULL, 
 	type TEXT, 
 	was_generated_by TEXT, 
@@ -173,6 +176,7 @@ CREATE TABLE edge_creation (
 	change_date TEXT, 
 	contributor TEXT, 
 	has_undo TEXT, 
+	term_tracker_issue TEXT, 
 	old_value TEXT, 
 	new_value TEXT, 
 	old_value_type TEXT, 
@@ -193,13 +197,13 @@ CREATE TABLE edge_creation (
 	annotation_set TEXT, 
 	change_description TEXT, 
 	PRIMARY KEY (id), 
-	FOREIGN KEY(was_generated_by) REFERENCES activity (id), 
-	FOREIGN KEY(subject) REFERENCES node (id), 
-	FOREIGN KEY(predicate) REFERENCES node (id), 
-	FOREIGN KEY(object) REFERENCES node (id)
+	FOREIGN KEY(was_generated_by) REFERENCES "Activity" (id), 
+	FOREIGN KEY(subject) REFERENCES "Node" (id), 
+	FOREIGN KEY(predicate) REFERENCES "Node" (id), 
+	FOREIGN KEY(object) REFERENCES "Node" (id)
 );
 
-CREATE TABLE edge_deletion (
+CREATE TABLE "EdgeDeletion" (
 	id TEXT NOT NULL, 
 	type TEXT, 
 	was_generated_by TEXT, 
@@ -209,6 +213,7 @@ CREATE TABLE edge_deletion (
 	change_date TEXT, 
 	contributor TEXT, 
 	has_undo TEXT, 
+	term_tracker_issue TEXT, 
 	old_value TEXT, 
 	new_value TEXT, 
 	old_value_type TEXT, 
@@ -229,13 +234,13 @@ CREATE TABLE edge_deletion (
 	annotation_set TEXT, 
 	change_description TEXT, 
 	PRIMARY KEY (id), 
-	FOREIGN KEY(was_generated_by) REFERENCES activity (id), 
-	FOREIGN KEY(subject) REFERENCES node (id), 
-	FOREIGN KEY(predicate) REFERENCES node (id), 
-	FOREIGN KEY(object) REFERENCES node (id)
+	FOREIGN KEY(was_generated_by) REFERENCES "Activity" (id), 
+	FOREIGN KEY(subject) REFERENCES "Node" (id), 
+	FOREIGN KEY(predicate) REFERENCES "Node" (id), 
+	FOREIGN KEY(object) REFERENCES "Node" (id)
 );
 
-CREATE TABLE edge_logical_interpretation_change (
+CREATE TABLE "EdgeLogicalInterpretationChange" (
 	id TEXT NOT NULL, 
 	type TEXT, 
 	was_generated_by TEXT, 
@@ -245,6 +250,7 @@ CREATE TABLE edge_logical_interpretation_change (
 	change_date TEXT, 
 	contributor TEXT, 
 	has_undo TEXT, 
+	term_tracker_issue TEXT, 
 	old_value TEXT, 
 	new_value TEXT, 
 	old_value_type TEXT, 
@@ -259,11 +265,11 @@ CREATE TABLE edge_logical_interpretation_change (
 	datatype TEXT, 
 	subject TEXT, 
 	PRIMARY KEY (id), 
-	FOREIGN KEY(was_generated_by) REFERENCES activity (id), 
-	FOREIGN KEY(subject) REFERENCES node (id)
+	FOREIGN KEY(was_generated_by) REFERENCES "Activity" (id), 
+	FOREIGN KEY(subject) REFERENCES "Node" (id)
 );
 
-CREATE TABLE edge_obsoletion (
+CREATE TABLE "EdgeObsoletion" (
 	id TEXT NOT NULL, 
 	type TEXT, 
 	was_generated_by TEXT, 
@@ -273,6 +279,7 @@ CREATE TABLE edge_obsoletion (
 	change_date TEXT, 
 	contributor TEXT, 
 	has_undo TEXT, 
+	term_tracker_issue TEXT, 
 	old_value TEXT, 
 	new_value TEXT, 
 	old_value_type TEXT, 
@@ -292,13 +299,13 @@ CREATE TABLE edge_obsoletion (
 	change_description TEXT, 
 	about TEXT, 
 	PRIMARY KEY (id), 
-	FOREIGN KEY(was_generated_by) REFERENCES activity (id), 
-	FOREIGN KEY(subject) REFERENCES node (id), 
-	FOREIGN KEY(predicate) REFERENCES node (id), 
-	FOREIGN KEY(object) REFERENCES node (id)
+	FOREIGN KEY(was_generated_by) REFERENCES "Activity" (id), 
+	FOREIGN KEY(subject) REFERENCES "Node" (id), 
+	FOREIGN KEY(predicate) REFERENCES "Node" (id), 
+	FOREIGN KEY(object) REFERENCES "Node" (id)
 );
 
-CREATE TABLE edge_rewiring (
+CREATE TABLE "EdgeRewiring" (
 	id TEXT NOT NULL, 
 	type TEXT, 
 	was_generated_by TEXT, 
@@ -308,6 +315,7 @@ CREATE TABLE edge_rewiring (
 	change_date TEXT, 
 	contributor TEXT, 
 	has_undo TEXT, 
+	term_tracker_issue TEXT, 
 	old_value TEXT, 
 	new_value TEXT, 
 	old_value_type TEXT, 
@@ -322,11 +330,11 @@ CREATE TABLE edge_rewiring (
 	datatype TEXT, 
 	subject TEXT, 
 	PRIMARY KEY (id), 
-	FOREIGN KEY(was_generated_by) REFERENCES activity (id), 
-	FOREIGN KEY(subject) REFERENCES node (id)
+	FOREIGN KEY(was_generated_by) REFERENCES "Activity" (id), 
+	FOREIGN KEY(subject) REFERENCES "Node" (id)
 );
 
-CREATE TABLE logical_axiom_change (
+CREATE TABLE "LogicalAxiomChange" (
 	id TEXT NOT NULL, 
 	type TEXT, 
 	was_generated_by TEXT, 
@@ -336,6 +344,7 @@ CREATE TABLE logical_axiom_change (
 	change_date TEXT, 
 	contributor TEXT, 
 	has_undo TEXT, 
+	term_tracker_issue TEXT, 
 	old_value TEXT, 
 	new_value TEXT, 
 	old_value_type TEXT, 
@@ -345,10 +354,10 @@ CREATE TABLE logical_axiom_change (
 	new_datatype TEXT, 
 	old_datatype TEXT, 
 	PRIMARY KEY (id), 
-	FOREIGN KEY(was_generated_by) REFERENCES activity (id)
+	FOREIGN KEY(was_generated_by) REFERENCES "Activity" (id)
 );
 
-CREATE TABLE mapping_creation (
+CREATE TABLE "MappingCreation" (
 	id TEXT NOT NULL, 
 	type TEXT, 
 	was_generated_by TEXT, 
@@ -358,6 +367,7 @@ CREATE TABLE mapping_creation (
 	change_date TEXT, 
 	contributor TEXT, 
 	has_undo TEXT, 
+	term_tracker_issue TEXT, 
 	old_value TEXT, 
 	new_value TEXT, 
 	old_value_type TEXT, 
@@ -378,13 +388,13 @@ CREATE TABLE mapping_creation (
 	annotation_set TEXT, 
 	change_description TEXT, 
 	PRIMARY KEY (id), 
-	FOREIGN KEY(was_generated_by) REFERENCES activity (id), 
-	FOREIGN KEY(subject) REFERENCES node (id), 
-	FOREIGN KEY(predicate) REFERENCES node (id), 
-	FOREIGN KEY(object) REFERENCES node (id)
+	FOREIGN KEY(was_generated_by) REFERENCES "Activity" (id), 
+	FOREIGN KEY(subject) REFERENCES "Node" (id), 
+	FOREIGN KEY(predicate) REFERENCES "Node" (id), 
+	FOREIGN KEY(object) REFERENCES "Node" (id)
 );
 
-CREATE TABLE mapping_predicate_change (
+CREATE TABLE "MappingPredicateChange" (
 	id TEXT NOT NULL, 
 	type TEXT, 
 	was_generated_by TEXT, 
@@ -394,6 +404,7 @@ CREATE TABLE mapping_predicate_change (
 	change_date TEXT, 
 	contributor TEXT, 
 	has_undo TEXT, 
+	term_tracker_issue TEXT, 
 	old_value_type TEXT, 
 	new_value_type TEXT, 
 	new_language TEXT, 
@@ -406,11 +417,11 @@ CREATE TABLE mapping_predicate_change (
 	old_value TEXT, 
 	new_value TEXT, 
 	PRIMARY KEY (id), 
-	FOREIGN KEY(was_generated_by) REFERENCES activity (id), 
-	FOREIGN KEY(about_node) REFERENCES node (id)
+	FOREIGN KEY(was_generated_by) REFERENCES "Activity" (id), 
+	FOREIGN KEY(about_node) REFERENCES "Node" (id)
 );
 
-CREATE TABLE mapping_replacement (
+CREATE TABLE "MappingReplacement" (
 	id TEXT NOT NULL, 
 	type TEXT, 
 	was_generated_by TEXT, 
@@ -420,6 +431,7 @@ CREATE TABLE mapping_replacement (
 	change_date TEXT, 
 	contributor TEXT, 
 	has_undo TEXT, 
+	term_tracker_issue TEXT, 
 	old_value_type TEXT, 
 	new_value_type TEXT, 
 	new_language TEXT, 
@@ -432,11 +444,11 @@ CREATE TABLE mapping_replacement (
 	old_value TEXT, 
 	new_value TEXT, 
 	PRIMARY KEY (id), 
-	FOREIGN KEY(was_generated_by) REFERENCES activity (id), 
-	FOREIGN KEY(about_node) REFERENCES node (id)
+	FOREIGN KEY(was_generated_by) REFERENCES "Activity" (id), 
+	FOREIGN KEY(about_node) REFERENCES "Node" (id)
 );
 
-CREATE TABLE metadata_assertion_predicate_change (
+CREATE TABLE "MetadataAssertionPredicateChange" (
 	id TEXT NOT NULL, 
 	type TEXT, 
 	was_generated_by TEXT, 
@@ -446,6 +458,7 @@ CREATE TABLE metadata_assertion_predicate_change (
 	change_date TEXT, 
 	contributor TEXT, 
 	has_undo TEXT, 
+	term_tracker_issue TEXT, 
 	old_value_type TEXT, 
 	new_value_type TEXT, 
 	new_language TEXT, 
@@ -458,11 +471,11 @@ CREATE TABLE metadata_assertion_predicate_change (
 	old_value TEXT, 
 	new_value TEXT, 
 	PRIMARY KEY (id), 
-	FOREIGN KEY(was_generated_by) REFERENCES activity (id), 
-	FOREIGN KEY(about_node) REFERENCES node (id)
+	FOREIGN KEY(was_generated_by) REFERENCES "Activity" (id), 
+	FOREIGN KEY(about_node) REFERENCES "Node" (id)
 );
 
-CREATE TABLE metadata_assertion_replacement (
+CREATE TABLE "MetadataAssertionReplacement" (
 	id TEXT NOT NULL, 
 	type TEXT, 
 	was_generated_by TEXT, 
@@ -472,6 +485,7 @@ CREATE TABLE metadata_assertion_replacement (
 	change_date TEXT, 
 	contributor TEXT, 
 	has_undo TEXT, 
+	term_tracker_issue TEXT, 
 	old_value_type TEXT, 
 	new_value_type TEXT, 
 	new_language TEXT, 
@@ -484,11 +498,11 @@ CREATE TABLE metadata_assertion_replacement (
 	old_value TEXT, 
 	new_value TEXT, 
 	PRIMARY KEY (id), 
-	FOREIGN KEY(was_generated_by) REFERENCES activity (id), 
-	FOREIGN KEY(about_node) REFERENCES node (id)
+	FOREIGN KEY(was_generated_by) REFERENCES "Activity" (id), 
+	FOREIGN KEY(about_node) REFERENCES "Node" (id)
 );
 
-CREATE TABLE multi_node_obsoletion (
+CREATE TABLE "MultiNodeObsoletion" (
 	id TEXT NOT NULL, 
 	type TEXT, 
 	was_generated_by TEXT, 
@@ -498,12 +512,13 @@ CREATE TABLE multi_node_obsoletion (
 	change_date TEXT, 
 	contributor TEXT, 
 	has_undo TEXT, 
+	term_tracker_issue TEXT, 
 	change_description TEXT, 
 	PRIMARY KEY (id), 
-	FOREIGN KEY(was_generated_by) REFERENCES activity (id)
+	FOREIGN KEY(was_generated_by) REFERENCES "Activity" (id)
 );
 
-CREATE TABLE new_mapping (
+CREATE TABLE "NewMapping" (
 	id TEXT NOT NULL, 
 	type TEXT, 
 	was_generated_by TEXT, 
@@ -513,6 +528,7 @@ CREATE TABLE new_mapping (
 	change_date TEXT, 
 	contributor TEXT, 
 	has_undo TEXT, 
+	term_tracker_issue TEXT, 
 	old_value TEXT, 
 	new_value TEXT, 
 	old_value_type TEXT, 
@@ -527,13 +543,13 @@ CREATE TABLE new_mapping (
 	object TEXT, 
 	predicate TEXT, 
 	PRIMARY KEY (id), 
-	FOREIGN KEY(was_generated_by) REFERENCES activity (id), 
-	FOREIGN KEY(about_node) REFERENCES node (id), 
-	FOREIGN KEY(object) REFERENCES node (id), 
-	FOREIGN KEY(predicate) REFERENCES node (id)
+	FOREIGN KEY(was_generated_by) REFERENCES "Activity" (id), 
+	FOREIGN KEY(about_node) REFERENCES "Node" (id), 
+	FOREIGN KEY(object) REFERENCES "Node" (id), 
+	FOREIGN KEY(predicate) REFERENCES "Node" (id)
 );
 
-CREATE TABLE new_metadata_assertion (
+CREATE TABLE "NewMetadataAssertion" (
 	id TEXT NOT NULL, 
 	type TEXT, 
 	was_generated_by TEXT, 
@@ -543,6 +559,7 @@ CREATE TABLE new_metadata_assertion (
 	change_date TEXT, 
 	contributor TEXT, 
 	has_undo TEXT, 
+	term_tracker_issue TEXT, 
 	old_value TEXT, 
 	new_value TEXT, 
 	old_value_type TEXT, 
@@ -557,13 +574,13 @@ CREATE TABLE new_metadata_assertion (
 	object TEXT, 
 	predicate TEXT, 
 	PRIMARY KEY (id), 
-	FOREIGN KEY(was_generated_by) REFERENCES activity (id), 
-	FOREIGN KEY(about_node) REFERENCES node (id), 
-	FOREIGN KEY(object) REFERENCES node (id), 
-	FOREIGN KEY(predicate) REFERENCES node (id)
+	FOREIGN KEY(was_generated_by) REFERENCES "Activity" (id), 
+	FOREIGN KEY(about_node) REFERENCES "Node" (id), 
+	FOREIGN KEY(object) REFERENCES "Node" (id), 
+	FOREIGN KEY(predicate) REFERENCES "Node" (id)
 );
 
-CREATE TABLE new_synonym (
+CREATE TABLE "NewSynonym" (
 	id TEXT NOT NULL, 
 	type TEXT, 
 	was_generated_by TEXT, 
@@ -573,6 +590,7 @@ CREATE TABLE new_synonym (
 	change_date TEXT, 
 	contributor TEXT, 
 	has_undo TEXT, 
+	term_tracker_issue TEXT, 
 	old_value TEXT, 
 	old_value_type TEXT, 
 	new_value_type TEXT, 
@@ -586,11 +604,11 @@ CREATE TABLE new_synonym (
 	language TEXT, 
 	qualifier TEXT, 
 	PRIMARY KEY (id), 
-	FOREIGN KEY(was_generated_by) REFERENCES activity (id), 
-	FOREIGN KEY(about_node) REFERENCES node (id)
+	FOREIGN KEY(was_generated_by) REFERENCES "Activity" (id), 
+	FOREIGN KEY(about_node) REFERENCES "Node" (id)
 );
 
-CREATE TABLE new_text_definition (
+CREATE TABLE "NewTextDefinition" (
 	id TEXT NOT NULL, 
 	type TEXT, 
 	was_generated_by TEXT, 
@@ -600,6 +618,7 @@ CREATE TABLE new_text_definition (
 	change_date TEXT, 
 	contributor TEXT, 
 	has_undo TEXT, 
+	term_tracker_issue TEXT, 
 	old_value TEXT, 
 	old_value_type TEXT, 
 	new_value_type TEXT, 
@@ -612,11 +631,11 @@ CREATE TABLE new_text_definition (
 	language TEXT, 
 	new_value TEXT, 
 	PRIMARY KEY (id), 
-	FOREIGN KEY(was_generated_by) REFERENCES activity (id), 
-	FOREIGN KEY(about_node) REFERENCES node (id)
+	FOREIGN KEY(was_generated_by) REFERENCES "Activity" (id), 
+	FOREIGN KEY(about_node) REFERENCES "Node" (id)
 );
 
-CREATE TABLE node_annotation_change (
+CREATE TABLE "NodeAnnotationChange" (
 	id TEXT NOT NULL, 
 	type TEXT, 
 	was_generated_by TEXT, 
@@ -626,34 +645,7 @@ CREATE TABLE node_annotation_change (
 	change_date TEXT, 
 	contributor TEXT, 
 	has_undo TEXT, 
-	old_value TEXT, 
-	new_value TEXT, 
-	old_value_type TEXT, 
-	new_value_type TEXT, 
-	new_language TEXT, 
-	old_language TEXT, 
-	new_datatype TEXT, 
-	old_datatype TEXT, 
-	about_node TEXT, 
-	about_node_representation TEXT, 
-	language TEXT, 
-	annotation_property TEXT, 
-	annotation_property_type TEXT, 
-	PRIMARY KEY (id), 
-	FOREIGN KEY(was_generated_by) REFERENCES activity (id), 
-	FOREIGN KEY(about_node) REFERENCES node (id)
-);
-
-CREATE TABLE node_annotation_replacement (
-	id TEXT NOT NULL, 
-	type TEXT, 
-	was_generated_by TEXT, 
-	see_also TEXT, 
-	pull_request TEXT, 
-	creator TEXT, 
-	change_date TEXT, 
-	contributor TEXT, 
-	has_undo TEXT, 
+	term_tracker_issue TEXT, 
 	old_value TEXT, 
 	new_value TEXT, 
 	old_value_type TEXT, 
@@ -668,11 +660,11 @@ CREATE TABLE node_annotation_replacement (
 	annotation_property TEXT, 
 	annotation_property_type TEXT, 
 	PRIMARY KEY (id), 
-	FOREIGN KEY(was_generated_by) REFERENCES activity (id), 
-	FOREIGN KEY(about_node) REFERENCES node (id)
+	FOREIGN KEY(was_generated_by) REFERENCES "Activity" (id), 
+	FOREIGN KEY(about_node) REFERENCES "Node" (id)
 );
 
-CREATE TABLE node_creation (
+CREATE TABLE "NodeAnnotationReplacement" (
 	id TEXT NOT NULL, 
 	type TEXT, 
 	was_generated_by TEXT, 
@@ -682,6 +674,36 @@ CREATE TABLE node_creation (
 	change_date TEXT, 
 	contributor TEXT, 
 	has_undo TEXT, 
+	term_tracker_issue TEXT, 
+	old_value TEXT, 
+	new_value TEXT, 
+	old_value_type TEXT, 
+	new_value_type TEXT, 
+	new_language TEXT, 
+	old_language TEXT, 
+	new_datatype TEXT, 
+	old_datatype TEXT, 
+	about_node TEXT, 
+	about_node_representation TEXT, 
+	language TEXT, 
+	annotation_property TEXT, 
+	annotation_property_type TEXT, 
+	PRIMARY KEY (id), 
+	FOREIGN KEY(was_generated_by) REFERENCES "Activity" (id), 
+	FOREIGN KEY(about_node) REFERENCES "Node" (id)
+);
+
+CREATE TABLE "NodeCreation" (
+	id TEXT NOT NULL, 
+	type TEXT, 
+	was_generated_by TEXT, 
+	see_also TEXT, 
+	pull_request TEXT, 
+	creator TEXT, 
+	change_date TEXT, 
+	contributor TEXT, 
+	has_undo TEXT, 
+	term_tracker_issue TEXT, 
 	old_value TEXT, 
 	new_value TEXT, 
 	old_value_type TEXT, 
@@ -699,12 +721,12 @@ CREATE TABLE node_creation (
 	language TEXT, 
 	change_description TEXT, 
 	PRIMARY KEY (id), 
-	FOREIGN KEY(was_generated_by) REFERENCES activity (id), 
-	FOREIGN KEY(about_node) REFERENCES node (id), 
-	FOREIGN KEY(node_id) REFERENCES node (id)
+	FOREIGN KEY(was_generated_by) REFERENCES "Activity" (id), 
+	FOREIGN KEY(about_node) REFERENCES "Node" (id), 
+	FOREIGN KEY(node_id) REFERENCES "Node" (id)
 );
 
-CREATE TABLE node_deepening (
+CREATE TABLE "NodeDeepening" (
 	id TEXT NOT NULL, 
 	type TEXT, 
 	was_generated_by TEXT, 
@@ -714,6 +736,7 @@ CREATE TABLE node_deepening (
 	change_date TEXT, 
 	contributor TEXT, 
 	has_undo TEXT, 
+	term_tracker_issue TEXT, 
 	old_value TEXT, 
 	new_value TEXT, 
 	old_value_type TEXT, 
@@ -731,11 +754,11 @@ CREATE TABLE node_deepening (
 	new_object_type TEXT, 
 	change_description TEXT, 
 	PRIMARY KEY (id), 
-	FOREIGN KEY(was_generated_by) REFERENCES activity (id), 
-	FOREIGN KEY(subject) REFERENCES node (id)
+	FOREIGN KEY(was_generated_by) REFERENCES "Activity" (id), 
+	FOREIGN KEY(subject) REFERENCES "Node" (id)
 );
 
-CREATE TABLE node_deletion (
+CREATE TABLE "NodeDeletion" (
 	id TEXT NOT NULL, 
 	type TEXT, 
 	was_generated_by TEXT, 
@@ -745,6 +768,7 @@ CREATE TABLE node_deletion (
 	change_date TEXT, 
 	contributor TEXT, 
 	has_undo TEXT, 
+	term_tracker_issue TEXT, 
 	old_value TEXT, 
 	new_value TEXT, 
 	old_value_type TEXT, 
@@ -758,11 +782,11 @@ CREATE TABLE node_deletion (
 	language TEXT, 
 	change_description TEXT, 
 	PRIMARY KEY (id), 
-	FOREIGN KEY(was_generated_by) REFERENCES activity (id), 
-	FOREIGN KEY(about_node) REFERENCES node (id)
+	FOREIGN KEY(was_generated_by) REFERENCES "Activity" (id), 
+	FOREIGN KEY(about_node) REFERENCES "Node" (id)
 );
 
-CREATE TABLE node_direct_merge (
+CREATE TABLE "NodeDirectMerge" (
 	id TEXT NOT NULL, 
 	type TEXT, 
 	was_generated_by TEXT, 
@@ -772,6 +796,7 @@ CREATE TABLE node_direct_merge (
 	change_date TEXT, 
 	contributor TEXT, 
 	has_undo TEXT, 
+	term_tracker_issue TEXT, 
 	old_value TEXT, 
 	new_value TEXT, 
 	old_value_type TEXT, 
@@ -788,12 +813,12 @@ CREATE TABLE node_direct_merge (
 	about_node TEXT, 
 	change_description TEXT, 
 	PRIMARY KEY (id), 
-	FOREIGN KEY(was_generated_by) REFERENCES activity (id), 
-	FOREIGN KEY(has_direct_replacement) REFERENCES node (id), 
-	FOREIGN KEY(about_node) REFERENCES node (id)
+	FOREIGN KEY(was_generated_by) REFERENCES "Activity" (id), 
+	FOREIGN KEY(has_direct_replacement) REFERENCES "Node" (id), 
+	FOREIGN KEY(about_node) REFERENCES "Node" (id)
 );
 
-CREATE TABLE node_mapping_change (
+CREATE TABLE "NodeMappingChange" (
 	id TEXT NOT NULL, 
 	type TEXT, 
 	was_generated_by TEXT, 
@@ -803,6 +828,7 @@ CREATE TABLE node_mapping_change (
 	change_date TEXT, 
 	contributor TEXT, 
 	has_undo TEXT, 
+	term_tracker_issue TEXT, 
 	old_value TEXT, 
 	new_value TEXT, 
 	old_value_type TEXT, 
@@ -815,11 +841,11 @@ CREATE TABLE node_mapping_change (
 	about_node_representation TEXT, 
 	language TEXT, 
 	PRIMARY KEY (id), 
-	FOREIGN KEY(was_generated_by) REFERENCES activity (id), 
-	FOREIGN KEY(about_node) REFERENCES node (id)
+	FOREIGN KEY(was_generated_by) REFERENCES "Activity" (id), 
+	FOREIGN KEY(about_node) REFERENCES "Node" (id)
 );
 
-CREATE TABLE node_metadata_assertion_change (
+CREATE TABLE "NodeMetadataAssertionChange" (
 	id TEXT NOT NULL, 
 	type TEXT, 
 	was_generated_by TEXT, 
@@ -829,6 +855,7 @@ CREATE TABLE node_metadata_assertion_change (
 	change_date TEXT, 
 	contributor TEXT, 
 	has_undo TEXT, 
+	term_tracker_issue TEXT, 
 	old_value TEXT, 
 	new_value TEXT, 
 	old_value_type TEXT, 
@@ -841,11 +868,11 @@ CREATE TABLE node_metadata_assertion_change (
 	about_node_representation TEXT, 
 	language TEXT, 
 	PRIMARY KEY (id), 
-	FOREIGN KEY(was_generated_by) REFERENCES activity (id), 
-	FOREIGN KEY(about_node) REFERENCES node (id)
+	FOREIGN KEY(was_generated_by) REFERENCES "Activity" (id), 
+	FOREIGN KEY(about_node) REFERENCES "Node" (id)
 );
 
-CREATE TABLE node_move (
+CREATE TABLE "NodeMove" (
 	id TEXT NOT NULL, 
 	type TEXT, 
 	was_generated_by TEXT, 
@@ -855,6 +882,7 @@ CREATE TABLE node_move (
 	change_date TEXT, 
 	contributor TEXT, 
 	has_undo TEXT, 
+	term_tracker_issue TEXT, 
 	old_value TEXT, 
 	new_value TEXT, 
 	old_value_type TEXT, 
@@ -872,11 +900,11 @@ CREATE TABLE node_move (
 	new_object_type TEXT, 
 	change_description TEXT, 
 	PRIMARY KEY (id), 
-	FOREIGN KEY(was_generated_by) REFERENCES activity (id), 
-	FOREIGN KEY(subject) REFERENCES node (id)
+	FOREIGN KEY(was_generated_by) REFERENCES "Activity" (id), 
+	FOREIGN KEY(subject) REFERENCES "Node" (id)
 );
 
-CREATE TABLE node_obsoletion_with_direct_replacement (
+CREATE TABLE "NodeObsoletionWithDirectReplacement" (
 	id TEXT NOT NULL, 
 	type TEXT, 
 	was_generated_by TEXT, 
@@ -886,6 +914,7 @@ CREATE TABLE node_obsoletion_with_direct_replacement (
 	change_date TEXT, 
 	contributor TEXT, 
 	has_undo TEXT, 
+	term_tracker_issue TEXT, 
 	old_value TEXT, 
 	new_value TEXT, 
 	old_value_type TEXT, 
@@ -902,12 +931,12 @@ CREATE TABLE node_obsoletion_with_direct_replacement (
 	has_direct_replacement TEXT NOT NULL, 
 	change_description TEXT, 
 	PRIMARY KEY (id), 
-	FOREIGN KEY(was_generated_by) REFERENCES activity (id), 
-	FOREIGN KEY(about_node) REFERENCES node (id), 
-	FOREIGN KEY(has_direct_replacement) REFERENCES node (id)
+	FOREIGN KEY(was_generated_by) REFERENCES "Activity" (id), 
+	FOREIGN KEY(about_node) REFERENCES "Node" (id), 
+	FOREIGN KEY(has_direct_replacement) REFERENCES "Node" (id)
 );
 
-CREATE TABLE node_obsoletion_with_no_direct_replacement (
+CREATE TABLE "NodeObsoletionWithNoDirectReplacement" (
 	id TEXT NOT NULL, 
 	type TEXT, 
 	was_generated_by TEXT, 
@@ -917,6 +946,7 @@ CREATE TABLE node_obsoletion_with_no_direct_replacement (
 	change_date TEXT, 
 	contributor TEXT, 
 	has_undo TEXT, 
+	term_tracker_issue TEXT, 
 	old_value TEXT, 
 	new_value TEXT, 
 	old_value_type TEXT, 
@@ -933,12 +963,12 @@ CREATE TABLE node_obsoletion_with_no_direct_replacement (
 	has_nondirect_replacement TEXT NOT NULL, 
 	change_description TEXT, 
 	PRIMARY KEY (id), 
-	FOREIGN KEY(was_generated_by) REFERENCES activity (id), 
-	FOREIGN KEY(about_node) REFERENCES node (id), 
-	FOREIGN KEY(has_direct_replacement) REFERENCES node (id)
+	FOREIGN KEY(was_generated_by) REFERENCES "Activity" (id), 
+	FOREIGN KEY(about_node) REFERENCES "Node" (id), 
+	FOREIGN KEY(has_direct_replacement) REFERENCES "Node" (id)
 );
 
-CREATE TABLE node_rename (
+CREATE TABLE "NodeRename" (
 	id TEXT NOT NULL, 
 	type TEXT, 
 	was_generated_by TEXT, 
@@ -948,6 +978,7 @@ CREATE TABLE node_rename (
 	change_date TEXT, 
 	contributor TEXT, 
 	has_undo TEXT, 
+	term_tracker_issue TEXT, 
 	old_value_type TEXT, 
 	new_value_type TEXT, 
 	new_datatype TEXT, 
@@ -962,11 +993,11 @@ CREATE TABLE node_rename (
 	old_language TEXT, 
 	change_description TEXT, 
 	PRIMARY KEY (id), 
-	FOREIGN KEY(was_generated_by) REFERENCES activity (id), 
-	FOREIGN KEY(about_node) REFERENCES node (id)
+	FOREIGN KEY(was_generated_by) REFERENCES "Activity" (id), 
+	FOREIGN KEY(about_node) REFERENCES "Node" (id)
 );
 
-CREATE TABLE node_shallowing (
+CREATE TABLE "NodeShallowing" (
 	id TEXT NOT NULL, 
 	type TEXT, 
 	was_generated_by TEXT, 
@@ -976,6 +1007,7 @@ CREATE TABLE node_shallowing (
 	change_date TEXT, 
 	contributor TEXT, 
 	has_undo TEXT, 
+	term_tracker_issue TEXT, 
 	old_value TEXT, 
 	new_value TEXT, 
 	old_value_type TEXT, 
@@ -993,11 +1025,11 @@ CREATE TABLE node_shallowing (
 	new_object_type TEXT, 
 	change_description TEXT, 
 	PRIMARY KEY (id), 
-	FOREIGN KEY(was_generated_by) REFERENCES activity (id), 
-	FOREIGN KEY(subject) REFERENCES node (id)
+	FOREIGN KEY(was_generated_by) REFERENCES "Activity" (id), 
+	FOREIGN KEY(subject) REFERENCES "Node" (id)
 );
 
-CREATE TABLE node_synonym_change (
+CREATE TABLE "NodeSynonymChange" (
 	id TEXT NOT NULL, 
 	type TEXT, 
 	was_generated_by TEXT, 
@@ -1007,6 +1039,7 @@ CREATE TABLE node_synonym_change (
 	change_date TEXT, 
 	contributor TEXT, 
 	has_undo TEXT, 
+	term_tracker_issue TEXT, 
 	old_value TEXT, 
 	new_value TEXT, 
 	old_value_type TEXT, 
@@ -1019,11 +1052,11 @@ CREATE TABLE node_synonym_change (
 	about_node_representation TEXT, 
 	language TEXT, 
 	PRIMARY KEY (id), 
-	FOREIGN KEY(was_generated_by) REFERENCES activity (id), 
-	FOREIGN KEY(about_node) REFERENCES node (id)
+	FOREIGN KEY(was_generated_by) REFERENCES "Activity" (id), 
+	FOREIGN KEY(about_node) REFERENCES "Node" (id)
 );
 
-CREATE TABLE node_unobsoletion (
+CREATE TABLE "NodeUnobsoletion" (
 	id TEXT NOT NULL, 
 	type TEXT, 
 	was_generated_by TEXT, 
@@ -1033,6 +1066,7 @@ CREATE TABLE node_unobsoletion (
 	change_date TEXT, 
 	contributor TEXT, 
 	has_undo TEXT, 
+	term_tracker_issue TEXT, 
 	old_value TEXT, 
 	new_value TEXT, 
 	old_value_type TEXT, 
@@ -1048,13 +1082,13 @@ CREATE TABLE node_unobsoletion (
 	replaced_by TEXT, 
 	consider TEXT, 
 	PRIMARY KEY (id), 
-	FOREIGN KEY(was_generated_by) REFERENCES activity (id), 
-	FOREIGN KEY(about_node) REFERENCES node (id), 
-	FOREIGN KEY(replaced_by) REFERENCES node (id), 
-	FOREIGN KEY(consider) REFERENCES node (id)
+	FOREIGN KEY(was_generated_by) REFERENCES "Activity" (id), 
+	FOREIGN KEY(about_node) REFERENCES "Node" (id), 
+	FOREIGN KEY(replaced_by) REFERENCES "Node" (id), 
+	FOREIGN KEY(consider) REFERENCES "Node" (id)
 );
 
-CREATE TABLE place_under (
+CREATE TABLE "ObjectPropertyCreation" (
 	id TEXT NOT NULL, 
 	type TEXT, 
 	was_generated_by TEXT, 
@@ -1064,6 +1098,40 @@ CREATE TABLE place_under (
 	change_date TEXT, 
 	contributor TEXT, 
 	has_undo TEXT, 
+	term_tracker_issue TEXT, 
+	old_value TEXT, 
+	new_value TEXT, 
+	old_value_type TEXT, 
+	new_value_type TEXT, 
+	new_language TEXT, 
+	old_language TEXT, 
+	new_datatype TEXT, 
+	old_datatype TEXT, 
+	about_node TEXT, 
+	about_node_representation TEXT, 
+	node_id TEXT, 
+	name TEXT, 
+	owl_type VARCHAR(16), 
+	annotation_set TEXT, 
+	language TEXT, 
+	change_description TEXT, 
+	PRIMARY KEY (id), 
+	FOREIGN KEY(was_generated_by) REFERENCES "Activity" (id), 
+	FOREIGN KEY(about_node) REFERENCES "Node" (id), 
+	FOREIGN KEY(node_id) REFERENCES "Node" (id)
+);
+
+CREATE TABLE "PlaceUnder" (
+	id TEXT NOT NULL, 
+	type TEXT, 
+	was_generated_by TEXT, 
+	see_also TEXT, 
+	pull_request TEXT, 
+	creator TEXT, 
+	change_date TEXT, 
+	contributor TEXT, 
+	has_undo TEXT, 
+	term_tracker_issue TEXT, 
 	old_value TEXT, 
 	new_value TEXT, 
 	old_value_type TEXT, 
@@ -1084,13 +1152,13 @@ CREATE TABLE place_under (
 	annotation_set TEXT, 
 	change_description TEXT, 
 	PRIMARY KEY (id), 
-	FOREIGN KEY(was_generated_by) REFERENCES activity (id), 
-	FOREIGN KEY(subject) REFERENCES node (id), 
-	FOREIGN KEY(predicate) REFERENCES node (id), 
-	FOREIGN KEY(object) REFERENCES node (id)
+	FOREIGN KEY(was_generated_by) REFERENCES "Activity" (id), 
+	FOREIGN KEY(subject) REFERENCES "Node" (id), 
+	FOREIGN KEY(predicate) REFERENCES "Node" (id), 
+	FOREIGN KEY(object) REFERENCES "Node" (id)
 );
 
-CREATE TABLE predicate_change (
+CREATE TABLE "PredicateChange" (
 	id TEXT NOT NULL, 
 	type TEXT, 
 	was_generated_by TEXT, 
@@ -1100,6 +1168,7 @@ CREATE TABLE predicate_change (
 	change_date TEXT, 
 	contributor TEXT, 
 	has_undo TEXT, 
+	term_tracker_issue TEXT, 
 	old_value TEXT, 
 	new_value TEXT, 
 	old_value_type TEXT, 
@@ -1115,18 +1184,18 @@ CREATE TABLE predicate_change (
 	subject TEXT, 
 	change_description TEXT, 
 	PRIMARY KEY (id), 
-	FOREIGN KEY(was_generated_by) REFERENCES activity (id), 
-	FOREIGN KEY(subject) REFERENCES node (id)
+	FOREIGN KEY(was_generated_by) REFERENCES "Activity" (id), 
+	FOREIGN KEY(subject) REFERENCES "Node" (id)
 );
 
-CREATE TABLE property_value (
+CREATE TABLE "PropertyValue" (
 	property TEXT, 
 	filler TEXT, 
 	PRIMARY KEY (property, filler), 
-	FOREIGN KEY(property) REFERENCES node (id)
+	FOREIGN KEY(property) REFERENCES "Node" (id)
 );
 
-CREATE TABLE remove_mapping (
+CREATE TABLE "RemoveMapping" (
 	id TEXT NOT NULL, 
 	type TEXT, 
 	was_generated_by TEXT, 
@@ -1136,6 +1205,7 @@ CREATE TABLE remove_mapping (
 	change_date TEXT, 
 	contributor TEXT, 
 	has_undo TEXT, 
+	term_tracker_issue TEXT, 
 	old_value TEXT, 
 	new_value TEXT, 
 	old_value_type TEXT, 
@@ -1150,13 +1220,13 @@ CREATE TABLE remove_mapping (
 	object TEXT, 
 	predicate TEXT, 
 	PRIMARY KEY (id), 
-	FOREIGN KEY(was_generated_by) REFERENCES activity (id), 
-	FOREIGN KEY(about_node) REFERENCES node (id), 
-	FOREIGN KEY(object) REFERENCES node (id), 
-	FOREIGN KEY(predicate) REFERENCES node (id)
+	FOREIGN KEY(was_generated_by) REFERENCES "Activity" (id), 
+	FOREIGN KEY(about_node) REFERENCES "Node" (id), 
+	FOREIGN KEY(object) REFERENCES "Node" (id), 
+	FOREIGN KEY(predicate) REFERENCES "Node" (id)
 );
 
-CREATE TABLE remove_metadata_assertion (
+CREATE TABLE "RemoveMetadataAssertion" (
 	id TEXT NOT NULL, 
 	type TEXT, 
 	was_generated_by TEXT, 
@@ -1166,6 +1236,7 @@ CREATE TABLE remove_metadata_assertion (
 	change_date TEXT, 
 	contributor TEXT, 
 	has_undo TEXT, 
+	term_tracker_issue TEXT, 
 	old_value TEXT, 
 	new_value TEXT, 
 	old_value_type TEXT, 
@@ -1180,13 +1251,13 @@ CREATE TABLE remove_metadata_assertion (
 	object TEXT, 
 	predicate TEXT, 
 	PRIMARY KEY (id), 
-	FOREIGN KEY(was_generated_by) REFERENCES activity (id), 
-	FOREIGN KEY(about_node) REFERENCES node (id), 
-	FOREIGN KEY(object) REFERENCES node (id), 
-	FOREIGN KEY(predicate) REFERENCES node (id)
+	FOREIGN KEY(was_generated_by) REFERENCES "Activity" (id), 
+	FOREIGN KEY(about_node) REFERENCES "Node" (id), 
+	FOREIGN KEY(object) REFERENCES "Node" (id), 
+	FOREIGN KEY(predicate) REFERENCES "Node" (id)
 );
 
-CREATE TABLE remove_node_from_subset (
+CREATE TABLE "RemoveNodeFromSubset" (
 	id TEXT NOT NULL, 
 	type TEXT, 
 	was_generated_by TEXT, 
@@ -1196,6 +1267,7 @@ CREATE TABLE remove_node_from_subset (
 	change_date TEXT, 
 	contributor TEXT, 
 	has_undo TEXT, 
+	term_tracker_issue TEXT, 
 	old_value TEXT, 
 	new_value TEXT, 
 	old_value_type TEXT, 
@@ -1211,11 +1283,11 @@ CREATE TABLE remove_node_from_subset (
 	subset TEXT, 
 	in_subset TEXT, 
 	PRIMARY KEY (id), 
-	FOREIGN KEY(was_generated_by) REFERENCES activity (id), 
-	FOREIGN KEY(about_node) REFERENCES node (id)
+	FOREIGN KEY(was_generated_by) REFERENCES "Activity" (id), 
+	FOREIGN KEY(about_node) REFERENCES "Node" (id)
 );
 
-CREATE TABLE remove_synonym (
+CREATE TABLE "RemoveSynonym" (
 	id TEXT NOT NULL, 
 	type TEXT, 
 	was_generated_by TEXT, 
@@ -1225,6 +1297,7 @@ CREATE TABLE remove_synonym (
 	change_date TEXT, 
 	contributor TEXT, 
 	has_undo TEXT, 
+	term_tracker_issue TEXT, 
 	new_value TEXT, 
 	old_value_type TEXT, 
 	new_value_type TEXT, 
@@ -1237,11 +1310,11 @@ CREATE TABLE remove_synonym (
 	language TEXT, 
 	old_value TEXT, 
 	PRIMARY KEY (id), 
-	FOREIGN KEY(was_generated_by) REFERENCES activity (id), 
-	FOREIGN KEY(about_node) REFERENCES node (id)
+	FOREIGN KEY(was_generated_by) REFERENCES "Activity" (id), 
+	FOREIGN KEY(about_node) REFERENCES "Node" (id)
 );
 
-CREATE TABLE remove_text_definition (
+CREATE TABLE "RemoveTextDefinition" (
 	id TEXT NOT NULL, 
 	type TEXT, 
 	was_generated_by TEXT, 
@@ -1251,6 +1324,7 @@ CREATE TABLE remove_text_definition (
 	change_date TEXT, 
 	contributor TEXT, 
 	has_undo TEXT, 
+	term_tracker_issue TEXT, 
 	new_value TEXT, 
 	old_value_type TEXT, 
 	new_value_type TEXT, 
@@ -1263,11 +1337,11 @@ CREATE TABLE remove_text_definition (
 	language TEXT, 
 	old_value TEXT, 
 	PRIMARY KEY (id), 
-	FOREIGN KEY(was_generated_by) REFERENCES activity (id), 
-	FOREIGN KEY(about_node) REFERENCES node (id)
+	FOREIGN KEY(was_generated_by) REFERENCES "Activity" (id), 
+	FOREIGN KEY(about_node) REFERENCES "Node" (id)
 );
 
-CREATE TABLE remove_under (
+CREATE TABLE "RemoveUnder" (
 	id TEXT NOT NULL, 
 	type TEXT, 
 	was_generated_by TEXT, 
@@ -1277,6 +1351,7 @@ CREATE TABLE remove_under (
 	change_date TEXT, 
 	contributor TEXT, 
 	has_undo TEXT, 
+	term_tracker_issue TEXT, 
 	old_value TEXT, 
 	new_value TEXT, 
 	old_value_type TEXT, 
@@ -1297,13 +1372,13 @@ CREATE TABLE remove_under (
 	annotation_set TEXT, 
 	change_description TEXT, 
 	PRIMARY KEY (id), 
-	FOREIGN KEY(was_generated_by) REFERENCES activity (id), 
-	FOREIGN KEY(subject) REFERENCES node (id), 
-	FOREIGN KEY(predicate) REFERENCES node (id), 
-	FOREIGN KEY(object) REFERENCES node (id)
+	FOREIGN KEY(was_generated_by) REFERENCES "Activity" (id), 
+	FOREIGN KEY(subject) REFERENCES "Node" (id), 
+	FOREIGN KEY(predicate) REFERENCES "Node" (id), 
+	FOREIGN KEY(object) REFERENCES "Node" (id)
 );
 
-CREATE TABLE set_language_for_name (
+CREATE TABLE "SetLanguageForName" (
 	id TEXT NOT NULL, 
 	type TEXT, 
 	was_generated_by TEXT, 
@@ -1313,6 +1388,7 @@ CREATE TABLE set_language_for_name (
 	change_date TEXT, 
 	contributor TEXT, 
 	has_undo TEXT, 
+	term_tracker_issue TEXT, 
 	old_value_type TEXT, 
 	new_value_type TEXT, 
 	new_language TEXT, 
@@ -1326,11 +1402,11 @@ CREATE TABLE set_language_for_name (
 	new_value TEXT, 
 	change_description TEXT, 
 	PRIMARY KEY (id), 
-	FOREIGN KEY(was_generated_by) REFERENCES activity (id), 
-	FOREIGN KEY(about_node) REFERENCES node (id)
+	FOREIGN KEY(was_generated_by) REFERENCES "Activity" (id), 
+	FOREIGN KEY(about_node) REFERENCES "Node" (id)
 );
 
-CREATE TABLE synonym_predicate_change (
+CREATE TABLE "SynonymPredicateChange" (
 	id TEXT NOT NULL, 
 	type TEXT, 
 	was_generated_by TEXT, 
@@ -1340,6 +1416,7 @@ CREATE TABLE synonym_predicate_change (
 	change_date TEXT, 
 	contributor TEXT, 
 	has_undo TEXT, 
+	term_tracker_issue TEXT, 
 	old_value_type TEXT, 
 	new_value_type TEXT, 
 	new_language TEXT, 
@@ -1353,11 +1430,11 @@ CREATE TABLE synonym_predicate_change (
 	new_value TEXT, 
 	has_textual_diff TEXT, 
 	PRIMARY KEY (id), 
-	FOREIGN KEY(was_generated_by) REFERENCES activity (id), 
-	FOREIGN KEY(about_node) REFERENCES node (id)
+	FOREIGN KEY(was_generated_by) REFERENCES "Activity" (id), 
+	FOREIGN KEY(about_node) REFERENCES "Node" (id)
 );
 
-CREATE TABLE synonym_replacement (
+CREATE TABLE "SynonymReplacement" (
 	id TEXT NOT NULL, 
 	type TEXT, 
 	was_generated_by TEXT, 
@@ -1367,6 +1444,7 @@ CREATE TABLE synonym_replacement (
 	change_date TEXT, 
 	contributor TEXT, 
 	has_undo TEXT, 
+	term_tracker_issue TEXT, 
 	old_value_type TEXT, 
 	new_value_type TEXT, 
 	new_language TEXT, 
@@ -1380,11 +1458,11 @@ CREATE TABLE synonym_replacement (
 	new_value TEXT, 
 	has_textual_diff TEXT, 
 	PRIMARY KEY (id), 
-	FOREIGN KEY(was_generated_by) REFERENCES activity (id), 
-	FOREIGN KEY(about_node) REFERENCES node (id)
+	FOREIGN KEY(was_generated_by) REFERENCES "Activity" (id), 
+	FOREIGN KEY(about_node) REFERENCES "Node" (id)
 );
 
-CREATE TABLE text_definition_replacement (
+CREATE TABLE "TextDefinitionReplacement" (
 	id TEXT NOT NULL, 
 	type TEXT, 
 	was_generated_by TEXT, 
@@ -1394,6 +1472,7 @@ CREATE TABLE text_definition_replacement (
 	change_date TEXT, 
 	contributor TEXT, 
 	has_undo TEXT, 
+	term_tracker_issue TEXT, 
 	old_value_type TEXT, 
 	new_value_type TEXT, 
 	new_language TEXT, 
@@ -1407,11 +1486,11 @@ CREATE TABLE text_definition_replacement (
 	new_value TEXT, 
 	has_textual_diff TEXT, 
 	PRIMARY KEY (id), 
-	FOREIGN KEY(was_generated_by) REFERENCES activity (id), 
-	FOREIGN KEY(about_node) REFERENCES node (id)
+	FOREIGN KEY(was_generated_by) REFERENCES "Activity" (id), 
+	FOREIGN KEY(about_node) REFERENCES "Node" (id)
 );
 
-CREATE TABLE "transaction" (
+CREATE TABLE "Transaction" (
 	id TEXT NOT NULL, 
 	type TEXT, 
 	was_generated_by TEXT, 
@@ -1421,11 +1500,12 @@ CREATE TABLE "transaction" (
 	change_date TEXT, 
 	contributor TEXT, 
 	has_undo TEXT, 
+	term_tracker_issue TEXT, 
 	PRIMARY KEY (id), 
-	FOREIGN KEY(was_generated_by) REFERENCES activity (id)
+	FOREIGN KEY(was_generated_by) REFERENCES "Activity" (id)
 );
 
-CREATE TABLE name_becomes_synonym (
+CREATE TABLE "NameBecomesSynonym" (
 	id TEXT NOT NULL, 
 	type TEXT, 
 	was_generated_by TEXT, 
@@ -1435,6 +1515,7 @@ CREATE TABLE name_becomes_synonym (
 	change_date TEXT, 
 	contributor TEXT, 
 	has_undo TEXT, 
+	term_tracker_issue TEXT, 
 	old_value TEXT, 
 	new_value TEXT, 
 	old_value_type TEXT, 
@@ -1450,13 +1531,13 @@ CREATE TABLE name_becomes_synonym (
 	change_2 TEXT, 
 	change_description TEXT, 
 	PRIMARY KEY (id), 
-	FOREIGN KEY(was_generated_by) REFERENCES activity (id), 
-	FOREIGN KEY(about_node) REFERENCES node (id), 
-	FOREIGN KEY(change_1) REFERENCES node_rename (id), 
-	FOREIGN KEY(change_2) REFERENCES new_synonym (id)
+	FOREIGN KEY(was_generated_by) REFERENCES "Activity" (id), 
+	FOREIGN KEY(about_node) REFERENCES "Node" (id), 
+	FOREIGN KEY(change_1) REFERENCES "NodeRename" (id), 
+	FOREIGN KEY(change_2) REFERENCES "NewSynonym" (id)
 );
 
-CREATE TABLE node_obsoletion (
+CREATE TABLE "NodeObsoletion" (
 	id TEXT NOT NULL, 
 	type TEXT, 
 	was_generated_by TEXT, 
@@ -1466,6 +1547,7 @@ CREATE TABLE node_obsoletion (
 	change_date TEXT, 
 	contributor TEXT, 
 	has_undo TEXT, 
+	term_tracker_issue TEXT, 
 	old_value TEXT, 
 	new_value TEXT, 
 	old_value_type TEXT, 
@@ -1481,52 +1563,52 @@ CREATE TABLE node_obsoletion (
 	has_nondirect_replacement TEXT, 
 	change_description TEXT, 
 	about TEXT, 
-	multi_node_obsoletion_id TEXT, 
+	"MultiNodeObsoletion_id" TEXT, 
 	PRIMARY KEY (id), 
-	FOREIGN KEY(was_generated_by) REFERENCES activity (id), 
-	FOREIGN KEY(about_node) REFERENCES node (id), 
-	FOREIGN KEY(has_direct_replacement) REFERENCES node (id), 
-	FOREIGN KEY(multi_node_obsoletion_id) REFERENCES multi_node_obsoletion (id)
+	FOREIGN KEY(was_generated_by) REFERENCES "Activity" (id), 
+	FOREIGN KEY(about_node) REFERENCES "Node" (id), 
+	FOREIGN KEY(has_direct_replacement) REFERENCES "Node" (id), 
+	FOREIGN KEY("MultiNodeObsoletion_id") REFERENCES "MultiNodeObsoletion" (id)
 );
 
-CREATE TABLE multi_node_obsoletion_associated_change_set (
+CREATE TABLE "MultiNodeObsoletion_associated_change_set" (
 	backref_id TEXT, 
 	associated_change_set TEXT, 
 	PRIMARY KEY (backref_id, associated_change_set), 
-	FOREIGN KEY(backref_id) REFERENCES multi_node_obsoletion (id)
+	FOREIGN KEY(backref_id) REFERENCES "MultiNodeObsoletion" (id)
 );
 
-CREATE TABLE node_direct_merge_associated_change_set (
+CREATE TABLE "NodeDirectMerge_associated_change_set" (
 	backref_id TEXT, 
 	associated_change_set TEXT, 
 	PRIMARY KEY (backref_id, associated_change_set), 
-	FOREIGN KEY(backref_id) REFERENCES node_direct_merge (id)
+	FOREIGN KEY(backref_id) REFERENCES "NodeDirectMerge" (id)
 );
 
-CREATE TABLE node_obsoletion_with_direct_replacement_associated_change_set (
+CREATE TABLE "NodeObsoletionWithDirectReplacement_associated_change_set" (
 	backref_id TEXT, 
 	associated_change_set TEXT, 
 	PRIMARY KEY (backref_id, associated_change_set), 
-	FOREIGN KEY(backref_id) REFERENCES node_obsoletion_with_direct_replacement (id)
+	FOREIGN KEY(backref_id) REFERENCES "NodeObsoletionWithDirectReplacement" (id)
 );
 
-CREATE TABLE node_obsoletion_with_no_direct_replacement_associated_change_set (
+CREATE TABLE "NodeObsoletionWithNoDirectReplacement_associated_change_set" (
 	backref_id TEXT, 
 	associated_change_set TEXT, 
 	PRIMARY KEY (backref_id, associated_change_set), 
-	FOREIGN KEY(backref_id) REFERENCES node_obsoletion_with_no_direct_replacement (id)
+	FOREIGN KEY(backref_id) REFERENCES "NodeObsoletionWithNoDirectReplacement" (id)
 );
 
-CREATE TABLE transaction_change_set (
+CREATE TABLE "Transaction_change_set" (
 	backref_id TEXT, 
 	change_set TEXT, 
 	PRIMARY KEY (backref_id, change_set), 
-	FOREIGN KEY(backref_id) REFERENCES "transaction" (id)
+	FOREIGN KEY(backref_id) REFERENCES "Transaction" (id)
 );
 
-CREATE TABLE node_obsoletion_associated_change_set (
+CREATE TABLE "NodeObsoletion_associated_change_set" (
 	backref_id TEXT, 
 	associated_change_set TEXT, 
 	PRIMARY KEY (backref_id, associated_change_set), 
-	FOREIGN KEY(backref_id) REFERENCES node_obsoletion (id)
+	FOREIGN KEY(backref_id) REFERENCES "NodeObsoletion" (id)
 );

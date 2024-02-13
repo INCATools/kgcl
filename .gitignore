@@ -6,4 +6,4 @@ __pycache__
 .idea
 tmp/
 tests/outputs/*
-docs/*
+project/docs/*
