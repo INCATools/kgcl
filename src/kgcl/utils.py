@@ -13,7 +13,7 @@ from uuid import uuid1
 
 import click
 import yaml
-from kgcl_schema.schema import get_schemaview
+from kgcl.schema import get_schemaview
 from linkml_runtime.dumpers import json_dumper, yaml_dumper, rdflib_dumper
 from linkml_runtime.dumpers.json_dumper import JSONDumper
 from linkml_runtime.dumpers.rdf_dumper import RDFDumper
@@ -22,9 +22,9 @@ from linkml_runtime.utils.formatutils import camelcase
 from linkml_runtime.utils.yamlutils import YAMLRoot
 from rdflib import Graph
 
-import kgcl_schema.datamodel as model
-from kgcl_schema.datamodel.kgcl import Session, Change
-from kgcl_schema.datamodel.kgcl import Activity
+import kgcl.datamodel as model
+from kgcl.datamodel.kgcl import Session, Change
+from kgcl.datamodel.kgcl import Activity
 from os.path import dirname, join
 
 # THIS_DIR = os.path.abspath(os.path.dirname(__file__))

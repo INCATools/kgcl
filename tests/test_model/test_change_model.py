@@ -4,8 +4,8 @@ import unittest
 
 from linkml_runtime.dumpers import JSONDumper
 
-from kgcl_schema.datamodel.kgcl import NewSynonym, PredicateChange
-from kgcl_schema.datamodel.ontology_model import Edge
+from kgcl.datamodel.kgcl import NewSynonym, PredicateChange
+from kgcl.datamodel.ontology_model import Edge
 
 from tests.util import roundtrip
 

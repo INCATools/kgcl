@@ -1,5 +1,5 @@
 # Auto generated from kgcl.yaml by pythongen.py version: 0.0.1
-# Generation date: 2024-02-23T12:20:03
+# Generation date: 2024-02-23T12:39:03
 # Schema: kgcl_schema
 #
 # id: https://w3id.org/kgcl
@@ -34,12 +34,12 @@ dataclasses._init_fn = dataclasses_init_fn_with_kwargs
 
 # Namespaces
 IAO = CurieNamespace('IAO', 'http://purl.obolibrary.org/obo/IAO_')
-BASICS = CurieNamespace('basics', 'https://w3id.org/kgcl_schema/basics/')
+BASICS = CurieNamespace('basics', 'https://w3id.org/kgcl/basics/')
 DCTERMS = CurieNamespace('dcterms', 'http://purl.org/dc/terms/')
 KGCL = CurieNamespace('kgcl', 'http://w3id.org/kgcl/')
 LINKML = CurieNamespace('linkml', 'https://w3id.org/linkml/')
 OIO = CurieNamespace('oio', 'http://www.geneontology.org/formats/oboInOwl#')
-OM = CurieNamespace('om', 'http://w3id.org/kgcl_schema/om/')
+OM = CurieNamespace('om', 'http://w3id.org/kgcl/om/')
 OWL = CurieNamespace('owl', 'http://www.w3.org/2002/07/owl#')
 PROV = CurieNamespace('prov', 'http://www.w3.org/ns/prov#')
 RDF = CurieNamespace('rdf', 'http://www.w3.org/1999/02/22-rdf-syntax-ns#')

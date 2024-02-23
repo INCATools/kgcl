@@ -1,7 +1,7 @@
 """Render operations."""
 # TODO: move this to grammar package
 
-from kgcl_schema.datamodel.kgcl import (
+from kgcl.datamodel.kgcl import (
     ClassCreation,
     EdgeCreation,
     EdgeDeletion,

@@ -6,9 +6,9 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 PREFIX xml1: <http://www.w3.org/XML/1998/namespace#>
 PREFIX linkml: <https://w3id.org/linkml/>
-PREFIX om: <http://w3id.org/kgcl_schema/om/>
+PREFIX om: <http://w3id.org/kgcl/om/>
 PREFIX dc1: <http://purl.org/dc/terms/>
-PREFIX basics: <https://w3id.org/kgcl_schema/basics/>
+PREFIX basics: <https://w3id.org/kgcl/basics/>
 
 
 <ChangeClassType> IRI
