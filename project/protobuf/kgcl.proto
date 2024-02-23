@@ -1382,6 +1382,7 @@ message SynonymPredicateChange
   string oldValue = 0
   string newValue = 0
   textualDiff hasTextualDiff = 0
+  node predicate = 0
  }
 // A node synonym change where the text of a synonym is changed
 message SynonymReplacement

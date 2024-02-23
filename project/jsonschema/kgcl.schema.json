@@ -4645,6 +4645,9 @@
                     "description": "The type (IRI or Literal) of an old value",
                     "type": "string"
                 },
+                "predicate": {
+                    "type": "string"
+                },
                 "pull_request": {
                     "type": "string"
                 },

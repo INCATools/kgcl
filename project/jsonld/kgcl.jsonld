@@ -1165,6 +1165,7 @@
         "EdgeDeletion",
         "EdgeObsoletion",
         "MappingCreation",
+        "SynonymPredicateChange",
         "NewMapping",
         "RemoveMapping",
         "NewMetadataAssertion",
@@ -4704,7 +4705,8 @@
         "language",
         "old_value",
         "new_value",
-        "has_textual_diff"
+        "has_textual_diff",
+        "predicate"
       ],
       "slot_usage": {},
       "class_uri": "http://w3id.org/kgcl/SynonymPredicateChange",
@@ -5979,9 +5981,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "kgcl.yaml",
-  "source_file_date": "2023-08-30T14:17:55",
-  "source_file_size": 32080,
-  "generation_date": "2024-02-12T15:47:58",
+  "source_file_date": "2024-02-23T12:19:43",
+  "source_file_size": 32096,
+  "generation_date": "2024-02-23T12:19:55",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/kgcl.context.jsonld",
