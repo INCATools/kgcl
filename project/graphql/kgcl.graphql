@@ -1566,7 +1566,7 @@ type SynonymPredicateChange
     oldValue: String
     newValue: String
     hasTextualDiff: TextualDiff
-    predicate: Node
+    target: String
   }
 
 type SynonymReplacement

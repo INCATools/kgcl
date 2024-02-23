@@ -491,7 +491,7 @@ classes:
     - old_value
     - new_value
     - has_textual_diff
-    - predicate
+    - target
   NodeMappingChange:
     description: A node change where the mappings for that node are altered
     is_a: NodeChange

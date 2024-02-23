@@ -926,7 +926,7 @@ prov:ProvElement_struct {
     (  $<SynonymPredicateChange_tes> (  &<NodeSynonymChange_tes> ;
           rdf:type [ <NodeSynonymChange> ] ? ;
           <has_textual_diff> @<TextualDiff> ? ;
-          om:predicate @om:Node ?
+          <target> @linkml:String ?
        ) ;
        rdf:type [ <SynonymPredicateChange> ]
     )

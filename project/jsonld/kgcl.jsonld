@@ -631,6 +631,10 @@
       "description": "The secondary entity on which the change operates",
       "from_schema": "https://w3id.org/kgcl",
       "slot_uri": "http://w3id.org/kgcl/target",
+      "owner": "SynonymPredicateChange",
+      "domain_of": [
+        "SynonymPredicateChange"
+      ],
       "range": "string",
       "@type": "SlotDefinition"
     },
@@ -1165,7 +1169,6 @@
         "EdgeDeletion",
         "EdgeObsoletion",
         "MappingCreation",
-        "SynonymPredicateChange",
         "NewMapping",
         "RemoveMapping",
         "NewMetadataAssertion",
@@ -4706,7 +4709,7 @@
         "old_value",
         "new_value",
         "has_textual_diff",
-        "predicate"
+        "target"
       ],
       "slot_usage": {},
       "class_uri": "http://w3id.org/kgcl/SynonymPredicateChange",
@@ -5981,9 +5984,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "kgcl.yaml",
-  "source_file_date": "2024-02-23T12:19:43",
-  "source_file_size": 32096,
-  "generation_date": "2024-02-23T12:38:55",
+  "source_file_date": "2024-02-23T14:41:21",
+  "source_file_size": 32093,
+  "generation_date": "2024-02-23T14:43:16",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/kgcl.context.jsonld",

@@ -1429,11 +1429,10 @@ CREATE TABLE "SynonymPredicateChange" (
 	old_value TEXT, 
 	new_value TEXT, 
 	has_textual_diff TEXT, 
-	predicate TEXT, 
+	target TEXT, 
 	PRIMARY KEY (id), 
 	FOREIGN KEY(was_generated_by) REFERENCES "Activity" (id), 
-	FOREIGN KEY(about_node) REFERENCES "Node" (id), 
-	FOREIGN KEY(predicate) REFERENCES "Node" (id)
+	FOREIGN KEY(about_node) REFERENCES "Node" (id)
 );
 
 CREATE TABLE "SynonymReplacement" (
