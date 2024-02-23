@@ -1169,6 +1169,7 @@
         "EdgeDeletion",
         "EdgeObsoletion",
         "MappingCreation",
+        "NewSynonym",
         "NewMapping",
         "RemoveMapping",
         "NewMetadataAssertion",
@@ -4568,7 +4569,8 @@
         "about_node_representation",
         "new_value",
         "language",
-        "qualifier"
+        "qualifier",
+        "predicate"
       ],
       "slot_usage": {},
       "class_uri": "http://w3id.org/kgcl/NewSynonym",
@@ -5984,9 +5986,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "kgcl.yaml",
-  "source_file_date": "2024-02-23T14:41:21",
-  "source_file_size": 32093,
-  "generation_date": "2024-02-23T14:43:16",
+  "source_file_date": "2024-02-23T15:34:05",
+  "source_file_size": 32109,
+  "generation_date": "2024-02-23T15:34:14",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/kgcl.context.jsonld",

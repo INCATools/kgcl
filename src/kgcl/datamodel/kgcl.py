@@ -1,5 +1,5 @@
 # Auto generated from kgcl.yaml by pythongen.py version: 0.0.1
-# Generation date: 2024-02-23T14:43:24
+# Generation date: 2024-02-23T15:34:21
 # Schema: kgcl_schema
 #
 # id: https://w3id.org/kgcl
@@ -1465,6 +1465,7 @@ class NewSynonym(NodeSynonymChange):
     new_value: Optional[str] = None
     language: Optional[str] = None
     qualifier: Optional[str] = None
+    predicate: Optional[Union[str, NodeId]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
@@ -1480,6 +1481,9 @@ class NewSynonym(NodeSynonymChange):
 
         if self.qualifier is not None and not isinstance(self.qualifier, str):
             self.qualifier = str(self.qualifier)
+
+        if self.predicate is not None and not isinstance(self.predicate, NodeId):
+            self.predicate = NodeId(self.predicate)
 
         super().__post_init__(**kwargs)
         self.type = str(self.class_name)

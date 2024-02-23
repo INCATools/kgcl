@@ -603,9 +603,11 @@ CREATE TABLE "NewSynonym" (
 	new_value TEXT, 
 	language TEXT, 
 	qualifier TEXT, 
+	predicate TEXT, 
 	PRIMARY KEY (id), 
 	FOREIGN KEY(was_generated_by) REFERENCES "Activity" (id), 
-	FOREIGN KEY(about_node) REFERENCES "Node" (id)
+	FOREIGN KEY(about_node) REFERENCES "Node" (id), 
+	FOREIGN KEY(predicate) REFERENCES "Node" (id)
 );
 
 CREATE TABLE "NewTextDefinition" (

@@ -449,6 +449,7 @@ classes:
     - new_value
     - language
     - qualifier
+    - predicate
     aliases:
     - new alias
     - create synonym

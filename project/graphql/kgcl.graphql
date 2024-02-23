@@ -662,6 +662,7 @@ type NewSynonym
     newValue: String
     language: LanguageTag
     qualifier: String
+    predicate: Node
   }
 
 type NewTextDefinition

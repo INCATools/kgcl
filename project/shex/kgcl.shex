@@ -481,7 +481,8 @@ om:LogicalDefinition CLOSED {
 <NewSynonym> CLOSED {
     (  $<NewSynonym_tes> (  &<NodeSynonymChange_tes> ;
           rdf:type [ <NodeSynonymChange> ] ? ;
-          <qualifier> @linkml:String ?
+          <qualifier> @linkml:String ? ;
+          om:predicate @om:Node ?
        ) ;
        rdf:type [ <NewSynonym> ]
     )
