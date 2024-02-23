@@ -1,5 +1,5 @@
 # Auto generated from kgcl.yaml by pythongen.py version: 0.0.1
-# Generation date: 2024-02-12T15:48:06
+# Generation date: 2024-02-23T12:20:03
 # Schema: kgcl_schema
 #
 # id: https://w3id.org/kgcl
@@ -1604,6 +1604,7 @@ class SynonymPredicateChange(NodeSynonymChange):
     old_value: Optional[str] = None
     new_value: Optional[str] = None
     has_textual_diff: Optional[Union[dict, "TextualDiff"]] = None
+    predicate: Optional[Union[str, NodeId]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
@@ -1619,6 +1620,9 @@ class SynonymPredicateChange(NodeSynonymChange):
 
         if self.has_textual_diff is not None and not isinstance(self.has_textual_diff, TextualDiff):
             self.has_textual_diff = TextualDiff()
+
+        if self.predicate is not None and not isinstance(self.predicate, NodeId):
+            self.predicate = NodeId(self.predicate)
 
         super().__post_init__(**kwargs)
         self.type = str(self.class_name)
