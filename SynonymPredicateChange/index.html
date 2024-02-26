@@ -255,6 +255,8 @@
 
       SynonymPredicateChange : see_also
 
+      SynonymPredicateChange : target
+
       SynonymPredicateChange : type
 
       SynonymPredicateChange : was_generated_by
@@ -309,6 +311,12 @@
 <td><a href="../has_textual_diff/">has_textual_diff</a></td>
 <td>0..1 <br/> <a href="../TextualDiff/">TextualDiff</a></td>
 <td>A representation of character-level changes on a textual literal property</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../target/">target</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>The secondary entity on which the change operates</td>
 <td>direct</td>
 </tr>
 <tr>
@@ -465,6 +473,7 @@ slots:
 - old_value
 - new_value
 - has_textual_diff
+- target
 
 </code></pre>
 </details>
@@ -539,6 +548,16 @@ attributes:
     - SynonymPredicateChange
     - TextDefinitionReplacement
     range: TextualDiff
+  target:
+    name: target
+    description: The secondary entity on which the change operates
+    from_schema: https://w3id.org/kgcl
+    rank: 1000
+    alias: target
+    owner: SynonymPredicateChange
+    domain_of:
+    - SynonymPredicateChange
+    range: string
   about_node:
     name: about_node
     from_schema: https://w3id.org/kgcl
@@ -647,9 +666,9 @@ attributes:
     owner: SynonymPredicateChange
     domain_of:
     - Change
+    - Node
     - Activity
     - Agent
-    - Node
     range: string
     required: true
   type:

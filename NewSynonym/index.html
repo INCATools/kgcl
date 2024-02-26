@@ -247,6 +247,10 @@
 
       NewSynonym : old_value_type
 
+      NewSynonym : predicate
+
+          NewSynonym --&gt; Node : predicate
+
       NewSynonym : pull_request
 
       NewSynonym : qualifier
@@ -307,6 +311,12 @@
 <td><a href="../qualifier/">qualifier</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
 <td>The qualifier of a change operation</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../predicate/">predicate</a></td>
+<td>0..1 <br/> <a href="../Node/">Node</a></td>
+<td></td>
 <td>direct</td>
 </tr>
 <tr>
@@ -465,6 +475,7 @@ slots:
 - new_value
 - language
 - qualifier
+- predicate
 
 </code></pre>
 </details>
@@ -523,6 +534,24 @@ attributes:
     domain_of:
     - NewSynonym
     range: string
+  predicate:
+    name: predicate
+    from_schema: https://w3id.org/kgcl
+    rank: 1000
+    alias: predicate
+    owner: NewSynonym
+    domain_of:
+    - EdgeCreation
+    - EdgeDeletion
+    - EdgeObsoletion
+    - MappingCreation
+    - NewSynonym
+    - NewMapping
+    - RemoveMapping
+    - NewMetadataAssertion
+    - RemoveMetadataAssertion
+    - Edge
+    range: Node
   about_node:
     name: about_node
     from_schema: https://w3id.org/kgcl
@@ -639,9 +668,9 @@ attributes:
     owner: NewSynonym
     domain_of:
     - Change
+    - Node
     - Activity
     - Agent
-    - Node
     range: string
     required: true
   type:
