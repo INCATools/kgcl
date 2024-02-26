@@ -9,6 +9,10 @@ authors = [
 license = "MIT"
 readme = "README.md"
 
+[[tool.poetry.packages]]
+include = "kgcl"
+from = "src"
+
 
 [tool.poetry.dependencies]
 python = "^3.9"
@@ -31,9 +35,9 @@ requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
 
 [tool.poetry.scripts]
-kgcl-diff = "kgcl_schema.kgcl_diff:cli"
-kgcl-apply = "kgcl_schema.kgcl:cli"
-kgcl-parse = "kgcl_schema.grammar.parser:cli"
+kgcl-diff = "kgcl.kgcl_diff:cli"
+kgcl-apply = "kgcl.kgcl:cli"
+kgcl-parse = "kgcl.grammar.parser:cli"
 
 [tool.poetry.extras]
 docs = ["linkml", "mkdocs-material"]
