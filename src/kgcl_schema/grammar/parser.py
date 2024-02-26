@@ -8,7 +8,7 @@ from typing import List
 import click
 from prefixmaps import load_converter
 from curies import Converter
-from kgcl.datamodel.kgcl import (
+from kgcl_schema.datamodel.kgcl import (
     Change,
     ClassCreation,
     EdgeCreation,
@@ -34,8 +34,8 @@ from kgcl.datamodel.kgcl import (
     Session,
     RemoveTextDefinition,
 )
-from kgcl.datamodel.ontology_model import Edge
-from kgcl.utils import to_json, to_rdf, to_yaml
+from kgcl_schema.datamodel.ontology_model import Edge
+from kgcl_schema.utils import to_json, to_rdf, to_yaml
 from lark import Lark, Token
 
 

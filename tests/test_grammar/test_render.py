@@ -1,7 +1,7 @@
 import unittest
 
-from kgcl.grammar.render_operations import render
-from kgcl.grammar.parser import parse_statement
+from kgcl_schema.grammar.render_operations import render
+from kgcl_schema.grammar.parser import parse_statement
 
 from tests.cases import CASES
 
