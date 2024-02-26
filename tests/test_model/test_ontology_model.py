@@ -2,7 +2,7 @@
 import os
 import unittest
 
-from kgcl_schema.datamodel.ontology_model import ClassNode, OwlTypeEnum
+from kgcl.datamodel.ontology_model import ClassNode, OwlTypeEnum
 
 from tests.util import roundtrip
 

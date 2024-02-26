@@ -1,11 +1,11 @@
 {
    "IAO": "http://purl.obolibrary.org/obo/IAO_",
-   "basics": "https://w3id.org/kgcl_schema/basics/",
+   "basics": "https://w3id.org/kgcl/basics/",
    "dcterms": "http://purl.org/dc/terms/",
    "kgcl": "http://w3id.org/kgcl/",
    "linkml": "https://w3id.org/linkml/",
    "oio": "http://www.geneontology.org/formats/oboInOwl#",
-   "om": "http://w3id.org/kgcl_schema/om/",
+   "om": "http://w3id.org/kgcl/om/",
    "owl": "http://www.w3.org/2002/07/owl#",
    "prov": "http://www.w3.org/ns/prov#",
    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",

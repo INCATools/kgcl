@@ -361,8 +361,8 @@
     },
     {
       "name": "LanguageTag",
-      "definition_uri": "https://w3id.org/kgcl_schema/basics/LanguageTag",
-      "from_schema": "https://w3id.org/kgcl_schema/basics",
+      "definition_uri": "https://w3id.org/kgcl/basics/LanguageTag",
+      "from_schema": "https://w3id.org/kgcl/basics",
       "base": "str",
       "uri": "http://www.w3.org/XML/1998/namespace#lang",
       "@type": "TypeDefinition"
@@ -386,8 +386,8 @@
     },
     {
       "name": "OwlTypeEnum",
-      "definition_uri": "http://w3id.org/kgcl_schema/om/OwlTypeEnum",
-      "from_schema": "https://w3id.org/kgcl_schema/ontology",
+      "definition_uri": "http://w3id.org/kgcl/om/OwlTypeEnum",
+      "from_schema": "https://w3id.org/kgcl/ontology",
       "permissible_values": [
         {
           "text": "CLASS",
@@ -405,8 +405,8 @@
     },
     {
       "name": "SynonymScopeEnum",
-      "definition_uri": "http://w3id.org/kgcl_schema/om/SynonymScopeEnum",
-      "from_schema": "https://w3id.org/kgcl_schema/ontology",
+      "definition_uri": "http://w3id.org/kgcl/om/SynonymScopeEnum",
+      "from_schema": "https://w3id.org/kgcl/ontology",
       "permissible_values": [
         {
           "text": "related",
@@ -631,6 +631,10 @@
       "description": "The secondary entity on which the change operates",
       "from_schema": "https://w3id.org/kgcl",
       "slot_uri": "http://w3id.org/kgcl/target",
+      "owner": "SynonymPredicateChange",
+      "domain_of": [
+        "SynonymPredicateChange"
+      ],
       "range": "string",
       "@type": "SlotDefinition"
     },
@@ -1094,9 +1098,9 @@
     },
     {
       "name": "owl_type",
-      "definition_uri": "http://w3id.org/kgcl_schema/om/owl_type",
-      "from_schema": "https://w3id.org/kgcl_schema/ontology",
-      "slot_uri": "http://w3id.org/kgcl_schema/om/owl_type",
+      "definition_uri": "http://w3id.org/kgcl/om/owl_type",
+      "from_schema": "https://w3id.org/kgcl/ontology",
+      "slot_uri": "http://w3id.org/kgcl/om/owl_type",
       "owner": "Node",
       "domain_of": [
         "NodeCreation",
@@ -1107,9 +1111,9 @@
     },
     {
       "name": "name",
-      "definition_uri": "http://w3id.org/kgcl_schema/om/name",
-      "from_schema": "https://w3id.org/kgcl_schema/ontology",
-      "slot_uri": "http://w3id.org/kgcl_schema/om/name",
+      "definition_uri": "http://w3id.org/kgcl/om/name",
+      "from_schema": "https://w3id.org/kgcl/ontology",
+      "slot_uri": "http://w3id.org/kgcl/om/name",
       "owner": "Node",
       "domain_of": [
         "NodeCreation",
@@ -1120,9 +1124,9 @@
     },
     {
       "name": "subject",
-      "definition_uri": "http://w3id.org/kgcl_schema/om/subject",
-      "from_schema": "https://w3id.org/kgcl_schema/ontology",
-      "slot_uri": "http://w3id.org/kgcl_schema/om/subject",
+      "definition_uri": "http://w3id.org/kgcl/om/subject",
+      "from_schema": "https://w3id.org/kgcl/ontology",
+      "slot_uri": "http://w3id.org/kgcl/om/subject",
       "owner": "Edge",
       "domain_of": [
         "EdgeCreation",
@@ -1136,9 +1140,9 @@
     },
     {
       "name": "object",
-      "definition_uri": "http://w3id.org/kgcl_schema/om/object",
-      "from_schema": "https://w3id.org/kgcl_schema/ontology",
-      "slot_uri": "http://w3id.org/kgcl_schema/om/object",
+      "definition_uri": "http://w3id.org/kgcl/om/object",
+      "from_schema": "https://w3id.org/kgcl/ontology",
+      "slot_uri": "http://w3id.org/kgcl/om/object",
       "owner": "Edge",
       "domain_of": [
         "EdgeCreation",
@@ -1156,15 +1160,16 @@
     },
     {
       "name": "predicate",
-      "definition_uri": "http://w3id.org/kgcl_schema/om/predicate",
-      "from_schema": "https://w3id.org/kgcl_schema/ontology",
-      "slot_uri": "http://w3id.org/kgcl_schema/om/predicate",
+      "definition_uri": "http://w3id.org/kgcl/om/predicate",
+      "from_schema": "https://w3id.org/kgcl/ontology",
+      "slot_uri": "http://w3id.org/kgcl/om/predicate",
       "owner": "Edge",
       "domain_of": [
         "EdgeCreation",
         "EdgeDeletion",
         "EdgeObsoletion",
         "MappingCreation",
+        "NewSynonym",
         "NewMapping",
         "RemoveMapping",
         "NewMetadataAssertion",
@@ -1176,9 +1181,9 @@
     },
     {
       "name": "annotation_set",
-      "definition_uri": "http://w3id.org/kgcl_schema/om/annotation_set",
-      "from_schema": "https://w3id.org/kgcl_schema/ontology",
-      "slot_uri": "http://w3id.org/kgcl_schema/om/annotation_set",
+      "definition_uri": "http://w3id.org/kgcl/om/annotation_set",
+      "from_schema": "https://w3id.org/kgcl/ontology",
+      "slot_uri": "http://w3id.org/kgcl/om/annotation_set",
       "owner": "Edge",
       "domain_of": [
         "EdgeCreation",
@@ -1196,9 +1201,9 @@
     },
     {
       "name": "property",
-      "definition_uri": "http://w3id.org/kgcl_schema/om/property",
-      "from_schema": "https://w3id.org/kgcl_schema/ontology",
-      "slot_uri": "http://w3id.org/kgcl_schema/om/property",
+      "definition_uri": "http://w3id.org/kgcl/om/property",
+      "from_schema": "https://w3id.org/kgcl/ontology",
+      "slot_uri": "http://w3id.org/kgcl/om/property",
       "owner": "Annotation",
       "domain_of": [
         "PropertyValue",
@@ -1209,9 +1214,9 @@
     },
     {
       "name": "filler",
-      "definition_uri": "http://w3id.org/kgcl_schema/om/filler",
-      "from_schema": "https://w3id.org/kgcl_schema/ontology",
-      "slot_uri": "http://w3id.org/kgcl_schema/om/filler",
+      "definition_uri": "http://w3id.org/kgcl/om/filler",
+      "from_schema": "https://w3id.org/kgcl/ontology",
+      "slot_uri": "http://w3id.org/kgcl/om/filler",
       "owner": "Annotation",
       "domain_of": [
         "PropertyValue",
@@ -1222,10 +1227,10 @@
     },
     {
       "name": "property_type",
-      "definition_uri": "http://w3id.org/kgcl_schema/om/property_type",
+      "definition_uri": "http://w3id.org/kgcl/om/property_type",
       "deprecated": "no longer required",
-      "from_schema": "https://w3id.org/kgcl_schema/ontology",
-      "slot_uri": "http://w3id.org/kgcl_schema/om/property_type",
+      "from_schema": "https://w3id.org/kgcl/ontology",
+      "slot_uri": "http://w3id.org/kgcl/om/property_type",
       "owner": "Annotation",
       "domain_of": [
         "Annotation"
@@ -1235,10 +1240,10 @@
     },
     {
       "name": "filler_type",
-      "definition_uri": "http://w3id.org/kgcl_schema/om/filler_type",
+      "definition_uri": "http://w3id.org/kgcl/om/filler_type",
       "deprecated": "no longer required",
-      "from_schema": "https://w3id.org/kgcl_schema/ontology",
-      "slot_uri": "http://w3id.org/kgcl_schema/om/filler_type",
+      "from_schema": "https://w3id.org/kgcl/ontology",
+      "slot_uri": "http://w3id.org/kgcl/om/filler_type",
       "owner": "Annotation",
       "domain_of": [
         "Annotation"
@@ -1248,10 +1253,10 @@
     },
     {
       "name": "subject_representation",
-      "definition_uri": "http://w3id.org/kgcl_schema/om/subject_representation",
+      "definition_uri": "http://w3id.org/kgcl/om/subject_representation",
       "deprecated": "no longer required",
-      "from_schema": "https://w3id.org/kgcl_schema/ontology",
-      "slot_uri": "http://w3id.org/kgcl_schema/om/subject_representation",
+      "from_schema": "https://w3id.org/kgcl/ontology",
+      "slot_uri": "http://w3id.org/kgcl/om/subject_representation",
       "owner": "Edge",
       "domain_of": [
         "Edge"
@@ -1261,10 +1266,10 @@
     },
     {
       "name": "predicate_representation",
-      "definition_uri": "http://w3id.org/kgcl_schema/om/predicate_representation",
+      "definition_uri": "http://w3id.org/kgcl/om/predicate_representation",
       "deprecated": "no longer required",
-      "from_schema": "https://w3id.org/kgcl_schema/ontology",
-      "slot_uri": "http://w3id.org/kgcl_schema/om/predicate_representation",
+      "from_schema": "https://w3id.org/kgcl/ontology",
+      "slot_uri": "http://w3id.org/kgcl/om/predicate_representation",
       "owner": "Edge",
       "domain_of": [
         "Edge"
@@ -1274,10 +1279,10 @@
     },
     {
       "name": "object_representation",
-      "definition_uri": "http://w3id.org/kgcl_schema/om/object_representation",
+      "definition_uri": "http://w3id.org/kgcl/om/object_representation",
       "deprecated": "no longer required",
-      "from_schema": "https://w3id.org/kgcl_schema/ontology",
-      "slot_uri": "http://w3id.org/kgcl_schema/om/object_representation",
+      "from_schema": "https://w3id.org/kgcl/ontology",
+      "slot_uri": "http://w3id.org/kgcl/om/object_representation",
       "owner": "Edge",
       "domain_of": [
         "Edge"
@@ -1287,9 +1292,9 @@
     },
     {
       "name": "property_value_set",
-      "definition_uri": "http://w3id.org/kgcl_schema/om/property_value_set",
-      "from_schema": "https://w3id.org/kgcl_schema/ontology",
-      "slot_uri": "http://w3id.org/kgcl_schema/om/property_value_set",
+      "definition_uri": "http://w3id.org/kgcl/om/property_value_set",
+      "from_schema": "https://w3id.org/kgcl/ontology",
+      "slot_uri": "http://w3id.org/kgcl/om/property_value_set",
       "multivalued": true,
       "range": "PropertyValue",
       "inlined": true,
@@ -1298,7 +1303,7 @@
     {
       "name": "started_at_time",
       "definition_uri": "http://www.w3.org/ns/prov#started_at_time",
-      "from_schema": "https://w3id.org/kgcl_schema/prov",
+      "from_schema": "https://w3id.org/kgcl/prov",
       "mappings": [
         "http://www.w3.org/ns/prov#startedAtTime"
       ],
@@ -1313,7 +1318,7 @@
     {
       "name": "ended_at_time",
       "definition_uri": "http://www.w3.org/ns/prov#ended_at_time",
-      "from_schema": "https://w3id.org/kgcl_schema/prov",
+      "from_schema": "https://w3id.org/kgcl/prov",
       "mappings": [
         "http://www.w3.org/ns/prov#endedAtTime"
       ],
@@ -1328,7 +1333,7 @@
     {
       "name": "was_informed_by",
       "definition_uri": "http://www.w3.org/ns/prov#was_informed_by",
-      "from_schema": "https://w3id.org/kgcl_schema/prov",
+      "from_schema": "https://w3id.org/kgcl/prov",
       "mappings": [
         "http://www.w3.org/ns/prov#wasInformedBy"
       ],
@@ -1344,7 +1349,7 @@
     {
       "name": "was_associated_with",
       "definition_uri": "http://www.w3.org/ns/prov#was_associated_with",
-      "from_schema": "https://w3id.org/kgcl_schema/prov",
+      "from_schema": "https://w3id.org/kgcl/prov",
       "mappings": [
         "http://www.w3.org/ns/prov#wasAssociatedWith"
       ],
@@ -1359,7 +1364,7 @@
     {
       "name": "acted_on_behalf_of",
       "definition_uri": "http://www.w3.org/ns/prov#acted_on_behalf_of",
-      "from_schema": "https://w3id.org/kgcl_schema/prov",
+      "from_schema": "https://w3id.org/kgcl/prov",
       "mappings": [
         "http://www.w3.org/ns/prov#actedOnBehalfOf"
       ],
@@ -1374,7 +1379,7 @@
     {
       "name": "was_generated_by",
       "definition_uri": "http://www.w3.org/ns/prov#was_generated_by",
-      "from_schema": "https://w3id.org/kgcl_schema/prov",
+      "from_schema": "https://w3id.org/kgcl/prov",
       "mappings": [
         "http://www.w3.org/ns/prov#wasGeneratedBy"
       ],
@@ -1389,7 +1394,7 @@
     {
       "name": "used",
       "definition_uri": "http://www.w3.org/ns/prov#used",
-      "from_schema": "https://w3id.org/kgcl_schema/prov",
+      "from_schema": "https://w3id.org/kgcl/prov",
       "mappings": [
         "http://www.w3.org/ns/prov#used"
       ],
@@ -1405,7 +1410,7 @@
     {
       "name": "activity_set",
       "definition_uri": "http://www.w3.org/ns/prov#activity_set",
-      "from_schema": "https://w3id.org/kgcl_schema/prov",
+      "from_schema": "https://w3id.org/kgcl/prov",
       "slot_uri": "http://www.w3.org/ns/prov#activity_set",
       "multivalued": true,
       "owner": "Session",
@@ -1420,7 +1425,7 @@
     {
       "name": "agent_set",
       "definition_uri": "http://www.w3.org/ns/prov#agent_set",
-      "from_schema": "https://w3id.org/kgcl_schema/prov",
+      "from_schema": "https://w3id.org/kgcl/prov",
       "slot_uri": "http://www.w3.org/ns/prov#agent_set",
       "multivalued": true,
       "range": "Agent",
@@ -1430,9 +1435,9 @@
     },
     {
       "name": "id",
-      "definition_uri": "https://w3id.org/kgcl_schema/basics/id",
-      "from_schema": "https://w3id.org/kgcl_schema/basics",
-      "slot_uri": "https://w3id.org/kgcl_schema/basics/id",
+      "definition_uri": "https://w3id.org/kgcl/basics/id",
+      "from_schema": "https://w3id.org/kgcl/basics",
+      "slot_uri": "https://w3id.org/kgcl/basics/id",
       "identifier": true,
       "owner": "Agent",
       "domain_of": [
@@ -1447,8 +1452,8 @@
     },
     {
       "name": "description",
-      "definition_uri": "https://w3id.org/kgcl_schema/basics/description",
-      "from_schema": "https://w3id.org/kgcl_schema/basics",
+      "definition_uri": "https://w3id.org/kgcl/basics/description",
+      "from_schema": "https://w3id.org/kgcl/basics",
       "mappings": [
         "http://purl.org/dc/terms/description"
       ],
@@ -1662,7 +1667,7 @@
       "comments": [
         "we use the PROV model to represent the agent making a change"
       ],
-      "from_schema": "https://w3id.org/kgcl_schema/prov",
+      "from_schema": "https://w3id.org/kgcl/prov",
       "mappings": [
         "http://www.w3.org/ns/prov#wasGeneratedBy"
       ],
@@ -1907,12 +1912,12 @@
     },
     {
       "name": "ChangeSetSummaryStatistic_property_value_set",
-      "definition_uri": "http://w3id.org/kgcl_schema/om/property_value_set",
+      "definition_uri": "http://w3id.org/kgcl/om/property_value_set",
       "description": "Summary statistic is grouped by these constraints",
-      "from_schema": "https://w3id.org/kgcl_schema/ontology",
+      "from_schema": "https://w3id.org/kgcl/ontology",
       "is_a": "property_value_set",
       "domain": "ChangeSetSummaryStatistic",
-      "slot_uri": "http://w3id.org/kgcl_schema/om/property_value_set",
+      "slot_uri": "http://w3id.org/kgcl/om/property_value_set",
       "multivalued": true,
       "alias": "property_value_set",
       "owner": "ChangeSetSummaryStatistic",
@@ -2096,14 +2101,14 @@
     },
     {
       "name": "EdgeChange_subject",
-      "definition_uri": "http://w3id.org/kgcl_schema/om/subject",
+      "definition_uri": "http://w3id.org/kgcl/om/subject",
       "comments": [
         "if subject is empty, use the about field of the last node change"
       ],
-      "from_schema": "https://w3id.org/kgcl_schema/ontology",
+      "from_schema": "https://w3id.org/kgcl/ontology",
       "is_a": "subject",
       "domain": "EdgeChange",
-      "slot_uri": "http://w3id.org/kgcl_schema/om/subject",
+      "slot_uri": "http://w3id.org/kgcl/om/subject",
       "alias": "subject",
       "owner": "EdgeChange",
       "domain_of": [
@@ -2296,12 +2301,12 @@
     },
     {
       "name": "MappingCreation_subject",
-      "definition_uri": "http://w3id.org/kgcl_schema/om/subject",
+      "definition_uri": "http://w3id.org/kgcl/om/subject",
       "description": "This corresponds to subject_id in SSSOM",
-      "from_schema": "https://w3id.org/kgcl_schema/ontology",
+      "from_schema": "https://w3id.org/kgcl/ontology",
       "is_a": "subject",
       "domain": "MappingCreation",
-      "slot_uri": "http://w3id.org/kgcl_schema/om/subject",
+      "slot_uri": "http://w3id.org/kgcl/om/subject",
       "alias": "subject",
       "owner": "MappingCreation",
       "domain_of": [
@@ -2314,12 +2319,12 @@
     },
     {
       "name": "MappingCreation_predicate",
-      "definition_uri": "http://w3id.org/kgcl_schema/om/predicate",
+      "definition_uri": "http://w3id.org/kgcl/om/predicate",
       "description": "This corresponds to predicate_id in SSSOM. The value of this is typically a predicate from SKOS",
-      "from_schema": "https://w3id.org/kgcl_schema/ontology",
+      "from_schema": "https://w3id.org/kgcl/ontology",
       "is_a": "predicate",
       "domain": "MappingCreation",
-      "slot_uri": "http://w3id.org/kgcl_schema/om/predicate",
+      "slot_uri": "http://w3id.org/kgcl/om/predicate",
       "alias": "predicate",
       "owner": "MappingCreation",
       "domain_of": [
@@ -2332,12 +2337,12 @@
     },
     {
       "name": "MappingCreation_object",
-      "definition_uri": "http://w3id.org/kgcl_schema/om/object",
+      "definition_uri": "http://w3id.org/kgcl/om/object",
       "description": "This corresponds to object_id in SSSOM",
-      "from_schema": "https://w3id.org/kgcl_schema/ontology",
+      "from_schema": "https://w3id.org/kgcl/ontology",
       "is_a": "object",
       "domain": "MappingCreation",
-      "slot_uri": "http://w3id.org/kgcl_schema/om/object",
+      "slot_uri": "http://w3id.org/kgcl/om/object",
       "alias": "object",
       "owner": "MappingCreation",
       "domain_of": [
@@ -4564,7 +4569,8 @@
         "about_node_representation",
         "new_value",
         "language",
-        "qualifier"
+        "qualifier",
+        "predicate"
       ],
       "slot_usage": {},
       "class_uri": "http://w3id.org/kgcl/NewSynonym",
@@ -4704,7 +4710,8 @@
         "language",
         "old_value",
         "new_value",
-        "has_textual_diff"
+        "has_textual_diff",
+        "target"
       ],
       "slot_usage": {},
       "class_uri": "http://w3id.org/kgcl/SynonymPredicateChange",
@@ -5772,35 +5779,35 @@
     },
     {
       "name": "OntologyElement",
-      "definition_uri": "http://w3id.org/kgcl_schema/om/OntologyElement",
+      "definition_uri": "http://w3id.org/kgcl/om/OntologyElement",
       "description": "Any component of an ontology or knowledge graph",
-      "from_schema": "https://w3id.org/kgcl_schema/ontology",
+      "from_schema": "https://w3id.org/kgcl/ontology",
       "aliases": [
         "entity"
       ],
       "slot_usage": {},
-      "class_uri": "http://w3id.org/kgcl_schema/om/OntologyElement",
+      "class_uri": "http://w3id.org/kgcl/om/OntologyElement",
       "@type": "ClassDefinition"
     },
     {
       "name": "PropertyValue",
-      "definition_uri": "http://w3id.org/kgcl_schema/om/PropertyValue",
+      "definition_uri": "http://w3id.org/kgcl/om/PropertyValue",
       "description": "a property-value pair",
-      "from_schema": "https://w3id.org/kgcl_schema/ontology",
+      "from_schema": "https://w3id.org/kgcl/ontology",
       "is_a": "OntologyElement",
       "slots": [
         "property",
         "filler"
       ],
       "slot_usage": {},
-      "class_uri": "http://w3id.org/kgcl_schema/om/PropertyValue",
+      "class_uri": "http://w3id.org/kgcl/om/PropertyValue",
       "@type": "ClassDefinition"
     },
     {
       "name": "Annotation",
-      "definition_uri": "http://w3id.org/kgcl_schema/om/Annotation",
+      "definition_uri": "http://w3id.org/kgcl/om/Annotation",
       "description": "owl annotations. Not to be confused with annotations sensu GO",
-      "from_schema": "https://w3id.org/kgcl_schema/ontology",
+      "from_schema": "https://w3id.org/kgcl/ontology",
       "mappings": [
         "owl:Annotation"
       ],
@@ -5813,14 +5820,14 @@
         "filler_type"
       ],
       "slot_usage": {},
-      "class_uri": "http://w3id.org/kgcl_schema/om/Annotation",
+      "class_uri": "http://w3id.org/kgcl/om/Annotation",
       "@type": "ClassDefinition"
     },
     {
       "name": "Node",
-      "definition_uri": "http://w3id.org/kgcl_schema/om/Node",
+      "definition_uri": "http://w3id.org/kgcl/om/Node",
       "description": "Any named entity in an ontology. May be a class, individual, property",
-      "from_schema": "https://w3id.org/kgcl_schema/ontology",
+      "from_schema": "https://w3id.org/kgcl/ontology",
       "aliases": [
         "entity",
         "term"
@@ -5833,14 +5840,14 @@
         "owl_type"
       ],
       "slot_usage": {},
-      "class_uri": "http://w3id.org/kgcl_schema/om/Node",
+      "class_uri": "http://w3id.org/kgcl/om/Node",
       "@type": "ClassDefinition"
     },
     {
       "name": "ClassNode",
-      "definition_uri": "http://w3id.org/kgcl_schema/om/ClassNode",
+      "definition_uri": "http://w3id.org/kgcl/om/ClassNode",
       "description": "A node that is a class",
-      "from_schema": "https://w3id.org/kgcl_schema/ontology",
+      "from_schema": "https://w3id.org/kgcl/ontology",
       "aliases": [
         "concept"
       ],
@@ -5860,9 +5867,9 @@
     },
     {
       "name": "InstanceNode",
-      "definition_uri": "http://w3id.org/kgcl_schema/om/InstanceNode",
+      "definition_uri": "http://w3id.org/kgcl/om/InstanceNode",
       "description": "A node that is an individual",
-      "from_schema": "https://w3id.org/kgcl_schema/ontology",
+      "from_schema": "https://w3id.org/kgcl/ontology",
       "aliases": [
         "named individual"
       ],
@@ -5882,9 +5889,9 @@
     },
     {
       "name": "Edge",
-      "definition_uri": "http://w3id.org/kgcl_schema/om/Edge",
+      "definition_uri": "http://w3id.org/kgcl/om/Edge",
       "description": "A relationship between two nodes.\nCurrently the only kinds of edges supported in KGCL:\n\n  * A subClassOf B <==> Edge(subject=A, predicate=owl:subClassOf, object=B)\n  * A subClassOf P some B <==> Edge(subject=A, predicate=P, object=B)\n  * P subPropertyOf Q <==> Edge(subject=P, predicate=owl:subPropertyOf, object=Q)\n\nThese represent the most common kind of pairwise relationship between classes, and classes are the dominant node type in ontologies.\nIn future a wider variety of OWL axiom types will be supportedn through the use of an additional edge property/slot to indicate the interpretation of the axiom, following owlstar (https://github.com/cmungall/owlstar).\nFor example:\n * `A subClassOf R only B <==> Edge(subject=A, predicate=P, object=B, interpretation=AllOnly)`\n * `A Annotation(P,B) <==> Edge(subject=A, predicate=P, object=B, interpretation=annotationAssertion)`\n\nNote that not all axioms are intended to map to edges. Axioms/triples where the object is a literal would be represented as node properties. Complex OWL axioms involving nesting would have their own dedicated construct, or may be represented generically. These are out of scope for the current version of KGCL",
-      "from_schema": "https://w3id.org/kgcl_schema/ontology",
+      "from_schema": "https://w3id.org/kgcl/ontology",
       "aliases": [
         "triple",
         "axiom",
@@ -5905,32 +5912,32 @@
         "annotation_set"
       ],
       "slot_usage": {},
-      "class_uri": "http://w3id.org/kgcl_schema/om/Edge",
+      "class_uri": "http://w3id.org/kgcl/om/Edge",
       "@type": "ClassDefinition"
     },
     {
       "name": "LogicalDefinition",
-      "definition_uri": "http://w3id.org/kgcl_schema/om/LogicalDefinition",
-      "from_schema": "https://w3id.org/kgcl_schema/ontology",
+      "definition_uri": "http://w3id.org/kgcl/om/LogicalDefinition",
+      "from_schema": "https://w3id.org/kgcl/ontology",
       "is_a": "OntologyElement",
       "slot_usage": {},
-      "class_uri": "http://w3id.org/kgcl_schema/om/LogicalDefinition",
+      "class_uri": "http://w3id.org/kgcl/om/LogicalDefinition",
       "@type": "ClassDefinition"
     },
     {
       "name": "OntologySubset",
-      "definition_uri": "http://w3id.org/kgcl_schema/om/OntologySubset",
-      "from_schema": "https://w3id.org/kgcl_schema/ontology",
+      "definition_uri": "http://w3id.org/kgcl/om/OntologySubset",
+      "from_schema": "https://w3id.org/kgcl/ontology",
       "is_a": "OntologyElement",
       "slot_usage": {},
-      "class_uri": "http://w3id.org/kgcl_schema/om/OntologySubset",
+      "class_uri": "http://w3id.org/kgcl/om/OntologySubset",
       "@type": "ClassDefinition"
     },
     {
       "name": "ProvElement",
       "definition_uri": "http://www.w3.org/ns/prov#ProvElement",
       "description": "A grouping for prov elements",
-      "from_schema": "https://w3id.org/kgcl_schema/prov",
+      "from_schema": "https://w3id.org/kgcl/prov",
       "abstract": true,
       "slot_usage": {},
       "class_uri": "http://www.w3.org/ns/prov#ProvElement",
@@ -5940,7 +5947,7 @@
       "name": "Activity",
       "definition_uri": "http://www.w3.org/ns/prov#Activity",
       "description": "a provence-generating activity",
-      "from_schema": "https://w3id.org/kgcl_schema/prov",
+      "from_schema": "https://w3id.org/kgcl/prov",
       "mappings": [
         "prov:Activity"
       ],
@@ -5962,7 +5969,7 @@
       "name": "Agent",
       "definition_uri": "http://www.w3.org/ns/prov#Agent",
       "description": "a provence-generating agent",
-      "from_schema": "https://w3id.org/kgcl_schema/prov",
+      "from_schema": "https://w3id.org/kgcl/prov",
       "mappings": [
         "prov:Agent"
       ],
@@ -5979,9 +5986,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "kgcl.yaml",
-  "source_file_date": "2023-08-30T14:17:55",
-  "source_file_size": 32080,
-  "generation_date": "2024-02-12T15:47:58",
+  "source_file_date": "2024-02-23T15:34:05",
+  "source_file_size": 32109,
+  "generation_date": "2024-02-23T15:34:14",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/kgcl.context.jsonld",

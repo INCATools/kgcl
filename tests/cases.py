@@ -1,6 +1,6 @@
 from typing import Tuple, Optional, List, Union
 
-from kgcl_schema.datamodel.kgcl import (
+from kgcl.datamodel.kgcl import (
     NewTextDefinition,
     NodeObsoletionWithDirectReplacement,
     NodeRename,
@@ -19,7 +19,7 @@ from kgcl_schema.datamodel.kgcl import (
     EdgeDeletion,
     NodeDeepening,
 )
-from kgcl_schema.datamodel.ontology_model import Edge
+from kgcl.datamodel.ontology_model import Edge
 
 TODO_TOKEN = "TODO"
 PART_OF = "BFO:0000050"

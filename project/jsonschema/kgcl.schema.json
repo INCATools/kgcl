@@ -1822,6 +1822,9 @@
                     "description": "The type (IRI or Literal) of an old value",
                     "type": "string"
                 },
+                "predicate": {
+                    "type": "string"
+                },
                 "pull_request": {
                     "type": "string"
                 },
@@ -4649,6 +4652,10 @@
                     "type": "string"
                 },
                 "see_also": {
+                    "type": "string"
+                },
+                "target": {
+                    "description": "The secondary entity on which the change operates",
                     "type": "string"
                 },
                 "type": {

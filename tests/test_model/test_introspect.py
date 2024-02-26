@@ -2,7 +2,7 @@
 import os
 import unittest
 
-from kgcl_schema.schema import get_schemaview
+from kgcl.schema import get_schemaview
 from linkml_runtime.dumpers import JSONDumper
 
 

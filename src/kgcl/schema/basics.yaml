@@ -1,10 +1,10 @@
-id: https://w3id.org/kgcl_schema/basics
+id: https://w3id.org/kgcl/basics
 name: basics
 title: basic predicates
 description: Core predicates
 license: https://creativecommons.org/publicdomain/zero/1.0/
 prefixes:
-  basics: https://w3id.org/kgcl_schema/basics/
+  basics: https://w3id.org/kgcl/basics/
   linkml: https://w3id.org/linkml/
 default_prefix: basics
 default_range: string

@@ -1,7 +1,7 @@
 import unittest
 from click.testing import CliRunner
 from pytest import Session
-from kgcl_schema.datamodel.kgcl import (
+from kgcl.datamodel.kgcl import (
     NodeObsoletionWithDirectReplacement,
     NodeRename,
     NodeObsoletion,
@@ -16,13 +16,13 @@ from kgcl_schema.datamodel.kgcl import (
     EdgeDeletion,
     NodeDeepening,
 )
-import kgcl_schema.grammar.parser as kgcl_parser
-from kgcl_schema.utils import from_yaml
+import kgcl.grammar.parser as kgcl_parser
+from kgcl.utils import from_yaml
 from tests import TMP_YAML
 from tests.cases import CASES
 from linkml_runtime.dumpers import yaml_dumper
 import yaml
-from kgcl_schema.grammar.parser import parse_statement
+from kgcl.grammar.parser import parse_statement
 from pathlib import Path
 
 PROJ_DIR = Path(__file__).resolve().parents[1]

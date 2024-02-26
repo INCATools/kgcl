@@ -2,7 +2,7 @@
 # Generation date: 2023-05-08T15:28:23
 # Schema: kgcl_schema-ontology-model
 #
-# id: https://w3id.org/kgcl_schema/ontology
+# id: https://w3id.org/kgcl/ontology
 # description: A basic bare-bones model of an ontology or ontology-like structure. The purpose is not to provide a complete model, rather just sufficient structure for domain and range constraints in the ocl model
 # license: https://creativecommons.org/publicdomain/zero/1.0/
 
@@ -30,11 +30,11 @@ version = "0.0.1"
 dataclasses._init_fn = dataclasses_init_fn_with_kwargs
 
 # Namespaces
-BASICS = CurieNamespace('basics', 'https://w3id.org/kgcl_schema/basics/')
+BASICS = CurieNamespace('basics', 'https://w3id.org/kgcl/basics/')
 DCTERMS = CurieNamespace('dcterms', 'http://purl.org/dc/terms/')
 LINKML = CurieNamespace('linkml', 'https://w3id.org/linkml/')
 OIO = CurieNamespace('oio', 'http://www.geneontology.org/formats/oboInOwl#')
-OM = CurieNamespace('om', 'http://w3id.org/kgcl_schema/om/')
+OM = CurieNamespace('om', 'http://w3id.org/kgcl/om/')
 OWL = CurieNamespace('owl', 'http://www.w3.org/2002/07/owl#')
 RDF = CurieNamespace('rdf', 'http://www.w3.org/1999/02/22-rdf-syntax-ns#')
 XML = CurieNamespace('xml', 'http://example.org/UNKNOWN/xml/')

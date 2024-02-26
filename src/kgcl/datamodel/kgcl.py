@@ -1,5 +1,5 @@
 # Auto generated from kgcl.yaml by pythongen.py version: 0.0.1
-# Generation date: 2024-02-12T15:48:06
+# Generation date: 2024-02-23T15:34:21
 # Schema: kgcl_schema
 #
 # id: https://w3id.org/kgcl
@@ -34,12 +34,12 @@ dataclasses._init_fn = dataclasses_init_fn_with_kwargs
 
 # Namespaces
 IAO = CurieNamespace('IAO', 'http://purl.obolibrary.org/obo/IAO_')
-BASICS = CurieNamespace('basics', 'https://w3id.org/kgcl_schema/basics/')
+BASICS = CurieNamespace('basics', 'https://w3id.org/kgcl/basics/')
 DCTERMS = CurieNamespace('dcterms', 'http://purl.org/dc/terms/')
 KGCL = CurieNamespace('kgcl', 'http://w3id.org/kgcl/')
 LINKML = CurieNamespace('linkml', 'https://w3id.org/linkml/')
 OIO = CurieNamespace('oio', 'http://www.geneontology.org/formats/oboInOwl#')
-OM = CurieNamespace('om', 'http://w3id.org/kgcl_schema/om/')
+OM = CurieNamespace('om', 'http://w3id.org/kgcl/om/')
 OWL = CurieNamespace('owl', 'http://www.w3.org/2002/07/owl#')
 PROV = CurieNamespace('prov', 'http://www.w3.org/ns/prov#')
 RDF = CurieNamespace('rdf', 'http://www.w3.org/1999/02/22-rdf-syntax-ns#')
@@ -1465,6 +1465,7 @@ class NewSynonym(NodeSynonymChange):
     new_value: Optional[str] = None
     language: Optional[str] = None
     qualifier: Optional[str] = None
+    predicate: Optional[Union[str, NodeId]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
@@ -1480,6 +1481,9 @@ class NewSynonym(NodeSynonymChange):
 
         if self.qualifier is not None and not isinstance(self.qualifier, str):
             self.qualifier = str(self.qualifier)
+
+        if self.predicate is not None and not isinstance(self.predicate, NodeId):
+            self.predicate = NodeId(self.predicate)
 
         super().__post_init__(**kwargs)
         self.type = str(self.class_name)
@@ -1604,6 +1608,7 @@ class SynonymPredicateChange(NodeSynonymChange):
     old_value: Optional[str] = None
     new_value: Optional[str] = None
     has_textual_diff: Optional[Union[dict, "TextualDiff"]] = None
+    target: Optional[str] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
@@ -1619,6 +1624,9 @@ class SynonymPredicateChange(NodeSynonymChange):
 
         if self.has_textual_diff is not None and not isinstance(self.has_textual_diff, TextualDiff):
             self.has_textual_diff = TextualDiff()
+
+        if self.target is not None and not isinstance(self.target, str):
+            self.target = str(self.target)
 
         super().__post_init__(**kwargs)
         self.type = str(self.class_name)
