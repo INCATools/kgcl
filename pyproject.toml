@@ -9,11 +9,6 @@ authors = [
 license = "MIT"
 readme = "README.md"
 
-[[tool.poetry.packages]]
-include = "kgcl"
-from = "src"
-
-
 [tool.poetry.dependencies]
 python = "^3.9"
 linkml-runtime = ">=1.1.24"

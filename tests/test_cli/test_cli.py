@@ -3,9 +3,9 @@ import unittest
 
 from click.testing import CliRunner
 
-import kgcl.grammar.parser as kgcl_parser
-from kgcl.datamodel.kgcl import Session
-from kgcl.utils import from_yaml
+import kgcl_schema.grammar.parser as kgcl_parser
+from kgcl_schema.datamodel.kgcl import Session
+from kgcl_schema.utils import from_yaml
 
 from tests import TMP_YAML
 from tests.cases import CASES, TODO_TOKEN, UID

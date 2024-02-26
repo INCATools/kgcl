@@ -5,12 +5,12 @@ import unittest
 from collections import defaultdict
 from typing import List, Dict
 
-from kgcl.datamodel.kgcl import SetLanguageForName
+from kgcl_schema.datamodel.kgcl import SetLanguageForName
 from linkml_runtime.linkml_model import ClassDefinitionName
 from linkml_runtime.utils.yamlutils import YAMLRoot
 from rdflib import Graph
 
-from kgcl.utils import from_yaml, to_json, to_jsonld, to_rdf
+from kgcl_schema.utils import from_yaml, to_json, to_jsonld, to_rdf
 
 # from test import EXAMPLE_DIR
 from tests.util import roundtrip
