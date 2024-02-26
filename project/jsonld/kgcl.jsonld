@@ -5986,9 +5986,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "kgcl.yaml",
-  "source_file_date": "2024-02-23T15:34:05",
+  "source_file_date": "2024-02-25T18:04:37",
   "source_file_size": 32109,
-  "generation_date": "2024-02-23T15:34:14",
+  "generation_date": "2024-02-25T23:33:07",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/kgcl.context.jsonld",

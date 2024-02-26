@@ -12,7 +12,7 @@ SCHEMA_NAME = $(shell sh ./utils/get-value.sh name)
 SOURCE_SCHEMA_PATH = $(shell sh ./utils/get-value.sh source_schema_path)
 SRC = src
 DEST = project
-PYMODEL = $(SRC)/$(SCHEMA_NAME)/datamodel
+PYMODEL = $(SRC)/$(SCHEMA_NAME)_schema/datamodel
 DOCDIR = docs
 TEMPLATEDIR = doc-templates
 
@@ -49,7 +49,7 @@ deploy: all mkd-gh-deploy
 gen-project: $(PYMODEL)
 	$(RUN) gen-project -d $(DEST) $(SOURCE_SCHEMA_PATH) --config-file project_config.yaml  && mv $(DEST)/*.py $(PYMODEL) 
 
-src/kgcl/datamodel/%.py: src/kgcl/schema/%.yaml
+src/kgcl_schema/datamodel/%.py: src/kgcl_schema/schema/%.yaml
 	$(RUN) gen-python $< > $@.tmp && mv $@.tmp $@
 
 test:
