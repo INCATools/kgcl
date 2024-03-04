@@ -49,8 +49,8 @@ h1,h2,h3,h4,h5,h6,footer,p {
   }
   .link {
     fill: none; !important;
-    stroke: rgba(100, 100, 100, 0.4); !important;
-    stroke-width: 1.5px; !important;
+    stroke: rgba(100, 100, 100, 0.6); !important;
+    stroke-width: 4.5px; !important;
   }
   .small-text {
       font-size: 0.8em;
