@@ -11,6 +11,8 @@ from linkml_runtime.utils.schemaview import SchemaView
 
 file_path = "src/kgcl_schema/schema/kgcl.yaml"
 
+ROOT_NODE = "ChangeLanguageElement"
+
 # Read the file content
 with open(file_path, "r") as file:
     file_content_str = file.read()
@@ -101,7 +103,7 @@ def load_category_tree_data(return_parent_to_child_dict: bool = False) -> tuple:
             if parent_name_english:
                 parent_name = parent_name_english
                 parent_to_child_dict[parent_name].add(class_name)
-                root_node = {"name": "NamedThing", "parent": None}
+                root_node = {"name": ROOT_NODE, "parent": None}
                 category_tree = get_tree_class_recursive(
                     root_node, parent_to_child_dict
                 )
