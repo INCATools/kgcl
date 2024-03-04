@@ -92,17 +92,6 @@ function generateD3Tree(jsonFile, marginSettings, camelcase) {
                     nodeText.text(d.name);
                     if (camelcase) {
                         nodeText.text(toCamelCase(d.name));
-                        nodeText.append("a")
-                        .attr("class", "md-link")  // Class for styling
-                        .attr("xlink:href", toCamelCase(d.name))  // Set the hyperlink reference
-                        .text("(doc)");
-                    }
-                    else {
-                        // Append an anchor tag to nodeText
-                        nodeText.append("a")
-                            .attr("class", "md-link")  // Class for styling
-                            .attr("xlink:href", d.name)  // Set the hyperlink reference
-                            .text("(doc)");
                     }
                 })
                 .style("fill-opacity", 1e-6);
