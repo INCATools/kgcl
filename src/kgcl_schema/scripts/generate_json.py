@@ -9,7 +9,7 @@ from typing import Any, List, Union
 
 from linkml_runtime.utils.schemaview import SchemaView
 
-file_path = "src/kgcl_schema/schema/biolink_model.yaml"
+file_path = "src/kgcl_schema/schema/kgcl.yaml"
 
 # Read the file content
 with open(file_path, "r") as file:
