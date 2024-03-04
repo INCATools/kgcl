@@ -180,26 +180,6 @@ def load_association_tree_data(return_parent_to_child_dict: bool = False) -> tup
     )
 
 
-def load_aspect_tree_data() -> List[dict]:
-    aspect_enum_field_name = "GeneOrGeneProductOrChemicalEntityAspectEnum"
-    # Build aspects tree
-    parent_to_child_dict = defaultdict(set)
-    root_name = "[root]"
-    enum = sv.get_enum(aspect_enum_field_name)
-    for aspect_name in enum.permissible_values:
-        parent = (
-            sv.permissible_value_parent(aspect_name, aspect_enum_field_name)
-            if aspect_name
-            else root_name
-        )
-        direct_parent = parent[0] if parent else root_name
-        parent_to_child_dict[direct_parent].add(aspect_name)
-    root_node = {"name": root_name, "parent": None}
-    aspect_tree = get_tree_slot_recursive(root_node, parent_to_child_dict)
-
-    return [aspect_tree]
-
-
 def convert_predicate_to_trapi_format(english_predicate: str) -> str:
     # Converts a string like "treated by" to "treated_by"
     return english_predicate.replace(" ", "_")
@@ -262,7 +242,6 @@ def generate_viz_json():
     pred_data = load_predicate_tree_data()
     qualifier_data = load_qualifier_tree_data()
     cat_data = load_category_tree_data()
-    aspect_data = load_aspect_tree_data()
     association_data = load_association_tree_data()
 
     with open("src/docs/predicates.json", "w") as json_file:
@@ -276,9 +255,6 @@ def generate_viz_json():
 
     with open("src/docs/associations.json", "w") as json_file:
         json.dump(association_data, json_file, indent=4)
-
-    with open("src/docs/aspects.json", "w") as json_file:
-        json.dump(aspect_data, json_file, indent=4)
 
 
 if __name__ == "__main__":
