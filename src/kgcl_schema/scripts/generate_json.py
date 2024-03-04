@@ -59,17 +59,16 @@ def load_predicate_tree_data(
         slot = sv.get_slot(slot_name)
         if slot.deprecated:
             continue
-        slot_name = convert_predicate_to_trapi_format(slot_name)
         parent_name_english = slot.is_a
         if parent_name_english:
-            parent_name = convert_predicate_to_trapi_format(parent_name_english)
+            parent_name = parent_name_english
             parent_to_child_dict[parent_name].add(slot_name)
             root_node = {"name": "related_to"}
             predicate_tree = get_tree_slot_recursive(root_node, parent_to_child_dict)
         if slot.mixins:
             for mixin in slot.mixins:
                 parent_name_english = mixin
-                parent_name = convert_predicate_to_trapi_format(parent_name_english)
+                parent_name = parent_name_english
                 parent_to_child_dict[parent_name].add(slot_name)
                 root_node = {"name": "related_to_at_instance_level"}
                 predicate_tree = get_tree_slot_recursive(
@@ -96,10 +95,9 @@ def load_qualifier_tree_data(
         slot = sv.get_slot(slot_name)
         if slot.deprecated:
             continue
-        slot_name = convert_predicate_to_trapi_format(slot_name)
         parent_name_english = slot.is_a
         if parent_name_english:
-            parent_name = convert_predicate_to_trapi_format(parent_name_english)
+            parent_name = parent_name_english
             parent_to_child_dict[parent_name].add(slot_name)
             root_node = {"name": "qualifier"}
             predicate_tree = get_tree_slot_recursive(root_node, parent_to_child_dict)
@@ -125,17 +123,16 @@ def load_category_tree_data(return_parent_to_child_dict: bool = False) -> tuple:
         cls = sv.get_class(class_name)
         if cls.deprecated:
             continue
-        class_name = convert_predicate_to_trapi_format(class_name)
         if cls.is_a:
             parent_name_english = cls.is_a
             if parent_name_english:
-                parent_name = convert_predicate_to_trapi_format(parent_name_english)
+                parent_name = parent_name_english
                 parent_to_child_dict[parent_name].add(class_name)
                 root_node = {"name": "NamedThing", "parent": None}
                 category_tree = get_tree_class_recursive(
                     root_node, parent_to_child_dict
                 )
-                parent_name = convert_category_to_trapi_format(parent_name_english)
+                parent_name = parent_name_english
                 parent_to_child_dict[parent_name].add(class_name)
 
     return (
@@ -160,35 +157,22 @@ def load_association_tree_data(return_parent_to_child_dict: bool = False) -> tup
         cls = sv.get_class(class_name)
         if cls.deprecated:
             continue
-        class_name = convert_predicate_to_trapi_format(class_name)
         if cls.is_a:
             parent_name_english = cls.is_a
             if parent_name_english:
-                parent_name = convert_predicate_to_trapi_format(parent_name_english)
+                parent_name = parent_name_english
                 parent_to_child_dict[parent_name].add(class_name)
                 root_node = {"name": "Association", "parent": None}
                 category_tree = get_tree_class_recursive(
                     root_node, parent_to_child_dict
                 )
-                parent_name = convert_category_to_trapi_format(parent_name_english)
+                parent_name = parent_name_english
                 parent_to_child_dict[parent_name].add(class_name)
 
     return (
         ([category_tree], parent_to_child_dict)
         if return_parent_to_child_dict
         else ([category_tree])
-    )
-
-
-def convert_predicate_to_trapi_format(english_predicate: str) -> str:
-    # Converts a string like "treated by" to "treated_by"
-    return english_predicate.replace(" ", "_")
-
-
-def convert_category_to_trapi_format(english_category: str) -> str:
-    # Converts a string like "named thing" to "NamedThing"
-    return "".join(
-        [f"{word[0].upper()}{word[1:]}" for word in english_category.split(" ")]
     )
 
 
