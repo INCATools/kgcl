@@ -81,33 +81,6 @@ def load_predicate_tree_data(
     )
 
 
-def load_qualifier_tree_data(
-    return_parent_to_child_dict: bool = False,
-) -> Union[List[List[Any]], dict]:
-    """
-    Load the qualifier tree data from the model.
-
-    :return: The qualifier tree data.
-    """
-    parent_to_child_dict = defaultdict(set)
-    predicate_tree = []
-    for slot_name in sv.all_slots(imports=True):
-        slot = sv.get_slot(slot_name)
-        if slot.deprecated:
-            continue
-        parent_name_english = slot.is_a
-        if parent_name_english:
-            parent_name = parent_name_english
-            parent_to_child_dict[parent_name].add(slot_name)
-            root_node = {"name": "qualifier"}
-            predicate_tree = get_tree_slot_recursive(root_node, parent_to_child_dict)
-    return (
-        ([predicate_tree], parent_to_child_dict)
-        if return_parent_to_child_dict
-        else ([predicate_tree])
-    )
-
-
 def load_category_tree_data(return_parent_to_child_dict: bool = False) -> tuple:
     """
     Load the category tree data from the model.
@@ -129,40 +102,6 @@ def load_category_tree_data(return_parent_to_child_dict: bool = False) -> tuple:
                 parent_name = parent_name_english
                 parent_to_child_dict[parent_name].add(class_name)
                 root_node = {"name": "NamedThing", "parent": None}
-                category_tree = get_tree_class_recursive(
-                    root_node, parent_to_child_dict
-                )
-                parent_name = parent_name_english
-                parent_to_child_dict[parent_name].add(class_name)
-
-    return (
-        ([category_tree], parent_to_child_dict)
-        if return_parent_to_child_dict
-        else ([category_tree])
-    )
-
-
-def load_association_tree_data(return_parent_to_child_dict: bool = False) -> tuple:
-    """
-    Load the category tree data from the model.
-
-    :param return_parent_to_child_dict: Whether to return the parent to child dictionary.
-    :type return_parent_to_child_dict: bool
-    :return: The category tree data.
-    :rtype: tuple
-    """
-    parent_to_child_dict = defaultdict(set)
-    category_tree = {}
-    for class_name in sv.all_classes(imports=True):
-        cls = sv.get_class(class_name)
-        if cls.deprecated:
-            continue
-        if cls.is_a:
-            parent_name_english = cls.is_a
-            if parent_name_english:
-                parent_name = parent_name_english
-                parent_to_child_dict[parent_name].add(class_name)
-                root_node = {"name": "Association", "parent": None}
                 category_tree = get_tree_class_recursive(
                     root_node, parent_to_child_dict
                 )
@@ -224,21 +163,13 @@ def generate_viz_json():
 
     # Generate the d3 viz data
     pred_data = load_predicate_tree_data()
-    qualifier_data = load_qualifier_tree_data()
     cat_data = load_category_tree_data()
-    association_data = load_association_tree_data()
 
     with open("src/docs/predicates.json", "w") as json_file:
         json.dump(pred_data, json_file, indent=4)
 
-    with open("src/docs/qualifiers.json", "w") as json_file:
-        json.dump(qualifier_data, json_file, indent=4)
-
     with open("src/docs/categories.json", "w") as json_file:
         json.dump(cat_data, json_file, indent=4)
-
-    with open("src/docs/associations.json", "w") as json_file:
-        json.dump(association_data, json_file, indent=4)
 
 
 if __name__ == "__main__":
