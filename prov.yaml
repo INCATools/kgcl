@@ -1,0 +1,72 @@
+id: https://w3id.org/kgcl/prov
+name: KGCL-PROV
+title: KGCL Rendering of prov schema
+description: See https://www.w3.org/TR/prov-o/
+license: https://creativecommons.org/publicdomain/zero/1.0/
+prefixes:
+  prov: http://www.w3.org/ns/prov#
+  linkml: https://w3id.org/linkml/
+default_prefix: prov
+default_range: string
+default_curi_maps:
+- semweb_context
+imports:
+- linkml:types
+- basics
+classes:
+
+  ProvElement:
+    abstract: true
+    description: A grouping for prov elements
+
+  Activity:
+    is_a: ProvElement
+    description: a provence-generating activity
+    slots:
+    - id
+    - started_at_time
+    - ended_at_time
+    - was_informed_by
+    - was_associated_with
+    - used
+    - description
+    mappings:
+    - prov:Activity
+  Agent:
+    is_a: ProvElement
+    description: a provence-generating agent
+    slots:
+    - id
+    - acted_on_behalf_of
+    - was_informed_by
+    class_uri: prov:Agent
+slots:
+  started_at_time:
+    slot_uri: prov:startedAtTime
+  ended_at_time:
+    slot_uri: prov:endedAtTime
+  was_informed_by:
+    range: Activity
+    slot_uri: prov:wasInformedBy
+  was_associated_with:
+    range: Agent
+    slot_uri: prov:wasAssociatedWith
+    inlined: false
+  acted_on_behalf_of:
+    range: Agent
+    slot_uri: prov:actedOnBehalfOf
+  was_generated_by:
+    range: Activity
+    slot_uri: prov:wasGeneratedBy
+  used:
+    domain: Activity
+    slot_uri: prov:used
+  activity_set:
+    range: Activity
+    multivalued: true
+    inlined_as_list: true
+  agent_set:
+    range: Agent
+    multivalued: true
+    inlined_as_list: true
+
