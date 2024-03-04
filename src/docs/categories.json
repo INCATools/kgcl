@@ -1,0 +1,270 @@
+[
+    {
+        "name": "ChangeLanguageElement",
+        "parent": null,
+        "children": [
+            {
+                "name": "Change",
+                "parent": "ChangeLanguageElement",
+                "children": [
+                    {
+                        "name": "ComplexChange",
+                        "parent": "Change",
+                        "children": [
+                            {
+                                "name": "MultiNodeObsoletion",
+                                "parent": "ComplexChange"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "SimpleChange",
+                        "parent": "Change",
+                        "children": [
+                            {
+                                "name": "EdgeChange",
+                                "parent": "SimpleChange",
+                                "children": [
+                                    {
+                                        "name": "EdgeCreation",
+                                        "parent": "EdgeChange",
+                                        "children": [
+                                            {
+                                                "name": "PlaceUnder",
+                                                "parent": "EdgeCreation"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "name": "EdgeDeletion",
+                                        "parent": "EdgeChange",
+                                        "children": [
+                                            {
+                                                "name": "RemoveUnder",
+                                                "parent": "EdgeDeletion"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "name": "EdgeLogicalInterpretationChange",
+                                        "parent": "EdgeChange"
+                                    },
+                                    {
+                                        "name": "EdgeObsoletion",
+                                        "parent": "EdgeChange"
+                                    },
+                                    {
+                                        "name": "EdgeRewiring",
+                                        "parent": "EdgeChange"
+                                    },
+                                    {
+                                        "name": "NodeMove",
+                                        "parent": "EdgeChange",
+                                        "children": [
+                                            {
+                                                "name": "NodeDeepening",
+                                                "parent": "NodeMove"
+                                            },
+                                            {
+                                                "name": "NodeShallowing",
+                                                "parent": "NodeMove"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "name": "PredicateChange",
+                                        "parent": "EdgeChange"
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "LogicalAxiomChange",
+                                "parent": "SimpleChange"
+                            },
+                            {
+                                "name": "NodeChange",
+                                "parent": "SimpleChange",
+                                "children": [
+                                    {
+                                        "name": "AddNodeToSubset",
+                                        "parent": "NodeChange"
+                                    },
+                                    {
+                                        "name": "NodeAnnotationChange",
+                                        "parent": "NodeChange",
+                                        "children": [
+                                            {
+                                                "name": "NodeAnnotationReplacement",
+                                                "parent": "NodeAnnotationChange"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "name": "NodeCreation",
+                                        "parent": "NodeChange",
+                                        "children": [
+                                            {
+                                                "name": "ClassCreation",
+                                                "parent": "NodeCreation"
+                                            },
+                                            {
+                                                "name": "ObjectPropertyCreation",
+                                                "parent": "NodeCreation"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "name": "NodeDeletion",
+                                        "parent": "NodeChange"
+                                    },
+                                    {
+                                        "name": "NodeMappingChange",
+                                        "parent": "NodeChange",
+                                        "children": [
+                                            {
+                                                "name": "MappingPredicateChange",
+                                                "parent": "NodeMappingChange"
+                                            },
+                                            {
+                                                "name": "MappingReplacement",
+                                                "parent": "NodeMappingChange"
+                                            },
+                                            {
+                                                "name": "NewMapping",
+                                                "parent": "NodeMappingChange"
+                                            },
+                                            {
+                                                "name": "RemoveMapping",
+                                                "parent": "NodeMappingChange"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "name": "NodeMetadataAssertionChange",
+                                        "parent": "NodeChange",
+                                        "children": [
+                                            {
+                                                "name": "MetadataAssertionPredicateChange",
+                                                "parent": "NodeMetadataAssertionChange"
+                                            },
+                                            {
+                                                "name": "MetadataAssertionReplacement",
+                                                "parent": "NodeMetadataAssertionChange"
+                                            },
+                                            {
+                                                "name": "NewMetadataAssertion",
+                                                "parent": "NodeMetadataAssertionChange"
+                                            },
+                                            {
+                                                "name": "RemoveMetadataAssertion",
+                                                "parent": "NodeMetadataAssertionChange"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "name": "NodeObsoletion",
+                                        "parent": "NodeChange",
+                                        "children": [
+                                            {
+                                                "name": "NodeDirectMerge",
+                                                "parent": "NodeObsoletion"
+                                            },
+                                            {
+                                                "name": "NodeObsoletionWithDirectReplacement",
+                                                "parent": "NodeObsoletion"
+                                            },
+                                            {
+                                                "name": "NodeObsoletionWithNoDirectReplacement",
+                                                "parent": "NodeObsoletion"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "name": "NodeRename",
+                                        "parent": "NodeChange"
+                                    },
+                                    {
+                                        "name": "NodeSynonymChange",
+                                        "parent": "NodeChange",
+                                        "children": [
+                                            {
+                                                "name": "NameBecomesSynonym",
+                                                "parent": "NodeSynonymChange"
+                                            },
+                                            {
+                                                "name": "NewSynonym",
+                                                "parent": "NodeSynonymChange"
+                                            },
+                                            {
+                                                "name": "RemoveSynonym",
+                                                "parent": "NodeSynonymChange"
+                                            },
+                                            {
+                                                "name": "SynonymPredicateChange",
+                                                "parent": "NodeSynonymChange"
+                                            },
+                                            {
+                                                "name": "SynonymReplacement",
+                                                "parent": "NodeSynonymChange"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "name": "NodeTextDefinitionChange",
+                                        "parent": "NodeChange",
+                                        "children": [
+                                            {
+                                                "name": "NewTextDefinition",
+                                                "parent": "NodeTextDefinitionChange"
+                                            },
+                                            {
+                                                "name": "RemoveTextDefinition",
+                                                "parent": "NodeTextDefinitionChange"
+                                            },
+                                            {
+                                                "name": "TextDefinitionReplacement",
+                                                "parent": "NodeTextDefinitionChange"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "name": "NodeUnobsoletion",
+                                        "parent": "NodeChange"
+                                    },
+                                    {
+                                        "name": "RemoveNodeFromSubset",
+                                        "parent": "NodeChange"
+                                    },
+                                    {
+                                        "name": "SetLanguageForName",
+                                        "parent": "NodeChange"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Transaction",
+                        "parent": "Change"
+                    }
+                ]
+            },
+            {
+                "name": "ChangeSetSummaryStatistic",
+                "parent": "ChangeLanguageElement"
+            },
+            {
+                "name": "Configuration",
+                "parent": "ChangeLanguageElement"
+            },
+            {
+                "name": "Session",
+                "parent": "ChangeLanguageElement"
+            },
+            {
+                "name": "TextualDiff",
+                "parent": "ChangeLanguageElement"
+            }
+        ]
+    }
+]
