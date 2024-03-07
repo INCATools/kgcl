@@ -53,7 +53,7 @@ function generateD3Tree(jsonFile, marginSettings, camelcase) {
 
             // Normalize for fixed-depth.
             nodes.forEach(function (d) {
-                d.y = d.depth * 186;
+                d.y = d.depth * 260;
             });
 
             // Update the nodes…
