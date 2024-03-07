@@ -44,12 +44,13 @@ h1,h2,h3,h4,h5,h6,footer,p {
     cursor: pointer;
   }
   .node text {
-    font: 18px serif;
-    text-shadow:-2px -2px 0 #fff, 2px -2px 0 #fff, -2px 2px 0 #fff, 2px 2px 0 #fff;
+    font: 20px serif;
+    /* text-shadow:-4px -4px 0 #fff, 4px -4px 0 #fff, -4px 4px 0 #fff, 4px 4px 0 #fff; */
+
   }
   .link {
     fill: none; !important;
-    stroke: rgba(100, 100, 100, 0.6); !important;
+    stroke: rgba(100, 100, 100, 0.5); !important;
     stroke-width: 4.5px; !important;
   }
   .small-text {

@@ -9,8 +9,8 @@ function generateD3Tree(jsonFile, marginSettings, camelcase) {
 
         // Shared code here...
         var margin = marginSettings,
-            width = 1600 - margin.right - margin.left,
-            height = 2000 - margin.top - margin.bottom;
+            width = 2600 - margin.right - margin.left,
+            height = 800 - margin.top - margin.bottom;
 
         var i = 0,
             duration = 750,
