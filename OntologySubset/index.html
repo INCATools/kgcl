@@ -208,14 +208,29 @@
 <p>URI: <a href="http://w3id.org/kgcl/OntologySubset">kgcl:OntologySubset</a></p>
 <div class="mermaid"> classDiagram
     class OntologySubset
-      OntologyElement &lt;|-- OntologySubset
+      Node &lt;|-- OntologySubset
+
+      OntologySubset : annotation_set
+
+          OntologySubset --&gt; Annotation : annotation_set
+
+      OntologySubset : id
+
+      OntologySubset : name
+
+      OntologySubset : owl_type
+
+          OntologySubset --&gt; OwlTypeEnum : owl_type
 
 
 </div>
 <h2 id="inheritance">Inheritance</h2>
 <ul>
 <li><a href="../OntologyElement/">OntologyElement</a><ul>
+<li><a href="../Node/">Node</a><ul>
 <li><strong>OntologySubset</strong></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -231,10 +246,28 @@
 </thead>
 <tbody>
 <tr>
+<td><a href="../id/">id</a></td>
+<td>1..1 <br/> <a href="../String/">String</a></td>
 <td></td>
+<td><a href="../Node/">Node</a></td>
+</tr>
+<tr>
+<td><a href="../name/">name</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td></td>
+<td><a href="../Node/">Node</a></td>
+</tr>
+<tr>
+<td><a href="../annotation_set/">annotation_set</a></td>
+<td>0..1 <br/> <a href="../Annotation/">Annotation</a></td>
 <td></td>
+<td><a href="../Node/">Node</a></td>
+</tr>
+<tr>
+<td><a href="../owl_type/">owl_type</a></td>
+<td>0..1 <br/> <a href="../OwlTypeEnum/">OwlTypeEnum</a></td>
 <td></td>
+<td><a href="../Node/">Node</a></td>
 </tr>
 </tbody>
 </table>
@@ -311,7 +344,7 @@
 <details>
 <pre><code class="language-yaml">name: OntologySubset
 from_schema: https://w3id.org/kgcl
-is_a: OntologyElement
+is_a: Node
 
 </code></pre>
 </details>
@@ -319,7 +352,58 @@ is_a: OntologyElement
 <details>
 <pre><code class="language-yaml">name: OntologySubset
 from_schema: https://w3id.org/kgcl
-is_a: OntologyElement
+is_a: Node
+attributes:
+  id:
+    name: id
+    from_schema: https://w3id.org/kgcl
+    rank: 1000
+    identifier: true
+    alias: id
+    owner: OntologySubset
+    domain_of:
+    - Change
+    - Node
+    - Activity
+    - Agent
+    range: string
+    required: true
+  name:
+    name: name
+    from_schema: https://w3id.org/kgcl
+    rank: 1000
+    alias: name
+    owner: OntologySubset
+    domain_of:
+    - NodeCreation
+    - Node
+    range: string
+  annotation_set:
+    name: annotation_set
+    from_schema: https://w3id.org/kgcl
+    rank: 1000
+    alias: annotation_set
+    owner: OntologySubset
+    domain_of:
+    - EdgeCreation
+    - EdgeDeletion
+    - EdgeObsoletion
+    - MappingCreation
+    - NodeCreation
+    - Annotation
+    - Node
+    - Edge
+    range: Annotation
+  owl_type:
+    name: owl_type
+    from_schema: https://w3id.org/kgcl
+    rank: 1000
+    alias: owl_type
+    owner: OntologySubset
+    domain_of:
+    - NodeCreation
+    - Node
+    range: OwlTypeEnum
 
 </code></pre>
 </details>
