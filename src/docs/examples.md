@@ -51,6 +51,26 @@ about_node: GO:0005634
 about_node_representation: curie
 
 ```
+## Example: Addition of a node to a subset.
+Class: [`AddNodeToSubset`](https://w3id.org/kgcl/AddNodeToSubset) </br></br>Command: `add GO:0005634 to subset foo`</br></br>YAML:
+```
+id: CHANGE:001
+type: AddNodeToSubset
+about_node: GO:0005634
+about_node_representation: curie
+in_subset: foo
+
+```
+## Example: Removal of a node from a subset.
+Class: [`RemoveNodeFromSubset`](https://w3id.org/kgcl/RemoveNodeFromSubset) </br></br>Command: `remove GO:0005634 from subset foo`</br></br>YAML:
+```
+id: CHANGE:001
+type: RemoveNodeFromSubset
+about_node: GO:0005634
+about_node_representation: curie
+in_subset: foo
+
+```
 ## Example: Creation of new class.
 Class: [`ClassCreation`](https://w3id.org/kgcl/ClassCreation) </br></br>Command: `create GO:9999999`</br></br>YAML:
 ```
