@@ -17,7 +17,9 @@ from kgcl_schema.datamodel.kgcl import (
     RemoveTextDefinition,
     RemoveUnder,
     EdgeDeletion,
-    NodeDeepening, AddNodeToSubset, RemoveNodeFromSubset,
+    NodeDeepening,
+    AddNodeToSubset,
+    RemoveNodeFromSubset,
 )
 from kgcl_schema.datamodel.ontology_model import Edge
 
@@ -367,7 +369,7 @@ CASES: List[CASE] = [
             id=UID,
             about_node=NUCLEUS,
             about_node_representation="curie",
-            has_direct_replacement=NEW_TERM
+            has_direct_replacement=NEW_TERM,
         ),
         None,
     ),

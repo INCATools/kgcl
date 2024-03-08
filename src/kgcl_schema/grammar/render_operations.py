@@ -2,6 +2,7 @@
 # TODO: move this to grammar package
 
 from kgcl_schema.datamodel.kgcl import (
+    AddNodeToSubset,
     ClassCreation,
     EdgeCreation,
     EdgeDeletion,
@@ -19,6 +20,7 @@ from kgcl_schema.datamodel.kgcl import (
     NodeUnobsoletion,
     PlaceUnder,
     PredicateChange,
+    RemoveNodeFromSubset,
     RemoveSynonym,
     RemoveTextDefinition,
     RemoveUnder,
@@ -284,3 +286,13 @@ def render(kgcl_instance: Change) -> str:
     if type(kgcl_instance) is RemoveTextDefinition:
         subject = render_entity(kgcl_instance.about_node, "uri")
         return "remove definition for " + subject
+
+    if type(kgcl_instance) is AddNodeToSubset:
+        subject = render_entity(kgcl_instance.about_node, "uri")
+        subset = render_entity(kgcl_instance.in_subset, "uri")
+        return "add " + subject + " to subset " + subset
+
+    if type(kgcl_instance) is RemoveNodeFromSubset:
+        subject = render_entity(kgcl_instance.about_node, "uri")
+        subset = render_entity(kgcl_instance.in_subset, "uri")
+        return "remove " + subject + " from subset " + subset

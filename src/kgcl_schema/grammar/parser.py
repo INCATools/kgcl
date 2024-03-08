@@ -45,6 +45,7 @@ from lark import Lark, Token
 def get_curie_converter() -> Converter:
     return load_converter(["obo", "bioregistry.upper", "linked_data"])
 
+
 def id_generator():
     """Return a new ID for KGCL change operations."""
     id = 0
@@ -159,7 +160,10 @@ def parse_remove_from_subset(tree, id):
     subset, _ = get_entity_representation(subset_id_token)
 
     return RemoveNodeFromSubset(
-        id=id, in_subset=subset, about_node=term, about_node_representation=representation
+        id=id,
+        in_subset=subset,
+        about_node=term,
+        about_node_representation=representation,
     )
 
 
@@ -171,8 +175,12 @@ def parse_add_to_subset(tree, id):
     subset, _ = get_entity_representation(subset_id_token)
 
     return AddNodeToSubset(
-        id=id, in_subset=subset, about_node=term, about_node_representation=representation
+        id=id,
+        in_subset=subset,
+        about_node=term,
+        about_node_representation=representation,
     )
+
 
 def parse_create_synonym(tree, id):
     """Create new synonym."""
