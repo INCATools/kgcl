@@ -18,6 +18,8 @@ from kgcl_schema.datamodel.kgcl import (
     RemoveUnder,
     EdgeDeletion,
     NodeDeepening,
+    AddNodeToSubset,
+    RemoveNodeFromSubset,
 )
 from kgcl_schema.datamodel.ontology_model import Edge
 
@@ -143,6 +145,28 @@ CASES: List[CASE] = [
             about_node=NUCLEUS,
             about_node_representation="curie",
             old_value="foo",
+        ),
+        None,
+    ),
+    (
+        f"add {NUCLEUS} to subset foo",
+        f"add {NUCLEUS_URI} to subset foo",
+        AddNodeToSubset(
+            id=UID,
+            about_node=NUCLEUS,
+            about_node_representation="curie",
+            in_subset="foo",
+        ),
+        None,
+    ),
+    (
+        f"remove {NUCLEUS} from subset foo",
+        f"remove {NUCLEUS_URI} from subset foo",
+        RemoveNodeFromSubset(
+            id=UID,
+            about_node=NUCLEUS,
+            about_node_representation="curie",
+            in_subset="foo",
         ),
         None,
     ),
@@ -345,7 +369,7 @@ CASES: List[CASE] = [
             id=UID,
             about_node=NUCLEUS,
             about_node_representation="curie",
-            has_direct_replacement=NEW_TERM
+            has_direct_replacement=NEW_TERM,
         ),
         None,
     ),

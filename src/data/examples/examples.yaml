@@ -60,12 +60,28 @@ Test_6:
   command_with_uri: remove synonym 'foo' for http://purl.obolibrary.org/obo/GO_0005634
 Test_7:
   id: CHANGE:001
+  type: AddNodeToSubset
+  about_node: GO:0005634
+  about_node_representation: curie
+  in_subset: foo
+  command_with_curie: add GO:0005634 to subset foo
+  command_with_uri: add http://purl.obolibrary.org/obo/GO_0005634 to subset foo
+Test_8:
+  id: CHANGE:001
+  type: RemoveNodeFromSubset
+  about_node: GO:0005634
+  about_node_representation: curie
+  in_subset: foo
+  command_with_curie: remove GO:0005634 from subset foo
+  command_with_uri: remove http://purl.obolibrary.org/obo/GO_0005634 from subset foo
+Test_9:
+  id: CHANGE:001
   type: ClassCreation
   about_node_representation: curie
   node_id: GO:9999999
   command_with_curie: create GO:9999999
   command_with_uri: create http://purl.obolibrary.org/obo/GO_9999999
-Test_8:
+Test_10:
   id: CHANGE:001
   type: NodeCreation
   about_node: GO:9999999
@@ -74,7 +90,7 @@ Test_8:
   name: '''foo'''
   command_with_curie: create node GO:9999999 'foo'
   command_with_uri: TODO
-Test_9:
+Test_11:
   id: CHANGE:001
   type: EdgeCreation
   object_type: curie
@@ -86,7 +102,7 @@ Test_9:
   command_with_curie: create edge GO:0005634 BFO:0000050 GO:0009411
   command_with_uri: create edge http://purl.obolibrary.org/obo/GO_0005634 http://purl.obolibrary.org/obo/BFO_0000050
     http://purl.obolibrary.org/obo/GO_0009411
-Test_10:
+Test_12:
   id: CHANGE:001
   type: PlaceUnder
   object_type: curie
@@ -98,7 +114,7 @@ Test_10:
   command_with_curie: create edge GO:0005634 rdfs:subClassOf GO:0009411
   command_with_uri: create edge http://purl.obolibrary.org/obo/GO_0005634 http://www.w3.org/2000/01/rdf-schema#subClassOf
     http://purl.obolibrary.org/obo/GO_0009411
-Test_11:
+Test_13:
   id: CHANGE:001
   type: PredicateChange
   old_value: BFO:0000050
@@ -114,7 +130,7 @@ Test_11:
     object_representation: curie
   command_with_curie: change relationship between GO:0005635 and GO:0005634 from BFO:0000050
     to rdfs:subClassOf
-Test_12:
+Test_14:
   id: CHANGE:001
   type: PredicateChange
   old_value: rdfs:subClassOf
@@ -133,7 +149,7 @@ Test_12:
   command_with_uri: change relationship between http://purl.obolibrary.org/obo/GO_0005634
     and http://purl.obolibrary.org/obo/GO_0043231 from http://www.w3.org/2000/01/rdf-schema#subClassOf
     to http://purl.obolibrary.org/obo/BFO_0000050
-Test_13:
+Test_15:
   id: CHANGE:001
   type: RemoveUnder
   object_type: curie
@@ -145,7 +161,7 @@ Test_13:
   command_with_curie: delete edge GO:0005634 rdfs:subClassOf GO:0043231
   command_with_uri: delete edge http://purl.obolibrary.org/obo/GO_0005634 http://www.w3.org/2000/01/rdf-schema#subClassOf
     http://purl.obolibrary.org/obo/GO_0043231
-Test_14:
+Test_16:
   id: CHANGE:001
   type: EdgeDeletion
   object_type: curie
@@ -156,7 +172,7 @@ Test_14:
   predicate_type: curie
   command_with_curie: delete edge GO:0005635 BFO:0000050 GO:0005634
   command_with_uri: TODO
-Test_15:
+Test_17:
   id: CHANGE:001
   type: NodeDeepening
   old_value: GO:0043231
@@ -170,7 +186,7 @@ Test_15:
   new_object_type: curie
   command_with_curie: deepen GO:0005739 from GO:0043231 to GO:0005634
   command_with_uri: TODO
-Test_16:
+Test_18:
   id: CHANGE:001
   type: NewTextDefinition
   new_value: '''this is dummy description'''
@@ -178,7 +194,7 @@ Test_16:
   about_node_representation: curie
   command_with_curie: add definition 'this is dummy description' to GO:0005635
   command_with_uri: add definition 'this is dummy description' to http://purl.obolibrary.org/obo/GO_0005635
-Test_17:
+Test_19:
   id: CHANGE:001
   type: NodeTextDefinitionChange
   new_value: '''this is dummy description'''
@@ -187,21 +203,21 @@ Test_17:
   command_with_curie: change definition of GO:0005635 to 'this is dummy description'
   command_with_uri: change definition of http://purl.obolibrary.org/obo/GO_0005635
     to 'this is dummy description'
-Test_18:
+Test_20:
   id: CHANGE:001
   type: RemoveTextDefinition
   about_node: GO:0005634
   about_node_representation: curie
   command_with_curie: remove definition for GO:0005634
   command_with_uri: remove definition for http://purl.obolibrary.org/obo/GO_0005634
-Test_19:
+Test_21:
   id: CHANGE:001
   type: NodeObsoletion
   about_node: GO:0005634
   about_node_representation: curie
   command_with_curie: obsolete GO:0005634
   command_with_uri: obsolete http://purl.obolibrary.org/obo/GO_0005634
-Test_20:
+Test_22:
   id: CHANGE:001
   type: NodeObsoletionWithDirectReplacement
   about_node: GO:0005634

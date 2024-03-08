@@ -33,6 +33,8 @@ YAML_OUT_PATH = SRC_DIR / "data/examples" / YAML_OUT_FN
 MD_OUT_PATH = SRC_DIR / "docs" / MD_OUT_FN
 W3ID = "https://w3id.org/kgcl/"
 CLASS_DESCRIPTION = {
+    "AddNodeToSubset": "Addition of a node to a subset.",
+    "RemoveNodeFromSubset": "Removal of a node from a subset.",
     "NodeObsoletionWithDirectReplacement": "Replacement of node after obsoletion.",
     "NodeRename": "Rename node.",
     "NodeObsoletion": "Obsolete node.",

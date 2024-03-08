@@ -106,7 +106,7 @@ classes:
   LogicalDefinition:
     is_a: OntologyElement
   OntologySubset:
-    is_a: OntologyElement
+    is_a: Node
 slots:
   owl_type:
     range: OwlTypeEnum

@@ -8,7 +8,9 @@ from typing import List
 import click
 from prefixmaps import load_converter
 from curies import Converter
+
 from kgcl_schema.datamodel.kgcl import (
+    AddNodeToSubset,
     Change,
     ClassCreation,
     EdgeCreation,
@@ -42,6 +44,7 @@ from lark import Lark, Token
 @lru_cache()
 def get_curie_converter() -> Converter:
     return load_converter(["obo", "bioregistry.upper", "linked_data"])
+
 
 def id_generator():
     """Return a new ID for KGCL change operations."""
@@ -123,6 +126,8 @@ def parse_statement(input: str) -> Change:
         return parse_create_class(tree, id)
     elif command == "create_synonym":
         return parse_create_synonym(tree, id)
+    elif command == "add_to_subset":
+        return parse_add_to_subset(tree, id)
     elif command == "remove_from_subset":
         return parse_remove_from_subset(tree, id)
     elif command == "remove_synonym":
@@ -135,19 +140,6 @@ def parse_statement(input: str) -> Change:
         return parse_remove_definition(tree, id)
     else:
         raise NotImplementedError("No implementation for KGCL command: " + command)
-
-    # TODO: does not have a field for subsets
-    # if(command == "add_to_subset"):
-
-    #    term_id = next(tree.find_data('id'))
-    #    term_id_token = next(get_tokens(term_id))
-
-    #    subset_id = next(tree.find_data('subset'))
-    #    subset_id_token = next(get_tokens(subset_id))
-
-    #    return AddNodeToSubset(
-    #        id=id, in_subset=subset_id_token, about_node=term_id_token
-    #     )
 
     # TODO: more commands
     # if(command == "merge"):
@@ -163,10 +155,30 @@ def parse_statement(input: str) -> Change:
 def parse_remove_from_subset(tree, id):
     """Remove node from subset."""
     term_id_token = extract(tree, "id")
+    term, representation = get_entity_representation(term_id_token)
     subset_id_token = extract(tree, "subset")
+    subset, _ = get_entity_representation(subset_id_token)
 
-    return RemovedNodeFromSubset(
-        id=id, subset=subset_id_token, about_node=term_id_token
+    return RemoveNodeFromSubset(
+        id=id,
+        in_subset=subset,
+        about_node=term,
+        about_node_representation=representation,
+    )
+
+
+def parse_add_to_subset(tree, id):
+    """Add node to subset."""
+    term_id_token = extract(tree, "id")
+    term, representation = get_entity_representation(term_id_token)
+    subset_id_token = extract(tree, "subset")
+    subset, _ = get_entity_representation(subset_id_token)
+
+    return AddNodeToSubset(
+        id=id,
+        in_subset=subset,
+        about_node=term,
+        about_node_representation=representation,
     )
 
 
