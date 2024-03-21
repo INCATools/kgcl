@@ -2,3 +2,6 @@
 
 test:
 	poetry run pytest
+
+gen-viz:
+	$(RUN) generate_viz_json

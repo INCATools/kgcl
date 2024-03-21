@@ -33,6 +33,7 @@ build-backend = "poetry.core.masonry.api"
 kgcl-diff = "kgcl.kgcl_diff:cli"
 kgcl-apply = "kgcl.kgcl:cli"
 kgcl-parse = "kgcl.grammar.parser:cli"
+generate_viz_json = "src.kgcl_schema.scripts.generate_json:generate_viz_json"
 
 [tool.poetry.extras]
 docs = ["linkml", "mkdocs-material"]
