@@ -643,8 +643,8 @@ def get_entity_representation(entity):
 
 
 def contract_uri(uri_or_curie: str):
-    converter = get_curie_converter()
     if uri_or_curie.startswith("http://") or uri_or_curie.startswith("https://"):
+        converter = get_curie_converter()
         return converter.compress(uri_or_curie)
     else:
         return uri_or_curie
