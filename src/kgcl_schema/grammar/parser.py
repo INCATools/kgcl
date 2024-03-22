@@ -575,6 +575,8 @@ def parse_rename(tree, id):
     old_language = extract(tree, "old_language")
     new_language = extract(tree, "new_language")
 
+    # TODO old_token and new_token are enclosed in ''
+
     term_id_token = extract(tree, "id")
     if term_id_token is not None:
         entity, representation = get_entity_representation(term_id_token)
@@ -597,7 +599,7 @@ def extract(tree, data):
     """Extract node."""
     node = get_next(tree.find_data(data))
     if node is not None:
-        node_token = next(get_tokens(node)).strip("'\"")
+        node_token = next(get_tokens(node))
         return node_token
     else:
         return None
