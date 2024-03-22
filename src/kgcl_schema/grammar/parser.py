@@ -595,14 +595,23 @@ def parse_rename(tree, id):
     )
 
 
+
+
 def extract(tree, data):
     """Extract node."""
     node = get_next(tree.find_data(data))
+    # Define this list at the module level if it's static and doesn't change per function call
+    quote_strip_param_substring = ["_label", "name"]
     if node is not None:
         node_token = next(get_tokens(node))
+        
+        if any(substring in data for substring in quote_strip_param_substring):
+            node_token = node_token.strip("'\"")
+
         return node_token
     else:
         return None
+
 
 
 def get_tokens(tree):

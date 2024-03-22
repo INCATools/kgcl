@@ -1,8 +1,8 @@
 Test_0:
   id: CHANGE:001
   type: NodeRename
-  old_value: '''nuclear envelope'''
-  new_value: '''foo bar'''
+  old_value: nuclear envelope
+  new_value: foo bar
   about_node: GO:0005635
   about_node_representation: curie
   command_with_curie: rename GO:0005635 from 'nuclear envelope' to 'foo bar'
@@ -11,8 +11,8 @@ Test_0:
 Test_1:
   id: CHANGE:001
   type: NodeRename
-  old_value: '''nucleus'''
-  new_value: '''bar'''
+  old_value: nucleus
+  new_value: bar
   about_node: GO:0005634
   about_node_representation: curie
   command_with_curie: rename GO:0005634 from 'nucleus' to 'bar'

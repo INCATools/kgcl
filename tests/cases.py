@@ -65,8 +65,8 @@ CASES: List[CASE] = [
         f"rename {NUCLEAR_ENVELOPE_URI} from 'nuclear envelope' to 'foo bar'",
         NodeRename(
             id=UID,
-            old_value="'nuclear envelope'",
-            new_value="'foo bar'",
+            old_value="nuclear envelope",
+            new_value="foo bar",
             about_node="GO:0005635",
             about_node_representation="curie",
         ),
@@ -77,8 +77,8 @@ CASES: List[CASE] = [
         f"rename {NUCLEUS_URI} from 'nucleus' to 'bar'",
         NodeRename(
             id=UID,
-            old_value="'nucleus'",
-            new_value="'bar'",
+            old_value="nucleus",
+            new_value="bar",
             about_node=NUCLEUS,
             about_node_representation="curie",
         ),
@@ -89,8 +89,8 @@ CASES: List[CASE] = [
     #    f"""rename {NUCLEUS} from 'nucleus' to 'bobby " tables'""",
     #    f"""rename {NUCLEUS_URI} from 'nucleus' to 'bobby " tables'""",
     #    NodeRename(id=UID,
-    #               old_value="'nucleus'",
-    #               new_value="'bar'",
+    #               old_value="nucleus",
+    #               new_value="bar",
     #               about_node=NUCLEUS,
     #               about_node_representation='curie'),
     #    None
