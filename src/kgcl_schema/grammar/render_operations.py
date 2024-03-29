@@ -45,8 +45,8 @@ def render_entity(entity, rdf_type):
         entity = entity.replace("'", "")
         return entity
     elif rdf_type == "label":
-        if type(eval(entity)) == Token:
-            entity = eval(entity).value
+        if isinstance(entity, Token):
+            entity = entity.value
         # elif "'" in entity:
         #     # TODO: replacing quotes with backticks
         #     # is only a temporary workaround

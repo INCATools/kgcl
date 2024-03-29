@@ -59,7 +59,7 @@ type: SynonymReplacement
 old_value: cell nucleus
 new_value: cell NUCLEUS
 about_node: GO:0005634
-about_node_representation: curie
+about_node_representation: label
 
 ```
 ## Example: Addition of a node to a subset.

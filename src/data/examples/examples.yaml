@@ -1,8 +1,8 @@
 Test_0:
   id: CHANGE:001
   type: NodeRename
-  old_value: '''nuclear envelope'''
-  new_value: '''foo bar'''
+  old_value: nuclear envelope
+  new_value: foo bar
   about_node: GO:0005635
   about_node_representation: curie
   command_with_curie: rename GO:0005635 from 'nuclear envelope' to 'foo bar'
@@ -11,8 +11,8 @@ Test_0:
 Test_1:
   id: CHANGE:001
   type: NodeRename
-  old_value: '''nucleus'''
-  new_value: '''bar'''
+  old_value: nucleus
+  new_value: bar
   about_node: GO:0005634
   about_node_representation: curie
   command_with_curie: rename GO:0005634 from 'nucleus' to 'bar'
@@ -61,10 +61,10 @@ Test_6:
 Test_7:
   id: CHANGE:001
   type: SynonymReplacement
-  old_value: '''cell nucleus'''
-  new_value: '''cell NUCLEUS'''
+  old_value: cell nucleus
+  new_value: cell NUCLEUS
   about_node: GO:0005634
-  about_node_representation: curie
+  about_node_representation: label
   command_with_curie: change synonym 'cell nucleus' for GO:0005634 to 'cell NUCLEUS'
   command_with_uri: change synonym 'cell nucleus' for http://purl.obolibrary.org/obo/GO_0005634
     to 'cell NUCLEUS'
@@ -97,7 +97,7 @@ Test_11:
   about_node: GO:9999999
   about_node_representation: curie
   node_id: GO:9999999
-  name: '''foo'''
+  name: foo
   command_with_curie: create node GO:9999999 'foo'
   command_with_uri: TODO
 Test_12:
@@ -199,7 +199,7 @@ Test_18:
 Test_19:
   id: CHANGE:001
   type: NewTextDefinition
-  new_value: '''this is dummy description'''
+  new_value: this is dummy description
   about_node: GO:0005635
   about_node_representation: curie
   command_with_curie: add definition 'this is dummy description' to GO:0005635
@@ -207,7 +207,7 @@ Test_19:
 Test_20:
   id: CHANGE:001
   type: NodeTextDefinitionChange
-  new_value: '''this is dummy description'''
+  new_value: this is dummy description
   about_node: GO:0005635
   about_node_representation: curie
   command_with_curie: change definition of GO:0005635 to 'this is dummy description'
