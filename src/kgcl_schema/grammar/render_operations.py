@@ -290,21 +290,22 @@ def render(kgcl_instance: Change) -> str:
         return "delete edge " + subclass + " " + property + " " + filler
 
     if type(kgcl_instance) is NodeDeepening:
-        subject = kgcl_instance.about_edge.subject
-        old_value = kgcl_instance.old_value
-        new_value = kgcl_instance.new_value
+        subject = render_entity(kgcl_instance.about_edge.subject, "uri")
+        old_value = render_entity(kgcl_instance.old_value, "uri")
+        new_value = render_entity(kgcl_instance.new_value, "uri")
         return "deepen " + subject + " from " + old_value + " to " + new_value
 
     if type(kgcl_instance) is NewTextDefinition:
-        subject = kgcl_instance.about_node
-        definition = kgcl_instance.new_value
+        subject = render_entity(kgcl_instance.about_node, "uri")
+        definition = render_entity(kgcl_instance.new_value, "label"`)
         return "add definition " + definition + " to " + subject
 
     if type(kgcl_instance) is NodeTextDefinitionChange:
-        subject = kgcl_instance.about_node
-        new_definition = kgcl_instance.new_value
+        subject = render_entity(kgcl_instance.about_node, "uri")
+        new_definition = render_entity(kgcl_instance.new_value, "label")
         if kgcl_instance.old_value:
-            old_definition = kgcl_instance.old_value
+            old_definition = render_entity(kgcl_instance.old_value, "label")
+            # old_definition = kgcl_instance.old_value
             return (
                 "change definition of "
                 + subject
