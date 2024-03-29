@@ -35,6 +35,7 @@ from kgcl_schema.datamodel.kgcl import (
     RemoveUnder,
     Session,
     RemoveTextDefinition,
+    SynonymReplacement,
 )
 from kgcl_schema.datamodel.ontology_model import Edge
 from kgcl_schema.utils import to_json, to_rdf, to_yaml
@@ -138,6 +139,8 @@ def parse_statement(input: str) -> Change:
         return parse_change_definition(tree, id)
     elif command == "remove_definition":
         return parse_remove_definition(tree, id)
+    elif command == "change_synonym":
+        return parse_change_synonym(tree, id)
     else:
         raise NotImplementedError("No implementation for KGCL command: " + command)
 
@@ -221,6 +224,20 @@ def parse_remove_synonym(tree, id):
         about_node_representation=representation,
         # qualifier=qualifier_token,
         language=language_token,
+    )
+
+def parse_change_synonym(tree, id):
+    """Change the synonym of a class."""
+    entity_token = extract(tree, "entity")
+    old_value = extract(tree, "synonym")
+    new_value = extract(tree, "new_synonym")
+    entity, representation = get_entity_representation(entity_token)
+    return SynonymReplacement(
+        id=id,
+        about_node=entity,
+        about_node_representation=representation,
+        new_value=new_value,
+        old_value=old_value,
     )
 
 

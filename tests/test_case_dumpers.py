@@ -52,6 +52,7 @@ CLASS_DESCRIPTION = {
     "NewTextDefinition": "New definition of a node.",
     "NodeTextDefinitionChange": "Update defintion of a node.",
     "RemoveTextDefinition": "Remove definition of a node.",
+    "SynonymReplacement": "Replace synonym of a node.",
 }
 
 
