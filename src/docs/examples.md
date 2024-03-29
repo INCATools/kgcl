@@ -51,6 +51,17 @@ about_node: GO:0005634
 about_node_representation: curie
 
 ```
+## Example: Replace synonym of a node.
+Class: [`SynonymReplacement`](https://w3id.org/kgcl/SynonymReplacement) </br></br>Command: `change synonym 'cell nucleus' for GO:0005634 to 'cell NUCLEUS'`</br></br>YAML:
+```
+id: CHANGE:001
+type: SynonymReplacement
+old_value: cell nucleus
+new_value: cell NUCLEUS
+about_node: GO:0005634
+about_node_representation: curie
+
+```
 ## Example: Addition of a node to a subset.
 Class: [`AddNodeToSubset`](https://w3id.org/kgcl/AddNodeToSubset) </br></br>Command: `add GO:0005634 to subset foo`</br></br>YAML:
 ```

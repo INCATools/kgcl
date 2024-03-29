@@ -20,6 +20,7 @@ from kgcl_schema.datamodel.kgcl import (
     NodeDeepening,
     AddNodeToSubset,
     RemoveNodeFromSubset,
+    SynonymReplacement,
 )
 from kgcl_schema.datamodel.ontology_model import Edge
 
@@ -145,6 +146,18 @@ CASES: List[CASE] = [
             about_node=NUCLEUS,
             about_node_representation="curie",
             old_value="foo",
+        ),
+        None,
+    ),
+    (
+        f"change synonym 'cell nucleus' for {NUCLEUS} to 'cell NUCLEUS'",
+        f"change synonym 'cell nucleus' for {NUCLEUS_URI} to 'cell NUCLEUS'",
+        SynonymReplacement(
+            id=UID,
+            about_node=NUCLEUS,
+            about_node_representation="curie",
+            old_value="'cell nucleus'",
+            new_value="'cell NUCLEUS'",
         ),
         None,
     ),

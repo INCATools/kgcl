@@ -25,6 +25,7 @@ from kgcl_schema.datamodel.kgcl import (
     RemoveTextDefinition,
     RemoveUnder,
     Change,
+    SynonymReplacement,
 )
 from lark.lexer import Token
 
@@ -230,6 +231,38 @@ def render(kgcl_instance: Change) -> str:
         #     )
         # else:
         return "remove synonym " + synonym + " for " + subject
+
+    if type(kgcl_instance) is SynonymReplacement:
+        subject = render_entity(kgcl_instance.about_node, "uri")
+        old_synonym = render_entity(kgcl_instance.old_value, "label")
+        new_synonym = render_entity(kgcl_instance.new_value, "label")
+        qualifier = kgcl_instance.qualifier
+        language = kgcl_instance.language
+
+        if language is not None:
+            old_synonym = old_synonym + "@" + language
+            new_synonym = new_synonym + "@" + language
+
+        if qualifier is not None:
+            return (
+                "change "
+                + qualifier
+                + " synonym "
+                + old_synonym
+                + " for "
+                + subject
+                + " to "
+                + new_synonym
+            )
+        else:
+            return (
+                "change synonym "
+                + old_synonym
+                + " for "
+                + subject
+                + " to "
+                + new_synonym
+            )
 
     if type(kgcl_instance) is PlaceUnder:
         subclass = render_entity(kgcl_instance.subject, "uri")

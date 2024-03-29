@@ -1,5 +1,5 @@
 # Auto generated from kgcl.yaml by pythongen.py version: 0.0.1
-# Generation date: 2024-03-08T08:41:57
+# Generation date: 2024-03-29T11:44:23
 # Schema: kgcl_schema
 #
 # id: https://w3id.org/kgcl
@@ -1573,6 +1573,7 @@ class SynonymReplacement(NodeSynonymChange):
     id: Union[str, SynonymReplacementId] = None
     old_value: Optional[str] = None
     new_value: Optional[str] = None
+    qualifier: Optional[str] = None
     has_textual_diff: Optional[Union[dict, "TextualDiff"]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
@@ -1586,6 +1587,9 @@ class SynonymReplacement(NodeSynonymChange):
 
         if self.new_value is not None and not isinstance(self.new_value, str):
             self.new_value = str(self.new_value)
+
+        if self.qualifier is not None and not isinstance(self.qualifier, str):
+            self.qualifier = str(self.qualifier)
 
         if self.has_textual_diff is not None and not isinstance(self.has_textual_diff, TextualDiff):
             self.has_textual_diff = TextualDiff()

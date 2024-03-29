@@ -18,6 +18,7 @@
            | add_definition
            | change_definition
            | remove_definition
+           | change_synonym
 
 rename : "rename" _WS [id _WS "from" _WS] old_label ["@" old_language] _WS ("to"|"as"|"->") _WS new_label ["@" new_language]
 
@@ -28,6 +29,8 @@ create_synonym: "create" _WS [synonym_qualifier _WS] "synonym" _WS synonym ["@" 
 synonym_qualifier : /exact|narrow|broad|related/
 
 remove_synonym: "remove" _WS "synonym" _WS synonym ["@" language] _WS "for" _WS entity
+
+change_synonym: "change" _WS [synonym_qualifier _WS] "synonym" _WS synonym ["@" language] _WS "for" _WS entity _WS ("to"|"->") _WS new_synonym
 
 delete : "delete" _WS entity
 
@@ -62,6 +65,8 @@ id : ID
 
 subset: ID
 synonym : LABEL
+old_synonym: LABEL
+new_synonym: LABEL
 
 subclass: _entity
 superclass: _entity
