@@ -650,8 +650,6 @@ def get_next(generator):
 
 def get_entity_representation(entity):
     """Get entity representation."""
-    if not entity:
-        import pdb; pdb.set_trace()
     first_character = entity[0]
     last_character = entity[-1:]
     if first_character == "<" and last_character == ">":
