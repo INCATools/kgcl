@@ -248,6 +248,8 @@
 
       SynonymReplacement : pull_request
 
+      SynonymReplacement : qualifier
+
       SynonymReplacement : see_also
 
       SynonymReplacement : type
@@ -298,6 +300,12 @@
 <td><a href="../new_value/">new_value</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
 <td>The value of a property held in the new instance of the ontology</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../qualifier/">qualifier</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>The qualifier of a change operation</td>
 <td>direct</td>
 </tr>
 <tr>
@@ -451,6 +459,7 @@ is_a: NodeSynonymChange
 slots:
 - old_value
 - new_value
+- qualifier
 - has_textual_diff
 
 </code></pre>
@@ -503,6 +512,17 @@ attributes:
     - MetadataAssertionPredicateChange
     - NewTextDefinition
     - TextDefinitionReplacement
+    range: string
+  qualifier:
+    name: qualifier
+    description: The qualifier of a change operation
+    from_schema: https://w3id.org/kgcl
+    rank: 1000
+    alias: qualifier
+    owner: SynonymReplacement
+    domain_of:
+    - NewSynonym
+    - SynonymReplacement
     range: string
   has_textual_diff:
     name: has_textual_diff

@@ -291,6 +291,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#example-replace-synonym-of-a-node" class="md-nav__link">
+    Example: Replace synonym of a node.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#example-addition-of-a-node-to-a-subset" class="md-nav__link">
     Example: Addition of a node to a subset.
   </a>
@@ -451,6 +458,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#example-replace-synonym-of-a-node" class="md-nav__link">
+    Example: Replace synonym of a node.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#example-addition-of-a-node-to-a-subset" class="md-nav__link">
     Example: Addition of a node to a subset.
   </a>
@@ -604,6 +618,16 @@ qualifier: exact
 <pre><code>id: CHANGE:001
 type: RemoveSynonym
 old_value: foo
+about_node: GO:0005634
+about_node_representation: curie
+
+</code></pre>
+<h2 id="example-replace-synonym-of-a-node">Example: Replace synonym of a node.</h2>
+<p>Class: <a href="https://w3id.org/kgcl/SynonymReplacement"><code>SynonymReplacement</code></a> </br></br>Command: <code>change synonym 'cell nucleus' for GO:0005634 to 'cell NUCLEUS'</code></br></br>YAML:</p>
+<pre><code>id: CHANGE:001
+type: SynonymReplacement
+old_value: cell nucleus
+new_value: cell NUCLEUS
 about_node: GO:0005634
 about_node_representation: curie
 
