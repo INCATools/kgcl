@@ -229,9 +229,12 @@ def parse_remove_synonym(tree, id):
 def parse_change_synonym(tree, id):
     """Change the synonym of a class."""
     entity_token = extract(tree, "entity")
-    old_value = extract(tree, "synonym")
-    new_value = extract(tree, "new_synonym")
     entity, representation = get_entity_representation(entity_token)
+    old_token = extract(tree, "synonym")
+    old_value, representation = get_entity_representation(old_token)
+    new_token = extract(tree, "new_synonym")
+    new_value, representation = get_entity_representation(new_token)
+    
     return SynonymReplacement(
         id=id,
         about_node=entity,
@@ -254,7 +257,8 @@ def parse_create_class(tree, id):
 def parse_add_definition(tree, id):
     """Add definition to class."""
     entity_token = extract(tree, "entity")
-    new_value = extract(tree, "new_definition")
+    new_token = extract(tree, "new_definition")
+    new_value, representation = get_entity_representation(new_token)
     entity, representation = get_entity_representation(entity_token)
     return NewTextDefinition(
         id=id,
@@ -267,8 +271,14 @@ def parse_add_definition(tree, id):
 def parse_change_definition(tree, id):
     """Change the definition of a class."""
     entity_token = extract(tree, "entity")
-    old_value = extract(tree, "old_definition")
-    new_value = extract(tree, "new_definition")
+    old_token = extract(tree, "old_definition")
+    if old_token:
+        old_value, representation = get_entity_representation(old_token)
+    else:
+        old_value = None
+        representation = None
+    new_token = extract(tree, "new_definition")
+    new_value, representation = get_entity_representation(new_token)
     entity, representation = get_entity_representation(entity_token)
     return NodeTextDefinitionChange(
         id=id,
@@ -298,6 +308,7 @@ def parse_create(tree, id):
     """Create a node."""
     term_id_token = extract(tree, "id")
     label_token = extract(tree, "label")
+    label_value, representation = get_entity_representation(label_token)
     language_token = extract(tree, "language")
 
     entity, representation = get_entity_representation(term_id_token)
@@ -307,7 +318,7 @@ def parse_create(tree, id):
         about_node=entity,
         about_node_representation=representation,
         node_id=entity,  # was term_id_token
-        name=label_token,
+        name=label_value,
         language=language_token,
     )
 
@@ -588,7 +599,9 @@ def parse_obsolete(tree, id):
 def parse_rename(tree, id):
     """Rename a node."""
     old_token = extract(tree, "old_label")
+    old_value, representation = get_entity_representation(old_token)
     new_token = extract(tree, "new_label")
+    new_value, representation = get_entity_representation(new_token)
     old_language = extract(tree, "old_language")
     new_language = extract(tree, "new_language")
 
@@ -600,13 +613,12 @@ def parse_rename(tree, id):
     else:
         entity = None
         representation = None
-
     return NodeRename(
         id=id,
         about_node=entity,
         about_node_representation=representation,
-        old_value=old_token,
-        new_value=new_token,
+        old_value=old_value,
+        new_value=new_value,
         old_language=old_language,
         new_language=new_language,
     )
