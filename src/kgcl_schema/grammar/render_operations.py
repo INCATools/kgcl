@@ -297,7 +297,7 @@ def render(kgcl_instance: Change) -> str:
 
     if type(kgcl_instance) is NewTextDefinition:
         subject = render_entity(kgcl_instance.about_node, "uri")
-        definition = render_entity(kgcl_instance.new_value, "label"`)
+        definition = render_entity(kgcl_instance.new_value, "label")
         return "add definition " + definition + " to " + subject
 
     if type(kgcl_instance) is NodeTextDefinitionChange:
