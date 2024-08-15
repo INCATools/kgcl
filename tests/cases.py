@@ -186,7 +186,7 @@ CASES: List[CASE] = [
     (
         f"create {NEW_TERM}",
         f"create {NEW_TERM_URI}",
-        ClassCreation(id=UID, node_id=NEW_TERM, about_node_representation="curie"),
+        ClassCreation(id=UID, about_node=NEW_TERM, about_node_representation="curie"),
         None,
     ),
     (
@@ -196,7 +196,6 @@ CASES: List[CASE] = [
         TODO_TOKEN,
         NodeCreation(
             id=UID,
-            node_id=NEW_TERM,  ## TODO: remove this
             about_node=NEW_TERM,
             name="foo",
             about_node_representation="curie",

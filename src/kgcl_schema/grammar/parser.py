@@ -250,7 +250,7 @@ def parse_create_class(tree, id):
     entity, representation = get_entity_representation(term_id_token)
 
     return ClassCreation(
-        id=id, node_id=entity, about_node_representation=representation
+        id=id, about_node=entity, about_node_representation=representation
     )
 
 
@@ -317,7 +317,6 @@ def parse_create(tree, id):
         id=id,
         about_node=entity,
         about_node_representation=representation,
-        node_id=entity,  # was term_id_token
         name=label_value,
         language=language_token,
     )
