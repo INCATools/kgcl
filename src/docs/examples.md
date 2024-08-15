@@ -87,8 +87,8 @@ Class: [`ClassCreation`](https://w3id.org/kgcl/ClassCreation) </br></br>Command:
 ```
 id: CHANGE:001
 type: ClassCreation
+about_node: GO:9999999
 about_node_representation: curie
-node_id: GO:9999999
 
 ```
 ## Example: Creation of new node.
@@ -98,7 +98,6 @@ id: CHANGE:001
 type: NodeCreation
 about_node: GO:9999999
 about_node_representation: curie
-node_id: GO:9999999
 name: foo
 
 ```

@@ -87,8 +87,8 @@ Test_9:
 Test_10:
   id: CHANGE:001
   type: ClassCreation
+  about_node: GO:9999999
   about_node_representation: curie
-  node_id: GO:9999999
   command_with_curie: create GO:9999999
   command_with_uri: create http://purl.obolibrary.org/obo/GO_9999999
 Test_11:
@@ -96,7 +96,6 @@ Test_11:
   type: NodeCreation
   about_node: GO:9999999
   about_node_representation: curie
-  node_id: GO:9999999
   name: foo
   command_with_curie: create node GO:9999999 'foo'
   command_with_uri: TODO
