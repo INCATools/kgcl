@@ -334,6 +334,10 @@ class InstanceNodeId(NodeId):
     pass
 
 
+class OntologySubsetId(NodeId):
+    pass
+
+
 class ActivityId(extended_str):
     pass
 
@@ -753,11 +757,11 @@ class SubsetMembershipChange(ChangeMixin):
     class_name: ClassVar[str] = "SubsetMembershipChange"
     class_model_uri: ClassVar[URIRef] = KGCL.SubsetMembershipChange
 
-    in_subset: Optional[Union[dict, "OntologySubset"]] = None
+    in_subset: Optional[Union[str, OntologySubsetId]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.in_subset is not None and not isinstance(self.in_subset, OntologySubset):
-            self.in_subset = OntologySubset()
+        if self.in_subset is not None and not isinstance(self.in_subset, OntologySubsetId):
+            self.in_subset = OntologySubsetId(self.in_subset)
 
         super().__post_init__(**kwargs)
 
@@ -774,11 +778,11 @@ class AddToSubset(SubsetMembershipChange):
     class_name: ClassVar[str] = "AddToSubset"
     class_model_uri: ClassVar[URIRef] = KGCL.AddToSubset
 
-    in_subset: Optional[Union[dict, "OntologySubset"]] = None
+    in_subset: Optional[Union[str, OntologySubsetId]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.in_subset is not None and not isinstance(self.in_subset, OntologySubset):
-            self.in_subset = OntologySubset()
+        if self.in_subset is not None and not isinstance(self.in_subset, OntologySubsetId):
+            self.in_subset = OntologySubsetId(self.in_subset)
 
         super().__post_init__(**kwargs)
 
@@ -795,12 +799,12 @@ class RemoveFromSubset(SubsetMembershipChange):
     class_name: ClassVar[str] = "RemoveFromSubset"
     class_model_uri: ClassVar[URIRef] = KGCL.RemoveFromSubset
 
-    in_subset: Optional[Union[dict, "OntologySubset"]] = None
+    in_subset: Optional[Union[str, OntologySubsetId]] = None
     has_undo: Optional[Union[dict, AddToSubset]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.in_subset is not None and not isinstance(self.in_subset, OntologySubset):
-            self.in_subset = OntologySubset()
+        if self.in_subset is not None and not isinstance(self.in_subset, OntologySubsetId):
+            self.in_subset = OntologySubsetId(self.in_subset)
 
         if self.has_undo is not None and not isinstance(self.has_undo, AddToSubset):
             self.has_undo = AddToSubset(**as_dict(self.has_undo))
@@ -1605,6 +1609,7 @@ class SynonymReplacement(NodeSynonymChange):
     id: Union[str, SynonymReplacementId] = None
     old_value: Optional[str] = None
     new_value: Optional[str] = None
+    qualifier: Optional[str] = None
     has_textual_diff: Optional[Union[dict, "TextualDiff"]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
@@ -1618,6 +1623,9 @@ class SynonymReplacement(NodeSynonymChange):
 
         if self.new_value is not None and not isinstance(self.new_value, str):
             self.new_value = str(self.new_value)
+
+        if self.qualifier is not None and not isinstance(self.qualifier, str):
+            self.qualifier = str(self.qualifier)
 
         if self.has_textual_diff is not None and not isinstance(self.has_textual_diff, TextualDiff):
             self.has_textual_diff = TextualDiff()
@@ -2097,7 +2105,7 @@ class AddNodeToSubset(NodeChange):
     class_model_uri: ClassVar[URIRef] = KGCL.AddNodeToSubset
 
     id: Union[str, AddNodeToSubsetId] = None
-    in_subset: Optional[Union[dict, "OntologySubset"]] = None
+    in_subset: Optional[Union[str, OntologySubsetId]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
@@ -2105,8 +2113,8 @@ class AddNodeToSubset(NodeChange):
         if not isinstance(self.id, AddNodeToSubsetId):
             self.id = AddNodeToSubsetId(self.id)
 
-        if self.in_subset is not None and not isinstance(self.in_subset, OntologySubset):
-            self.in_subset = OntologySubset()
+        if self.in_subset is not None and not isinstance(self.in_subset, OntologySubsetId):
+            self.in_subset = OntologySubsetId(self.in_subset)
 
         super().__post_init__(**kwargs)
         self.type = str(self.class_name)
@@ -2128,7 +2136,7 @@ class RemoveNodeFromSubset(NodeChange):
     change_description: Optional[str] = None
     about_node: Optional[Union[str, NodeId]] = None
     subset: Optional[str] = None
-    in_subset: Optional[Union[dict, "OntologySubset"]] = None
+    in_subset: Optional[Union[str, OntologySubsetId]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
@@ -2145,8 +2153,8 @@ class RemoveNodeFromSubset(NodeChange):
         if self.subset is not None and not isinstance(self.subset, str):
             self.subset = str(self.subset)
 
-        if self.in_subset is not None and not isinstance(self.in_subset, OntologySubset):
-            self.in_subset = OntologySubset()
+        if self.in_subset is not None and not isinstance(self.in_subset, OntologySubsetId):
+            self.in_subset = OntologySubsetId(self.in_subset)
 
         super().__post_init__(**kwargs)
         self.type = str(self.class_name)
@@ -2806,13 +2814,24 @@ class LogicalDefinition(OntologyElement):
     class_model_uri: ClassVar[URIRef] = KGCL.LogicalDefinition
 
 
-class OntologySubset(OntologyElement):
+@dataclass
+class OntologySubset(Node):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = OM["OntologySubset"]
     class_class_curie: ClassVar[str] = "om:OntologySubset"
     class_name: ClassVar[str] = "OntologySubset"
     class_model_uri: ClassVar[URIRef] = KGCL.OntologySubset
+
+    id: Union[str, OntologySubsetId] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, OntologySubsetId):
+            self.id = OntologySubsetId(self.id)
+
+        super().__post_init__(**kwargs)
 
 
 class ProvElement(YAMLRoot):
@@ -3067,7 +3086,7 @@ slots.predicate_type = Slot(uri=KGCL.predicate_type, name="predicate_type", curi
                    model_uri=KGCL.predicate_type, domain=None, range=Optional[str])
 
 slots.in_subset = Slot(uri=KGCL.in_subset, name="in_subset", curie=KGCL.curie('in_subset'),
-                   model_uri=KGCL.in_subset, domain=None, range=Optional[Union[dict, OntologySubset]])
+                   model_uri=KGCL.in_subset, domain=None, range=Optional[Union[str, OntologySubsetId]])
 
 slots.annotation_property = Slot(uri=KGCL.annotation_property, name="annotation_property", curie=KGCL.curie('annotation_property'),
                    model_uri=KGCL.annotation_property, domain=None, range=Optional[str])
@@ -3280,10 +3299,10 @@ slots.Creation_has_undo = Slot(uri=KGCL.has_undo, name="Creation_has_undo", curi
                    model_uri=KGCL.Creation_has_undo, domain=None, range=Optional[Union[dict, Deletion]])
 
 slots.AddToSubset_in_subset = Slot(uri=KGCL.in_subset, name="AddToSubset_in_subset", curie=KGCL.curie('in_subset'),
-                   model_uri=KGCL.AddToSubset_in_subset, domain=None, range=Optional[Union[dict, "OntologySubset"]])
+                   model_uri=KGCL.AddToSubset_in_subset, domain=None, range=Optional[Union[str, OntologySubsetId]])
 
 slots.RemoveFromSubset_in_subset = Slot(uri=KGCL.in_subset, name="RemoveFromSubset_in_subset", curie=KGCL.curie('in_subset'),
-                   model_uri=KGCL.RemoveFromSubset_in_subset, domain=None, range=Optional[Union[dict, "OntologySubset"]])
+                   model_uri=KGCL.RemoveFromSubset_in_subset, domain=None, range=Optional[Union[str, OntologySubsetId]])
 
 slots.RemoveFromSubset_has_undo = Slot(uri=KGCL.has_undo, name="RemoveFromSubset_has_undo", curie=KGCL.curie('has_undo'),
                    model_uri=KGCL.RemoveFromSubset_has_undo, domain=None, range=Optional[Union[dict, AddToSubset]])

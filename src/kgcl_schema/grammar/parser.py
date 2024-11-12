@@ -8,7 +8,9 @@ from typing import List
 import click
 from prefixmaps import load_converter
 from curies import Converter
+
 from kgcl_schema.datamodel.kgcl import (
+    AddNodeToSubset,
     Change,
     ClassCreation,
     EdgeCreation,
@@ -33,6 +35,7 @@ from kgcl_schema.datamodel.kgcl import (
     RemoveUnder,
     Session,
     RemoveTextDefinition,
+    SynonymReplacement,
 )
 from kgcl_schema.datamodel.ontology_model import Edge
 from kgcl_schema.utils import to_json, to_rdf, to_yaml
@@ -42,6 +45,7 @@ from lark import Lark, Token
 @lru_cache()
 def get_curie_converter() -> Converter:
     return load_converter(["obo", "bioregistry.upper", "linked_data"])
+
 
 def id_generator():
     """Return a new ID for KGCL change operations."""
@@ -123,6 +127,8 @@ def parse_statement(input: str) -> Change:
         return parse_create_class(tree, id)
     elif command == "create_synonym":
         return parse_create_synonym(tree, id)
+    elif command == "add_to_subset":
+        return parse_add_to_subset(tree, id)
     elif command == "remove_from_subset":
         return parse_remove_from_subset(tree, id)
     elif command == "remove_synonym":
@@ -133,21 +139,10 @@ def parse_statement(input: str) -> Change:
         return parse_change_definition(tree, id)
     elif command == "remove_definition":
         return parse_remove_definition(tree, id)
+    elif command == "change_synonym":
+        return parse_change_synonym(tree, id)
     else:
         raise NotImplementedError("No implementation for KGCL command: " + command)
-
-    # TODO: does not have a field for subsets
-    # if(command == "add_to_subset"):
-
-    #    term_id = next(tree.find_data('id'))
-    #    term_id_token = next(get_tokens(term_id))
-
-    #    subset_id = next(tree.find_data('subset'))
-    #    subset_id_token = next(get_tokens(subset_id))
-
-    #    return AddNodeToSubset(
-    #        id=id, in_subset=subset_id_token, about_node=term_id_token
-    #     )
 
     # TODO: more commands
     # if(command == "merge"):
@@ -163,10 +158,30 @@ def parse_statement(input: str) -> Change:
 def parse_remove_from_subset(tree, id):
     """Remove node from subset."""
     term_id_token = extract(tree, "id")
+    term, representation = get_entity_representation(term_id_token)
     subset_id_token = extract(tree, "subset")
+    subset, _ = get_entity_representation(subset_id_token)
 
-    return RemovedNodeFromSubset(
-        id=id, subset=subset_id_token, about_node=term_id_token
+    return RemoveNodeFromSubset(
+        id=id,
+        in_subset=subset,
+        about_node=term,
+        about_node_representation=representation,
+    )
+
+
+def parse_add_to_subset(tree, id):
+    """Add node to subset."""
+    term_id_token = extract(tree, "id")
+    term, representation = get_entity_representation(term_id_token)
+    subset_id_token = extract(tree, "subset")
+    subset, _ = get_entity_representation(subset_id_token)
+
+    return AddNodeToSubset(
+        id=id,
+        in_subset=subset,
+        about_node=term,
+        about_node_representation=representation,
     )
 
 
@@ -211,6 +226,23 @@ def parse_remove_synonym(tree, id):
         language=language_token,
     )
 
+def parse_change_synonym(tree, id):
+    """Change the synonym of a class."""
+    entity_token = extract(tree, "entity")
+    entity, representation = get_entity_representation(entity_token)
+    old_token = extract(tree, "synonym")
+    old_value, representation = get_entity_representation(old_token)
+    new_token = extract(tree, "new_synonym")
+    new_value, representation = get_entity_representation(new_token)
+    
+    return SynonymReplacement(
+        id=id,
+        about_node=entity,
+        about_node_representation=representation,
+        new_value=new_value,
+        old_value=old_value,
+    )
+
 
 def parse_create_class(tree, id):
     """Create new class."""
@@ -218,14 +250,15 @@ def parse_create_class(tree, id):
     entity, representation = get_entity_representation(term_id_token)
 
     return ClassCreation(
-        id=id, node_id=entity, about_node_representation=representation
+        id=id, about_node=entity, about_node_representation=representation
     )
 
 
 def parse_add_definition(tree, id):
     """Add definition to class."""
     entity_token = extract(tree, "entity")
-    new_value = extract(tree, "new_definition")
+    new_token = extract(tree, "new_definition")
+    new_value, representation = get_entity_representation(new_token)
     entity, representation = get_entity_representation(entity_token)
     return NewTextDefinition(
         id=id,
@@ -238,8 +271,14 @@ def parse_add_definition(tree, id):
 def parse_change_definition(tree, id):
     """Change the definition of a class."""
     entity_token = extract(tree, "entity")
-    old_value = extract(tree, "old_definition")
-    new_value = extract(tree, "new_definition")
+    old_token = extract(tree, "old_definition")
+    if old_token:
+        old_value, representation = get_entity_representation(old_token)
+    else:
+        old_value = None
+        representation = None
+    new_token = extract(tree, "new_definition")
+    new_value, representation = get_entity_representation(new_token)
     entity, representation = get_entity_representation(entity_token)
     return NodeTextDefinitionChange(
         id=id,
@@ -269,6 +308,7 @@ def parse_create(tree, id):
     """Create a node."""
     term_id_token = extract(tree, "id")
     label_token = extract(tree, "label")
+    label_value, representation = get_entity_representation(label_token)
     language_token = extract(tree, "language")
 
     entity, representation = get_entity_representation(term_id_token)
@@ -277,8 +317,7 @@ def parse_create(tree, id):
         id=id,
         about_node=entity,
         about_node_representation=representation,
-        node_id=entity,  # was term_id_token
-        name=label_token,
+        name=label_value,
         language=language_token,
     )
 
@@ -559,7 +598,9 @@ def parse_obsolete(tree, id):
 def parse_rename(tree, id):
     """Rename a node."""
     old_token = extract(tree, "old_label")
+    old_value, representation = get_entity_representation(old_token)
     new_token = extract(tree, "new_label")
+    new_value, representation = get_entity_representation(new_token)
     old_language = extract(tree, "old_language")
     new_language = extract(tree, "new_language")
 
@@ -571,13 +612,12 @@ def parse_rename(tree, id):
     else:
         entity = None
         representation = None
-
     return NodeRename(
         id=id,
         about_node=entity,
         about_node_representation=representation,
-        old_value=old_token,
-        new_value=new_token,
+        old_value=old_value,
+        new_value=new_value,
         old_language=old_language,
         new_language=new_language,
     )
@@ -631,8 +671,8 @@ def get_entity_representation(entity):
 
 
 def contract_uri(uri_or_curie: str):
-    converter = get_curie_converter()
     if uri_or_curie.startswith("http://") or uri_or_curie.startswith("https://"):
+        converter = get_curie_converter()
         return converter.compress(uri_or_curie)
     else:
         return uri_or_curie

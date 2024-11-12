@@ -18,6 +18,9 @@ from kgcl_schema.datamodel.kgcl import (
     RemoveUnder,
     EdgeDeletion,
     NodeDeepening,
+    AddNodeToSubset,
+    RemoveNodeFromSubset,
+    SynonymReplacement,
 )
 from kgcl_schema.datamodel.ontology_model import Edge
 
@@ -63,8 +66,8 @@ CASES: List[CASE] = [
         f"rename {NUCLEAR_ENVELOPE_URI} from 'nuclear envelope' to 'foo bar'",
         NodeRename(
             id=UID,
-            old_value="'nuclear envelope'",
-            new_value="'foo bar'",
+            old_value="nuclear envelope",
+            new_value="foo bar",
             about_node="GO:0005635",
             about_node_representation="curie",
         ),
@@ -75,8 +78,8 @@ CASES: List[CASE] = [
         f"rename {NUCLEUS_URI} from 'nucleus' to 'bar'",
         NodeRename(
             id=UID,
-            old_value="'nucleus'",
-            new_value="'bar'",
+            old_value="nucleus",
+            new_value="bar",
             about_node=NUCLEUS,
             about_node_representation="curie",
         ),
@@ -87,8 +90,8 @@ CASES: List[CASE] = [
     #    f"""rename {NUCLEUS} from 'nucleus' to 'bobby " tables'""",
     #    f"""rename {NUCLEUS_URI} from 'nucleus' to 'bobby " tables'""",
     #    NodeRename(id=UID,
-    #               old_value="'nucleus'",
-    #               new_value="'bar'",
+    #               old_value="nucleus",
+    #               new_value="bar",
     #               about_node=NUCLEUS,
     #               about_node_representation='curie'),
     #    None
@@ -147,9 +150,43 @@ CASES: List[CASE] = [
         None,
     ),
     (
+        f"change synonym 'cell nucleus' for {NUCLEUS} to 'cell NUCLEUS'",
+        f"change synonym 'cell nucleus' for {NUCLEUS_URI} to 'cell NUCLEUS'",
+        SynonymReplacement(
+            id=UID,
+            about_node=NUCLEUS,
+            about_node_representation="label",
+            old_value="cell nucleus",
+            new_value="cell NUCLEUS",
+        ),
+        None,
+    ),
+    (
+        f"add {NUCLEUS} to subset foo",
+        f"add {NUCLEUS_URI} to subset foo",
+        AddNodeToSubset(
+            id=UID,
+            about_node=NUCLEUS,
+            about_node_representation="curie",
+            in_subset="foo",
+        ),
+        None,
+    ),
+    (
+        f"remove {NUCLEUS} from subset foo",
+        f"remove {NUCLEUS_URI} from subset foo",
+        RemoveNodeFromSubset(
+            id=UID,
+            about_node=NUCLEUS,
+            about_node_representation="curie",
+            in_subset="foo",
+        ),
+        None,
+    ),
+    (
         f"create {NEW_TERM}",
         f"create {NEW_TERM_URI}",
-        ClassCreation(id=UID, node_id=NEW_TERM, about_node_representation="curie"),
+        ClassCreation(id=UID, about_node=NEW_TERM, about_node_representation="curie"),
         None,
     ),
     (
@@ -159,9 +196,8 @@ CASES: List[CASE] = [
         TODO_TOKEN,
         NodeCreation(
             id=UID,
-            node_id=NEW_TERM,  ## TODO: remove this
             about_node=NEW_TERM,
-            name="'foo'",
+            name="foo",
             about_node_representation="curie",
         ),
         None,
@@ -175,7 +211,7 @@ CASES: List[CASE] = [
     #     NodeCreation(id=UID,
     #                  node_id=NEW_TERM,   ## TODO: remove this
     #                  about_node=NEW_TERM,
-    #                  name="'foo'",
+    #                  name="foo",
     #                  about_node_representation='curie'),
     #     None
     # ),
@@ -301,7 +337,7 @@ CASES: List[CASE] = [
         f"add definition 'this is dummy description' to {NUCLEAR_ENVELOPE_URI}",
         NewTextDefinition(
             id=UID,
-            new_value="'this is dummy description'",
+            new_value="this is dummy description",
             about_node="GO:0005635",
             about_node_representation="curie",
         ),
@@ -312,7 +348,7 @@ CASES: List[CASE] = [
         f"change definition of {NUCLEAR_ENVELOPE_URI} to 'this is dummy description'",
         NodeTextDefinitionChange(
             id=UID,
-            new_value="'this is dummy description'",
+            new_value="this is dummy description",
             about_node="GO:0005635",
             about_node_representation="curie",
         ),
@@ -345,7 +381,7 @@ CASES: List[CASE] = [
             id=UID,
             about_node=NUCLEUS,
             about_node_representation="curie",
-            has_direct_replacement=NEW_TERM
+            has_direct_replacement=NEW_TERM,
         ),
         None,
     ),

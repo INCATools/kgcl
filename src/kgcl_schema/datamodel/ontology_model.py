@@ -1,5 +1,5 @@
-# Auto generated from ontology_model.yaml by pythongen.py version: 0.9.0
-# Generation date: 2023-05-08T15:28:23
+# Auto generated from ontology_model.yaml by pythongen.py version: 0.0.1
+# Generation date: 2024-03-08T08:26:55
 # Schema: kgcl_schema-ontology-model
 #
 # id: https://w3id.org/kgcl/ontology
@@ -43,7 +43,7 @@ DEFAULT_ = OM
 
 # Types
 class LanguageTag(str):
-    type_class_uri = XML.lang
+    type_class_uri = XML["lang"]
     type_class_curie = "xml:lang"
     type_name = "LanguageTag"
     type_model_uri = OM.LanguageTag
@@ -62,13 +62,17 @@ class InstanceNodeId(NodeId):
     pass
 
 
+class OntologySubsetId(NodeId):
+    pass
+
+
 class OntologyElement(YAMLRoot):
     """
     Any component of an ontology or knowledge graph
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = OM.OntologyElement
+    class_class_uri: ClassVar[URIRef] = OM["OntologyElement"]
     class_class_curie: ClassVar[str] = "om:OntologyElement"
     class_name: ClassVar[str] = "OntologyElement"
     class_model_uri: ClassVar[URIRef] = OM.OntologyElement
@@ -81,7 +85,7 @@ class PropertyValue(OntologyElement):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = OM.PropertyValue
+    class_class_uri: ClassVar[URIRef] = OM["PropertyValue"]
     class_class_curie: ClassVar[str] = "om:PropertyValue"
     class_name: ClassVar[str] = "PropertyValue"
     class_model_uri: ClassVar[URIRef] = OM.PropertyValue
@@ -106,7 +110,7 @@ class Annotation(PropertyValue):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = OM.Annotation
+    class_class_uri: ClassVar[URIRef] = OM["Annotation"]
     class_class_curie: ClassVar[str] = "om:Annotation"
     class_name: ClassVar[str] = "Annotation"
     class_model_uri: ClassVar[URIRef] = OM.Annotation
@@ -143,7 +147,7 @@ class Node(OntologyElement):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = OM.Node
+    class_class_uri: ClassVar[URIRef] = OM["Node"]
     class_class_curie: ClassVar[str] = "om:Node"
     class_name: ClassVar[str] = "Node"
     class_model_uri: ClassVar[URIRef] = OM.Node
@@ -178,7 +182,7 @@ class ClassNode(Node):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = OWL.Class
+    class_class_uri: ClassVar[URIRef] = OWL["Class"]
     class_class_curie: ClassVar[str] = "owl:Class"
     class_name: ClassVar[str] = "ClassNode"
     class_model_uri: ClassVar[URIRef] = OM.ClassNode
@@ -201,7 +205,7 @@ class InstanceNode(Node):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = OWL.NamedIndividual
+    class_class_uri: ClassVar[URIRef] = OWL["NamedIndividual"]
     class_class_curie: ClassVar[str] = "owl:NamedIndividual"
     class_name: ClassVar[str] = "InstanceNode"
     class_model_uri: ClassVar[URIRef] = OM.InstanceNode
@@ -242,7 +246,7 @@ class Edge(OntologyElement):
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = OM.Edge
+    class_class_uri: ClassVar[URIRef] = OM["Edge"]
     class_class_curie: ClassVar[str] = "om:Edge"
     class_name: ClassVar[str] = "Edge"
     class_model_uri: ClassVar[URIRef] = OM.Edge
@@ -283,19 +287,30 @@ class Edge(OntologyElement):
 class LogicalDefinition(OntologyElement):
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = OM.LogicalDefinition
+    class_class_uri: ClassVar[URIRef] = OM["LogicalDefinition"]
     class_class_curie: ClassVar[str] = "om:LogicalDefinition"
     class_name: ClassVar[str] = "LogicalDefinition"
     class_model_uri: ClassVar[URIRef] = OM.LogicalDefinition
 
 
-class OntologySubset(OntologyElement):
+@dataclass
+class OntologySubset(Node):
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = OM.OntologySubset
+    class_class_uri: ClassVar[URIRef] = OM["OntologySubset"]
     class_class_curie: ClassVar[str] = "om:OntologySubset"
     class_name: ClassVar[str] = "OntologySubset"
     class_model_uri: ClassVar[URIRef] = OM.OntologySubset
+
+    id: Union[str, OntologySubsetId] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, OntologySubsetId):
+            self.id = OntologySubsetId(self.id)
+
+        super().__post_init__(**kwargs)
 
 
 # Enumerations
@@ -303,13 +318,13 @@ class OwlTypeEnum(EnumDefinitionImpl):
 
     CLASS = PermissibleValue(
         text="CLASS",
-        meaning=OWL.Class)
+        meaning=OWL["Class"])
     OBJECT_PROPERTY = PermissibleValue(
         text="OBJECT_PROPERTY",
-        meaning=OWL.ObjectProperty)
+        meaning=OWL["ObjectProperty"])
     NAMED_INDIVIDUAL = PermissibleValue(
         text="NAMED_INDIVIDUAL",
-        meaning=OWL.NamedIndividual)
+        meaning=OWL["NamedIndividual"])
 
     _defn = EnumDefinition(
         name="OwlTypeEnum",
@@ -319,16 +334,16 @@ class SynonymScopeEnum(EnumDefinitionImpl):
 
     related = PermissibleValue(
         text="related",
-        meaning=OIO.hasNarrowSynonym)
+        meaning=OIO["hasNarrowSynonym"])
     broad = PermissibleValue(
         text="broad",
-        meaning=OIO.hasBroadSynonym)
+        meaning=OIO["hasBroadSynonym"])
     narrow = PermissibleValue(
         text="narrow",
-        meaning=OIO.hasNarrowSynonym)
+        meaning=OIO["hasNarrowSynonym"])
     exact = PermissibleValue(
         text="exact",
-        meaning=OIO.hasExactSynonym)
+        meaning=OIO["hasExactSynonym"])
 
     _defn = EnumDefinition(
         name="SynonymScopeEnum",

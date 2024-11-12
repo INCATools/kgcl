@@ -2,6 +2,7 @@
 # TODO: move this to grammar package
 
 from kgcl_schema.datamodel.kgcl import (
+    AddNodeToSubset,
     ClassCreation,
     EdgeCreation,
     EdgeDeletion,
@@ -19,10 +20,12 @@ from kgcl_schema.datamodel.kgcl import (
     NodeUnobsoletion,
     PlaceUnder,
     PredicateChange,
+    RemoveNodeFromSubset,
     RemoveSynonym,
     RemoveTextDefinition,
     RemoveUnder,
     Change,
+    SynonymReplacement,
 )
 from lark.lexer import Token
 
@@ -42,8 +45,8 @@ def render_entity(entity, rdf_type):
         entity = entity.replace("'", "")
         return entity
     elif rdf_type == "label":
-        if type(eval(entity)) == Token:
-            entity = eval(entity).value
+        if isinstance(entity, Token):
+            entity = entity.value
         # elif "'" in entity:
         #     # TODO: replacing quotes with backticks
         #     # is only a temporary workaround
@@ -194,7 +197,7 @@ def render(kgcl_instance: Change) -> str:
             return "create " + subject
 
     if type(kgcl_instance) is ClassCreation:
-        subject = render_entity(kgcl_instance.node_id, "uri")
+        subject = render_entity(kgcl_instance.about_node, "uri")
         return "create " + subject
 
     if type(kgcl_instance) is NewSynonym:
@@ -229,6 +232,38 @@ def render(kgcl_instance: Change) -> str:
         # else:
         return "remove synonym " + synonym + " for " + subject
 
+    if type(kgcl_instance) is SynonymReplacement:
+        subject = render_entity(kgcl_instance.about_node, "uri")
+        old_synonym = render_entity(kgcl_instance.old_value, "label")
+        new_synonym = render_entity(kgcl_instance.new_value, "label")
+        qualifier = kgcl_instance.qualifier
+        language = kgcl_instance.language
+
+        if language is not None:
+            old_synonym = old_synonym + "@" + language
+            new_synonym = new_synonym + "@" + language
+
+        if qualifier is not None:
+            return (
+                "change "
+                + qualifier
+                + " synonym "
+                + old_synonym
+                + " for "
+                + subject
+                + " to "
+                + new_synonym
+            )
+        else:
+            return (
+                "change synonym "
+                + old_synonym
+                + " for "
+                + subject
+                + " to "
+                + new_synonym
+            )
+
     if type(kgcl_instance) is PlaceUnder:
         subclass = render_entity(kgcl_instance.subject, "uri")
         superclass = render_entity(kgcl_instance.object, "uri")
@@ -255,21 +290,22 @@ def render(kgcl_instance: Change) -> str:
         return "delete edge " + subclass + " " + property + " " + filler
 
     if type(kgcl_instance) is NodeDeepening:
-        subject = kgcl_instance.about_edge.subject
-        old_value = kgcl_instance.old_value
-        new_value = kgcl_instance.new_value
+        subject = render_entity(kgcl_instance.about_edge.subject, "uri")
+        old_value = render_entity(kgcl_instance.old_value, "uri")
+        new_value = render_entity(kgcl_instance.new_value, "uri")
         return "deepen " + subject + " from " + old_value + " to " + new_value
 
     if type(kgcl_instance) is NewTextDefinition:
-        subject = kgcl_instance.about_node
-        definition = kgcl_instance.new_value
+        subject = render_entity(kgcl_instance.about_node, "uri")
+        definition = render_entity(kgcl_instance.new_value, "label")
         return "add definition " + definition + " to " + subject
 
     if type(kgcl_instance) is NodeTextDefinitionChange:
-        subject = kgcl_instance.about_node
-        new_definition = kgcl_instance.new_value
+        subject = render_entity(kgcl_instance.about_node, "uri")
+        new_definition = render_entity(kgcl_instance.new_value, "label")
         if kgcl_instance.old_value:
-            old_definition = kgcl_instance.old_value
+            old_definition = render_entity(kgcl_instance.old_value, "label")
+            # old_definition = kgcl_instance.old_value
             return (
                 "change definition of "
                 + subject
@@ -284,3 +320,13 @@ def render(kgcl_instance: Change) -> str:
     if type(kgcl_instance) is RemoveTextDefinition:
         subject = render_entity(kgcl_instance.about_node, "uri")
         return "remove definition for " + subject
+
+    if type(kgcl_instance) is AddNodeToSubset:
+        subject = render_entity(kgcl_instance.about_node, "uri")
+        subset = render_entity(kgcl_instance.in_subset, "uri")
+        return "add " + subject + " to subset " + subset
+
+    if type(kgcl_instance) is RemoveNodeFromSubset:
+        subject = render_entity(kgcl_instance.about_node, "uri")
+        subset = render_entity(kgcl_instance.in_subset, "uri")
+        return "remove " + subject + " from subset " + subset
