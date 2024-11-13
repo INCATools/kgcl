@@ -7,7 +7,7 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <link href="https://incatools.github.io/kgcl/ComplexChange/" rel="canonical"/>
 <link href="../assets/images/favicon.png" rel="icon"/>
-<meta content="mkdocs-1.5.3, mkdocs-material-8.5.10" name="generator"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-8.5.10" name="generator"/>
 <title>Class: ComplexChange - KGCL</title>
 <link href="../assets/stylesheets/main.975780f9.min.css" rel="stylesheet"/>
 <link href="../assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
@@ -207,17 +207,25 @@
 <p>URI: <a href="http://w3id.org/kgcl/ComplexChange">kgcl:ComplexChange</a></p>
 <div class="mermaid"> classDiagram
     class ComplexChange
+    click ComplexChange href "../ComplexChange"
       Change &lt;|-- ComplexChange
+        click Change href "../Change"
 
 
       ComplexChange &lt;|-- MultiNodeObsoletion
+        click MultiNodeObsoletion href "../MultiNodeObsoletion"
 
 
       ComplexChange : change_date
 
       ComplexChange : change_set
 
-          ComplexChange --&gt; Change : change_set
+
+
+
+    ComplexChange --&gt; "*" Change : change_set
+    click Change href "../Change"
+
 
       ComplexChange : contributor
 
@@ -225,7 +233,12 @@
 
       ComplexChange : has_undo
 
-          ComplexChange --&gt; Change : has_undo
+
+
+
+    ComplexChange --&gt; "0..1" Change : has_undo
+    click Change href "../Change"
+
 
       ComplexChange : id
 
@@ -237,7 +250,12 @@
 
       ComplexChange : was_generated_by
 
-          ComplexChange --&gt; Activity : was_generated_by
+
+
+
+    ComplexChange --&gt; "0..1" Activity : was_generated_by
+    click Activity href "../Activity"
+
 
 
 </div>
@@ -267,13 +285,13 @@
 <tbody>
 <tr>
 <td><a href="../change_set/">change_set</a></td>
-<td>0..* <br/> <a href="../Change/">Change</a></td>
+<td>* <br/> <a href="../Change/">Change</a></td>
 <td>A collection of changes</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../id/">id</a></td>
-<td>1..1 <br/> <a href="../String/">String</a></td>
+<td>1 <br/> <a href="../String/">String</a></td>
 <td></td>
 <td><a href="../Change/">Change</a></td>
 </tr>
@@ -378,7 +396,6 @@ attributes:
     description: A collection of changes
     from_schema: https://w3id.org/kgcl
     rank: 1000
-    multivalued: true
     alias: change_set
     owner: ComplexChange
     domain_of:
@@ -386,6 +403,7 @@ attributes:
     - Transaction
     - Session
     range: Change
+    multivalued: true
     inlined: true
     inlined_as_list: true
   id:
@@ -489,12 +507,12 @@ attributes:
     from_schema: https://w3id.org/kgcl
     rank: 1000
     domain: Change
-    multivalued: false
     alias: has_undo
     owner: ComplexChange
     domain_of:
     - Change
     range: Change
+    multivalued: false
 
 </code></pre>
 </details>

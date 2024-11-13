@@ -7,7 +7,7 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <link href="https://incatools.github.io/kgcl/MappingCreation/" rel="canonical"/>
 <link href="../assets/images/favicon.png" rel="icon"/>
-<meta content="mkdocs-1.5.3, mkdocs-material-8.5.10" name="generator"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-8.5.10" name="generator"/>
 <title>Class: MappingCreation - KGCL</title>
 <link href="../assets/stylesheets/main.975780f9.min.css" rel="stylesheet"/>
 <link href="../assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
@@ -214,16 +214,29 @@
 <p>URI: <a href="http://w3id.org/kgcl/MappingCreation">kgcl:MappingCreation</a></p>
 <div class="mermaid"> classDiagram
     class MappingCreation
+    click MappingCreation href "../MappingCreation"
       Creation &lt;|-- MappingCreation
+        click Creation href "../Creation"
       EdgeCreation &lt;|-- MappingCreation
+        click EdgeCreation href "../EdgeCreation"
 
       MappingCreation : about_edge
 
-          MappingCreation --&gt; Edge : about_edge
+
+
+
+    MappingCreation --&gt; "0..1" Edge : about_edge
+    click Edge href "../Edge"
+
 
       MappingCreation : annotation_set
 
-          MappingCreation --&gt; Annotation : annotation_set
+
+
+
+    MappingCreation --&gt; "0..1" Annotation : annotation_set
+    click Annotation href "../Annotation"
+
 
       MappingCreation : change_date
 
@@ -235,7 +248,12 @@
 
       MappingCreation : has_undo
 
-          MappingCreation --&gt; Deletion : has_undo
+
+
+
+    MappingCreation --&gt; "0..1" Deletion : has_undo
+    click Deletion href "../Deletion"
+
 
       MappingCreation : id
 
@@ -251,7 +269,12 @@
 
       MappingCreation : object
 
-          MappingCreation --&gt; Node : object
+
+
+
+    MappingCreation --&gt; "0..1" Node : object
+    click Node href "../Node"
+
 
       MappingCreation : object_type
 
@@ -265,7 +288,12 @@
 
       MappingCreation : predicate
 
-          MappingCreation --&gt; Node : predicate
+
+
+
+    MappingCreation --&gt; "0..1" Node : predicate
+    click Node href "../Node"
+
 
       MappingCreation : predicate_type
 
@@ -275,7 +303,12 @@
 
       MappingCreation : subject
 
-          MappingCreation --&gt; Node : subject
+
+
+
+    MappingCreation --&gt; "0..1" Node : subject
+    click Node href "../Node"
+
 
       MappingCreation : subject_type
 
@@ -283,7 +316,12 @@
 
       MappingCreation : was_generated_by
 
-          MappingCreation --&gt; Activity : was_generated_by
+
+
+
+    MappingCreation --&gt; "0..1" Activity : was_generated_by
+    click Activity href "../Activity"
+
 
 
 </div>
@@ -427,7 +465,7 @@
 </tr>
 <tr>
 <td><a href="../id/">id</a></td>
-<td>1..1 <br/> <a href="../String/">String</a></td>
+<td>1 <br/> <a href="../String/">String</a></td>
 <td></td>
 <td><a href="../Change/">Change</a></td>
 </tr>
@@ -540,40 +578,13 @@ slot_usage:
   subject:
     name: subject
     description: This corresponds to subject_id in SSSOM
-    domain_of:
-    - EdgeCreation
-    - EdgeDeletion
-    - EdgeObsoletion
-    - MappingCreation
-    - Edge
   predicate:
     name: predicate
     description: This corresponds to predicate_id in SSSOM. The value of this is typically
       a predicate from SKOS
-    domain_of:
-    - EdgeCreation
-    - EdgeDeletion
-    - EdgeObsoletion
-    - MappingCreation
-    - NewSynonym
-    - NewMapping
-    - RemoveMapping
-    - NewMetadataAssertion
-    - RemoveMetadataAssertion
-    - Edge
   object:
     name: object
     description: This corresponds to object_id in SSSOM
-    domain_of:
-    - EdgeCreation
-    - EdgeDeletion
-    - EdgeObsoletion
-    - MappingCreation
-    - NewMapping
-    - RemoveMapping
-    - NewMetadataAssertion
-    - RemoveMetadataAssertion
-    - Edge
 
 </code></pre>
 </details>
@@ -597,44 +608,19 @@ slot_usage:
   subject:
     name: subject
     description: This corresponds to subject_id in SSSOM
-    domain_of:
-    - EdgeCreation
-    - EdgeDeletion
-    - EdgeObsoletion
-    - MappingCreation
-    - Edge
   predicate:
     name: predicate
     description: This corresponds to predicate_id in SSSOM. The value of this is typically
       a predicate from SKOS
-    domain_of:
-    - EdgeCreation
-    - EdgeDeletion
-    - EdgeObsoletion
-    - MappingCreation
-    - NewSynonym
-    - NewMapping
-    - RemoveMapping
-    - NewMetadataAssertion
-    - RemoveMetadataAssertion
-    - Edge
   object:
     name: object
     description: This corresponds to object_id in SSSOM
-    domain_of:
-    - EdgeCreation
-    - EdgeDeletion
-    - EdgeObsoletion
-    - MappingCreation
-    - NewMapping
-    - RemoveMapping
-    - NewMetadataAssertion
-    - RemoveMetadataAssertion
-    - Edge
 attributes:
   subject:
     name: subject
     description: This corresponds to subject_id in SSSOM
+    comments:
+    - if subject is empty, use the about field of the last node change
     from_schema: https://w3id.org/kgcl
     rank: 1000
     alias: subject
@@ -742,12 +728,12 @@ attributes:
     from_schema: https://w3id.org/kgcl
     rank: 1000
     is_a: about
-    multivalued: false
     alias: about_edge
     owner: MappingCreation
     domain_of:
     - EdgeChange
     range: Edge
+    multivalued: false
   language:
     name: language
     description: The language tag of a literal
@@ -978,12 +964,12 @@ attributes:
     from_schema: https://w3id.org/kgcl
     rank: 1000
     domain: Change
-    multivalued: false
     alias: has_undo
     owner: MappingCreation
     domain_of:
     - Change
     range: Deletion
+    multivalued: false
 
 </code></pre>
 </details>

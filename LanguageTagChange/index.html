@@ -7,7 +7,7 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <link href="https://incatools.github.io/kgcl/LanguageTagChange/" rel="canonical"/>
 <link href="../assets/images/favicon.png" rel="icon"/>
-<meta content="mkdocs-1.5.3, mkdocs-material-8.5.10" name="generator"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-8.5.10" name="generator"/>
 <title>Class: LanguageTagChange - KGCL</title>
 <link href="../assets/stylesheets/main.975780f9.min.css" rel="stylesheet"/>
 <link href="../assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
@@ -203,10 +203,13 @@
 <p>URI: <a href="http://w3id.org/kgcl/LanguageTagChange">kgcl:LanguageTagChange</a></p>
 <div class="mermaid"> classDiagram
     class LanguageTagChange
+    click LanguageTagChange href "../LanguageTagChange"
       DatatypeOrLanguageTagChange &lt;|-- LanguageTagChange
+        click DatatypeOrLanguageTagChange href "../DatatypeOrLanguageTagChange"
 
 
       LanguageTagChange &lt;|-- SetLanguageForName
+        click SetLanguageForName href "../SetLanguageForName"
 
 
 
@@ -274,38 +277,12 @@ is_a: DatatypeOrLanguageTagChange
 slot_usage:
   old_value:
     name: old_value
-    multivalued: false
-    domain_of:
-    - SimpleChange
-    - NodeRename
-    - SetLanguageForName
-    - RemoveSynonym
-    - SynonymReplacement
-    - SynonymPredicateChange
-    - MappingReplacement
-    - MappingPredicateChange
-    - MetadataAssertionReplacement
-    - MetadataAssertionPredicateChange
-    - RemoveTextDefinition
-    - TextDefinitionReplacement
     range: LanguageTag
+    multivalued: false
   new_value:
     name: new_value
-    multivalued: false
-    domain_of:
-    - SimpleChange
-    - NodeRename
-    - SetLanguageForName
-    - NewSynonym
-    - SynonymReplacement
-    - SynonymPredicateChange
-    - MappingReplacement
-    - MappingPredicateChange
-    - MetadataAssertionReplacement
-    - MetadataAssertionPredicateChange
-    - NewTextDefinition
-    - TextDefinitionReplacement
     range: LanguageTag
+    multivalued: false
 
 </code></pre>
 </details>
@@ -317,38 +294,12 @@ is_a: DatatypeOrLanguageTagChange
 slot_usage:
   old_value:
     name: old_value
-    multivalued: false
-    domain_of:
-    - SimpleChange
-    - NodeRename
-    - SetLanguageForName
-    - RemoveSynonym
-    - SynonymReplacement
-    - SynonymPredicateChange
-    - MappingReplacement
-    - MappingPredicateChange
-    - MetadataAssertionReplacement
-    - MetadataAssertionPredicateChange
-    - RemoveTextDefinition
-    - TextDefinitionReplacement
     range: LanguageTag
+    multivalued: false
   new_value:
     name: new_value
-    multivalued: false
-    domain_of:
-    - SimpleChange
-    - NodeRename
-    - SetLanguageForName
-    - NewSynonym
-    - SynonymReplacement
-    - SynonymPredicateChange
-    - MappingReplacement
-    - MappingPredicateChange
-    - MetadataAssertionReplacement
-    - MetadataAssertionPredicateChange
-    - NewTextDefinition
-    - TextDefinitionReplacement
     range: LanguageTag
+    multivalued: false
 
 </code></pre>
 </details>

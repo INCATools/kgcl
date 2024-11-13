@@ -7,7 +7,7 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <link href="https://incatools.github.io/kgcl/NodeObsoletionWithDirectReplacement/" rel="canonical"/>
 <link href="../assets/images/favicon.png" rel="icon"/>
-<meta content="mkdocs-1.5.3, mkdocs-material-8.5.10" name="generator"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-8.5.10" name="generator"/>
 <title>Class: NodeObsoletionWithDirectReplacement - KGCL</title>
 <link href="../assets/stylesheets/main.975780f9.min.css" rel="stylesheet"/>
 <link href="../assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
@@ -209,12 +209,20 @@
 <p>URI: <a href="http://w3id.org/kgcl/NodeObsoletionWithDirectReplacement">kgcl:NodeObsoletionWithDirectReplacement</a></p>
 <div class="mermaid"> classDiagram
     class NodeObsoletionWithDirectReplacement
+    click NodeObsoletionWithDirectReplacement href "../NodeObsoletionWithDirectReplacement"
       AllowsAutomaticReplacementOfEdges &lt;|-- NodeObsoletionWithDirectReplacement
+        click AllowsAutomaticReplacementOfEdges href "../AllowsAutomaticReplacementOfEdges"
       NodeObsoletion &lt;|-- NodeObsoletionWithDirectReplacement
+        click NodeObsoletion href "../NodeObsoletion"
 
       NodeObsoletionWithDirectReplacement : about_node
 
-          NodeObsoletionWithDirectReplacement --&gt; Node : about_node
+
+
+
+    NodeObsoletionWithDirectReplacement --&gt; "0..1" Node : about_node
+    click Node href "../Node"
+
 
       NodeObsoletionWithDirectReplacement : about_node_representation
 
@@ -226,15 +234,30 @@
 
       NodeObsoletionWithDirectReplacement : has_direct_replacement
 
-          NodeObsoletionWithDirectReplacement --&gt; Node : has_direct_replacement
+
+
+
+    NodeObsoletionWithDirectReplacement --&gt; "1" Node : has_direct_replacement
+    click Node href "../Node"
+
 
       NodeObsoletionWithDirectReplacement : has_nondirect_replacement
 
-          NodeObsoletionWithDirectReplacement --&gt; Node : has_nondirect_replacement
+
+
+
+    NodeObsoletionWithDirectReplacement --&gt; "*" Node : has_nondirect_replacement
+    click Node href "../Node"
+
 
       NodeObsoletionWithDirectReplacement : has_undo
 
-          NodeObsoletionWithDirectReplacement --&gt; Obsoletion : has_undo
+
+
+
+    NodeObsoletionWithDirectReplacement --&gt; "0..1" Obsoletion : has_undo
+    click Obsoletion href "../Obsoletion"
+
 
       NodeObsoletionWithDirectReplacement : id
 
@@ -264,7 +287,12 @@
 
       NodeObsoletionWithDirectReplacement : was_generated_by
 
-          NodeObsoletionWithDirectReplacement --&gt; Activity : was_generated_by
+
+
+
+    NodeObsoletionWithDirectReplacement --&gt; "0..1" Activity : was_generated_by
+    click Activity href "../Activity"
+
 
 
 </div>
@@ -300,13 +328,13 @@
 <tbody>
 <tr>
 <td><a href="../has_direct_replacement/">has_direct_replacement</a></td>
-<td>1..1 <br/> <a href="../Node/">Node</a></td>
+<td>1 <br/> <a href="../Node/">Node</a></td>
 <td>An obsoletion replacement where it IS valid to automatically update annotatio...</td>
 <td><a href="../NodeObsoletion/">NodeObsoletion</a></td>
 </tr>
 <tr>
 <td><a href="../has_nondirect_replacement/">has_nondirect_replacement</a></td>
-<td>0..* <br/> <a href="../Node/">Node</a></td>
+<td>* <br/> <a href="../Node/">Node</a></td>
 <td>An obsoletion replacement where it is NOT valid to automatically update annot...</td>
 <td><a href="../NodeObsoletion/">NodeObsoletion</a></td>
 </tr>
@@ -378,7 +406,7 @@
 </tr>
 <tr>
 <td><a href="../id/">id</a></td>
-<td>1..1 <br/> <a href="../String/">String</a></td>
+<td>1 <br/> <a href="../String/">String</a></td>
 <td></td>
 <td><a href="../Change/">Change</a></td>
 </tr>
@@ -479,8 +507,6 @@ mixins:
 slot_usage:
   has_direct_replacement:
     name: has_direct_replacement
-    domain_of:
-    - NodeObsoletion
     required: true
   change_description:
     name: change_description
@@ -504,8 +530,6 @@ mixins:
 slot_usage:
   has_direct_replacement:
     name: has_direct_replacement
-    domain_of:
-    - NodeObsoletion
     required: true
   change_description:
     name: change_description
@@ -515,15 +539,23 @@ attributes:
     name: has_direct_replacement
     description: An obsoletion replacement where it IS valid to automatically update
       annotations/edges pointing at the node with its direct replacement
+    comments:
+    - if a node obsoletion C, C about N1, and C has direct replacement N2, and there
+      exists an edge with an edge property referencing N1, it is possible to replace
+      with N2
+    - if a node obsoletion C C about N1, and Chas direct replacement N2, then N1 IAO:0100001
+      N2
     from_schema: https://w3id.org/kgcl
+    close_mappings:
+    - IAO:0100001
     rank: 1000
-    multivalued: false
     alias: has_direct_replacement
     owner: NodeObsoletionWithDirectReplacement
     domain_of:
     - NodeObsoletion
     range: Node
     required: true
+    multivalued: false
   has_nondirect_replacement:
     name: has_nondirect_replacement
     description: An obsoletion replacement where it is NOT valid to automatically
@@ -538,23 +570,23 @@ attributes:
     close_mappings:
     - oio:consider
     rank: 1000
-    multivalued: true
     alias: has_nondirect_replacement
     owner: NodeObsoletionWithDirectReplacement
     domain_of:
     - NodeObsoletion
     range: Node
+    multivalued: true
   about_node:
     name: about_node
     from_schema: https://w3id.org/kgcl
     rank: 1000
     is_a: about
-    multivalued: false
     alias: about_node
     owner: NodeObsoletionWithDirectReplacement
     domain_of:
     - NodeChange
     range: Node
+    multivalued: false
   about_node_representation:
     name: about_node_representation
     description: 'The representation of a node (URI, CURIE, label) '
@@ -786,12 +818,12 @@ attributes:
     from_schema: https://w3id.org/kgcl
     rank: 1000
     domain: Change
-    multivalued: false
     alias: has_undo
     owner: NodeObsoletionWithDirectReplacement
     domain_of:
     - Change
     range: Obsoletion
+    multivalued: false
 
 </code></pre>
 </details>

@@ -7,7 +7,7 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <link href="https://incatools.github.io/kgcl/EdgeChange/" rel="canonical"/>
 <link href="../assets/images/favicon.png" rel="icon"/>
-<meta content="mkdocs-1.5.3, mkdocs-material-8.5.10" name="generator"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-8.5.10" name="generator"/>
 <title>Class: EdgeChange - KGCL</title>
 <link href="../assets/stylesheets/main.975780f9.min.css" rel="stylesheet"/>
 <link href="../assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
@@ -217,21 +217,35 @@
 <p>URI: <a href="http://w3id.org/kgcl/EdgeChange">kgcl:EdgeChange</a></p>
 <div class="mermaid"> classDiagram
     class EdgeChange
+    click EdgeChange href "../EdgeChange"
       SimpleChange &lt;|-- EdgeChange
+        click SimpleChange href "../SimpleChange"
 
 
       EdgeChange &lt;|-- EdgeCreation
+        click EdgeCreation href "../EdgeCreation"
       EdgeChange &lt;|-- EdgeDeletion
+        click EdgeDeletion href "../EdgeDeletion"
       EdgeChange &lt;|-- EdgeObsoletion
+        click EdgeObsoletion href "../EdgeObsoletion"
       EdgeChange &lt;|-- EdgeRewiring
+        click EdgeRewiring href "../EdgeRewiring"
       EdgeChange &lt;|-- NodeMove
+        click NodeMove href "../NodeMove"
       EdgeChange &lt;|-- PredicateChange
+        click PredicateChange href "../PredicateChange"
       EdgeChange &lt;|-- EdgeLogicalInterpretationChange
+        click EdgeLogicalInterpretationChange href "../EdgeLogicalInterpretationChange"
 
 
       EdgeChange : about_edge
 
-          EdgeChange --&gt; Edge : about_edge
+
+
+
+    EdgeChange --&gt; "0..1" Edge : about_edge
+    click Edge href "../Edge"
+
 
       EdgeChange : change_date
 
@@ -243,7 +257,12 @@
 
       EdgeChange : has_undo
 
-          EdgeChange --&gt; Change : has_undo
+
+
+
+    EdgeChange --&gt; "0..1" Change : has_undo
+    click Change href "../Change"
+
 
       EdgeChange : id
 
@@ -275,7 +294,12 @@
 
       EdgeChange : was_generated_by
 
-          EdgeChange --&gt; Activity : was_generated_by
+
+
+
+    EdgeChange --&gt; "0..1" Activity : was_generated_by
+    click Activity href "../Activity"
+
 
 
 </div>
@@ -386,7 +410,7 @@
 </tr>
 <tr>
 <td><a href="../id/">id</a></td>
-<td>1..1 <br/> <a href="../String/">String</a></td>
+<td>1 <br/> <a href="../String/">String</a></td>
 <td></td>
 <td><a href="../Change/">Change</a></td>
 </tr>
@@ -497,12 +521,6 @@ slot_usage:
     name: subject
     comments:
     - if subject is empty, use the about field of the last node change
-    domain_of:
-    - EdgeCreation
-    - EdgeDeletion
-    - EdgeObsoletion
-    - MappingCreation
-    - Edge
 
 </code></pre>
 </details>
@@ -523,24 +541,18 @@ slot_usage:
     name: subject
     comments:
     - if subject is empty, use the about field of the last node change
-    domain_of:
-    - EdgeCreation
-    - EdgeDeletion
-    - EdgeObsoletion
-    - MappingCreation
-    - Edge
 attributes:
   about_edge:
     name: about_edge
     from_schema: https://w3id.org/kgcl
     rank: 1000
     is_a: about
-    multivalued: false
     alias: about_edge
     owner: EdgeChange
     domain_of:
     - EdgeChange
     range: Edge
+    multivalued: false
   object_type:
     name: object_type
     description: The type (IRI or Literal) of an object
@@ -784,12 +796,12 @@ attributes:
     from_schema: https://w3id.org/kgcl
     rank: 1000
     domain: Change
-    multivalued: false
     alias: has_undo
     owner: EdgeChange
     domain_of:
     - Change
     range: Change
+    multivalued: false
 
 </code></pre>
 </details>

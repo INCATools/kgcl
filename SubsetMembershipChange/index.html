@@ -7,7 +7,7 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <link href="https://incatools.github.io/kgcl/SubsetMembershipChange/" rel="canonical"/>
 <link href="../assets/images/favicon.png" rel="icon"/>
-<meta content="mkdocs-1.5.3, mkdocs-material-8.5.10" name="generator"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-8.5.10" name="generator"/>
 <title>Class: SubsetMembershipChange - KGCL</title>
 <link href="../assets/stylesheets/main.975780f9.min.css" rel="stylesheet"/>
 <link href="../assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
@@ -209,16 +209,25 @@
 <p>URI: <a href="http://w3id.org/kgcl/SubsetMembershipChange">kgcl:SubsetMembershipChange</a></p>
 <div class="mermaid"> classDiagram
     class SubsetMembershipChange
+    click SubsetMembershipChange href "../SubsetMembershipChange"
       ChangeMixin &lt;|-- SubsetMembershipChange
+        click ChangeMixin href "../ChangeMixin"
 
 
       SubsetMembershipChange &lt;|-- AddToSubset
+        click AddToSubset href "../AddToSubset"
       SubsetMembershipChange &lt;|-- RemoveFromSubset
+        click RemoveFromSubset href "../RemoveFromSubset"
 
 
       SubsetMembershipChange : in_subset
 
-          SubsetMembershipChange --&gt; OntologySubset : in_subset
+
+
+
+    SubsetMembershipChange --&gt; "0..1" OntologySubset : in_subset
+    click OntologySubset href "../OntologySubset"
+
 
 
 </div>

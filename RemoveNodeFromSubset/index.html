@@ -7,7 +7,7 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <link href="https://incatools.github.io/kgcl/RemoveNodeFromSubset/" rel="canonical"/>
 <link href="../assets/images/favicon.png" rel="icon"/>
-<meta content="mkdocs-1.5.3, mkdocs-material-8.5.10" name="generator"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-8.5.10" name="generator"/>
 <title>Class: RemoveNodeFromSubset - KGCL</title>
 <link href="../assets/stylesheets/main.975780f9.min.css" rel="stylesheet"/>
 <link href="../assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
@@ -209,12 +209,20 @@
 <p>URI: <a href="http://w3id.org/kgcl/RemoveNodeFromSubset">kgcl:RemoveNodeFromSubset</a></p>
 <div class="mermaid"> classDiagram
     class RemoveNodeFromSubset
+    click RemoveNodeFromSubset href "../RemoveNodeFromSubset"
       RemoveFromSubset &lt;|-- RemoveNodeFromSubset
+        click RemoveFromSubset href "../RemoveFromSubset"
       NodeChange &lt;|-- RemoveNodeFromSubset
+        click NodeChange href "../NodeChange"
 
       RemoveNodeFromSubset : about_node
 
-          RemoveNodeFromSubset --&gt; Node : about_node
+
+
+
+    RemoveNodeFromSubset --&gt; "0..1" Node : about_node
+    click Node href "../Node"
+
 
       RemoveNodeFromSubset : about_node_representation
 
@@ -226,13 +234,23 @@
 
       RemoveNodeFromSubset : has_undo
 
-          RemoveNodeFromSubset --&gt; AddToSubset : has_undo
+
+
+
+    RemoveNodeFromSubset --&gt; "0..1" AddToSubset : has_undo
+    click AddToSubset href "../AddToSubset"
+
 
       RemoveNodeFromSubset : id
 
       RemoveNodeFromSubset : in_subset
 
-          RemoveNodeFromSubset --&gt; OntologySubset : in_subset
+
+
+
+    RemoveNodeFromSubset --&gt; "0..1" OntologySubset : in_subset
+    click OntologySubset href "../OntologySubset"
+
 
       RemoveNodeFromSubset : language
 
@@ -260,7 +278,12 @@
 
       RemoveNodeFromSubset : was_generated_by
 
-          RemoveNodeFromSubset --&gt; Activity : was_generated_by
+
+
+
+    RemoveNodeFromSubset --&gt; "0..1" Activity : was_generated_by
+    click Activity href "../Activity"
+
 
 
 </div>
@@ -359,7 +382,7 @@
 </tr>
 <tr>
 <td><a href="../id/">id</a></td>
-<td>1..1 <br/> <a href="../String/">String</a></td>
+<td>1 <br/> <a href="../String/">String</a></td>
 <td></td>
 <td><a href="../Change/">Change</a></td>
 </tr>
@@ -466,8 +489,6 @@ slot_usage:
   about_node:
     name: about_node
     description: The node that is removed from the subset
-    domain_of:
-    - NodeChange
   subset:
     name: subset
     description: The subset from which the node is to be removed
@@ -491,8 +512,6 @@ slot_usage:
   about_node:
     name: about_node
     description: The node that is removed from the subset
-    domain_of:
-    - NodeChange
   subset:
     name: subset
     description: The subset from which the node is to be removed
@@ -503,12 +522,12 @@ attributes:
     from_schema: https://w3id.org/kgcl
     rank: 1000
     is_a: about
-    multivalued: false
     alias: about_node
     owner: RemoveNodeFromSubset
     domain_of:
     - NodeChange
     range: Node
+    multivalued: false
   about_node_representation:
     name: about_node_representation
     description: 'The representation of a node (URI, CURIE, label) '
@@ -740,12 +759,12 @@ attributes:
     from_schema: https://w3id.org/kgcl
     rank: 1000
     domain: Change
-    multivalued: false
     alias: has_undo
     owner: RemoveNodeFromSubset
     domain_of:
     - Change
     range: AddToSubset
+    multivalued: false
   in_subset:
     name: in_subset
     description: subset that the element is being removed from

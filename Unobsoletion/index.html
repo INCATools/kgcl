@@ -7,7 +7,7 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <link href="https://incatools.github.io/kgcl/Unobsoletion/" rel="canonical"/>
 <link href="../assets/images/favicon.png" rel="icon"/>
-<meta content="mkdocs-1.5.3, mkdocs-material-8.5.10" name="generator"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-8.5.10" name="generator"/>
 <title>Class: Unobsoletion - KGCL</title>
 <link href="../assets/stylesheets/main.975780f9.min.css" rel="stylesheet"/>
 <link href="../assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
@@ -214,10 +214,13 @@
 <p>URI: <a href="http://w3id.org/kgcl/Unobsoletion">kgcl:Unobsoletion</a></p>
 <div class="mermaid"> classDiagram
     class Unobsoletion
+    click Unobsoletion href "../Unobsoletion"
       ChangeMixin &lt;|-- Unobsoletion
+        click ChangeMixin href "../ChangeMixin"
 
 
       Unobsoletion &lt;|-- NodeUnobsoletion
+        click NodeUnobsoletion href "../NodeUnobsoletion"
 
 
 
@@ -305,8 +308,6 @@ mixin: true
 slot_usage:
   has_undo:
     name: has_undo
-    domain_of:
-    - Change
     range: Obsoletion
 
 </code></pre>
@@ -323,8 +324,6 @@ mixin: true
 slot_usage:
   has_undo:
     name: has_undo
-    domain_of:
-    - Change
     range: Obsoletion
 
 </code></pre>

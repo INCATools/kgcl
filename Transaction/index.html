@@ -7,7 +7,7 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <link href="https://incatools.github.io/kgcl/Transaction/" rel="canonical"/>
 <link href="../assets/images/favicon.png" rel="icon"/>
-<meta content="mkdocs-1.5.3, mkdocs-material-8.5.10" name="generator"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-8.5.10" name="generator"/>
 <title>Class: Transaction - KGCL</title>
 <link href="../assets/stylesheets/main.975780f9.min.css" rel="stylesheet"/>
 <link href="../assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
@@ -204,13 +204,20 @@
 <p>URI: <a href="http://w3id.org/kgcl/Transaction">kgcl:Transaction</a></p>
 <div class="mermaid"> classDiagram
     class Transaction
+    click Transaction href "../Transaction"
       Change &lt;|-- Transaction
+        click Change href "../Change"
 
       Transaction : change_date
 
       Transaction : change_set
 
-          Transaction --&gt; Change : change_set
+
+
+
+    Transaction --&gt; "*" Change : change_set
+    click Change href "../Change"
+
 
       Transaction : contributor
 
@@ -218,7 +225,12 @@
 
       Transaction : has_undo
 
-          Transaction --&gt; Change : has_undo
+
+
+
+    Transaction --&gt; "0..1" Change : has_undo
+    click Change href "../Change"
+
 
       Transaction : id
 
@@ -230,7 +242,12 @@
 
       Transaction : was_generated_by
 
-          Transaction --&gt; Activity : was_generated_by
+
+
+
+    Transaction --&gt; "0..1" Activity : was_generated_by
+    click Activity href "../Activity"
+
 
 
 </div>
@@ -257,13 +274,13 @@
 <tbody>
 <tr>
 <td><a href="../change_set/">change_set</a></td>
-<td>0..* <br/> <a href="../Change/">Change</a></td>
+<td>* <br/> <a href="../Change/">Change</a></td>
 <td>A collection of changes</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../id/">id</a></td>
-<td>1..1 <br/> <a href="../String/">String</a></td>
+<td>1 <br/> <a href="../String/">String</a></td>
 <td></td>
 <td><a href="../Change/">Change</a></td>
 </tr>
@@ -370,7 +387,6 @@ attributes:
     description: A collection of changes
     from_schema: https://w3id.org/kgcl
     rank: 1000
-    multivalued: true
     alias: change_set
     owner: Transaction
     domain_of:
@@ -378,6 +394,7 @@ attributes:
     - Transaction
     - Session
     range: Change
+    multivalued: true
     inlined: true
     inlined_as_list: true
   id:
@@ -481,12 +498,12 @@ attributes:
     from_schema: https://w3id.org/kgcl
     rank: 1000
     domain: Change
-    multivalued: false
     alias: has_undo
     owner: Transaction
     domain_of:
     - Change
     range: Change
+    multivalued: false
 
 </code></pre>
 </details>

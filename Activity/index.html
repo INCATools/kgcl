@@ -7,7 +7,7 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <link href="https://incatools.github.io/kgcl/Activity/" rel="canonical"/>
 <link href="../assets/images/favicon.png" rel="icon"/>
-<meta content="mkdocs-1.5.3, mkdocs-material-8.5.10" name="generator"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-8.5.10" name="generator"/>
 <title>Class: Activity - KGCL</title>
 <link href="../assets/stylesheets/main.975780f9.min.css" rel="stylesheet"/>
 <link href="../assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
@@ -209,7 +209,9 @@
 <p>URI: <a href="http://w3id.org/kgcl/Activity">kgcl:Activity</a></p>
 <div class="mermaid"> classDiagram
     class Activity
+    click Activity href "../Activity"
       ProvElement &lt;|-- Activity
+        click ProvElement href "../ProvElement"
 
       Activity : description
 
@@ -223,11 +225,21 @@
 
       Activity : was_associated_with
 
-          Activity --&gt; Agent : was_associated_with
+
+
+
+    Activity --&gt; "0..1" Agent : was_associated_with
+    click Agent href "../Agent"
+
 
       Activity : was_informed_by
 
-          Activity --&gt; Activity : was_informed_by
+
+
+
+    Activity --&gt; "0..1" Activity : was_informed_by
+    click Activity href "../Activity"
+
 
 
 </div>
@@ -251,7 +263,7 @@
 <tbody>
 <tr>
 <td><a href="../id/">id</a></td>
-<td>1..1 <br/> <a href="../String/">String</a></td>
+<td>1 <br/> <a href="../String/">String</a></td>
 <td></td>
 <td>direct</td>
 </tr>

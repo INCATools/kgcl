@@ -7,7 +7,7 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <link href="https://incatools.github.io/kgcl/EdgeCreation/" rel="canonical"/>
 <link href="../assets/images/favicon.png" rel="icon"/>
-<meta content="mkdocs-1.5.3, mkdocs-material-8.5.10" name="generator"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-8.5.10" name="generator"/>
 <title>Class: EdgeCreation - KGCL</title>
 <link href="../assets/stylesheets/main.975780f9.min.css" rel="stylesheet"/>
 <link href="../assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
@@ -214,21 +214,36 @@
 <p>URI: <a href="http://w3id.org/kgcl/EdgeCreation">kgcl:EdgeCreation</a></p>
 <div class="mermaid"> classDiagram
     class EdgeCreation
+    click EdgeCreation href "../EdgeCreation"
       Creation &lt;|-- EdgeCreation
+        click Creation href "../Creation"
       EdgeChange &lt;|-- EdgeCreation
+        click EdgeChange href "../EdgeChange"
 
 
       EdgeCreation &lt;|-- PlaceUnder
+        click PlaceUnder href "../PlaceUnder"
       EdgeCreation &lt;|-- MappingCreation
+        click MappingCreation href "../MappingCreation"
 
 
       EdgeCreation : about_edge
 
-          EdgeCreation --&gt; Edge : about_edge
+
+
+
+    EdgeCreation --&gt; "0..1" Edge : about_edge
+    click Edge href "../Edge"
+
 
       EdgeCreation : annotation_set
 
-          EdgeCreation --&gt; Annotation : annotation_set
+
+
+
+    EdgeCreation --&gt; "0..1" Annotation : annotation_set
+    click Annotation href "../Annotation"
+
 
       EdgeCreation : change_date
 
@@ -240,7 +255,12 @@
 
       EdgeCreation : has_undo
 
-          EdgeCreation --&gt; Deletion : has_undo
+
+
+
+    EdgeCreation --&gt; "0..1" Deletion : has_undo
+    click Deletion href "../Deletion"
+
 
       EdgeCreation : id
 
@@ -256,7 +276,12 @@
 
       EdgeCreation : object
 
-          EdgeCreation --&gt; Node : object
+
+
+
+    EdgeCreation --&gt; "0..1" Node : object
+    click Node href "../Node"
+
 
       EdgeCreation : object_type
 
@@ -270,7 +295,12 @@
 
       EdgeCreation : predicate
 
-          EdgeCreation --&gt; Node : predicate
+
+
+
+    EdgeCreation --&gt; "0..1" Node : predicate
+    click Node href "../Node"
+
 
       EdgeCreation : predicate_type
 
@@ -280,7 +310,12 @@
 
       EdgeCreation : subject
 
-          EdgeCreation --&gt; Node : subject
+
+
+
+    EdgeCreation --&gt; "0..1" Node : subject
+    click Node href "../Node"
+
 
       EdgeCreation : subject_type
 
@@ -288,7 +323,12 @@
 
       EdgeCreation : was_generated_by
 
-          EdgeCreation --&gt; Activity : was_generated_by
+
+
+
+    EdgeCreation --&gt; "0..1" Activity : was_generated_by
+    click Activity href "../Activity"
+
 
 
 </div>
@@ -433,7 +473,7 @@
 </tr>
 <tr>
 <td><a href="../id/">id</a></td>
-<td>1..1 <br/> <a href="../String/">String</a></td>
+<td>1 <br/> <a href="../String/">String</a></td>
 <td></td>
 <td><a href="../Change/">Change</a></td>
 </tr>
@@ -675,12 +715,12 @@ attributes:
     from_schema: https://w3id.org/kgcl
     rank: 1000
     is_a: about
-    multivalued: false
     alias: about_edge
     owner: EdgeCreation
     domain_of:
     - EdgeChange
     range: Edge
+    multivalued: false
   language:
     name: language
     description: The language tag of a literal
@@ -911,12 +951,12 @@ attributes:
     from_schema: https://w3id.org/kgcl
     rank: 1000
     domain: Change
-    multivalued: false
     alias: has_undo
     owner: EdgeCreation
     domain_of:
     - Change
     range: Deletion
+    multivalued: false
 
 </code></pre>
 </details>

@@ -11,7 +11,7 @@
         <link rel="canonical" href="https://incatools.github.io/kgcl/datatype/">
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-8.5.10">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-8.5.10">
     
     
       
@@ -290,6 +290,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#mappings" class="md-nav__link">
+    Mappings
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#linkml-source" class="md-nav__link">
     LinkML Source
   </a>
@@ -332,11 +339,6 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../EdgeChange/">EdgeChange</a></td>
-<td>A change in which the element that is the focus of the change is an edge</td>
-<td>no</td>
-</tr>
-<tr>
 <td><a href="../EdgeCreation/">EdgeCreation</a></td>
 <td>An edge change in which a de-novo edge is created</td>
 <td>no</td>
@@ -347,18 +349,13 @@
 <td>no</td>
 </tr>
 <tr>
-<td><a href="../EdgeDeletion/">EdgeDeletion</a></td>
-<td>An edge change in which an edge is removed</td>
-<td>no</td>
-</tr>
-<tr>
 <td><a href="../RemoveUnder/">RemoveUnder</a></td>
 <td>An edge deletion where the predicate is owl:subClassOf</td>
 <td>no</td>
 </tr>
 <tr>
-<td><a href="../EdgeObsoletion/">EdgeObsoletion</a></td>
-<td>An edge change in which an edge is obsoleted</td>
+<td><a href="../EdgeLogicalInterpretationChange/">EdgeLogicalInterpretationChange</a></td>
+<td>An edge change where the subject, object, and predicate are unchanged, but th...</td>
 <td>no</td>
 </tr>
 <tr>
@@ -367,8 +364,13 @@
 <td>no</td>
 </tr>
 <tr>
-<td><a href="../MappingCreation/">MappingCreation</a></td>
-<td>A specific kind of edge creation in which the created edge is a mapping</td>
+<td><a href="../NodeShallowing/">NodeShallowing</a></td>
+<td>The opposite of node deepening</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../EdgeObsoletion/">EdgeObsoletion</a></td>
+<td>An edge change in which an edge is obsoleted</td>
 <td>no</td>
 </tr>
 <tr>
@@ -377,13 +379,18 @@
 <td>no</td>
 </tr>
 <tr>
-<td><a href="../NodeDeepening/">NodeDeepening</a></td>
-<td>A node move in which a node where the destination is a proper descendant of t...</td>
+<td><a href="../EdgeDeletion/">EdgeDeletion</a></td>
+<td>An edge change in which an edge is removed</td>
 <td>no</td>
 </tr>
 <tr>
-<td><a href="../NodeShallowing/">NodeShallowing</a></td>
-<td>The opposite of node deepening</td>
+<td><a href="../MappingCreation/">MappingCreation</a></td>
+<td>A specific kind of edge creation in which the created edge is a mapping</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../EdgeChange/">EdgeChange</a></td>
+<td>A change in which the element that is the focus of the change is an edge</td>
 <td>no</td>
 </tr>
 <tr>
@@ -392,8 +399,8 @@
 <td>no</td>
 </tr>
 <tr>
-<td><a href="../EdgeLogicalInterpretationChange/">EdgeLogicalInterpretationChange</a></td>
-<td>An edge change where the subject, object, and predicate are unchanged, but th...</td>
+<td><a href="../NodeDeepening/">NodeDeepening</a></td>
+<td>A node move in which a node where the destination is a proper descendant of t...</td>
 <td>no</td>
 </tr>
 </tbody>
@@ -407,6 +414,25 @@
 <ul>
 <li>from schema: https://w3id.org/kgcl</li>
 </ul>
+<h2 id="mappings">Mappings</h2>
+<table>
+<thead>
+<tr>
+<th>Mapping Type</th>
+<th>Mapped Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>self</td>
+<td>kgcl:datatype</td>
+</tr>
+<tr>
+<td>native</td>
+<td>kgcl:datatype</td>
+</tr>
+</tbody>
+</table>
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 

@@ -7,7 +7,7 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <link href="https://incatools.github.io/kgcl/AddToSubset/" rel="canonical"/>
 <link href="../assets/images/favicon.png" rel="icon"/>
-<meta content="mkdocs-1.5.3, mkdocs-material-8.5.10" name="generator"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-8.5.10" name="generator"/>
 <title>Class: AddToSubset - KGCL</title>
 <link href="../assets/stylesheets/main.975780f9.min.css" rel="stylesheet"/>
 <link href="../assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
@@ -214,15 +214,23 @@
 <p>URI: <a href="http://w3id.org/kgcl/AddToSubset">kgcl:AddToSubset</a></p>
 <div class="mermaid"> classDiagram
     class AddToSubset
+    click AddToSubset href "../AddToSubset"
       SubsetMembershipChange &lt;|-- AddToSubset
+        click SubsetMembershipChange href "../SubsetMembershipChange"
 
 
       AddToSubset &lt;|-- AddNodeToSubset
+        click AddNodeToSubset href "../AddNodeToSubset"
 
 
       AddToSubset : in_subset
 
-          AddToSubset --&gt; OntologySubset : in_subset
+
+
+
+    AddToSubset --&gt; "0..1" OntologySubset : in_subset
+    click OntologySubset href "../OntologySubset"
+
 
 
 </div>
@@ -326,8 +334,6 @@ slot_usage:
   in_subset:
     name: in_subset
     description: subset that the element is being placed inside.
-    domain_of:
-    - SubsetMembershipChange
 
 </code></pre>
 </details>
@@ -342,8 +348,6 @@ slot_usage:
   in_subset:
     name: in_subset
     description: subset that the element is being placed inside.
-    domain_of:
-    - SubsetMembershipChange
 attributes:
   in_subset:
     name: in_subset

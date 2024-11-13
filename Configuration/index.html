@@ -7,7 +7,7 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <link href="https://incatools.github.io/kgcl/Configuration/" rel="canonical"/>
 <link href="../assets/images/favicon.png" rel="icon"/>
-<meta content="mkdocs-1.5.3, mkdocs-material-8.5.10" name="generator"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-8.5.10" name="generator"/>
 <title>Class: Configuration - KGCL</title>
 <link href="../assets/stylesheets/main.975780f9.min.css" rel="stylesheet"/>
 <link href="../assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
@@ -204,7 +204,9 @@
 <p>URI: <a href="http://w3id.org/kgcl/Configuration">kgcl:Configuration</a></p>
 <div class="mermaid"> classDiagram
     class Configuration
+    click Configuration href "../Configuration"
       ChangeLanguageElement &lt;|-- Configuration
+        click ChangeLanguageElement href "../ChangeLanguageElement"
 
       Configuration : contributor_predicate
 
@@ -222,7 +224,12 @@
 
       Configuration : obsoletion_policies
 
-          Configuration --&gt; ObsoletionPolicyEnum : obsoletion_policies
+
+
+
+    Configuration --&gt; "*" ObsoletionPolicyEnum : obsoletion_policies
+    click ObsoletionPolicyEnum href "../ObsoletionPolicyEnum"
+
 
       Configuration : obsoletion_workflow
 
@@ -298,7 +305,7 @@
 </tr>
 <tr>
 <td><a href="../obsoletion_policies/">obsoletion_policies</a></td>
-<td>0..* <br/> <a href="../ObsoletionPolicyEnum/">ObsoletionPolicyEnum</a></td>
+<td>* <br/> <a href="../ObsoletionPolicyEnum/">ObsoletionPolicyEnum</a></td>
 <td></td>
 <td>direct</td>
 </tr>
@@ -398,10 +405,10 @@ attributes:
     name: obsoletion_policies
     from_schema: https://w3id.org/kgcl
     rank: 1000
-    multivalued: true
     domain_of:
     - Configuration
     range: ObsoletionPolicyEnum
+    multivalued: true
   obsolete_subclass_of_shadow_property:
     name: obsolete_subclass_of_shadow_property
     description: specifies the annotation property to be used to create a shadow annotation
@@ -499,12 +506,12 @@ attributes:
     name: obsoletion_policies
     from_schema: https://w3id.org/kgcl
     rank: 1000
-    multivalued: true
     alias: obsoletion_policies
     owner: Configuration
     domain_of:
     - Configuration
     range: ObsoletionPolicyEnum
+    multivalued: true
   obsolete_subclass_of_shadow_property:
     name: obsolete_subclass_of_shadow_property
     description: specifies the annotation property to be used to create a shadow annotation

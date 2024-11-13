@@ -7,7 +7,7 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <link href="https://incatools.github.io/kgcl/RemoveSynonym/" rel="canonical"/>
 <link href="../assets/images/favicon.png" rel="icon"/>
-<meta content="mkdocs-1.5.3, mkdocs-material-8.5.10" name="generator"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-8.5.10" name="generator"/>
 <title>Class: RemoveSynonym - KGCL</title>
 <link href="../assets/stylesheets/main.975780f9.min.css" rel="stylesheet"/>
 <link href="../assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
@@ -204,11 +204,18 @@
 <p>URI: <a href="http://w3id.org/kgcl/RemoveSynonym">kgcl:RemoveSynonym</a></p>
 <div class="mermaid"> classDiagram
     class RemoveSynonym
+    click RemoveSynonym href "../RemoveSynonym"
       NodeSynonymChange &lt;|-- RemoveSynonym
+        click NodeSynonymChange href "../NodeSynonymChange"
 
       RemoveSynonym : about_node
 
-          RemoveSynonym --&gt; Node : about_node
+
+
+
+    RemoveSynonym --&gt; "0..1" Node : about_node
+    click Node href "../Node"
+
 
       RemoveSynonym : about_node_representation
 
@@ -220,7 +227,12 @@
 
       RemoveSynonym : has_undo
 
-          RemoveSynonym --&gt; Change : has_undo
+
+
+
+    RemoveSynonym --&gt; "0..1" Change : has_undo
+    click Change href "../Change"
+
 
       RemoveSynonym : id
 
@@ -250,7 +262,12 @@
 
       RemoveSynonym : was_generated_by
 
-          RemoveSynonym --&gt; Activity : was_generated_by
+
+
+
+    RemoveSynonym --&gt; "0..1" Activity : was_generated_by
+    click Activity href "../Activity"
+
 
 
 </div>
@@ -352,7 +369,7 @@
 </tr>
 <tr>
 <td><a href="../id/">id</a></td>
-<td>1..1 <br/> <a href="../String/">String</a></td>
+<td>1 <br/> <a href="../String/">String</a></td>
 <td></td>
 <td><a href="../Change/">Change</a></td>
 </tr>
@@ -476,12 +493,12 @@ attributes:
     from_schema: https://w3id.org/kgcl
     rank: 1000
     is_a: about
-    multivalued: false
     alias: about_node
     owner: RemoveSynonym
     domain_of:
     - NodeChange
     range: Node
+    multivalued: false
   about_node_representation:
     name: about_node_representation
     description: 'The representation of a node (URI, CURIE, label) '
@@ -692,12 +709,12 @@ attributes:
     from_schema: https://w3id.org/kgcl
     rank: 1000
     domain: Change
-    multivalued: false
     alias: has_undo
     owner: RemoveSynonym
     domain_of:
     - Change
     range: Change
+    multivalued: false
 
 </code></pre>
 </details>

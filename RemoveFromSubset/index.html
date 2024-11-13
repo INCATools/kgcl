@@ -7,7 +7,7 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <link href="https://incatools.github.io/kgcl/RemoveFromSubset/" rel="canonical"/>
 <link href="../assets/images/favicon.png" rel="icon"/>
-<meta content="mkdocs-1.5.3, mkdocs-material-8.5.10" name="generator"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-8.5.10" name="generator"/>
 <title>Class: RemoveFromSubset - KGCL</title>
 <link href="../assets/stylesheets/main.975780f9.min.css" rel="stylesheet"/>
 <link href="../assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
@@ -209,15 +209,23 @@
 <p>URI: <a href="http://w3id.org/kgcl/RemoveFromSubset">kgcl:RemoveFromSubset</a></p>
 <div class="mermaid"> classDiagram
     class RemoveFromSubset
+    click RemoveFromSubset href "../RemoveFromSubset"
       SubsetMembershipChange &lt;|-- RemoveFromSubset
+        click SubsetMembershipChange href "../SubsetMembershipChange"
 
 
       RemoveFromSubset &lt;|-- RemoveNodeFromSubset
+        click RemoveNodeFromSubset href "../RemoveNodeFromSubset"
 
 
       RemoveFromSubset : in_subset
 
-          RemoveFromSubset --&gt; OntologySubset : in_subset
+
+
+
+    RemoveFromSubset --&gt; "0..1" OntologySubset : in_subset
+    click OntologySubset href "../OntologySubset"
+
 
 
 </div>
@@ -302,12 +310,8 @@ slot_usage:
   in_subset:
     name: in_subset
     description: subset that the element is being removed from
-    domain_of:
-    - SubsetMembershipChange
   has_undo:
     name: has_undo
-    domain_of:
-    - Change
     range: AddToSubset
 
 </code></pre>
@@ -323,12 +327,8 @@ slot_usage:
   in_subset:
     name: in_subset
     description: subset that the element is being removed from
-    domain_of:
-    - SubsetMembershipChange
   has_undo:
     name: has_undo
-    domain_of:
-    - Change
     range: AddToSubset
 attributes:
   in_subset:

@@ -7,7 +7,7 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <link href="https://incatools.github.io/kgcl/MultiNodeObsoletion/" rel="canonical"/>
 <link href="../assets/images/favicon.png" rel="icon"/>
-<meta content="mkdocs-1.5.3, mkdocs-material-8.5.10" name="generator"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-8.5.10" name="generator"/>
 <title>Class: MultiNodeObsoletion - KGCL</title>
 <link href="../assets/stylesheets/main.975780f9.min.css" rel="stylesheet"/>
 <link href="../assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
@@ -214,13 +214,20 @@
 <p>URI: <a href="http://w3id.org/kgcl/MultiNodeObsoletion">kgcl:MultiNodeObsoletion</a></p>
 <div class="mermaid"> classDiagram
     class MultiNodeObsoletion
+    click MultiNodeObsoletion href "../MultiNodeObsoletion"
       ComplexChange &lt;|-- MultiNodeObsoletion
+        click ComplexChange href "../ComplexChange"
 
       MultiNodeObsoletion : change_date
 
       MultiNodeObsoletion : change_set
 
-          MultiNodeObsoletion --&gt; NodeObsoletion : change_set
+
+
+
+    MultiNodeObsoletion --&gt; "*" NodeObsoletion : change_set
+    click NodeObsoletion href "../NodeObsoletion"
+
 
       MultiNodeObsoletion : contributor
 
@@ -228,7 +235,12 @@
 
       MultiNodeObsoletion : has_undo
 
-          MultiNodeObsoletion --&gt; Change : has_undo
+
+
+
+    MultiNodeObsoletion --&gt; "0..1" Change : has_undo
+    click Change href "../Change"
+
 
       MultiNodeObsoletion : id
 
@@ -240,7 +252,12 @@
 
       MultiNodeObsoletion : was_generated_by
 
-          MultiNodeObsoletion --&gt; Activity : was_generated_by
+
+
+
+    MultiNodeObsoletion --&gt; "0..1" Activity : was_generated_by
+    click Activity href "../Activity"
+
 
 
 </div>
@@ -270,13 +287,13 @@
 <tbody>
 <tr>
 <td><a href="../change_set/">change_set</a></td>
-<td>0..* <br/> <a href="../NodeObsoletion/">NodeObsoletion</a></td>
+<td>* <br/> <a href="../NodeObsoletion/">NodeObsoletion</a></td>
 <td>A collection of changes</td>
 <td><a href="../ComplexChange/">ComplexChange</a></td>
 </tr>
 <tr>
 <td><a href="../id/">id</a></td>
-<td>1..1 <br/> <a href="../String/">String</a></td>
+<td>1 <br/> <a href="../String/">String</a></td>
 <td></td>
 <td><a href="../Change/">Change</a></td>
 </tr>
@@ -383,10 +400,6 @@ is_a: ComplexChange
 slot_usage:
   change_set:
     name: change_set
-    domain_of:
-    - ComplexChange
-    - Transaction
-    - Session
     range: NodeObsoletion
   change_description:
     name: change_description
@@ -418,10 +431,6 @@ is_a: ComplexChange
 slot_usage:
   change_set:
     name: change_set
-    domain_of:
-    - ComplexChange
-    - Transaction
-    - Session
     range: NodeObsoletion
   change_description:
     name: change_description
@@ -440,7 +449,6 @@ attributes:
     description: A collection of changes
     from_schema: https://w3id.org/kgcl
     rank: 1000
-    multivalued: true
     alias: change_set
     owner: MultiNodeObsoletion
     domain_of:
@@ -448,6 +456,7 @@ attributes:
     - Transaction
     - Session
     range: NodeObsoletion
+    multivalued: true
     inlined: true
     inlined_as_list: true
   id:
@@ -551,12 +560,12 @@ attributes:
     from_schema: https://w3id.org/kgcl
     rank: 1000
     domain: Change
-    multivalued: false
     alias: has_undo
     owner: MultiNodeObsoletion
     domain_of:
     - Change
     range: Change
+    multivalued: false
 
 </code></pre>
 </details>

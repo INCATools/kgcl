@@ -7,7 +7,7 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <link href="https://incatools.github.io/kgcl/OntologyElement/" rel="canonical"/>
 <link href="../assets/images/favicon.png" rel="icon"/>
-<meta content="mkdocs-1.5.3, mkdocs-material-8.5.10" name="generator"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-8.5.10" name="generator"/>
 <title>Class: OntologyElement - KGCL</title>
 <link href="../assets/stylesheets/main.975780f9.min.css" rel="stylesheet"/>
 <link href="../assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
@@ -209,10 +209,15 @@
 <p>URI: <a href="http://w3id.org/kgcl/OntologyElement">kgcl:OntologyElement</a></p>
 <div class="mermaid"> classDiagram
     class OntologyElement
+    click OntologyElement href "../OntologyElement"
       OntologyElement &lt;|-- PropertyValue
+        click PropertyValue href "../PropertyValue"
       OntologyElement &lt;|-- Node
+        click Node href "../Node"
       OntologyElement &lt;|-- Edge
+        click Edge href "../Edge"
       OntologyElement &lt;|-- LogicalDefinition
+        click LogicalDefinition href "../LogicalDefinition"
 
 
 </div>

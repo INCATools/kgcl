@@ -7,7 +7,7 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <link href="https://incatools.github.io/kgcl/NodeChange/" rel="canonical"/>
 <link href="../assets/images/favicon.png" rel="icon"/>
-<meta content="mkdocs-1.5.3, mkdocs-material-8.5.10" name="generator"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-8.5.10" name="generator"/>
 <title>Class: NodeChange - KGCL</title>
 <link href="../assets/stylesheets/main.975780f9.min.css" rel="stylesheet"/>
 <link href="../assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
@@ -207,27 +207,47 @@
 <p>URI: <a href="http://w3id.org/kgcl/NodeChange">kgcl:NodeChange</a></p>
 <div class="mermaid"> classDiagram
     class NodeChange
+    click NodeChange href "../NodeChange"
       SimpleChange &lt;|-- NodeChange
+        click SimpleChange href "../SimpleChange"
 
 
       NodeChange &lt;|-- NodeRename
+        click NodeRename href "../NodeRename"
       NodeChange &lt;|-- SetLanguageForName
+        click SetLanguageForName href "../SetLanguageForName"
       NodeChange &lt;|-- NodeAnnotationChange
+        click NodeAnnotationChange href "../NodeAnnotationChange"
       NodeChange &lt;|-- NodeSynonymChange
+        click NodeSynonymChange href "../NodeSynonymChange"
       NodeChange &lt;|-- NodeMappingChange
+        click NodeMappingChange href "../NodeMappingChange"
       NodeChange &lt;|-- NodeMetadataAssertionChange
+        click NodeMetadataAssertionChange href "../NodeMetadataAssertionChange"
       NodeChange &lt;|-- NodeTextDefinitionChange
+        click NodeTextDefinitionChange href "../NodeTextDefinitionChange"
       NodeChange &lt;|-- AddNodeToSubset
+        click AddNodeToSubset href "../AddNodeToSubset"
       NodeChange &lt;|-- RemoveNodeFromSubset
+        click RemoveNodeFromSubset href "../RemoveNodeFromSubset"
       NodeChange &lt;|-- NodeObsoletion
+        click NodeObsoletion href "../NodeObsoletion"
       NodeChange &lt;|-- NodeUnobsoletion
+        click NodeUnobsoletion href "../NodeUnobsoletion"
       NodeChange &lt;|-- NodeCreation
+        click NodeCreation href "../NodeCreation"
       NodeChange &lt;|-- NodeDeletion
+        click NodeDeletion href "../NodeDeletion"
 
 
       NodeChange : about_node
 
-          NodeChange --&gt; Node : about_node
+
+
+
+    NodeChange --&gt; "0..1" Node : about_node
+    click Node href "../Node"
+
 
       NodeChange : about_node_representation
 
@@ -239,7 +259,12 @@
 
       NodeChange : has_undo
 
-          NodeChange --&gt; Change : has_undo
+
+
+
+    NodeChange --&gt; "0..1" Change : has_undo
+    click Change href "../Change"
+
 
       NodeChange : id
 
@@ -269,7 +294,12 @@
 
       NodeChange : was_generated_by
 
-          NodeChange --&gt; Activity : was_generated_by
+
+
+
+    NodeChange --&gt; "0..1" Activity : was_generated_by
+    click Activity href "../Activity"
+
 
 
 </div>
@@ -380,7 +410,7 @@
 </tr>
 <tr>
 <td><a href="../id/">id</a></td>
-<td>1..1 <br/> <a href="../String/">String</a></td>
+<td>1 <br/> <a href="../String/">String</a></td>
 <td></td>
 <td><a href="../Change/">Change</a></td>
 </tr>
@@ -487,12 +517,12 @@ attributes:
     from_schema: https://w3id.org/kgcl
     rank: 1000
     is_a: about
-    multivalued: false
     alias: about_node
     owner: NodeChange
     domain_of:
     - NodeChange
     range: Node
+    multivalued: false
   about_node_representation:
     name: about_node_representation
     description: 'The representation of a node (URI, CURIE, label) '
@@ -724,12 +754,12 @@ attributes:
     from_schema: https://w3id.org/kgcl
     rank: 1000
     domain: Change
-    multivalued: false
     alias: has_undo
     owner: NodeChange
     domain_of:
     - Change
     range: Change
+    multivalued: false
 
 </code></pre>
 </details>

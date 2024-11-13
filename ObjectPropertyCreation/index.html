@@ -7,7 +7,7 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <link href="https://incatools.github.io/kgcl/ObjectPropertyCreation/" rel="canonical"/>
 <link href="../assets/images/favicon.png" rel="icon"/>
-<meta content="mkdocs-1.5.3, mkdocs-material-8.5.10" name="generator"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-8.5.10" name="generator"/>
 <title>Class: ObjectPropertyCreation - KGCL</title>
 <link href="../assets/stylesheets/main.975780f9.min.css" rel="stylesheet"/>
 <link href="../assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
@@ -204,17 +204,29 @@
 <p>URI: <a href="http://w3id.org/kgcl/ObjectPropertyCreation">kgcl:ObjectPropertyCreation</a></p>
 <div class="mermaid"> classDiagram
     class ObjectPropertyCreation
+    click ObjectPropertyCreation href "../ObjectPropertyCreation"
       NodeCreation &lt;|-- ObjectPropertyCreation
+        click NodeCreation href "../NodeCreation"
 
       ObjectPropertyCreation : about_node
 
-          ObjectPropertyCreation --&gt; Node : about_node
+
+
+
+    ObjectPropertyCreation --&gt; "0..1" Node : about_node
+    click Node href "../Node"
+
 
       ObjectPropertyCreation : about_node_representation
 
       ObjectPropertyCreation : annotation_set
 
-          ObjectPropertyCreation --&gt; Annotation : annotation_set
+
+
+
+    ObjectPropertyCreation --&gt; "0..1" Annotation : annotation_set
+    click Annotation href "../Annotation"
+
 
       ObjectPropertyCreation : change_date
 
@@ -224,7 +236,12 @@
 
       ObjectPropertyCreation : has_undo
 
-          ObjectPropertyCreation --&gt; Deletion : has_undo
+
+
+
+    ObjectPropertyCreation --&gt; "0..1" Deletion : has_undo
+    click Deletion href "../Deletion"
+
 
       ObjectPropertyCreation : id
 
@@ -242,7 +259,12 @@
 
       ObjectPropertyCreation : node_id
 
-          ObjectPropertyCreation --&gt; Node : node_id
+
+
+
+    ObjectPropertyCreation --&gt; "0..1" Node : node_id
+    click Node href "../Node"
+
 
       ObjectPropertyCreation : old_datatype
 
@@ -254,7 +276,12 @@
 
       ObjectPropertyCreation : owl_type
 
-          ObjectPropertyCreation --&gt; OwlTypeEnum : owl_type
+
+
+
+    ObjectPropertyCreation --&gt; "0..1" OwlTypeEnum : owl_type
+    click OwlTypeEnum href "../OwlTypeEnum"
+
 
       ObjectPropertyCreation : pull_request
 
@@ -264,7 +291,12 @@
 
       ObjectPropertyCreation : was_generated_by
 
-          ObjectPropertyCreation --&gt; Activity : was_generated_by
+
+
+
+    ObjectPropertyCreation --&gt; "0..1" Activity : was_generated_by
+    click Activity href "../Activity"
+
 
 
 </div>
@@ -390,7 +422,7 @@
 </tr>
 <tr>
 <td><a href="../id/">id</a></td>
-<td>1..1 <br/> <a href="../String/">String</a></td>
+<td>1 <br/> <a href="../String/">String</a></td>
 <td></td>
 <td><a href="../Change/">Change</a></td>
 </tr>
@@ -560,12 +592,12 @@ attributes:
     from_schema: https://w3id.org/kgcl
     rank: 1000
     is_a: about
-    multivalued: false
     alias: about_node
     owner: ObjectPropertyCreation
     domain_of:
     - NodeChange
     range: Node
+    multivalued: false
   about_node_representation:
     name: about_node_representation
     description: 'The representation of a node (URI, CURIE, label) '
@@ -784,12 +816,12 @@ attributes:
     from_schema: https://w3id.org/kgcl
     rank: 1000
     domain: Change
-    multivalued: false
     alias: has_undo
     owner: ObjectPropertyCreation
     domain_of:
     - Change
     range: Deletion
+    multivalued: false
 
 </code></pre>
 </details>

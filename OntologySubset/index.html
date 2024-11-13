@@ -7,7 +7,7 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <link href="https://incatools.github.io/kgcl/OntologySubset/" rel="canonical"/>
 <link href="../assets/images/favicon.png" rel="icon"/>
-<meta content="mkdocs-1.5.3, mkdocs-material-8.5.10" name="generator"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-8.5.10" name="generator"/>
 <title>Class: OntologySubset - KGCL</title>
 <link href="../assets/stylesheets/main.975780f9.min.css" rel="stylesheet"/>
 <link href="../assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
@@ -208,11 +208,18 @@
 <p>URI: <a href="http://w3id.org/kgcl/OntologySubset">kgcl:OntologySubset</a></p>
 <div class="mermaid"> classDiagram
     class OntologySubset
+    click OntologySubset href "../OntologySubset"
       Node &lt;|-- OntologySubset
+        click Node href "../Node"
 
       OntologySubset : annotation_set
 
-          OntologySubset --&gt; Annotation : annotation_set
+
+
+
+    OntologySubset --&gt; "0..1" Annotation : annotation_set
+    click Annotation href "../Annotation"
+
 
       OntologySubset : id
 
@@ -220,7 +227,12 @@
 
       OntologySubset : owl_type
 
-          OntologySubset --&gt; OwlTypeEnum : owl_type
+
+
+
+    OntologySubset --&gt; "0..1" OwlTypeEnum : owl_type
+    click OwlTypeEnum href "../OwlTypeEnum"
+
 
 
 </div>
@@ -247,7 +259,7 @@
 <tbody>
 <tr>
 <td><a href="../id/">id</a></td>
-<td>1..1 <br/> <a href="../String/">String</a></td>
+<td>1 <br/> <a href="../String/">String</a></td>
 <td></td>
 <td><a href="../Node/">Node</a></td>
 </tr>

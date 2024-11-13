@@ -11,7 +11,7 @@
         <link rel="canonical" href="https://incatools.github.io/kgcl/predicate/">
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-8.5.10">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-8.5.10">
     
     
       
@@ -290,6 +290,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#mappings" class="md-nav__link">
+    Mappings
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#linkml-source" class="md-nav__link">
     LinkML Source
   </a>
@@ -331,38 +338,28 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../EdgeCreation/">EdgeCreation</a></td>
-<td>An edge change in which a de-novo edge is created</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../EdgeDeletion/">EdgeDeletion</a></td>
-<td>An edge change in which an edge is removed</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../EdgeObsoletion/">EdgeObsoletion</a></td>
-<td>An edge change in which an edge is obsoleted</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../MappingCreation/">MappingCreation</a></td>
-<td>A specific kind of edge creation in which the created edge is a mapping</td>
-<td>yes</td>
-</tr>
-<tr>
-<td><a href="../NewSynonym/">NewSynonym</a></td>
-<td>A node synonym change where a de-novo synonym is created</td>
-<td>no</td>
-</tr>
-<tr>
 <td><a href="../NewMapping/">NewMapping</a></td>
 <td>A node mapping change where a mapping is added to a node</td>
 <td>no</td>
 </tr>
 <tr>
-<td><a href="../RemoveMapping/">RemoveMapping</a></td>
-<td>A node mapping change where a mapping is deleted</td>
+<td><a href="../EdgeCreation/">EdgeCreation</a></td>
+<td>An edge change in which a de-novo edge is created</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../PlaceUnder/">PlaceUnder</a></td>
+<td>An edge creation where the predicate is owl:subClassOf</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../RemoveUnder/">RemoveUnder</a></td>
+<td>An edge deletion where the predicate is owl:subClassOf</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../NewSynonym/">NewSynonym</a></td>
+<td>A node synonym change where a de-novo synonym is created</td>
 <td>no</td>
 </tr>
 <tr>
@@ -376,19 +373,29 @@
 <td>no</td>
 </tr>
 <tr>
+<td><a href="../EdgeObsoletion/">EdgeObsoletion</a></td>
+<td>An edge change in which an edge is obsoleted</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../RemoveMapping/">RemoveMapping</a></td>
+<td>A node mapping change where a mapping is deleted</td>
+<td>no</td>
+</tr>
+<tr>
 <td><a href="../Edge/">Edge</a></td>
 <td>A relationship between two nodes</td>
 <td>no</td>
 </tr>
 <tr>
-<td><a href="../PlaceUnder/">PlaceUnder</a></td>
-<td>An edge creation where the predicate is owl:subClassOf</td>
+<td><a href="../EdgeDeletion/">EdgeDeletion</a></td>
+<td>An edge change in which an edge is removed</td>
 <td>no</td>
 </tr>
 <tr>
-<td><a href="../RemoveUnder/">RemoveUnder</a></td>
-<td>An edge deletion where the predicate is owl:subClassOf</td>
-<td>no</td>
+<td><a href="../MappingCreation/">MappingCreation</a></td>
+<td>A specific kind of edge creation in which the created edge is a mapping</td>
+<td>yes</td>
 </tr>
 </tbody>
 </table>
@@ -401,6 +408,25 @@
 <ul>
 <li>from schema: https://w3id.org/kgcl</li>
 </ul>
+<h2 id="mappings">Mappings</h2>
+<table>
+<thead>
+<tr>
+<th>Mapping Type</th>
+<th>Mapped Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>self</td>
+<td>kgcl:predicate</td>
+</tr>
+<tr>
+<td>native</td>
+<td>kgcl:predicate</td>
+</tr>
+</tbody>
+</table>
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 

@@ -7,7 +7,7 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <link href="https://incatools.github.io/kgcl/EdgeRewiring/" rel="canonical"/>
 <link href="../assets/images/favicon.png" rel="icon"/>
-<meta content="mkdocs-1.5.3, mkdocs-material-8.5.10" name="generator"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-8.5.10" name="generator"/>
 <title>Class: EdgeRewiring - KGCL</title>
 <link href="../assets/stylesheets/main.975780f9.min.css" rel="stylesheet"/>
 <link href="../assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
@@ -209,11 +209,18 @@
 <p>URI: <a href="http://w3id.org/kgcl/EdgeRewiring">kgcl:EdgeRewiring</a></p>
 <div class="mermaid"> classDiagram
     class EdgeRewiring
+    click EdgeRewiring href "../EdgeRewiring"
       EdgeChange &lt;|-- EdgeRewiring
+        click EdgeChange href "../EdgeChange"
 
       EdgeRewiring : about_edge
 
-          EdgeRewiring --&gt; Edge : about_edge
+
+
+
+    EdgeRewiring --&gt; "0..1" Edge : about_edge
+    click Edge href "../Edge"
+
 
       EdgeRewiring : change_date
 
@@ -225,7 +232,12 @@
 
       EdgeRewiring : has_undo
 
-          EdgeRewiring --&gt; Change : has_undo
+
+
+
+    EdgeRewiring --&gt; "0..1" Change : has_undo
+    click Change href "../Change"
+
 
       EdgeRewiring : id
 
@@ -257,7 +269,12 @@
 
       EdgeRewiring : was_generated_by
 
-          EdgeRewiring --&gt; Activity : was_generated_by
+
+
+
+    EdgeRewiring --&gt; "0..1" Activity : was_generated_by
+    click Activity href "../Activity"
+
 
 
 </div>
@@ -362,7 +379,7 @@
 </tr>
 <tr>
 <td><a href="../id/">id</a></td>
-<td>1..1 <br/> <a href="../String/">String</a></td>
+<td>1 <br/> <a href="../String/">String</a></td>
 <td></td>
 <td><a href="../Change/">Change</a></td>
 </tr>
@@ -484,12 +501,12 @@ attributes:
     from_schema: https://w3id.org/kgcl
     rank: 1000
     is_a: about
-    multivalued: false
     alias: about_edge
     owner: EdgeRewiring
     domain_of:
     - EdgeChange
     range: Edge
+    multivalued: false
   object_type:
     name: object_type
     description: The type (IRI or Literal) of an object
@@ -733,12 +750,12 @@ attributes:
     from_schema: https://w3id.org/kgcl
     rank: 1000
     domain: Change
-    multivalued: false
     alias: has_undo
     owner: EdgeRewiring
     domain_of:
     - Change
     range: Change
+    multivalued: false
 
 </code></pre>
 </details>

@@ -7,7 +7,7 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <link href="https://incatools.github.io/kgcl/Edge/" rel="canonical"/>
 <link href="../assets/images/favicon.png" rel="icon"/>
-<meta content="mkdocs-1.5.3, mkdocs-material-8.5.10" name="generator"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-8.5.10" name="generator"/>
 <title>Class: Edge - KGCL</title>
 <link href="../assets/stylesheets/main.975780f9.min.css" rel="stylesheet"/>
 <link href="../assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
@@ -227,27 +227,49 @@
 <p>URI: <a href="http://w3id.org/kgcl/Edge">kgcl:Edge</a></p>
 <div class="mermaid"> classDiagram
     class Edge
+    click Edge href "../Edge"
       OntologyElement &lt;|-- Edge
+        click OntologyElement href "../OntologyElement"
 
       Edge : annotation_set
 
-          Edge --&gt; Annotation : annotation_set
+
+
+
+    Edge --&gt; "0..1" Annotation : annotation_set
+    click Annotation href "../Annotation"
+
 
       Edge : object
 
-          Edge --&gt; Node : object
+
+
+
+    Edge --&gt; "0..1" Node : object
+    click Node href "../Node"
+
 
       Edge : object_representation
 
       Edge : predicate
 
-          Edge --&gt; Node : predicate
+
+
+
+    Edge --&gt; "0..1" Node : predicate
+    click Node href "../Node"
+
 
       Edge : predicate_representation
 
       Edge : subject
 
-          Edge --&gt; Node : subject
+
+
+
+    Edge --&gt; "0..1" Node : subject
+    click Node href "../Node"
+
 
       Edge : subject_representation
 

@@ -7,7 +7,7 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <link href="https://incatools.github.io/kgcl/NodeAnnotationChange/" rel="canonical"/>
 <link href="../assets/images/favicon.png" rel="icon"/>
-<meta content="mkdocs-1.5.3, mkdocs-material-8.5.10" name="generator"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-8.5.10" name="generator"/>
 <title>Class: NodeAnnotationChange - KGCL</title>
 <link href="../assets/stylesheets/main.975780f9.min.css" rel="stylesheet"/>
 <link href="../assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
@@ -204,15 +204,23 @@
 <p>URI: <a href="http://w3id.org/kgcl/NodeAnnotationChange">kgcl:NodeAnnotationChange</a></p>
 <div class="mermaid"> classDiagram
     class NodeAnnotationChange
+    click NodeAnnotationChange href "../NodeAnnotationChange"
       NodeChange &lt;|-- NodeAnnotationChange
+        click NodeChange href "../NodeChange"
 
 
       NodeAnnotationChange &lt;|-- NodeAnnotationReplacement
+        click NodeAnnotationReplacement href "../NodeAnnotationReplacement"
 
 
       NodeAnnotationChange : about_node
 
-          NodeAnnotationChange --&gt; Node : about_node
+
+
+
+    NodeAnnotationChange --&gt; "0..1" Node : about_node
+    click Node href "../Node"
+
 
       NodeAnnotationChange : about_node_representation
 
@@ -228,7 +236,12 @@
 
       NodeAnnotationChange : has_undo
 
-          NodeAnnotationChange --&gt; Change : has_undo
+
+
+
+    NodeAnnotationChange --&gt; "0..1" Change : has_undo
+    click Change href "../Change"
+
 
       NodeAnnotationChange : id
 
@@ -258,7 +271,12 @@
 
       NodeAnnotationChange : was_generated_by
 
-          NodeAnnotationChange --&gt; Activity : was_generated_by
+
+
+
+    NodeAnnotationChange --&gt; "0..1" Activity : was_generated_by
+    click Activity href "../Activity"
+
 
 
 </div>
@@ -372,7 +390,7 @@
 </tr>
 <tr>
 <td><a href="../id/">id</a></td>
-<td>1..1 <br/> <a href="../String/">String</a></td>
+<td>1 <br/> <a href="../String/">String</a></td>
 <td></td>
 <td><a href="../Change/">Change</a></td>
 </tr>
@@ -497,12 +515,12 @@ attributes:
     from_schema: https://w3id.org/kgcl
     rank: 1000
     is_a: about
-    multivalued: false
     alias: about_node
     owner: NodeAnnotationChange
     domain_of:
     - NodeChange
     range: Node
+    multivalued: false
   about_node_representation:
     name: about_node_representation
     description: 'The representation of a node (URI, CURIE, label) '
@@ -734,12 +752,12 @@ attributes:
     from_schema: https://w3id.org/kgcl
     rank: 1000
     domain: Change
-    multivalued: false
     alias: has_undo
     owner: NodeAnnotationChange
     domain_of:
     - Change
     range: Change
+    multivalued: false
 
 </code></pre>
 </details>

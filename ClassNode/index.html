@@ -7,7 +7,7 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <link href="https://incatools.github.io/kgcl/ClassNode/" rel="canonical"/>
 <link href="../assets/images/favicon.png" rel="icon"/>
-<meta content="mkdocs-1.5.3, mkdocs-material-8.5.10" name="generator"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-8.5.10" name="generator"/>
 <title>Class: ClassNode - KGCL</title>
 <link href="../assets/stylesheets/main.975780f9.min.css" rel="stylesheet"/>
 <link href="../assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
@@ -209,11 +209,18 @@
 <p>URI: <a href="owl:Class">owl:Class</a></p>
 <div class="mermaid"> classDiagram
     class ClassNode
+    click ClassNode href "../ClassNode"
       Node &lt;|-- ClassNode
+        click Node href "../Node"
 
       ClassNode : annotation_set
 
-          ClassNode --&gt; Annotation : annotation_set
+
+
+
+    ClassNode --&gt; "0..1" Annotation : annotation_set
+    click Annotation href "../Annotation"
+
 
       ClassNode : id
 
@@ -221,7 +228,12 @@
 
       ClassNode : owl_type
 
-          ClassNode --&gt; OwlTypeEnum : owl_type
+
+
+
+    ClassNode --&gt; "0..1" OwlTypeEnum : owl_type
+    click OwlTypeEnum href "../OwlTypeEnum"
+
 
 
 </div>
@@ -248,7 +260,7 @@
 <tbody>
 <tr>
 <td><a href="../id/">id</a></td>
-<td>1..1 <br/> <a href="../String/">String</a></td>
+<td>1 <br/> <a href="../String/">String</a></td>
 <td></td>
 <td><a href="../Node/">Node</a></td>
 </tr>

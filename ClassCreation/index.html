@@ -7,7 +7,7 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <link href="https://incatools.github.io/kgcl/ClassCreation/" rel="canonical"/>
 <link href="../assets/images/favicon.png" rel="icon"/>
-<meta content="mkdocs-1.5.3, mkdocs-material-8.5.10" name="generator"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-8.5.10" name="generator"/>
 <title>Class: ClassCreation - KGCL</title>
 <link href="../assets/stylesheets/main.975780f9.min.css" rel="stylesheet"/>
 <link href="../assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
@@ -204,17 +204,29 @@
 <p>URI: <a href="http://w3id.org/kgcl/ClassCreation">kgcl:ClassCreation</a></p>
 <div class="mermaid"> classDiagram
     class ClassCreation
+    click ClassCreation href "../ClassCreation"
       NodeCreation &lt;|-- ClassCreation
+        click NodeCreation href "../NodeCreation"
 
       ClassCreation : about_node
 
-          ClassCreation --&gt; Node : about_node
+
+
+
+    ClassCreation --&gt; "0..1" Node : about_node
+    click Node href "../Node"
+
 
       ClassCreation : about_node_representation
 
       ClassCreation : annotation_set
 
-          ClassCreation --&gt; Annotation : annotation_set
+
+
+
+    ClassCreation --&gt; "0..1" Annotation : annotation_set
+    click Annotation href "../Annotation"
+
 
       ClassCreation : change_date
 
@@ -224,7 +236,12 @@
 
       ClassCreation : has_undo
 
-          ClassCreation --&gt; Deletion : has_undo
+
+
+
+    ClassCreation --&gt; "0..1" Deletion : has_undo
+    click Deletion href "../Deletion"
+
 
       ClassCreation : id
 
@@ -242,7 +259,12 @@
 
       ClassCreation : node_id
 
-          ClassCreation --&gt; Node : node_id
+
+
+
+    ClassCreation --&gt; "0..1" Node : node_id
+    click Node href "../Node"
+
 
       ClassCreation : old_datatype
 
@@ -254,7 +276,12 @@
 
       ClassCreation : owl_type
 
-          ClassCreation --&gt; OwlTypeEnum : owl_type
+
+
+
+    ClassCreation --&gt; "0..1" OwlTypeEnum : owl_type
+    click OwlTypeEnum href "../OwlTypeEnum"
+
 
       ClassCreation : pull_request
 
@@ -262,13 +289,23 @@
 
       ClassCreation : superclass
 
-          ClassCreation --&gt; Node : superclass
+
+
+
+    ClassCreation --&gt; "0..1" Node : superclass
+    click Node href "../Node"
+
 
       ClassCreation : type
 
       ClassCreation : was_generated_by
 
-          ClassCreation --&gt; Activity : was_generated_by
+
+
+
+    ClassCreation --&gt; "0..1" Activity : was_generated_by
+    click Activity href "../Activity"
+
 
 
 </div>
@@ -400,7 +437,7 @@
 </tr>
 <tr>
 <td><a href="../id/">id</a></td>
-<td>1..1 <br/> <a href="../String/">String</a></td>
+<td>1 <br/> <a href="../String/">String</a></td>
 <td></td>
 <td><a href="../Change/">Change</a></td>
 </tr>
@@ -581,12 +618,12 @@ attributes:
     from_schema: https://w3id.org/kgcl
     rank: 1000
     is_a: about
-    multivalued: false
     alias: about_node
     owner: ClassCreation
     domain_of:
     - NodeChange
     range: Node
+    multivalued: false
   about_node_representation:
     name: about_node_representation
     description: 'The representation of a node (URI, CURIE, label) '
@@ -805,12 +842,12 @@ attributes:
     from_schema: https://w3id.org/kgcl
     rank: 1000
     domain: Change
-    multivalued: false
     alias: has_undo
     owner: ClassCreation
     domain_of:
     - Change
     range: Deletion
+    multivalued: false
 
 </code></pre>
 </details>

@@ -7,7 +7,7 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <link href="https://incatools.github.io/kgcl/NodeTextDefinitionChange/" rel="canonical"/>
 <link href="../assets/images/favicon.png" rel="icon"/>
-<meta content="mkdocs-1.5.3, mkdocs-material-8.5.10" name="generator"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-8.5.10" name="generator"/>
 <title>Class: NodeTextDefinitionChange - KGCL</title>
 <link href="../assets/stylesheets/main.975780f9.min.css" rel="stylesheet"/>
 <link href="../assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
@@ -207,17 +207,27 @@
 <p>URI: <a href="http://w3id.org/kgcl/NodeTextDefinitionChange">kgcl:NodeTextDefinitionChange</a></p>
 <div class="mermaid"> classDiagram
     class NodeTextDefinitionChange
+    click NodeTextDefinitionChange href "../NodeTextDefinitionChange"
       NodeChange &lt;|-- NodeTextDefinitionChange
+        click NodeChange href "../NodeChange"
 
 
       NodeTextDefinitionChange &lt;|-- NewTextDefinition
+        click NewTextDefinition href "../NewTextDefinition"
       NodeTextDefinitionChange &lt;|-- RemoveTextDefinition
+        click RemoveTextDefinition href "../RemoveTextDefinition"
       NodeTextDefinitionChange &lt;|-- TextDefinitionReplacement
+        click TextDefinitionReplacement href "../TextDefinitionReplacement"
 
 
       NodeTextDefinitionChange : about_node
 
-          NodeTextDefinitionChange --&gt; Node : about_node
+
+
+
+    NodeTextDefinitionChange --&gt; "0..1" Node : about_node
+    click Node href "../Node"
+
 
       NodeTextDefinitionChange : about_node_representation
 
@@ -229,7 +239,12 @@
 
       NodeTextDefinitionChange : has_undo
 
-          NodeTextDefinitionChange --&gt; Change : has_undo
+
+
+
+    NodeTextDefinitionChange --&gt; "0..1" Change : has_undo
+    click Change href "../Change"
+
 
       NodeTextDefinitionChange : id
 
@@ -259,7 +274,12 @@
 
       NodeTextDefinitionChange : was_generated_by
 
-          NodeTextDefinitionChange --&gt; Activity : was_generated_by
+
+
+
+    NodeTextDefinitionChange --&gt; "0..1" Activity : was_generated_by
+    click Activity href "../Activity"
+
 
 
 </div>
@@ -363,7 +383,7 @@
 </tr>
 <tr>
 <td><a href="../id/">id</a></td>
-<td>1..1 <br/> <a href="../String/">String</a></td>
+<td>1 <br/> <a href="../String/">String</a></td>
 <td></td>
 <td><a href="../Change/">Change</a></td>
 </tr>
@@ -466,12 +486,12 @@ attributes:
     from_schema: https://w3id.org/kgcl
     rank: 1000
     is_a: about
-    multivalued: false
     alias: about_node
     owner: NodeTextDefinitionChange
     domain_of:
     - NodeChange
     range: Node
+    multivalued: false
   about_node_representation:
     name: about_node_representation
     description: 'The representation of a node (URI, CURIE, label) '
@@ -703,12 +723,12 @@ attributes:
     from_schema: https://w3id.org/kgcl
     rank: 1000
     domain: Change
-    multivalued: false
     alias: has_undo
     owner: NodeTextDefinitionChange
     domain_of:
     - Change
     range: Change
+    multivalued: false
 
 </code></pre>
 </details>

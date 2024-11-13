@@ -7,7 +7,7 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <link href="https://incatools.github.io/kgcl/NodeRename/" rel="canonical"/>
 <link href="../assets/images/favicon.png" rel="icon"/>
-<meta content="mkdocs-1.5.3, mkdocs-material-8.5.10" name="generator"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-8.5.10" name="generator"/>
 <title>Class: NodeRename - KGCL</title>
 <link href="../assets/stylesheets/main.975780f9.min.css" rel="stylesheet"/>
 <link href="../assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
@@ -209,11 +209,18 @@
 <p>URI: <a href="http://w3id.org/kgcl/NodeRename">kgcl:NodeRename</a></p>
 <div class="mermaid"> classDiagram
     class NodeRename
+    click NodeRename href "../NodeRename"
       NodeChange &lt;|-- NodeRename
+        click NodeChange href "../NodeChange"
 
       NodeRename : about_node
 
-          NodeRename --&gt; Node : about_node
+
+
+
+    NodeRename --&gt; "0..1" Node : about_node
+    click Node href "../Node"
+
 
       NodeRename : about_node_representation
 
@@ -225,11 +232,21 @@
 
       NodeRename : has_textual_diff
 
-          NodeRename --&gt; TextualDiff : has_textual_diff
+
+
+
+    NodeRename --&gt; "0..1" TextualDiff : has_textual_diff
+    click TextualDiff href "../TextualDiff"
+
 
       NodeRename : has_undo
 
-          NodeRename --&gt; Change : has_undo
+
+
+
+    NodeRename --&gt; "0..1" Change : has_undo
+    click Change href "../Change"
+
 
       NodeRename : id
 
@@ -259,7 +276,12 @@
 
       NodeRename : was_generated_by
 
-          NodeRename --&gt; Activity : was_generated_by
+
+
+
+    NodeRename --&gt; "0..1" Activity : was_generated_by
+    click Activity href "../Activity"
+
 
 
 </div>
@@ -364,7 +386,7 @@
 </tr>
 <tr>
 <td><a href="../id/">id</a></td>
-<td>1..1 <br/> <a href="../String/">String</a></td>
+<td>1 <br/> <a href="../String/">String</a></td>
 <td></td>
 <td><a href="../Change/">Change</a></td>
 </tr>
@@ -477,35 +499,9 @@ slot_usage:
   old_value:
     name: old_value
     multivalued: false
-    domain_of:
-    - SimpleChange
-    - NodeRename
-    - SetLanguageForName
-    - RemoveSynonym
-    - SynonymReplacement
-    - SynonymPredicateChange
-    - MappingReplacement
-    - MappingPredicateChange
-    - MetadataAssertionReplacement
-    - MetadataAssertionPredicateChange
-    - RemoveTextDefinition
-    - TextDefinitionReplacement
   new_value:
     name: new_value
     multivalued: false
-    domain_of:
-    - SimpleChange
-    - NodeRename
-    - SetLanguageForName
-    - NewSynonym
-    - SynonymReplacement
-    - SynonymPredicateChange
-    - MappingReplacement
-    - MappingPredicateChange
-    - MetadataAssertionReplacement
-    - MetadataAssertionPredicateChange
-    - NewTextDefinition
-    - TextDefinitionReplacement
   change_description:
     name: change_description
     string_serialization: rename {about_node} from {old_value} to {new_value}
@@ -526,35 +522,9 @@ slot_usage:
   old_value:
     name: old_value
     multivalued: false
-    domain_of:
-    - SimpleChange
-    - NodeRename
-    - SetLanguageForName
-    - RemoveSynonym
-    - SynonymReplacement
-    - SynonymPredicateChange
-    - MappingReplacement
-    - MappingPredicateChange
-    - MetadataAssertionReplacement
-    - MetadataAssertionPredicateChange
-    - RemoveTextDefinition
-    - TextDefinitionReplacement
   new_value:
     name: new_value
     multivalued: false
-    domain_of:
-    - SimpleChange
-    - NodeRename
-    - SetLanguageForName
-    - NewSynonym
-    - SynonymReplacement
-    - SynonymPredicateChange
-    - MappingReplacement
-    - MappingPredicateChange
-    - MetadataAssertionReplacement
-    - MetadataAssertionPredicateChange
-    - NewTextDefinition
-    - TextDefinitionReplacement
   change_description:
     name: change_description
     string_serialization: rename {about_node} from {old_value} to {new_value}
@@ -564,7 +534,6 @@ attributes:
     description: The value of a property held in the old instance of the ontology
     from_schema: https://w3id.org/kgcl
     rank: 1000
-    multivalued: false
     alias: old_value
     owner: NodeRename
     domain_of:
@@ -581,12 +550,12 @@ attributes:
     - RemoveTextDefinition
     - TextDefinitionReplacement
     range: string
+    multivalued: false
   new_value:
     name: new_value
     description: The value of a property held in the new instance of the ontology
     from_schema: https://w3id.org/kgcl
     rank: 1000
-    multivalued: false
     alias: new_value
     owner: NodeRename
     domain_of:
@@ -603,6 +572,7 @@ attributes:
     - NewTextDefinition
     - TextDefinitionReplacement
     range: string
+    multivalued: false
   has_textual_diff:
     name: has_textual_diff
     description: A representation of character-level changes on a textual literal
@@ -648,12 +618,12 @@ attributes:
     from_schema: https://w3id.org/kgcl
     rank: 1000
     is_a: about
-    multivalued: false
     alias: about_node
     owner: NodeRename
     domain_of:
     - NodeChange
     range: Node
+    multivalued: false
   about_node_representation:
     name: about_node_representation
     description: 'The representation of a node (URI, CURIE, label) '
@@ -821,12 +791,12 @@ attributes:
     from_schema: https://w3id.org/kgcl
     rank: 1000
     domain: Change
-    multivalued: false
     alias: has_undo
     owner: NodeRename
     domain_of:
     - Change
     range: Change
+    multivalued: false
 
 </code></pre>
 </details>

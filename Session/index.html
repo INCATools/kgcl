@@ -7,7 +7,7 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <link href="https://incatools.github.io/kgcl/Session/" rel="canonical"/>
 <link href="../assets/images/favicon.png" rel="icon"/>
-<meta content="mkdocs-1.5.3, mkdocs-material-8.5.10" name="generator"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-8.5.10" name="generator"/>
 <title>Class: Session - KGCL</title>
 <link href="../assets/stylesheets/main.975780f9.min.css" rel="stylesheet"/>
 <link href="../assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
@@ -204,15 +204,27 @@
 <p>URI: <a href="http://w3id.org/kgcl/Session">kgcl:Session</a></p>
 <div class="mermaid"> classDiagram
     class Session
+    click Session href "../Session"
       ChangeLanguageElement &lt;|-- Session
+        click ChangeLanguageElement href "../ChangeLanguageElement"
 
       Session : activity_set
 
-          Session --&gt; Activity : activity_set
+
+
+
+    Session --&gt; "*" Activity : activity_set
+    click Activity href "../Activity"
+
 
       Session : change_set
 
-          Session --&gt; Change : change_set
+
+
+
+    Session --&gt; "*" Change : change_set
+    click Change href "../Change"
+
 
 
 </div>
@@ -236,13 +248,13 @@
 <tbody>
 <tr>
 <td><a href="../change_set/">change_set</a></td>
-<td>0..* <br/> <a href="../Change/">Change</a></td>
+<td>* <br/> <a href="../Change/">Change</a></td>
 <td>A collection of changes</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../activity_set/">activity_set</a></td>
-<td>0..* <br/> <a href="../Activity/">Activity</a></td>
+<td>* <br/> <a href="../Activity/">Activity</a></td>
 <td></td>
 <td>direct</td>
 </tr>
@@ -301,7 +313,6 @@ attributes:
     description: A collection of changes
     from_schema: https://w3id.org/kgcl
     rank: 1000
-    multivalued: true
     alias: change_set
     owner: Session
     domain_of:
@@ -309,18 +320,19 @@ attributes:
     - Transaction
     - Session
     range: Change
+    multivalued: true
     inlined: true
     inlined_as_list: true
   activity_set:
     name: activity_set
     from_schema: https://w3id.org/kgcl
     rank: 1000
-    multivalued: true
     alias: activity_set
     owner: Session
     domain_of:
     - Session
     range: Activity
+    multivalued: true
     inlined: true
     inlined_as_list: true
 tree_root: true

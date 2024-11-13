@@ -7,7 +7,7 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <link href="https://incatools.github.io/kgcl/Obsoletion/" rel="canonical"/>
 <link href="../assets/images/favicon.png" rel="icon"/>
-<meta content="mkdocs-1.5.3, mkdocs-material-8.5.10" name="generator"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-8.5.10" name="generator"/>
 <title>Class: Obsoletion - KGCL</title>
 <link href="../assets/stylesheets/main.975780f9.min.css" rel="stylesheet"/>
 <link href="../assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
@@ -229,12 +229,17 @@
 <p>URI: <a href="http://w3id.org/kgcl/Obsoletion">kgcl:Obsoletion</a></p>
 <div class="mermaid"> classDiagram
     class Obsoletion
+    click Obsoletion href "../Obsoletion"
       ChangeMixin &lt;|-- Obsoletion
+        click ChangeMixin href "../ChangeMixin"
 
 
       Obsoletion &lt;|-- AllowsAutomaticReplacementOfEdges
+        click AllowsAutomaticReplacementOfEdges href "../AllowsAutomaticReplacementOfEdges"
       Obsoletion &lt;|-- EdgeObsoletion
+        click EdgeObsoletion href "../EdgeObsoletion"
       Obsoletion &lt;|-- NodeObsoletion
+        click NodeObsoletion href "../NodeObsoletion"
 
 
 
@@ -399,8 +404,6 @@ slot_usage:
     description: The element that is obsoleted by this change.
   has_undo:
     name: has_undo
-    domain_of:
-    - Change
     range: Obsoletion
 
 </code></pre>
@@ -428,8 +431,6 @@ slot_usage:
     description: The element that is obsoleted by this change.
   has_undo:
     name: has_undo
-    domain_of:
-    - Change
     range: Obsoletion
 
 </code></pre>

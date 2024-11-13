@@ -7,7 +7,7 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <link href="https://incatools.github.io/kgcl/Deletion/" rel="canonical"/>
 <link href="../assets/images/favicon.png" rel="icon"/>
-<meta content="mkdocs-1.5.3, mkdocs-material-8.5.10" name="generator"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-8.5.10" name="generator"/>
 <title>Class: Deletion - KGCL</title>
 <link href="../assets/stylesheets/main.975780f9.min.css" rel="stylesheet"/>
 <link href="../assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
@@ -219,11 +219,15 @@
 <p>URI: <a href="http://w3id.org/kgcl/Deletion">kgcl:Deletion</a></p>
 <div class="mermaid"> classDiagram
     class Deletion
+    click Deletion href "../Deletion"
       ChangeMixin &lt;|-- Deletion
+        click ChangeMixin href "../ChangeMixin"
 
 
       Deletion &lt;|-- EdgeDeletion
+        click EdgeDeletion href "../EdgeDeletion"
       Deletion &lt;|-- NodeDeletion
+        click NodeDeletion href "../NodeDeletion"
 
 
 

@@ -7,7 +7,7 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <link href="https://incatools.github.io/kgcl/RemoveUnder/" rel="canonical"/>
 <link href="../assets/images/favicon.png" rel="icon"/>
-<meta content="mkdocs-1.5.3, mkdocs-material-8.5.10" name="generator"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-8.5.10" name="generator"/>
 <title>Class: RemoveUnder - KGCL</title>
 <link href="../assets/stylesheets/main.975780f9.min.css" rel="stylesheet"/>
 <link href="../assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
@@ -205,15 +205,27 @@
 <p>URI: <a href="http://w3id.org/kgcl/RemoveUnder">kgcl:RemoveUnder</a></p>
 <div class="mermaid"> classDiagram
     class RemoveUnder
+    click RemoveUnder href "../RemoveUnder"
       EdgeDeletion &lt;|-- RemoveUnder
+        click EdgeDeletion href "../EdgeDeletion"
 
       RemoveUnder : about_edge
 
-          RemoveUnder --&gt; Edge : about_edge
+
+
+
+    RemoveUnder --&gt; "0..1" Edge : about_edge
+    click Edge href "../Edge"
+
 
       RemoveUnder : annotation_set
 
-          RemoveUnder --&gt; Annotation : annotation_set
+
+
+
+    RemoveUnder --&gt; "0..1" Annotation : annotation_set
+    click Annotation href "../Annotation"
+
 
       RemoveUnder : change_date
 
@@ -225,7 +237,12 @@
 
       RemoveUnder : has_undo
 
-          RemoveUnder --&gt; Change : has_undo
+
+
+
+    RemoveUnder --&gt; "0..1" Change : has_undo
+    click Change href "../Change"
+
 
       RemoveUnder : id
 
@@ -241,7 +258,12 @@
 
       RemoveUnder : object
 
-          RemoveUnder --&gt; Node : object
+
+
+
+    RemoveUnder --&gt; "0..1" Node : object
+    click Node href "../Node"
+
 
       RemoveUnder : object_type
 
@@ -255,7 +277,12 @@
 
       RemoveUnder : predicate
 
-          RemoveUnder --&gt; Node : predicate
+
+
+
+    RemoveUnder --&gt; "0..1" Node : predicate
+    click Node href "../Node"
+
 
       RemoveUnder : predicate_type
 
@@ -265,7 +292,12 @@
 
       RemoveUnder : subject
 
-          RemoveUnder --&gt; Node : subject
+
+
+
+    RemoveUnder --&gt; "0..1" Node : subject
+    click Node href "../Node"
+
 
       RemoveUnder : subject_type
 
@@ -273,7 +305,12 @@
 
       RemoveUnder : was_generated_by
 
-          RemoveUnder --&gt; Activity : was_generated_by
+
+
+
+    RemoveUnder --&gt; "0..1" Activity : was_generated_by
+    click Activity href "../Activity"
+
 
 
 </div>
@@ -417,7 +454,7 @@
 </tr>
 <tr>
 <td><a href="../id/">id</a></td>
-<td>1..1 <br/> <a href="../String/">String</a></td>
+<td>1 <br/> <a href="../String/">String</a></td>
 <td></td>
 <td><a href="../Change/">Change</a></td>
 </tr>
@@ -621,12 +658,12 @@ attributes:
     from_schema: https://w3id.org/kgcl
     rank: 1000
     is_a: about
-    multivalued: false
     alias: about_edge
     owner: RemoveUnder
     domain_of:
     - EdgeChange
     range: Edge
+    multivalued: false
   language:
     name: language
     description: The language tag of a literal
@@ -857,12 +894,12 @@ attributes:
     from_schema: https://w3id.org/kgcl
     rank: 1000
     domain: Change
-    multivalued: false
     alias: has_undo
     owner: RemoveUnder
     domain_of:
     - Change
     range: Change
+    multivalued: false
 
 </code></pre>
 </details>

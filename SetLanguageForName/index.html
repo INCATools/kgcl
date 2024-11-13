@@ -7,7 +7,7 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <link href="https://incatools.github.io/kgcl/SetLanguageForName/" rel="canonical"/>
 <link href="../assets/images/favicon.png" rel="icon"/>
-<meta content="mkdocs-1.5.3, mkdocs-material-8.5.10" name="generator"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-8.5.10" name="generator"/>
 <title>Class: SetLanguageForName - KGCL</title>
 <link href="../assets/stylesheets/main.975780f9.min.css" rel="stylesheet"/>
 <link href="../assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
@@ -204,12 +204,20 @@
 <p>URI: <a href="http://w3id.org/kgcl/SetLanguageForName">kgcl:SetLanguageForName</a></p>
 <div class="mermaid"> classDiagram
     class SetLanguageForName
+    click SetLanguageForName href "../SetLanguageForName"
       LanguageTagChange &lt;|-- SetLanguageForName
+        click LanguageTagChange href "../LanguageTagChange"
       NodeChange &lt;|-- SetLanguageForName
+        click NodeChange href "../NodeChange"
 
       SetLanguageForName : about_node
 
-          SetLanguageForName --&gt; Node : about_node
+
+
+
+    SetLanguageForName --&gt; "0..1" Node : about_node
+    click Node href "../Node"
+
 
       SetLanguageForName : about_node_representation
 
@@ -221,7 +229,12 @@
 
       SetLanguageForName : has_undo
 
-          SetLanguageForName --&gt; Change : has_undo
+
+
+
+    SetLanguageForName --&gt; "0..1" Change : has_undo
+    click Change href "../Change"
+
 
       SetLanguageForName : id
 
@@ -251,7 +264,12 @@
 
       SetLanguageForName : was_generated_by
 
-          SetLanguageForName --&gt; Activity : was_generated_by
+
+
+
+    SetLanguageForName --&gt; "0..1" Activity : was_generated_by
+    click Activity href "../Activity"
+
 
 
 </div>
@@ -350,7 +368,7 @@
 </tr>
 <tr>
 <td><a href="../id/">id</a></td>
-<td>1..1 <br/> <a href="../String/">String</a></td>
+<td>1 <br/> <a href="../String/">String</a></td>
 <td></td>
 <td><a href="../Change/">Change</a></td>
 </tr>
@@ -468,7 +486,6 @@ attributes:
     description: The value of a property held in the old instance of the ontology
     from_schema: https://w3id.org/kgcl
     rank: 1000
-    multivalued: false
     alias: old_value
     owner: SetLanguageForName
     domain_of:
@@ -485,12 +502,12 @@ attributes:
     - RemoveTextDefinition
     - TextDefinitionReplacement
     range: LanguageTag
+    multivalued: false
   new_value:
     name: new_value
     description: The value of a property held in the new instance of the ontology
     from_schema: https://w3id.org/kgcl
     rank: 1000
-    multivalued: false
     alias: new_value
     owner: SetLanguageForName
     domain_of:
@@ -507,17 +524,18 @@ attributes:
     - NewTextDefinition
     - TextDefinitionReplacement
     range: LanguageTag
+    multivalued: false
   about_node:
     name: about_node
     from_schema: https://w3id.org/kgcl
     rank: 1000
     is_a: about
-    multivalued: false
     alias: about_node
     owner: SetLanguageForName
     domain_of:
     - NodeChange
     range: Node
+    multivalued: false
   about_node_representation:
     name: about_node_representation
     description: 'The representation of a node (URI, CURIE, label) '
@@ -707,12 +725,12 @@ attributes:
     from_schema: https://w3id.org/kgcl
     rank: 1000
     domain: Change
-    multivalued: false
     alias: has_undo
     owner: SetLanguageForName
     domain_of:
     - Change
     range: Change
+    multivalued: false
 
 </code></pre>
 </details>

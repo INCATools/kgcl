@@ -7,7 +7,7 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <link href="https://incatools.github.io/kgcl/LogicalAxiomChange/" rel="canonical"/>
 <link href="../assets/images/favicon.png" rel="icon"/>
-<meta content="mkdocs-1.5.3, mkdocs-material-8.5.10" name="generator"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-8.5.10" name="generator"/>
 <title>Class: LogicalAxiomChange - KGCL</title>
 <link href="../assets/stylesheets/main.975780f9.min.css" rel="stylesheet"/>
 <link href="../assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
@@ -204,7 +204,9 @@
 <p>URI: <a href="http://w3id.org/kgcl/LogicalAxiomChange">kgcl:LogicalAxiomChange</a></p>
 <div class="mermaid"> classDiagram
     class LogicalAxiomChange
+    click LogicalAxiomChange href "../LogicalAxiomChange"
       SimpleChange &lt;|-- LogicalAxiomChange
+        click SimpleChange href "../SimpleChange"
 
       LogicalAxiomChange : change_date
 
@@ -214,7 +216,12 @@
 
       LogicalAxiomChange : has_undo
 
-          LogicalAxiomChange --&gt; Change : has_undo
+
+
+
+    LogicalAxiomChange --&gt; "0..1" Change : has_undo
+    click Change href "../Change"
+
 
       LogicalAxiomChange : id
 
@@ -242,7 +249,12 @@
 
       LogicalAxiomChange : was_generated_by
 
-          LogicalAxiomChange --&gt; Activity : was_generated_by
+
+
+
+    LogicalAxiomChange --&gt; "0..1" Activity : was_generated_by
+    click Activity href "../Activity"
+
 
 
 </div>
@@ -320,7 +332,7 @@
 </tr>
 <tr>
 <td><a href="../id/">id</a></td>
-<td>1..1 <br/> <a href="../String/">String</a></td>
+<td>1 <br/> <a href="../String/">String</a></td>
 <td></td>
 <td><a href="../Change/">Change</a></td>
 </tr>
@@ -625,12 +637,12 @@ attributes:
     from_schema: https://w3id.org/kgcl
     rank: 1000
     domain: Change
-    multivalued: false
     alias: has_undo
     owner: LogicalAxiomChange
     domain_of:
     - Change
     range: Change
+    multivalued: false
 
 </code></pre>
 </details>
