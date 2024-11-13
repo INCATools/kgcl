@@ -1,3 +1,26 @@
+# metamodel_version: 1.7.0
+# version: 0.0.1
+enum ObsoletionPolicyEnum
+  {
+    NoLogicalAxiomsOnObsoletes
+    ObsoleteLabelsArePrefixed
+  }
+
+enum OwlTypeEnum
+  {
+    CLASS
+    OBJECT_PROPERTY
+    NAMED_INDIVIDUAL
+  }
+
+enum SynonymScopeEnum
+  {
+    related
+    broad
+    narrow
+    exact
+  }
+
 type Activity
   {
     id: String!

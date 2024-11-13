@@ -1027,7 +1027,6 @@
       "description": "A collection of changes",
       "from_schema": "https://w3id.org/kgcl",
       "slot_uri": "http://w3id.org/kgcl/change_set",
-      "multivalued": true,
       "owner": "Session",
       "domain_of": [
         "ComplexChange",
@@ -1035,6 +1034,7 @@
         "Session"
       ],
       "range": "Change",
+      "multivalued": true,
       "inlined": true,
       "inlined_as_list": true,
       "@type": "SlotDefinition"
@@ -1088,12 +1088,12 @@
         "http://www.geneontology.org/formats/oboInOwl#consider"
       ],
       "slot_uri": "http://w3id.org/kgcl/has_nondirect_replacement",
-      "multivalued": true,
       "owner": "NodeObsoletion",
       "domain_of": [
         "NodeObsoletion"
       ],
       "range": "Node",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -1295,8 +1295,8 @@
       "definition_uri": "http://w3id.org/kgcl/om/property_value_set",
       "from_schema": "https://w3id.org/kgcl/ontology",
       "slot_uri": "http://w3id.org/kgcl/om/property_value_set",
-      "multivalued": true,
       "range": "PropertyValue",
+      "multivalued": true,
       "inlined": true,
       "@type": "SlotDefinition"
     },
@@ -1412,12 +1412,12 @@
       "definition_uri": "http://www.w3.org/ns/prov#activity_set",
       "from_schema": "https://w3id.org/kgcl/prov",
       "slot_uri": "http://www.w3.org/ns/prov#activity_set",
-      "multivalued": true,
       "owner": "Session",
       "domain_of": [
         "Session"
       ],
       "range": "Activity",
+      "multivalued": true,
       "inlined": true,
       "inlined_as_list": true,
       "@type": "SlotDefinition"
@@ -1427,8 +1427,8 @@
       "definition_uri": "http://www.w3.org/ns/prov#agent_set",
       "from_schema": "https://w3id.org/kgcl/prov",
       "slot_uri": "http://www.w3.org/ns/prov#agent_set",
-      "multivalued": true,
       "range": "Agent",
+      "multivalued": true,
       "inlined": true,
       "inlined_as_list": true,
       "@type": "SlotDefinition"
@@ -1566,13 +1566,13 @@
       "name": "configuration__obsoletion_policies",
       "from_schema": "https://w3id.org/kgcl",
       "slot_uri": "http://w3id.org/kgcl/obsoletion_policies",
-      "multivalued": true,
       "alias": "obsoletion_policies",
       "owner": "Configuration",
       "domain_of": [
         "Configuration"
       ],
       "range": "ObsoletionPolicyEnum",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -1604,8 +1604,8 @@
       "from_schema": "https://w3id.org/kgcl",
       "is_a": "change_set",
       "slot_uri": "http://w3id.org/kgcl/associated_change_set",
-      "multivalued": true,
       "range": "Change",
+      "multivalued": true,
       "inlined": true,
       "inlined_as_list": true,
       "@type": "SlotDefinition"
@@ -1800,7 +1800,6 @@
       "is_a": "change_set",
       "domain": "MultiNodeObsoletion",
       "slot_uri": "http://w3id.org/kgcl/change_set",
-      "multivalued": true,
       "alias": "change_set",
       "owner": "MultiNodeObsoletion",
       "domain_of": [
@@ -1809,6 +1808,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "change_set",
       "range": "NodeObsoletion",
+      "multivalued": true,
       "inlined": true,
       "inlined_as_list": true,
       "@type": "SlotDefinition"
@@ -1865,7 +1865,6 @@
       "is_a": "change_set",
       "domain": "MultiNodeObsoletion",
       "slot_uri": "http://w3id.org/kgcl/associated_change_set",
-      "multivalued": true,
       "alias": "associated change set",
       "owner": "MultiNodeObsoletion",
       "domain_of": [
@@ -1874,6 +1873,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "associated change set",
       "range": "Change",
+      "multivalued": true,
       "inlined": true,
       "inlined_as_list": true,
       "@type": "SlotDefinition"
@@ -1918,7 +1918,6 @@
       "is_a": "property_value_set",
       "domain": "ChangeSetSummaryStatistic",
       "slot_uri": "http://w3id.org/kgcl/om/property_value_set",
-      "multivalued": true,
       "alias": "property_value_set",
       "owner": "ChangeSetSummaryStatistic",
       "domain_of": [
@@ -1927,6 +1926,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "property_value_set",
       "range": "PropertyValue",
+      "multivalued": true,
       "inlined": true,
       "@type": "SlotDefinition"
     },
@@ -2869,7 +2869,6 @@
       "is_a": "change_set",
       "domain": "NodeObsoletion",
       "slot_uri": "http://w3id.org/kgcl/associated_change_set",
-      "multivalued": true,
       "alias": "associated change set",
       "owner": "NodeObsoletion",
       "domain_of": [
@@ -2878,6 +2877,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "associated change set",
       "range": "Change",
+      "multivalued": true,
       "inlined": true,
       "inlined_as_list": true,
       "@type": "SlotDefinition"
@@ -3316,7 +3316,6 @@
       "is_a": "has_nondirect_replacement",
       "domain": "NodeObsoletionWithNoDirectReplacement",
       "slot_uri": "http://w3id.org/kgcl/has_nondirect_replacement",
-      "multivalued": true,
       "alias": "has_nondirect_replacement",
       "owner": "NodeObsoletionWithNoDirectReplacement",
       "domain_of": [
@@ -3326,6 +3325,7 @@
       "usage_slot_name": "has_nondirect_replacement",
       "range": "Node",
       "required": true,
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -5748,8 +5748,8 @@
         },
         {
           "name": "obsoletion_policies",
-          "multivalued": true,
           "range": "ObsoletionPolicyEnum",
+          "multivalued": true,
           "@type": "SlotDefinition"
         },
         {
@@ -5986,9 +5986,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "kgcl.yaml",
-  "source_file_date": "2024-02-25T18:04:37",
+  "source_file_date": "2024-03-04T17:09:27",
   "source_file_size": 32109,
-  "generation_date": "2024-02-25T23:33:07",
+  "generation_date": "2024-11-12T12:18:11",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/kgcl.context.jsonld",

@@ -1,3 +1,5 @@
+# metamodel_version: 1.7.0
+# version: 0.0.1
 BASE <http://w3id.org/kgcl/>
 PREFIX prov: <http://www.w3.org/ns/prov#>
 PREFIX owl: <http://www.w3.org/2002/07/owl#>
@@ -976,5 +978,4 @@ prov:ProvElement_struct {
        rdf:type [ <Unobsoletion> ] ?
     )
 }
-
 

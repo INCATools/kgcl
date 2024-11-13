@@ -1,5 +1,5 @@
 # Auto generated from kgcl.yaml by pythongen.py version: 0.0.1
-# Generation date: 2024-03-29T11:44:23
+# Generation date: 2024-11-12T12:18:14
 # Schema: kgcl_schema
 #
 # id: https://w3id.org/kgcl
@@ -10,19 +10,55 @@
 
 import dataclasses
 import re
-from jsonasobj2 import JsonObj, as_dict
-from typing import Optional, List, Union, Dict, ClassVar, Any
 from dataclasses import dataclass
-from linkml_runtime.linkml_model.meta import EnumDefinition, PermissibleValue, PvFormulaOptions
+from datetime import (
+    date,
+    datetime,
+    time
+)
+from typing import (
+    Any,
+    ClassVar,
+    Dict,
+    List,
+    Optional,
+    Union
+)
 
-from linkml_runtime.utils.slot import Slot
-from linkml_runtime.utils.metamodelcore import empty_list, empty_dict, bnode
-from linkml_runtime.utils.yamlutils import YAMLRoot, extended_str, extended_float, extended_int
-from linkml_runtime.utils.dataclass_extensions_376 import dataclasses_init_fn_with_kwargs
-from linkml_runtime.utils.formatutils import camelcase, underscore, sfx
-from linkml_runtime.utils.enumerations import EnumDefinitionImpl
-from rdflib import Namespace, URIRef
+from jsonasobj2 import (
+    JsonObj,
+    as_dict
+)
+from linkml_runtime.linkml_model.meta import (
+    EnumDefinition,
+    PermissibleValue,
+    PvFormulaOptions
+)
 from linkml_runtime.utils.curienamespace import CurieNamespace
+from linkml_runtime.utils.dataclass_extensions_376 import dataclasses_init_fn_with_kwargs
+from linkml_runtime.utils.enumerations import EnumDefinitionImpl
+from linkml_runtime.utils.formatutils import (
+    camelcase,
+    sfx,
+    underscore
+)
+from linkml_runtime.utils.metamodelcore import (
+    bnode,
+    empty_dict,
+    empty_list
+)
+from linkml_runtime.utils.slot import Slot
+from linkml_runtime.utils.yamlutils import (
+    YAMLRoot,
+    extended_float,
+    extended_int,
+    extended_str
+)
+from rdflib import (
+    Namespace,
+    URIRef
+)
+
 from linkml_runtime.linkml_model.types import Integer, String, Uriorcurie
 from linkml_runtime.utils.metamodelcore import URIorCURIE
 
@@ -322,7 +358,7 @@ class ChangeLanguageElement(YAMLRoot):
     class_model_uri: ClassVar[URIRef] = KGCL.ChangeLanguageElement
 
 
-@dataclass
+@dataclass(repr=False)
 class Change(ChangeLanguageElement):
     """
     Any change perform on an ontology or knowledge graph
@@ -397,7 +433,7 @@ class Change(ChangeLanguageElement):
 
 
 
-@dataclass
+@dataclass(repr=False)
 class SimpleChange(Change):
     """
     A change that is about a single ontology element
@@ -448,7 +484,7 @@ class SimpleChange(Change):
         self.type = str(self.class_name)
 
 
-@dataclass
+@dataclass(repr=False)
 class ComplexChange(Change):
     """
     A change that is is a composition of other changes
@@ -470,7 +506,7 @@ class ComplexChange(Change):
         self.type = str(self.class_name)
 
 
-@dataclass
+@dataclass(repr=False)
 class MultiNodeObsoletion(ComplexChange):
     """
     A complex change consisting of multiple obsoletions.
@@ -504,7 +540,7 @@ class MultiNodeObsoletion(ComplexChange):
         self.type = str(self.class_name)
 
 
-@dataclass
+@dataclass(repr=False)
 class Transaction(Change):
     """
     A change that is a composition of a set of changes, where those changes are treated as a single unit. Could be a
@@ -532,7 +568,7 @@ class Transaction(Change):
         self.type = str(self.class_name)
 
 
-@dataclass
+@dataclass(repr=False)
 class ChangeSetSummaryStatistic(ChangeLanguageElement):
     """
     A summary statistic for a set of changes of the same type, grouped by zero or more node properties
@@ -574,7 +610,7 @@ class ChangeMixin(YAMLRoot):
     class_model_uri: ClassVar[URIRef] = KGCL.ChangeMixin
 
 
-@dataclass
+@dataclass(repr=False)
 class Obsoletion(ChangeMixin):
     """
     Obsoletion of an element deprecates usage of that element, but does not delete that element.
@@ -611,7 +647,7 @@ class DatatypeOrLanguageTagChange(ChangeMixin):
     class_model_uri: ClassVar[URIRef] = KGCL.DatatypeOrLanguageTagChange
 
 
-@dataclass
+@dataclass(repr=False)
 class LanguageTagChange(DatatypeOrLanguageTagChange):
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -655,7 +691,7 @@ class AllowsAutomaticReplacementOfEdges(Obsoletion):
     class_model_uri: ClassVar[URIRef] = KGCL.AllowsAutomaticReplacementOfEdges
 
 
-@dataclass
+@dataclass(repr=False)
 class Unobsoletion(ChangeMixin):
     """
     Opposite operation of obsoletion. Rarely performed.
@@ -688,7 +724,7 @@ class Deletion(ChangeMixin):
     class_model_uri: ClassVar[URIRef] = KGCL.Deletion
 
 
-@dataclass
+@dataclass(repr=False)
 class Creation(ChangeMixin):
     """
     Creation of an element.
@@ -709,7 +745,7 @@ class Creation(ChangeMixin):
         super().__post_init__(**kwargs)
 
 
-@dataclass
+@dataclass(repr=False)
 class SubsetMembershipChange(ChangeMixin):
     """
     A change in the membership status of a node with respect to a subset (view)
@@ -730,7 +766,7 @@ class SubsetMembershipChange(ChangeMixin):
         super().__post_init__(**kwargs)
 
 
-@dataclass
+@dataclass(repr=False)
 class AddToSubset(SubsetMembershipChange):
     """
     placing an element inside a subset
@@ -751,7 +787,7 @@ class AddToSubset(SubsetMembershipChange):
         super().__post_init__(**kwargs)
 
 
-@dataclass
+@dataclass(repr=False)
 class RemoveFromSubset(SubsetMembershipChange):
     """
     removing an element from a subset
@@ -776,7 +812,7 @@ class RemoveFromSubset(SubsetMembershipChange):
         super().__post_init__(**kwargs)
 
 
-@dataclass
+@dataclass(repr=False)
 class EdgeChange(SimpleChange):
     """
     A change in which the element that is the focus of the change is an edge.
@@ -815,7 +851,7 @@ class EdgeChange(SimpleChange):
         self.type = str(self.class_name)
 
 
-@dataclass
+@dataclass(repr=False)
 class EdgeCreation(EdgeChange):
     """
     An edge change in which a de-novo edge is created. The edge is potentially annotated in the same action.
@@ -871,7 +907,7 @@ class EdgeCreation(EdgeChange):
         self.type = str(self.class_name)
 
 
-@dataclass
+@dataclass(repr=False)
 class PlaceUnder(EdgeCreation):
     """
     An edge creation where the predicate is owl:subClassOf
@@ -895,7 +931,7 @@ class PlaceUnder(EdgeCreation):
         self.type = str(self.class_name)
 
 
-@dataclass
+@dataclass(repr=False)
 class EdgeDeletion(EdgeChange):
     """
     An edge change in which an edge is removed. All edge annotations/properies are removed in the same action.
@@ -951,7 +987,7 @@ class EdgeDeletion(EdgeChange):
         self.type = str(self.class_name)
 
 
-@dataclass
+@dataclass(repr=False)
 class RemoveUnder(EdgeDeletion):
     """
     An edge deletion where the predicate is owl:subClassOf
@@ -975,7 +1011,7 @@ class RemoveUnder(EdgeDeletion):
         self.type = str(self.class_name)
 
 
-@dataclass
+@dataclass(repr=False)
 class EdgeObsoletion(EdgeChange):
     """
     An edge change in which an edge is obsoleted.
@@ -1023,7 +1059,7 @@ class EdgeObsoletion(EdgeChange):
         self.type = str(self.class_name)
 
 
-@dataclass
+@dataclass(repr=False)
 class EdgeRewiring(EdgeChange):
     """
     An edge change where one node is replaced with another, as in the case of obsoletion with replacement
@@ -1047,7 +1083,7 @@ class EdgeRewiring(EdgeChange):
         self.type = str(self.class_name)
 
 
-@dataclass
+@dataclass(repr=False)
 class MappingCreation(EdgeCreation):
     """
     A specific kind of edge creation in which the created edge is a mapping.
@@ -1091,7 +1127,7 @@ class MappingCreation(EdgeCreation):
         self.type = str(self.class_name)
 
 
-@dataclass
+@dataclass(repr=False)
 class NodeMove(EdgeChange):
     """
     A node move is a combination of deleting a parent edge and adding a parent edge, where the predicate is preserved
@@ -1128,7 +1164,7 @@ class NodeMove(EdgeChange):
         self.type = str(self.class_name)
 
 
-@dataclass
+@dataclass(repr=False)
 class NodeDeepening(NodeMove):
     """
     A node move in which a node where the destination is a proper descendant of the original location. Note that here
@@ -1157,7 +1193,7 @@ class NodeDeepening(NodeMove):
         self.type = str(self.class_name)
 
 
-@dataclass
+@dataclass(repr=False)
 class NodeShallowing(NodeMove):
     """
     The opposite of node deepening
@@ -1185,7 +1221,7 @@ class NodeShallowing(NodeMove):
         self.type = str(self.class_name)
 
 
-@dataclass
+@dataclass(repr=False)
 class PredicateChange(EdgeChange):
     """
     An edge change where the predicate (relationship type) is modified.
@@ -1213,7 +1249,7 @@ class PredicateChange(EdgeChange):
         self.type = str(self.class_name)
 
 
-@dataclass
+@dataclass(repr=False)
 class EdgeLogicalInterpretationChange(EdgeChange):
     """
     An edge change where the subject, object, and predicate are unchanged, but the logical interpretation changes
@@ -1237,7 +1273,7 @@ class EdgeLogicalInterpretationChange(EdgeChange):
         self.type = str(self.class_name)
 
 
-@dataclass
+@dataclass(repr=False)
 class LogicalAxiomChange(SimpleChange):
     """
     A simple change where a logical axiom is changed, where the logical axiom cannot be represented as an edge
@@ -1261,7 +1297,7 @@ class LogicalAxiomChange(SimpleChange):
         self.type = str(self.class_name)
 
 
-@dataclass
+@dataclass(repr=False)
 class NodeChange(SimpleChange):
     """
     A simple change where the change is about a node
@@ -1292,7 +1328,7 @@ class NodeChange(SimpleChange):
         self.type = str(self.class_name)
 
 
-@dataclass
+@dataclass(repr=False)
 class NodeRename(NodeChange):
     """
     A node change where the name (aka rdfs:label) of the node changes
@@ -1340,7 +1376,7 @@ class NodeRename(NodeChange):
         self.type = str(self.class_name)
 
 
-@dataclass
+@dataclass(repr=False)
 class SetLanguageForName(NodeChange):
     """
     A node change where the string value for the name is unchanged but the language tag is set
@@ -1376,7 +1412,7 @@ class SetLanguageForName(NodeChange):
         self.type = str(self.class_name)
 
 
-@dataclass
+@dataclass(repr=False)
 class NodeAnnotationChange(NodeChange):
     """
     A node change where the change alters node properties/annotations. TODO
@@ -1408,7 +1444,7 @@ class NodeAnnotationChange(NodeChange):
         self.type = str(self.class_name)
 
 
-@dataclass
+@dataclass(repr=False)
 class NodeAnnotationReplacement(NodeAnnotationChange):
     """
     A node annotation change where the change replaces a particular property value. TODO
@@ -1432,7 +1468,7 @@ class NodeAnnotationReplacement(NodeAnnotationChange):
         self.type = str(self.class_name)
 
 
-@dataclass
+@dataclass(repr=False)
 class NodeSynonymChange(NodeChange):
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -1453,7 +1489,7 @@ class NodeSynonymChange(NodeChange):
         self.type = str(self.class_name)
 
 
-@dataclass
+@dataclass(repr=False)
 class NewSynonym(NodeSynonymChange):
     """
     A node synonym change where a de-novo synonym is created
@@ -1493,7 +1529,7 @@ class NewSynonym(NodeSynonymChange):
         self.type = str(self.class_name)
 
 
-@dataclass
+@dataclass(repr=False)
 class NameBecomesSynonym(NodeSynonymChange):
     """
     A node synonym where the name NAME of an node NODE moves to a synonym, and NODE receives a new name. This change
@@ -1530,7 +1566,7 @@ class NameBecomesSynonym(NodeSynonymChange):
         self.type = str(self.class_name)
 
 
-@dataclass
+@dataclass(repr=False)
 class RemoveSynonym(NodeSynonymChange):
     """
     A node synonym change where a synonym is deleted
@@ -1558,7 +1594,7 @@ class RemoveSynonym(NodeSynonymChange):
         self.type = str(self.class_name)
 
 
-@dataclass
+@dataclass(repr=False)
 class SynonymReplacement(NodeSynonymChange):
     """
     A node synonym change where the text of a synonym is changed
@@ -1598,7 +1634,7 @@ class SynonymReplacement(NodeSynonymChange):
         self.type = str(self.class_name)
 
 
-@dataclass
+@dataclass(repr=False)
 class SynonymPredicateChange(NodeSynonymChange):
     """
     A node synonym change where the predicate of a synonym is changed. Background: synonyms can be represented by a
@@ -1640,7 +1676,7 @@ class SynonymPredicateChange(NodeSynonymChange):
         self.type = str(self.class_name)
 
 
-@dataclass
+@dataclass(repr=False)
 class NodeMappingChange(NodeChange):
     """
     A node change where the mappings for that node are altered
@@ -1664,7 +1700,7 @@ class NodeMappingChange(NodeChange):
         self.type = str(self.class_name)
 
 
-@dataclass
+@dataclass(repr=False)
 class NewMapping(NodeMappingChange):
     """
     A node mapping change where a mapping is added to a node
@@ -1696,7 +1732,7 @@ class NewMapping(NodeMappingChange):
         self.type = str(self.class_name)
 
 
-@dataclass
+@dataclass(repr=False)
 class RemoveMapping(NodeMappingChange):
     """
     A node mapping change where a mapping is deleted
@@ -1728,7 +1764,7 @@ class RemoveMapping(NodeMappingChange):
         self.type = str(self.class_name)
 
 
-@dataclass
+@dataclass(repr=False)
 class MappingReplacement(NodeMappingChange):
     """
     A node mapping change where the object of a mapping is changed
@@ -1760,7 +1796,7 @@ class MappingReplacement(NodeMappingChange):
         self.type = str(self.class_name)
 
 
-@dataclass
+@dataclass(repr=False)
 class MappingPredicateChange(NodeMappingChange):
     """
     A node mapping change where the predicate of a mapping is changed.
@@ -1792,7 +1828,7 @@ class MappingPredicateChange(NodeMappingChange):
         self.type = str(self.class_name)
 
 
-@dataclass
+@dataclass(repr=False)
 class NodeMetadataAssertionChange(NodeChange):
     """
     A node change where the metadata assertion (OWL annotations) for that node are altered
@@ -1816,7 +1852,7 @@ class NodeMetadataAssertionChange(NodeChange):
         self.type = str(self.class_name)
 
 
-@dataclass
+@dataclass(repr=False)
 class NewMetadataAssertion(NodeMetadataAssertionChange):
     """
     A node metadata assertion change where a metadata assertion is added to a node
@@ -1848,7 +1884,7 @@ class NewMetadataAssertion(NodeMetadataAssertionChange):
         self.type = str(self.class_name)
 
 
-@dataclass
+@dataclass(repr=False)
 class RemoveMetadataAssertion(NodeMetadataAssertionChange):
     """
     A node metadata assertion change where a metadata assertion is deleted
@@ -1880,7 +1916,7 @@ class RemoveMetadataAssertion(NodeMetadataAssertionChange):
         self.type = str(self.class_name)
 
 
-@dataclass
+@dataclass(repr=False)
 class MetadataAssertionReplacement(NodeMetadataAssertionChange):
     """
     A node metadata assertion change where the object of a metadata assertion is changed
@@ -1912,7 +1948,7 @@ class MetadataAssertionReplacement(NodeMetadataAssertionChange):
         self.type = str(self.class_name)
 
 
-@dataclass
+@dataclass(repr=False)
 class MetadataAssertionPredicateChange(NodeMetadataAssertionChange):
     """
     A node metadata assertion change where the predicate of a metadata assertion is changed.
@@ -1944,7 +1980,7 @@ class MetadataAssertionPredicateChange(NodeMetadataAssertionChange):
         self.type = str(self.class_name)
 
 
-@dataclass
+@dataclass(repr=False)
 class NodeTextDefinitionChange(NodeChange):
     """
     A node change where the text definition is changed
@@ -1964,7 +2000,7 @@ class NodeTextDefinitionChange(NodeChange):
         self.type = str(self.class_name)
 
 
-@dataclass
+@dataclass(repr=False)
 class NewTextDefinition(NodeTextDefinitionChange):
     """
     A node change where a de-novo text definition is created
@@ -1992,7 +2028,7 @@ class NewTextDefinition(NodeTextDefinitionChange):
         self.type = str(self.class_name)
 
 
-@dataclass
+@dataclass(repr=False)
 class RemoveTextDefinition(NodeTextDefinitionChange):
     """
     A node change where a text definition is deleted
@@ -2020,7 +2056,7 @@ class RemoveTextDefinition(NodeTextDefinitionChange):
         self.type = str(self.class_name)
 
 
-@dataclass
+@dataclass(repr=False)
 class TextDefinitionReplacement(NodeTextDefinitionChange):
     """
     A node change where a text definition is modified
@@ -2056,7 +2092,7 @@ class TextDefinitionReplacement(NodeTextDefinitionChange):
         self.type = str(self.class_name)
 
 
-@dataclass
+@dataclass(repr=False)
 class AddNodeToSubset(NodeChange):
     """
     Places a node inside a subset, by annotating that node
@@ -2084,7 +2120,7 @@ class AddNodeToSubset(NodeChange):
         self.type = str(self.class_name)
 
 
-@dataclass
+@dataclass(repr=False)
 class RemoveNodeFromSubset(NodeChange):
     """
     Removes a node from a subset, by removing an annotation
@@ -2124,7 +2160,7 @@ class RemoveNodeFromSubset(NodeChange):
         self.type = str(self.class_name)
 
 
-@dataclass
+@dataclass(repr=False)
 class NodeObsoletion(NodeChange):
     """
     Obsoletion of a node deprecates usage of that node, but does not delete it.
@@ -2168,7 +2204,7 @@ class NodeObsoletion(NodeChange):
         self.type = str(self.class_name)
 
 
-@dataclass
+@dataclass(repr=False)
 class NodeUnobsoletion(NodeChange):
     """
     unobsoletion of a node deprecates usage of that node. Rarely applied.
@@ -2204,7 +2240,7 @@ class NodeUnobsoletion(NodeChange):
         self.type = str(self.class_name)
 
 
-@dataclass
+@dataclass(repr=False)
 class NodeCreation(NodeChange):
     """
     a node change in which a new node is created
@@ -2252,7 +2288,7 @@ class NodeCreation(NodeChange):
         self.type = str(self.class_name)
 
 
-@dataclass
+@dataclass(repr=False)
 class ClassCreation(NodeCreation):
     """
     A node creation where the owl type is 'owl:Class'
@@ -2284,7 +2320,7 @@ class ClassCreation(NodeCreation):
         self.type = str(self.class_name)
 
 
-@dataclass
+@dataclass(repr=False)
 class ObjectPropertyCreation(NodeCreation):
     """
     A node creation where the owl type is 'ObjectProperty'
@@ -2312,7 +2348,7 @@ class ObjectPropertyCreation(NodeCreation):
         self.type = str(self.class_name)
 
 
-@dataclass
+@dataclass(repr=False)
 class NodeDeletion(NodeChange):
     """
     Deletion of a node from the graph. Note it is recommended nodes are obsoleted and never merged, but this operation
@@ -2341,7 +2377,7 @@ class NodeDeletion(NodeChange):
         self.type = str(self.class_name)
 
 
-@dataclass
+@dataclass(repr=False)
 class NodeDirectMerge(NodeObsoletion):
     """
     An obsoletion change in which all metadata (including name/label) from the source node is deleted and added to the
@@ -2384,7 +2420,7 @@ class NodeDirectMerge(NodeObsoletion):
         self.type = str(self.class_name)
 
 
-@dataclass
+@dataclass(repr=False)
 class NodeObsoletionWithDirectReplacement(NodeObsoletion):
     """
     An obsoletion change in which information from the obsoleted node is selectively copied to a single target, and
@@ -2423,7 +2459,7 @@ class NodeObsoletionWithDirectReplacement(NodeObsoletion):
         self.type = str(self.class_name)
 
 
-@dataclass
+@dataclass(repr=False)
 class NodeObsoletionWithNoDirectReplacement(NodeObsoletion):
     """
     An obsoletion change in which there is no direct replacement
@@ -2470,7 +2506,7 @@ class TextualDiff(ChangeLanguageElement):
     class_model_uri: ClassVar[URIRef] = KGCL.TextualDiff
 
 
-@dataclass
+@dataclass(repr=False)
 class Configuration(ChangeLanguageElement):
     """
     The meaning of operations can be configured
@@ -2528,7 +2564,7 @@ class Configuration(ChangeLanguageElement):
         super().__post_init__(**kwargs)
 
 
-@dataclass
+@dataclass(repr=False)
 class Session(ChangeLanguageElement):
     """
     A session consists of a set of change sets bundled with the activities that generated those change sets
@@ -2563,7 +2599,7 @@ class OntologyElement(YAMLRoot):
     class_model_uri: ClassVar[URIRef] = KGCL.OntologyElement
 
 
-@dataclass
+@dataclass(repr=False)
 class PropertyValue(OntologyElement):
     """
     a property-value pair
@@ -2588,7 +2624,7 @@ class PropertyValue(OntologyElement):
         super().__post_init__(**kwargs)
 
 
-@dataclass
+@dataclass(repr=False)
 class Annotation(PropertyValue):
     """
     owl annotations. Not to be confused with annotations sensu GO
@@ -2625,7 +2661,7 @@ class Annotation(PropertyValue):
         super().__post_init__(**kwargs)
 
 
-@dataclass
+@dataclass(repr=False)
 class Node(OntologyElement):
     """
     Any named entity in an ontology. May be a class, individual, property
@@ -2660,7 +2696,7 @@ class Node(OntologyElement):
         super().__post_init__(**kwargs)
 
 
-@dataclass
+@dataclass(repr=False)
 class ClassNode(Node):
     """
     A node that is a class
@@ -2683,7 +2719,7 @@ class ClassNode(Node):
         super().__post_init__(**kwargs)
 
 
-@dataclass
+@dataclass(repr=False)
 class InstanceNode(Node):
     """
     A node that is an individual
@@ -2706,7 +2742,7 @@ class InstanceNode(Node):
         super().__post_init__(**kwargs)
 
 
-@dataclass
+@dataclass(repr=False)
 class Edge(OntologyElement):
     """
     A relationship between two nodes.
@@ -2810,7 +2846,7 @@ class ProvElement(YAMLRoot):
     class_model_uri: ClassVar[URIRef] = KGCL.ProvElement
 
 
-@dataclass
+@dataclass(repr=False)
 class Activity(ProvElement):
     """
     a provence-generating activity
@@ -2857,7 +2893,7 @@ class Activity(ProvElement):
         super().__post_init__(**kwargs)
 
 
-@dataclass
+@dataclass(repr=False)
 class Agent(ProvElement):
     """
     a provence-generating agent
