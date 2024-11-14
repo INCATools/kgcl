@@ -759,9 +759,10 @@
       "description": "The qualifier of a change operation",
       "from_schema": "https://w3id.org/kgcl",
       "slot_uri": "http://w3id.org/kgcl/qualifier",
-      "owner": "NewSynonym",
+      "owner": "SynonymReplacement",
       "domain_of": [
-        "NewSynonym"
+        "NewSynonym",
+        "SynonymReplacement"
       ],
       "range": "string",
       "@type": "SlotDefinition"
@@ -935,7 +936,6 @@
         "SubsetMembershipChange"
       ],
       "range": "OntologySubset",
-      "inlined": true,
       "@type": "SlotDefinition"
     },
     {
@@ -2058,7 +2058,6 @@
       "is_usage_slot": true,
       "usage_slot_name": "in_subset",
       "range": "OntologySubset",
-      "inlined": true,
       "@type": "SlotDefinition"
     },
     {
@@ -2077,7 +2076,6 @@
       "is_usage_slot": true,
       "usage_slot_name": "in_subset",
       "range": "OntologySubset",
-      "inlined": true,
       "@type": "SlotDefinition"
     },
     {
@@ -4673,6 +4671,7 @@
         "language",
         "old_value",
         "new_value",
+        "qualifier",
         "has_textual_diff"
       ],
       "slot_usage": {},
@@ -5928,7 +5927,13 @@
       "name": "OntologySubset",
       "definition_uri": "http://w3id.org/kgcl/om/OntologySubset",
       "from_schema": "https://w3id.org/kgcl/ontology",
-      "is_a": "OntologyElement",
+      "is_a": "Node",
+      "slots": [
+        "id",
+        "name",
+        "annotation_set",
+        "owl_type"
+      ],
       "slot_usage": {},
       "class_uri": "http://w3id.org/kgcl/om/OntologySubset",
       "@type": "ClassDefinition"
@@ -5986,9 +5991,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "kgcl.yaml",
-  "source_file_date": "2024-03-04T17:09:27",
-  "source_file_size": 32109,
-  "generation_date": "2024-11-12T12:18:11",
+  "source_file_date": "2024-11-14T14:03:10",
+  "source_file_size": 32125,
+  "generation_date": "2024-11-14T14:12:01",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/kgcl.context.jsonld",
