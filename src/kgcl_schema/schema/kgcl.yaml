@@ -16,6 +16,7 @@ prefixes:
   oio: http://www.geneontology.org/formats/oboInOwl#
   xml: http://www.w3.org/XML/1998/namespace#
   linkml: https://w3id.org/linkml/
+  rdfs: http://www.w3.org/2000/01/rdf-schema#
 default_prefix: kgcl
 default_range: string
 imports:
@@ -88,6 +89,7 @@ classes:
     description: A change that is is a composition of other changes
     slots:
     - change_set
+    - associated_change_set
   MultiNodeObsoletion:
     aliases:
     - multi node deprecation
@@ -103,8 +105,7 @@ classes:
         range: NodeObsoletion
       change_description:
         string_serialization: obsolete multiple {change set}
-      associated change set:
-        is_a: change_set
+      associated_change_set:
         description: >-
           All changes associated with a set of obsoletions. This change
           set is the composed change set rather than the set of individual changes.
@@ -112,6 +113,7 @@ classes:
           D` and we obsolete {B,C}, then the individual changes are `A moves from
           B to C` and `B moves from C to D`, but the composed change set is `A moves
           from B to D`"
+          
   Transaction:
     is_a: Change
     description: A change that is a composition of a set of changes, where those changes
@@ -124,12 +126,12 @@ classes:
     description: A summary statistic for a set of changes of the same type, grouped
       by zero or more node properties
     slot_usage:
-      change type:
-        range: ChangeClassType
-      count:
-        range: integer
-      property_value_set:
-        description: Summary statistic is grouped by these constraints
+      #change type:
+      #  range: ChangeClassType
+      #count:
+      #  range: integer
+      #property_value_set:
+      #  description: Summary statistic is grouped by these constraints
   ChangeMixin:
     mixin: true
     description: root class for all change mixins
@@ -233,7 +235,7 @@ classes:
     - language
     - datatype
     slot_usage:
-      subject:
+      about_edge:
         comments:
         - if subject is empty, use the about field of the last node change
     todos:
@@ -460,11 +462,11 @@ classes:
       and NODE receives a new name. This change consists of compose of (1) a node
       rename where NAME is replaced by a different name (2) a new synonym
     slot_usage:
-      change 1:
-        range: NodeRename
-      change 2:
-        range: NewSynonym
-        description: ''
+      #change_1:
+      #  range: NodeRename
+      #change 2:
+      #  range: NewSynonym
+      #  description: ''
       change_description:
         string_serialization: synonym {synonym} becomes new name of {about_node},
           and name {name} becomes a synonym
@@ -606,7 +608,7 @@ classes:
         string_serialization: removing {about_node} from {subset}
       about_node:
         description: The node that is removed from the subset
-      subset:
+      in_subset:
         description: The subset from which the node is to be removed
   NodeObsoletion:
     aliases:
@@ -625,7 +627,7 @@ classes:
     slot_usage:
       change_description:
         string_serialization: obsoleting {about_node}
-      associated change set:
+      associated_change_set:
         is_a: change_set
         description: 'All changes forced as a result of this obsoletion. For example,
           starting with `A subClassOf B subClassOf C`, if we obsolete node B, then
@@ -645,13 +647,12 @@ classes:
     mixins:
     - Unobsoletion
     description: unobsoletion of a node deprecates usage of that node. Rarely applied.
+    slots:
+    - has_direct_replacement
+    - has_nondirect_replacement
     slot_usage:
       change_description:
         string_serialization: unobsoleting {about_node}
-      replaced by:
-        range: Node
-      consider:
-        range: Node
     see_also:
     - http://wiki.geneontology.org/index.php/Restoring_an_Obsolete_Ontology_Term
   NodeCreation:
@@ -789,6 +790,9 @@ slots:
     slot_uri: dcterms:creator
   change_date:
     slot_uri: dcterms:date
+  term_tracker_issue:
+    exact_mappings:
+      - IAO:0000233
   has_undo:
     domain: Change
     description: A change that reverses this change
@@ -908,6 +912,14 @@ slots:
     multivalued: true
     inlined: true
     inlined_as_list: true
+  associated_change_set:
+    is_a: change_set
+    description: 'All changes forced as a result of this obsoletion. For example,
+      starting with `A subClassOf B subClassOf C`, if we obsolete node B, then
+      we may decide to bundle in a node move change of A from B to C. Note: this
+      change set is not considered a part of the obsoletion, as obsoletion is
+      considered atomic/simple. Instead this is a reference to a change set that
+      may exist elsewhere'
   has_replacement:
     domain: NodeObsoletion
     range: Node
