@@ -1,5 +1,7 @@
 generator_args:
   owl:
+      add_root_classes: true
+      mixins_as_expressions: true
       metaclasses: false
       type_objects: false
     
