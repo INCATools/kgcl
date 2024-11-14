@@ -41,6 +41,7 @@ classes:
     - was_generated_by
     - see_also
     - pull_request
+    - term_tracker_issue
     - creator
     - change_date
     - contributor
