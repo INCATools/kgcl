@@ -140,6 +140,8 @@ classes:
     slots:
     - about
     - has_undo
+    - old_value
+    - new_value
   Obsoletion:
     aliases:
     - deprecation
