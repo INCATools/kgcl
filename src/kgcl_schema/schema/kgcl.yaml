@@ -137,6 +137,9 @@ classes:
   ChangeMixin:
     mixin: true
     description: root class for all change mixins
+    slots:
+    - about
+    - has_undo
   Obsoletion:
     aliases:
     - deprecation
