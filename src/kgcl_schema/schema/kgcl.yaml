@@ -46,6 +46,7 @@ classes:
     - contributor
     - has_undo
     - change_description
+    - associated_change_set
     slot_usage:
       was_generated_by:
         comments:
@@ -90,7 +91,6 @@ classes:
     description: A change that is is a composition of other changes
     slots:
     - change_set
-    - associated_change_set
   MultiNodeObsoletion:
     aliases:
     - multi node deprecation
