@@ -230,7 +230,18 @@
         click NodeChange href "../NodeChange"
 
 
+      SimpleChange : associated_change_set
+
+
+
+
+    SimpleChange --&gt; "*" Change : associated_change_set
+    click Change href "../Change"
+
+
       SimpleChange : change_date
+
+      SimpleChange : change_description
 
       SimpleChange : contributor
 
@@ -266,6 +277,8 @@
       SimpleChange : pull_request
 
       SimpleChange : see_also
+
+      SimpleChange : term_tracker_issue
 
       SimpleChange : type
 
@@ -385,6 +398,12 @@
 <td><a href="../Change/">Change</a></td>
 </tr>
 <tr>
+<td><a href="../term_tracker_issue/">term_tracker_issue</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td></td>
+<td><a href="../Change/">Change</a></td>
+</tr>
+<tr>
 <td><a href="../creator/">creator</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
 <td></td>
@@ -406,6 +425,18 @@
 <td><a href="../has_undo/">has_undo</a></td>
 <td>0..1 <br/> <a href="../Change/">Change</a></td>
 <td>A change that reverses this change</td>
+<td><a href="../Change/">Change</a></td>
+</tr>
+<tr>
+<td><a href="../change_description/">change_description</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>A string serialization of the change</td>
+<td><a href="../Change/">Change</a></td>
+</tr>
+<tr>
+<td><a href="../associated_change_set/">associated_change_set</a></td>
+<td>* <br/> <a href="../Change/">Change</a></td>
+<td>All changes forced as a result of this obsoletion</td>
 <td><a href="../Change/">Change</a></td>
 </tr>
 </tbody>
@@ -480,6 +511,7 @@ attributes:
     owner: SimpleChange
     domain_of:
     - SimpleChange
+    - ChangeMixin
     - NodeRename
     - SetLanguageForName
     - RemoveSynonym
@@ -501,6 +533,7 @@ attributes:
     owner: SimpleChange
     domain_of:
     - SimpleChange
+    - ChangeMixin
     - NodeRename
     - SetLanguageForName
     - NewSynonym
@@ -638,6 +671,19 @@ attributes:
     domain_of:
     - Change
     range: string
+  term_tracker_issue:
+    name: term_tracker_issue
+    comments:
+    - If this change has an issue on a system like github, include the URL here
+    from_schema: https://w3id.org/kgcl
+    exact_mappings:
+    - IAO:0000233
+    rank: 1000
+    alias: term_tracker_issue
+    owner: SimpleChange
+    domain_of:
+    - Change
+    range: string
   creator:
     name: creator
     comments:
@@ -682,8 +728,51 @@ attributes:
     owner: SimpleChange
     domain_of:
     - Change
+    - ChangeMixin
     range: Change
     multivalued: false
+  change_description:
+    name: change_description
+    description: A string serialization of the change. This should be both human-readable,
+      and parseable.
+    comments:
+    - '{''Form 1'': ''IRIs are denoted by CURIEs, optionally followed by label in
+      parenthesis''}'
+    - '{''Form 2'': "IRIs are denoted by the rdfs:label in single quotes, e.g. ''nervous
+      system''"}'
+    examples:
+    - value: rename UBERON:0002398 from 'manus' to 'hand'
+    - value: move 'hand' from 'part of' 'hindlimb' to 'part of' 'forelimb'
+    - value: merge 'cellular metabolic process' into 'metabolic process'
+    - value: search and replace 'metabolic process' with 'metabolism' in all labels
+        under 'biological process'
+    - value: search and replace 'metabolic process' with 'metabolism' in all labels
+        under 'biological process' retaining as 'exact synonym'
+    from_schema: https://w3id.org/kgcl
+    rank: 1000
+    alias: change_description
+    owner: SimpleChange
+    domain_of:
+    - Change
+    range: string
+  associated_change_set:
+    name: associated_change_set
+    description: 'All changes forced as a result of this obsoletion. For example,
+      starting with `A subClassOf B subClassOf C`, if we obsolete node B, then we
+      may decide to bundle in a node move change of A from B to C. Note: this change
+      set is not considered a part of the obsoletion, as obsoletion is considered
+      atomic/simple. Instead this is a reference to a change set that may exist elsewhere'
+    from_schema: https://w3id.org/kgcl
+    rank: 1000
+    is_a: change_set
+    alias: associated_change_set
+    owner: SimpleChange
+    domain_of:
+    - Change
+    range: Change
+    multivalued: true
+    inlined: true
+    inlined_as_list: true
 
 </code></pre>
 </details>

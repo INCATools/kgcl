@@ -225,6 +225,24 @@
         click RemoveFromSubset href "../RemoveFromSubset"
 
 
+      SubsetMembershipChange : about
+
+
+
+
+    SubsetMembershipChange --&gt; "0..1" OntologyElement : about
+    click OntologyElement href "../OntologyElement"
+
+
+      SubsetMembershipChange : has_undo
+
+
+
+
+    SubsetMembershipChange --&gt; "0..1" Change : has_undo
+    click Change href "../Change"
+
+
       SubsetMembershipChange : in_subset
 
 
@@ -233,6 +251,10 @@
     SubsetMembershipChange --&gt; "0..1" OntologySubset : in_subset
     click OntologySubset href "../OntologySubset"
 
+
+      SubsetMembershipChange : new_value
+
+      SubsetMembershipChange : old_value
 
 
 </div>
@@ -263,6 +285,30 @@
 <td>0..1 <br/> <a href="../OntologySubset/">OntologySubset</a></td>
 <td>The subset that pertains to this change</td>
 <td>direct</td>
+</tr>
+<tr>
+<td><a href="../about/">about</a></td>
+<td>0..1 <br/> <a href="../OntologyElement/">OntologyElement</a></td>
+<td>The 'focus' entity on which the change operates</td>
+<td><a href="../ChangeMixin/">ChangeMixin</a></td>
+</tr>
+<tr>
+<td><a href="../has_undo/">has_undo</a></td>
+<td>0..1 <br/> <a href="../Change/">Change</a></td>
+<td>A change that reverses this change</td>
+<td><a href="../ChangeMixin/">ChangeMixin</a></td>
+</tr>
+<tr>
+<td><a href="../old_value/">old_value</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>The value of a property held in the old instance of the ontology</td>
+<td><a href="../ChangeMixin/">ChangeMixin</a></td>
+</tr>
+<tr>
+<td><a href="../new_value/">new_value</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>The value of a property held in the new instance of the ontology</td>
+<td><a href="../ChangeMixin/">ChangeMixin</a></td>
 </tr>
 </tbody>
 </table>
@@ -339,6 +385,74 @@ attributes:
     domain_of:
     - SubsetMembershipChange
     range: OntologySubset
+  about:
+    name: about
+    description: The 'focus' entity on which the change operates
+    from_schema: https://w3id.org/kgcl
+    rank: 1000
+    alias: about
+    owner: SubsetMembershipChange
+    domain_of:
+    - ChangeMixin
+    range: OntologyElement
+    multivalued: false
+  has_undo:
+    name: has_undo
+    description: A change that reverses this change
+    from_schema: https://w3id.org/kgcl
+    rank: 1000
+    domain: Change
+    alias: has_undo
+    owner: SubsetMembershipChange
+    domain_of:
+    - Change
+    - ChangeMixin
+    range: Change
+    multivalued: false
+  old_value:
+    name: old_value
+    description: The value of a property held in the old instance of the ontology
+    from_schema: https://w3id.org/kgcl
+    rank: 1000
+    alias: old_value
+    owner: SubsetMembershipChange
+    domain_of:
+    - SimpleChange
+    - ChangeMixin
+    - NodeRename
+    - SetLanguageForName
+    - RemoveSynonym
+    - SynonymReplacement
+    - SynonymPredicateChange
+    - MappingReplacement
+    - MappingPredicateChange
+    - MetadataAssertionReplacement
+    - MetadataAssertionPredicateChange
+    - RemoveTextDefinition
+    - TextDefinitionReplacement
+    range: string
+  new_value:
+    name: new_value
+    description: The value of a property held in the new instance of the ontology
+    from_schema: https://w3id.org/kgcl
+    rank: 1000
+    alias: new_value
+    owner: SubsetMembershipChange
+    domain_of:
+    - SimpleChange
+    - ChangeMixin
+    - NodeRename
+    - SetLanguageForName
+    - NewSynonym
+    - SynonymReplacement
+    - SynonymPredicateChange
+    - MappingReplacement
+    - MappingPredicateChange
+    - MetadataAssertionReplacement
+    - MetadataAssertionPredicateChange
+    - NewTextDefinition
+    - TextDefinitionReplacement
+    range: string
 
 </code></pre>
 </details>

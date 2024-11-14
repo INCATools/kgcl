@@ -353,123 +353,8 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../MultiNodeObsoletion/">MultiNodeObsoletion</a></td>
-<td>A complex change consisting of multiple obsoletions</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../PlaceUnder/">PlaceUnder</a></td>
-<td>An edge creation where the predicate is owl:subClassOf</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../NodeCreation/">NodeCreation</a></td>
-<td>a node change in which a new node is created</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../NodeDeletion/">NodeDeletion</a></td>
-<td>Deletion of a node from the graph</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../RemoveNodeFromSubset/">RemoveNodeFromSubset</a></td>
-<td>Removes a node from a subset, by removing an annotation</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../InstanceNode/">InstanceNode</a></td>
-<td>A node that is an individual</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../NodeAnnotationReplacement/">NodeAnnotationReplacement</a></td>
-<td>A node annotation change where the change replaces a particular property valu...</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../NodeDeepening/">NodeDeepening</a></td>
-<td>A node move in which a node where the destination is a proper descendant of t...</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../SynonymReplacement/">SynonymReplacement</a></td>
-<td>A node synonym change where the text of a synonym is changed</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../MappingPredicateChange/">MappingPredicateChange</a></td>
-<td>A node mapping change where the predicate of a mapping is changed</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../MappingCreation/">MappingCreation</a></td>
-<td>A specific kind of edge creation in which the created edge is a mapping</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../Transaction/">Transaction</a></td>
-<td>A change that is a composition of a set of changes, where those changes are t...</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../SetLanguageForName/">SetLanguageForName</a></td>
-<td>A node change where the string value for the name is unchanged but the langua...</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../NodeShallowing/">NodeShallowing</a></td>
-<td>The opposite of node deepening</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../NodeObsoletion/">NodeObsoletion</a></td>
-<td>Obsoletion of a node deprecates usage of that node, but does not delete it</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../ObjectPropertyCreation/">ObjectPropertyCreation</a></td>
-<td>A node creation where the owl type is 'ObjectProperty'</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../RemoveSynonym/">RemoveSynonym</a></td>
-<td>A node synonym change where a synonym is deleted</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../NewMetadataAssertion/">NewMetadataAssertion</a></td>
-<td>A node metadata assertion change where a metadata assertion is added to a nod...</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../Change/">Change</a></td>
-<td>Any change perform on an ontology or knowledge graph</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../MetadataAssertionReplacement/">MetadataAssertionReplacement</a></td>
-<td>A node metadata assertion change where the object of a metadata assertion is ...</td>
-<td>no</td>
-</tr>
-<tr>
 <td><a href="../AddNodeToSubset/">AddNodeToSubset</a></td>
 <td>Places a node inside a subset, by annotating that node</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../NameBecomesSynonym/">NameBecomesSynonym</a></td>
-<td>A node synonym where the name NAME of an node NODE moves to a synonym, and NO...</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../EdgeCreation/">EdgeCreation</a></td>
-<td>An edge change in which a de-novo edge is created</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../LogicalAxiomChange/">LogicalAxiomChange</a></td>
-<td>A simple change where a logical axiom is changed, where the logical axiom can...</td>
 <td>no</td>
 </tr>
 <tr>
@@ -478,13 +363,138 @@
 <td>no</td>
 </tr>
 <tr>
-<td><a href="../EdgeRewiring/">EdgeRewiring</a></td>
-<td>An edge change where one node is replaced with another, as in the case of obs...</td>
+<td><a href="../Transaction/">Transaction</a></td>
+<td>A change that is a composition of a set of changes, where those changes are t...</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../SimpleChange/">SimpleChange</a></td>
+<td>A change that is about a single ontology element</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../PlaceUnder/">PlaceUnder</a></td>
+<td>An edge creation where the predicate is owl:subClassOf</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../SynonymPredicateChange/">SynonymPredicateChange</a></td>
+<td>A node synonym change where the predicate of a synonym is changed</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../MappingPredicateChange/">MappingPredicateChange</a></td>
+<td>A node mapping change where the predicate of a mapping is changed</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../NodeObsoletion/">NodeObsoletion</a></td>
+<td>Obsoletion of a node deprecates usage of that node, but does not delete it</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../NewTextDefinition/">NewTextDefinition</a></td>
+<td>A node change where a de-novo text definition is created</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../ClassNode/">ClassNode</a></td>
+<td>A node that is a class</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../PredicateChange/">PredicateChange</a></td>
+<td>An edge change where the predicate (relationship type) is modified</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../TextDefinitionReplacement/">TextDefinitionReplacement</a></td>
+<td>A node change where a text definition is modified</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../MappingCreation/">MappingCreation</a></td>
+<td>A specific kind of edge creation in which the created edge is a mapping</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../NodeAnnotationChange/">NodeAnnotationChange</a></td>
+<td>A node change where the change alters node properties/annotations</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../NodeCreation/">NodeCreation</a></td>
+<td>a node change in which a new node is created</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../MetadataAssertionPredicateChange/">MetadataAssertionPredicateChange</a></td>
+<td>A node metadata assertion change where the predicate of a metadata assertion ...</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../EdgeChange/">EdgeChange</a></td>
+<td>A change in which the element that is the focus of the change is an edge</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../OntologySubset/">OntologySubset</a></td>
+<td></td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../EdgeCreation/">EdgeCreation</a></td>
+<td>An edge change in which a de-novo edge is created</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../NodeTextDefinitionChange/">NodeTextDefinitionChange</a></td>
+<td>A node change where the text definition is changed</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../RemoveUnder/">RemoveUnder</a></td>
+<td>An edge deletion where the predicate is owl:subClassOf</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../SetLanguageForName/">SetLanguageForName</a></td>
+<td>A node change where the string value for the name is unchanged but the langua...</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../NodeAnnotationReplacement/">NodeAnnotationReplacement</a></td>
+<td>A node annotation change where the change replaces a particular property valu...</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../NodeDirectMerge/">NodeDirectMerge</a></td>
+<td>An obsoletion change in which all metadata (including name/label) from the so...</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../Agent/">Agent</a></td>
+<td>a provence-generating agent</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../ObjectPropertyCreation/">ObjectPropertyCreation</a></td>
+<td>A node creation where the owl type is 'ObjectProperty'</td>
 <td>no</td>
 </tr>
 <tr>
 <td><a href="../Activity/">Activity</a></td>
 <td>a provence-generating activity</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../NameBecomesSynonym/">NameBecomesSynonym</a></td>
+<td>A node synonym where the name NAME of an node NODE moves to a synonym, and NO...</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../MultiNodeObsoletion/">MultiNodeObsoletion</a></td>
+<td>A complex change consisting of multiple obsoletions</td>
 <td>no</td>
 </tr>
 <tr>
@@ -498,83 +508,28 @@
 <td>no</td>
 </tr>
 <tr>
-<td><a href="../ClassNode/">ClassNode</a></td>
-<td>A node that is a class</td>
+<td><a href="../SynonymReplacement/">SynonymReplacement</a></td>
+<td>A node synonym change where the text of a synonym is changed</td>
 <td>no</td>
 </tr>
 <tr>
-<td><a href="../MappingReplacement/">MappingReplacement</a></td>
-<td>A node mapping change where the object of a mapping is changed</td>
+<td><a href="../LogicalAxiomChange/">LogicalAxiomChange</a></td>
+<td>A simple change where a logical axiom is changed, where the logical axiom can...</td>
 <td>no</td>
 </tr>
 <tr>
-<td><a href="../SimpleChange/">SimpleChange</a></td>
-<td>A change that is about a single ontology element</td>
+<td><a href="../MetadataAssertionReplacement/">MetadataAssertionReplacement</a></td>
+<td>A node metadata assertion change where the object of a metadata assertion is ...</td>
 <td>no</td>
 </tr>
 <tr>
-<td><a href="../NodeChange/">NodeChange</a></td>
-<td>A simple change where the change is about a node</td>
+<td><a href="../RemoveNodeFromSubset/">RemoveNodeFromSubset</a></td>
+<td>Removes a node from a subset, by removing an annotation</td>
 <td>no</td>
 </tr>
 <tr>
-<td><a href="../NodeRename/">NodeRename</a></td>
-<td>A node change where the name (aka rdfs:label) of the node changes</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../RemoveMetadataAssertion/">RemoveMetadataAssertion</a></td>
-<td>A node metadata assertion change where a metadata assertion is deleted</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../MetadataAssertionPredicateChange/">MetadataAssertionPredicateChange</a></td>
-<td>A node metadata assertion change where the predicate of a metadata assertion ...</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../TextDefinitionReplacement/">TextDefinitionReplacement</a></td>
-<td>A node change where a text definition is modified</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../SynonymPredicateChange/">SynonymPredicateChange</a></td>
-<td>A node synonym change where the predicate of a synonym is changed</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../RemoveUnder/">RemoveUnder</a></td>
-<td>An edge deletion where the predicate is owl:subClassOf</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../OntologySubset/">OntologySubset</a></td>
-<td></td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../EdgeDeletion/">EdgeDeletion</a></td>
-<td>An edge change in which an edge is removed</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../RemoveMapping/">RemoveMapping</a></td>
-<td>A node mapping change where a mapping is deleted</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../EdgeChange/">EdgeChange</a></td>
-<td>A change in which the element that is the focus of the change is an edge</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../ComplexChange/">ComplexChange</a></td>
-<td>A change that is is a composition of other changes</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../NewSynonym/">NewSynonym</a></td>
-<td>A node synonym change where a de-novo synonym is created</td>
+<td><a href="../NodeDeepening/">NodeDeepening</a></td>
+<td>A node move in which a node where the destination is a proper descendant of t...</td>
 <td>no</td>
 </tr>
 <tr>
@@ -583,43 +538,28 @@
 <td>no</td>
 </tr>
 <tr>
-<td><a href="../NodeDirectMerge/">NodeDirectMerge</a></td>
-<td>An obsoletion change in which all metadata (including name/label) from the so...</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../NewTextDefinition/">NewTextDefinition</a></td>
-<td>A node change where a de-novo text definition is created</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../NodeObsoletionWithNoDirectReplacement/">NodeObsoletionWithNoDirectReplacement</a></td>
-<td>An obsoletion change in which there is no direct replacement</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../NodeTextDefinitionChange/">NodeTextDefinitionChange</a></td>
-<td>A node change where the text definition is changed</td>
-<td>no</td>
-</tr>
-<tr>
 <td><a href="../RemoveTextDefinition/">RemoveTextDefinition</a></td>
 <td>A node change where a text definition is deleted</td>
 <td>no</td>
 </tr>
 <tr>
-<td><a href="../NodeObsoletionWithDirectReplacement/">NodeObsoletionWithDirectReplacement</a></td>
-<td>An obsoletion change in which information from the obsoleted node is selectiv...</td>
+<td><a href="../InstanceNode/">InstanceNode</a></td>
+<td>A node that is an individual</td>
 <td>no</td>
 </tr>
 <tr>
-<td><a href="../NodeMove/">NodeMove</a></td>
-<td>A node move is a combination of deleting a parent edge and adding a parent ed...</td>
+<td><a href="../RemoveSynonym/">RemoveSynonym</a></td>
+<td>A node synonym change where a synonym is deleted</td>
 <td>no</td>
 </tr>
 <tr>
-<td><a href="../ClassCreation/">ClassCreation</a></td>
-<td>A node creation where the owl type is 'owl:Class'</td>
+<td><a href="../NodeChange/">NodeChange</a></td>
+<td>A simple change where the change is about a node</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../Change/">Change</a></td>
+<td>Any change perform on an ontology or knowledge graph</td>
 <td>no</td>
 </tr>
 <tr>
@@ -628,8 +568,33 @@
 <td>no</td>
 </tr>
 <tr>
-<td><a href="../EdgeObsoletion/">EdgeObsoletion</a></td>
-<td>An edge change in which an edge is obsoleted</td>
+<td><a href="../NodeDeletion/">NodeDeletion</a></td>
+<td>Deletion of a node from the graph</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../RemoveMetadataAssertion/">RemoveMetadataAssertion</a></td>
+<td>A node metadata assertion change where a metadata assertion is deleted</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../EdgeRewiring/">EdgeRewiring</a></td>
+<td>An edge change where one node is replaced with another, as in the case of obs...</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../NodeMove/">NodeMove</a></td>
+<td>A node move is a combination of deleting a parent edge and adding a parent ed...</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../EdgeDeletion/">EdgeDeletion</a></td>
+<td>An edge change in which an edge is removed</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../NodeObsoletionWithDirectReplacement/">NodeObsoletionWithDirectReplacement</a></td>
+<td>An obsoletion change in which information from the obsoleted node is selectiv...</td>
 <td>no</td>
 </tr>
 <tr>
@@ -638,13 +603,33 @@
 <td>no</td>
 </tr>
 <tr>
-<td><a href="../PredicateChange/">PredicateChange</a></td>
-<td>An edge change where the predicate (relationship type) is modified</td>
+<td><a href="../EdgeObsoletion/">EdgeObsoletion</a></td>
+<td>An edge change in which an edge is obsoleted</td>
 <td>no</td>
 </tr>
 <tr>
-<td><a href="../Agent/">Agent</a></td>
-<td>a provence-generating agent</td>
+<td><a href="../ComplexChange/">ComplexChange</a></td>
+<td>A change that is is a composition of other changes</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../MappingReplacement/">MappingReplacement</a></td>
+<td>A node mapping change where the object of a mapping is changed</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../RemoveMapping/">RemoveMapping</a></td>
+<td>A node mapping change where a mapping is deleted</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../NewSynonym/">NewSynonym</a></td>
+<td>A node synonym change where a de-novo synonym is created</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../ClassCreation/">ClassCreation</a></td>
+<td>A node creation where the owl type is 'owl:Class'</td>
 <td>no</td>
 </tr>
 <tr>
@@ -653,8 +638,23 @@
 <td>no</td>
 </tr>
 <tr>
-<td><a href="../NodeAnnotationChange/">NodeAnnotationChange</a></td>
-<td>A node change where the change alters node properties/annotations</td>
+<td><a href="../NewMetadataAssertion/">NewMetadataAssertion</a></td>
+<td>A node metadata assertion change where a metadata assertion is added to a nod...</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../NodeObsoletionWithNoDirectReplacement/">NodeObsoletionWithNoDirectReplacement</a></td>
+<td>An obsoletion change in which there is no direct replacement</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../NodeShallowing/">NodeShallowing</a></td>
+<td>The opposite of node deepening</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../NodeRename/">NodeRename</a></td>
+<td>A node change where the name (aka rdfs:label) of the node changes</td>
 <td>no</td>
 </tr>
 </tbody>

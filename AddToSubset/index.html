@@ -228,6 +228,24 @@
         click AddNodeToSubset href "../AddNodeToSubset"
 
 
+      AddToSubset : about
+
+
+
+
+    AddToSubset --&gt; "0..1" OntologyElement : about
+    click OntologyElement href "../OntologyElement"
+
+
+      AddToSubset : has_undo
+
+
+
+
+    AddToSubset --&gt; "0..1" Change : has_undo
+    click Change href "../Change"
+
+
       AddToSubset : in_subset
 
 
@@ -236,6 +254,10 @@
     AddToSubset --&gt; "0..1" OntologySubset : in_subset
     click OntologySubset href "../OntologySubset"
 
+
+      AddToSubset : new_value
+
+      AddToSubset : old_value
 
 
 </div>
@@ -266,6 +288,30 @@
 <td>subset that the element is being placed inside</td>
 <td><a href="../SubsetMembershipChange/">SubsetMembershipChange</a></td>
 </tr>
+<tr>
+<td><a href="../about/">about</a></td>
+<td>0..1 <br/> <a href="../OntologyElement/">OntologyElement</a></td>
+<td>The 'focus' entity on which the change operates</td>
+<td><a href="../ChangeMixin/">ChangeMixin</a></td>
+</tr>
+<tr>
+<td><a href="../has_undo/">has_undo</a></td>
+<td>0..1 <br/> <a href="../Change/">Change</a></td>
+<td>A change that reverses this change</td>
+<td><a href="../ChangeMixin/">ChangeMixin</a></td>
+</tr>
+<tr>
+<td><a href="../old_value/">old_value</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>The value of a property held in the old instance of the ontology</td>
+<td><a href="../ChangeMixin/">ChangeMixin</a></td>
+</tr>
+<tr>
+<td><a href="../new_value/">new_value</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>The value of a property held in the new instance of the ontology</td>
+<td><a href="../ChangeMixin/">ChangeMixin</a></td>
+</tr>
 </tbody>
 </table>
 <h2 id="mixin-usage">Mixin Usage</h2>
@@ -294,6 +340,12 @@
 </tr>
 </thead>
 <tbody>
+<tr>
+<td><a href="../RemoveFromSubset/">RemoveFromSubset</a></td>
+<td><a href="../has_undo/">has_undo</a></td>
+<td>range</td>
+<td><a href="./">AddToSubset</a></td>
+</tr>
 <tr>
 <td><a href="../RemoveNodeFromSubset/">RemoveNodeFromSubset</a></td>
 <td><a href="../has_undo/">has_undo</a></td>
@@ -364,6 +416,74 @@ attributes:
     domain_of:
     - SubsetMembershipChange
     range: OntologySubset
+  about:
+    name: about
+    description: The 'focus' entity on which the change operates
+    from_schema: https://w3id.org/kgcl
+    rank: 1000
+    alias: about
+    owner: AddToSubset
+    domain_of:
+    - ChangeMixin
+    range: OntologyElement
+    multivalued: false
+  has_undo:
+    name: has_undo
+    description: A change that reverses this change
+    from_schema: https://w3id.org/kgcl
+    rank: 1000
+    domain: Change
+    alias: has_undo
+    owner: AddToSubset
+    domain_of:
+    - Change
+    - ChangeMixin
+    range: Change
+    multivalued: false
+  old_value:
+    name: old_value
+    description: The value of a property held in the old instance of the ontology
+    from_schema: https://w3id.org/kgcl
+    rank: 1000
+    alias: old_value
+    owner: AddToSubset
+    domain_of:
+    - SimpleChange
+    - ChangeMixin
+    - NodeRename
+    - SetLanguageForName
+    - RemoveSynonym
+    - SynonymReplacement
+    - SynonymPredicateChange
+    - MappingReplacement
+    - MappingPredicateChange
+    - MetadataAssertionReplacement
+    - MetadataAssertionPredicateChange
+    - RemoveTextDefinition
+    - TextDefinitionReplacement
+    range: string
+  new_value:
+    name: new_value
+    description: The value of a property held in the new instance of the ontology
+    from_schema: https://w3id.org/kgcl
+    rank: 1000
+    alias: new_value
+    owner: AddToSubset
+    domain_of:
+    - SimpleChange
+    - ChangeMixin
+    - NodeRename
+    - SetLanguageForName
+    - NewSynonym
+    - SynonymReplacement
+    - SynonymPredicateChange
+    - MappingReplacement
+    - MappingPredicateChange
+    - MetadataAssertionReplacement
+    - MetadataAssertionPredicateChange
+    - NewTextDefinition
+    - TextDefinitionReplacement
+    range: string
 
 </code></pre>
 </details>

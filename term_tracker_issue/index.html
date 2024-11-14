@@ -8,14 +8,14 @@
       
       
       
-        <link rel="canonical" href="https://incatools.github.io/kgcl/type/">
+        <link rel="canonical" href="https://incatools.github.io/kgcl/term_tracker_issue/">
       
       <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-8.5.10">
     
     
       
-        <title>Slot: type - KGCL</title>
+        <title>Slot: term_tracker_issue - KGCL</title>
       
     
     
@@ -64,7 +64,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#slot-type" class="md-skip">
+        <a href="#slot-term_tracker_issue" class="md-skip">
           Skip to content
         </a>
       
@@ -97,7 +97,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Slot: type
+              Slot: term_tracker_issue
             
           </span>
         </div>
@@ -332,14 +332,14 @@
                 
                   
 
-  <a href="https://github.com/INCATools/kgcl/edit/master/docs/type.md" title="Edit this page" class="md-content__button md-icon">
+  <a href="https://github.com/INCATools/kgcl/edit/master/docs/term_tracker_issue.md" title="Edit this page" class="md-content__button md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
   </a>
 
 
-<h1 id="slot-type">Slot: type</h1>
-<p>URI: <a href="rdf:type">rdf:type</a></p>
+<h1 id="slot-term_tracker_issue">Slot: term_tracker_issue</h1>
+<p>URI: <a href="http://w3id.org/kgcl/term_tracker_issue">kgcl:term_tracker_issue</a></p>
 <!-- no inheritance hierarchy -->
 
 <h2 id="applicable-classes">Applicable Classes</h2>
@@ -530,7 +530,7 @@
 <tr>
 <td><a href="../Change/">Change</a></td>
 <td>Any change perform on an ontology or knowledge graph</td>
-<td>no</td>
+<td>yes</td>
 </tr>
 <tr>
 <td><a href="../NodeMappingChange/">NodeMappingChange</a></td>
@@ -649,23 +649,27 @@
 <tbody>
 <tr>
 <td>self</td>
-<td>rdf:type</td>
+<td>kgcl:term_tracker_issue</td>
 </tr>
 <tr>
 <td>native</td>
-<td>kgcl:type</td>
+<td>kgcl:term_tracker_issue</td>
+</tr>
+<tr>
+<td>exact</td>
+<td>IAO:0000233</td>
 </tr>
 </tbody>
 </table>
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 
-<pre><code class="language-yaml">name: type
+<pre><code class="language-yaml">name: term_tracker_issue
 from_schema: https://w3id.org/kgcl
+exact_mappings:
+- IAO:0000233
 rank: 1000
-slot_uri: rdf:type
-designates_type: true
-alias: type
+alias: term_tracker_issue
 domain_of:
 - Change
 range: string

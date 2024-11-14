@@ -228,6 +228,28 @@
       ChangeMixin &lt;|-- SubsetMembershipChange
         click SubsetMembershipChange href "../SubsetMembershipChange"
 
+      ChangeMixin : about
+
+
+
+
+    ChangeMixin --&gt; "0..1" OntologyElement : about
+    click OntologyElement href "../OntologyElement"
+
+
+      ChangeMixin : has_undo
+
+
+
+
+    ChangeMixin --&gt; "0..1" Change : has_undo
+    click Change href "../Change"
+
+
+      ChangeMixin : new_value
+
+      ChangeMixin : old_value
+
 
 </div>
 <h2 id="inheritance">Inheritance</h2>
@@ -254,10 +276,28 @@
 </thead>
 <tbody>
 <tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
+<td><a href="../about/">about</a></td>
+<td>0..1 <br/> <a href="../OntologyElement/">OntologyElement</a></td>
+<td>The 'focus' entity on which the change operates</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../has_undo/">has_undo</a></td>
+<td>0..1 <br/> <a href="../Change/">Change</a></td>
+<td>A change that reverses this change</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../old_value/">old_value</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>The value of a property held in the old instance of the ontology</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../new_value/">new_value</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>The value of a property held in the new instance of the ontology</td>
+<td>direct</td>
 </tr>
 </tbody>
 </table>
@@ -308,6 +348,11 @@
 description: root class for all change mixins
 from_schema: https://w3id.org/kgcl
 mixin: true
+slots:
+- about
+- has_undo
+- old_value
+- new_value
 
 </code></pre>
 </details>
@@ -317,6 +362,75 @@ mixin: true
 description: root class for all change mixins
 from_schema: https://w3id.org/kgcl
 mixin: true
+attributes:
+  about:
+    name: about
+    description: The 'focus' entity on which the change operates
+    from_schema: https://w3id.org/kgcl
+    rank: 1000
+    alias: about
+    owner: ChangeMixin
+    domain_of:
+    - ChangeMixin
+    range: OntologyElement
+    multivalued: false
+  has_undo:
+    name: has_undo
+    description: A change that reverses this change
+    from_schema: https://w3id.org/kgcl
+    rank: 1000
+    domain: Change
+    alias: has_undo
+    owner: ChangeMixin
+    domain_of:
+    - Change
+    - ChangeMixin
+    range: Change
+    multivalued: false
+  old_value:
+    name: old_value
+    description: The value of a property held in the old instance of the ontology
+    from_schema: https://w3id.org/kgcl
+    rank: 1000
+    alias: old_value
+    owner: ChangeMixin
+    domain_of:
+    - SimpleChange
+    - ChangeMixin
+    - NodeRename
+    - SetLanguageForName
+    - RemoveSynonym
+    - SynonymReplacement
+    - SynonymPredicateChange
+    - MappingReplacement
+    - MappingPredicateChange
+    - MetadataAssertionReplacement
+    - MetadataAssertionPredicateChange
+    - RemoveTextDefinition
+    - TextDefinitionReplacement
+    range: string
+  new_value:
+    name: new_value
+    description: The value of a property held in the new instance of the ontology
+    from_schema: https://w3id.org/kgcl
+    rank: 1000
+    alias: new_value
+    owner: ChangeMixin
+    domain_of:
+    - SimpleChange
+    - ChangeMixin
+    - NodeRename
+    - SetLanguageForName
+    - NewSynonym
+    - SynonymReplacement
+    - SynonymPredicateChange
+    - MappingReplacement
+    - MappingPredicateChange
+    - MetadataAssertionReplacement
+    - MetadataAssertionPredicateChange
+    - NewTextDefinition
+    - TextDefinitionReplacement
+    range: string
 
 </code></pre>
 </details>

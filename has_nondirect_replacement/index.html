@@ -361,8 +361,13 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../NodeDirectMerge/">NodeDirectMerge</a></td>
-<td>An obsoletion change in which all metadata (including name/label) from the so...</td>
+<td><a href="../NodeUnobsoletion/">NodeUnobsoletion</a></td>
+<td>unobsoletion of a node deprecates usage of that node</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../NodeObsoletionWithDirectReplacement/">NodeObsoletionWithDirectReplacement</a></td>
+<td>An obsoletion change in which information from the obsoleted node is selectiv...</td>
 <td>no</td>
 </tr>
 <tr>
@@ -371,14 +376,14 @@
 <td>no</td>
 </tr>
 <tr>
+<td><a href="../NodeDirectMerge/">NodeDirectMerge</a></td>
+<td>An obsoletion change in which all metadata (including name/label) from the so...</td>
+<td>no</td>
+</tr>
+<tr>
 <td><a href="../NodeObsoletionWithNoDirectReplacement/">NodeObsoletionWithNoDirectReplacement</a></td>
 <td>An obsoletion change in which there is no direct replacement</td>
 <td>yes</td>
-</tr>
-<tr>
-<td><a href="../NodeObsoletionWithDirectReplacement/">NodeObsoletionWithDirectReplacement</a></td>
-<td>An obsoletion change in which information from the obsoleted node is selectiv...</td>
-<td>no</td>
 </tr>
 </tbody>
 </table>
@@ -442,6 +447,7 @@ rank: 1000
 alias: has_nondirect_replacement
 domain_of:
 - NodeObsoletion
+- NodeUnobsoletion
 range: Node
 multivalued: true
 

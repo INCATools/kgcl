@@ -271,6 +271,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#inheritance" class="md-nav__link">
+    Inheritance
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#applicable-classes" class="md-nav__link">
     Applicable Classes
   </a>
@@ -341,8 +348,13 @@
 <h1 id="slot-change_set">Slot: change_set</h1>
 <p><em>A collection of changes</em></p>
 <p>URI: <a href="http://w3id.org/kgcl/change_set">kgcl:change_set</a></p>
-<!-- no inheritance hierarchy -->
-
+<h2 id="inheritance">Inheritance</h2>
+<ul>
+<li><strong>change_set</strong><ul>
+<li><a href="../associated_change_set/">associated_change_set</a></li>
+</ul>
+</li>
+</ul>
 <h2 id="applicable-classes">Applicable Classes</h2>
 <table>
 <thead>
@@ -354,13 +366,13 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../MultiNodeObsoletion/">MultiNodeObsoletion</a></td>
-<td>A complex change consisting of multiple obsoletions</td>
-<td>yes</td>
-</tr>
-<tr>
 <td><a href="../Session/">Session</a></td>
 <td>A session consists of a set of change sets bundled with the activities that g...</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../ComplexChange/">ComplexChange</a></td>
+<td>A change that is is a composition of other changes</td>
 <td>no</td>
 </tr>
 <tr>
@@ -369,9 +381,9 @@
 <td>no</td>
 </tr>
 <tr>
-<td><a href="../ComplexChange/">ComplexChange</a></td>
-<td>A change that is is a composition of other changes</td>
-<td>no</td>
+<td><a href="../MultiNodeObsoletion/">MultiNodeObsoletion</a></td>
+<td>A complex change consisting of multiple obsoletions</td>
+<td>yes</td>
 </tr>
 </tbody>
 </table>
