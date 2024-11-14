@@ -629,7 +629,7 @@ classes:
         is_a: change_set
         description: 'All changes forced as a result of this obsoletion. For example,
           starting with `A subClassOf B subClassOf C`, if we obsolete node B, then
-          we may decide to bundle in a node move change of A from B to C. Note: this
+          we may decide to bundle in a node move change of A from B to C. Note that this
           change set is not considered a part of the obsoletion, as obsoletion is
           considered atomic/simple. Instead this is a reference to a change set that
           may exist elsewhere'
@@ -675,7 +675,7 @@ classes:
     - http://wiki.geneontology.org/index.php/Guidelines_for_creating_a_GO_term
   ClassCreation:
     is_a: NodeCreation
-    description: A node creation where the owl type is 'owl:Class'
+    description: A node creation where the node is a class (as opposed to a relation)
     slots:
     - superclass
     slot_usage:
@@ -683,7 +683,7 @@ classes:
         string_serialization: create class {about_node}
   ObjectPropertyCreation:
     is_a: NodeCreation
-    description: A node creation where the owl type is 'ObjectProperty'
+    description: A node creation where the node is a property
     slot_usage:
       change_description:
         string_serialization: create object property {about_node}
@@ -691,7 +691,7 @@ classes:
     is_a: NodeChange
     mixins:
     - Deletion
-    description: Deletion of a node from the graph. Note it is recommended nodes are
+    description: Deletion of a node from the graph. Note: it is recommended nodes are
       obsoleted and never merged, but this operation exists to represent deletions
       in ontologies, accidental or otherwise
     slot_usage:
@@ -881,7 +881,7 @@ slots:
     deprecated: no longer required
     description: 'The type of a property (URI, CURIE, label) '
   change_description:
-    description: A string serialization of the change. This should be both human-readable,
+    description: A string serialization of the change. This should be both human-readable
       and parseable.
     comments:
     - Form 1: IRIs are denoted by CURIEs, optionally followed by label in parenthesis
@@ -896,7 +896,7 @@ slots:
         under 'biological process' retaining as 'exact synonym'
   has_textual_diff:
     description: A representation of character-level changes on a textual literal
-      property. For example, if a text definition may change by only a single character
+      property. For example, if a text definition changes by only a single character
       such as addition of a period, it is useful to be able to see this visually.
     comments:
     - this is NOT for representing the diff of the change as a whole.
@@ -928,7 +928,7 @@ slots:
     - if a node obsoletion C, C about N1, and C has direct replacement N2, and there
       exists an edge with an edge property referencing N1, it is possible to replace
       with N2
-    - if a node obsoletion C C about N1, and Chas direct replacement N2, then N1 IAO:0100001
+    - if a node obsoletion C C about N1, and C has direct replacement N2, then N1 IAO:0100001
       N2
   has_nondirect_replacement:
     range: Node
