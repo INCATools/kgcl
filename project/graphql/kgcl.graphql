@@ -1263,6 +1263,10 @@ type OntologyElement
 
 type OntologySubset
   {
+    id: String!
+    name: String
+    annotationSet: Annotation
+    owlType: OwlTypeEnum
   }
 
 type PlaceUnder
@@ -1616,6 +1620,7 @@ type SynonymReplacement
     language: LanguageTag
     oldValue: String
     newValue: String
+    qualifier: String
     hasTextualDiff: TextualDiff
   }
 

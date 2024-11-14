@@ -1097,6 +1097,13 @@ message ObjectPropertyCreation
   languageTag language = 0
   string changeDescription = 0
  }
+message OntologySubset
+ {
+  string id = 0
+  string name = 0
+  annotation annotationSet = 0
+  owlTypeEnum owlType = 0
+ }
 // An edge creation where the predicate is owl:subClassOf
 message PlaceUnder
  {
@@ -1413,6 +1420,7 @@ message SynonymReplacement
   languageTag language = 0
   string oldValue = 0
   string newValue = 0
+  string qualifier = 0
   textualDiff hasTextualDiff = 0
  }
 // A node change where a text definition is modified

@@ -1,5 +1,5 @@
 # Auto generated from kgcl.yaml by pythongen.py version: 0.0.1
-# Generation date: 2024-11-12T12:18:14
+# Generation date: 2024-11-14T14:12:04
 # Schema: kgcl_schema
 #
 # id: https://w3id.org/kgcl
@@ -2814,7 +2814,7 @@ class LogicalDefinition(OntologyElement):
     class_model_uri: ClassVar[URIRef] = KGCL.LogicalDefinition
 
 
-@dataclass
+@dataclass(repr=False)
 class OntologySubset(Node):
     _inherited_slots: ClassVar[List[str]] = []
 

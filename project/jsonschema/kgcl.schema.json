@@ -96,15 +96,11 @@
                     "type": "string"
                 },
                 "in_subset": {
-                    "anyOf": [
-                        {
-                            "$ref": "#/$defs/OntologySubset"
-                        },
-                        {
-                            "type": "null"
-                        }
-                    ],
-                    "description": "subset that the element is being placed inside."
+                    "description": "subset that the element is being placed inside.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "language": {
                     "description": "The language tag of a literal",
@@ -6003,6 +5999,33 @@
         "OntologySubset": {
             "additionalProperties": false,
             "description": "",
+            "properties": {
+                "annotation_set": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/Annotation"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ]
+                },
+                "id": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "owl_type": {
+                    "$ref": "#/$defs/OwlTypeEnum"
+                }
+            },
+            "required": [
+                "id"
+            ],
             "title": "OntologySubset",
             "type": "object"
         },
@@ -6747,15 +6770,11 @@
                     "type": "string"
                 },
                 "in_subset": {
-                    "anyOf": [
-                        {
-                            "$ref": "#/$defs/OntologySubset"
-                        },
-                        {
-                            "type": "null"
-                        }
-                    ],
-                    "description": "subset that the element is being removed from"
+                    "description": "subset that the element is being removed from",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "language": {
                     "description": "The language tag of a literal",
@@ -7930,6 +7949,13 @@
                     ]
                 },
                 "pull_request": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "qualifier": {
+                    "description": "The qualifier of a change operation",
                     "type": [
                         "string",
                         "null"

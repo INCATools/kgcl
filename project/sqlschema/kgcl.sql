@@ -83,13 +83,13 @@
 --     * Slot: id Description: 
 -- # Class: "SubsetMembershipChange" Description: "A change in the membership status of a node with respect to a subset (view)"
 --     * Slot: id Description: 
---     * Slot: in_subset_id Description: The subset that pertains to this change
+--     * Slot: in_subset Description: The subset that pertains to this change
 -- # Class: "AddToSubset" Description: "placing an element inside a subset"
 --     * Slot: id Description: 
---     * Slot: in_subset_id Description: subset that the element is being placed inside.
+--     * Slot: in_subset Description: subset that the element is being placed inside.
 -- # Class: "RemoveFromSubset" Description: "removing an element from a subset"
 --     * Slot: id Description: 
---     * Slot: in_subset_id Description: subset that the element is being removed from
+--     * Slot: in_subset Description: subset that the element is being removed from
 -- # Class: "EdgeChange" Description: "A change in which the element that is the focus of the change is an edge."
 --     * Slot: object_type Description: The type (IRI or Literal) of an object
 --     * Slot: language Description: The language tag of a literal
@@ -633,6 +633,7 @@
 -- # Class: "SynonymReplacement" Description: "A node synonym change where the text of a synonym is changed"
 --     * Slot: old_value Description: The value of a property held in the old instance of the ontology
 --     * Slot: new_value Description: The value of a property held in the new instance of the ontology
+--     * Slot: qualifier Description: The qualifier of a change operation
 --     * Slot: about_node Description: 
 --     * Slot: about_node_representation Description: The representation of a node (URI, CURIE, label) 
 --     * Slot: language Description: The language tag of a literal
@@ -999,7 +1000,7 @@
 --     * Slot: change_date Description: 
 --     * Slot: contributor Description: 
 --     * Slot: has_undo Description: A change that reverses this change
---     * Slot: in_subset_id Description: subset that the element is being placed inside.
+--     * Slot: in_subset Description: subset that the element is being placed inside.
 -- # Class: "RemoveNodeFromSubset" Description: "Removes a node from a subset, by removing an annotation"
 --     * Slot: about_node Description: The node that is removed from the subset
 --     * Slot: about_node_representation Description: The representation of a node (URI, CURIE, label) 
@@ -1020,8 +1021,8 @@
 --     * Slot: creator Description: 
 --     * Slot: change_date Description: 
 --     * Slot: contributor Description: 
+--     * Slot: in_subset Description: subset that the element is being removed from
 --     * Slot: has_undo_id Description: A change that reverses this change
---     * Slot: in_subset_id Description: subset that the element is being removed from
 -- # Class: "NodeObsoletion" Description: "Obsoletion of a node deprecates usage of that node, but does not delete it."
 --     * Slot: has_direct_replacement Description: An obsoletion replacement where it IS valid to automatically update annotations/edges pointing at the node with its direct replacement
 --     * Slot: about_node Description: 
@@ -1285,6 +1286,9 @@
 --     * Slot: id Description: 
 -- # Class: "OntologySubset" Description: ""
 --     * Slot: id Description: 
+--     * Slot: name Description: 
+--     * Slot: owl_type Description: 
+--     * Slot: annotation_set_id Description: 
 -- # Class: "ProvElement" Description: "A grouping for prov elements"
 --     * Slot: id Description: 
 -- # Class: "Activity" Description: "a provence-generating activity"
@@ -1456,10 +1460,6 @@ CREATE TABLE "LogicalDefinition" (
 	id INTEGER NOT NULL, 
 	PRIMARY KEY (id)
 );
-CREATE TABLE "OntologySubset" (
-	id INTEGER NOT NULL, 
-	PRIMARY KEY (id)
-);
 CREATE TABLE "ProvElement" (
 	id INTEGER NOT NULL, 
 	PRIMARY KEY (id)
@@ -1521,24 +1521,6 @@ CREATE TABLE "MultiNodeObsoletion" (
 	PRIMARY KEY (id), 
 	FOREIGN KEY(was_generated_by) REFERENCES "Activity" (id), 
 	FOREIGN KEY(has_undo) REFERENCES "Change" (id)
-);
-CREATE TABLE "SubsetMembershipChange" (
-	id INTEGER NOT NULL, 
-	in_subset_id INTEGER, 
-	PRIMARY KEY (id), 
-	FOREIGN KEY(in_subset_id) REFERENCES "OntologySubset" (id)
-);
-CREATE TABLE "AddToSubset" (
-	id INTEGER NOT NULL, 
-	in_subset_id INTEGER, 
-	PRIMARY KEY (id), 
-	FOREIGN KEY(in_subset_id) REFERENCES "OntologySubset" (id)
-);
-CREATE TABLE "RemoveFromSubset" (
-	id INTEGER NOT NULL, 
-	in_subset_id INTEGER, 
-	PRIMARY KEY (id), 
-	FOREIGN KEY(in_subset_id) REFERENCES "OntologySubset" (id)
 );
 CREATE TABLE "LogicalAxiomChange" (
 	old_value TEXT, 
@@ -1808,6 +1790,7 @@ CREATE TABLE "RemoveSynonym" (
 CREATE TABLE "SynonymReplacement" (
 	old_value TEXT, 
 	new_value TEXT, 
+	qualifier TEXT, 
 	about_node TEXT, 
 	about_node_representation TEXT, 
 	language TEXT, 
@@ -2244,34 +2227,6 @@ CREATE TABLE "TextDefinitionReplacement" (
 	FOREIGN KEY(has_undo) REFERENCES "Change" (id), 
 	FOREIGN KEY(has_textual_diff_id) REFERENCES "TextualDiff" (id)
 );
-CREATE TABLE "AddNodeToSubset" (
-	about_node TEXT, 
-	about_node_representation TEXT, 
-	language TEXT, 
-	old_value TEXT, 
-	new_value TEXT, 
-	old_value_type TEXT, 
-	new_value_type TEXT, 
-	new_language TEXT, 
-	old_language TEXT, 
-	new_datatype TEXT, 
-	old_datatype TEXT, 
-	id TEXT NOT NULL, 
-	type TEXT, 
-	was_generated_by TEXT, 
-	see_also TEXT, 
-	pull_request TEXT, 
-	creator TEXT, 
-	change_date TEXT, 
-	contributor TEXT, 
-	has_undo TEXT, 
-	in_subset_id INTEGER, 
-	PRIMARY KEY (id), 
-	FOREIGN KEY(about_node) REFERENCES "Node" (id), 
-	FOREIGN KEY(was_generated_by) REFERENCES "Activity" (id), 
-	FOREIGN KEY(has_undo) REFERENCES "Change" (id), 
-	FOREIGN KEY(in_subset_id) REFERENCES "OntologySubset" (id)
-);
 CREATE TABLE "NodeUnobsoletion" (
 	about_node TEXT, 
 	about_node_representation TEXT, 
@@ -2544,11 +2499,37 @@ CREATE TABLE "Edge" (
 	FOREIGN KEY(object) REFERENCES "Node" (id), 
 	FOREIGN KEY(annotation_set_id) REFERENCES "Annotation" (id)
 );
+CREATE TABLE "OntologySubset" (
+	id TEXT NOT NULL, 
+	name TEXT, 
+	owl_type VARCHAR(16), 
+	annotation_set_id INTEGER, 
+	PRIMARY KEY (id), 
+	FOREIGN KEY(annotation_set_id) REFERENCES "Annotation" (id)
+);
 CREATE TABLE "Configuration_obsoletion_policies" (
 	"Configuration_id" INTEGER, 
 	obsoletion_policies VARCHAR(26), 
 	PRIMARY KEY ("Configuration_id", obsoletion_policies), 
 	FOREIGN KEY("Configuration_id") REFERENCES "Configuration" (id)
+);
+CREATE TABLE "SubsetMembershipChange" (
+	id INTEGER NOT NULL, 
+	in_subset TEXT, 
+	PRIMARY KEY (id), 
+	FOREIGN KEY(in_subset) REFERENCES "OntologySubset" (id)
+);
+CREATE TABLE "AddToSubset" (
+	id INTEGER NOT NULL, 
+	in_subset TEXT, 
+	PRIMARY KEY (id), 
+	FOREIGN KEY(in_subset) REFERENCES "OntologySubset" (id)
+);
+CREATE TABLE "RemoveFromSubset" (
+	id INTEGER NOT NULL, 
+	in_subset TEXT, 
+	PRIMARY KEY (id), 
+	FOREIGN KEY(in_subset) REFERENCES "OntologySubset" (id)
 );
 CREATE TABLE "EdgeChange" (
 	object_type TEXT, 
@@ -2965,7 +2946,7 @@ CREATE TABLE "EdgeLogicalInterpretationChange" (
 	FOREIGN KEY(has_undo) REFERENCES "Change" (id), 
 	FOREIGN KEY(about_edge_id) REFERENCES "Edge" (id)
 );
-CREATE TABLE "RemoveNodeFromSubset" (
+CREATE TABLE "AddNodeToSubset" (
 	about_node TEXT, 
 	about_node_representation TEXT, 
 	language TEXT, 
@@ -2985,13 +2966,13 @@ CREATE TABLE "RemoveNodeFromSubset" (
 	creator TEXT, 
 	change_date TEXT, 
 	contributor TEXT, 
-	has_undo_id INTEGER, 
-	in_subset_id INTEGER, 
+	has_undo TEXT, 
+	in_subset TEXT, 
 	PRIMARY KEY (id), 
 	FOREIGN KEY(about_node) REFERENCES "Node" (id), 
 	FOREIGN KEY(was_generated_by) REFERENCES "Activity" (id), 
-	FOREIGN KEY(has_undo_id) REFERENCES "AddToSubset" (id), 
-	FOREIGN KEY(in_subset_id) REFERENCES "OntologySubset" (id)
+	FOREIGN KEY(has_undo) REFERENCES "Change" (id), 
+	FOREIGN KEY(in_subset) REFERENCES "OntologySubset" (id)
 );
 CREATE TABLE "NodeObsoletion" (
 	has_direct_replacement TEXT, 
@@ -3043,6 +3024,34 @@ CREATE TABLE "NodeObsoletionWithNoDirectReplacement_has_nondirect_replacement" (
 	PRIMARY KEY ("NodeObsoletionWithNoDirectReplacement_id", has_nondirect_replacement_id), 
 	FOREIGN KEY("NodeObsoletionWithNoDirectReplacement_id") REFERENCES "NodeObsoletionWithNoDirectReplacement" (id), 
 	FOREIGN KEY(has_nondirect_replacement_id) REFERENCES "Node" (id)
+);
+CREATE TABLE "RemoveNodeFromSubset" (
+	about_node TEXT, 
+	about_node_representation TEXT, 
+	language TEXT, 
+	old_value TEXT, 
+	new_value TEXT, 
+	old_value_type TEXT, 
+	new_value_type TEXT, 
+	new_language TEXT, 
+	old_language TEXT, 
+	new_datatype TEXT, 
+	old_datatype TEXT, 
+	id TEXT NOT NULL, 
+	type TEXT, 
+	was_generated_by TEXT, 
+	see_also TEXT, 
+	pull_request TEXT, 
+	creator TEXT, 
+	change_date TEXT, 
+	contributor TEXT, 
+	in_subset TEXT, 
+	has_undo_id INTEGER, 
+	PRIMARY KEY (id), 
+	FOREIGN KEY(about_node) REFERENCES "Node" (id), 
+	FOREIGN KEY(was_generated_by) REFERENCES "Activity" (id), 
+	FOREIGN KEY(in_subset) REFERENCES "OntologySubset" (id), 
+	FOREIGN KEY(has_undo_id) REFERENCES "AddToSubset" (id)
 );
 CREATE TABLE "NodeObsoletion_has_nondirect_replacement" (
 	"NodeObsoletion_id" TEXT, 

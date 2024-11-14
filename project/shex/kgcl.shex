@@ -508,7 +508,7 @@ om:Node  (
           ) ;
           rdf:type [ om:Node ]
        )
-    } OR @om:ClassNode OR @om:InstanceNode
+    } OR @om:ClassNode OR @om:InstanceNode OR @om:OntologySubset
 )
 
 <NodeAnnotationChange>  (
@@ -753,14 +753,14 @@ om:OntologyElement  (
        (  $om:OntologyElement_tes rdf:type . * ;
           rdf:type [ om:OntologyElement ] ?
        )
-    } OR @om:Edge OR @om:LogicalDefinition OR @om:Node OR @om:OntologySubset OR @om:PropertyValue
+    } OR @om:Edge OR @om:LogicalDefinition OR @om:Node OR @om:PropertyValue
 )
 
 om:OntologySubset CLOSED {
-    (  $om:OntologySubset_tes (  &om:OntologyElement_tes ;
-          rdf:type [ om:OntologyElement ] ?
+    (  $om:OntologySubset_tes (  &om:Node_tes ;
+          rdf:type [ om:Node ] ?
        ) ;
-       rdf:type [ om:OntologySubset ] ?
+       rdf:type [ om:OntologySubset ]
     )
 }
 
@@ -938,6 +938,7 @@ prov:ProvElement_struct {
 <SynonymReplacement> CLOSED {
     (  $<SynonymReplacement_tes> (  &<NodeSynonymChange_tes> ;
           rdf:type [ <NodeSynonymChange> ] ? ;
+          <qualifier> @linkml:String ? ;
           <has_textual_diff> @<TextualDiff> ?
        ) ;
        rdf:type [ <SynonymReplacement> ]
