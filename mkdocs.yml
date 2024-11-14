@@ -14,7 +14,7 @@ plugins:
 docs_dir: docs
 site_dir: mkdocs_html
 nav:
-#  - Home: home.md
+  - About: main.md
   - Index: index.md
   - Examples: examples.md
 site_url: https://incatools.github.io/kgcl/
