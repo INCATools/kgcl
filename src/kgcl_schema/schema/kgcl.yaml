@@ -45,6 +45,7 @@ classes:
     - change_date
     - contributor
     - has_undo
+    - change_description
     slot_usage:
       was_generated_by:
         comments:
