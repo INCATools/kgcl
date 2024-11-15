@@ -365,28 +365,8 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../EdgeCreation/">EdgeCreation</a></td>
-<td>An edge change in which a de-novo edge is created</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../EdgeDeletion/">EdgeDeletion</a></td>
-<td>An edge change in which an edge is removed</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../NodeShallowing/">NodeShallowing</a></td>
-<td>The opposite of node deepening</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../PlaceUnder/">PlaceUnder</a></td>
-<td>An edge creation where the predicate is owl:subClassOf</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../EdgeLogicalInterpretationChange/">EdgeLogicalInterpretationChange</a></td>
-<td>An edge change where the subject, object, and predicate are unchanged, but th...</td>
+<td><a href="../NodeMove/">NodeMove</a></td>
+<td>A node move is a combination of deleting a parent edge and adding a parent ed...</td>
 <td>no</td>
 </tr>
 <tr>
@@ -395,8 +375,28 @@
 <td>no</td>
 </tr>
 <tr>
-<td><a href="../PredicateChange/">PredicateChange</a></td>
-<td>An edge change where the predicate (relationship type) is modified</td>
+<td><a href="../NodeDeepening/">NodeDeepening</a></td>
+<td>A node move in which a node where the destination is a proper descendant of t...</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../PlaceUnder/">PlaceUnder</a></td>
+<td>An edge creation where the predicate is owl:subClassOf</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../EdgeChange/">EdgeChange</a></td>
+<td>A change in which the element that is the focus of the change is an edge</td>
+<td>yes</td>
+</tr>
+<tr>
+<td><a href="../EdgeDeletion/">EdgeDeletion</a></td>
+<td>An edge change in which an edge is removed</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../RemoveUnder/">RemoveUnder</a></td>
+<td>An edge deletion where the predicate is owl:subClassOf</td>
 <td>no</td>
 </tr>
 <tr>
@@ -410,23 +410,23 @@
 <td>no</td>
 </tr>
 <tr>
-<td><a href="../NodeMove/">NodeMove</a></td>
-<td>A node move is a combination of deleting a parent edge and adding a parent ed...</td>
+<td><a href="../PredicateChange/">PredicateChange</a></td>
+<td>An edge change where the predicate (relationship type) is modified</td>
 <td>no</td>
 </tr>
 <tr>
-<td><a href="../NodeDeepening/">NodeDeepening</a></td>
-<td>A node move in which a node where the destination is a proper descendant of t...</td>
+<td><a href="../EdgeLogicalInterpretationChange/">EdgeLogicalInterpretationChange</a></td>
+<td>An edge change where the subject, object, and predicate are unchanged, but th...</td>
 <td>no</td>
 </tr>
 <tr>
-<td><a href="../EdgeChange/">EdgeChange</a></td>
-<td>A change in which the element that is the focus of the change is an edge</td>
-<td>yes</td>
+<td><a href="../EdgeCreation/">EdgeCreation</a></td>
+<td>An edge change in which a de-novo edge is created</td>
+<td>no</td>
 </tr>
 <tr>
-<td><a href="../RemoveUnder/">RemoveUnder</a></td>
-<td>An edge deletion where the predicate is owl:subClassOf</td>
+<td><a href="../NodeShallowing/">NodeShallowing</a></td>
+<td>The opposite of node deepening</td>
 <td>no</td>
 </tr>
 </tbody>
