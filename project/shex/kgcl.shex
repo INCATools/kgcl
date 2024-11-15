@@ -74,6 +74,7 @@ prov:Activity CLOSED {
           rdf:type [ <NodeChange> ] ? ;
           &<AddToSubset_tes> ;
           rdf:type [ <AddToSubset> ] ? ;
+          <about> @om:OntologyElement ? ;
           <in_subset> @om:OntologySubset ?
        ) ;
        rdf:type [ <AddNodeToSubset> ]
@@ -129,11 +130,13 @@ om:Annotation CLOSED {
           prov:wasGeneratedBy @prov:Activity ? ;
           rdfs:seeAlso @linkml:String ? ;
           <pull_request> @linkml:String ? ;
+          <term_tracker_issue> @linkml:String ? ;
           dc1:creator @linkml:String ? ;
           dc1:date @linkml:String ? ;
           dc1:creator @linkml:String ? ;
           <has_undo> @<Change> ? ;
-          <term_tracker_issue> @linkml:String ?
+          <change_description> @linkml:String ? ;
+          <associated_change_set> @<Change> *
        ) ;
        rdf:type [ <Change> ]
     )
@@ -154,17 +157,18 @@ om:Annotation CLOSED {
 )
 
 <ChangeMixin_struct> {
-    (  $<ChangeMixin_tes> rdf:type . * ;
+    (  $<ChangeMixin_tes> (  <about> @om:OntologyElement ? ;
+          <has_undo> @<Change> ? ;
+          <old_value> @linkml:String ? ;
+          <new_value> @linkml:String ?
+       ) ;
        rdf:type [ <ChangeMixin> ] ?
     )
 }
 
 <ChangeSetSummaryStatistic> CLOSED {
     (  $<ChangeSetSummaryStatistic_tes> (  &<ChangeLanguageElement_tes> ;
-          rdf:type [ <ChangeLanguageElement> ] ? ;
-          <change_type> @<ChangeClassType> ? ;
-          <count> @linkml:Integer ? ;
-          om:property_value_set @om:PropertyValue *
+          rdf:type [ <ChangeLanguageElement> ] ?
        ) ;
        rdf:type [ <ChangeSetSummaryStatistic> ] ?
     )
@@ -281,8 +285,7 @@ om:Edge CLOSED {
           <about_edge> @om:Edge ? ;
           <object_type> @linkml:String ? ;
           <language> @basics:LanguageTag ? ;
-          <datatype> @linkml:String ? ;
-          om:subject @om:Node ?
+          <datatype> @linkml:String ?
        ) ;
        rdf:type [ <EdgeChange> ]
     )
@@ -300,7 +303,8 @@ om:Edge CLOSED {
              <subject_type> @linkml:String ? ;
              <predicate_type> @linkml:String ? ;
              om:annotation_set @om:Annotation ? ;
-             <change_description> @linkml:String ?
+             <change_description> @linkml:String ? ;
+             <about> @om:OntologyElement ?
           ) ;
           rdf:type [ <EdgeCreation> ]
        )
@@ -319,7 +323,8 @@ om:Edge CLOSED {
              <subject_type> @linkml:String ? ;
              <predicate_type> @linkml:String ? ;
              om:annotation_set @om:Annotation ? ;
-             <change_description> @linkml:String ?
+             <change_description> @linkml:String ? ;
+             <about> @om:OntologyElement ?
           ) ;
           rdf:type [ <EdgeDeletion> ]
        )
@@ -452,8 +457,6 @@ om:LogicalDefinition CLOSED {
 <NameBecomesSynonym> CLOSED {
     (  $<NameBecomesSynonym_tes> (  &<NodeSynonymChange_tes> ;
           rdf:type [ <NodeSynonymChange> ] ? ;
-          <change_1> @<NodeRename> ? ;
-          <change_2> @<NewSynonym> ? ;
           <change_description> @linkml:String ?
        ) ;
        rdf:type [ <NameBecomesSynonym> ]
@@ -558,7 +561,8 @@ om:Node  (
              om:name @linkml:String ? ;
              om:owl_type [ owl:Class owl:ObjectProperty owl:NamedIndividual ] ? ;
              om:annotation_set @om:Annotation ? ;
-             <change_description> @linkml:String ?
+             <change_description> @linkml:String ? ;
+             <about> @om:OntologyElement ?
           ) ;
           rdf:type [ <NodeCreation> ]
        )
@@ -579,7 +583,8 @@ om:Node  (
           rdf:type [ <NodeChange> ] ? ;
           &<Deletion_tes> ;
           rdf:type [ <Deletion> ] ? ;
-          <change_description> @linkml:String ?
+          <change_description> @linkml:String ? ;
+          <about> @om:OntologyElement ?
        ) ;
        rdf:type [ <NodeDeletion> ]
     )
@@ -719,9 +724,10 @@ om:Node  (
           rdf:type [ <NodeChange> ] ? ;
           &<Unobsoletion_tes> ;
           rdf:type [ <Unobsoletion> ] ? ;
+          <has_direct_replacement> @om:Node ? ;
+          <has_nondirect_replacement> @om:Node * ;
           <change_description> @linkml:String ? ;
-          <replaced_by> @om:Node ? ;
-          <consider> @om:Node ?
+          <about> @om:OntologyElement ?
        ) ;
        rdf:type [ <NodeUnobsoletion> ]
     )
@@ -840,8 +846,8 @@ prov:ProvElement_struct {
           rdf:type [ <RemoveFromSubset> ] ? ;
           <change_description> @linkml:String ? ;
           <about_node> @om:Node ? ;
-          <subset> @linkml:String ? ;
-          <in_subset> @om:OntologySubset ?
+          <in_subset> @om:OntologySubset ? ;
+          <about> @om:OntologyElement ?
        ) ;
        rdf:type [ <RemoveNodeFromSubset> ]
     )
@@ -886,7 +892,8 @@ prov:ProvElement_struct {
           rdf:type [ <NodeChange> ] ? ;
           &<LanguageTagChange_tes> ;
           rdf:type [ <LanguageTagChange> ] ? ;
-          <change_description> @linkml:String ?
+          <change_description> @linkml:String ? ;
+          <about> @om:OntologyElement ?
        ) ;
        rdf:type [ <SetLanguageForName> ]
     )
