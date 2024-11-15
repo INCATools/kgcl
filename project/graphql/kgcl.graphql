@@ -39,11 +39,13 @@ type AddNodeToSubset implements AddToSubset
     wasGeneratedBy: Activity
     seeAlso: String
     pullRequest: String
+    termTrackerIssue: String
     creator: String
     changeDate: String
     contributor: String
     hasUndo: Change
-    termTrackerIssue: String
+    changeDescription: String
+    associatedChangeSet: [Change]
     oldValue: String
     newValue: String
     oldValueType: String
@@ -55,11 +57,16 @@ type AddNodeToSubset implements AddToSubset
     aboutNode: Node
     aboutNodeRepresentation: String
     language: LanguageTag
+    about: OntologyElement
     inSubset: OntologySubset
   }
 
 interface AddToSubset
   {
+    about: OntologyElement
+    hasUndo: Change
+    oldValue: String
+    newValue: String
     inSubset: OntologySubset
   }
 
@@ -72,6 +79,8 @@ type Agent
 
 interface AllowsAutomaticReplacementOfEdges
   {
+    oldValue: String
+    newValue: String
     about: OntologyElement
     hasUndo: Obsoletion
   }
@@ -92,11 +101,13 @@ interface Change
     wasGeneratedBy: Activity
     seeAlso: String
     pullRequest: String
+    termTrackerIssue: String
     creator: String
     changeDate: String
     contributor: String
     hasUndo: Change
-    termTrackerIssue: String
+    changeDescription: String
+    associatedChangeSet: [Change]
   }
 
 interface ChangeLanguageElement
@@ -105,13 +116,14 @@ interface ChangeLanguageElement
 
 interface ChangeMixin
   {
+    about: OntologyElement
+    hasUndo: Change
+    oldValue: String
+    newValue: String
   }
 
 type ChangeSetSummaryStatistic
   {
-    changeType: ChangeClassType
-    count: Integer
-    propertyValueSet: [PropertyValue]
   }
 
 type ClassCreation
@@ -121,11 +133,12 @@ type ClassCreation
     wasGeneratedBy: Activity
     seeAlso: String
     pullRequest: String
+    termTrackerIssue: String
     creator: String
     changeDate: String
     contributor: String
     hasUndo: Change
-    termTrackerIssue: String
+    associatedChangeSet: [Change]
     oldValue: String
     newValue: String
     oldValueType: String
@@ -141,6 +154,7 @@ type ClassCreation
     owlType: OwlTypeEnum
     annotationSet: Annotation
     language: LanguageTag
+    about: OntologyElement
     superclass: Node
     changeDescription: String
   }
@@ -160,11 +174,13 @@ interface ComplexChange
     wasGeneratedBy: Activity
     seeAlso: String
     pullRequest: String
+    termTrackerIssue: String
     creator: String
     changeDate: String
     contributor: String
     hasUndo: Change
-    termTrackerIssue: String
+    changeDescription: String
+    associatedChangeSet: [Change]
     changeSet: [Change]
   }
 
@@ -184,19 +200,34 @@ type Configuration
 
 interface Creation
   {
+    about: OntologyElement
+    oldValue: String
+    newValue: String
     hasUndo: Deletion
   }
 
 type DatatypeChange
   {
+    about: OntologyElement
+    hasUndo: Change
+    oldValue: String
+    newValue: String
   }
 
 interface DatatypeOrLanguageTagChange
   {
+    about: OntologyElement
+    hasUndo: Change
+    oldValue: String
+    newValue: String
   }
 
 interface Deletion
   {
+    about: OntologyElement
+    hasUndo: Change
+    oldValue: String
+    newValue: String
   }
 
 type Edge
@@ -217,11 +248,13 @@ interface EdgeChange
     wasGeneratedBy: Activity
     seeAlso: String
     pullRequest: String
+    termTrackerIssue: String
     creator: String
     changeDate: String
     contributor: String
     hasUndo: Change
-    termTrackerIssue: String
+    changeDescription: String
+    associatedChangeSet: [Change]
     oldValue: String
     newValue: String
     oldValueType: String
@@ -234,7 +267,6 @@ interface EdgeChange
     objectType: String
     language: LanguageTag
     datatype: String
-    subject: Node
   }
 
 type EdgeCreation implements Creation
@@ -244,11 +276,12 @@ type EdgeCreation implements Creation
     wasGeneratedBy: Activity
     seeAlso: String
     pullRequest: String
+    termTrackerIssue: String
     creator: String
     changeDate: String
     contributor: String
     hasUndo: Change
-    termTrackerIssue: String
+    associatedChangeSet: [Change]
     oldValue: String
     newValue: String
     oldValueType: String
@@ -268,6 +301,7 @@ type EdgeCreation implements Creation
     objectType: String
     annotationSet: Annotation
     changeDescription: String
+    about: OntologyElement
   }
 
 type EdgeDeletion implements Deletion
@@ -277,11 +311,12 @@ type EdgeDeletion implements Deletion
     wasGeneratedBy: Activity
     seeAlso: String
     pullRequest: String
+    termTrackerIssue: String
     creator: String
     changeDate: String
     contributor: String
     hasUndo: Change
-    termTrackerIssue: String
+    associatedChangeSet: [Change]
     oldValue: String
     newValue: String
     oldValueType: String
@@ -301,6 +336,7 @@ type EdgeDeletion implements Deletion
     objectType: String
     annotationSet: Annotation
     changeDescription: String
+    about: OntologyElement
   }
 
 type EdgeLogicalInterpretationChange
@@ -310,11 +346,13 @@ type EdgeLogicalInterpretationChange
     wasGeneratedBy: Activity
     seeAlso: String
     pullRequest: String
+    termTrackerIssue: String
     creator: String
     changeDate: String
     contributor: String
     hasUndo: Change
-    termTrackerIssue: String
+    changeDescription: String
+    associatedChangeSet: [Change]
     oldValue: String
     newValue: String
     oldValueType: String
@@ -327,7 +365,6 @@ type EdgeLogicalInterpretationChange
     objectType: String
     language: LanguageTag
     datatype: String
-    subject: Node
   }
 
 type EdgeObsoletion implements Obsoletion
@@ -337,11 +374,12 @@ type EdgeObsoletion implements Obsoletion
     wasGeneratedBy: Activity
     seeAlso: String
     pullRequest: String
+    termTrackerIssue: String
     creator: String
     changeDate: String
     contributor: String
     hasUndo: Change
-    termTrackerIssue: String
+    associatedChangeSet: [Change]
     oldValue: String
     newValue: String
     oldValueType: String
@@ -369,11 +407,13 @@ type EdgeRewiring
     wasGeneratedBy: Activity
     seeAlso: String
     pullRequest: String
+    termTrackerIssue: String
     creator: String
     changeDate: String
     contributor: String
     hasUndo: Change
-    termTrackerIssue: String
+    changeDescription: String
+    associatedChangeSet: [Change]
     oldValue: String
     newValue: String
     oldValueType: String
@@ -386,7 +426,6 @@ type EdgeRewiring
     objectType: String
     language: LanguageTag
     datatype: String
-    subject: Node
   }
 
 type InstanceNode
@@ -399,6 +438,8 @@ type InstanceNode
 
 type LanguageTagChange
   {
+    about: OntologyElement
+    hasUndo: Change
     oldValue: LanguageTag
     newValue: LanguageTag
   }
@@ -410,11 +451,13 @@ type LogicalAxiomChange
     wasGeneratedBy: Activity
     seeAlso: String
     pullRequest: String
+    termTrackerIssue: String
     creator: String
     changeDate: String
     contributor: String
     hasUndo: Change
-    termTrackerIssue: String
+    changeDescription: String
+    associatedChangeSet: [Change]
     oldValue: String
     newValue: String
     oldValueType: String
@@ -436,11 +479,12 @@ type MappingCreation implements Creation
     wasGeneratedBy: Activity
     seeAlso: String
     pullRequest: String
+    termTrackerIssue: String
     creator: String
     changeDate: String
     contributor: String
     hasUndo: Change
-    termTrackerIssue: String
+    associatedChangeSet: [Change]
     oldValue: String
     newValue: String
     oldValueType: String
@@ -455,6 +499,7 @@ type MappingCreation implements Creation
     subjectType: String
     predicateType: String
     objectType: String
+    about: OntologyElement
     subject: Node
     predicate: Node
     object: Node
@@ -469,11 +514,13 @@ type MappingPredicateChange
     wasGeneratedBy: Activity
     seeAlso: String
     pullRequest: String
+    termTrackerIssue: String
     creator: String
     changeDate: String
     contributor: String
     hasUndo: Change
-    termTrackerIssue: String
+    changeDescription: String
+    associatedChangeSet: [Change]
     oldValueType: String
     newValueType: String
     newLanguage: String
@@ -494,11 +541,13 @@ type MappingReplacement
     wasGeneratedBy: Activity
     seeAlso: String
     pullRequest: String
+    termTrackerIssue: String
     creator: String
     changeDate: String
     contributor: String
     hasUndo: Change
-    termTrackerIssue: String
+    changeDescription: String
+    associatedChangeSet: [Change]
     oldValueType: String
     newValueType: String
     newLanguage: String
@@ -519,11 +568,13 @@ type MetadataAssertionPredicateChange
     wasGeneratedBy: Activity
     seeAlso: String
     pullRequest: String
+    termTrackerIssue: String
     creator: String
     changeDate: String
     contributor: String
     hasUndo: Change
-    termTrackerIssue: String
+    changeDescription: String
+    associatedChangeSet: [Change]
     oldValueType: String
     newValueType: String
     newLanguage: String
@@ -544,11 +595,13 @@ type MetadataAssertionReplacement
     wasGeneratedBy: Activity
     seeAlso: String
     pullRequest: String
+    termTrackerIssue: String
     creator: String
     changeDate: String
     contributor: String
     hasUndo: Change
-    termTrackerIssue: String
+    changeDescription: String
+    associatedChangeSet: [Change]
     oldValueType: String
     newValueType: String
     newLanguage: String
@@ -569,11 +622,11 @@ type MultiNodeObsoletion
     wasGeneratedBy: Activity
     seeAlso: String
     pullRequest: String
+    termTrackerIssue: String
     creator: String
     changeDate: String
     contributor: String
     hasUndo: Change
-    termTrackerIssue: String
     changeSet: [NodeObsoletion]
     changeDescription: String
     associatedChangeSet: [Change]
@@ -586,11 +639,12 @@ type NameBecomesSynonym
     wasGeneratedBy: Activity
     seeAlso: String
     pullRequest: String
+    termTrackerIssue: String
     creator: String
     changeDate: String
     contributor: String
     hasUndo: Change
-    termTrackerIssue: String
+    associatedChangeSet: [Change]
     oldValue: String
     newValue: String
     oldValueType: String
@@ -602,8 +656,6 @@ type NameBecomesSynonym
     aboutNode: Node
     aboutNodeRepresentation: String
     language: LanguageTag
-    change1: NodeRename
-    change2: NewSynonym
     changeDescription: String
   }
 
@@ -614,11 +666,13 @@ type NewMapping
     wasGeneratedBy: Activity
     seeAlso: String
     pullRequest: String
+    termTrackerIssue: String
     creator: String
     changeDate: String
     contributor: String
     hasUndo: Change
-    termTrackerIssue: String
+    changeDescription: String
+    associatedChangeSet: [Change]
     oldValue: String
     newValue: String
     oldValueType: String
@@ -641,11 +695,13 @@ type NewMetadataAssertion
     wasGeneratedBy: Activity
     seeAlso: String
     pullRequest: String
+    termTrackerIssue: String
     creator: String
     changeDate: String
     contributor: String
     hasUndo: Change
-    termTrackerIssue: String
+    changeDescription: String
+    associatedChangeSet: [Change]
     oldValue: String
     newValue: String
     oldValueType: String
@@ -668,11 +724,13 @@ type NewSynonym
     wasGeneratedBy: Activity
     seeAlso: String
     pullRequest: String
+    termTrackerIssue: String
     creator: String
     changeDate: String
     contributor: String
     hasUndo: Change
-    termTrackerIssue: String
+    changeDescription: String
+    associatedChangeSet: [Change]
     oldValue: String
     oldValueType: String
     newValueType: String
@@ -695,11 +753,13 @@ type NewTextDefinition
     wasGeneratedBy: Activity
     seeAlso: String
     pullRequest: String
+    termTrackerIssue: String
     creator: String
     changeDate: String
     contributor: String
     hasUndo: Change
-    termTrackerIssue: String
+    changeDescription: String
+    associatedChangeSet: [Change]
     oldValue: String
     oldValueType: String
     newValueType: String
@@ -728,11 +788,13 @@ type NodeAnnotationChange
     wasGeneratedBy: Activity
     seeAlso: String
     pullRequest: String
+    termTrackerIssue: String
     creator: String
     changeDate: String
     contributor: String
     hasUndo: Change
-    termTrackerIssue: String
+    changeDescription: String
+    associatedChangeSet: [Change]
     oldValue: String
     newValue: String
     oldValueType: String
@@ -755,11 +817,13 @@ type NodeAnnotationReplacement
     wasGeneratedBy: Activity
     seeAlso: String
     pullRequest: String
+    termTrackerIssue: String
     creator: String
     changeDate: String
     contributor: String
     hasUndo: Change
-    termTrackerIssue: String
+    changeDescription: String
+    associatedChangeSet: [Change]
     oldValue: String
     newValue: String
     oldValueType: String
@@ -782,11 +846,13 @@ interface NodeChange
     wasGeneratedBy: Activity
     seeAlso: String
     pullRequest: String
+    termTrackerIssue: String
     creator: String
     changeDate: String
     contributor: String
     hasUndo: Change
-    termTrackerIssue: String
+    changeDescription: String
+    associatedChangeSet: [Change]
     oldValue: String
     newValue: String
     oldValueType: String
@@ -807,11 +873,12 @@ type NodeCreation implements Creation
     wasGeneratedBy: Activity
     seeAlso: String
     pullRequest: String
+    termTrackerIssue: String
     creator: String
     changeDate: String
     contributor: String
     hasUndo: Change
-    termTrackerIssue: String
+    associatedChangeSet: [Change]
     oldValue: String
     newValue: String
     oldValueType: String
@@ -828,6 +895,7 @@ type NodeCreation implements Creation
     annotationSet: Annotation
     language: LanguageTag
     changeDescription: String
+    about: OntologyElement
   }
 
 type NodeDeepening
@@ -837,11 +905,12 @@ type NodeDeepening
     wasGeneratedBy: Activity
     seeAlso: String
     pullRequest: String
+    termTrackerIssue: String
     creator: String
     changeDate: String
     contributor: String
     hasUndo: Change
-    termTrackerIssue: String
+    associatedChangeSet: [Change]
     oldValue: String
     newValue: String
     oldValueType: String
@@ -854,7 +923,6 @@ type NodeDeepening
     objectType: String
     language: LanguageTag
     datatype: String
-    subject: Node
     oldObjectType: String
     newObjectType: String
     changeDescription: String
@@ -867,11 +935,12 @@ type NodeDeletion implements Deletion
     wasGeneratedBy: Activity
     seeAlso: String
     pullRequest: String
+    termTrackerIssue: String
     creator: String
     changeDate: String
     contributor: String
     hasUndo: Change
-    termTrackerIssue: String
+    associatedChangeSet: [Change]
     oldValue: String
     newValue: String
     oldValueType: String
@@ -884,6 +953,7 @@ type NodeDeletion implements Deletion
     aboutNodeRepresentation: String
     language: LanguageTag
     changeDescription: String
+    about: OntologyElement
   }
 
 type NodeDirectMerge implements AllowsAutomaticReplacementOfEdges
@@ -893,11 +963,11 @@ type NodeDirectMerge implements AllowsAutomaticReplacementOfEdges
     wasGeneratedBy: Activity
     seeAlso: String
     pullRequest: String
+    termTrackerIssue: String
     creator: String
     changeDate: String
     contributor: String
     hasUndo: Change
-    termTrackerIssue: String
     oldValue: String
     newValue: String
     oldValueType: String
@@ -923,11 +993,13 @@ type NodeMappingChange
     wasGeneratedBy: Activity
     seeAlso: String
     pullRequest: String
+    termTrackerIssue: String
     creator: String
     changeDate: String
     contributor: String
     hasUndo: Change
-    termTrackerIssue: String
+    changeDescription: String
+    associatedChangeSet: [Change]
     oldValue: String
     newValue: String
     oldValueType: String
@@ -948,11 +1020,13 @@ type NodeMetadataAssertionChange
     wasGeneratedBy: Activity
     seeAlso: String
     pullRequest: String
+    termTrackerIssue: String
     creator: String
     changeDate: String
     contributor: String
     hasUndo: Change
-    termTrackerIssue: String
+    changeDescription: String
+    associatedChangeSet: [Change]
     oldValue: String
     newValue: String
     oldValueType: String
@@ -973,11 +1047,12 @@ type NodeMove
     wasGeneratedBy: Activity
     seeAlso: String
     pullRequest: String
+    termTrackerIssue: String
     creator: String
     changeDate: String
     contributor: String
     hasUndo: Change
-    termTrackerIssue: String
+    associatedChangeSet: [Change]
     oldValue: String
     newValue: String
     oldValueType: String
@@ -990,7 +1065,6 @@ type NodeMove
     objectType: String
     language: LanguageTag
     datatype: String
-    subject: Node
     oldObjectType: String
     newObjectType: String
     changeDescription: String
@@ -1003,11 +1077,11 @@ type NodeObsoletion implements Obsoletion
     wasGeneratedBy: Activity
     seeAlso: String
     pullRequest: String
+    termTrackerIssue: String
     creator: String
     changeDate: String
     contributor: String
     hasUndo: Change
-    termTrackerIssue: String
     oldValue: String
     newValue: String
     oldValueType: String
@@ -1033,11 +1107,11 @@ type NodeObsoletionWithDirectReplacement implements AllowsAutomaticReplacementOf
     wasGeneratedBy: Activity
     seeAlso: String
     pullRequest: String
+    termTrackerIssue: String
     creator: String
     changeDate: String
     contributor: String
     hasUndo: Change
-    termTrackerIssue: String
     oldValue: String
     newValue: String
     oldValueType: String
@@ -1063,11 +1137,11 @@ type NodeObsoletionWithNoDirectReplacement
     wasGeneratedBy: Activity
     seeAlso: String
     pullRequest: String
+    termTrackerIssue: String
     creator: String
     changeDate: String
     contributor: String
     hasUndo: Change
-    termTrackerIssue: String
     oldValue: String
     newValue: String
     oldValueType: String
@@ -1093,11 +1167,12 @@ type NodeRename
     wasGeneratedBy: Activity
     seeAlso: String
     pullRequest: String
+    termTrackerIssue: String
     creator: String
     changeDate: String
     contributor: String
     hasUndo: Change
-    termTrackerIssue: String
+    associatedChangeSet: [Change]
     oldValueType: String
     newValueType: String
     newDatatype: String
@@ -1120,11 +1195,12 @@ type NodeShallowing
     wasGeneratedBy: Activity
     seeAlso: String
     pullRequest: String
+    termTrackerIssue: String
     creator: String
     changeDate: String
     contributor: String
     hasUndo: Change
-    termTrackerIssue: String
+    associatedChangeSet: [Change]
     oldValue: String
     newValue: String
     oldValueType: String
@@ -1137,7 +1213,6 @@ type NodeShallowing
     objectType: String
     language: LanguageTag
     datatype: String
-    subject: Node
     oldObjectType: String
     newObjectType: String
     changeDescription: String
@@ -1150,11 +1225,13 @@ type NodeSynonymChange
     wasGeneratedBy: Activity
     seeAlso: String
     pullRequest: String
+    termTrackerIssue: String
     creator: String
     changeDate: String
     contributor: String
     hasUndo: Change
-    termTrackerIssue: String
+    changeDescription: String
+    associatedChangeSet: [Change]
     oldValue: String
     newValue: String
     oldValueType: String
@@ -1175,11 +1252,13 @@ interface NodeTextDefinitionChange
     wasGeneratedBy: Activity
     seeAlso: String
     pullRequest: String
+    termTrackerIssue: String
     creator: String
     changeDate: String
     contributor: String
     hasUndo: Change
-    termTrackerIssue: String
+    changeDescription: String
+    associatedChangeSet: [Change]
     oldValue: String
     newValue: String
     oldValueType: String
@@ -1200,11 +1279,12 @@ type NodeUnobsoletion implements Unobsoletion
     wasGeneratedBy: Activity
     seeAlso: String
     pullRequest: String
+    termTrackerIssue: String
     creator: String
     changeDate: String
     contributor: String
     hasUndo: Change
-    termTrackerIssue: String
+    associatedChangeSet: [Change]
     oldValue: String
     newValue: String
     oldValueType: String
@@ -1216,9 +1296,10 @@ type NodeUnobsoletion implements Unobsoletion
     aboutNode: Node
     aboutNodeRepresentation: String
     language: LanguageTag
+    hasDirectReplacement: Node
+    hasNondirectReplacement: [Node]
     changeDescription: String
-    replacedBy: Node
-    consider: Node
+    about: OntologyElement
   }
 
 type ObjectPropertyCreation
@@ -1228,11 +1309,12 @@ type ObjectPropertyCreation
     wasGeneratedBy: Activity
     seeAlso: String
     pullRequest: String
+    termTrackerIssue: String
     creator: String
     changeDate: String
     contributor: String
     hasUndo: Change
-    termTrackerIssue: String
+    associatedChangeSet: [Change]
     oldValue: String
     newValue: String
     oldValueType: String
@@ -1248,11 +1330,14 @@ type ObjectPropertyCreation
     owlType: OwlTypeEnum
     annotationSet: Annotation
     language: LanguageTag
+    about: OntologyElement
     changeDescription: String
   }
 
 interface Obsoletion
   {
+    oldValue: String
+    newValue: String
     about: OntologyElement
     hasUndo: Obsoletion
   }
@@ -1276,11 +1361,12 @@ type PlaceUnder
     wasGeneratedBy: Activity
     seeAlso: String
     pullRequest: String
+    termTrackerIssue: String
     creator: String
     changeDate: String
     contributor: String
     hasUndo: Change
-    termTrackerIssue: String
+    associatedChangeSet: [Change]
     oldValue: String
     newValue: String
     oldValueType: String
@@ -1300,6 +1386,7 @@ type PlaceUnder
     objectType: String
     annotationSet: Annotation
     changeDescription: String
+    about: OntologyElement
   }
 
 type PredicateChange
@@ -1309,11 +1396,12 @@ type PredicateChange
     wasGeneratedBy: Activity
     seeAlso: String
     pullRequest: String
+    termTrackerIssue: String
     creator: String
     changeDate: String
     contributor: String
     hasUndo: Change
-    termTrackerIssue: String
+    associatedChangeSet: [Change]
     oldValue: String
     newValue: String
     oldValueType: String
@@ -1326,7 +1414,6 @@ type PredicateChange
     objectType: String
     language: LanguageTag
     datatype: String
-    subject: Node
     changeDescription: String
   }
 
@@ -1342,6 +1429,9 @@ interface ProvElement
 
 interface RemoveFromSubset
   {
+    about: OntologyElement
+    oldValue: String
+    newValue: String
     inSubset: OntologySubset
     hasUndo: AddToSubset
   }
@@ -1353,11 +1443,13 @@ type RemoveMapping
     wasGeneratedBy: Activity
     seeAlso: String
     pullRequest: String
+    termTrackerIssue: String
     creator: String
     changeDate: String
     contributor: String
     hasUndo: Change
-    termTrackerIssue: String
+    changeDescription: String
+    associatedChangeSet: [Change]
     oldValue: String
     newValue: String
     oldValueType: String
@@ -1380,11 +1472,13 @@ type RemoveMetadataAssertion
     wasGeneratedBy: Activity
     seeAlso: String
     pullRequest: String
+    termTrackerIssue: String
     creator: String
     changeDate: String
     contributor: String
     hasUndo: Change
-    termTrackerIssue: String
+    changeDescription: String
+    associatedChangeSet: [Change]
     oldValue: String
     newValue: String
     oldValueType: String
@@ -1407,11 +1501,12 @@ type RemoveNodeFromSubset implements RemoveFromSubset
     wasGeneratedBy: Activity
     seeAlso: String
     pullRequest: String
+    termTrackerIssue: String
     creator: String
     changeDate: String
     contributor: String
     hasUndo: Change
-    termTrackerIssue: String
+    associatedChangeSet: [Change]
     oldValue: String
     newValue: String
     oldValueType: String
@@ -1424,8 +1519,8 @@ type RemoveNodeFromSubset implements RemoveFromSubset
     language: LanguageTag
     changeDescription: String
     aboutNode: Node
-    subset: String
     inSubset: OntologySubset
+    about: OntologyElement
   }
 
 type RemoveSynonym
@@ -1435,11 +1530,13 @@ type RemoveSynonym
     wasGeneratedBy: Activity
     seeAlso: String
     pullRequest: String
+    termTrackerIssue: String
     creator: String
     changeDate: String
     contributor: String
     hasUndo: Change
-    termTrackerIssue: String
+    changeDescription: String
+    associatedChangeSet: [Change]
     newValue: String
     oldValueType: String
     newValueType: String
@@ -1460,11 +1557,13 @@ type RemoveTextDefinition
     wasGeneratedBy: Activity
     seeAlso: String
     pullRequest: String
+    termTrackerIssue: String
     creator: String
     changeDate: String
     contributor: String
     hasUndo: Change
-    termTrackerIssue: String
+    changeDescription: String
+    associatedChangeSet: [Change]
     newValue: String
     oldValueType: String
     newValueType: String
@@ -1485,11 +1584,12 @@ type RemoveUnder
     wasGeneratedBy: Activity
     seeAlso: String
     pullRequest: String
+    termTrackerIssue: String
     creator: String
     changeDate: String
     contributor: String
     hasUndo: Change
-    termTrackerIssue: String
+    associatedChangeSet: [Change]
     oldValue: String
     newValue: String
     oldValueType: String
@@ -1509,6 +1609,7 @@ type RemoveUnder
     objectType: String
     annotationSet: Annotation
     changeDescription: String
+    about: OntologyElement
   }
 
 type Session
@@ -1524,11 +1625,12 @@ type SetLanguageForName implements LanguageTagChange
     wasGeneratedBy: Activity
     seeAlso: String
     pullRequest: String
+    termTrackerIssue: String
     creator: String
     changeDate: String
     contributor: String
     hasUndo: Change
-    termTrackerIssue: String
+    associatedChangeSet: [Change]
     oldValueType: String
     newValueType: String
     newLanguage: String
@@ -1541,6 +1643,7 @@ type SetLanguageForName implements LanguageTagChange
     oldValue: String
     newValue: String
     changeDescription: String
+    about: OntologyElement
   }
 
 interface SimpleChange
@@ -1550,11 +1653,13 @@ interface SimpleChange
     wasGeneratedBy: Activity
     seeAlso: String
     pullRequest: String
+    termTrackerIssue: String
     creator: String
     changeDate: String
     contributor: String
     hasUndo: Change
-    termTrackerIssue: String
+    changeDescription: String
+    associatedChangeSet: [Change]
     oldValue: String
     newValue: String
     oldValueType: String
@@ -1567,6 +1672,10 @@ interface SimpleChange
 
 interface SubsetMembershipChange
   {
+    about: OntologyElement
+    hasUndo: Change
+    oldValue: String
+    newValue: String
     inSubset: OntologySubset
   }
 
@@ -1577,11 +1686,13 @@ type SynonymPredicateChange
     wasGeneratedBy: Activity
     seeAlso: String
     pullRequest: String
+    termTrackerIssue: String
     creator: String
     changeDate: String
     contributor: String
     hasUndo: Change
-    termTrackerIssue: String
+    changeDescription: String
+    associatedChangeSet: [Change]
     oldValueType: String
     newValueType: String
     newLanguage: String
@@ -1604,11 +1715,13 @@ type SynonymReplacement
     wasGeneratedBy: Activity
     seeAlso: String
     pullRequest: String
+    termTrackerIssue: String
     creator: String
     changeDate: String
     contributor: String
     hasUndo: Change
-    termTrackerIssue: String
+    changeDescription: String
+    associatedChangeSet: [Change]
     oldValueType: String
     newValueType: String
     newLanguage: String
@@ -1631,11 +1744,13 @@ type TextDefinitionReplacement
     wasGeneratedBy: Activity
     seeAlso: String
     pullRequest: String
+    termTrackerIssue: String
     creator: String
     changeDate: String
     contributor: String
     hasUndo: Change
-    termTrackerIssue: String
+    changeDescription: String
+    associatedChangeSet: [Change]
     oldValueType: String
     newValueType: String
     newLanguage: String
@@ -1661,16 +1776,21 @@ type Transaction
     wasGeneratedBy: Activity
     seeAlso: String
     pullRequest: String
+    termTrackerIssue: String
     creator: String
     changeDate: String
     contributor: String
     hasUndo: Change
-    termTrackerIssue: String
+    changeDescription: String
+    associatedChangeSet: [Change]
     changeSet: [Change]
   }
 
 interface Unobsoletion
   {
+    about: OntologyElement
+    oldValue: String
+    newValue: String
     hasUndo: Obsoletion
   }
 
