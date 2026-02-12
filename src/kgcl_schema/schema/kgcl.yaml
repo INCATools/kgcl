@@ -705,6 +705,12 @@ classes:
     slot_usage:
       change_description:
         string_serialization: delete {about_node}
+  ObjectPropertyDeletion:
+    is_a: NodeDeletion
+    description: A node deletion where the owl type is 'ObjectProperty'
+    slot_usage:
+      change_description:
+        string_serialization: delete object property {about_node}
   NodeDirectMerge:
     is_a: NodeObsoletion
     mixins:
