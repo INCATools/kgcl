@@ -705,6 +705,14 @@ classes:
     slot_usage:
       change_description:
         string_serialization: delete {about_node}
+  ClassDeletion:
+    is_a: NodeDeletion
+    description: A node deletion where the owl type is 'owl:Class'
+    slots:
+    - superclass
+    slot_usage:
+      change_description:
+        string_serialization: delete class {about_node}
   NodeDirectMerge:
     is_a: NodeObsoletion
     mixins:
