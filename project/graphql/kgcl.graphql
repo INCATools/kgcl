@@ -1,4 +1,4 @@
-# metamodel_version: 1.7.0
+# metamodel_version: 1.11.0
 # version: 0.0.1
 enum ObsoletionPolicyEnum
   {
@@ -195,7 +195,7 @@ type Configuration
     obsoleteNodeLabelPrefix: String
     obsoletionWorkflow: String
     obsoletionPolicies: [ObsoletionPolicyEnum]
-    obsoleteSubclassOfShadowProperty: Uriorcurie
+    obsoleteSubclassOfShadowProperty: String
   }
 
 interface Creation
@@ -1793,4 +1793,3 @@ interface Unobsoletion
     newValue: String
     hasUndo: Obsoletion
   }
-

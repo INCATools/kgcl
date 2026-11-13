@@ -60,7 +60,7 @@
       "definition_uri": "https://w3id.org/linkml/String",
       "description": "A character string",
       "notes": [
-        "In RDF serializations, a slot with range of string is treated as a literal or type xsd:string.   If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"string\"."
+        "In RDF serializations, a slot with range of string is treated as a literal or type xsd:string. If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"string\"."
       ],
       "from_schema": "https://w3id.org/linkml/types",
       "imported_from": "linkml:types",
@@ -606,6 +606,7 @@
       ],
       "range": "OntologyElement",
       "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -633,6 +634,7 @@
       ],
       "range": "Edge",
       "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -1049,6 +1051,7 @@
       ],
       "range": "TextualDiff",
       "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -1246,6 +1249,7 @@
       ],
       "range": "Annotation",
       "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -1347,6 +1351,7 @@
       "range": "PropertyValue",
       "multivalued": true,
       "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -1876,6 +1881,7 @@
       "usage_slot_name": "about",
       "range": "OntologyElement",
       "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -1895,6 +1901,7 @@
       "usage_slot_name": "has_undo",
       "range": "Obsoletion",
       "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -1950,6 +1957,7 @@
       "usage_slot_name": "has_undo",
       "range": "Obsoletion",
       "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -1969,6 +1977,7 @@
       "usage_slot_name": "has_undo",
       "range": "Deletion",
       "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -2024,6 +2033,7 @@
       "usage_slot_name": "has_undo",
       "range": "AddToSubset",
       "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -2045,6 +2055,7 @@
       "usage_slot_name": "about_edge",
       "range": "Edge",
       "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -5982,11 +5993,11 @@
       "@type": "ClassDefinition"
     }
   ],
-  "metamodel_version": "1.7.0",
+  "metamodel_version": "1.11.0",
   "source_file": "kgcl.yaml",
-  "source_file_date": "2024-11-15T14:00:37",
+  "source_file_date": "2026-11-13T16:55:08",
   "source_file_size": 32855,
-  "generation_date": "2024-11-15T14:01:00",
+  "generation_date": "2026-11-13T17:01:28",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/kgcl.context.jsonld",

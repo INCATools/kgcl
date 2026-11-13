@@ -83,7 +83,7 @@ def export_yaml_and_md():
 
 class TestCases(unittest.TestCase):
     def setUp(self) -> None:
-        runner = CliRunner(mix_stderr=False)
+        runner = CliRunner()
         self.runner = runner
         export_yaml_and_md()
 

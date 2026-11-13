@@ -381,6 +381,53 @@
             "title": "AddNodeToSubset",
             "type": "object"
         },
+        "AddToSubset": {
+            "additionalProperties": false,
+            "description": "placing an element inside a subset",
+            "properties": {
+                "about": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/OntologyElement"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "The 'focus' entity on which the change operates"
+                },
+                "has_undo": {
+                    "description": "A change that reverses this change",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "in_subset": {
+                    "description": "subset that the element is being placed inside.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "new_value": {
+                    "description": "The value of a property held in the new instance of the ontology",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "old_value": {
+                    "description": "The value of a property held in the old instance of the ontology",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "AddToSubset",
+            "type": "object"
+        },
         "Agent": {
             "additionalProperties": false,
             "description": "a provence-generating agent",
@@ -405,6 +452,50 @@
                 "id"
             ],
             "title": "Agent",
+            "type": "object"
+        },
+        "AllowsAutomaticReplacementOfEdges": {
+            "additionalProperties": false,
+            "description": "Applies to an obsoletion in which annotations or edges pointing at the obsoleted node can be automatically rewired to point to a target",
+            "properties": {
+                "about": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/OntologyElement"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "The element that is obsoleted by this change."
+                },
+                "has_undo": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/Obsoletion"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "A change that reverses this change"
+                },
+                "new_value": {
+                    "description": "The value of a property held in the new instance of the ontology",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "old_value": {
+                    "description": "The value of a property held in the old instance of the ontology",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "AllowsAutomaticReplacementOfEdges",
             "type": "object"
         },
         "Annotation": {
@@ -447,6 +538,289 @@
                 }
             },
             "title": "Annotation",
+            "type": "object"
+        },
+        "Change": {
+            "additionalProperties": false,
+            "description": "Any change perform on an ontology or knowledge graph",
+            "properties": {
+                "associated_change_set": {
+                    "description": "All changes forced as a result of this obsoletion. For example, starting with `A subClassOf B subClassOf C`, if we obsolete node B, then we may decide to bundle in a node move change of A from B to C. Note: this change set is not considered a part of the obsoletion, as obsoletion is considered atomic/simple. Instead this is a reference to a change set that may exist elsewhere",
+                    "items": {
+                        "anyOf": [
+                            {
+                                "$ref": "#/$defs/Transaction"
+                            },
+                            {
+                                "$ref": "#/$defs/MultiNodeObsoletion"
+                            },
+                            {
+                                "$ref": "#/$defs/LogicalAxiomChange"
+                            },
+                            {
+                                "$ref": "#/$defs/NodeRename"
+                            },
+                            {
+                                "$ref": "#/$defs/SetLanguageForName"
+                            },
+                            {
+                                "$ref": "#/$defs/NodeAnnotationChange"
+                            },
+                            {
+                                "$ref": "#/$defs/NodeSynonymChange"
+                            },
+                            {
+                                "$ref": "#/$defs/NodeMappingChange"
+                            },
+                            {
+                                "$ref": "#/$defs/NodeMetadataAssertionChange"
+                            },
+                            {
+                                "$ref": "#/$defs/AddNodeToSubset"
+                            },
+                            {
+                                "$ref": "#/$defs/RemoveNodeFromSubset"
+                            },
+                            {
+                                "$ref": "#/$defs/NodeObsoletion"
+                            },
+                            {
+                                "$ref": "#/$defs/NodeUnobsoletion"
+                            },
+                            {
+                                "$ref": "#/$defs/NodeCreation"
+                            },
+                            {
+                                "$ref": "#/$defs/NodeDeletion"
+                            },
+                            {
+                                "$ref": "#/$defs/ClassCreation"
+                            },
+                            {
+                                "$ref": "#/$defs/ObjectPropertyCreation"
+                            },
+                            {
+                                "$ref": "#/$defs/NodeDirectMerge"
+                            },
+                            {
+                                "$ref": "#/$defs/NodeObsoletionWithDirectReplacement"
+                            },
+                            {
+                                "$ref": "#/$defs/NodeObsoletionWithNoDirectReplacement"
+                            },
+                            {
+                                "$ref": "#/$defs/NewTextDefinition"
+                            },
+                            {
+                                "$ref": "#/$defs/RemoveTextDefinition"
+                            },
+                            {
+                                "$ref": "#/$defs/TextDefinitionReplacement"
+                            },
+                            {
+                                "$ref": "#/$defs/NewMetadataAssertion"
+                            },
+                            {
+                                "$ref": "#/$defs/RemoveMetadataAssertion"
+                            },
+                            {
+                                "$ref": "#/$defs/MetadataAssertionReplacement"
+                            },
+                            {
+                                "$ref": "#/$defs/MetadataAssertionPredicateChange"
+                            },
+                            {
+                                "$ref": "#/$defs/NewMapping"
+                            },
+                            {
+                                "$ref": "#/$defs/RemoveMapping"
+                            },
+                            {
+                                "$ref": "#/$defs/MappingReplacement"
+                            },
+                            {
+                                "$ref": "#/$defs/MappingPredicateChange"
+                            },
+                            {
+                                "$ref": "#/$defs/NewSynonym"
+                            },
+                            {
+                                "$ref": "#/$defs/NameBecomesSynonym"
+                            },
+                            {
+                                "$ref": "#/$defs/RemoveSynonym"
+                            },
+                            {
+                                "$ref": "#/$defs/SynonymReplacement"
+                            },
+                            {
+                                "$ref": "#/$defs/SynonymPredicateChange"
+                            },
+                            {
+                                "$ref": "#/$defs/NodeAnnotationReplacement"
+                            },
+                            {
+                                "$ref": "#/$defs/EdgeCreation"
+                            },
+                            {
+                                "$ref": "#/$defs/EdgeDeletion"
+                            },
+                            {
+                                "$ref": "#/$defs/EdgeObsoletion"
+                            },
+                            {
+                                "$ref": "#/$defs/EdgeRewiring"
+                            },
+                            {
+                                "$ref": "#/$defs/NodeMove"
+                            },
+                            {
+                                "$ref": "#/$defs/PredicateChange"
+                            },
+                            {
+                                "$ref": "#/$defs/EdgeLogicalInterpretationChange"
+                            },
+                            {
+                                "$ref": "#/$defs/NodeDeepening"
+                            },
+                            {
+                                "$ref": "#/$defs/NodeShallowing"
+                            },
+                            {
+                                "$ref": "#/$defs/RemoveUnder"
+                            },
+                            {
+                                "$ref": "#/$defs/PlaceUnder"
+                            },
+                            {
+                                "$ref": "#/$defs/MappingCreation"
+                            }
+                        ]
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "change_date": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "change_description": {
+                    "description": "A string serialization of the change. This should be both human-readable, and parseable.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "contributor": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "creator": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "has_undo": {
+                    "description": "A change that reverses this change",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "id": {
+                    "type": "string"
+                },
+                "pull_request": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "see_also": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "term_tracker_issue": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "type": {
+                    "enum": [
+                        "Change"
+                    ],
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "was_generated_by": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "id"
+            ],
+            "title": "Change",
+            "type": "object"
+        },
+        "ChangeLanguageElement": {
+            "additionalProperties": false,
+            "description": "A broad grouping for all elements of the change language",
+            "title": "ChangeLanguageElement",
+            "type": "object"
+        },
+        "ChangeMixin": {
+            "additionalProperties": false,
+            "description": "root class for all change mixins",
+            "properties": {
+                "about": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/OntologyElement"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "The 'focus' entity on which the change operates"
+                },
+                "has_undo": {
+                    "description": "A change that reverses this change",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "new_value": {
+                    "description": "The value of a property held in the new instance of the ontology",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "old_value": {
+                    "description": "The value of a property held in the old instance of the ontology",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "ChangeMixin",
             "type": "object"
         },
         "ChangeSetSummaryStatistic": {
@@ -848,6 +1222,401 @@
             "title": "ClassNode",
             "type": "object"
         },
+        "ComplexChange": {
+            "additionalProperties": false,
+            "description": "A change that is is a composition of other changes",
+            "properties": {
+                "associated_change_set": {
+                    "description": "All changes forced as a result of this obsoletion. For example, starting with `A subClassOf B subClassOf C`, if we obsolete node B, then we may decide to bundle in a node move change of A from B to C. Note: this change set is not considered a part of the obsoletion, as obsoletion is considered atomic/simple. Instead this is a reference to a change set that may exist elsewhere",
+                    "items": {
+                        "anyOf": [
+                            {
+                                "$ref": "#/$defs/Transaction"
+                            },
+                            {
+                                "$ref": "#/$defs/MultiNodeObsoletion"
+                            },
+                            {
+                                "$ref": "#/$defs/LogicalAxiomChange"
+                            },
+                            {
+                                "$ref": "#/$defs/NodeRename"
+                            },
+                            {
+                                "$ref": "#/$defs/SetLanguageForName"
+                            },
+                            {
+                                "$ref": "#/$defs/NodeAnnotationChange"
+                            },
+                            {
+                                "$ref": "#/$defs/NodeSynonymChange"
+                            },
+                            {
+                                "$ref": "#/$defs/NodeMappingChange"
+                            },
+                            {
+                                "$ref": "#/$defs/NodeMetadataAssertionChange"
+                            },
+                            {
+                                "$ref": "#/$defs/AddNodeToSubset"
+                            },
+                            {
+                                "$ref": "#/$defs/RemoveNodeFromSubset"
+                            },
+                            {
+                                "$ref": "#/$defs/NodeObsoletion"
+                            },
+                            {
+                                "$ref": "#/$defs/NodeUnobsoletion"
+                            },
+                            {
+                                "$ref": "#/$defs/NodeCreation"
+                            },
+                            {
+                                "$ref": "#/$defs/NodeDeletion"
+                            },
+                            {
+                                "$ref": "#/$defs/ClassCreation"
+                            },
+                            {
+                                "$ref": "#/$defs/ObjectPropertyCreation"
+                            },
+                            {
+                                "$ref": "#/$defs/NodeDirectMerge"
+                            },
+                            {
+                                "$ref": "#/$defs/NodeObsoletionWithDirectReplacement"
+                            },
+                            {
+                                "$ref": "#/$defs/NodeObsoletionWithNoDirectReplacement"
+                            },
+                            {
+                                "$ref": "#/$defs/NewTextDefinition"
+                            },
+                            {
+                                "$ref": "#/$defs/RemoveTextDefinition"
+                            },
+                            {
+                                "$ref": "#/$defs/TextDefinitionReplacement"
+                            },
+                            {
+                                "$ref": "#/$defs/NewMetadataAssertion"
+                            },
+                            {
+                                "$ref": "#/$defs/RemoveMetadataAssertion"
+                            },
+                            {
+                                "$ref": "#/$defs/MetadataAssertionReplacement"
+                            },
+                            {
+                                "$ref": "#/$defs/MetadataAssertionPredicateChange"
+                            },
+                            {
+                                "$ref": "#/$defs/NewMapping"
+                            },
+                            {
+                                "$ref": "#/$defs/RemoveMapping"
+                            },
+                            {
+                                "$ref": "#/$defs/MappingReplacement"
+                            },
+                            {
+                                "$ref": "#/$defs/MappingPredicateChange"
+                            },
+                            {
+                                "$ref": "#/$defs/NewSynonym"
+                            },
+                            {
+                                "$ref": "#/$defs/NameBecomesSynonym"
+                            },
+                            {
+                                "$ref": "#/$defs/RemoveSynonym"
+                            },
+                            {
+                                "$ref": "#/$defs/SynonymReplacement"
+                            },
+                            {
+                                "$ref": "#/$defs/SynonymPredicateChange"
+                            },
+                            {
+                                "$ref": "#/$defs/NodeAnnotationReplacement"
+                            },
+                            {
+                                "$ref": "#/$defs/EdgeCreation"
+                            },
+                            {
+                                "$ref": "#/$defs/EdgeDeletion"
+                            },
+                            {
+                                "$ref": "#/$defs/EdgeObsoletion"
+                            },
+                            {
+                                "$ref": "#/$defs/EdgeRewiring"
+                            },
+                            {
+                                "$ref": "#/$defs/NodeMove"
+                            },
+                            {
+                                "$ref": "#/$defs/PredicateChange"
+                            },
+                            {
+                                "$ref": "#/$defs/EdgeLogicalInterpretationChange"
+                            },
+                            {
+                                "$ref": "#/$defs/NodeDeepening"
+                            },
+                            {
+                                "$ref": "#/$defs/NodeShallowing"
+                            },
+                            {
+                                "$ref": "#/$defs/RemoveUnder"
+                            },
+                            {
+                                "$ref": "#/$defs/PlaceUnder"
+                            },
+                            {
+                                "$ref": "#/$defs/MappingCreation"
+                            }
+                        ]
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "change_date": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "change_description": {
+                    "description": "A string serialization of the change. This should be both human-readable, and parseable.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "change_set": {
+                    "description": "A collection of changes",
+                    "items": {
+                        "anyOf": [
+                            {
+                                "$ref": "#/$defs/Transaction"
+                            },
+                            {
+                                "$ref": "#/$defs/MultiNodeObsoletion"
+                            },
+                            {
+                                "$ref": "#/$defs/LogicalAxiomChange"
+                            },
+                            {
+                                "$ref": "#/$defs/NodeRename"
+                            },
+                            {
+                                "$ref": "#/$defs/SetLanguageForName"
+                            },
+                            {
+                                "$ref": "#/$defs/NodeAnnotationChange"
+                            },
+                            {
+                                "$ref": "#/$defs/NodeSynonymChange"
+                            },
+                            {
+                                "$ref": "#/$defs/NodeMappingChange"
+                            },
+                            {
+                                "$ref": "#/$defs/NodeMetadataAssertionChange"
+                            },
+                            {
+                                "$ref": "#/$defs/AddNodeToSubset"
+                            },
+                            {
+                                "$ref": "#/$defs/RemoveNodeFromSubset"
+                            },
+                            {
+                                "$ref": "#/$defs/NodeObsoletion"
+                            },
+                            {
+                                "$ref": "#/$defs/NodeUnobsoletion"
+                            },
+                            {
+                                "$ref": "#/$defs/NodeCreation"
+                            },
+                            {
+                                "$ref": "#/$defs/NodeDeletion"
+                            },
+                            {
+                                "$ref": "#/$defs/ClassCreation"
+                            },
+                            {
+                                "$ref": "#/$defs/ObjectPropertyCreation"
+                            },
+                            {
+                                "$ref": "#/$defs/NodeDirectMerge"
+                            },
+                            {
+                                "$ref": "#/$defs/NodeObsoletionWithDirectReplacement"
+                            },
+                            {
+                                "$ref": "#/$defs/NodeObsoletionWithNoDirectReplacement"
+                            },
+                            {
+                                "$ref": "#/$defs/NewTextDefinition"
+                            },
+                            {
+                                "$ref": "#/$defs/RemoveTextDefinition"
+                            },
+                            {
+                                "$ref": "#/$defs/TextDefinitionReplacement"
+                            },
+                            {
+                                "$ref": "#/$defs/NewMetadataAssertion"
+                            },
+                            {
+                                "$ref": "#/$defs/RemoveMetadataAssertion"
+                            },
+                            {
+                                "$ref": "#/$defs/MetadataAssertionReplacement"
+                            },
+                            {
+                                "$ref": "#/$defs/MetadataAssertionPredicateChange"
+                            },
+                            {
+                                "$ref": "#/$defs/NewMapping"
+                            },
+                            {
+                                "$ref": "#/$defs/RemoveMapping"
+                            },
+                            {
+                                "$ref": "#/$defs/MappingReplacement"
+                            },
+                            {
+                                "$ref": "#/$defs/MappingPredicateChange"
+                            },
+                            {
+                                "$ref": "#/$defs/NewSynonym"
+                            },
+                            {
+                                "$ref": "#/$defs/NameBecomesSynonym"
+                            },
+                            {
+                                "$ref": "#/$defs/RemoveSynonym"
+                            },
+                            {
+                                "$ref": "#/$defs/SynonymReplacement"
+                            },
+                            {
+                                "$ref": "#/$defs/SynonymPredicateChange"
+                            },
+                            {
+                                "$ref": "#/$defs/NodeAnnotationReplacement"
+                            },
+                            {
+                                "$ref": "#/$defs/EdgeCreation"
+                            },
+                            {
+                                "$ref": "#/$defs/EdgeDeletion"
+                            },
+                            {
+                                "$ref": "#/$defs/EdgeObsoletion"
+                            },
+                            {
+                                "$ref": "#/$defs/EdgeRewiring"
+                            },
+                            {
+                                "$ref": "#/$defs/NodeMove"
+                            },
+                            {
+                                "$ref": "#/$defs/PredicateChange"
+                            },
+                            {
+                                "$ref": "#/$defs/EdgeLogicalInterpretationChange"
+                            },
+                            {
+                                "$ref": "#/$defs/NodeDeepening"
+                            },
+                            {
+                                "$ref": "#/$defs/NodeShallowing"
+                            },
+                            {
+                                "$ref": "#/$defs/RemoveUnder"
+                            },
+                            {
+                                "$ref": "#/$defs/PlaceUnder"
+                            },
+                            {
+                                "$ref": "#/$defs/MappingCreation"
+                            }
+                        ]
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "contributor": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "creator": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "has_undo": {
+                    "description": "A change that reverses this change",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "id": {
+                    "type": "string"
+                },
+                "pull_request": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "see_also": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "term_tracker_issue": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "type": {
+                    "enum": [
+                        "ComplexChange"
+                    ],
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "was_generated_by": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "id"
+            ],
+            "title": "ComplexChange",
+            "type": "object"
+        },
         "Configuration": {
             "additionalProperties": false,
             "description": "The meaning of operations can be configured",
@@ -921,6 +1690,50 @@
             "title": "Configuration",
             "type": "object"
         },
+        "Creation": {
+            "additionalProperties": false,
+            "description": "Creation of an element.",
+            "properties": {
+                "about": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/OntologyElement"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "The 'focus' entity on which the change operates"
+                },
+                "has_undo": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/Deletion"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "A change that reverses this change"
+                },
+                "new_value": {
+                    "description": "The value of a property held in the new instance of the ontology",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "old_value": {
+                    "description": "The value of a property held in the old instance of the ontology",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "Creation",
+            "type": "object"
+        },
         "DatatypeChange": {
             "additionalProperties": false,
             "description": "",
@@ -959,6 +1772,86 @@
                 }
             },
             "title": "DatatypeChange",
+            "type": "object"
+        },
+        "DatatypeOrLanguageTagChange": {
+            "additionalProperties": false,
+            "description": "A change in a value assertion where the value remain unchanged but either the datatype or language changes",
+            "properties": {
+                "about": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/OntologyElement"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "The 'focus' entity on which the change operates"
+                },
+                "has_undo": {
+                    "description": "A change that reverses this change",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "new_value": {
+                    "description": "The value of a property held in the new instance of the ontology",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "old_value": {
+                    "description": "The value of a property held in the old instance of the ontology",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "DatatypeOrLanguageTagChange",
+            "type": "object"
+        },
+        "Deletion": {
+            "additionalProperties": false,
+            "description": "Removal of an element.",
+            "properties": {
+                "about": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/OntologyElement"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "The 'focus' entity on which the change operates"
+                },
+                "has_undo": {
+                    "description": "A change that reverses this change",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "new_value": {
+                    "description": "The value of a property held in the new instance of the ontology",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "old_value": {
+                    "description": "The value of a property held in the old instance of the ontology",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "Deletion",
             "type": "object"
         },
         "Edge": {
@@ -1013,6 +1906,330 @@
                 }
             },
             "title": "Edge",
+            "type": "object"
+        },
+        "EdgeChange": {
+            "additionalProperties": false,
+            "description": "A change in which the element that is the focus of the change is an edge.",
+            "properties": {
+                "about_edge": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/Edge"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ]
+                },
+                "associated_change_set": {
+                    "description": "All changes forced as a result of this obsoletion. For example, starting with `A subClassOf B subClassOf C`, if we obsolete node B, then we may decide to bundle in a node move change of A from B to C. Note: this change set is not considered a part of the obsoletion, as obsoletion is considered atomic/simple. Instead this is a reference to a change set that may exist elsewhere",
+                    "items": {
+                        "anyOf": [
+                            {
+                                "$ref": "#/$defs/Transaction"
+                            },
+                            {
+                                "$ref": "#/$defs/MultiNodeObsoletion"
+                            },
+                            {
+                                "$ref": "#/$defs/LogicalAxiomChange"
+                            },
+                            {
+                                "$ref": "#/$defs/NodeRename"
+                            },
+                            {
+                                "$ref": "#/$defs/SetLanguageForName"
+                            },
+                            {
+                                "$ref": "#/$defs/NodeAnnotationChange"
+                            },
+                            {
+                                "$ref": "#/$defs/NodeSynonymChange"
+                            },
+                            {
+                                "$ref": "#/$defs/NodeMappingChange"
+                            },
+                            {
+                                "$ref": "#/$defs/NodeMetadataAssertionChange"
+                            },
+                            {
+                                "$ref": "#/$defs/AddNodeToSubset"
+                            },
+                            {
+                                "$ref": "#/$defs/RemoveNodeFromSubset"
+                            },
+                            {
+                                "$ref": "#/$defs/NodeObsoletion"
+                            },
+                            {
+                                "$ref": "#/$defs/NodeUnobsoletion"
+                            },
+                            {
+                                "$ref": "#/$defs/NodeCreation"
+                            },
+                            {
+                                "$ref": "#/$defs/NodeDeletion"
+                            },
+                            {
+                                "$ref": "#/$defs/ClassCreation"
+                            },
+                            {
+                                "$ref": "#/$defs/ObjectPropertyCreation"
+                            },
+                            {
+                                "$ref": "#/$defs/NodeDirectMerge"
+                            },
+                            {
+                                "$ref": "#/$defs/NodeObsoletionWithDirectReplacement"
+                            },
+                            {
+                                "$ref": "#/$defs/NodeObsoletionWithNoDirectReplacement"
+                            },
+                            {
+                                "$ref": "#/$defs/NewTextDefinition"
+                            },
+                            {
+                                "$ref": "#/$defs/RemoveTextDefinition"
+                            },
+                            {
+                                "$ref": "#/$defs/TextDefinitionReplacement"
+                            },
+                            {
+                                "$ref": "#/$defs/NewMetadataAssertion"
+                            },
+                            {
+                                "$ref": "#/$defs/RemoveMetadataAssertion"
+                            },
+                            {
+                                "$ref": "#/$defs/MetadataAssertionReplacement"
+                            },
+                            {
+                                "$ref": "#/$defs/MetadataAssertionPredicateChange"
+                            },
+                            {
+                                "$ref": "#/$defs/NewMapping"
+                            },
+                            {
+                                "$ref": "#/$defs/RemoveMapping"
+                            },
+                            {
+                                "$ref": "#/$defs/MappingReplacement"
+                            },
+                            {
+                                "$ref": "#/$defs/MappingPredicateChange"
+                            },
+                            {
+                                "$ref": "#/$defs/NewSynonym"
+                            },
+                            {
+                                "$ref": "#/$defs/NameBecomesSynonym"
+                            },
+                            {
+                                "$ref": "#/$defs/RemoveSynonym"
+                            },
+                            {
+                                "$ref": "#/$defs/SynonymReplacement"
+                            },
+                            {
+                                "$ref": "#/$defs/SynonymPredicateChange"
+                            },
+                            {
+                                "$ref": "#/$defs/NodeAnnotationReplacement"
+                            },
+                            {
+                                "$ref": "#/$defs/EdgeCreation"
+                            },
+                            {
+                                "$ref": "#/$defs/EdgeDeletion"
+                            },
+                            {
+                                "$ref": "#/$defs/EdgeObsoletion"
+                            },
+                            {
+                                "$ref": "#/$defs/EdgeRewiring"
+                            },
+                            {
+                                "$ref": "#/$defs/NodeMove"
+                            },
+                            {
+                                "$ref": "#/$defs/PredicateChange"
+                            },
+                            {
+                                "$ref": "#/$defs/EdgeLogicalInterpretationChange"
+                            },
+                            {
+                                "$ref": "#/$defs/NodeDeepening"
+                            },
+                            {
+                                "$ref": "#/$defs/NodeShallowing"
+                            },
+                            {
+                                "$ref": "#/$defs/RemoveUnder"
+                            },
+                            {
+                                "$ref": "#/$defs/PlaceUnder"
+                            },
+                            {
+                                "$ref": "#/$defs/MappingCreation"
+                            }
+                        ]
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "change_date": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "change_description": {
+                    "description": "A string serialization of the change. This should be both human-readable, and parseable.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "contributor": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "creator": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "datatype": {
+                    "description": "The datatype of a literal",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "has_undo": {
+                    "description": "A change that reverses this change",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "id": {
+                    "type": "string"
+                },
+                "language": {
+                    "description": "The language tag of a literal",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "new_datatype": {
+                    "description": "The new datatype of a literal",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "new_language": {
+                    "description": "The new language tag of a literal",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "new_value": {
+                    "description": "The value of a property held in the new instance of the ontology",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "new_value_type": {
+                    "description": "The type (IRI or Literal) of a new value",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "object_type": {
+                    "description": "The type (IRI or Literal) of an object",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "old_datatype": {
+                    "description": "The old datatype of a literal",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "old_language": {
+                    "description": "The old language tag of a literal",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "old_value": {
+                    "description": "The value of a property held in the old instance of the ontology",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "old_value_type": {
+                    "description": "The type (IRI or Literal) of an old value",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "pull_request": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "see_also": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "term_tracker_issue": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "type": {
+                    "enum": [
+                        "EdgeChange"
+                    ],
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "was_generated_by": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "id"
+            ],
+            "title": "EdgeChange",
             "type": "object"
         },
         "EdgeCreation": {
@@ -6673,10 +7890,7 @@
                     ]
                 },
                 "id": {
-                    "type": [
-                        "string",
-                        "null"
-                    ]
+                    "type": "string"
                 },
                 "name": {
                     "type": [
@@ -7346,6 +8560,319 @@
                 "id"
             ],
             "title": "NodeAnnotationReplacement",
+            "type": "object"
+        },
+        "NodeChange": {
+            "additionalProperties": false,
+            "description": "A simple change where the change is about a node",
+            "properties": {
+                "about_node": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "about_node_representation": {
+                    "description": "The representation of a node (URI, CURIE, label) ",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "associated_change_set": {
+                    "description": "All changes forced as a result of this obsoletion. For example, starting with `A subClassOf B subClassOf C`, if we obsolete node B, then we may decide to bundle in a node move change of A from B to C. Note: this change set is not considered a part of the obsoletion, as obsoletion is considered atomic/simple. Instead this is a reference to a change set that may exist elsewhere",
+                    "items": {
+                        "anyOf": [
+                            {
+                                "$ref": "#/$defs/Transaction"
+                            },
+                            {
+                                "$ref": "#/$defs/MultiNodeObsoletion"
+                            },
+                            {
+                                "$ref": "#/$defs/LogicalAxiomChange"
+                            },
+                            {
+                                "$ref": "#/$defs/NodeRename"
+                            },
+                            {
+                                "$ref": "#/$defs/SetLanguageForName"
+                            },
+                            {
+                                "$ref": "#/$defs/NodeAnnotationChange"
+                            },
+                            {
+                                "$ref": "#/$defs/NodeSynonymChange"
+                            },
+                            {
+                                "$ref": "#/$defs/NodeMappingChange"
+                            },
+                            {
+                                "$ref": "#/$defs/NodeMetadataAssertionChange"
+                            },
+                            {
+                                "$ref": "#/$defs/AddNodeToSubset"
+                            },
+                            {
+                                "$ref": "#/$defs/RemoveNodeFromSubset"
+                            },
+                            {
+                                "$ref": "#/$defs/NodeObsoletion"
+                            },
+                            {
+                                "$ref": "#/$defs/NodeUnobsoletion"
+                            },
+                            {
+                                "$ref": "#/$defs/NodeCreation"
+                            },
+                            {
+                                "$ref": "#/$defs/NodeDeletion"
+                            },
+                            {
+                                "$ref": "#/$defs/ClassCreation"
+                            },
+                            {
+                                "$ref": "#/$defs/ObjectPropertyCreation"
+                            },
+                            {
+                                "$ref": "#/$defs/NodeDirectMerge"
+                            },
+                            {
+                                "$ref": "#/$defs/NodeObsoletionWithDirectReplacement"
+                            },
+                            {
+                                "$ref": "#/$defs/NodeObsoletionWithNoDirectReplacement"
+                            },
+                            {
+                                "$ref": "#/$defs/NewTextDefinition"
+                            },
+                            {
+                                "$ref": "#/$defs/RemoveTextDefinition"
+                            },
+                            {
+                                "$ref": "#/$defs/TextDefinitionReplacement"
+                            },
+                            {
+                                "$ref": "#/$defs/NewMetadataAssertion"
+                            },
+                            {
+                                "$ref": "#/$defs/RemoveMetadataAssertion"
+                            },
+                            {
+                                "$ref": "#/$defs/MetadataAssertionReplacement"
+                            },
+                            {
+                                "$ref": "#/$defs/MetadataAssertionPredicateChange"
+                            },
+                            {
+                                "$ref": "#/$defs/NewMapping"
+                            },
+                            {
+                                "$ref": "#/$defs/RemoveMapping"
+                            },
+                            {
+                                "$ref": "#/$defs/MappingReplacement"
+                            },
+                            {
+                                "$ref": "#/$defs/MappingPredicateChange"
+                            },
+                            {
+                                "$ref": "#/$defs/NewSynonym"
+                            },
+                            {
+                                "$ref": "#/$defs/NameBecomesSynonym"
+                            },
+                            {
+                                "$ref": "#/$defs/RemoveSynonym"
+                            },
+                            {
+                                "$ref": "#/$defs/SynonymReplacement"
+                            },
+                            {
+                                "$ref": "#/$defs/SynonymPredicateChange"
+                            },
+                            {
+                                "$ref": "#/$defs/NodeAnnotationReplacement"
+                            },
+                            {
+                                "$ref": "#/$defs/EdgeCreation"
+                            },
+                            {
+                                "$ref": "#/$defs/EdgeDeletion"
+                            },
+                            {
+                                "$ref": "#/$defs/EdgeObsoletion"
+                            },
+                            {
+                                "$ref": "#/$defs/EdgeRewiring"
+                            },
+                            {
+                                "$ref": "#/$defs/NodeMove"
+                            },
+                            {
+                                "$ref": "#/$defs/PredicateChange"
+                            },
+                            {
+                                "$ref": "#/$defs/EdgeLogicalInterpretationChange"
+                            },
+                            {
+                                "$ref": "#/$defs/NodeDeepening"
+                            },
+                            {
+                                "$ref": "#/$defs/NodeShallowing"
+                            },
+                            {
+                                "$ref": "#/$defs/RemoveUnder"
+                            },
+                            {
+                                "$ref": "#/$defs/PlaceUnder"
+                            },
+                            {
+                                "$ref": "#/$defs/MappingCreation"
+                            }
+                        ]
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "change_date": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "change_description": {
+                    "description": "A string serialization of the change. This should be both human-readable, and parseable.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "contributor": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "creator": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "has_undo": {
+                    "description": "A change that reverses this change",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "id": {
+                    "type": "string"
+                },
+                "language": {
+                    "description": "The language tag of a literal",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "new_datatype": {
+                    "description": "The new datatype of a literal",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "new_language": {
+                    "description": "The new language tag of a literal",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "new_value": {
+                    "description": "The value of a property held in the new instance of the ontology",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "new_value_type": {
+                    "description": "The type (IRI or Literal) of a new value",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "old_datatype": {
+                    "description": "The old datatype of a literal",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "old_language": {
+                    "description": "The old language tag of a literal",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "old_value": {
+                    "description": "The value of a property held in the old instance of the ontology",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "old_value_type": {
+                    "description": "The type (IRI or Literal) of an old value",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "pull_request": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "see_also": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "term_tracker_issue": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "type": {
+                    "enum": [
+                        "NodeChange"
+                    ],
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "was_generated_by": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "id"
+            ],
+            "title": "NodeChange",
             "type": "object"
         },
         "NodeCreation": {
@@ -11677,6 +13204,319 @@
             "title": "NodeSynonymChange",
             "type": "object"
         },
+        "NodeTextDefinitionChange": {
+            "additionalProperties": false,
+            "description": "A node change where the text definition is changed",
+            "properties": {
+                "about_node": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "about_node_representation": {
+                    "description": "The representation of a node (URI, CURIE, label) ",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "associated_change_set": {
+                    "description": "All changes forced as a result of this obsoletion. For example, starting with `A subClassOf B subClassOf C`, if we obsolete node B, then we may decide to bundle in a node move change of A from B to C. Note: this change set is not considered a part of the obsoletion, as obsoletion is considered atomic/simple. Instead this is a reference to a change set that may exist elsewhere",
+                    "items": {
+                        "anyOf": [
+                            {
+                                "$ref": "#/$defs/Transaction"
+                            },
+                            {
+                                "$ref": "#/$defs/MultiNodeObsoletion"
+                            },
+                            {
+                                "$ref": "#/$defs/LogicalAxiomChange"
+                            },
+                            {
+                                "$ref": "#/$defs/NodeRename"
+                            },
+                            {
+                                "$ref": "#/$defs/SetLanguageForName"
+                            },
+                            {
+                                "$ref": "#/$defs/NodeAnnotationChange"
+                            },
+                            {
+                                "$ref": "#/$defs/NodeSynonymChange"
+                            },
+                            {
+                                "$ref": "#/$defs/NodeMappingChange"
+                            },
+                            {
+                                "$ref": "#/$defs/NodeMetadataAssertionChange"
+                            },
+                            {
+                                "$ref": "#/$defs/AddNodeToSubset"
+                            },
+                            {
+                                "$ref": "#/$defs/RemoveNodeFromSubset"
+                            },
+                            {
+                                "$ref": "#/$defs/NodeObsoletion"
+                            },
+                            {
+                                "$ref": "#/$defs/NodeUnobsoletion"
+                            },
+                            {
+                                "$ref": "#/$defs/NodeCreation"
+                            },
+                            {
+                                "$ref": "#/$defs/NodeDeletion"
+                            },
+                            {
+                                "$ref": "#/$defs/ClassCreation"
+                            },
+                            {
+                                "$ref": "#/$defs/ObjectPropertyCreation"
+                            },
+                            {
+                                "$ref": "#/$defs/NodeDirectMerge"
+                            },
+                            {
+                                "$ref": "#/$defs/NodeObsoletionWithDirectReplacement"
+                            },
+                            {
+                                "$ref": "#/$defs/NodeObsoletionWithNoDirectReplacement"
+                            },
+                            {
+                                "$ref": "#/$defs/NewTextDefinition"
+                            },
+                            {
+                                "$ref": "#/$defs/RemoveTextDefinition"
+                            },
+                            {
+                                "$ref": "#/$defs/TextDefinitionReplacement"
+                            },
+                            {
+                                "$ref": "#/$defs/NewMetadataAssertion"
+                            },
+                            {
+                                "$ref": "#/$defs/RemoveMetadataAssertion"
+                            },
+                            {
+                                "$ref": "#/$defs/MetadataAssertionReplacement"
+                            },
+                            {
+                                "$ref": "#/$defs/MetadataAssertionPredicateChange"
+                            },
+                            {
+                                "$ref": "#/$defs/NewMapping"
+                            },
+                            {
+                                "$ref": "#/$defs/RemoveMapping"
+                            },
+                            {
+                                "$ref": "#/$defs/MappingReplacement"
+                            },
+                            {
+                                "$ref": "#/$defs/MappingPredicateChange"
+                            },
+                            {
+                                "$ref": "#/$defs/NewSynonym"
+                            },
+                            {
+                                "$ref": "#/$defs/NameBecomesSynonym"
+                            },
+                            {
+                                "$ref": "#/$defs/RemoveSynonym"
+                            },
+                            {
+                                "$ref": "#/$defs/SynonymReplacement"
+                            },
+                            {
+                                "$ref": "#/$defs/SynonymPredicateChange"
+                            },
+                            {
+                                "$ref": "#/$defs/NodeAnnotationReplacement"
+                            },
+                            {
+                                "$ref": "#/$defs/EdgeCreation"
+                            },
+                            {
+                                "$ref": "#/$defs/EdgeDeletion"
+                            },
+                            {
+                                "$ref": "#/$defs/EdgeObsoletion"
+                            },
+                            {
+                                "$ref": "#/$defs/EdgeRewiring"
+                            },
+                            {
+                                "$ref": "#/$defs/NodeMove"
+                            },
+                            {
+                                "$ref": "#/$defs/PredicateChange"
+                            },
+                            {
+                                "$ref": "#/$defs/EdgeLogicalInterpretationChange"
+                            },
+                            {
+                                "$ref": "#/$defs/NodeDeepening"
+                            },
+                            {
+                                "$ref": "#/$defs/NodeShallowing"
+                            },
+                            {
+                                "$ref": "#/$defs/RemoveUnder"
+                            },
+                            {
+                                "$ref": "#/$defs/PlaceUnder"
+                            },
+                            {
+                                "$ref": "#/$defs/MappingCreation"
+                            }
+                        ]
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "change_date": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "change_description": {
+                    "description": "A string serialization of the change. This should be both human-readable, and parseable.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "contributor": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "creator": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "has_undo": {
+                    "description": "A change that reverses this change",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "id": {
+                    "type": "string"
+                },
+                "language": {
+                    "description": "The language tag of a literal",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "new_datatype": {
+                    "description": "The new datatype of a literal",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "new_language": {
+                    "description": "The new language tag of a literal",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "new_value": {
+                    "description": "The value of a property held in the new instance of the ontology",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "new_value_type": {
+                    "description": "The type (IRI or Literal) of a new value",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "old_datatype": {
+                    "description": "The old datatype of a literal",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "old_language": {
+                    "description": "The old language tag of a literal",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "old_value": {
+                    "description": "The value of a property held in the old instance of the ontology",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "old_value_type": {
+                    "description": "The type (IRI or Literal) of an old value",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "pull_request": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "see_also": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "term_tracker_issue": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "type": {
+                    "enum": [
+                        "NodeTextDefinitionChange"
+                    ],
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "was_generated_by": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "id"
+            ],
+            "title": "NodeTextDefinitionChange",
+            "type": "object"
+        },
         "NodeUnobsoletion": {
             "additionalProperties": false,
             "description": "unobsoletion of a node deprecates usage of that node. Rarely applied.",
@@ -12374,6 +14214,50 @@
                 "id"
             ],
             "title": "ObjectPropertyCreation",
+            "type": "object"
+        },
+        "Obsoletion": {
+            "additionalProperties": false,
+            "description": "Obsoletion of an element deprecates usage of that element, but does not delete that element.",
+            "properties": {
+                "about": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/OntologyElement"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "The element that is obsoleted by this change."
+                },
+                "has_undo": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/Obsoletion"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "A change that reverses this change"
+                },
+                "new_value": {
+                    "description": "The value of a property held in the new instance of the ontology",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "old_value": {
+                    "description": "The value of a property held in the old instance of the ontology",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "Obsoletion",
             "type": "object"
         },
         "ObsoletionPolicyEnum": {
@@ -13157,6 +15041,63 @@
                 }
             },
             "title": "PropertyValue",
+            "type": "object"
+        },
+        "ProvElement": {
+            "additionalProperties": false,
+            "description": "A grouping for prov elements",
+            "title": "ProvElement",
+            "type": "object"
+        },
+        "RemoveFromSubset": {
+            "additionalProperties": false,
+            "description": "removing an element from a subset",
+            "properties": {
+                "about": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/OntologyElement"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "The 'focus' entity on which the change operates"
+                },
+                "has_undo": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/AddToSubset"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "A change that reverses this change"
+                },
+                "in_subset": {
+                    "description": "subset that the element is being removed from",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "new_value": {
+                    "description": "The value of a property held in the new instance of the ontology",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "old_value": {
+                    "description": "The value of a property held in the old instance of the ontology",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "RemoveFromSubset",
             "type": "object"
         },
         "RemoveMapping": {
@@ -15647,6 +17588,346 @@
             "title": "SetLanguageForName",
             "type": "object"
         },
+        "SimpleChange": {
+            "additionalProperties": false,
+            "description": "A change that is about a single ontology element",
+            "properties": {
+                "associated_change_set": {
+                    "description": "All changes forced as a result of this obsoletion. For example, starting with `A subClassOf B subClassOf C`, if we obsolete node B, then we may decide to bundle in a node move change of A from B to C. Note: this change set is not considered a part of the obsoletion, as obsoletion is considered atomic/simple. Instead this is a reference to a change set that may exist elsewhere",
+                    "items": {
+                        "anyOf": [
+                            {
+                                "$ref": "#/$defs/Transaction"
+                            },
+                            {
+                                "$ref": "#/$defs/MultiNodeObsoletion"
+                            },
+                            {
+                                "$ref": "#/$defs/LogicalAxiomChange"
+                            },
+                            {
+                                "$ref": "#/$defs/NodeRename"
+                            },
+                            {
+                                "$ref": "#/$defs/SetLanguageForName"
+                            },
+                            {
+                                "$ref": "#/$defs/NodeAnnotationChange"
+                            },
+                            {
+                                "$ref": "#/$defs/NodeSynonymChange"
+                            },
+                            {
+                                "$ref": "#/$defs/NodeMappingChange"
+                            },
+                            {
+                                "$ref": "#/$defs/NodeMetadataAssertionChange"
+                            },
+                            {
+                                "$ref": "#/$defs/AddNodeToSubset"
+                            },
+                            {
+                                "$ref": "#/$defs/RemoveNodeFromSubset"
+                            },
+                            {
+                                "$ref": "#/$defs/NodeObsoletion"
+                            },
+                            {
+                                "$ref": "#/$defs/NodeUnobsoletion"
+                            },
+                            {
+                                "$ref": "#/$defs/NodeCreation"
+                            },
+                            {
+                                "$ref": "#/$defs/NodeDeletion"
+                            },
+                            {
+                                "$ref": "#/$defs/ClassCreation"
+                            },
+                            {
+                                "$ref": "#/$defs/ObjectPropertyCreation"
+                            },
+                            {
+                                "$ref": "#/$defs/NodeDirectMerge"
+                            },
+                            {
+                                "$ref": "#/$defs/NodeObsoletionWithDirectReplacement"
+                            },
+                            {
+                                "$ref": "#/$defs/NodeObsoletionWithNoDirectReplacement"
+                            },
+                            {
+                                "$ref": "#/$defs/NewTextDefinition"
+                            },
+                            {
+                                "$ref": "#/$defs/RemoveTextDefinition"
+                            },
+                            {
+                                "$ref": "#/$defs/TextDefinitionReplacement"
+                            },
+                            {
+                                "$ref": "#/$defs/NewMetadataAssertion"
+                            },
+                            {
+                                "$ref": "#/$defs/RemoveMetadataAssertion"
+                            },
+                            {
+                                "$ref": "#/$defs/MetadataAssertionReplacement"
+                            },
+                            {
+                                "$ref": "#/$defs/MetadataAssertionPredicateChange"
+                            },
+                            {
+                                "$ref": "#/$defs/NewMapping"
+                            },
+                            {
+                                "$ref": "#/$defs/RemoveMapping"
+                            },
+                            {
+                                "$ref": "#/$defs/MappingReplacement"
+                            },
+                            {
+                                "$ref": "#/$defs/MappingPredicateChange"
+                            },
+                            {
+                                "$ref": "#/$defs/NewSynonym"
+                            },
+                            {
+                                "$ref": "#/$defs/NameBecomesSynonym"
+                            },
+                            {
+                                "$ref": "#/$defs/RemoveSynonym"
+                            },
+                            {
+                                "$ref": "#/$defs/SynonymReplacement"
+                            },
+                            {
+                                "$ref": "#/$defs/SynonymPredicateChange"
+                            },
+                            {
+                                "$ref": "#/$defs/NodeAnnotationReplacement"
+                            },
+                            {
+                                "$ref": "#/$defs/EdgeCreation"
+                            },
+                            {
+                                "$ref": "#/$defs/EdgeDeletion"
+                            },
+                            {
+                                "$ref": "#/$defs/EdgeObsoletion"
+                            },
+                            {
+                                "$ref": "#/$defs/EdgeRewiring"
+                            },
+                            {
+                                "$ref": "#/$defs/NodeMove"
+                            },
+                            {
+                                "$ref": "#/$defs/PredicateChange"
+                            },
+                            {
+                                "$ref": "#/$defs/EdgeLogicalInterpretationChange"
+                            },
+                            {
+                                "$ref": "#/$defs/NodeDeepening"
+                            },
+                            {
+                                "$ref": "#/$defs/NodeShallowing"
+                            },
+                            {
+                                "$ref": "#/$defs/RemoveUnder"
+                            },
+                            {
+                                "$ref": "#/$defs/PlaceUnder"
+                            },
+                            {
+                                "$ref": "#/$defs/MappingCreation"
+                            }
+                        ]
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "change_date": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "change_description": {
+                    "description": "A string serialization of the change. This should be both human-readable, and parseable.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "contributor": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "creator": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "has_undo": {
+                    "description": "A change that reverses this change",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "id": {
+                    "type": "string"
+                },
+                "new_datatype": {
+                    "description": "The new datatype of a literal",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "new_language": {
+                    "description": "The new language tag of a literal",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "new_value": {
+                    "description": "The value of a property held in the new instance of the ontology",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "new_value_type": {
+                    "description": "The type (IRI or Literal) of a new value",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "old_datatype": {
+                    "description": "The old datatype of a literal",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "old_language": {
+                    "description": "The old language tag of a literal",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "old_value": {
+                    "description": "The value of a property held in the old instance of the ontology",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "old_value_type": {
+                    "description": "The type (IRI or Literal) of an old value",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "pull_request": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "see_also": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "term_tracker_issue": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "type": {
+                    "enum": [
+                        "SimpleChange"
+                    ],
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "was_generated_by": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "id"
+            ],
+            "title": "SimpleChange",
+            "type": "object"
+        },
+        "SubsetMembershipChange": {
+            "additionalProperties": false,
+            "description": "A change in the membership status of a node with respect to a subset (view)",
+            "properties": {
+                "about": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/OntologyElement"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "The 'focus' entity on which the change operates"
+                },
+                "has_undo": {
+                    "description": "A change that reverses this change",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "in_subset": {
+                    "description": "The subset that pertains to this change",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "new_value": {
+                    "description": "The value of a property held in the new instance of the ontology",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "old_value": {
+                    "description": "The value of a property held in the old instance of the ontology",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "SubsetMembershipChange",
+            "type": "object"
+        },
         "SynonymPredicateChange": {
             "additionalProperties": false,
             "description": "A node synonym change where the predicate of a synonym is changed. Background: synonyms can be represented by a variety of predicates. For example, many OBO ontologies make use of predicates such as oio:hasExactSynonym, oio:hasRelatedSynonym, etc",
@@ -17044,13 +19325,57 @@
             ],
             "title": "Transaction",
             "type": "object"
+        },
+        "Unobsoletion": {
+            "additionalProperties": false,
+            "description": "Opposite operation of obsoletion. Rarely performed.",
+            "properties": {
+                "about": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/OntologyElement"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "The 'focus' entity on which the change operates"
+                },
+                "has_undo": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/Obsoletion"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "A change that reverses this change"
+                },
+                "new_value": {
+                    "description": "The value of a property held in the new instance of the ontology",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "old_value": {
+                    "description": "The value of a property held in the old instance of the ontology",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "Unobsoletion",
+            "type": "object"
         }
     },
     "$id": "https://w3id.org/kgcl",
     "$schema": "https://json-schema.org/draft/2019-09/schema",
     "additionalProperties": true,
     "description": "A session consists of a set of change sets bundled with the activities that generated those change sets",
-    "metamodel_version": "1.7.0",
+    "metamodel_version": "1.11.0",
     "properties": {
         "activity_set": {
             "items": {
