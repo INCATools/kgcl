@@ -7,3 +7,4 @@ __pycache__
 tmp/
 tests/outputs/*
 project/docs/*
+mkdocs_html/

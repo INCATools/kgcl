@@ -1,21 +1,49 @@
 site_name: "KGCL"
+site_description: "Knowledge Graph Change Language: a standard for describing changes to ontologies and knowledge graphs"
+site_url: https://incatools.github.io/kgcl/
+repo_url: https://github.com/INCATools/kgcl
 theme:
   name: material
   analytics:
     gtag: G-2SYBSJVZ23
-#  palette:
-#    scheme: slate
-#    primary: cyan
   features:
     - content.tabs.link
+    - navigation.sections
+    - navigation.top
 plugins:
   - search
-  - mermaid2
+  - redirects:
+      # Pages that moved; keeps old links working
+      redirect_maps:
+        main.md: index.md  # home page was main.md until it became the site root
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.highlight
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
 docs_dir: docs
 site_dir: mkdocs_html
 nav:
-  - About: main.md
-  - Index: index.md
-  - Examples: examples.md
-site_url: https://incatools.github.io/kgcl/
-repo_url: https://github.com/INCATools/kgcl
+  - Home: index.md
+  - Using KGCL:
+      - Visual guide to change types: change-types.md
+      - Command examples: examples.md
+      - Class hierarchy: class-hierarchy.md
+  - Tools:
+      - Ontobot (GitHub): github-integration.md
+      - BioPortal: bioportal-implementation.md
+  - Schema reference: schema-reference.md
+  - Citing KGCL: citing.md
+extra_javascript:
+  - class_tree.js
