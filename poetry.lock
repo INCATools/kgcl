@@ -1016,6 +1016,21 @@ files = [
 ]
 
 [[package]]
+name = "mkdocs-redirects"
+version = "1.2.2"
+description = "A MkDocs plugin for dynamic page redirects to prevent broken links"
+optional = false
+python-versions = ">=3.8"
+groups = ["dev"]
+files = [
+    {file = "mkdocs_redirects-1.2.2-py3-none-any.whl", hash = "sha256:7dbfa5647b79a3589da4401403d69494bd1f4ad03b9c15136720367e1f340ed5"},
+    {file = "mkdocs_redirects-1.2.2.tar.gz", hash = "sha256:3094981b42ffab29313c2c1b8ac3969861109f58b2dd58c45fc81cd44bfa0095"},
+]
+
+[package.dependencies]
+mkdocs = ">=1.1.1"
+
+[[package]]
 name = "openpyxl"
 version = "3.1.5"
 description = "A Python library to read/write Excel 2010 xlsx/xlsm files"
@@ -2348,4 +2363,4 @@ docs = []
 [metadata]
 lock-version = "2.1"
 python-versions = ">=3.10,<4.0"
-content-hash = "1c2f7eed7f416b90c6e3784ea404629e0e079d9d9f6b842100420f5bf1356c4a"
+content-hash = "5caf29940c9d8695a6f77cee8991a798286cb236dcfac63c77f5071985fbcae5"

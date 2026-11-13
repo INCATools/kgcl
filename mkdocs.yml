@@ -12,6 +12,10 @@ theme:
     - navigation.top
 plugins:
   - search
+  - redirects:
+      # Pages that moved; keeps old links working
+      redirect_maps:
+        main.md: index.md  # home page was main.md until it became the site root
 markdown_extensions:
   - admonition
   - attr_list
