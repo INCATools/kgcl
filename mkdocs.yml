@@ -31,7 +31,7 @@ markdown_extensions:
 docs_dir: docs
 site_dir: mkdocs_html
 nav:
-  - Home: main.md
+  - Home: index.md
   - Using KGCL:
       - Visual guide to change types: change-types.md
       - Command examples: examples.md
@@ -39,7 +39,7 @@ nav:
   - Tools:
       - Ontobot (GitHub): github-integration.md
       - BioPortal: bioportal-implementation.md
-  - Schema reference: index.md
-  - Citing KGCL: about.md
+  - Schema reference: schema-reference.md
+  - Citing KGCL: citing.md
 extra_javascript:
   - class_tree.js

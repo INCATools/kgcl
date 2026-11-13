@@ -11,7 +11,7 @@ The examples use real terms from the [Gene Ontology](https://geneontology.org) a
 not changes anyone has requested. For the full list of command forms and their YAML
 serializations, see [Command examples](examples.md). For every change type in the
 model, see the [class hierarchy](class-hierarchy.md) or the
-[schema reference](index.md).
+[schema reference](schema-reference.md).
 
 ## Labels
 

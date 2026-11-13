@@ -89,7 +89,7 @@ gendoc: $(DOCDIR)
 	$(RUN) generate_viz_json
 	cp -r $(SRC)/docs/*.md $(SRC)/docs/*.js $(SRC)/docs/*.json $(DOCDIR)
 	cp -r $(SRC)/docs/images $(DOCDIR)
-	$(RUN) gen-doc -d $(DOCDIR) --template-directory $(SRC)/$(TEMPLATEDIR) $(SOURCE_SCHEMA_PATH)
+	$(RUN) gen-doc -d $(DOCDIR) --template-directory $(SRC)/$(TEMPLATEDIR) --index-name schema-reference $(SOURCE_SCHEMA_PATH)
 
 # Build the site without deploying; fails on broken links and other warnings
 docs-check: gendoc

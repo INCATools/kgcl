@@ -35,7 +35,7 @@ the following, with permission under that license:
 
 | Where | What | Changes |
 | --- | --- | --- |
-| [Home](main.md) | Figures 2 and 3, and text from the Introduction and the sections on the change classification, data model, and serialization | Text condensed and reworded; figure captions rewritten |
+| [Home](index.md) | Figures 2 and 3, and text from the Introduction and the sections on the change classification, data model, and serialization | Text condensed and reworded; figure captions rewritten |
 | [Ontobot](github-integration.md) | Figure 4, and text from the Ontobot section | Text condensed and reworded; figure caption rewritten |
 | [BioPortal](bioportal-implementation.md) | The list of ontologies with change requests enabled | None |
 

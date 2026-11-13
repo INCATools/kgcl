@@ -5,6 +5,7 @@ from pathlib import Path
 
 from kgcl_schema.grammar.parser import parse_statement
 from kgcl_schema.grammar.render_operations import render
+from kgcl_schema.schema import get_schemaview
 
 DOCS_DIR = Path(__file__).resolve().parents[1] / "src" / "docs"
 KGCL_BLOCK = re.compile(r"^```kgcl\n(.*?)^```", re.MULTILINE | re.DOTALL)
@@ -28,3 +29,14 @@ class DocsTestSuite(unittest.TestCase):
             with self.subTest(file=md_name, command=command):
                 change = parse_statement(command)
                 self.assertEqual(command, render(change))
+
+
+class DocsPageNameTestSuite(unittest.TestCase):
+    def test_no_page_name_collides_with_schema_element(self):
+        """gen-doc writes one page per schema element into the same directory,
+        so a hand-written page with the same name would be overwritten."""
+        schemaview = get_schemaview()
+        element_names = {name.lower() for name in schemaview.all_elements(imports=True)}
+        for md_file in DOCS_DIR.glob("*.md"):
+            with self.subTest(page=md_file.name):
+                self.assertNotIn(md_file.stem.lower(), element_names)

@@ -17,7 +17,7 @@ obsolete GO:9999999 with replacement GO:0005634
     [Hegde *et al.*, *A change language for ontologies and knowledge graphs*,
     Database (2025)](https://doi.org/10.1093/database/baae133), used under the
     [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) license.
-    See [Citing KGCL](about.md).
+    See [Citing KGCL](citing.md).
 
 ## Why a change language?
 

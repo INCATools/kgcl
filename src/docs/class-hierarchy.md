@@ -10,7 +10,7 @@ documentation is built.
 <div id="kgcl-class-tree" markdown="0">Loading the class hierarchy…</div>
 
 The same hierarchy, with a description of each class, is in the
-[schema reference](index.md#classes). It is also browsable as an ontology on
+[schema reference](schema-reference.md#classes). It is also browsable as an ontology on
 [BioPortal](https://bioportal.bioontology.org/ontologies/KGCL).
 
 <style>
