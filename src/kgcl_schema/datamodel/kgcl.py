@@ -1,5 +1,5 @@
 # Auto generated from kgcl.yaml by pythongen.py version: 0.0.1
-# Generation date: 2026-11-13T17:01:30
+# Generation date: 2026-11-13T17:04:22
 # Schema: kgcl_schema
 #
 # id: https://w3id.org/kgcl
@@ -179,6 +179,10 @@ class NodeChangeId(SimpleChangeId):
 
 
 class NodeRenameId(NodeChangeId):
+    pass
+
+
+class NewLabelId(NodeChangeId):
     pass
 
 
@@ -1430,6 +1434,43 @@ class NodeRename(NodeChange):
 
         if self.old_language is not None and not isinstance(self.old_language, str):
             self.old_language = str(self.old_language)
+
+        if self.change_description is not None and not isinstance(self.change_description, str):
+            self.change_description = str(self.change_description)
+
+        super().__post_init__(**kwargs)
+        self.type = str(self.class_name)
+
+
+@dataclass(repr=False)
+class NewLabel(NodeChange):
+    """
+    A node change where a name (aka rdfs:label) is added to a node that does not already have one. To replace an
+    existing name, use NodeRename.
+    """
+    _inherited_slots: ClassVar[list[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = KGCL["NewLabel"]
+    class_class_curie: ClassVar[str] = "kgcl:NewLabel"
+    class_name: ClassVar[str] = "NewLabel"
+    class_model_uri: ClassVar[URIRef] = KGCL.NewLabel
+
+    id: Union[str, NewLabelId] = None
+    new_value: Optional[str] = None
+    new_language: Optional[str] = None
+    change_description: Optional[str] = None
+
+    def __post_init__(self, *_: str, **kwargs: Any):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, NewLabelId):
+            self.id = NewLabelId(self.id)
+
+        if self.new_value is not None and not isinstance(self.new_value, str):
+            self.new_value = str(self.new_value)
+
+        if self.new_language is not None and not isinstance(self.new_language, str):
+            self.new_language = str(self.new_language)
 
         if self.change_description is not None and not isinstance(self.change_description, str):
             self.change_description = str(self.change_description)
@@ -3496,6 +3537,12 @@ slots.NodeRename_new_value = Slot(uri=KGCL.new_value, name="NodeRename_new_value
 
 slots.NodeRename_change_description = Slot(uri=KGCL.change_description, name="NodeRename_change_description", curie=KGCL.curie('change_description'),
                    model_uri=KGCL.NodeRename_change_description, domain=NodeRename, range=Optional[str])
+
+slots.NewLabel_new_value = Slot(uri=KGCL.new_value, name="NewLabel_new_value", curie=KGCL.curie('new_value'),
+                   model_uri=KGCL.NewLabel_new_value, domain=NewLabel, range=Optional[str])
+
+slots.NewLabel_change_description = Slot(uri=KGCL.change_description, name="NewLabel_change_description", curie=KGCL.curie('change_description'),
+                   model_uri=KGCL.NewLabel_change_description, domain=NewLabel, range=Optional[str])
 
 slots.SetLanguageForName_change_description = Slot(uri=KGCL.change_description, name="SetLanguageForName_change_description", curie=KGCL.curie('change_description'),
                    model_uri=KGCL.SetLanguageForName_change_description, domain=SetLanguageForName, range=Optional[str])

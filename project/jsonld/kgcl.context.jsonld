@@ -416,6 +416,9 @@
       "NameBecomesSynonym": {
          "@id": "NameBecomesSynonym"
       },
+      "NewLabel": {
+         "@id": "NewLabel"
+      },
       "NewMapping": {
          "@id": "NewMapping"
       },

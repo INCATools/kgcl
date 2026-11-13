@@ -1,4 +1,5 @@
 ?expression: rename 
+           | add_label
            | create
            | obsolete 
            | delete 
@@ -21,6 +22,8 @@
            | change_synonym
 
 rename : "rename" _WS [id _WS "from" _WS] old_label ["@" old_language] _WS ("to"|"as"|"->") _WS new_label ["@" new_language]
+
+add_label : "add label" _WS new_label ["@" new_language] _WS "to" _WS entity
 
 create : "create node" _WS id _WS label ["@" language]
 create_class: "create" _WS id

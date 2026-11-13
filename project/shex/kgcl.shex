@@ -463,6 +463,16 @@ om:LogicalDefinition CLOSED {
     )
 }
 
+<NewLabel> CLOSED {
+    (  $<NewLabel_tes> (  &<NodeChange_tes> ;
+          rdf:type [ <NodeChange> ] ? ;
+          <new_value> @linkml:String ? ;
+          <change_description> @linkml:String ?
+       ) ;
+       rdf:type [ <NewLabel> ]
+    )
+}
+
 <NewMapping> CLOSED {
     (  $<NewMapping_tes> (  &<NodeMappingChange_tes> ;
           rdf:type [ <NodeMappingChange> ] ? ;
@@ -535,7 +545,7 @@ om:Node  (
 }
 
 <NodeChange>  (
-    @<AddNodeToSubset> OR @<NodeAnnotationChange> OR @<NodeCreation> OR @<NodeDeletion> OR @<NodeMappingChange> OR
+    @<AddNodeToSubset> OR @<NewLabel> OR @<NodeAnnotationChange> OR @<NodeCreation> OR @<NodeDeletion> OR @<NodeMappingChange> OR
     @<NodeMetadataAssertionChange> OR @<NodeObsoletion> OR @<NodeRename> OR @<NodeSynonymChange> OR @<NodeTextDefinitionChange> OR
     @<NodeUnobsoletion> OR @<RemoveNodeFromSubset> OR @<SetLanguageForName>
 )

@@ -529,6 +529,33 @@ message NameBecomesSynonym
   languageTag language = 0
   string changeDescription = 0
  }
+// A node change where a name (aka rdfs:label) is added to a node that does not already have one. To replace an existing name, use NodeRename.
+message NewLabel
+ {
+  string id = 0
+  string type = 0
+  activity wasGeneratedBy = 0
+  string seeAlso = 0
+  string pullRequest = 0
+  string termTrackerIssue = 0
+  string creator = 0
+  string changeDate = 0
+  string contributor = 0
+  change hasUndo = 0
+ repeated  change associatedChangeSet = 0
+  string oldValue = 0
+  string oldValueType = 0
+  string newValueType = 0
+  string oldLanguage = 0
+  string newDatatype = 0
+  string oldDatatype = 0
+  node aboutNode = 0
+  string aboutNodeRepresentation = 0
+  languageTag language = 0
+  string newValue = 0
+  string newLanguage = 0
+  string changeDescription = 0
+ }
 // A node mapping change where a mapping is added to a node
 message NewMapping
  {

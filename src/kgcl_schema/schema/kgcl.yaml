@@ -425,6 +425,28 @@ classes:
     - value: rename UBERON:0002398 from 'manus' to 'hand'
       description: replacing the rdfs:label of 'manus' on an uberon class with the
         rdfs:label 'hand'
+  NewLabel:
+    is_a: NodeChange
+    aliases:
+    - add label
+    - add name
+    description: A node change where a name (aka rdfs:label) is added to a node that
+      does not already have one. To replace an existing name, use NodeRename.
+    slots:
+    - new_value
+    - new_language
+    slot_usage:
+      new_value:
+        multivalued: false
+      change_description:
+        string_serialization: add label {new_value} to {about_node}
+    examples:
+    - value: add label 'nucleus' to GO:0005634
+      description: adding the rdfs:label 'nucleus' to a GO class that has no label
+    - value: add label 'noyau'@fr to GO:0005634
+      description: adding a French-language rdfs:label to a GO class
+    see_also:
+    - https://github.com/INCATools/kgcl/issues/100
   SetLanguageForName:
     is_a: NodeChange
     mixins:

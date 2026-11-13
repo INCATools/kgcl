@@ -33,6 +33,7 @@
 --     * Slot: LogicalAxiomChange_id Description: Autocreated FK slot
 --     * Slot: NodeChange_id Description: Autocreated FK slot
 --     * Slot: NodeRename_id Description: Autocreated FK slot
+--     * Slot: NewLabel_id Description: Autocreated FK slot
 --     * Slot: SetLanguageForName_id Description: Autocreated FK slot
 --     * Slot: NodeAnnotationChange_id Description: Autocreated FK slot
 --     * Slot: NodeAnnotationReplacement_id Description: Autocreated FK slot
@@ -626,6 +627,29 @@
 --     * Slot: has_undo Description: A change that reverses this change
 --     * Slot: change_description Description: A string serialization of the change. This should be both human-readable, and parseable.
 --     * Slot: has_textual_diff_id Description: A representation of character-level changes on a textual literal property. For example, if a text definition may change by only a single character such as addition of a period, it is useful to be able to see this visually.
+-- # Class: NewLabel Description: A node change where a name (aka rdfs:label) is added to a node that does not already have one. To replace an existing name, use NodeRename.
+--     * Slot: new_value Description: The value of a property held in the new instance of the ontology
+--     * Slot: new_language Description: The new language tag of a literal
+--     * Slot: about_node
+--     * Slot: about_node_representation Description: The representation of a node (URI, CURIE, label)
+--     * Slot: language Description: The language tag of a literal
+--     * Slot: old_value Description: The value of a property held in the old instance of the ontology
+--     * Slot: old_value_type Description: The type (IRI or Literal) of an old value
+--     * Slot: new_value_type Description: The type (IRI or Literal) of a new value
+--     * Slot: old_language Description: The old language tag of a literal
+--     * Slot: new_datatype Description: The new datatype of a literal
+--     * Slot: old_datatype Description: The old datatype of a literal
+--     * Slot: id
+--     * Slot: type
+--     * Slot: was_generated_by
+--     * Slot: see_also
+--     * Slot: pull_request
+--     * Slot: term_tracker_issue
+--     * Slot: creator
+--     * Slot: change_date
+--     * Slot: contributor
+--     * Slot: has_undo Description: A change that reverses this change
+--     * Slot: change_description Description: A string serialization of the change. This should be both human-readable, and parseable.
 -- # Class: SetLanguageForName Description: A node change where the string value for the name is unchanged but the language tag is set
 --     * Slot: old_value Description: The value of a property held in the old instance of the ontology
 --     * Slot: new_value Description: The value of a property held in the new instance of the ontology
@@ -1592,6 +1616,7 @@ CREATE TABLE "Change" (
 	"LogicalAxiomChange_id" TEXT,
 	"NodeChange_id" TEXT,
 	"NodeRename_id" TEXT,
+	"NewLabel_id" TEXT,
 	"SetLanguageForName_id" TEXT,
 	"NodeAnnotationChange_id" TEXT,
 	"NodeAnnotationReplacement_id" TEXT,
@@ -1651,6 +1676,7 @@ CREATE TABLE "Change" (
 	FOREIGN KEY("LogicalAxiomChange_id") REFERENCES "LogicalAxiomChange" (id),
 	FOREIGN KEY("NodeChange_id") REFERENCES "NodeChange" (id),
 	FOREIGN KEY("NodeRename_id") REFERENCES "NodeRename" (id),
+	FOREIGN KEY("NewLabel_id") REFERENCES "NewLabel" (id),
 	FOREIGN KEY("SetLanguageForName_id") REFERENCES "SetLanguageForName" (id),
 	FOREIGN KEY("NodeAnnotationChange_id") REFERENCES "NodeAnnotationChange" (id),
 	FOREIGN KEY("NodeAnnotationReplacement_id") REFERENCES "NodeAnnotationReplacement" (id),
@@ -2326,6 +2352,36 @@ CREATE TABLE "NodeRename" (
 	FOREIGN KEY(has_textual_diff_id) REFERENCES "TextualDiff" (id)
 );
 CREATE INDEX "ix_NodeRename_id" ON "NodeRename" (id);
+
+CREATE TABLE "NewLabel" (
+	new_value TEXT,
+	new_language TEXT,
+	about_node TEXT,
+	about_node_representation TEXT,
+	language TEXT,
+	old_value TEXT,
+	old_value_type TEXT,
+	new_value_type TEXT,
+	old_language TEXT,
+	new_datatype TEXT,
+	old_datatype TEXT,
+	id TEXT NOT NULL,
+	type TEXT,
+	was_generated_by TEXT,
+	see_also TEXT,
+	pull_request TEXT,
+	term_tracker_issue TEXT,
+	creator TEXT,
+	change_date TEXT,
+	contributor TEXT,
+	has_undo TEXT,
+	change_description TEXT,
+	PRIMARY KEY (id),
+	FOREIGN KEY(about_node) REFERENCES "Node" (id),
+	FOREIGN KEY(was_generated_by) REFERENCES "Activity" (id),
+	FOREIGN KEY(has_undo) REFERENCES "Change" (id)
+);
+CREATE INDEX "ix_NewLabel_id" ON "NewLabel" (id);
 
 CREATE TABLE "SetLanguageForName" (
 	old_value TEXT,
@@ -3779,8 +3835,8 @@ CREATE TABLE "NodeUnobsoletion_has_nondirect_replacement" (
 	FOREIGN KEY("NodeUnobsoletion_id") REFERENCES "NodeUnobsoletion" (id),
 	FOREIGN KEY(has_nondirect_replacement_id) REFERENCES "Node" (id)
 );
-CREATE INDEX "ix_NodeUnobsoletion_has_nondirect_replacement_has_nondirect_replacement_id" ON "NodeUnobsoletion_has_nondirect_replacement" (has_nondirect_replacement_id);
 CREATE INDEX "ix_NodeUnobsoletion_has_nondirect_replacement_NodeUnobsoletion_id" ON "NodeUnobsoletion_has_nondirect_replacement" ("NodeUnobsoletion_id");
+CREATE INDEX "ix_NodeUnobsoletion_has_nondirect_replacement_has_nondirect_replacement_id" ON "NodeUnobsoletion_has_nondirect_replacement" (has_nondirect_replacement_id);
 
 CREATE TABLE "NodeDirectMerge_has_nondirect_replacement" (
 	"NodeDirectMerge_id" TEXT,
@@ -3799,8 +3855,8 @@ CREATE TABLE "NodeObsoletionWithDirectReplacement_has_nondirect_replacement" (
 	FOREIGN KEY("NodeObsoletionWithDirectReplacement_id") REFERENCES "NodeObsoletionWithDirectReplacement" (id),
 	FOREIGN KEY(has_nondirect_replacement_id) REFERENCES "Node" (id)
 );
-CREATE INDEX "ix_NodeObsoletionWithDirectReplacement_has_nondirect_replacement_NodeObsoletionWithDirectReplacement_id" ON "NodeObsoletionWithDirectReplacement_has_nondirect_replacement" ("NodeObsoletionWithDirectReplacement_id");
 CREATE INDEX "ix_NodeObsoletionWithDirectReplacement_has_nondirect_replacement_has_nondirect_replacement_id" ON "NodeObsoletionWithDirectReplacement_has_nondirect_replacement" (has_nondirect_replacement_id);
+CREATE INDEX "ix_NodeObsoletionWithDirectReplacement_has_nondirect_replacement_NodeObsoletionWithDirectReplacement_id" ON "NodeObsoletionWithDirectReplacement_has_nondirect_replacement" ("NodeObsoletionWithDirectReplacement_id");
 
 CREATE TABLE "NodeObsoletionWithNoDirectReplacement_has_nondirect_replacement" (
 	"NodeObsoletionWithNoDirectReplacement_id" TEXT,
@@ -3809,5 +3865,5 @@ CREATE TABLE "NodeObsoletionWithNoDirectReplacement_has_nondirect_replacement" (
 	FOREIGN KEY("NodeObsoletionWithNoDirectReplacement_id") REFERENCES "NodeObsoletionWithNoDirectReplacement" (id),
 	FOREIGN KEY(has_nondirect_replacement_id) REFERENCES "Node" (id)
 );
-CREATE INDEX "ix_NodeObsoletionWithNoDirectReplacement_has_nondirect_replacement_NodeObsoletionWithNoDirectReplacement_id" ON "NodeObsoletionWithNoDirectReplacement_has_nondirect_replacement" ("NodeObsoletionWithNoDirectReplacement_id");
 CREATE INDEX "ix_NodeObsoletionWithNoDirectReplacement_has_nondirect_replacement_has_nondirect_replacement_id" ON "NodeObsoletionWithNoDirectReplacement_has_nondirect_replacement" (has_nondirect_replacement_id);
+CREATE INDEX "ix_NodeObsoletionWithNoDirectReplacement_has_nondirect_replacement_NodeObsoletionWithNoDirectReplacement_id" ON "NodeObsoletionWithNoDirectReplacement_has_nondirect_replacement" ("NodeObsoletionWithNoDirectReplacement_id");

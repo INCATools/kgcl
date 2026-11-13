@@ -700,6 +700,7 @@
         "SimpleChange",
         "ChangeMixin",
         "NodeRename",
+        "NewLabel",
         "SetLanguageForName",
         "NewSynonym",
         "SynonymReplacement",
@@ -759,10 +760,11 @@
       "description": "The new language tag of a literal",
       "from_schema": "https://w3id.org/kgcl",
       "slot_uri": "http://w3id.org/kgcl/new_language",
-      "owner": "NodeRename",
+      "owner": "NewLabel",
       "domain_of": [
         "SimpleChange",
-        "NodeRename"
+        "NodeRename",
+        "NewLabel"
       ],
       "range": "string",
       "@type": "SlotDefinition"
@@ -2547,6 +2549,69 @@
       "owner": "NodeRename",
       "domain_of": [
         "NodeRename"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "change_description",
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "NewLabel_new_value",
+      "definition_uri": "http://w3id.org/kgcl/new_value",
+      "description": "The value of a property held in the new instance of the ontology",
+      "from_schema": "https://w3id.org/kgcl",
+      "is_a": "new_value",
+      "domain": "NewLabel",
+      "slot_uri": "http://w3id.org/kgcl/new_value",
+      "alias": "new_value",
+      "owner": "NewLabel",
+      "domain_of": [
+        "NewLabel"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "new_value",
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "NewLabel_change_description",
+      "definition_uri": "http://w3id.org/kgcl/change_description",
+      "description": "A string serialization of the change. This should be both human-readable, and parseable.",
+      "comments": [
+        "{'Form 1': 'IRIs are denoted by CURIEs, optionally followed by label in parenthesis'}",
+        "{'Form 2': \"IRIs are denoted by the rdfs:label in single quotes, e.g. 'nervous system'\"}"
+      ],
+      "examples": [
+        {
+          "value": "rename UBERON:0002398 from 'manus' to 'hand'",
+          "@type": "Example"
+        },
+        {
+          "value": "move 'hand' from 'part of' 'hindlimb' to 'part of' 'forelimb'",
+          "@type": "Example"
+        },
+        {
+          "value": "merge 'cellular metabolic process' into 'metabolic process'",
+          "@type": "Example"
+        },
+        {
+          "value": "search and replace 'metabolic process' with 'metabolism' in all labels under 'biological process'",
+          "@type": "Example"
+        },
+        {
+          "value": "search and replace 'metabolic process' with 'metabolism' in all labels under 'biological process' retaining as 'exact synonym'",
+          "@type": "Example"
+        }
+      ],
+      "from_schema": "https://w3id.org/kgcl",
+      "is_a": "change_description",
+      "string_serialization": "add label {new_value} to {about_node}",
+      "domain": "NewLabel",
+      "slot_uri": "http://w3id.org/kgcl/change_description",
+      "alias": "change_description",
+      "owner": "NewLabel",
+      "domain_of": [
+        "NewLabel"
       ],
       "is_usage_slot": true,
       "usage_slot_name": "change_description",
@@ -4343,6 +4408,60 @@
       "@type": "ClassDefinition"
     },
     {
+      "name": "NewLabel",
+      "definition_uri": "http://w3id.org/kgcl/NewLabel",
+      "description": "A node change where a name (aka rdfs:label) is added to a node that does not already have one. To replace an existing name, use NodeRename.",
+      "examples": [
+        {
+          "value": "add label 'nucleus' to GO:0005634",
+          "description": "adding the rdfs:label 'nucleus' to a GO class that has no label",
+          "@type": "Example"
+        },
+        {
+          "value": "add label 'noyau'@fr to GO:0005634",
+          "description": "adding a French-language rdfs:label to a GO class",
+          "@type": "Example"
+        }
+      ],
+      "from_schema": "https://w3id.org/kgcl",
+      "see_also": [
+        "https://github.com/INCATools/kgcl/issues/100"
+      ],
+      "aliases": [
+        "add label",
+        "add name"
+      ],
+      "is_a": "NodeChange",
+      "slots": [
+        "id",
+        "type",
+        "Change_was_generated_by",
+        "Change_see_also",
+        "Change_pull_request",
+        "Change_term_tracker_issue",
+        "Change_creator",
+        "Change_change_date",
+        "contributor",
+        "has_undo",
+        "associated_change_set",
+        "old_value",
+        "old_value_type",
+        "new_value_type",
+        "old_language",
+        "new_datatype",
+        "old_datatype",
+        "about_node",
+        "about_node_representation",
+        "language",
+        "NewLabel_new_value",
+        "new_language",
+        "NewLabel_change_description"
+      ],
+      "slot_usage": {},
+      "class_uri": "http://w3id.org/kgcl/NewLabel",
+      "@type": "ClassDefinition"
+    },
+    {
       "name": "SetLanguageForName",
       "definition_uri": "http://w3id.org/kgcl/SetLanguageForName",
       "description": "A node change where the string value for the name is unchanged but the language tag is set",
@@ -5995,9 +6114,9 @@
   ],
   "metamodel_version": "1.11.0",
   "source_file": "kgcl.yaml",
-  "source_file_date": "2026-11-13T16:55:08",
-  "source_file_size": 32855,
-  "generation_date": "2026-11-13T17:01:28",
+  "source_file_date": "2026-11-13T17:04:03",
+  "source_file_size": 33621,
+  "generation_date": "2026-11-13T17:04:19",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/kgcl.context.jsonld",
