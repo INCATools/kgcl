@@ -1,0 +1,754 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="https://incatools.github.io/kgcl/NewLabel/" rel="canonical"/>
+<link href="../assets/images/favicon.png" rel="icon"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-9.7.7" name="generator"/>
+<title>Class: NewLabel - KGCL</title>
+<link href="../assets/stylesheets/main.ec1eaa64.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+</head>
+<body dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#class-newlabel">
+          Skip to content
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header md-header--shadow" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="KGCL" class="md-header__button md-logo" data-md-component="logo" href=".." title="KGCL">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            KGCL
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              Class: NewLabel
+            
+          </span>
+</div>
+</div>
+</div>
+<script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</label>
+<nav aria-label="Search" class="md-search__options">
+<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" title="Clear" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+</button>
+</nav>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="" tabindex="0">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initializing search
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="md-header__source">
+<a class="md-source" data-md-component="source" href="https://github.com/INCATools/kgcl" title="Go to repository">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"></path></svg>
+</div>
+<div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="KGCL" class="md-nav__button md-logo" data-md-component="logo" href=".." title="KGCL">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+</a>
+    KGCL
+  </label>
+<div class="md-nav__source">
+<a class="md-source" data-md-component="source" href="https://github.com/INCATools/kgcl" title="Go to repository">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"></path></svg>
+</div>
+<div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+</div>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../main/">
+<span class="md-ellipsis">
+    
+  
+    About
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="..">
+<span class="md-ellipsis">
+    
+  
+    Index
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../examples/">
+<span class="md-ellipsis">
+    
+  
+    Examples
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h1 id="class-newlabel">Class: NewLabel</h1>
+<p><em>A node change where a name (aka rdfs:label) is added to a node that does not already have one. To replace an existing name, use NodeRename.</em></p>
+<div data-search-exclude="" markdown="1">
+
+
+
+URI: [kgcl:NewLabel](http://w3id.org/kgcl/NewLabel)
+
+
+
+
+
+
+<div class="mermaid"> classDiagram
+    class NewLabel
+    click NewLabel href "../NewLabel/"
+      NodeChange &lt;|-- NewLabel
+        click NodeChange href "../NodeChange/"
+
+      NewLabel : about_node
+
+
+
+
+
+        NewLabel --&gt; "0..1" Node : about_node
+        click Node href "../Node/"
+
+
+
+      NewLabel : about_node_representation
+
+      NewLabel : associated_change_set
+
+
+
+
+
+        NewLabel --&gt; "*" Change : associated_change_set
+        click Change href "../Change/"
+
+
+
+      NewLabel : change_date
+
+      NewLabel : change_description
+
+      NewLabel : contributor
+
+      NewLabel : creator
+
+      NewLabel : has_undo
+
+
+
+
+
+        NewLabel --&gt; "0..1" Change : has_undo
+        click Change href "../Change/"
+
+
+
+      NewLabel : id
+
+      NewLabel : language
+
+      NewLabel : new_datatype
+
+      NewLabel : new_language
+
+      NewLabel : new_value
+
+      NewLabel : new_value_type
+
+      NewLabel : old_datatype
+
+      NewLabel : old_language
+
+      NewLabel : old_value
+
+      NewLabel : old_value_type
+
+      NewLabel : pull_request
+
+      NewLabel : see_also
+
+      NewLabel : term_tracker_issue
+
+      NewLabel : type
+
+      NewLabel : was_generated_by
+
+
+
+
+
+        NewLabel --&gt; "0..1" Activity : was_generated_by
+        click Activity href "../Activity/"
+
+
+
+
+</div>
+
+
+
+
+
+
+## Inheritance
+* [ChangeLanguageElement](ChangeLanguageElement.md)
+    * [Change](Change.md)
+        * [SimpleChange](SimpleChange.md)
+            * [NodeChange](NodeChange.md)
+                * **NewLabel**
+
+
+## Slots
+
+| Name | Cardinality and Range | Description | Inheritance |
+| ---  | --- | --- | --- |
+| [new_value](new_value.md) | 0..1 <br/> [String](String.md) | The value of a property held in the new instance of the ontology | direct |
+| [new_language](new_language.md) | 0..1 <br/> [String](String.md) | The new language tag of a literal | direct |
+| [about_node](about_node.md) | 0..1 <br/> [Node](Node.md) |  | [NodeChange](NodeChange.md) |
+| [about_node_representation](about_node_representation.md) | 0..1 <br/> [String](String.md) | The representation of a node (URI, CURIE, label)  | [NodeChange](NodeChange.md) |
+| [language](language.md) | 0..1 <br/> [LanguageTag](LanguageTag.md) | The language tag of a literal | [NodeChange](NodeChange.md) |
+| [old_value](old_value.md) | 0..1 <br/> [String](String.md) | The value of a property held in the old instance of the ontology | [SimpleChange](SimpleChange.md) |
+| [old_value_type](old_value_type.md) | 0..1 <br/> [String](String.md) | The type (IRI or Literal) of an old value | [SimpleChange](SimpleChange.md) |
+| [new_value_type](new_value_type.md) | 0..1 <br/> [String](String.md) | The type (IRI or Literal) of a new value | [SimpleChange](SimpleChange.md) |
+| [old_language](old_language.md) | 0..1 <br/> [String](String.md) | The old language tag of a literal | [SimpleChange](SimpleChange.md) |
+| [new_datatype](new_datatype.md) | 0..1 <br/> [String](String.md) | The new datatype of a literal | [SimpleChange](SimpleChange.md) |
+| [old_datatype](old_datatype.md) | 0..1 <br/> [String](String.md) | The old datatype of a literal | [SimpleChange](SimpleChange.md) |
+| [id](id.md) | 1 <br/> [String](String.md) |  | [Change](Change.md) |
+| [type](type.md) | 0..1 <br/> [String](String.md) |  | [Change](Change.md) |
+| [was_generated_by](was_generated_by.md) | 0..1 <br/> [Activity](Activity.md) |  | [Change](Change.md) |
+| [see_also](see_also.md) | 0..1 <br/> [String](String.md) |  | [Change](Change.md) |
+| [pull_request](pull_request.md) | 0..1 <br/> [String](String.md) |  | [Change](Change.md) |
+| [term_tracker_issue](term_tracker_issue.md) | 0..1 <br/> [String](String.md) |  | [Change](Change.md) |
+| [creator](creator.md) | 0..1 <br/> [String](String.md) |  | [Change](Change.md) |
+| [change_date](change_date.md) | 0..1 <br/> [String](String.md) |  | [Change](Change.md) |
+| [contributor](contributor.md) | 0..1 <br/> [String](String.md) |  | [Change](Change.md) |
+| [has_undo](has_undo.md) | 0..1 <br/> [Change](Change.md) | A change that reverses this change | [Change](Change.md) |
+| [change_description](change_description.md) | 0..1 <br/> [String](String.md) | A string serialization of the change | [Change](Change.md) |
+| [associated_change_set](associated_change_set.md) | * <br/> [Change](Change.md) | All changes forced as a result of this obsoletion | [Change](Change.md) |
+
+
+
+
+
+
+
+
+
+
+
+
+## Aliases
+
+
+* add label
+* add name
+
+
+
+## Examples
+
+| Value |
+| --- |
+| add label 'nucleus' to GO:0005634 |
+| add label 'noyau'@fr to GO:0005634 |
+
+## See Also
+
+* [https://github.com/INCATools/kgcl/issues/100](https://github.com/INCATools/kgcl/issues/100)
+
+
+
+## Identifier and Mapping Information
+
+
+
+
+
+### Schema Source
+
+
+* from schema: https://w3id.org/kgcl
+
+
+
+
+## Mappings
+
+| Mapping Type | Mapped Value |
+| ---  | ---  |
+| self | kgcl:NewLabel |
+| native | kgcl:NewLabel |
+
+
+
+
+
+
+## LinkML Source
+
+<!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
+
+### Direct
+
+<details>
+<pre><code class="language-yaml">name: NewLabel
+description: A node change where a name (aka rdfs:label) is added to a node that does
+  not already have one. To replace an existing name, use NodeRename.
+examples:
+- value: add label 'nucleus' to GO:0005634
+  description: adding the rdfs:label 'nucleus' to a GO class that has no label
+- value: add label 'noyau'@fr to GO:0005634
+  description: adding a French-language rdfs:label to a GO class
+from_schema: https://w3id.org/kgcl
+see_also:
+- https://github.com/INCATools/kgcl/issues/100
+aliases:
+- add label
+- add name
+is_a: NodeChange
+slots:
+- new_value
+- new_language
+slot_usage:
+  new_value:
+    name: new_value
+    multivalued: false
+  change_description:
+    name: change_description
+    string_serialization: add label {new_value} to {about_node}
+
+</code></pre>
+</details>
+
+### Induced
+
+<details>
+<pre><code class="language-yaml">name: NewLabel
+description: A node change where a name (aka rdfs:label) is added to a node that does
+  not already have one. To replace an existing name, use NodeRename.
+examples:
+- value: add label 'nucleus' to GO:0005634
+  description: adding the rdfs:label 'nucleus' to a GO class that has no label
+- value: add label 'noyau'@fr to GO:0005634
+  description: adding a French-language rdfs:label to a GO class
+from_schema: https://w3id.org/kgcl
+see_also:
+- https://github.com/INCATools/kgcl/issues/100
+aliases:
+- add label
+- add name
+is_a: NodeChange
+slot_usage:
+  new_value:
+    name: new_value
+    multivalued: false
+  change_description:
+    name: change_description
+    string_serialization: add label {new_value} to {about_node}
+attributes:
+  new_value:
+    name: new_value
+    description: The value of a property held in the new instance of the ontology
+    from_schema: https://w3id.org/kgcl
+    rank: 1000
+    owner: NewLabel
+    domain_of:
+    - SimpleChange
+    - ChangeMixin
+    - NodeRename
+    - NewLabel
+    - SetLanguageForName
+    - NewSynonym
+    - SynonymReplacement
+    - SynonymPredicateChange
+    - MappingReplacement
+    - MappingPredicateChange
+    - MetadataAssertionReplacement
+    - MetadataAssertionPredicateChange
+    - NewTextDefinition
+    - TextDefinitionReplacement
+    range: string
+    multivalued: false
+  new_language:
+    name: new_language
+    description: The new language tag of a literal
+    from_schema: https://w3id.org/kgcl
+    rank: 1000
+    owner: NewLabel
+    domain_of:
+    - SimpleChange
+    - NodeRename
+    - NewLabel
+    range: string
+  about_node:
+    name: about_node
+    from_schema: https://w3id.org/kgcl
+    rank: 1000
+    is_a: about
+    owner: NewLabel
+    domain_of:
+    - NodeChange
+    range: Node
+    multivalued: false
+  about_node_representation:
+    name: about_node_representation
+    description: 'The representation of a node (URI, CURIE, label) '
+    deprecated: no longer required
+    from_schema: https://w3id.org/kgcl
+    rank: 1000
+    owner: NewLabel
+    domain_of:
+    - NodeChange
+    range: string
+  language:
+    name: language
+    description: The language tag of a literal
+    from_schema: https://w3id.org/kgcl
+    rank: 1000
+    owner: NewLabel
+    domain_of:
+    - EdgeChange
+    - NodeChange
+    - NewSynonym
+    - NodeCreation
+    range: LanguageTag
+  old_value:
+    name: old_value
+    description: The value of a property held in the old instance of the ontology
+    from_schema: https://w3id.org/kgcl
+    rank: 1000
+    owner: NewLabel
+    domain_of:
+    - SimpleChange
+    - ChangeMixin
+    - NodeRename
+    - SetLanguageForName
+    - RemoveSynonym
+    - SynonymReplacement
+    - SynonymPredicateChange
+    - MappingReplacement
+    - MappingPredicateChange
+    - MetadataAssertionReplacement
+    - MetadataAssertionPredicateChange
+    - RemoveTextDefinition
+    - TextDefinitionReplacement
+    range: string
+  old_value_type:
+    name: old_value_type
+    description: The type (IRI or Literal) of an old value
+    deprecated: no longer required
+    from_schema: https://w3id.org/kgcl
+    rank: 1000
+    owner: NewLabel
+    domain_of:
+    - SimpleChange
+    range: string
+  new_value_type:
+    name: new_value_type
+    description: The type (IRI or Literal) of a new value
+    deprecated: no longer required
+    from_schema: https://w3id.org/kgcl
+    rank: 1000
+    owner: NewLabel
+    domain_of:
+    - SimpleChange
+    range: string
+  old_language:
+    name: old_language
+    description: The old language tag of a literal
+    from_schema: https://w3id.org/kgcl
+    rank: 1000
+    owner: NewLabel
+    domain_of:
+    - SimpleChange
+    - NodeRename
+    range: string
+  new_datatype:
+    name: new_datatype
+    description: The new datatype of a literal
+    from_schema: https://w3id.org/kgcl
+    rank: 1000
+    owner: NewLabel
+    domain_of:
+    - SimpleChange
+    range: string
+  old_datatype:
+    name: old_datatype
+    description: The old datatype of a literal
+    from_schema: https://w3id.org/kgcl
+    rank: 1000
+    owner: NewLabel
+    domain_of:
+    - SimpleChange
+    range: string
+  id:
+    name: id
+    from_schema: https://w3id.org/kgcl
+    rank: 1000
+    identifier: true
+    owner: NewLabel
+    domain_of:
+    - Change
+    - Node
+    - Activity
+    - Agent
+    range: string
+    required: true
+  type:
+    name: type
+    from_schema: https://w3id.org/kgcl
+    rank: 1000
+    slot_uri: rdf:type
+    designates_type: true
+    owner: NewLabel
+    domain_of:
+    - Change
+    range: string
+  was_generated_by:
+    name: was_generated_by
+    comments:
+    - we use the PROV model to represent the agent making a change
+    from_schema: https://w3id.org/kgcl
+    rank: 1000
+    slot_uri: prov:wasGeneratedBy
+    owner: NewLabel
+    domain_of:
+    - Change
+    range: Activity
+  see_also:
+    name: see_also
+    comments:
+    - If this change is in relationship to an issue on a system like github, include
+      the URL here
+    from_schema: https://w3id.org/kgcl
+    rank: 1000
+    slot_uri: rdfs:seeAlso
+    owner: NewLabel
+    domain_of:
+    - Change
+    range: string
+  pull_request:
+    name: pull_request
+    comments:
+    - If this change has a pull request on a system like github, include the URL here
+    from_schema: https://w3id.org/kgcl
+    rank: 1000
+    owner: NewLabel
+    domain_of:
+    - Change
+    range: string
+  term_tracker_issue:
+    name: term_tracker_issue
+    comments:
+    - If this change has an issue on a system like github, include the URL here
+    from_schema: https://w3id.org/kgcl
+    exact_mappings:
+    - IAO:0000233
+    rank: 1000
+    owner: NewLabel
+    domain_of:
+    - Change
+    range: string
+  creator:
+    name: creator
+    comments:
+    - This should be the composition of 'was generated by' and 'was associated with'
+    from_schema: https://w3id.org/kgcl
+    rank: 1000
+    slot_uri: dcterms:creator
+    owner: NewLabel
+    domain_of:
+    - Change
+    range: string
+  change_date:
+    name: change_date
+    comments:
+    - This should be the composition of 'was generated by' and 'ended at time'
+    from_schema: https://w3id.org/kgcl
+    rank: 1000
+    slot_uri: dcterms:date
+    owner: NewLabel
+    domain_of:
+    - Change
+    range: string
+  contributor:
+    name: contributor
+    from_schema: https://w3id.org/kgcl
+    rank: 1000
+    slot_uri: dcterms:creator
+    owner: NewLabel
+    domain_of:
+    - Change
+    range: string
+  has_undo:
+    name: has_undo
+    description: A change that reverses this change
+    from_schema: https://w3id.org/kgcl
+    rank: 1000
+    domain: Change
+    owner: NewLabel
+    domain_of:
+    - Change
+    - ChangeMixin
+    range: Change
+    multivalued: false
+  change_description:
+    name: change_description
+    description: A string serialization of the change. This should be both human-readable,
+      and parseable.
+    comments:
+    - '{''Form 1'': ''IRIs are denoted by CURIEs, optionally followed by label in
+      parenthesis''}'
+    - '{''Form 2'': "IRIs are denoted by the rdfs:label in single quotes, e.g. ''nervous
+      system''"}'
+    examples:
+    - value: rename UBERON:0002398 from 'manus' to 'hand'
+    - value: move 'hand' from 'part of' 'hindlimb' to 'part of' 'forelimb'
+    - value: merge 'cellular metabolic process' into 'metabolic process'
+    - value: search and replace 'metabolic process' with 'metabolism' in all labels
+        under 'biological process'
+    - value: search and replace 'metabolic process' with 'metabolism' in all labels
+        under 'biological process' retaining as 'exact synonym'
+    from_schema: https://w3id.org/kgcl
+    rank: 1000
+    string_serialization: add label {new_value} to {about_node}
+    owner: NewLabel
+    domain_of:
+    - Change
+    range: string
+  associated_change_set:
+    name: associated_change_set
+    description: 'All changes forced as a result of this obsoletion. For example,
+      starting with `A subClassOf B subClassOf C`, if we obsolete node B, then we
+      may decide to bundle in a node move change of A from B to C. Note: this change
+      set is not considered a part of the obsoletion, as obsoletion is considered
+      atomic/simple. Instead this is a reference to a change set that may exist elsewhere'
+    from_schema: https://w3id.org/kgcl
+    rank: 1000
+    is_a: change_set
+    owner: NewLabel
+    domain_of:
+    - Change
+    range: Change
+    multivalued: true
+    inlined: true
+    inlined_as_list: true
+
+</code></pre>
+</details></div>
+</article>
+</div>
+<script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+</div>
+</main>
+<footer class="md-footer">
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+      Material for MkDocs
+    </a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["content.tabs.link"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+<script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+<script type="module">import mermaid from "https://unpkg.com/mermaid@10.4.0/dist/mermaid.esm.min.mjs";
+mermaid.initialize({});</script></body>
+</html>

@@ -7,16 +7,15 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <link href="https://incatools.github.io/kgcl/ObjectPropertyCreation/" rel="canonical"/>
 <link href="../assets/images/favicon.png" rel="icon"/>
-<meta content="mkdocs-1.6.1, mkdocs-material-8.5.10" name="generator"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-9.7.7" name="generator"/>
 <title>Class: ObjectPropertyCreation - KGCL</title>
-<link href="../assets/stylesheets/main.975780f9.min.css" rel="stylesheet"/>
-<link href="../assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
+<link href="../assets/stylesheets/main.ec1eaa64.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
 <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
-<script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+<script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
 </head>
-<body data-md-color-accent="None" data-md-color-primary="None" data-md-color-scheme="default" dir="ltr">
+<body dir="ltr">
 <input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
@@ -27,13 +26,13 @@
 </div>
 <div data-md-component="announce">
 </div>
-<header class="md-header" data-md-component="header">
+<header class="md-header md-header--shadow" data-md-component="header">
 <nav aria-label="Header" class="md-header__inner md-grid">
 <a aria-label="KGCL" class="md-header__button md-logo" data-md-component="logo" href=".." title="KGCL">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
 </a>
 <label class="md-header__button md-icon" for="__drawer">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
 </label>
 <div class="md-header__title" data-md-component="header-title">
 <div class="md-header__ellipsis">
@@ -51,8 +50,9 @@
 </div>
 </div>
 </div>
+<script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
 <label class="md-header__button md-icon" for="__search">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
 </label>
 <div class="md-search" data-md-component="search" role="dialog">
 <label class="md-search__overlay" for="__search"></label>
@@ -60,22 +60,22 @@
 <form class="md-search__form" name="search">
 <input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
 <label class="md-search__icon md-icon" for="__search">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
 </label>
 <nav aria-label="Search" class="md-search__options">
 <button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" title="Clear" type="reset">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
 </button>
 </nav>
 </form>
 <div class="md-search__output">
-<div class="md-search__scrollwrap" data-md-scrollfix="">
+<div class="md-search__scrollwrap" data-md-scrollfix="" tabindex="0">
 <div class="md-search-result" data-md-component="search-result">
 <div class="md-search-result__meta">
             Initializing search
           </div>
-<ol class="md-search-result__list"></ol>
+<ol class="md-search-result__list" role="presentation"></ol>
 </div>
 </div>
 </div>
@@ -84,7 +84,7 @@
 <div class="md-header__source">
 <a class="md-source" data-md-component="source" href="https://github.com/INCATools/kgcl" title="Go to repository">
 <div class="md-source__icon md-icon">
-<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"></path></svg>
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"></path></svg>
 </div>
 <div class="md-source__repository">
     GitHub
@@ -102,14 +102,14 @@
 <nav aria-label="Navigation" class="md-nav md-nav--primary" data-md-level="0">
 <label class="md-nav__title" for="__drawer">
 <a aria-label="KGCL" class="md-nav__button md-logo" data-md-component="logo" href=".." title="KGCL">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
 </a>
     KGCL
   </label>
 <div class="md-nav__source">
 <a class="md-source" data-md-component="source" href="https://github.com/INCATools/kgcl" title="Go to repository">
 <div class="md-source__icon md-icon">
-<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"></path></svg>
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"></path></svg>
 </div>
 <div class="md-source__repository">
     GitHub
@@ -119,18 +119,39 @@
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="../main/">
-        About
-      </a>
+<span class="md-ellipsis">
+    
+  
+    About
+  
+
+    
+  </span>
+</a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="..">
-        Index
-      </a>
+<span class="md-ellipsis">
+    
+  
+    Index
+  
+
+    
+  </span>
+</a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../examples/">
-        Examples
-      </a>
+<span class="md-ellipsis">
+    
+  
+    Examples
+  
+
+    
+  </span>
+</a>
 </li>
 </ul>
 </nav>
@@ -141,85 +162,40 @@
 <div class="md-sidebar__scrollwrap">
 <div class="md-sidebar__inner">
 <nav aria-label="Table of contents" class="md-nav md-nav--secondary">
-<label class="md-nav__title" for="__toc">
-<span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#inheritance">
-    Inheritance
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#slots">
-    Slots
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#identifier-and-mapping-information">
-    Identifier and Mapping Information
-  </a>
-<nav aria-label="Identifier and Mapping Information" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#schema-source">
-    Schema Source
-  </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#mappings">
-    Mappings
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#linkml-source">
-    LinkML Source
-  </a>
-<nav aria-label="LinkML Source" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#direct">
-    Direct
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#induced">
-    Induced
-  </a>
-</li>
-</ul>
-</nav>
-</li>
-</ul>
 </nav>
 </div>
 </div>
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<a class="md-content__button md-icon" href="https://github.com/INCATools/kgcl/edit/master/docs/ObjectPropertyCreation.md" title="Edit this page">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"></path></svg>
-</a>
 <h1 id="class-objectpropertycreation">Class: ObjectPropertyCreation</h1>
 <p><em>A node creation where the owl type is 'ObjectProperty'</em></p>
-<p>URI: <a href="http://w3id.org/kgcl/ObjectPropertyCreation">kgcl:ObjectPropertyCreation</a></p>
+<div data-search-exclude="" markdown="1">
+
+
+
+URI: [kgcl:ObjectPropertyCreation](http://w3id.org/kgcl/ObjectPropertyCreation)
+
+
+
+
+
+
 <div class="mermaid"> classDiagram
     class ObjectPropertyCreation
-    click ObjectPropertyCreation href "../ObjectPropertyCreation"
+    click ObjectPropertyCreation href "../ObjectPropertyCreation/"
       NodeCreation &lt;|-- ObjectPropertyCreation
-        click NodeCreation href "../NodeCreation"
+        click NodeCreation href "../NodeCreation/"
 
       ObjectPropertyCreation : about
 
 
 
 
-    ObjectPropertyCreation --&gt; "0..1" OntologyElement : about
-    click OntologyElement href "../OntologyElement"
+
+        ObjectPropertyCreation --&gt; "0..1" OntologyElement : about
+        click OntologyElement href "../OntologyElement/"
+
 
 
       ObjectPropertyCreation : about_node
@@ -227,8 +203,10 @@
 
 
 
-    ObjectPropertyCreation --&gt; "0..1" Node : about_node
-    click Node href "../Node"
+
+        ObjectPropertyCreation --&gt; "0..1" Node : about_node
+        click Node href "../Node/"
+
 
 
       ObjectPropertyCreation : about_node_representation
@@ -238,8 +216,10 @@
 
 
 
-    ObjectPropertyCreation --&gt; "0..1" Annotation : annotation_set
-    click Annotation href "../Annotation"
+
+        ObjectPropertyCreation --&gt; "0..1" Annotation : annotation_set
+        click Annotation href "../Annotation/"
+
 
 
       ObjectPropertyCreation : associated_change_set
@@ -247,8 +227,10 @@
 
 
 
-    ObjectPropertyCreation --&gt; "*" Change : associated_change_set
-    click Change href "../Change"
+
+        ObjectPropertyCreation --&gt; "*" Change : associated_change_set
+        click Change href "../Change/"
+
 
 
       ObjectPropertyCreation : change_date
@@ -264,8 +246,10 @@
 
 
 
-    ObjectPropertyCreation --&gt; "0..1" Deletion : has_undo
-    click Deletion href "../Deletion"
+
+        ObjectPropertyCreation --&gt; "0..1" Deletion : has_undo
+        click Deletion href "../Deletion/"
+
 
 
       ObjectPropertyCreation : id
@@ -287,8 +271,10 @@
 
 
 
-    ObjectPropertyCreation --&gt; "0..1" Node : node_id
-    click Node href "../Node"
+
+        ObjectPropertyCreation --&gt; "0..1" Node : node_id
+        click Node href "../Node/"
+
 
 
       ObjectPropertyCreation : old_datatype
@@ -304,8 +290,10 @@
 
 
 
-    ObjectPropertyCreation --&gt; "0..1" OwlTypeEnum : owl_type
-    click OwlTypeEnum href "../OwlTypeEnum"
+
+        ObjectPropertyCreation --&gt; "0..1" OwlTypeEnum : owl_type
+        click OwlTypeEnum href "../OwlTypeEnum/"
+
 
 
       ObjectPropertyCreation : pull_request
@@ -321,239 +309,108 @@
 
 
 
-    ObjectPropertyCreation --&gt; "0..1" Activity : was_generated_by
-    click Activity href "../Activity"
+
+        ObjectPropertyCreation --&gt; "0..1" Activity : was_generated_by
+        click Activity href "../Activity/"
+
 
 
 
 </div>
-<h2 id="inheritance">Inheritance</h2>
-<ul>
-<li><a href="../ChangeLanguageElement/">ChangeLanguageElement</a><ul>
-<li><a href="../Change/">Change</a><ul>
-<li><a href="../SimpleChange/">SimpleChange</a><ul>
-<li><a href="../NodeChange/">NodeChange</a><ul>
-<li><a href="../NodeCreation/">NodeCreation</a> [ <a href="../Creation/">Creation</a>]<ul>
-<li><strong>ObjectPropertyCreation</strong></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="slots">Slots</h2>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Cardinality and Range</th>
-<th>Description</th>
-<th>Inheritance</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a href="../node_id/">node_id</a></td>
-<td>0..1 <br/> <a href="../Node/">Node</a></td>
-<td>id of a node to be created</td>
-<td><a href="../NodeCreation/">NodeCreation</a></td>
-</tr>
-<tr>
-<td><a href="../name/">name</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
-<td></td>
-<td><a href="../NodeCreation/">NodeCreation</a></td>
-</tr>
-<tr>
-<td><a href="../owl_type/">owl_type</a></td>
-<td>0..1 <br/> <a href="../OwlTypeEnum/">OwlTypeEnum</a></td>
-<td></td>
-<td><a href="../NodeCreation/">NodeCreation</a></td>
-</tr>
-<tr>
-<td><a href="../annotation_set/">annotation_set</a></td>
-<td>0..1 <br/> <a href="../Annotation/">Annotation</a></td>
-<td></td>
-<td><a href="../NodeCreation/">NodeCreation</a></td>
-</tr>
-<tr>
-<td><a href="../language/">language</a></td>
-<td>0..1 <br/> <a href="../LanguageTag/">LanguageTag</a></td>
-<td>The language tag of a literal</td>
-<td><a href="../NodeCreation/">NodeCreation</a>, <a href="../NodeChange/">NodeChange</a></td>
-</tr>
-<tr>
-<td><a href="../about_node/">about_node</a></td>
-<td>0..1 <br/> <a href="../Node/">Node</a></td>
-<td></td>
-<td><a href="../NodeChange/">NodeChange</a></td>
-</tr>
-<tr>
-<td><a href="../about_node_representation/">about_node_representation</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
-<td>The representation of a node (URI, CURIE, label)</td>
-<td><a href="../NodeChange/">NodeChange</a></td>
-</tr>
-<tr>
-<td><a href="../old_value/">old_value</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
-<td>The value of a property held in the old instance of the ontology</td>
-<td><a href="../ChangeMixin/">ChangeMixin</a>, <a href="../SimpleChange/">SimpleChange</a></td>
-</tr>
-<tr>
-<td><a href="../new_value/">new_value</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
-<td>The value of a property held in the new instance of the ontology</td>
-<td><a href="../ChangeMixin/">ChangeMixin</a>, <a href="../SimpleChange/">SimpleChange</a></td>
-</tr>
-<tr>
-<td><a href="../old_value_type/">old_value_type</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
-<td>The type (IRI or Literal) of an old value</td>
-<td><a href="../SimpleChange/">SimpleChange</a></td>
-</tr>
-<tr>
-<td><a href="../new_value_type/">new_value_type</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
-<td>The type (IRI or Literal) of a new value</td>
-<td><a href="../SimpleChange/">SimpleChange</a></td>
-</tr>
-<tr>
-<td><a href="../new_language/">new_language</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
-<td>The new language tag of a literal</td>
-<td><a href="../SimpleChange/">SimpleChange</a></td>
-</tr>
-<tr>
-<td><a href="../old_language/">old_language</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
-<td>The old language tag of a literal</td>
-<td><a href="../SimpleChange/">SimpleChange</a></td>
-</tr>
-<tr>
-<td><a href="../new_datatype/">new_datatype</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
-<td>The new datatype of a literal</td>
-<td><a href="../SimpleChange/">SimpleChange</a></td>
-</tr>
-<tr>
-<td><a href="../old_datatype/">old_datatype</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
-<td>The old datatype of a literal</td>
-<td><a href="../SimpleChange/">SimpleChange</a></td>
-</tr>
-<tr>
-<td><a href="../id/">id</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
-<td></td>
-<td><a href="../Change/">Change</a></td>
-</tr>
-<tr>
-<td><a href="../type/">type</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
-<td></td>
-<td><a href="../Change/">Change</a></td>
-</tr>
-<tr>
-<td><a href="../was_generated_by/">was_generated_by</a></td>
-<td>0..1 <br/> <a href="../Activity/">Activity</a></td>
-<td></td>
-<td><a href="../Change/">Change</a></td>
-</tr>
-<tr>
-<td><a href="../see_also/">see_also</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
-<td></td>
-<td><a href="../Change/">Change</a></td>
-</tr>
-<tr>
-<td><a href="../pull_request/">pull_request</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
-<td></td>
-<td><a href="../Change/">Change</a></td>
-</tr>
-<tr>
-<td><a href="../term_tracker_issue/">term_tracker_issue</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
-<td></td>
-<td><a href="../Change/">Change</a></td>
-</tr>
-<tr>
-<td><a href="../creator/">creator</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
-<td></td>
-<td><a href="../Change/">Change</a></td>
-</tr>
-<tr>
-<td><a href="../change_date/">change_date</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
-<td></td>
-<td><a href="../Change/">Change</a></td>
-</tr>
-<tr>
-<td><a href="../contributor/">contributor</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
-<td></td>
-<td><a href="../Change/">Change</a></td>
-</tr>
-<tr>
-<td><a href="../has_undo/">has_undo</a></td>
-<td>0..1 <br/> <a href="../Deletion/">Deletion</a></td>
-<td>A change that reverses this change</td>
-<td><a href="../ChangeMixin/">ChangeMixin</a>, <a href="../Change/">Change</a></td>
-</tr>
-<tr>
-<td><a href="../change_description/">change_description</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
-<td>A string serialization of the change</td>
-<td><a href="../Change/">Change</a></td>
-</tr>
-<tr>
-<td><a href="../associated_change_set/">associated_change_set</a></td>
-<td>* <br/> <a href="../Change/">Change</a></td>
-<td>All changes forced as a result of this obsoletion</td>
-<td><a href="../Change/">Change</a></td>
-</tr>
-<tr>
-<td><a href="../about/">about</a></td>
-<td>0..1 <br/> <a href="../OntologyElement/">OntologyElement</a></td>
-<td>The 'focus' entity on which the change operates</td>
-<td><a href="../ChangeMixin/">ChangeMixin</a></td>
-</tr>
-</tbody>
-</table>
-<h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
-<h3 id="schema-source">Schema Source</h3>
-<ul>
-<li>from schema: https://w3id.org/kgcl</li>
-</ul>
-<h2 id="mappings">Mappings</h2>
-<table>
-<thead>
-<tr>
-<th>Mapping Type</th>
-<th>Mapped Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>self</td>
-<td>kgcl:ObjectPropertyCreation</td>
-</tr>
-<tr>
-<td>native</td>
-<td>kgcl:ObjectPropertyCreation</td>
-</tr>
-</tbody>
-</table>
-<h2 id="linkml-source">LinkML Source</h2>
+
+
+
+
+
+
+## Inheritance
+* [ChangeLanguageElement](ChangeLanguageElement.md)
+    * [Change](Change.md)
+        * [SimpleChange](SimpleChange.md)
+            * [NodeChange](NodeChange.md)
+                * [NodeCreation](NodeCreation.md) [ [Creation](Creation.md)]
+                    * **ObjectPropertyCreation**
+
+
+## Slots
+
+| Name | Cardinality and Range | Description | Inheritance |
+| ---  | --- | --- | --- |
+| [node_id](node_id.md) | 0..1 <br/> [Node](Node.md) | id of a node to be created | [NodeCreation](NodeCreation.md) |
+| [name](name.md) | 0..1 <br/> [String](String.md) |  | [NodeCreation](NodeCreation.md) |
+| [owl_type](owl_type.md) | 0..1 <br/> [OwlTypeEnum](OwlTypeEnum.md) |  | [NodeCreation](NodeCreation.md) |
+| [annotation_set](annotation_set.md) | 0..1 <br/> [Annotation](Annotation.md) |  | [NodeCreation](NodeCreation.md) |
+| [language](language.md) | 0..1 <br/> [LanguageTag](LanguageTag.md) | The language tag of a literal | [NodeCreation](NodeCreation.md), [NodeChange](NodeChange.md) |
+| [about_node](about_node.md) | 0..1 <br/> [Node](Node.md) |  | [NodeChange](NodeChange.md) |
+| [about_node_representation](about_node_representation.md) | 0..1 <br/> [String](String.md) | The representation of a node (URI, CURIE, label)  | [NodeChange](NodeChange.md) |
+| [old_value](old_value.md) | 0..1 <br/> [String](String.md) | The value of a property held in the old instance of the ontology | [SimpleChange](SimpleChange.md), [ChangeMixin](ChangeMixin.md) |
+| [new_value](new_value.md) | 0..1 <br/> [String](String.md) | The value of a property held in the new instance of the ontology | [SimpleChange](SimpleChange.md), [ChangeMixin](ChangeMixin.md) |
+| [old_value_type](old_value_type.md) | 0..1 <br/> [String](String.md) | The type (IRI or Literal) of an old value | [SimpleChange](SimpleChange.md) |
+| [new_value_type](new_value_type.md) | 0..1 <br/> [String](String.md) | The type (IRI or Literal) of a new value | [SimpleChange](SimpleChange.md) |
+| [new_language](new_language.md) | 0..1 <br/> [String](String.md) | The new language tag of a literal | [SimpleChange](SimpleChange.md) |
+| [old_language](old_language.md) | 0..1 <br/> [String](String.md) | The old language tag of a literal | [SimpleChange](SimpleChange.md) |
+| [new_datatype](new_datatype.md) | 0..1 <br/> [String](String.md) | The new datatype of a literal | [SimpleChange](SimpleChange.md) |
+| [old_datatype](old_datatype.md) | 0..1 <br/> [String](String.md) | The old datatype of a literal | [SimpleChange](SimpleChange.md) |
+| [id](id.md) | 1 <br/> [String](String.md) |  | [Change](Change.md) |
+| [type](type.md) | 0..1 <br/> [String](String.md) |  | [Change](Change.md) |
+| [was_generated_by](was_generated_by.md) | 0..1 <br/> [Activity](Activity.md) |  | [Change](Change.md) |
+| [see_also](see_also.md) | 0..1 <br/> [String](String.md) |  | [Change](Change.md) |
+| [pull_request](pull_request.md) | 0..1 <br/> [String](String.md) |  | [Change](Change.md) |
+| [term_tracker_issue](term_tracker_issue.md) | 0..1 <br/> [String](String.md) |  | [Change](Change.md) |
+| [creator](creator.md) | 0..1 <br/> [String](String.md) |  | [Change](Change.md) |
+| [change_date](change_date.md) | 0..1 <br/> [String](String.md) |  | [Change](Change.md) |
+| [contributor](contributor.md) | 0..1 <br/> [String](String.md) |  | [Change](Change.md) |
+| [has_undo](has_undo.md) | 0..1 <br/> [Deletion](Deletion.md) | A change that reverses this change | [ChangeMixin](ChangeMixin.md), [Change](Change.md) |
+| [change_description](change_description.md) | 0..1 <br/> [String](String.md) | A string serialization of the change | [Change](Change.md) |
+| [associated_change_set](associated_change_set.md) | * <br/> [Change](Change.md) | All changes forced as a result of this obsoletion | [Change](Change.md) |
+| [about](about.md) | 0..1 <br/> [OntologyElement](OntologyElement.md) | The 'focus' entity on which the change operates | [ChangeMixin](ChangeMixin.md) |
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## Identifier and Mapping Information
+
+
+
+
+
+### Schema Source
+
+
+* from schema: https://w3id.org/kgcl
+
+
+
+
+## Mappings
+
+| Mapping Type | Mapped Value |
+| ---  | ---  |
+| self | kgcl:ObjectPropertyCreation |
+| native | kgcl:ObjectPropertyCreation |
+
+
+
+
+
+
+## LinkML Source
+
 <!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
-<h3 id="direct">Direct</h3>
+
+### Direct
+
 <details>
 <pre><code class="language-yaml">name: ObjectPropertyCreation
 description: A node creation where the owl type is 'ObjectProperty'
@@ -566,7 +423,9 @@ slot_usage:
 
 </code></pre>
 </details>
-<h3 id="induced">Induced</h3>
+
+### Induced
+
 <details>
 <pre><code class="language-yaml">name: ObjectPropertyCreation
 description: A node creation where the owl type is 'ObjectProperty'
@@ -584,7 +443,6 @@ attributes:
     - consider using 'about' instead
     from_schema: https://w3id.org/kgcl
     rank: 1000
-    alias: node_id
     owner: ObjectPropertyCreation
     domain_of:
     - NodeCreation
@@ -593,7 +451,6 @@ attributes:
     name: name
     from_schema: https://w3id.org/kgcl
     rank: 1000
-    alias: name
     owner: ObjectPropertyCreation
     domain_of:
     - NodeCreation
@@ -603,7 +460,6 @@ attributes:
     name: owl_type
     from_schema: https://w3id.org/kgcl
     rank: 1000
-    alias: owl_type
     owner: ObjectPropertyCreation
     domain_of:
     - NodeCreation
@@ -613,7 +469,6 @@ attributes:
     name: annotation_set
     from_schema: https://w3id.org/kgcl
     rank: 1000
-    alias: annotation_set
     owner: ObjectPropertyCreation
     domain_of:
     - EdgeCreation
@@ -630,7 +485,6 @@ attributes:
     description: The language tag of a literal
     from_schema: https://w3id.org/kgcl
     rank: 1000
-    alias: language
     owner: ObjectPropertyCreation
     domain_of:
     - EdgeChange
@@ -643,7 +497,6 @@ attributes:
     from_schema: https://w3id.org/kgcl
     rank: 1000
     is_a: about
-    alias: about_node
     owner: ObjectPropertyCreation
     domain_of:
     - NodeChange
@@ -655,7 +508,6 @@ attributes:
     deprecated: no longer required
     from_schema: https://w3id.org/kgcl
     rank: 1000
-    alias: about_node_representation
     owner: ObjectPropertyCreation
     domain_of:
     - NodeChange
@@ -665,7 +517,6 @@ attributes:
     description: The value of a property held in the old instance of the ontology
     from_schema: https://w3id.org/kgcl
     rank: 1000
-    alias: old_value
     owner: ObjectPropertyCreation
     domain_of:
     - SimpleChange
@@ -687,12 +538,12 @@ attributes:
     description: The value of a property held in the new instance of the ontology
     from_schema: https://w3id.org/kgcl
     rank: 1000
-    alias: new_value
     owner: ObjectPropertyCreation
     domain_of:
     - SimpleChange
     - ChangeMixin
     - NodeRename
+    - NewLabel
     - SetLanguageForName
     - NewSynonym
     - SynonymReplacement
@@ -710,7 +561,6 @@ attributes:
     deprecated: no longer required
     from_schema: https://w3id.org/kgcl
     rank: 1000
-    alias: old_value_type
     owner: ObjectPropertyCreation
     domain_of:
     - SimpleChange
@@ -721,7 +571,6 @@ attributes:
     deprecated: no longer required
     from_schema: https://w3id.org/kgcl
     rank: 1000
-    alias: new_value_type
     owner: ObjectPropertyCreation
     domain_of:
     - SimpleChange
@@ -731,18 +580,17 @@ attributes:
     description: The new language tag of a literal
     from_schema: https://w3id.org/kgcl
     rank: 1000
-    alias: new_language
     owner: ObjectPropertyCreation
     domain_of:
     - SimpleChange
     - NodeRename
+    - NewLabel
     range: string
   old_language:
     name: old_language
     description: The old language tag of a literal
     from_schema: https://w3id.org/kgcl
     rank: 1000
-    alias: old_language
     owner: ObjectPropertyCreation
     domain_of:
     - SimpleChange
@@ -753,7 +601,6 @@ attributes:
     description: The new datatype of a literal
     from_schema: https://w3id.org/kgcl
     rank: 1000
-    alias: new_datatype
     owner: ObjectPropertyCreation
     domain_of:
     - SimpleChange
@@ -763,7 +610,6 @@ attributes:
     description: The old datatype of a literal
     from_schema: https://w3id.org/kgcl
     rank: 1000
-    alias: old_datatype
     owner: ObjectPropertyCreation
     domain_of:
     - SimpleChange
@@ -773,7 +619,6 @@ attributes:
     from_schema: https://w3id.org/kgcl
     rank: 1000
     identifier: true
-    alias: id
     owner: ObjectPropertyCreation
     domain_of:
     - Change
@@ -788,7 +633,6 @@ attributes:
     rank: 1000
     slot_uri: rdf:type
     designates_type: true
-    alias: type
     owner: ObjectPropertyCreation
     domain_of:
     - Change
@@ -800,7 +644,6 @@ attributes:
     from_schema: https://w3id.org/kgcl
     rank: 1000
     slot_uri: prov:wasGeneratedBy
-    alias: was_generated_by
     owner: ObjectPropertyCreation
     domain_of:
     - Change
@@ -813,7 +656,6 @@ attributes:
     from_schema: https://w3id.org/kgcl
     rank: 1000
     slot_uri: rdfs:seeAlso
-    alias: see_also
     owner: ObjectPropertyCreation
     domain_of:
     - Change
@@ -824,7 +666,6 @@ attributes:
     - If this change has a pull request on a system like github, include the URL here
     from_schema: https://w3id.org/kgcl
     rank: 1000
-    alias: pull_request
     owner: ObjectPropertyCreation
     domain_of:
     - Change
@@ -837,7 +678,6 @@ attributes:
     exact_mappings:
     - IAO:0000233
     rank: 1000
-    alias: term_tracker_issue
     owner: ObjectPropertyCreation
     domain_of:
     - Change
@@ -849,7 +689,6 @@ attributes:
     from_schema: https://w3id.org/kgcl
     rank: 1000
     slot_uri: dcterms:creator
-    alias: creator
     owner: ObjectPropertyCreation
     domain_of:
     - Change
@@ -861,7 +700,6 @@ attributes:
     from_schema: https://w3id.org/kgcl
     rank: 1000
     slot_uri: dcterms:date
-    alias: change_date
     owner: ObjectPropertyCreation
     domain_of:
     - Change
@@ -871,7 +709,6 @@ attributes:
     from_schema: https://w3id.org/kgcl
     rank: 1000
     slot_uri: dcterms:creator
-    alias: contributor
     owner: ObjectPropertyCreation
     domain_of:
     - Change
@@ -882,7 +719,6 @@ attributes:
     from_schema: https://w3id.org/kgcl
     rank: 1000
     domain: Change
-    alias: has_undo
     owner: ObjectPropertyCreation
     domain_of:
     - Change
@@ -909,7 +745,6 @@ attributes:
     from_schema: https://w3id.org/kgcl
     rank: 1000
     string_serialization: create object property {about_node}
-    alias: change_description
     owner: ObjectPropertyCreation
     domain_of:
     - Change
@@ -924,7 +759,6 @@ attributes:
     from_schema: https://w3id.org/kgcl
     rank: 1000
     is_a: change_set
-    alias: associated_change_set
     owner: ObjectPropertyCreation
     domain_of:
     - Change
@@ -937,7 +771,6 @@ attributes:
     description: The 'focus' entity on which the change operates
     from_schema: https://w3id.org/kgcl
     rank: 1000
-    alias: about
     owner: ObjectPropertyCreation
     domain_of:
     - ChangeMixin
@@ -945,10 +778,11 @@ attributes:
     multivalued: false
 
 </code></pre>
-</details>
+</details></div>
 </article>
 </div>
-<script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+<script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
 </div>
 </main>
 <footer class="md-footer">
@@ -969,7 +803,8 @@ attributes:
 <div class="md-dialog" data-md-component="dialog">
 <div class="md-dialog__inner md-typeset"></div>
 </div>
-<script id="__config" type="application/json">{"base": "..", "features": ["content.tabs.link"], "search": "../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
-<script src="../assets/javascripts/bundle.5a2dcb6a.min.js"></script>
-<script src="https://unpkg.com/mermaid@8.8.0/dist/mermaid.min.js"></script><script>mermaid.initialize({});</script></body>
+<script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["content.tabs.link"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+<script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+<script type="module">import mermaid from "https://unpkg.com/mermaid@10.4.0/dist/mermaid.esm.min.mjs";
+mermaid.initialize({});</script></body>
 </html>
