@@ -42,3 +42,21 @@ jobs:
     #----------------------------------------------
     - name: Pytest within poetry
       run: poetry run pytest
+
+  docs:
+    # Build the documentation site; fails on broken links and other warnings
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: "3.12"
+    - name: Install Poetry
+      uses: snok/install-poetry@v1
+    - name: Install library
+      run: poetry install --no-interaction
+    - name: Build docs in strict mode
+      run: |
+        mkdir -p docs
+        make docs-check

@@ -20,7 +20,6 @@ curies = ">=0.6.0"
 linkml = ">=1.9.0"
 pytest = ">=8.0"
 mkdocs-material = ">=9.5"
-mkdocs-mermaid2-plugin = ">=1.1"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]

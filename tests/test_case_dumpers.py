@@ -32,54 +32,87 @@ YAML_OUT_FN = "examples.yaml"
 YAML_OUT_PATH = SRC_DIR / "data/examples" / YAML_OUT_FN
 MD_OUT_PATH = SRC_DIR / "docs" / MD_OUT_FN
 W3ID = "https://w3id.org/kgcl/"
-CLASS_DESCRIPTION = {
-    "AddNodeToSubset": "Addition of a node to a subset.",
-    "RemoveNodeFromSubset": "Removal of a node from a subset.",
-    "NodeObsoletionWithDirectReplacement": "Replacement of node after obsoletion.",
-    "NodeRename": "Rename node.",
-    "NodeObsoletion": "Obsolete node.",
-    "NewSynonym": "Addition of a new synonym.",
-    "RemoveSynonym": "Removal of a synonym.",
-    "ClassCreation": "Creation of new class.",
-    "PredicateChange": "Change predicate.",
-    "Change": "Change node.",
-    "NodeCreation": "Creation of new node.",
-    "EdgeCreation": "Creation of new edge.",
-    "PlaceUnder": "Place node under another node.",
-    "RemoveUnder": "Remove node from under another node.",
-    "EdgeDeletion": "Deletion of an edge.",
-    "NodeDeepening": "Deepening of a node.",
-    "NewLabel": "Addition of a label to an unlabeled node.",
-    "NewTextDefinition": "New definition of a node.",
-    "NodeTextDefinitionChange": "Update defintion of a node.",
-    "RemoveTextDefinition": "Remove definition of a node.",
-    "SynonymReplacement": "Replace synonym of a node.",
+# Sections of the examples page, in display order. Each change type in
+# tests/cases.py must appear in exactly one section, with a short description.
+SECTIONS = {
+    "Labels": {
+        "NodeRename": "Rename a node (replace its label).",
+        "NewLabel": "Add a label to an unlabeled node.",
+    },
+    "Synonyms": {
+        "NewSynonym": "Add a synonym.",
+        "RemoveSynonym": "Remove a synonym.",
+        "SynonymReplacement": "Replace the text of a synonym.",
+    },
+    "Definitions": {
+        "NewTextDefinition": "Add a definition.",
+        "NodeTextDefinitionChange": "Change a definition.",
+        "RemoveTextDefinition": "Remove a definition.",
+    },
+    "Relationships (edges)": {
+        "EdgeCreation": "Create an edge.",
+        "PlaceUnder": "Place a node under another node (create an is_a edge).",
+        "EdgeDeletion": "Delete an edge.",
+        "RemoveUnder": "Remove a node from under another node (delete an is_a edge).",
+        "PredicateChange": "Change the predicate (relationship type) of an edge.",
+        "NodeDeepening": "Move a node under a more specific parent.",
+        "NodeShallowing": "Move a node under a more general parent.",
+    },
+    "Obsoletion": {
+        "NodeObsoletion": "Obsolete a node.",
+        "NodeObsoletionWithDirectReplacement": "Obsolete a node and name its replacement.",
+    },
+    "Subsets": {
+        "AddNodeToSubset": "Add a node to a subset.",
+        "RemoveNodeFromSubset": "Remove a node from a subset.",
+    },
+    "Creating nodes": {
+        "ClassCreation": "Create a class.",
+        "NodeCreation": "Create a node with a label.",
+    },
 }
+CLASS_DESCRIPTION = {
+    cls: desc for section in SECTIONS.values() for cls, desc in section.items()
+}
+MD_INTRO = """# Command examples
+
+One example of each change type, written as a KGCL command and as YAML. The
+examples are generated from the test suite (`tests/cases.py`), so every command on
+this page is known to parse. For before-and-after diagrams of the most common
+changes, see the [visual guide to change types](change-types.md).
+
+"""
 
 
 def export_yaml_and_md():
     yaml_dict = {}
-    used_type = {}
-    md = "# KGCL Commands.\n\n"
+    examples = {}  # change type name -> markdown block, first example only
     # Dump YAML file with test information.
     for idx, (command_curie, command_uri, obj, _) in enumerate(CASES):
+        type_name = type(obj).__name__
         yaml_dict[f"Test_{idx}"] = obj.__dict__.copy()
-        yaml_dict[f"Test_{idx}"]["type"] = type(obj).__name__
+        yaml_dict[f"Test_{idx}"]["type"] = type_name
         yaml_dict[f"Test_{idx}"]["command_with_curie"] = command_curie
         yaml_dict[f"Test_{idx}"]["command_with_uri"] = command_uri
 
-        if type(obj).__name__ not in used_type:
-            used_type[type(obj).__name__] = 1
+        if type_name not in examples:
             yaml_block = yaml_dumper.dumps(obj).replace("'", "")
-            md += f"## Example: {CLASS_DESCRIPTION[type(obj).__name__]}\n"
-            md += f"Class: [`{type(obj).__name__}`]({W3ID}{type(obj).__name__}) </br></br>"
-            md += f"Command: `{command_curie}`</br></br>"
-            md += f"YAML:\n"
-            md += f"```\n{yaml_block}\n```\n"
+            examples[type_name] = (
+                f"### {CLASS_DESCRIPTION[type_name].rstrip('.')}\n\n"
+                f"Class: [`{type_name}`]({W3ID}{type_name})\n\n"
+                f"```kgcl\n{command_curie}\n```\n\n"
+                f"```yaml\n{yaml_block}```\n\n"
+            )
 
-        yaml_dumper.dump(yaml_dict, YAML_OUT_PATH)
-        with open(MD_OUT_PATH, "w") as md_dump:
-            md_dump.write(md)
+    md = MD_INTRO
+    for section, classes in SECTIONS.items():
+        blocks = [examples[c] for c in classes if c in examples]
+        if blocks:
+            md += f"## {section}\n\n" + "".join(blocks)
+
+    yaml_dumper.dump(yaml_dict, YAML_OUT_PATH)
+    with open(MD_OUT_PATH, "w") as md_dump:
+        md_dump.write(md.rstrip() + "\n")
 
 
 class TestCases(unittest.TestCase):
