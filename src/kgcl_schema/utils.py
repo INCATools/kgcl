@@ -34,7 +34,7 @@ LD = join(dirname(dirname(dirname(__file__))), "ldcontext/kgcl.context.jsonld")
 
 def get_context() -> str:
     """Get JSON-LD context."""
-    with open(LD) as stream:
+    with open(LD, encoding="utf-8") as stream:
         context = json.load(stream)
         context["@context"]["ANAT"] = {
             "@id": "https://example.org/anatomy/",
@@ -95,7 +95,7 @@ def from_yaml(filename: str) -> Session:
     code for instantiating to the correct class
     """
     logging.info(f"Converting {filename}")
-    with open(filename, "r") as stream:
+    with open(filename, "r", encoding="utf-8") as stream:
         obj = yaml.safe_load(stream)
         return from_dict(obj)
 

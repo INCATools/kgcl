@@ -14,7 +14,7 @@ KGCL_BLOCK = re.compile(r"^```kgcl\n(.*?)^```", re.MULTILINE | re.DOTALL)
 def kgcl_commands():
     """Yield (file name, command) for every line in a ```kgcl block in the docs."""
     for md_file in sorted(DOCS_DIR.glob("*.md")):
-        for block in KGCL_BLOCK.findall(md_file.read_text()):
+        for block in KGCL_BLOCK.findall(md_file.read_text(encoding="utf-8")):
             for line in block.splitlines():
                 if line.strip():
                     yield md_file.name, line.strip()

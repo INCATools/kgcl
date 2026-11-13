@@ -51,11 +51,11 @@ class ConversionTestSuite(unittest.TestCase):
         logging.info(f"Session: {json}")
         print(json)
         ofn = os.path.join(OUTPUT_DIR, "test.json")
-        with open(ofn, "w") as stream:
+        with open(ofn, "w", encoding="utf-8") as stream:
             stream.write(json)
-        with open(os.path.join(OUTPUT_DIR, "test.jsonld"), "w") as stream:
+        with open(os.path.join(OUTPUT_DIR, "test.jsonld"), "w", encoding="utf-8") as stream:
             stream.write(to_jsonld(session))
-        with open(os.path.join(OUTPUT_DIR, "test.rdf"), "w") as stream:
+        with open(os.path.join(OUTPUT_DIR, "test.rdf"), "w", encoding="utf-8") as stream:
             stream.write(
                 to_rdf(
                     session,

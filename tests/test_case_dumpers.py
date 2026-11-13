@@ -111,7 +111,7 @@ def export_yaml_and_md():
             md += f"## {section}\n\n" + "".join(blocks)
 
     yaml_dumper.dump(yaml_dict, YAML_OUT_PATH)
-    with open(MD_OUT_PATH, "w") as md_dump:
+    with open(MD_OUT_PATH, "w", encoding="utf-8") as md_dump:
         md_dump.write(md.rstrip() + "\n")
 
 
@@ -128,7 +128,7 @@ class TestCases(unittest.TestCase):
         self.assertTrue(MD_OUT_PATH.is_file())
 
     def test_run_using_yaml_load(self):
-        with open(YAML_OUT_PATH, "r") as y:
+        with open(YAML_OUT_PATH, "r", encoding="utf-8") as y:
             test_cases = yaml.safe_load(y)
 
         patches = []
