@@ -90,6 +90,10 @@
                                         "parent": "NodeChange"
                                     },
                                     {
+                                        "name": "NewLabel",
+                                        "parent": "NodeChange"
+                                    },
+                                    {
                                         "name": "NodeAnnotationChange",
                                         "parent": "NodeChange",
                                         "children": [

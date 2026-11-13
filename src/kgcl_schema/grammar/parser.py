@@ -15,6 +15,7 @@ from kgcl_schema.datamodel.kgcl import (
     ClassCreation,
     EdgeCreation,
     EdgeDeletion,
+    NewLabel,
     NewSynonym,
     NewTextDefinition,
     NodeAnnotationChange,
@@ -101,6 +102,8 @@ def parse_statement(input: str) -> Change:
 
     if command == "rename":
         return parse_rename(tree, id)
+    elif command == "add_label":
+        return parse_add_label(tree, id)
     elif command == "obsolete":
         return parse_obsolete(tree, id)
     elif command == "unobsolete":
@@ -619,6 +622,22 @@ def parse_rename(tree, id):
         old_value=old_value,
         new_value=new_value,
         old_language=old_language,
+        new_language=new_language,
+    )
+
+
+def parse_add_label(tree, id):
+    """Add a label to a node that has none."""
+    new_token = extract(tree, "new_label")
+    new_value, _ = get_entity_representation(new_token)
+    new_language = extract(tree, "new_language")
+    entity_token = extract(tree, "entity")
+    entity, representation = get_entity_representation(entity_token)
+    return NewLabel(
+        id=id,
+        about_node=entity,
+        about_node_representation=representation,
+        new_value=new_value,
         new_language=new_language,
     )
 

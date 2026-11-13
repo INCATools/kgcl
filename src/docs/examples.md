@@ -11,6 +11,16 @@ about_node: GO:0005635
 about_node_representation: curie
 
 ```
+## Example: Addition of a label to an unlabeled node.
+Class: [`NewLabel`](https://w3id.org/kgcl/NewLabel) </br></br>Command: `add label 'nucleus' to GO:0005634`</br></br>YAML:
+```
+id: CHANGE:001
+type: NewLabel
+new_value: nucleus
+about_node: GO:0005634
+about_node_representation: curie
+
+```
 ## Example: Obsolete node.
 Class: [`NodeObsoletion`](https://w3id.org/kgcl/NodeObsoletion) </br></br>Command: `obsolete GO:0005634`</br></br>YAML:
 ```

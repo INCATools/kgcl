@@ -7,6 +7,7 @@ from kgcl_schema.datamodel.kgcl import (
     EdgeCreation,
     EdgeDeletion,
     NewSynonym,
+    NewLabel,
     NewTextDefinition,
     NodeAnnotationChange,
     NodeCreation,
@@ -85,6 +86,13 @@ def render(kgcl_instance: Change) -> str:
             new = new + "@" + new_language
 
         return "rename " + subject + " from " + old + " to " + new
+
+    if type(kgcl_instance) is NewLabel:
+        subject = render_entity(kgcl_instance.about_node, "uri")
+        new = render_entity(kgcl_instance.new_value, "label")
+        if kgcl_instance.new_language is not None:
+            new = new + "@" + kgcl_instance.new_language
+        return "add label " + new + " to " + subject
 
     if type(kgcl_instance) is NodeAnnotationChange:
         subject = render_entity(

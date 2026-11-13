@@ -1,4 +1,4 @@
-# metamodel_version: 1.7.0
+# metamodel_version: 1.11.0
 # version: 0.0.1
 enum ObsoletionPolicyEnum
   {
@@ -195,7 +195,7 @@ type Configuration
     obsoleteNodeLabelPrefix: String
     obsoletionWorkflow: String
     obsoletionPolicies: [ObsoletionPolicyEnum]
-    obsoleteSubclassOfShadowProperty: Uriorcurie
+    obsoleteSubclassOfShadowProperty: String
   }
 
 interface Creation
@@ -656,6 +656,33 @@ type NameBecomesSynonym
     aboutNode: Node
     aboutNodeRepresentation: String
     language: LanguageTag
+    changeDescription: String
+  }
+
+type NewLabel
+  {
+    id: String!
+    type: String
+    wasGeneratedBy: Activity
+    seeAlso: String
+    pullRequest: String
+    termTrackerIssue: String
+    creator: String
+    changeDate: String
+    contributor: String
+    hasUndo: Change
+    associatedChangeSet: [Change]
+    oldValue: String
+    oldValueType: String
+    newValueType: String
+    oldLanguage: String
+    newDatatype: String
+    oldDatatype: String
+    aboutNode: Node
+    aboutNodeRepresentation: String
+    language: LanguageTag
+    newValue: String
+    newLanguage: String
     changeDescription: String
   }
 
@@ -1793,4 +1820,3 @@ interface Unobsoletion
     newValue: String
     hasUndo: Obsoletion
   }
-

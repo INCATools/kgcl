@@ -1,5 +1,5 @@
 # Auto generated from ontology_model.yaml by pythongen.py version: 0.0.1
-# Generation date: 2024-03-08T08:26:55
+# Generation date: 2026-11-13T17:02:01
 # Schema: kgcl_schema-ontology-model
 #
 # id: https://w3id.org/kgcl/ontology
@@ -8,26 +8,58 @@
 
 import dataclasses
 import re
-from jsonasobj2 import JsonObj, as_dict
-from typing import Optional, List, Union, Dict, ClassVar, Any
 from dataclasses import dataclass
-from linkml_runtime.linkml_model.meta import EnumDefinition, PermissibleValue, PvFormulaOptions
+from datetime import (
+    date,
+    datetime,
+    time
+)
+from typing import (
+    Any,
+    ClassVar,
+    Dict,
+    List,
+    Optional,
+    Union
+)
 
-from linkml_runtime.utils.slot import Slot
-from linkml_runtime.utils.metamodelcore import empty_list, empty_dict, bnode
-from linkml_runtime.utils.yamlutils import YAMLRoot, extended_str, extended_float, extended_int
-from linkml_runtime.utils.dataclass_extensions_376 import dataclasses_init_fn_with_kwargs
-from linkml_runtime.utils.formatutils import camelcase, underscore, sfx
-from linkml_runtime.utils.enumerations import EnumDefinitionImpl
-from rdflib import Namespace, URIRef
+from jsonasobj2 import (
+    JsonObj,
+    as_dict
+)
+from linkml_runtime.linkml_model.meta import (
+    EnumDefinition,
+    PermissibleValue,
+    PvFormulaOptions
+)
 from linkml_runtime.utils.curienamespace import CurieNamespace
+from linkml_runtime.utils.enumerations import EnumDefinitionImpl
+from linkml_runtime.utils.formatutils import (
+    camelcase,
+    sfx,
+    underscore
+)
+from linkml_runtime.utils.metamodelcore import (
+    bnode,
+    empty_dict,
+    empty_list
+)
+from linkml_runtime.utils.slot import Slot
+from linkml_runtime.utils.yamlutils import (
+    YAMLRoot,
+    extended_float,
+    extended_int,
+    extended_str
+)
+from rdflib import (
+    Namespace,
+    URIRef
+)
+
 from linkml_runtime.linkml_model.types import String
 
-metamodel_version = "1.7.0"
+metamodel_version = "1.11.0"
 version = "0.0.1"
-
-# Overwrite dataclasses _init_fn to add **kwargs in __init__
-dataclasses._init_fn = dataclasses_init_fn_with_kwargs
 
 # Namespaces
 BASICS = CurieNamespace('basics', 'https://w3id.org/kgcl/basics/')
@@ -70,7 +102,7 @@ class OntologyElement(YAMLRoot):
     """
     Any component of an ontology or knowledge graph
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = OM["OntologyElement"]
     class_class_curie: ClassVar[str] = "om:OntologyElement"
@@ -78,12 +110,12 @@ class OntologyElement(YAMLRoot):
     class_model_uri: ClassVar[URIRef] = OM.OntologyElement
 
 
-@dataclass
+@dataclass(repr=False)
 class PropertyValue(OntologyElement):
     """
     a property-value pair
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = OM["PropertyValue"]
     class_class_curie: ClassVar[str] = "om:PropertyValue"
@@ -93,7 +125,7 @@ class PropertyValue(OntologyElement):
     property: Optional[Union[str, NodeId]] = None
     filler: Optional[str] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self.property is not None and not isinstance(self.property, NodeId):
             self.property = NodeId(self.property)
 
@@ -103,12 +135,12 @@ class PropertyValue(OntologyElement):
         super().__post_init__(**kwargs)
 
 
-@dataclass
+@dataclass(repr=False)
 class Annotation(PropertyValue):
     """
     owl annotations. Not to be confused with annotations sensu GO
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = OM["Annotation"]
     class_class_curie: ClassVar[str] = "om:Annotation"
@@ -121,7 +153,7 @@ class Annotation(PropertyValue):
     property_type: Optional[str] = None
     filler_type: Optional[str] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self.property is not None and not isinstance(self.property, NodeId):
             self.property = NodeId(self.property)
 
@@ -140,12 +172,12 @@ class Annotation(PropertyValue):
         super().__post_init__(**kwargs)
 
 
-@dataclass
+@dataclass(repr=False)
 class Node(OntologyElement):
     """
     Any named entity in an ontology. May be a class, individual, property
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = OM["Node"]
     class_class_curie: ClassVar[str] = "om:Node"
@@ -157,7 +189,7 @@ class Node(OntologyElement):
     annotation_set: Optional[Union[dict, Annotation]] = None
     owl_type: Optional[Union[str, "OwlTypeEnum"]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, NodeId):
@@ -175,12 +207,12 @@ class Node(OntologyElement):
         super().__post_init__(**kwargs)
 
 
-@dataclass
+@dataclass(repr=False)
 class ClassNode(Node):
     """
     A node that is a class
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = OWL["Class"]
     class_class_curie: ClassVar[str] = "owl:Class"
@@ -189,7 +221,7 @@ class ClassNode(Node):
 
     id: Union[str, ClassNodeId] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, ClassNodeId):
@@ -198,12 +230,12 @@ class ClassNode(Node):
         super().__post_init__(**kwargs)
 
 
-@dataclass
+@dataclass(repr=False)
 class InstanceNode(Node):
     """
     A node that is an individual
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = OWL["NamedIndividual"]
     class_class_curie: ClassVar[str] = "owl:NamedIndividual"
@@ -212,7 +244,7 @@ class InstanceNode(Node):
 
     id: Union[str, InstanceNodeId] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, InstanceNodeId):
@@ -221,7 +253,7 @@ class InstanceNode(Node):
         super().__post_init__(**kwargs)
 
 
-@dataclass
+@dataclass(repr=False)
 class Edge(OntologyElement):
     """
     A relationship between two nodes.
@@ -244,7 +276,7 @@ class Edge(OntologyElement):
     represented as node properties. Complex OWL axioms involving nesting would have their own dedicated construct, or
     may be represented generically. These are out of scope for the current version of KGCL
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = OM["Edge"]
     class_class_curie: ClassVar[str] = "om:Edge"
@@ -259,7 +291,7 @@ class Edge(OntologyElement):
     object_representation: Optional[str] = None
     annotation_set: Optional[Union[dict, Annotation]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self.subject is not None and not isinstance(self.subject, NodeId):
             self.subject = NodeId(self.subject)
 
@@ -285,7 +317,7 @@ class Edge(OntologyElement):
 
 
 class LogicalDefinition(OntologyElement):
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = OM["LogicalDefinition"]
     class_class_curie: ClassVar[str] = "om:LogicalDefinition"
@@ -293,9 +325,9 @@ class LogicalDefinition(OntologyElement):
     class_model_uri: ClassVar[URIRef] = OM.LogicalDefinition
 
 
-@dataclass
+@dataclass(repr=False)
 class OntologySubset(Node):
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = OM["OntologySubset"]
     class_class_curie: ClassVar[str] = "om:OntologySubset"
@@ -304,7 +336,7 @@ class OntologySubset(Node):
 
     id: Union[str, OntologySubsetId] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, OntologySubsetId):
@@ -393,10 +425,11 @@ slots.object_representation = Slot(uri=OM.object_representation, name="object_re
                    model_uri=OM.object_representation, domain=None, range=Optional[str])
 
 slots.property_value_set = Slot(uri=OM.property_value_set, name="property_value_set", curie=OM.curie('property_value_set'),
-                   model_uri=OM.property_value_set, domain=None, range=Optional[Union[Union[dict, PropertyValue], List[Union[dict, PropertyValue]]]])
+                   model_uri=OM.property_value_set, domain=None, range=Optional[Union[Union[dict, PropertyValue], list[Union[dict, PropertyValue]]]])
 
 slots.id = Slot(uri=BASICS.id, name="id", curie=BASICS.curie('id'),
                    model_uri=OM.id, domain=None, range=URIRef)
 
 slots.description = Slot(uri=DCTERMS.description, name="description", curie=DCTERMS.curie('description'),
                    model_uri=OM.description, domain=None, range=Optional[str])
+

@@ -1,6 +1,7 @@
 from typing import Tuple, Optional, List, Union
 
 from kgcl_schema.datamodel.kgcl import (
+    NewLabel,
     NewTextDefinition,
     NodeObsoletionWithDirectReplacement,
     NodeRename,
@@ -80,6 +81,29 @@ CASES: List[CASE] = [
             id=UID,
             old_value="nucleus",
             new_value="bar",
+            about_node=NUCLEUS,
+            about_node_representation="curie",
+        ),
+        None,
+    ),
+    (
+        f"add label 'nucleus' to {NUCLEUS}",
+        f"add label 'nucleus' to {NUCLEUS_URI}",
+        NewLabel(
+            id=UID,
+            new_value="nucleus",
+            about_node=NUCLEUS,
+            about_node_representation="curie",
+        ),
+        None,
+    ),
+    (
+        f"add label 'noyau'@fr to {NUCLEUS}",
+        f"add label 'noyau'@fr to {NUCLEUS_URI}",
+        NewLabel(
+            id=UID,
+            new_value="noyau",
+            new_language="fr",
             about_node=NUCLEUS,
             about_node_representation="curie",
         ),
