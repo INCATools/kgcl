@@ -1,37 +1,27 @@
-""" 
-Functions for generating JSON files for visualizations. 
-Adapted from code developed for biolink-model. 
+"""
+Generate the class-hierarchy JSON used by the visualization on the docs site.
+
+Adapted from code developed for biolink-model.
+Run from the repository root (`make gendoc` does this).
 """
 
-from collections import defaultdict
 import json
-from typing import Any, List, Union
+from collections import defaultdict
+from typing import Dict, List, Set
 
-from linkml_runtime.utils.schemaview import SchemaView
-
-file_path = "src/kgcl_schema/schema/kgcl.yaml"
+from kgcl_schema.schema import get_schemaview
 
 ROOT_NODE = "ChangeLanguageElement"
-
-# Read the file content
-with open(file_path, "r", encoding="utf-8") as file:
-    file_content_str = file.read()
-
-# Parse the YAML content
-sv = SchemaView(file_content_str)
+OUTPUT_PATH = "src/docs/categories.json"
 
 
-def get_tree_class_recursive(root_node: dict, parent_to_child_map: dict) -> dict:
+def get_tree_class_recursive(root_node: dict, parent_to_child_map: Dict[str, Set[str]]) -> dict:
     """
-    Recursively get the tree node.
+    Recursively attach children to a tree node.
 
-    :param root_node: The root node of the tree.
-    :type root_node: dict
-    :param parent_to_child_map: A dictionary mapping parent nodes to child nodes.
-    :type parent_to_child_map: dict
-    :return: The tree node.
-    :rtype: dict
-
+    :param root_node: The node to expand, as a dict with "name" and "parent".
+    :param parent_to_child_map: A dictionary mapping parent class names to child class names.
+    :return: The node, with a sorted "children" list if it has any.
     """
     root_name = root_node["name"]
     children_names = parent_to_child_map.get(root_name, [])
@@ -39,98 +29,35 @@ def get_tree_class_recursive(root_node: dict, parent_to_child_map: dict) -> dict
         children = []
         for child_name in children_names:
             child_node = {"name": child_name, "parent": root_name}
-            child_node = get_tree_class_recursive(child_node, parent_to_child_map)
-            children.append(child_node)
+            children.append(get_tree_class_recursive(child_node, parent_to_child_map))
         root_node["children"] = sorted(children, key=lambda x: x["name"])
-        # test
-
     return root_node
 
 
-def load_category_tree_data(return_parent_to_child_dict: bool = False) -> tuple:
+def load_category_tree_data() -> List[dict]:
     """
-    Load the category tree data from the model.
+    Build the class tree from the schema, rooted at ROOT_NODE.
 
-    :param return_parent_to_child_dict: Whether to return the parent to child dictionary.
-    :type return_parent_to_child_dict: bool
-    :return: The category tree data.
-    :rtype: tuple
+    Deprecated classes are left out.
+
+    :return: A one-element list holding the root of the tree.
     """
+    sv = get_schemaview()
     parent_to_child_dict = defaultdict(set)
-    category_tree = {}
     for class_name in sv.all_classes(imports=True):
         cls = sv.get_class(class_name)
         if cls.deprecated:
             continue
         if cls.is_a:
-            parent_name_english = cls.is_a
-            if parent_name_english:
-                parent_name = parent_name_english
-                parent_to_child_dict[parent_name].add(class_name)
-                root_node = {"name": ROOT_NODE, "parent": None}
-                category_tree = get_tree_class_recursive(
-                    root_node, parent_to_child_dict
-                )
-                parent_name = parent_name_english
-                parent_to_child_dict[parent_name].add(class_name)
+            parent_to_child_dict[cls.is_a].add(class_name)
+    root_node = {"name": ROOT_NODE, "parent": None}
+    return [get_tree_class_recursive(root_node, parent_to_child_dict)]
 
-    return (
-        ([category_tree], parent_to_child_dict)
-        if return_parent_to_child_dict
-        else ([category_tree])
-    )
-
-
-def get_tree_slot_recursive(root_node: dict, parent_to_child_map: dict) -> dict:
-    """
-    Recursively get the tree node.
-
-    :param root_node: The root node of the tree.
-    :type root_node: dict
-    :param parent_to_child_map: A dictionary mapping parent nodes to child nodes.
-    :type parent_to_child_map: dict
-    :return: The tree node.
-    :rtype: dict
-
-    """
-    root_name = root_node["name"]
-    children_names = parent_to_child_map.get(root_name, [])
-    if children_names:
-        children = []
-        for child_name in children_names:
-            child_node = {"name": child_name, "parent": root_name}
-            child_node = get_tree_slot_recursive(child_node, parent_to_child_map)
-            children.append(child_node)
-        root_node["children"] = sorted(children, key=lambda x: x["name"])
-        # test
-
-    return root_node
-
-
-"""
-            elements: {
-                nodes: [
-                    {data: {id: 'a', label: 'treats', mdFile: "treats", mixin: "true"}},
-                    {data: {id: 'b', label: 'contraindicated in', mdFile: "contraindicated in", mixin: "false"}},
-                    {data: {id: 'c', label: 'studied_to_treat', mdFile: "studied to treat", mixin: "false"}},
-                    {data: {id: 'd', label: 'taken_or_studied_or_treats', mdFile: "studied to treat", mixin: "false"}}
-
-                ],
-                edges: [
-                    {data: {id: 'ab', source: 'a', target: 'b'}},
-                    {data: {id: 'bc', source: 'a', target: 'c'}},
-                    {data: {id: 'ca', source: 'd', target: 'a'}},
-                    {data: {id: 'ca', source: 'b', target: 'a'}}
-                ]
-            },
-"""
 
 def generate_viz_json():
-
-    # Generate the d3 viz data
+    """Write the class tree to OUTPUT_PATH."""
     cat_data = load_category_tree_data()
-
-    with open("src/docs/categories.json", "w", encoding="utf-8") as json_file:
+    with open(OUTPUT_PATH, "w", encoding="utf-8") as json_file:
         json.dump(cat_data, json_file, indent=4)
 
 
