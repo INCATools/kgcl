@@ -214,13 +214,27 @@ Test_20:
   command_with_uri: TODO
 Test_21:
   id: CHANGE:001
+  type: NodeShallowing
+  old_value: GO:0005634
+  new_value: GO:0043231
+  about_edge:
+    subject: GO:0005739
+    object: GO:0005634
+    subject_representation: curie
+    object_representation: curie
+  old_object_type: curie
+  new_object_type: curie
+  command_with_curie: shallow GO:0005739 from GO:0005634 to GO:0043231
+  command_with_uri: TODO
+Test_22:
+  id: CHANGE:001
   type: NewTextDefinition
   new_value: this is dummy description
   about_node: GO:0005635
   about_node_representation: curie
   command_with_curie: add definition 'this is dummy description' to GO:0005635
   command_with_uri: add definition 'this is dummy description' to http://purl.obolibrary.org/obo/GO_0005635
-Test_22:
+Test_23:
   id: CHANGE:001
   type: NodeTextDefinitionChange
   new_value: this is dummy description
@@ -229,21 +243,21 @@ Test_22:
   command_with_curie: change definition of GO:0005635 to 'this is dummy description'
   command_with_uri: change definition of http://purl.obolibrary.org/obo/GO_0005635
     to 'this is dummy description'
-Test_23:
+Test_24:
   id: CHANGE:001
   type: RemoveTextDefinition
   about_node: GO:0005634
   about_node_representation: curie
   command_with_curie: remove definition for GO:0005634
   command_with_uri: remove definition for http://purl.obolibrary.org/obo/GO_0005634
-Test_24:
+Test_25:
   id: CHANGE:001
   type: NodeObsoletion
   about_node: GO:0005634
   about_node_representation: curie
   command_with_curie: obsolete GO:0005634
   command_with_uri: obsolete http://purl.obolibrary.org/obo/GO_0005634
-Test_25:
+Test_26:
   id: CHANGE:001
   type: NodeObsoletionWithDirectReplacement
   about_node: GO:0005634

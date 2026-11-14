@@ -19,6 +19,7 @@ from kgcl_schema.datamodel.kgcl import (
     RemoveUnder,
     EdgeDeletion,
     NodeDeepening,
+    NodeShallowing,
     AddNodeToSubset,
     RemoveNodeFromSubset,
     SynonymReplacement,
@@ -350,6 +351,24 @@ CASES: List[CASE] = [
             about_edge=Edge(
                 subject=MITOCHONDRION,
                 object=IMBO,
+                subject_representation="curie",
+                object_representation="curie",
+            ),
+        ),
+        None,
+    ),
+    (
+        f"shallow {MITOCHONDRION} from {NUCLEUS} to {IMBO}",
+        TODO_TOKEN,
+        NodeShallowing(
+            id=UID,
+            old_value=NUCLEUS,
+            new_value=IMBO,
+            old_object_type="curie",
+            new_object_type="curie",
+            about_edge=Edge(
+                subject=MITOCHONDRION,
+                object=NUCLEUS,
                 subject_representation="curie",
                 object_representation="curie",
             ),

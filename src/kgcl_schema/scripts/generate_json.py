@@ -14,7 +14,7 @@ file_path = "src/kgcl_schema/schema/kgcl.yaml"
 ROOT_NODE = "ChangeLanguageElement"
 
 # Read the file content
-with open(file_path, "r") as file:
+with open(file_path, "r", encoding="utf-8") as file:
     file_content_str = file.read()
 
 # Parse the YAML content
@@ -130,7 +130,7 @@ def generate_viz_json():
     # Generate the d3 viz data
     cat_data = load_category_tree_data()
 
-    with open("src/docs/categories.json", "w") as json_file:
+    with open("src/docs/categories.json", "w", encoding="utf-8") as json_file:
         json.dump(cat_data, json_file, indent=4)
 
 
