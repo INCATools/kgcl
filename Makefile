@@ -45,9 +45,11 @@ all: gen-project gendoc
 %.yaml: gen-project
 deploy: all mkd-gh-deploy
 
-# generates all project files
+# generates all project files; the JSON-LD context is also copied into the
+# package, where kgcl_schema.utils.to_jsonld reads it
 gen-project: $(PYMODEL)
-	$(RUN) gen-project -d $(DEST) $(SOURCE_SCHEMA_PATH) --config-file project_config.yaml  && mv $(DEST)/*.py $(PYMODEL) 
+	$(RUN) gen-project -d $(DEST) $(SOURCE_SCHEMA_PATH) --config-file project_config.yaml  && mv $(DEST)/*.py $(PYMODEL)
+	cp $(DEST)/jsonld/$(SCHEMA_NAME).context.jsonld $(SRC)/$(SCHEMA_NAME)_schema/schema/
 
 src/kgcl_schema/datamodel/%.py: src/kgcl_schema/schema/%.yaml
 	$(RUN) gen-python $< > $@.tmp && mv $@.tmp $@

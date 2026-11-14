@@ -11,7 +11,7 @@ from typing import Dict, Any
 from uuid import uuid1
 
 import yaml
-from kgcl_schema.schema import get_schemaview
+from kgcl_schema.schema import PATH as SCHEMA_DIR, get_schemaview
 from linkml_runtime.dumpers import json_dumper, yaml_dumper, rdflib_dumper
 from linkml_runtime.loaders.yaml_loader import YAMLLoader
 from linkml_runtime.utils.formatutils import camelcase
@@ -20,11 +20,9 @@ from linkml_runtime.utils.yamlutils import YAMLRoot
 import kgcl_schema.datamodel as model
 from kgcl_schema.datamodel.kgcl import Session, Change
 from kgcl_schema.datamodel.kgcl import Activity
-from os.path import dirname, join
 
-# THIS_DIR = os.path.abspath(os.path.dirname(__file__))
-# LD = os.path.join(THIS_DIR, "../ldcontext/kgcl_schema.context.jsonld")
-LD = join(dirname(dirname(dirname(__file__))), "ldcontext/kgcl.context.jsonld")
+# JSON-LD context generated from the schema by `make gen-project`
+LD = SCHEMA_DIR / "kgcl.context.jsonld"
 
 
 def get_context() -> str:
