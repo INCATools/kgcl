@@ -6,13 +6,17 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
+        <meta name="description" content="Knowledge Graph Change Language: a standard for describing changes to ontologies and knowledge graphs">
+      
       
       
         <link rel="canonical" href="https://incatools.github.io/kgcl/examples/">
       
       
-        <link rel="prev" href="..">
+        <link rel="prev" href="../change-types/">
       
+      
+        <link rel="next" href="../class-hierarchy/">
       
       
         
@@ -23,7 +27,7 @@
     
     
       
-        <title>Examples - KGCL</title>
+        <title>Command examples - KGCL</title>
       
     
     
@@ -64,7 +68,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#kgcl-commands" class="md-skip">
+        <a href="#command-examples" class="md-skip">
           Skip to content
         </a>
       
@@ -100,7 +104,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Examples
+              Command examples
             
           </span>
         </div>
@@ -220,33 +224,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../main/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    About
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href=".." class="md-nav__link">
         
   
@@ -254,7 +231,7 @@
   <span class="md-ellipsis">
     
   
-    Index
+    Home
   
 
     
@@ -269,6 +246,88 @@
     
       
       
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Using KGCL
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Using KGCL
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../change-types/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Visual guide to change types
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
   
   
     
@@ -290,7 +349,7 @@
   <span class="md-ellipsis">
     
   
-    Examples
+    Command examples
   
 
     
@@ -308,7 +367,7 @@
   <span class="md-ellipsis">
     
   
-    Examples
+    Command examples
   
 
     
@@ -334,222 +393,352 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#example-rename-node" class="md-nav__link">
+  <a href="#labels" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Example: Rename node.
+        Labels
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Labels">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rename-a-node-replace-its-label" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rename a node (replace its label)
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#example-addition-of-a-label-to-an-unlabeled-node" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#add-a-label-to-an-unlabeled-node" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Example: Addition of a label to an unlabeled node.
+        Add a label to an unlabeled node
       
     </span>
   </a>
   
 </li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
         <li class="md-nav__item">
-  <a href="#example-obsolete-node" class="md-nav__link">
+  <a href="#synonyms" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Example: Obsolete node.
+        Synonyms
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Synonyms">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#add-a-synonym" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Add a synonym
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#example-replacement-of-node-after-obsoletion" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#remove-a-synonym" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Example: Replacement of node after obsoletion.
+        Remove a synonym
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#example-addition-of-a-new-synonym" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#replace-the-text-of-a-synonym" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Example: Addition of a new synonym.
+        Replace the text of a synonym
       
     </span>
   </a>
   
 </li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
         <li class="md-nav__item">
-  <a href="#example-removal-of-a-synonym" class="md-nav__link">
+  <a href="#definitions" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Example: Removal of a synonym.
+        Definitions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Definitions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#add-a-definition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Add a definition
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#example-replace-synonym-of-a-node" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#change-a-definition" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Example: Replace synonym of a node.
+        Change a definition
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#example-addition-of-a-node-to-a-subset" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#remove-a-definition" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Example: Addition of a node to a subset.
+        Remove a definition
       
     </span>
   </a>
   
 </li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
         <li class="md-nav__item">
-  <a href="#example-removal-of-a-node-from-a-subset" class="md-nav__link">
+  <a href="#relationships-edges" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Example: Removal of a node from a subset.
+        Relationships (edges)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Relationships (edges)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-an-edge" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Create an edge
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#example-creation-of-new-class" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#place-a-node-under-another-node-create-an-is_a-edge" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Example: Creation of new class.
+        Place a node under another node (create an is_a edge)
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#example-creation-of-new-node" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#delete-an-edge" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Example: Creation of new node.
+        Delete an edge
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#example-creation-of-new-edge" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#remove-a-node-from-under-another-node-delete-an-is_a-edge" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Example: Creation of new edge.
+        Remove a node from under another node (delete an is_a edge)
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#example-place-node-under-another-node" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#change-the-predicate-relationship-type-of-an-edge" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Example: Place node under another node.
+        Change the predicate (relationship type) of an edge
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#example-change-predicate" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#move-a-node-under-a-more-specific-parent" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Example: Change predicate.
+        Move a node under a more specific parent
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#example-remove-node-from-under-another-node" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#move-a-node-under-a-more-general-parent" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Example: Remove node from under another node.
+        Move a node under a more general parent
       
     </span>
   </a>
   
 </li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
         <li class="md-nav__item">
-  <a href="#example-deletion-of-an-edge" class="md-nav__link">
+  <a href="#obsoletion" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Example: Deletion of an edge.
+        Obsoletion
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Obsoletion">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#obsolete-a-node" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Obsolete a node
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#example-deepening-of-a-node" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#obsolete-a-node-and-name-its-replacement" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Example: Deepening of a node.
+        Obsolete a node and name its replacement
       
     </span>
   </a>
   
 </li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
         <li class="md-nav__item">
-  <a href="#example-new-definition-of-a-node" class="md-nav__link">
+  <a href="#subsets" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Example: New definition of a node.
+        Subsets
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Subsets">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#add-a-node-to-a-subset" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Add a node to a subset
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#example-update-defintion-of-a-node" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#remove-a-node-from-a-subset" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Example: Update defintion of a node.
+        Remove a node from a subset
       
     </span>
   </a>
   
 </li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
         <li class="md-nav__item">
-  <a href="#example-remove-definition-of-a-node" class="md-nav__link">
+  <a href="#creating-nodes" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Example: Remove definition of a node.
+        Creating nodes
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Creating nodes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-a-class" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Create a class
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-a-node-with-a-label" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Create a node with a label
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -557,6 +746,211 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../class-hierarchy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Class hierarchy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tools
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Tools
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../github-integration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ontobot (GitHub)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bioportal-implementation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    BioPortal
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../schema-reference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Schema reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../citing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Citing KGCL
+  
+
+    
+  </span>
+  
+  
+
+      </a>
     </li>
   
 
@@ -588,222 +982,352 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#example-rename-node" class="md-nav__link">
+  <a href="#labels" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Example: Rename node.
+        Labels
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Labels">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rename-a-node-replace-its-label" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rename a node (replace its label)
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#example-addition-of-a-label-to-an-unlabeled-node" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#add-a-label-to-an-unlabeled-node" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Example: Addition of a label to an unlabeled node.
+        Add a label to an unlabeled node
       
     </span>
   </a>
   
 </li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
         <li class="md-nav__item">
-  <a href="#example-obsolete-node" class="md-nav__link">
+  <a href="#synonyms" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Example: Obsolete node.
+        Synonyms
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Synonyms">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#add-a-synonym" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Add a synonym
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#example-replacement-of-node-after-obsoletion" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#remove-a-synonym" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Example: Replacement of node after obsoletion.
+        Remove a synonym
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#example-addition-of-a-new-synonym" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#replace-the-text-of-a-synonym" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Example: Addition of a new synonym.
+        Replace the text of a synonym
       
     </span>
   </a>
   
 </li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
         <li class="md-nav__item">
-  <a href="#example-removal-of-a-synonym" class="md-nav__link">
+  <a href="#definitions" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Example: Removal of a synonym.
+        Definitions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Definitions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#add-a-definition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Add a definition
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#example-replace-synonym-of-a-node" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#change-a-definition" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Example: Replace synonym of a node.
+        Change a definition
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#example-addition-of-a-node-to-a-subset" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#remove-a-definition" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Example: Addition of a node to a subset.
+        Remove a definition
       
     </span>
   </a>
   
 </li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
         <li class="md-nav__item">
-  <a href="#example-removal-of-a-node-from-a-subset" class="md-nav__link">
+  <a href="#relationships-edges" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Example: Removal of a node from a subset.
+        Relationships (edges)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Relationships (edges)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-an-edge" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Create an edge
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#example-creation-of-new-class" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#place-a-node-under-another-node-create-an-is_a-edge" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Example: Creation of new class.
+        Place a node under another node (create an is_a edge)
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#example-creation-of-new-node" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#delete-an-edge" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Example: Creation of new node.
+        Delete an edge
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#example-creation-of-new-edge" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#remove-a-node-from-under-another-node-delete-an-is_a-edge" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Example: Creation of new edge.
+        Remove a node from under another node (delete an is_a edge)
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#example-place-node-under-another-node" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#change-the-predicate-relationship-type-of-an-edge" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Example: Place node under another node.
+        Change the predicate (relationship type) of an edge
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#example-change-predicate" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#move-a-node-under-a-more-specific-parent" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Example: Change predicate.
+        Move a node under a more specific parent
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#example-remove-node-from-under-another-node" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#move-a-node-under-a-more-general-parent" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Example: Remove node from under another node.
+        Move a node under a more general parent
       
     </span>
   </a>
   
 </li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
         <li class="md-nav__item">
-  <a href="#example-deletion-of-an-edge" class="md-nav__link">
+  <a href="#obsoletion" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Example: Deletion of an edge.
+        Obsoletion
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Obsoletion">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#obsolete-a-node" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Obsolete a node
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#example-deepening-of-a-node" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#obsolete-a-node-and-name-its-replacement" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Example: Deepening of a node.
+        Obsolete a node and name its replacement
       
     </span>
   </a>
   
 </li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
         <li class="md-nav__item">
-  <a href="#example-new-definition-of-a-node" class="md-nav__link">
+  <a href="#subsets" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Example: New definition of a node.
+        Subsets
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Subsets">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#add-a-node-to-a-subset" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Add a node to a subset
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#example-update-defintion-of-a-node" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#remove-a-node-from-a-subset" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Example: Update defintion of a node.
+        Remove a node from a subset
       
     </span>
   </a>
   
 </li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
         <li class="md-nav__item">
-  <a href="#example-remove-definition-of-a-node" class="md-nav__link">
+  <a href="#creating-nodes" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Example: Remove definition of a node.
+        Creating nodes
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Creating nodes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-a-class" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Create a class
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-a-node-with-a-label" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Create a node with a label
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -827,213 +1351,260 @@
   
 
 
-<h1 id="kgcl-commands">KGCL Commands.</h1>
-<h2 id="example-rename-node">Example: Rename node.</h2>
-<p>Class: <a href="https://w3id.org/kgcl/NodeRename"><code>NodeRename</code></a> </br></br>Command: <code>rename GO:0005635 from 'nuclear envelope' to 'foo bar'</code></br></br>YAML:</p>
-<pre><code>id: CHANGE:001
-type: NodeRename
-old_value: nuclear envelope
-new_value: foo bar
-about_node: GO:0005635
-about_node_representation: curie
-
-</code></pre>
-<h2 id="example-addition-of-a-label-to-an-unlabeled-node">Example: Addition of a label to an unlabeled node.</h2>
-<p>Class: <a href="https://w3id.org/kgcl/NewLabel"><code>NewLabel</code></a> </br></br>Command: <code>add label 'nucleus' to GO:0005634</code></br></br>YAML:</p>
-<pre><code>id: CHANGE:001
-type: NewLabel
-new_value: nucleus
-about_node: GO:0005634
-about_node_representation: curie
-
-</code></pre>
-<h2 id="example-obsolete-node">Example: Obsolete node.</h2>
-<p>Class: <a href="https://w3id.org/kgcl/NodeObsoletion"><code>NodeObsoletion</code></a> </br></br>Command: <code>obsolete GO:0005634</code></br></br>YAML:</p>
-<pre><code>id: CHANGE:001
-type: NodeObsoletion
-about_node: GO:0005634
-about_node_representation: curie
-
-</code></pre>
-<h2 id="example-replacement-of-node-after-obsoletion">Example: Replacement of node after obsoletion.</h2>
-<p>Class: <a href="https://w3id.org/kgcl/NodeObsoletionWithDirectReplacement"><code>NodeObsoletionWithDirectReplacement</code></a> </br></br>Command: <code>obsolete GO:0005634 with replacement GO:999</code></br></br>YAML:</p>
-<pre><code>id: CHANGE:001
-type: NodeObsoletionWithDirectReplacement
-about_node: GO:0005634
-about_node_representation: curie
-has_direct_replacement: GO:999
-
-</code></pre>
-<h2 id="example-addition-of-a-new-synonym">Example: Addition of a new synonym.</h2>
-<p>Class: <a href="https://w3id.org/kgcl/NewSynonym"><code>NewSynonym</code></a> </br></br>Command: <code>create exact synonym 'foo' for GO:0005634</code></br></br>YAML:</p>
-<pre><code>id: CHANGE:001
-type: NewSynonym
-new_value: foo
-about_node: GO:0005634
-about_node_representation: curie
-qualifier: exact
-
-</code></pre>
-<h2 id="example-removal-of-a-synonym">Example: Removal of a synonym.</h2>
-<p>Class: <a href="https://w3id.org/kgcl/RemoveSynonym"><code>RemoveSynonym</code></a> </br></br>Command: <code>remove synonym 'foo' for GO:0005634</code></br></br>YAML:</p>
-<pre><code>id: CHANGE:001
-type: RemoveSynonym
-old_value: foo
-about_node: GO:0005634
-about_node_representation: curie
-
-</code></pre>
-<h2 id="example-replace-synonym-of-a-node">Example: Replace synonym of a node.</h2>
-<p>Class: <a href="https://w3id.org/kgcl/SynonymReplacement"><code>SynonymReplacement</code></a> </br></br>Command: <code>change synonym 'cell nucleus' for GO:0005634 to 'cell NUCLEUS'</code></br></br>YAML:</p>
-<pre><code>id: CHANGE:001
-type: SynonymReplacement
-old_value: cell nucleus
-new_value: cell NUCLEUS
-about_node: GO:0005634
-about_node_representation: label
-
-</code></pre>
-<h2 id="example-addition-of-a-node-to-a-subset">Example: Addition of a node to a subset.</h2>
-<p>Class: <a href="https://w3id.org/kgcl/AddNodeToSubset"><code>AddNodeToSubset</code></a> </br></br>Command: <code>add GO:0005634 to subset foo</code></br></br>YAML:</p>
-<pre><code>id: CHANGE:001
-type: AddNodeToSubset
-about_node: GO:0005634
-about_node_representation: curie
-in_subset: foo
-
-</code></pre>
-<h2 id="example-removal-of-a-node-from-a-subset">Example: Removal of a node from a subset.</h2>
-<p>Class: <a href="https://w3id.org/kgcl/RemoveNodeFromSubset"><code>RemoveNodeFromSubset</code></a> </br></br>Command: <code>remove GO:0005634 from subset foo</code></br></br>YAML:</p>
-<pre><code>id: CHANGE:001
-type: RemoveNodeFromSubset
-about_node: GO:0005634
-about_node_representation: curie
-in_subset: foo
-
-</code></pre>
-<h2 id="example-creation-of-new-class">Example: Creation of new class.</h2>
-<p>Class: <a href="https://w3id.org/kgcl/ClassCreation"><code>ClassCreation</code></a> </br></br>Command: <code>create GO:9999999</code></br></br>YAML:</p>
-<pre><code>id: CHANGE:001
-type: ClassCreation
-about_node: GO:9999999
-about_node_representation: curie
-
-</code></pre>
-<h2 id="example-creation-of-new-node">Example: Creation of new node.</h2>
-<p>Class: <a href="https://w3id.org/kgcl/NodeCreation"><code>NodeCreation</code></a> </br></br>Command: <code>create node GO:9999999 'foo'</code></br></br>YAML:</p>
-<pre><code>id: CHANGE:001
-type: NodeCreation
-about_node: GO:9999999
-about_node_representation: curie
-name: foo
-
-</code></pre>
-<h2 id="example-creation-of-new-edge">Example: Creation of new edge.</h2>
-<p>Class: <a href="https://w3id.org/kgcl/EdgeCreation"><code>EdgeCreation</code></a> </br></br>Command: <code>create edge GO:0005634 BFO:0000050 GO:0009411</code></br></br>YAML:</p>
-<pre><code>id: CHANGE:001
-type: EdgeCreation
-object_type: curie
-subject: GO:0005634
-predicate: BFO:0000050
-object: GO:0009411
-subject_type: curie
-predicate_type: curie
-
-</code></pre>
-<h2 id="example-place-node-under-another-node">Example: Place node under another node.</h2>
-<p>Class: <a href="https://w3id.org/kgcl/PlaceUnder"><code>PlaceUnder</code></a> </br></br>Command: <code>create edge GO:0005634 rdfs:subClassOf GO:0009411</code></br></br>YAML:</p>
-<pre><code>id: CHANGE:001
-type: PlaceUnder
-object_type: curie
-subject: GO:0005634
-predicate: rdfs:subClassOf
-object: GO:0009411
-subject_type: curie
-predicate_type: curie
-
-</code></pre>
-<h2 id="example-change-predicate">Example: Change predicate.</h2>
-<p>Class: <a href="https://w3id.org/kgcl/PredicateChange"><code>PredicateChange</code></a> </br></br>Command: <code>change relationship between GO:0005635 and GO:0005634 from BFO:0000050 to rdfs:subClassOf</code></br></br>YAML:</p>
-<pre><code>id: CHANGE:001
-type: PredicateChange
-old_value: BFO:0000050
-new_value: rdfs:subClassOf
-old_value_type: curie
-new_value_type: curie
-about_edge:
-  subject: GO:0005635
-  predicate: BFO:0000050
-  object: GO:0005634
-  subject_representation: curie
-  predicate_representation: curie
-  object_representation: curie
-
-</code></pre>
-<h2 id="example-remove-node-from-under-another-node">Example: Remove node from under another node.</h2>
-<p>Class: <a href="https://w3id.org/kgcl/RemoveUnder"><code>RemoveUnder</code></a> </br></br>Command: <code>delete edge GO:0005634 rdfs:subClassOf GO:0043231</code></br></br>YAML:</p>
-<pre><code>id: CHANGE:001
-type: RemoveUnder
-object_type: curie
-subject: GO:0005634
-predicate: rdfs:subClassOf
-object: GO:0043231
-subject_type: curie
-predicate_type: curie
-
-</code></pre>
-<h2 id="example-deletion-of-an-edge">Example: Deletion of an edge.</h2>
-<p>Class: <a href="https://w3id.org/kgcl/EdgeDeletion"><code>EdgeDeletion</code></a> </br></br>Command: <code>delete edge GO:0005635 BFO:0000050 GO:0005634</code></br></br>YAML:</p>
-<pre><code>id: CHANGE:001
-type: EdgeDeletion
-object_type: curie
-subject: GO:0005635
-predicate: BFO:0000050
-object: GO:0005634
-subject_type: curie
-predicate_type: curie
-
-</code></pre>
-<h2 id="example-deepening-of-a-node">Example: Deepening of a node.</h2>
-<p>Class: <a href="https://w3id.org/kgcl/NodeDeepening"><code>NodeDeepening</code></a> </br></br>Command: <code>deepen GO:0005739 from GO:0043231 to GO:0005634</code></br></br>YAML:</p>
-<pre><code>id: CHANGE:001
-type: NodeDeepening
-old_value: GO:0043231
-new_value: GO:0005634
-about_edge:
-  subject: GO:0005739
-  object: GO:0043231
-  subject_representation: curie
-  object_representation: curie
-old_object_type: curie
-new_object_type: curie
-
-</code></pre>
-<h2 id="example-new-definition-of-a-node">Example: New definition of a node.</h2>
-<p>Class: <a href="https://w3id.org/kgcl/NewTextDefinition"><code>NewTextDefinition</code></a> </br></br>Command: <code>add definition 'this is dummy description' to GO:0005635</code></br></br>YAML:</p>
-<pre><code>id: CHANGE:001
-type: NewTextDefinition
-new_value: this is dummy description
-about_node: GO:0005635
-about_node_representation: curie
-
-</code></pre>
-<h2 id="example-update-defintion-of-a-node">Example: Update defintion of a node.</h2>
-<p>Class: <a href="https://w3id.org/kgcl/NodeTextDefinitionChange"><code>NodeTextDefinitionChange</code></a> </br></br>Command: <code>change definition of GO:0005635 to 'this is dummy description'</code></br></br>YAML:</p>
-<pre><code>id: CHANGE:001
-type: NodeTextDefinitionChange
-new_value: this is dummy description
-about_node: GO:0005635
-about_node_representation: curie
-
-</code></pre>
-<h2 id="example-remove-definition-of-a-node">Example: Remove definition of a node.</h2>
-<p>Class: <a href="https://w3id.org/kgcl/RemoveTextDefinition"><code>RemoveTextDefinition</code></a> </br></br>Command: <code>remove definition for GO:0005634</code></br></br>YAML:</p>
-<pre><code>id: CHANGE:001
-type: RemoveTextDefinition
-about_node: GO:0005634
-about_node_representation: curie
-
-</code></pre>
+<h1 id="command-examples">Command examples<a class="headerlink" href="#command-examples" title="Permanent link">&para;</a></h1>
+<p>One example of each change type, written as a KGCL command and as YAML. The
+examples are generated from the test suite (<code>tests/cases.py</code>), so every command on
+this page is known to parse. For before-and-after diagrams of the most common
+changes, see the <a href="../change-types/">visual guide to change types</a>.</p>
+<h2 id="labels">Labels<a class="headerlink" href="#labels" title="Permanent link">&para;</a></h2>
+<h3 id="rename-a-node-replace-its-label">Rename a node (replace its label)<a class="headerlink" href="#rename-a-node-replace-its-label" title="Permanent link">&para;</a></h3>
+<p>Class: <a href="https://w3id.org/kgcl/NodeRename"><code>NodeRename</code></a></p>
+<div class="highlight"><pre><span></span><code>rename GO:0005635 from &#39;nuclear envelope&#39; to &#39;foo bar&#39;
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CHANGE:001</span>
+<span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">NodeRename</span>
+<span class="nt">old_value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nuclear envelope</span>
+<span class="nt">new_value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">foo bar</span>
+<span class="nt">about_node</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GO:0005635</span>
+<span class="nt">about_node_representation</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">curie</span>
+</code></pre></div>
+<h3 id="add-a-label-to-an-unlabeled-node">Add a label to an unlabeled node<a class="headerlink" href="#add-a-label-to-an-unlabeled-node" title="Permanent link">&para;</a></h3>
+<p>Class: <a href="https://w3id.org/kgcl/NewLabel"><code>NewLabel</code></a></p>
+<div class="highlight"><pre><span></span><code>add label &#39;nucleus&#39; to GO:0005634
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CHANGE:001</span>
+<span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">NewLabel</span>
+<span class="nt">new_value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nucleus</span>
+<span class="nt">about_node</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GO:0005634</span>
+<span class="nt">about_node_representation</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">curie</span>
+</code></pre></div>
+<h2 id="synonyms">Synonyms<a class="headerlink" href="#synonyms" title="Permanent link">&para;</a></h2>
+<h3 id="add-a-synonym">Add a synonym<a class="headerlink" href="#add-a-synonym" title="Permanent link">&para;</a></h3>
+<p>Class: <a href="https://w3id.org/kgcl/NewSynonym"><code>NewSynonym</code></a></p>
+<div class="highlight"><pre><span></span><code>create exact synonym &#39;foo&#39; for GO:0005634
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CHANGE:001</span>
+<span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">NewSynonym</span>
+<span class="nt">new_value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">foo</span>
+<span class="nt">about_node</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GO:0005634</span>
+<span class="nt">about_node_representation</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">curie</span>
+<span class="nt">qualifier</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">exact</span>
+</code></pre></div>
+<h3 id="remove-a-synonym">Remove a synonym<a class="headerlink" href="#remove-a-synonym" title="Permanent link">&para;</a></h3>
+<p>Class: <a href="https://w3id.org/kgcl/RemoveSynonym"><code>RemoveSynonym</code></a></p>
+<div class="highlight"><pre><span></span><code>remove synonym &#39;foo&#39; for GO:0005634
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CHANGE:001</span>
+<span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">RemoveSynonym</span>
+<span class="nt">old_value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">foo</span>
+<span class="nt">about_node</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GO:0005634</span>
+<span class="nt">about_node_representation</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">curie</span>
+</code></pre></div>
+<h3 id="replace-the-text-of-a-synonym">Replace the text of a synonym<a class="headerlink" href="#replace-the-text-of-a-synonym" title="Permanent link">&para;</a></h3>
+<p>Class: <a href="https://w3id.org/kgcl/SynonymReplacement"><code>SynonymReplacement</code></a></p>
+<div class="highlight"><pre><span></span><code>change synonym &#39;cell nucleus&#39; for GO:0005634 to &#39;cell NUCLEUS&#39;
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CHANGE:001</span>
+<span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">SynonymReplacement</span>
+<span class="nt">old_value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cell nucleus</span>
+<span class="nt">new_value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cell NUCLEUS</span>
+<span class="nt">about_node</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GO:0005634</span>
+<span class="nt">about_node_representation</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">label</span>
+</code></pre></div>
+<h2 id="definitions">Definitions<a class="headerlink" href="#definitions" title="Permanent link">&para;</a></h2>
+<h3 id="add-a-definition">Add a definition<a class="headerlink" href="#add-a-definition" title="Permanent link">&para;</a></h3>
+<p>Class: <a href="https://w3id.org/kgcl/NewTextDefinition"><code>NewTextDefinition</code></a></p>
+<div class="highlight"><pre><span></span><code>add definition &#39;this is dummy description&#39; to GO:0005635
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CHANGE:001</span>
+<span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">NewTextDefinition</span>
+<span class="nt">new_value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">this is dummy description</span>
+<span class="nt">about_node</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GO:0005635</span>
+<span class="nt">about_node_representation</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">curie</span>
+</code></pre></div>
+<h3 id="change-a-definition">Change a definition<a class="headerlink" href="#change-a-definition" title="Permanent link">&para;</a></h3>
+<p>Class: <a href="https://w3id.org/kgcl/NodeTextDefinitionChange"><code>NodeTextDefinitionChange</code></a></p>
+<div class="highlight"><pre><span></span><code>change definition of GO:0005635 to &#39;this is dummy description&#39;
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CHANGE:001</span>
+<span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">NodeTextDefinitionChange</span>
+<span class="nt">new_value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">this is dummy description</span>
+<span class="nt">about_node</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GO:0005635</span>
+<span class="nt">about_node_representation</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">curie</span>
+</code></pre></div>
+<h3 id="remove-a-definition">Remove a definition<a class="headerlink" href="#remove-a-definition" title="Permanent link">&para;</a></h3>
+<p>Class: <a href="https://w3id.org/kgcl/RemoveTextDefinition"><code>RemoveTextDefinition</code></a></p>
+<div class="highlight"><pre><span></span><code>remove definition for GO:0005634
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CHANGE:001</span>
+<span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">RemoveTextDefinition</span>
+<span class="nt">about_node</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GO:0005634</span>
+<span class="nt">about_node_representation</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">curie</span>
+</code></pre></div>
+<h2 id="relationships-edges">Relationships (edges)<a class="headerlink" href="#relationships-edges" title="Permanent link">&para;</a></h2>
+<h3 id="create-an-edge">Create an edge<a class="headerlink" href="#create-an-edge" title="Permanent link">&para;</a></h3>
+<p>Class: <a href="https://w3id.org/kgcl/EdgeCreation"><code>EdgeCreation</code></a></p>
+<div class="highlight"><pre><span></span><code>create edge GO:0005634 BFO:0000050 GO:0009411
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CHANGE:001</span>
+<span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">EdgeCreation</span>
+<span class="nt">object_type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">curie</span>
+<span class="nt">subject</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GO:0005634</span>
+<span class="nt">predicate</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">BFO:0000050</span>
+<span class="nt">object</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GO:0009411</span>
+<span class="nt">subject_type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">curie</span>
+<span class="nt">predicate_type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">curie</span>
+</code></pre></div>
+<h3 id="place-a-node-under-another-node-create-an-is_a-edge">Place a node under another node (create an is_a edge)<a class="headerlink" href="#place-a-node-under-another-node-create-an-is_a-edge" title="Permanent link">&para;</a></h3>
+<p>Class: <a href="https://w3id.org/kgcl/PlaceUnder"><code>PlaceUnder</code></a></p>
+<div class="highlight"><pre><span></span><code>create edge GO:0005634 rdfs:subClassOf GO:0009411
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CHANGE:001</span>
+<span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PlaceUnder</span>
+<span class="nt">object_type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">curie</span>
+<span class="nt">subject</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GO:0005634</span>
+<span class="nt">predicate</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">rdfs:subClassOf</span>
+<span class="nt">object</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GO:0009411</span>
+<span class="nt">subject_type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">curie</span>
+<span class="nt">predicate_type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">curie</span>
+</code></pre></div>
+<h3 id="delete-an-edge">Delete an edge<a class="headerlink" href="#delete-an-edge" title="Permanent link">&para;</a></h3>
+<p>Class: <a href="https://w3id.org/kgcl/EdgeDeletion"><code>EdgeDeletion</code></a></p>
+<div class="highlight"><pre><span></span><code>delete edge GO:0005635 BFO:0000050 GO:0005634
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CHANGE:001</span>
+<span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">EdgeDeletion</span>
+<span class="nt">object_type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">curie</span>
+<span class="nt">subject</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GO:0005635</span>
+<span class="nt">predicate</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">BFO:0000050</span>
+<span class="nt">object</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GO:0005634</span>
+<span class="nt">subject_type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">curie</span>
+<span class="nt">predicate_type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">curie</span>
+</code></pre></div>
+<h3 id="remove-a-node-from-under-another-node-delete-an-is_a-edge">Remove a node from under another node (delete an is_a edge)<a class="headerlink" href="#remove-a-node-from-under-another-node-delete-an-is_a-edge" title="Permanent link">&para;</a></h3>
+<p>Class: <a href="https://w3id.org/kgcl/RemoveUnder"><code>RemoveUnder</code></a></p>
+<div class="highlight"><pre><span></span><code>delete edge GO:0005634 rdfs:subClassOf GO:0043231
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CHANGE:001</span>
+<span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">RemoveUnder</span>
+<span class="nt">object_type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">curie</span>
+<span class="nt">subject</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GO:0005634</span>
+<span class="nt">predicate</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">rdfs:subClassOf</span>
+<span class="nt">object</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GO:0043231</span>
+<span class="nt">subject_type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">curie</span>
+<span class="nt">predicate_type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">curie</span>
+</code></pre></div>
+<h3 id="change-the-predicate-relationship-type-of-an-edge">Change the predicate (relationship type) of an edge<a class="headerlink" href="#change-the-predicate-relationship-type-of-an-edge" title="Permanent link">&para;</a></h3>
+<p>Class: <a href="https://w3id.org/kgcl/PredicateChange"><code>PredicateChange</code></a></p>
+<div class="highlight"><pre><span></span><code>change relationship between GO:0005635 and GO:0005634 from BFO:0000050 to rdfs:subClassOf
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CHANGE:001</span>
+<span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PredicateChange</span>
+<span class="nt">old_value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">BFO:0000050</span>
+<span class="nt">new_value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">rdfs:subClassOf</span>
+<span class="nt">old_value_type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">curie</span>
+<span class="nt">new_value_type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">curie</span>
+<span class="nt">about_edge</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">subject</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GO:0005635</span>
+<span class="w">  </span><span class="nt">predicate</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">BFO:0000050</span>
+<span class="w">  </span><span class="nt">object</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GO:0005634</span>
+<span class="w">  </span><span class="nt">subject_representation</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">curie</span>
+<span class="w">  </span><span class="nt">predicate_representation</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">curie</span>
+<span class="w">  </span><span class="nt">object_representation</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">curie</span>
+</code></pre></div>
+<h3 id="move-a-node-under-a-more-specific-parent">Move a node under a more specific parent<a class="headerlink" href="#move-a-node-under-a-more-specific-parent" title="Permanent link">&para;</a></h3>
+<p>Class: <a href="https://w3id.org/kgcl/NodeDeepening"><code>NodeDeepening</code></a></p>
+<div class="highlight"><pre><span></span><code>deepen GO:0005739 from GO:0043231 to GO:0005634
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CHANGE:001</span>
+<span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">NodeDeepening</span>
+<span class="nt">old_value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GO:0043231</span>
+<span class="nt">new_value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GO:0005634</span>
+<span class="nt">about_edge</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">subject</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GO:0005739</span>
+<span class="w">  </span><span class="nt">object</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GO:0043231</span>
+<span class="w">  </span><span class="nt">subject_representation</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">curie</span>
+<span class="w">  </span><span class="nt">object_representation</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">curie</span>
+<span class="nt">old_object_type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">curie</span>
+<span class="nt">new_object_type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">curie</span>
+</code></pre></div>
+<h3 id="move-a-node-under-a-more-general-parent">Move a node under a more general parent<a class="headerlink" href="#move-a-node-under-a-more-general-parent" title="Permanent link">&para;</a></h3>
+<p>Class: <a href="https://w3id.org/kgcl/NodeShallowing"><code>NodeShallowing</code></a></p>
+<div class="highlight"><pre><span></span><code>shallow GO:0005739 from GO:0005634 to GO:0043231
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CHANGE:001</span>
+<span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">NodeShallowing</span>
+<span class="nt">old_value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GO:0005634</span>
+<span class="nt">new_value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GO:0043231</span>
+<span class="nt">about_edge</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">subject</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GO:0005739</span>
+<span class="w">  </span><span class="nt">object</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GO:0005634</span>
+<span class="w">  </span><span class="nt">subject_representation</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">curie</span>
+<span class="w">  </span><span class="nt">object_representation</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">curie</span>
+<span class="nt">old_object_type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">curie</span>
+<span class="nt">new_object_type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">curie</span>
+</code></pre></div>
+<h2 id="obsoletion">Obsoletion<a class="headerlink" href="#obsoletion" title="Permanent link">&para;</a></h2>
+<h3 id="obsolete-a-node">Obsolete a node<a class="headerlink" href="#obsolete-a-node" title="Permanent link">&para;</a></h3>
+<p>Class: <a href="https://w3id.org/kgcl/NodeObsoletion"><code>NodeObsoletion</code></a></p>
+<div class="highlight"><pre><span></span><code>obsolete GO:0005634
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CHANGE:001</span>
+<span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">NodeObsoletion</span>
+<span class="nt">about_node</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GO:0005634</span>
+<span class="nt">about_node_representation</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">curie</span>
+</code></pre></div>
+<h3 id="obsolete-a-node-and-name-its-replacement">Obsolete a node and name its replacement<a class="headerlink" href="#obsolete-a-node-and-name-its-replacement" title="Permanent link">&para;</a></h3>
+<p>Class: <a href="https://w3id.org/kgcl/NodeObsoletionWithDirectReplacement"><code>NodeObsoletionWithDirectReplacement</code></a></p>
+<div class="highlight"><pre><span></span><code>obsolete GO:0005634 with replacement GO:999
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CHANGE:001</span>
+<span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">NodeObsoletionWithDirectReplacement</span>
+<span class="nt">about_node</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GO:0005634</span>
+<span class="nt">about_node_representation</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">curie</span>
+<span class="nt">has_direct_replacement</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GO:999</span>
+</code></pre></div>
+<h2 id="subsets">Subsets<a class="headerlink" href="#subsets" title="Permanent link">&para;</a></h2>
+<h3 id="add-a-node-to-a-subset">Add a node to a subset<a class="headerlink" href="#add-a-node-to-a-subset" title="Permanent link">&para;</a></h3>
+<p>Class: <a href="https://w3id.org/kgcl/AddNodeToSubset"><code>AddNodeToSubset</code></a></p>
+<div class="highlight"><pre><span></span><code>add GO:0005634 to subset foo
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CHANGE:001</span>
+<span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AddNodeToSubset</span>
+<span class="nt">about_node</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GO:0005634</span>
+<span class="nt">about_node_representation</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">curie</span>
+<span class="nt">in_subset</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">foo</span>
+</code></pre></div>
+<h3 id="remove-a-node-from-a-subset">Remove a node from a subset<a class="headerlink" href="#remove-a-node-from-a-subset" title="Permanent link">&para;</a></h3>
+<p>Class: <a href="https://w3id.org/kgcl/RemoveNodeFromSubset"><code>RemoveNodeFromSubset</code></a></p>
+<div class="highlight"><pre><span></span><code>remove GO:0005634 from subset foo
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CHANGE:001</span>
+<span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">RemoveNodeFromSubset</span>
+<span class="nt">about_node</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GO:0005634</span>
+<span class="nt">about_node_representation</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">curie</span>
+<span class="nt">in_subset</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">foo</span>
+</code></pre></div>
+<h2 id="creating-nodes">Creating nodes<a class="headerlink" href="#creating-nodes" title="Permanent link">&para;</a></h2>
+<h3 id="create-a-class">Create a class<a class="headerlink" href="#create-a-class" title="Permanent link">&para;</a></h3>
+<p>Class: <a href="https://w3id.org/kgcl/ClassCreation"><code>ClassCreation</code></a></p>
+<div class="highlight"><pre><span></span><code>create GO:9999999
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CHANGE:001</span>
+<span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ClassCreation</span>
+<span class="nt">about_node</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GO:9999999</span>
+<span class="nt">about_node_representation</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">curie</span>
+</code></pre></div>
+<h3 id="create-a-node-with-a-label">Create a node with a label<a class="headerlink" href="#create-a-node-with-a-label" title="Permanent link">&para;</a></h3>
+<p>Class: <a href="https://w3id.org/kgcl/NodeCreation"><code>NodeCreation</code></a></p>
+<div class="highlight"><pre><span></span><code>create node GO:9999999 &#39;foo&#39;
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CHANGE:001</span>
+<span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">NodeCreation</span>
+<span class="nt">about_node</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GO:9999999</span>
+<span class="nt">about_node_representation</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">curie</span>
+<span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">foo</span>
+</code></pre></div>
 
 
 
@@ -1055,6 +1626,12 @@ about_node_representation: curie
 
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
         
       </main>
       
@@ -1085,10 +1662,12 @@ about_node_representation: curie
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["content.tabs.link"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["content.tabs.link", "navigation.sections", "navigation.top"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
       <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../class_tree.js"></script>
       
     
   </body>

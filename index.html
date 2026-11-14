@@ -6,15 +6,15 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
+        <meta name="description" content="Knowledge Graph Change Language: a standard for describing changes to ontologies and knowledge graphs">
+      
       
       
         <link rel="canonical" href="https://incatools.github.io/kgcl/">
       
       
-        <link rel="prev" href="main/">
       
-      
-        <link rel="next" href="examples/">
+        <link rel="next" href="change-types/">
       
       
         
@@ -66,7 +66,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#kgcl_schema" class="md-skip">
+        <a href="#kgcl-knowledge-graph-change-language" class="md-skip">
           Skip to content
         </a>
       
@@ -102,7 +102,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Index
+              Home
             
           </span>
         </div>
@@ -219,33 +219,6 @@
       
   
   
-  
-  
-    <li class="md-nav__item">
-      <a href="main/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    About
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
     
   
   
@@ -265,7 +238,7 @@
   <span class="md-ellipsis">
     
   
-    Index
+    Home
   
 
     
@@ -283,7 +256,7 @@
   <span class="md-ellipsis">
     
   
-    Index
+    Home
   
 
     
@@ -309,10 +282,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#classes" class="md-nav__link">
+  <a href="#why-a-change-language" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Classes
+        Why a change language?
       
     </span>
   </a>
@@ -320,10 +293,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#slots" class="md-nav__link">
+  <a href="#the-three-parts-of-kgcl" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Slots
+        The three parts of KGCL
       
     </span>
   </a>
@@ -331,10 +304,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#enumerations" class="md-nav__link">
+  <a href="#tools-that-use-kgcl" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Enumerations
+        Tools that use KGCL
       
     </span>
   </a>
@@ -342,10 +315,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#types" class="md-nav__link">
+  <a href="#using-the-parser" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Types
+        Using the parser
       
     </span>
   </a>
@@ -353,10 +326,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#subsets" class="md-nav__link">
+  <a href="#persistent-uris" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Subsets
+        Persistent URIs
       
     </span>
   </a>
@@ -377,6 +350,86 @@
   
   
   
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Using KGCL
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Using KGCL
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="change-types/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Visual guide to change types
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
     <li class="md-nav__item">
       <a href="examples/" class="md-nav__link">
         
@@ -385,7 +438,212 @@
   <span class="md-ellipsis">
     
   
-    Examples
+    Command examples
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="class-hierarchy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Class hierarchy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tools
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Tools
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="github-integration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ontobot (GitHub)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="bioportal-implementation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    BioPortal
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="schema-reference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Schema reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="citing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Citing KGCL
   
 
     
@@ -425,10 +683,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#classes" class="md-nav__link">
+  <a href="#why-a-change-language" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Classes
+        Why a change language?
       
     </span>
   </a>
@@ -436,10 +694,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#slots" class="md-nav__link">
+  <a href="#the-three-parts-of-kgcl" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Slots
+        The three parts of KGCL
       
     </span>
   </a>
@@ -447,10 +705,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#enumerations" class="md-nav__link">
+  <a href="#tools-that-use-kgcl" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Enumerations
+        Tools that use KGCL
       
     </span>
   </a>
@@ -458,10 +716,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#types" class="md-nav__link">
+  <a href="#using-the-parser" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Types
+        Using the parser
       
     </span>
   </a>
@@ -469,10 +727,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#subsets" class="md-nav__link">
+  <a href="#persistent-uris" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Subsets
+        Persistent URIs
       
     </span>
   </a>
@@ -499,834 +757,155 @@
   
 
 
-<h1 id="kgcl_schema">kgcl_schema</h1>
-<p>A data model for describing change operations at a high level on an ontology or ontology-like artefact, such as a Knowledge Graph.
-* <a href="https://cmungall.github.io/knowledge-graph-change-language/">Browse Schema</a>
-* <a href="https://github.com/cmungall/knowledge-graph-change-language">GitHub</a></p>
-<p>URI: <a href=https://w3id.org/kgcl>https://w3id.org/kgcl</a></p>
-<h2 id="classes">Classes</h2>
+<h1 id="kgcl-knowledge-graph-change-language">KGCL: Knowledge Graph Change Language<a class="headerlink" href="#kgcl-knowledge-graph-change-language" title="Permanent link">&para;</a></h1>
+<p>The Knowledge Graph Change Language (KGCL) is a standard for describing changes to
+ontologies and knowledge graphs (KGs). It describes changes at a high level, the way
+curators and ontology editors think about them: <em>rename this term</em>, <em>add a synonym</em>,
+<em>move this class under a different parent</em>, <em>obsolete this term and point to its
+replacement</em>.</p>
+<div class="highlight"><pre><span></span><code>rename UBERON:0002398 from &#39;manus&#39; to &#39;hand&#39;
+create exact synonym &#39;cell nucleus&#39; for GO:0005634
+obsolete GO:9999999 with replacement GO:0005634
+</code></pre></div>
+<div class="admonition info">
+<p class="admonition-title">Source</p>
+<p>Portions of this page, and Figures 2 and 3, are adapted from
+<a href="https://doi.org/10.1093/database/baae133">Hegde <em>et al.</em>, <em>A change language for ontologies and knowledge graphs</em>,
+Database (2025)</a>, used under the
+<a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a> license.
+See <a href="citing/">Citing KGCL</a>.</p>
+</div>
+<h2 id="why-a-change-language">Why a change language?<a class="headerlink" href="#why-a-change-language" title="Permanent link">&para;</a></h2>
+<p>Ontologies and KGs are never finished. Terms are added, merged, and obsoleted; labels,
+definitions, and synonyms are corrected; and relationships are refined as knowledge
+improves. The Gene Ontology, for example, is more than 20 years old, and it still
+changes in every release.</p>
+<p>Despite this, there has been no single agreed-upon way to <em>represent</em> or <em>communicate</em>
+those changes. That gap shows up in two places:</p>
+<ul>
+<li><strong>Retrospective changes ("diffs").</strong> How do you tell people what changed between two
+  releases? Comparing ontology <em>O1</em> with <em>O2</em> should produce the most parsimonious set
+  of changes that turns one into the other. In the figure below, that is a single move
+  of node E from under C to under B.</li>
+<li><strong>Prospective changes ("patches").</strong> How do you ask for a change you want? <em>Applying</em>
+  a change to <em>O1</em> produces <em>O2</em>. Today, change requests usually arrive as free-text
+  GitHub issues, which an ontology editor then has to translate by hand into edits in
+  a tool such as Protégé.</li>
+</ul>
+<figure>
+<p><img alt="Diff (retrospective) and apply (prospective) operations on two versions of an ontology" src="images/paper/fig2-diff-and-apply.jpg" />
+  </p>
+<figcaption>
+    <b>The logic of ontology changes.</b> (a) A <i>diff</i> between O1 and O2 yields a
+    change object, here a <code>NodeMove</code>. (b) <i>Applying</i> that change object
+    to O1 yields O2.
+    Reproduced from <a href="https://doi.org/10.1093/database/baae133">Hegde <i>et al.</i> 2025</a>, Fig. 2
+    (<a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>).
+  </figcaption>
+</figure>
+<p>A low-level diff of OWL axioms is precise, but it doesn't match how editors think about
+changes: the move above would show up as one deleted axiom and one added axiom. In a
+2023 community survey, 82% of ontology users said staying informed about changes was
+very or extremely important, yet only 8% were satisfied with the existing ways of
+viewing them. KGCL provides the higher-level representation that was missing.</p>
+<h2 id="the-three-parts-of-kgcl">The three parts of KGCL<a class="headerlink" href="#the-three-parts-of-kgcl" title="Permanent link">&para;</a></h2>
+<figure>
+<p><img alt="The three components of KGCL: change types, controlled natural language, and direct serialization" src="images/paper/fig3-kgcl-components.jpg" width="560" />
+  </p>
+<figcaption>
+    <b>The components of KGCL.</b> (a) A classification of change types, (b) a
+    controlled natural language (CNL) for writing changes, and (c) a data model that
+    serializes directly to formats such as YAML.
+    Reproduced from <a href="https://doi.org/10.1093/database/baae133">Hegde <i>et al.</i> 2025</a>, Fig. 3
+    (<a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>).
+  </figcaption>
+</figure>
+<ol>
+<li><strong>A classification of change types.</strong> Changes that affect terms (nodes) and changes
+   that affect relationships (edges) form two branches of one hierarchy. For example,
+   <code>NodeRename</code> is a kind of <code>NodeChange</code>, alongside <code>NodeCreation</code> and <code>NodeDeletion</code>.
+   Browse it in the <a href="class-hierarchy/">class hierarchy</a>, or see each type drawn out
+   in the <a href="change-types/">visual guide</a>.</li>
+<li><strong>A controlled natural language (CNL).</strong> A restricted subset of English that people
+   can read and write, and that machines can parse without ambiguity:
+   <code>rename ENVO:01000575 from 'wax' to 'oil'</code>. The CNL is defined by a
+   <a href="https://github.com/INCATools/kgcl/blob/main/src/kgcl_schema/grammar/kgcl.lark">Lark grammar</a>.</li>
+<li><strong>A data model.</strong> Each change type has a defined set of attributes. Every change has
+   an <code>id</code>; a <code>NodeRename</code> also has <code>about_node</code>, <code>old_value</code>, and <code>new_value</code>. The model
+   is written in <a href="https://linkml.io">LinkML</a>, so the same change can be written as the
+   CNL, JSON, YAML, or RDF, or as a table in a spreadsheet (less expressive).</li>
+</ol>
+<p>The same rename in two of those forms:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">CNL</label><label for="__tabbed_1_2">YAML</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code>rename ENVO:01000575 from &#39;wax&#39; to &#39;oil&#39;
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CHANGE:001</span>
+<span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">NodeRename</span>
+<span class="nt">about_node</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ENVO:01000575</span>
+<span class="nt">old_value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">wax</span>
+<span class="nt">new_value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">oil</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<h2 id="tools-that-use-kgcl">Tools that use KGCL<a class="headerlink" href="#tools-that-use-kgcl" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
-<th>Class</th>
-<th>Description</th>
+<th>Tool</th>
+<th>What it does with KGCL</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><a href="ChangeLanguageElement/">ChangeLanguageElement</a></td>
-<td>A broad grouping for all elements of the change language</td>
+<td><a href="github-integration/">Ontobot</a></td>
+<td>GitHub Action that reads KGCL commands from an issue and opens a pull request that applies them to the ontology</td>
 </tr>
 <tr>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="Change/">Change</a></td>
-<td>Any change perform on an ontology or knowledge graph</td>
+<td><a href="bioportal-implementation/">BioPortal</a></td>
+<td>Web forms that let curators propose changes without writing KGCL; BioPortal writes the KGCL and files the issue for Ontobot</td>
 </tr>
 <tr>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="ComplexChange/">ComplexChange</a></td>
-<td>A change that is is a composition of other changes</td>
+<td><a href="https://github.com/INCATools/ontology-access-kit">Ontology Access Kit (OAK)</a></td>
+<td>Python library and command line: <code>diff</code> two ontologies into KGCL, or <code>apply</code> KGCL to an ontology</td>
 </tr>
 <tr>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="MultiNodeObsoletion/">MultiNodeObsoletion</a></td>
-<td>A complex change consisting of multiple obsoletions</td>
+<td><a href="https://github.com/gouttegd/kgcl-java">KGCL-Java</a> and its ROBOT plugin</td>
+<td>Java parser and serializer, and a <code>robot apply</code> command for use in ROBOT pipelines</td>
 </tr>
 <tr>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="SimpleChange/">SimpleChange</a></td>
-<td>A change that is about a single ontology element</td>
-</tr>
-<tr>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="EdgeChange/">EdgeChange</a></td>
-<td>A change in which the element that is the focus of the change is an edge</td>
-</tr>
-<tr>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="EdgeCreation/">EdgeCreation</a></td>
-<td>An edge change in which a de-novo edge is created</td>
-</tr>
-<tr>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="MappingCreation/">MappingCreation</a></td>
-<td>A specific kind of edge creation in which the created edge is a mapping</td>
-</tr>
-<tr>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="PlaceUnder/">PlaceUnder</a></td>
-<td>An edge creation where the predicate is owl:subClassOf</td>
-</tr>
-<tr>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="EdgeDeletion/">EdgeDeletion</a></td>
-<td>An edge change in which an edge is removed</td>
-</tr>
-<tr>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="RemoveUnder/">RemoveUnder</a></td>
-<td>An edge deletion where the predicate is owl:subClassOf</td>
-</tr>
-<tr>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="EdgeLogicalInterpretationChange/">EdgeLogicalInterpretationChange</a></td>
-<td>An edge change where the subject, object, and predicate are unchanged, but th...</td>
-</tr>
-<tr>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="EdgeObsoletion/">EdgeObsoletion</a></td>
-<td>An edge change in which an edge is obsoleted</td>
-</tr>
-<tr>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="EdgeRewiring/">EdgeRewiring</a></td>
-<td>An edge change where one node is replaced with another, as in the case of obs...</td>
-</tr>
-<tr>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="NodeMove/">NodeMove</a></td>
-<td>A node move is a combination of deleting a parent edge and adding a parent ed...</td>
-</tr>
-<tr>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="NodeDeepening/">NodeDeepening</a></td>
-<td>A node move in which a node where the destination is a proper descendant of t...</td>
-</tr>
-<tr>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="NodeShallowing/">NodeShallowing</a></td>
-<td>The opposite of node deepening</td>
-</tr>
-<tr>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="PredicateChange/">PredicateChange</a></td>
-<td>An edge change where the predicate (relationship type) is modified</td>
-</tr>
-<tr>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="LogicalAxiomChange/">LogicalAxiomChange</a></td>
-<td>A simple change where a logical axiom is changed, where the logical axiom can...</td>
-</tr>
-<tr>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="NodeChange/">NodeChange</a></td>
-<td>A simple change where the change is about a node</td>
-</tr>
-<tr>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="AddNodeToSubset/">AddNodeToSubset</a></td>
-<td>Places a node inside a subset, by annotating that node</td>
-</tr>
-<tr>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="NewLabel/">NewLabel</a></td>
-<td>A node change where a name (aka rdfs:label) is added to a node that does not ...</td>
-</tr>
-<tr>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="NodeAnnotationChange/">NodeAnnotationChange</a></td>
-<td>A node change where the change alters node properties/annotations</td>
-</tr>
-<tr>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="NodeAnnotationReplacement/">NodeAnnotationReplacement</a></td>
-<td>A node annotation change where the change replaces a particular property valu...</td>
-</tr>
-<tr>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="NodeCreation/">NodeCreation</a></td>
-<td>a node change in which a new node is created</td>
-</tr>
-<tr>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="ClassCreation/">ClassCreation</a></td>
-<td>A node creation where the owl type is 'owl:Class'</td>
-</tr>
-<tr>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="ObjectPropertyCreation/">ObjectPropertyCreation</a></td>
-<td>A node creation where the owl type is 'ObjectProperty'</td>
-</tr>
-<tr>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="NodeDeletion/">NodeDeletion</a></td>
-<td>Deletion of a node from the graph</td>
-</tr>
-<tr>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="NodeMappingChange/">NodeMappingChange</a></td>
-<td>A node change where the mappings for that node are altered</td>
-</tr>
-<tr>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="MappingPredicateChange/">MappingPredicateChange</a></td>
-<td>A node mapping change where the predicate of a mapping is changed</td>
-</tr>
-<tr>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="MappingReplacement/">MappingReplacement</a></td>
-<td>A node mapping change where the object of a mapping is changed</td>
-</tr>
-<tr>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="NewMapping/">NewMapping</a></td>
-<td>A node mapping change where a mapping is added to a node</td>
-</tr>
-<tr>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="RemoveMapping/">RemoveMapping</a></td>
-<td>A node mapping change where a mapping is deleted</td>
-</tr>
-<tr>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="NodeMetadataAssertionChange/">NodeMetadataAssertionChange</a></td>
-<td>A node change where the metadata assertion (OWL annotations) for that node ar...</td>
-</tr>
-<tr>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="MetadataAssertionPredicateChange/">MetadataAssertionPredicateChange</a></td>
-<td>A node metadata assertion change where the predicate of a metadata assertion ...</td>
-</tr>
-<tr>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="MetadataAssertionReplacement/">MetadataAssertionReplacement</a></td>
-<td>A node metadata assertion change where the object of a metadata assertion is ...</td>
-</tr>
-<tr>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="NewMetadataAssertion/">NewMetadataAssertion</a></td>
-<td>A node metadata assertion change where a metadata assertion is added to a nod...</td>
-</tr>
-<tr>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="RemoveMetadataAssertion/">RemoveMetadataAssertion</a></td>
-<td>A node metadata assertion change where a metadata assertion is deleted</td>
-</tr>
-<tr>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="NodeObsoletion/">NodeObsoletion</a></td>
-<td>Obsoletion of a node deprecates usage of that node, but does not delete it</td>
-</tr>
-<tr>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="NodeDirectMerge/">NodeDirectMerge</a></td>
-<td>An obsoletion change in which all metadata (including name/label) from the so...</td>
-</tr>
-<tr>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="NodeObsoletionWithDirectReplacement/">NodeObsoletionWithDirectReplacement</a></td>
-<td>An obsoletion change in which information from the obsoleted node is selectiv...</td>
-</tr>
-<tr>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="NodeObsoletionWithNoDirectReplacement/">NodeObsoletionWithNoDirectReplacement</a></td>
-<td>An obsoletion change in which there is no direct replacement</td>
-</tr>
-<tr>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="NodeRename/">NodeRename</a></td>
-<td>A node change where the name (aka rdfs:label) of the node changes</td>
-</tr>
-<tr>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="NodeSynonymChange/">NodeSynonymChange</a></td>
-<td></td>
-</tr>
-<tr>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="NameBecomesSynonym/">NameBecomesSynonym</a></td>
-<td>A node synonym where the name NAME of an node NODE moves to a synonym, and NO...</td>
-</tr>
-<tr>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="NewSynonym/">NewSynonym</a></td>
-<td>A node synonym change where a de-novo synonym is created</td>
-</tr>
-<tr>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="RemoveSynonym/">RemoveSynonym</a></td>
-<td>A node synonym change where a synonym is deleted</td>
-</tr>
-<tr>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="SynonymPredicateChange/">SynonymPredicateChange</a></td>
-<td>A node synonym change where the predicate of a synonym is changed</td>
-</tr>
-<tr>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="SynonymReplacement/">SynonymReplacement</a></td>
-<td>A node synonym change where the text of a synonym is changed</td>
-</tr>
-<tr>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="NodeTextDefinitionChange/">NodeTextDefinitionChange</a></td>
-<td>A node change where the text definition is changed</td>
-</tr>
-<tr>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="NewTextDefinition/">NewTextDefinition</a></td>
-<td>A node change where a de-novo text definition is created</td>
-</tr>
-<tr>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="RemoveTextDefinition/">RemoveTextDefinition</a></td>
-<td>A node change where a text definition is deleted</td>
-</tr>
-<tr>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="TextDefinitionReplacement/">TextDefinitionReplacement</a></td>
-<td>A node change where a text definition is modified</td>
-</tr>
-<tr>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="NodeUnobsoletion/">NodeUnobsoletion</a></td>
-<td>unobsoletion of a node deprecates usage of that node</td>
-</tr>
-<tr>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="RemoveNodeFromSubset/">RemoveNodeFromSubset</a></td>
-<td>Removes a node from a subset, by removing an annotation</td>
-</tr>
-<tr>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="SetLanguageForName/">SetLanguageForName</a></td>
-<td>A node change where the string value for the name is unchanged but the langua...</td>
-</tr>
-<tr>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="Transaction/">Transaction</a></td>
-<td>A change that is a composition of a set of changes, where those changes are t...</td>
-</tr>
-<tr>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="ChangeSetSummaryStatistic/">ChangeSetSummaryStatistic</a></td>
-<td>A summary statistic for a set of changes of the same type, grouped by zero or...</td>
-</tr>
-<tr>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="Configuration/">Configuration</a></td>
-<td>The meaning of operations can be configured</td>
-</tr>
-<tr>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="Session/">Session</a></td>
-<td>A session consists of a set of change sets bundled with the activities that g...</td>
-</tr>
-<tr>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="TextualDiff/">TextualDiff</a></td>
-<td>A summarizing of a change on a piece of text</td>
-</tr>
-<tr>
-<td><a href="ChangeMixin/">ChangeMixin</a></td>
-<td>root class for all change mixins</td>
-</tr>
-<tr>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="Creation/">Creation</a></td>
-<td>Creation of an element</td>
-</tr>
-<tr>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="DatatypeOrLanguageTagChange/">DatatypeOrLanguageTagChange</a></td>
-<td>A change in a value assertion where the value remain unchanged but either the...</td>
-</tr>
-<tr>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="DatatypeChange/">DatatypeChange</a></td>
-<td></td>
-</tr>
-<tr>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="LanguageTagChange/">LanguageTagChange</a></td>
-<td></td>
-</tr>
-<tr>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="Deletion/">Deletion</a></td>
-<td>Removal of an element</td>
-</tr>
-<tr>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="Obsoletion/">Obsoletion</a></td>
-<td>Obsoletion of an element deprecates usage of that element, but does not delet...</td>
-</tr>
-<tr>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="AllowsAutomaticReplacementOfEdges/">AllowsAutomaticReplacementOfEdges</a></td>
-<td>Applies to an obsoletion in which annotations or edges pointing at the obsole...</td>
-</tr>
-<tr>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="SubsetMembershipChange/">SubsetMembershipChange</a></td>
-<td>A change in the membership status of a node with respect to a subset (view)</td>
-</tr>
-<tr>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="AddToSubset/">AddToSubset</a></td>
-<td>placing an element inside a subset</td>
-</tr>
-<tr>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="RemoveFromSubset/">RemoveFromSubset</a></td>
-<td>removing an element from a subset</td>
-</tr>
-<tr>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="Unobsoletion/">Unobsoletion</a></td>
-<td>Opposite operation of obsoletion</td>
-</tr>
-<tr>
-<td><a href="OntologyElement/">OntologyElement</a></td>
-<td>Any component of an ontology or knowledge graph</td>
-</tr>
-<tr>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="Edge/">Edge</a></td>
-<td>A relationship between two nodes</td>
-</tr>
-<tr>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="LogicalDefinition/">LogicalDefinition</a></td>
-<td></td>
-</tr>
-<tr>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="Node/">Node</a></td>
-<td>Any named entity in an ontology</td>
-</tr>
-<tr>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="ClassNode/">ClassNode</a></td>
-<td>A node that is a class</td>
-</tr>
-<tr>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="InstanceNode/">InstanceNode</a></td>
-<td>A node that is an individual</td>
-</tr>
-<tr>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="OntologySubset/">OntologySubset</a></td>
-<td></td>
-</tr>
-<tr>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="PropertyValue/">PropertyValue</a></td>
-<td>a property-value pair</td>
-</tr>
-<tr>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="Annotation/">Annotation</a></td>
-<td>owl annotations</td>
-</tr>
-<tr>
-<td><a href="ProvElement/">ProvElement</a></td>
-<td>A grouping for prov elements</td>
-</tr>
-<tr>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="Activity/">Activity</a></td>
-<td>a provence-generating activity</td>
-</tr>
-<tr>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="Agent/">Agent</a></td>
-<td>a provence-generating agent</td>
+<td>This repository (<code>kgcl-schema</code> on PyPI)</td>
+<td>The schema, the generated Python data model, and the CNL parser and renderer</td>
 </tr>
 </tbody>
 </table>
-<h2 id="slots">Slots</h2>
-<table>
-<thead>
-<tr>
-<th>Slot</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a href="about/">about</a></td>
-<td>The 'focus' entity on which the change operates</td>
-</tr>
-<tr>
-<td><a href="about_edge/">about_edge</a></td>
-<td></td>
-</tr>
-<tr>
-<td><a href="about_node/">about_node</a></td>
-<td></td>
-</tr>
-<tr>
-<td><a href="about_node_representation/">about_node_representation</a></td>
-<td>The representation of a node (URI, CURIE, label)</td>
-</tr>
-<tr>
-<td><a href="acted_on_behalf_of/">acted_on_behalf_of</a></td>
-<td></td>
-</tr>
-<tr>
-<td><a href="activity_set/">activity_set</a></td>
-<td></td>
-</tr>
-<tr>
-<td><a href="agent_set/">agent_set</a></td>
-<td></td>
-</tr>
-<tr>
-<td><a href="annotation_property/">annotation_property</a></td>
-<td>An annotation property</td>
-</tr>
-<tr>
-<td><a href="annotation_property_type/">annotation_property_type</a></td>
-<td>The type of a property (URI, CURIE, label)</td>
-</tr>
-<tr>
-<td><a href="annotation_set/">annotation_set</a></td>
-<td></td>
-</tr>
-<tr>
-<td><a href="associated_change_set/">associated_change_set</a></td>
-<td>All changes forced as a result of this obsoletion</td>
-</tr>
-<tr>
-<td><a href="change_date/">change_date</a></td>
-<td></td>
-</tr>
-<tr>
-<td><a href="change_description/">change_description</a></td>
-<td>A string serialization of the change</td>
-</tr>
-<tr>
-<td><a href="change_set/">change_set</a></td>
-<td>A collection of changes</td>
-</tr>
-<tr>
-<td><a href="contributor/">contributor</a></td>
-<td></td>
-</tr>
-<tr>
-<td><a href="contributor_predicate/">contributor_predicate</a></td>
-<td></td>
-</tr>
-<tr>
-<td><a href="creator/">creator</a></td>
-<td></td>
-</tr>
-<tr>
-<td><a href="creator_predicate/">creator_predicate</a></td>
-<td></td>
-</tr>
-<tr>
-<td><a href="datatype/">datatype</a></td>
-<td>The datatype of a literal</td>
-</tr>
-<tr>
-<td><a href="definition_predicate/">definition_predicate</a></td>
-<td></td>
-</tr>
-<tr>
-<td><a href="description/">description</a></td>
-<td></td>
-</tr>
-<tr>
-<td><a href="ended_at_time/">ended_at_time</a></td>
-<td></td>
-</tr>
-<tr>
-<td><a href="filler/">filler</a></td>
-<td></td>
-</tr>
-<tr>
-<td><a href="filler_type/">filler_type</a></td>
-<td></td>
-</tr>
-<tr>
-<td><a href="has_direct_replacement/">has_direct_replacement</a></td>
-<td>An obsoletion replacement where it IS valid to automatically update annotatio...</td>
-</tr>
-<tr>
-<td><a href="has_nondirect_replacement/">has_nondirect_replacement</a></td>
-<td>An obsoletion replacement where it is NOT valid to automatically update annot...</td>
-</tr>
-<tr>
-<td><a href="has_replacement/">has_replacement</a></td>
-<td>A single node obsoletion event may be accompanied by one or more suggested re...</td>
-</tr>
-<tr>
-<td><a href="has_textual_diff/">has_textual_diff</a></td>
-<td>A representation of character-level changes on a textual literal property</td>
-</tr>
-<tr>
-<td><a href="has_undo/">has_undo</a></td>
-<td>A change that reverses this change</td>
-</tr>
-<tr>
-<td><a href="id/">id</a></td>
-<td></td>
-</tr>
-<tr>
-<td><a href="in_subset/">in_subset</a></td>
-<td>The subset that pertains to this change</td>
-</tr>
-<tr>
-<td><a href="language/">language</a></td>
-<td>The language tag of a literal</td>
-</tr>
-<tr>
-<td><a href="main_synonym_predicate/">main_synonym_predicate</a></td>
-<td></td>
-</tr>
-<tr>
-<td><a href="name/">name</a></td>
-<td></td>
-</tr>
-<tr>
-<td><a href="name_predicate/">name_predicate</a></td>
-<td></td>
-</tr>
-<tr>
-<td><a href="new_datatype/">new_datatype</a></td>
-<td>The new datatype of a literal</td>
-</tr>
-<tr>
-<td><a href="new_filler/">new_filler</a></td>
-<td>The new filler of an OWL restriction</td>
-</tr>
-<tr>
-<td><a href="new_language/">new_language</a></td>
-<td>The new language tag of a literal</td>
-</tr>
-<tr>
-<td><a href="new_object_type/">new_object_type</a></td>
-<td>The type (IRI or Literal) of a new object</td>
-</tr>
-<tr>
-<td><a href="new_property/">new_property</a></td>
-<td>The new property of an OWL restriction</td>
-</tr>
-<tr>
-<td><a href="new_subclass/">new_subclass</a></td>
-<td>The new subclass of a subsumption axiom</td>
-</tr>
-<tr>
-<td><a href="new_value/">new_value</a></td>
-<td>The value of a property held in the new instance of the ontology</td>
-</tr>
-<tr>
-<td><a href="new_value_type/">new_value_type</a></td>
-<td>The type (IRI or Literal) of a new value</td>
-</tr>
-<tr>
-<td><a href="node_id/">node_id</a></td>
-<td>id of a node to be created</td>
-</tr>
-<tr>
-<td><a href="object/">object</a></td>
-<td></td>
-</tr>
-<tr>
-<td><a href="object_representation/">object_representation</a></td>
-<td></td>
-</tr>
-<tr>
-<td><a href="object_type/">object_type</a></td>
-<td>The type (IRI or Literal) of an object</td>
-</tr>
-<tr>
-<td><a href="obsolete_node_label_prefix/">obsolete_node_label_prefix</a></td>
-<td>A prefix to add to the label of an obsolete node</td>
-</tr>
-<tr>
-<td><a href="obsolete_subclass_of_shadow_property/">obsolete_subclass_of_shadow_property</a></td>
-<td>specifies the annotation property to be used to create a shadow annotation as...</td>
-</tr>
-<tr>
-<td><a href="obsoletion_policies/">obsoletion_policies</a></td>
-<td></td>
-</tr>
-<tr>
-<td><a href="obsoletion_workflow/">obsoletion_workflow</a></td>
-<td></td>
-</tr>
-<tr>
-<td><a href="old_datatype/">old_datatype</a></td>
-<td>The old datatype of a literal</td>
-</tr>
-<tr>
-<td><a href="old_language/">old_language</a></td>
-<td>The old language tag of a literal</td>
-</tr>
-<tr>
-<td><a href="old_object_type/">old_object_type</a></td>
-<td>The type (IRI or Literal) of an old object</td>
-</tr>
-<tr>
-<td><a href="old_value/">old_value</a></td>
-<td>The value of a property held in the old instance of the ontology</td>
-</tr>
-<tr>
-<td><a href="old_value_type/">old_value_type</a></td>
-<td>The type (IRI or Literal) of an old value</td>
-</tr>
-<tr>
-<td><a href="owl_type/">owl_type</a></td>
-<td></td>
-</tr>
-<tr>
-<td><a href="predicate/">predicate</a></td>
-<td></td>
-</tr>
-<tr>
-<td><a href="predicate_representation/">predicate_representation</a></td>
-<td></td>
-</tr>
-<tr>
-<td><a href="predicate_type/">predicate_type</a></td>
-<td>The type (IRI or Literal) of an edge's subject</td>
-</tr>
-<tr>
-<td><a href="property/">property</a></td>
-<td></td>
-</tr>
-<tr>
-<td><a href="property_type/">property_type</a></td>
-<td></td>
-</tr>
-<tr>
-<td><a href="property_value_set/">property_value_set</a></td>
-<td></td>
-</tr>
-<tr>
-<td><a href="pull_request/">pull_request</a></td>
-<td></td>
-</tr>
-<tr>
-<td><a href="qualifier/">qualifier</a></td>
-<td>The qualifier of a change operation</td>
-</tr>
-<tr>
-<td><a href="see_also/">see_also</a></td>
-<td></td>
-</tr>
-<tr>
-<td><a href="started_at_time/">started_at_time</a></td>
-<td></td>
-</tr>
-<tr>
-<td><a href="subclass/">subclass</a></td>
-<td>The subclass of a subsumption axiom</td>
-</tr>
-<tr>
-<td><a href="subclass_type/">subclass_type</a></td>
-<td>The type of a subclass</td>
-</tr>
-<tr>
-<td><a href="subject/">subject</a></td>
-<td></td>
-</tr>
-<tr>
-<td><a href="subject_representation/">subject_representation</a></td>
-<td></td>
-</tr>
-<tr>
-<td><a href="subject_type/">subject_type</a></td>
-<td>The type (IRI or Literal) of an edge's subject</td>
-</tr>
-<tr>
-<td><a href="superclass/">superclass</a></td>
-<td></td>
-</tr>
-<tr>
-<td><a href="superclass_type/">superclass_type</a></td>
-<td>The type of a superclass</td>
-</tr>
-<tr>
-<td><a href="synonym_predicates/">synonym_predicates</a></td>
-<td></td>
-</tr>
-<tr>
-<td><a href="target/">target</a></td>
-<td>The secondary entity on which the change operates</td>
-</tr>
-<tr>
-<td><a href="term_tracker_issue/">term_tracker_issue</a></td>
-<td></td>
-</tr>
-<tr>
-<td><a href="type/">type</a></td>
-<td></td>
-</tr>
-<tr>
-<td><a href="used/">used</a></td>
-<td></td>
-</tr>
-<tr>
-<td><a href="was_associated_with/">was_associated_with</a></td>
-<td></td>
-</tr>
-<tr>
-<td><a href="was_generated_by/">was_generated_by</a></td>
-<td></td>
-</tr>
-<tr>
-<td><a href="was_informed_by/">was_informed_by</a></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<h2 id="enumerations">Enumerations</h2>
-<table>
-<thead>
-<tr>
-<th>Enumeration</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a href="ObsoletionPolicyEnum/">ObsoletionPolicyEnum</a></td>
-<td></td>
-</tr>
-<tr>
-<td><a href="OwlTypeEnum/">OwlTypeEnum</a></td>
-<td></td>
-</tr>
-<tr>
-<td><a href="SynonymScopeEnum/">SynonymScopeEnum</a></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<h2 id="types">Types</h2>
-<table>
-<thead>
-<tr>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a href="Boolean/">Boolean</a></td>
-<td>A binary (true or false) value</td>
-</tr>
-<tr>
-<td><a href="ChangeClassType/">ChangeClassType</a></td>
-<td>CURIE for a class within this data model</td>
-</tr>
-<tr>
-<td><a href="Curie/">Curie</a></td>
-<td>a compact URI</td>
-</tr>
-<tr>
-<td><a href="Date/">Date</a></td>
-<td>a date (year, month and day) in an idealized calendar</td>
-</tr>
-<tr>
-<td><a href="DateOrDatetime/">DateOrDatetime</a></td>
-<td>Either a date or a datetime</td>
-</tr>
-<tr>
-<td><a href="Datetime/">Datetime</a></td>
-<td>The combination of a date and time</td>
-</tr>
-<tr>
-<td><a href="Decimal/">Decimal</a></td>
-<td>A real number with arbitrary precision that conforms to the xsd:decimal speci...</td>
-</tr>
-<tr>
-<td><a href="Double/">Double</a></td>
-<td>A real number that conforms to the xsd:double specification</td>
-</tr>
-<tr>
-<td><a href="Float/">Float</a></td>
-<td>A real number that conforms to the xsd:float specification</td>
-</tr>
-<tr>
-<td><a href="Integer/">Integer</a></td>
-<td>An integer</td>
-</tr>
-<tr>
-<td><a href="Jsonpath/">Jsonpath</a></td>
-<td>A string encoding a JSON Path</td>
-</tr>
-<tr>
-<td><a href="Jsonpointer/">Jsonpointer</a></td>
-<td>A string encoding a JSON Pointer</td>
-</tr>
-<tr>
-<td><a href="LanguageTag/">LanguageTag</a></td>
-<td></td>
-</tr>
-<tr>
-<td><a href="Ncname/">Ncname</a></td>
-<td>Prefix part of CURIE</td>
-</tr>
-<tr>
-<td><a href="Nodeidentifier/">Nodeidentifier</a></td>
-<td>A URI, CURIE or BNODE that represents a node in a model</td>
-</tr>
-<tr>
-<td><a href="Objectidentifier/">Objectidentifier</a></td>
-<td>A URI or CURIE that represents an object in the model</td>
-</tr>
-<tr>
-<td><a href="Sparqlpath/">Sparqlpath</a></td>
-<td>A string encoding a SPARQL Property Path</td>
-</tr>
-<tr>
-<td><a href="String/">String</a></td>
-<td>A character string</td>
-</tr>
-<tr>
-<td><a href="Time/">Time</a></td>
-<td>A time object represents a (local) time of day, independent of any particular...</td>
-</tr>
-<tr>
-<td><a href="Uri/">Uri</a></td>
-<td>a complete URI</td>
-</tr>
-<tr>
-<td><a href="Uriorcurie/">Uriorcurie</a></td>
-<td>a URI or a CURIE</td>
-</tr>
-</tbody>
-</table>
-<h2 id="subsets">Subsets</h2>
-<table>
-<thead>
-<tr>
-<th>Subset</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
+<p>Not every tool supports every change type yet.</p>
+<h2 id="using-the-parser">Using the parser<a class="headerlink" href="#using-the-parser" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>kgcl-schema
+kgcl-parse<span class="w"> </span><span class="s2">&quot;create exact synonym &#39;cell nucleus&#39; for GO:0005634&quot;</span>
+</code></pre></div>
+<p>From Python:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">kgcl_schema.grammar.parser</span> <span class="kn">import</span> <span class="n">parse_statement</span>
+<span class="kn">from</span> <span class="nn">kgcl_schema.grammar.render_operations</span> <span class="kn">import</span> <span class="n">render</span>
+
+<span class="n">change</span> <span class="o">=</span> <span class="n">parse_statement</span><span class="p">(</span><span class="s2">&quot;add label &#39;nucleus&#39; to GO:0005634&quot;</span><span class="p">)</span>
+<span class="nb">type</span><span class="p">(</span><span class="n">change</span><span class="p">)</span><span class="o">.</span><span class="vm">__name__</span>   <span class="c1"># &#39;NewLabel&#39;</span>
+<span class="n">render</span><span class="p">(</span><span class="n">change</span><span class="p">)</span>          <span class="c1"># &quot;add label &#39;nucleus&#39; to GO:0005634&quot;</span>
+</code></pre></div>
+<h2 id="persistent-uris">Persistent URIs<a class="headerlink" href="#persistent-uris" title="Permanent link">&para;</a></h2>
+<p>These URIs resolve to the KGCL standard:</p>
+<ul>
+<li>JSON-LD context: <a href="https://w3id.org/kgcl/kgcl.context.jsonld">https://w3id.org/kgcl/kgcl.context.jsonld</a></li>
+<li>OWL: <a href="https://w3id.org/kgcl/kgcl.owl.ttl">https://w3id.org/kgcl/kgcl.owl.ttl</a></li>
+<li>SHACL: <a href="https://w3id.org/kgcl/kgcl.shacl.ttl">https://w3id.org/kgcl/kgcl.shacl.ttl</a></li>
+<li>YAML (LinkML schema): <a href="https://w3id.org/kgcl/kgcl.yaml">https://w3id.org/kgcl/kgcl.yaml</a></li>
+</ul>
+<p>The KGCL classification is also
+<a href="https://bioportal.bioontology.org/ontologies/KGCL">browsable on BioPortal</a>.</p>
 
 
 
@@ -1348,6 +927,12 @@
 
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
         
       </main>
       
@@ -1378,10 +963,12 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["content.tabs.link"], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["content.tabs.link", "navigation.sections", "navigation.top"], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
       <script src="assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="class_tree.js"></script>
       
     
   </body>
