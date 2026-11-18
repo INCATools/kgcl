@@ -287,6 +287,55 @@ old_object_type: curie
 new_object_type: curie
 ```
 
+### Move an edge's object from one node to another
+
+Class: [`NodeMove`](https://w3id.org/kgcl/NodeMove)
+
+```kgcl
+move GO:0005634 BFO:0000050 GO:0043231 from GO:0043231 to GO:0005739
+```
+
+```yaml
+id: CHANGE:001
+type: NodeMove
+old_value: GO:0043231
+new_value: GO:0005739
+about_edge:
+  subject: GO:0005634
+  predicate: BFO:0000050
+  object: GO:0043231
+  subject_representation: curie
+  predicate_representation: curie
+  object_representation: curie
+old_object_type: curie
+new_object_type: curie
+```
+
+## Annotations
+
+### Change the value of an annotation
+
+Class: [`NodeAnnotationChange`](https://w3id.org/kgcl/NodeAnnotationChange)
+
+```kgcl
+change annotation of GO:0005634 with rdfs:comment from "old"@en to "new"@fr
+```
+
+```yaml
+id: CHANGE:001
+type: NodeAnnotationChange
+old_value: old
+new_value: new
+old_value_type: literal
+new_value_type: literal
+new_language: fr
+old_language: en
+about_node: GO:0005634
+about_node_representation: curie
+annotation_property: rdfs:comment
+annotation_property_type: curie
+```
+
 ## Obsoletion
 
 ### Obsolete a node
