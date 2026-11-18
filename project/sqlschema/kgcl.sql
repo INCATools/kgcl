@@ -1608,6 +1608,12 @@
 --     * Slot: id
 --     * Slot: acted_on_behalf_of
 --     * Slot: was_informed_by
+-- # Class: NewSynonym_xrefs
+--     * Slot: NewSynonym_id Description: Autocreated FK slot
+--     * Slot: xrefs Description: Cross-references that support a definition or synonym, such as the publication or database record it comes from (for example PMID:12869615). They are attached to the definition or synonym itself, as in the OBO format def: "..." [PMID:12869615], not to the node. For cross-references on the node itself (mappings), see NewMapping.
+-- # Class: NewTextDefinition_xrefs
+--     * Slot: NewTextDefinition_id Description: Autocreated FK slot
+--     * Slot: xrefs Description: Cross-references that support a definition or synonym, such as the publication or database record it comes from (for example PMID:12869615). They are attached to the definition or synonym itself, as in the OBO format def: "..." [PMID:12869615], not to the node. For cross-references on the node itself (mappings), see NewMapping.
 -- # Class: NodeObsoletion_has_nondirect_replacement
 --     * Slot: NodeObsoletion_id Description: Autocreated FK slot
 --     * Slot: has_nondirect_replacement_id Description: An obsoletion replacement where it is NOT valid to automatically update annotations/edges pointing at the node with its direct replacement
@@ -3698,6 +3704,24 @@ CREATE TABLE "OntologySubset" (
 );
 CREATE INDEX "ix_OntologySubset_id" ON "OntologySubset" (id);
 
+CREATE TABLE "NewSynonym_xrefs" (
+	"NewSynonym_id" TEXT,
+	xrefs TEXT,
+	PRIMARY KEY ("NewSynonym_id", xrefs),
+	FOREIGN KEY("NewSynonym_id") REFERENCES "NewSynonym" (id)
+);
+CREATE INDEX "ix_NewSynonym_xrefs_xrefs" ON "NewSynonym_xrefs" (xrefs);
+CREATE INDEX "ix_NewSynonym_xrefs_NewSynonym_id" ON "NewSynonym_xrefs" ("NewSynonym_id");
+
+CREATE TABLE "NewTextDefinition_xrefs" (
+	"NewTextDefinition_id" TEXT,
+	xrefs TEXT,
+	PRIMARY KEY ("NewTextDefinition_id", xrefs),
+	FOREIGN KEY("NewTextDefinition_id") REFERENCES "NewTextDefinition" (id)
+);
+CREATE INDEX "ix_NewTextDefinition_xrefs_NewTextDefinition_id" ON "NewTextDefinition_xrefs" ("NewTextDefinition_id");
+CREATE INDEX "ix_NewTextDefinition_xrefs_xrefs" ON "NewTextDefinition_xrefs" (xrefs);
+
 CREATE TABLE "NodeObsoletion_has_nondirect_replacement" (
 	"NodeObsoletion_id" TEXT,
 	has_nondirect_replacement_id TEXT,
@@ -3714,8 +3738,8 @@ CREATE TABLE "Configuration_obsoletion_policies" (
 	PRIMARY KEY ("Configuration_id", obsoletion_policies),
 	FOREIGN KEY("Configuration_id") REFERENCES "Configuration" (id)
 );
-CREATE INDEX "ix_Configuration_obsoletion_policies_Configuration_id" ON "Configuration_obsoletion_policies" ("Configuration_id");
 CREATE INDEX "ix_Configuration_obsoletion_policies_obsoletion_policies" ON "Configuration_obsoletion_policies" (obsoletion_policies);
+CREATE INDEX "ix_Configuration_obsoletion_policies_Configuration_id" ON "Configuration_obsoletion_policies" ("Configuration_id");
 
 CREATE TABLE "AllowsAutomaticReplacementOfEdges" (
 	id INTEGER NOT NULL,
@@ -3953,8 +3977,8 @@ CREATE TABLE "NodeUnobsoletion_has_nondirect_replacement" (
 	FOREIGN KEY("NodeUnobsoletion_id") REFERENCES "NodeUnobsoletion" (id),
 	FOREIGN KEY(has_nondirect_replacement_id) REFERENCES "Node" (id)
 );
-CREATE INDEX "ix_NodeUnobsoletion_has_nondirect_replacement_has_nondirect_replacement_id" ON "NodeUnobsoletion_has_nondirect_replacement" (has_nondirect_replacement_id);
 CREATE INDEX "ix_NodeUnobsoletion_has_nondirect_replacement_NodeUnobsoletion_id" ON "NodeUnobsoletion_has_nondirect_replacement" ("NodeUnobsoletion_id");
+CREATE INDEX "ix_NodeUnobsoletion_has_nondirect_replacement_has_nondirect_replacement_id" ON "NodeUnobsoletion_has_nondirect_replacement" (has_nondirect_replacement_id);
 
 CREATE TABLE "NodeDirectMerge_has_nondirect_replacement" (
 	"NodeDirectMerge_id" TEXT,
@@ -3963,8 +3987,8 @@ CREATE TABLE "NodeDirectMerge_has_nondirect_replacement" (
 	FOREIGN KEY("NodeDirectMerge_id") REFERENCES "NodeDirectMerge" (id),
 	FOREIGN KEY(has_nondirect_replacement_id) REFERENCES "Node" (id)
 );
-CREATE INDEX "ix_NodeDirectMerge_has_nondirect_replacement_has_nondirect_replacement_id" ON "NodeDirectMerge_has_nondirect_replacement" (has_nondirect_replacement_id);
 CREATE INDEX "ix_NodeDirectMerge_has_nondirect_replacement_NodeDirectMerge_id" ON "NodeDirectMerge_has_nondirect_replacement" ("NodeDirectMerge_id");
+CREATE INDEX "ix_NodeDirectMerge_has_nondirect_replacement_has_nondirect_replacement_id" ON "NodeDirectMerge_has_nondirect_replacement" (has_nondirect_replacement_id);
 
 CREATE TABLE "NodeObsoletionWithDirectReplacement_has_nondirect_replacement" (
 	"NodeObsoletionWithDirectReplacement_id" TEXT,
@@ -3973,8 +3997,8 @@ CREATE TABLE "NodeObsoletionWithDirectReplacement_has_nondirect_replacement" (
 	FOREIGN KEY("NodeObsoletionWithDirectReplacement_id") REFERENCES "NodeObsoletionWithDirectReplacement" (id),
 	FOREIGN KEY(has_nondirect_replacement_id) REFERENCES "Node" (id)
 );
-CREATE INDEX "ix_NodeObsoletionWithDirectReplacement_has_nondirect_replacement_has_nondirect_replacement_id" ON "NodeObsoletionWithDirectReplacement_has_nondirect_replacement" (has_nondirect_replacement_id);
 CREATE INDEX "ix_NodeObsoletionWithDirectReplacement_has_nondirect_replacement_NodeObsoletionWithDirectReplacement_id" ON "NodeObsoletionWithDirectReplacement_has_nondirect_replacement" ("NodeObsoletionWithDirectReplacement_id");
+CREATE INDEX "ix_NodeObsoletionWithDirectReplacement_has_nondirect_replacement_has_nondirect_replacement_id" ON "NodeObsoletionWithDirectReplacement_has_nondirect_replacement" (has_nondirect_replacement_id);
 
 CREATE TABLE "NodeObsoletionWithNoDirectReplacement_has_nondirect_replacement" (
 	"NodeObsoletionWithNoDirectReplacement_id" TEXT,

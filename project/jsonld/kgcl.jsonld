@@ -799,6 +799,33 @@
       "@type": "SlotDefinition"
     },
     {
+      "name": "xrefs",
+      "definition_uri": "http://w3id.org/kgcl/xrefs",
+      "description": "Cross-references that support a definition or synonym, such as the publication or database record it comes from (for example PMID:12869615). They are attached to the definition or synonym itself, as in the OBO format def: \"...\" [PMID:12869615], not to the node. For cross-references on the node itself (mappings), see NewMapping.",
+      "comments": [
+        "Values are strings, as oboInOwl:hasDbXref values are in OBO ontologies (e.g. \"PMID:12869615\"^^xsd:string), not IRIs."
+      ],
+      "examples": [
+        {
+          "value": "PMID:12869615",
+          "@type": "Example"
+        }
+      ],
+      "from_schema": "https://w3id.org/kgcl",
+      "mappings": [
+        "http://www.geneontology.org/formats/oboInOwl#hasDbXref"
+      ],
+      "slot_uri": "http://www.geneontology.org/formats/oboInOwl#hasDbXref",
+      "owner": "NewTextDefinition",
+      "domain_of": [
+        "NewSynonym",
+        "NewTextDefinition"
+      ],
+      "range": "string",
+      "multivalued": true,
+      "@type": "SlotDefinition"
+    },
+    {
       "name": "subclass",
       "definition_uri": "http://w3id.org/kgcl/subclass",
       "description": "The subclass of a subsumption axiom",
@@ -4736,7 +4763,8 @@
         "new_value",
         "language",
         "qualifier",
-        "predicate"
+        "predicate",
+        "xrefs"
       ],
       "slot_usage": {},
       "class_uri": "http://w3id.org/kgcl/NewSynonym",
@@ -5330,7 +5358,8 @@
         "about_node",
         "about_node_representation",
         "language",
-        "new_value"
+        "new_value",
+        "xrefs"
       ],
       "slot_usage": {},
       "class_uri": "http://w3id.org/kgcl/NewTextDefinition",
@@ -6278,9 +6307,9 @@
   ],
   "metamodel_version": "1.11.0",
   "source_file": "kgcl.yaml",
-  "source_file_date": "2026-11-18T12:05:54",
-  "source_file_size": 34457,
-  "generation_date": "2026-11-18T12:06:06",
+  "source_file_date": "2026-11-18T13:24:11",
+  "source_file_size": 35122,
+  "generation_date": "2026-11-18T13:24:17",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/kgcl.context.jsonld",

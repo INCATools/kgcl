@@ -483,6 +483,7 @@ classes:
     - language
     - qualifier
     - predicate
+    - xrefs
     aliases:
     - new alias
     - create synonym
@@ -606,6 +607,7 @@ classes:
     is_a: NodeTextDefinitionChange
     slots:
     - new_value
+    - xrefs
   RemoveTextDefinition:
     description: A node change where a text definition is deleted
     is_a: NodeTextDefinitionChange
@@ -886,6 +888,21 @@ slots:
     description: The old language tag of a literal
   qualifier:
     description: The qualifier of a change operation
+  xrefs:
+    description: >-
+      Cross-references that support a definition or synonym, such as the
+      publication or database record it comes from (for example PMID:12869615).
+      They are attached to the definition or synonym itself, as in the OBO format
+      def: "..." [PMID:12869615], not to the node. For cross-references on the
+      node itself (mappings), see NewMapping.
+    comments:
+    - Values are strings, as oboInOwl:hasDbXref values are in OBO ontologies
+      (e.g. "PMID:12869615"^^xsd:string), not IRIs.
+    range: string
+    multivalued: true
+    slot_uri: oio:hasDbXref
+    examples:
+    - value: PMID:12869615
   subclass:
     description: The subclass of a subsumption axiom
   new_subclass:

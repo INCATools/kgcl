@@ -48,6 +48,12 @@ NEW_TERM = "GO:9999999"
 NEW_TERM_URI = "http://purl.obolibrary.org/obo/GO_9999999"
 RESPONSE_TO_UV = "GO:0009411"
 RESPONSE_TO_UV_URI = "http://purl.obolibrary.org/obo/GO_0009411"
+FAVEOLUS = "UBERON:0009058"
+FAVEOLUS_URI = "http://purl.obolibrary.org/obo/UBERON_0009058"
+FAVEOLUS_DEF = (
+    "A bellow-shaped respiratory unit extending from the outer wall of the lung"
+    " into a central air space."
+)
 
 UID = "CHANGE:001"
 TERM = "GO:123"
@@ -452,6 +458,43 @@ CASES: List[CASE] = [
             about_node=NUCLEUS,
             about_node_representation="curie",
             has_direct_replacement=NEW_TERM,
+        ),
+        None,
+    ),
+    (
+        f"add definition '{FAVEOLUS_DEF}' to {FAVEOLUS} with xrefs PMID:12869615",
+        f"add definition '{FAVEOLUS_DEF}' to {FAVEOLUS_URI} with xrefs PMID:12869615",
+        NewTextDefinition(
+            id=UID,
+            about_node=FAVEOLUS,
+            about_node_representation="curie",
+            new_value=FAVEOLUS_DEF,
+            xrefs=["PMID:12869615"],
+        ),
+        None,
+    ),
+    (
+        f"create related synonym 'edicula' for {FAVEOLUS} with xrefs PMID:12625309",
+        f"create related synonym 'edicula' for {FAVEOLUS_URI} with xrefs PMID:12625309",
+        NewSynonym(
+            id=UID,
+            about_node=FAVEOLUS,
+            about_node_representation="curie",
+            new_value="edicula",
+            qualifier="related",
+            xrefs=["PMID:12625309"],
+        ),
+        None,
+    ),
+    (
+        f"create synonym 'edicula' for {FAVEOLUS} with xrefs PMID:12625309, ISBN:0123456789",
+        f"create synonym 'edicula' for {FAVEOLUS_URI} with xrefs PMID:12625309, ISBN:0123456789",
+        NewSynonym(
+            id=UID,
+            about_node=FAVEOLUS,
+            about_node_representation="curie",
+            new_value="edicula",
+            xrefs=["PMID:12625309", "ISBN:0123456789"],
         ),
         None,
     ),

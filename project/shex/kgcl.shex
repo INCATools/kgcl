@@ -10,6 +10,7 @@ PREFIX xml1: <http://www.w3.org/XML/1998/namespace#>
 PREFIX linkml: <https://w3id.org/linkml/>
 PREFIX om: <http://w3id.org/kgcl/om/>
 PREFIX dc1: <http://purl.org/dc/terms/>
+PREFIX oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
 PREFIX basics: <https://w3id.org/kgcl/basics/>
 
 
@@ -506,7 +507,8 @@ om:LogicalDefinition CLOSED {
     (  $<NewSynonym_tes> (  &<NodeSynonymChange_tes> ;
           rdf:type [ <NodeSynonymChange> ] ? ;
           <qualifier> @linkml:String ? ;
-          om:predicate @om:Node ?
+          om:predicate @om:Node ? ;
+          oboInOwl:hasDbXref @linkml:String *
        ) ;
        rdf:type [ <NewSynonym> ]
     )
@@ -514,7 +516,8 @@ om:LogicalDefinition CLOSED {
 
 <NewTextDefinition> CLOSED {
     (  $<NewTextDefinition_tes> (  &<NodeTextDefinitionChange_tes> ;
-          rdf:type [ <NodeTextDefinitionChange> ] ?
+          rdf:type [ <NodeTextDefinitionChange> ] ? ;
+          oboInOwl:hasDbXref @linkml:String *
        ) ;
        rdf:type [ <NewTextDefinition> ]
     )

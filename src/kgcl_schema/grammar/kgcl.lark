@@ -32,7 +32,7 @@ create : "create node" _WS id _WS label ["@" language]
 create_class: "create" _WS id
 create_object_property: "create object property" _WS id
 
-create_synonym: "create" _WS [synonym_qualifier _WS] "synonym" _WS synonym ["@" language] _WS "for" _WS entity
+create_synonym: "create" _WS [synonym_qualifier _WS] "synonym" _WS synonym ["@" language] _WS "for" _WS entity [_WS xrefs]
 synonym_qualifier : /exact|narrow|broad|related/
 
 remove_synonym: "remove" _WS "synonym" _WS synonym ["@" language] _WS "for" _WS entity
@@ -62,7 +62,14 @@ change_annotation: "change annotation of" _WS entity_subject _WS "with" _WS enti
 
 change_definition: "change definition of" _WS entity _WS "to" _WS new_definition
                  | "change definition of" _WS entity _WS "from" _WS old_definition _WS "to" _WS new_definition
-add_definition: "add definition" _WS new_definition _WS "to" _WS entity
+add_definition: "add definition" _WS new_definition _WS "to" _WS entity [_WS xrefs]
+
+// Cross-references supporting a definition or synonym (oboInOwl:hasDbXref),
+// e.g. "with xrefs PMID:12869615, PMID:12625309"
+xrefs: "with" _WS ("xrefs" | "xref") _WS xref (_XREF_SEP xref)*
+xref: XREF
+XREF: /[^\s,'"<>]+:[^\s,]+/
+_XREF_SEP: /[ \t]*,[ \t]*/
 remove_definition: "remove definition for" _WS entity
 
 remove_from_subset :  "remove" _WS id _WS "from subset" _WS subset

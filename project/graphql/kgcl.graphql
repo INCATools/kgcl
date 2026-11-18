@@ -799,6 +799,7 @@ type NewSynonym
     language: LanguageTag
     qualifier: String
     predicate: Node
+    xrefs: [String]
   }
 
 type NewTextDefinition
@@ -826,6 +827,7 @@ type NewTextDefinition
     aboutNodeRepresentation: String
     language: LanguageTag
     newValue: String
+    xrefs: [String]
   }
 
 type Node

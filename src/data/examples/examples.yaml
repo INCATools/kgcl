@@ -289,6 +289,47 @@ Test_29:
     http://purl.obolibrary.org/obo/GO_9999999
 Test_30:
   id: CHANGE:001
+  type: NewTextDefinition
+  new_value: A bellow-shaped respiratory unit extending from the outer wall of the
+    lung into a central air space.
+  about_node: UBERON:0009058
+  about_node_representation: curie
+  xrefs:
+  - PMID:12869615
+  command_with_curie: add definition 'A bellow-shaped respiratory unit extending from
+    the outer wall of the lung into a central air space.' to UBERON:0009058 with xrefs
+    PMID:12869615
+  command_with_uri: add definition 'A bellow-shaped respiratory unit extending from
+    the outer wall of the lung into a central air space.' to http://purl.obolibrary.org/obo/UBERON_0009058
+    with xrefs PMID:12869615
+Test_31:
+  id: CHANGE:001
+  type: NewSynonym
+  new_value: edicula
+  about_node: UBERON:0009058
+  about_node_representation: curie
+  qualifier: related
+  xrefs:
+  - PMID:12625309
+  command_with_curie: create related synonym 'edicula' for UBERON:0009058 with xrefs
+    PMID:12625309
+  command_with_uri: create related synonym 'edicula' for http://purl.obolibrary.org/obo/UBERON_0009058
+    with xrefs PMID:12625309
+Test_32:
+  id: CHANGE:001
+  type: NewSynonym
+  new_value: edicula
+  about_node: UBERON:0009058
+  about_node_representation: curie
+  xrefs:
+  - PMID:12625309
+  - ISBN:0123456789
+  command_with_curie: create synonym 'edicula' for UBERON:0009058 with xrefs PMID:12625309,
+    ISBN:0123456789
+  command_with_uri: create synonym 'edicula' for http://purl.obolibrary.org/obo/UBERON_0009058
+    with xrefs PMID:12625309, ISBN:0123456789
+Test_33:
+  id: CHANGE:001
   type: NodeMove
   old_value: GO:0043231
   new_value: GO:0005739
@@ -305,7 +346,7 @@ Test_30:
   command_with_uri: move http://purl.obolibrary.org/obo/GO_0005634 http://purl.obolibrary.org/obo/BFO_0000050
     http://purl.obolibrary.org/obo/GO_0043231 from http://purl.obolibrary.org/obo/GO_0043231
     to http://purl.obolibrary.org/obo/GO_0005739
-Test_31:
+Test_34:
   id: CHANGE:001
   type: NodeAnnotationChange
   old_value: old
@@ -322,7 +363,7 @@ Test_31:
     to "new"@fr
   command_with_uri: change annotation of http://purl.obolibrary.org/obo/GO_0005634
     with rdfs:comment from "old"@en to "new"@fr
-Test_32:
+Test_35:
   id: CHANGE:001
   type: NodeAnnotationChange
   old_value: '1'
