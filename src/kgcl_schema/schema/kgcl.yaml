@@ -715,7 +715,7 @@ classes:
         string_serialization: create class {about_node}
   ObjectPropertyCreation:
     is_a: NodeCreation
-    description: A node creation where the node is a property
+    description: A node creation where the node is an object property (a relation)
     slot_usage:
       change_description:
         string_serialization: create object property {about_node}
@@ -723,7 +723,7 @@ classes:
     is_a: NodeChange
     mixins:
     - Deletion
-    description: Deletion of a node from the graph. Note: it is recommended nodes are
+    description: Deletion of a node from the graph. Note that it is recommended nodes are
       obsoleted and never merged, but this operation exists to represent deletions
       in ontologies, accidental or otherwise
     slot_usage:
@@ -731,13 +731,13 @@ classes:
         string_serialization: delete {about_node}
   ClassDeletion:
     is_a: NodeDeletion
-    description: A node deletion where the owl type is 'owl:Class'
+    description: A node deletion where the node is a class (as opposed to a relation)
     slot_usage:
       change_description:
         string_serialization: delete class {about_node}
   ObjectPropertyDeletion:
     is_a: NodeDeletion
-    description: A node deletion where the owl type is 'ObjectProperty'
+    description: A node deletion where the node is an object property (a relation)
     slot_usage:
       change_description:
         string_serialization: delete object property {about_node}
@@ -982,11 +982,11 @@ slots:
     description: An obsoletion replacement where it IS valid to automatically update
       annotations/edges pointing at the node with its direct replacement
     comments:
-    - if a node obsoletion C, C about N1, and C has direct replacement N2, and there
-      exists an edge with an edge property referencing N1, it is possible to replace
-      with N2
-    - if a node obsoletion C C about N1, and C has direct replacement N2, then N1 IAO:0100001
-      N2
+    - If C is a node obsoletion of N1 (C's about_node is N1) and C has direct replacement
+      N2, then any edge or annotation that references N1 can be automatically updated
+      to reference N2 instead.
+    - If C is a node obsoletion of N1 and C has direct replacement N2, then N1 IAO:0100001
+      (term replaced by) N2.
   has_nondirect_replacement:
     range: Node
     multivalued: true
@@ -995,11 +995,11 @@ slots:
     close_mappings:
     - oio:consider
     comments:
-    - if a node obsoletion C, C about N1, and C has direct replacement N2, and there
-      exists an edge with an edge property referencing N1, it is possible to replace
-      with N2
-    - if a node obsoletion C C about N1, and Chas direct replacement N2, then N1 oio:consider
-      N2
+    - If C is a node obsoletion of N1 (C's about_node is N1) and C has nondirect replacement
+      N2, then edges or annotations that reference N1 should not be automatically updated
+      to reference N2; each needs review.
+    - If C is a node obsoletion of N1 and C has nondirect replacement N2, then N1 oio:consider
+      N2.
 enums:
   ObsoletionPolicyEnum:
     permissible_values:
