@@ -99,11 +99,41 @@ kgcl:ChangeSetSummaryStatistic a owl:Class ;
 kgcl:Configuration a owl:Class ;
     rdfs:label "Configuration" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
+            owl:minCardinality 0 ;
             owl:onProperty kgcl:synonym_predicates ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty kgcl:obsolete_node_label_prefix ],
+            owl:onProperty kgcl:obsolete_subclass_of_shadow_property ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kgcl:creator_predicate ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kgcl:obsoletion_workflow ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kgcl:definition_predicate ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kgcl:obsolete_subclass_of_shadow_property ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kgcl:name_predicate ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kgcl:name_predicate ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kgcl:obsoletion_workflow ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kgcl:synonym_predicates ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kgcl:obsoletion_policies ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kgcl:name_predicate ],
         [ a owl:Restriction ;
             owl:allValuesFrom kgcl:ObsoletionPolicyEnum ;
             owl:onProperty kgcl:obsoletion_policies ],
@@ -111,62 +141,17 @@ kgcl:Configuration a owl:Class ;
             owl:allValuesFrom xsd:string ;
             owl:onProperty kgcl:main_synonym_predicate ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty kgcl:contributor_predicate ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty kgcl:definition_predicate ],
+            owl:minCardinality 0 ;
+            owl:onProperty kgcl:main_synonym_predicate ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty kgcl:contributor_predicate ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty kgcl:obsolete_node_label_prefix ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty kgcl:definition_predicate ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
             owl:onProperty kgcl:creator_predicate ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty kgcl:obsoletion_policies ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty kgcl:name_predicate ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty kgcl:obsolete_subclass_of_shadow_property ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty kgcl:definition_predicate ],
+            owl:onProperty kgcl:obsolete_node_label_prefix ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty kgcl:main_synonym_predicate ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty kgcl:name_predicate ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty kgcl:name_predicate ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty kgcl:obsoletion_workflow ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty kgcl:synonym_predicates ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty kgcl:obsolete_subclass_of_shadow_property ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty kgcl:contributor_predicate ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty kgcl:obsolete_node_label_prefix ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty kgcl:creator_predicate ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty kgcl:obsoletion_workflow ],
@@ -174,17 +159,32 @@ kgcl:Configuration a owl:Class ;
             owl:allValuesFrom xsd:anyURI ;
             owl:onProperty kgcl:obsolete_subclass_of_shadow_property ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty kgcl:synonym_predicates ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty kgcl:main_synonym_predicate ],
-        [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
-            owl:onProperty kgcl:obsoletion_workflow ],
+            owl:onProperty kgcl:definition_predicate ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty kgcl:creator_predicate ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kgcl:contributor_predicate ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kgcl:obsolete_node_label_prefix ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kgcl:definition_predicate ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kgcl:contributor_predicate ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kgcl:obsolete_node_label_prefix ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kgcl:synonym_predicates ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kgcl:contributor_predicate ],
         kgcl:ChangeLanguageElement ;
     skos:definition "The meaning of operations can be configured" ;
     skos:inScheme <https://w3id.org/kgcl> .
@@ -192,22 +192,22 @@ kgcl:Configuration a owl:Class ;
 kgcl:LanguageTagChange a owl:Class ;
     rdfs:label "LanguageTagChange" ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom xml1:lang ;
+            owl:onProperty kgcl:old_value ],
+        [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty kgcl:new_value ],
         [ a owl:Restriction ;
-            owl:allValuesFrom xml1:lang ;
+            owl:minCardinality 0 ;
             owl:onProperty kgcl:old_value ],
         [ a owl:Restriction ;
             owl:allValuesFrom xml1:lang ;
             owl:onProperty kgcl:new_value ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty kgcl:old_value ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
             owl:onProperty kgcl:new_value ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
+            owl:maxCardinality 1 ;
             owl:onProperty kgcl:old_value ],
         kgcl:DatatypeOrLanguageTagChange ;
     skos:inScheme <https://w3id.org/kgcl> .
@@ -236,20 +236,20 @@ kgcl:ClassCreation a owl:Class ;
             owl:minCardinality 0 ;
             owl:onProperty kgcl:change_description ],
         [ a owl:Restriction ;
-            owl:allValuesFrom <http://w3id.org/kgcl/om/Node> ;
+            owl:maxCardinality 1 ;
             owl:onProperty kgcl:superclass ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty kgcl:change_description ],
-        [ a owl:Restriction ;
             owl:minCardinality 0 ;
+            owl:onProperty kgcl:superclass ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom <http://w3id.org/kgcl/om/Node> ;
             owl:onProperty kgcl:superclass ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
             owl:onProperty kgcl:change_description ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty kgcl:superclass ],
+            owl:onProperty kgcl:change_description ],
         kgcl:NodeCreation ;
     skos:definition "A node creation where the node is a class (as opposed to a relation)" ;
     skos:inScheme <https://w3id.org/kgcl> .
@@ -257,10 +257,10 @@ kgcl:ClassCreation a owl:Class ;
 kgcl:ClassDeletion a owl:Class ;
     rdfs:label "ClassDeletion" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
+            owl:maxCardinality 1 ;
             owl:onProperty kgcl:change_description ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
+            owl:allValuesFrom xsd:string ;
             owl:onProperty kgcl:change_description ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
@@ -273,34 +273,40 @@ kgcl:MappingCreation a owl:Class ;
     rdfs:label "MappingCreation" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty kgcl:change_description ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <http://w3id.org/kgcl/om/annotation_set> ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
             owl:onProperty <http://w3id.org/kgcl/om/subject> ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <http://w3id.org/kgcl/om/object> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
+            owl:allValuesFrom <http://w3id.org/kgcl/om/Node> ;
             owl:onProperty <http://w3id.org/kgcl/om/subject> ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <http://w3id.org/kgcl/om/annotation_set> ],
         [ a owl:Restriction ;
             owl:onProperty linkml:mixins ;
             owl:someValuesFrom kgcl:Creation ],
         [ a owl:Restriction ;
-            owl:allValuesFrom <http://w3id.org/kgcl/om/Annotation> ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <http://w3id.org/kgcl/om/predicate> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <http://w3id.org/kgcl/om/predicate> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
             owl:onProperty <http://w3id.org/kgcl/om/annotation_set> ],
         [ a owl:Restriction ;
             owl:allValuesFrom <http://w3id.org/kgcl/om/Node> ;
             owl:onProperty <http://w3id.org/kgcl/om/predicate> ],
         [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <http://w3id.org/kgcl/om/annotation_set> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <http://w3id.org/kgcl/om/object> ],
+        [ a owl:Restriction ;
             owl:allValuesFrom <http://w3id.org/kgcl/om/Node> ;
+            owl:onProperty <http://w3id.org/kgcl/om/object> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
             owl:onProperty <http://w3id.org/kgcl/om/subject> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom <http://w3id.org/kgcl/om/Annotation> ;
+            owl:onProperty <http://w3id.org/kgcl/om/annotation_set> ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty <http://w3id.org/kgcl/om/object> ],
@@ -308,16 +314,10 @@ kgcl:MappingCreation a owl:Class ;
             owl:maxCardinality 1 ;
             owl:onProperty kgcl:change_description ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <http://w3id.org/kgcl/om/predicate> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom <http://w3id.org/kgcl/om/Node> ;
-            owl:onProperty <http://w3id.org/kgcl/om/object> ],
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kgcl:change_description ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty <http://w3id.org/kgcl/om/predicate> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
             owl:onProperty kgcl:change_description ],
         kgcl:EdgeCreation ;
     skos:altLabel "xref creation" ;
@@ -327,10 +327,16 @@ kgcl:MappingCreation a owl:Class ;
 kgcl:MappingPredicateChange a owl:Class ;
     rdfs:label "MappingPredicateChange" ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kgcl:old_value ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kgcl:old_value ],
+        [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty kgcl:new_value ],
         [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
+            owl:maxCardinality 1 ;
             owl:onProperty kgcl:old_value ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
@@ -338,12 +344,6 @@ kgcl:MappingPredicateChange a owl:Class ;
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty kgcl:new_value ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty kgcl:old_value ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty kgcl:old_value ],
         kgcl:NodeMappingChange ;
     skos:altLabel "node scope change" ;
     skos:definition "A node mapping change where the predicate of a mapping is changed." ;
@@ -352,22 +352,22 @@ kgcl:MappingPredicateChange a owl:Class ;
 kgcl:MappingReplacement a owl:Class ;
     rdfs:label "MappingReplacement" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:minCardinality 0 ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kgcl:new_value ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
             owl:onProperty kgcl:old_value ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty kgcl:new_value ],
+            owl:onProperty kgcl:old_value ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty kgcl:old_value ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
-            owl:onProperty kgcl:old_value ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
             owl:onProperty kgcl:new_value ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
+            owl:minCardinality 0 ;
             owl:onProperty kgcl:new_value ],
         kgcl:NodeMappingChange ;
     skos:definition "A node mapping change where the object of a mapping is changed" ;
@@ -376,11 +376,14 @@ kgcl:MappingReplacement a owl:Class ;
 kgcl:MetadataAssertionPredicateChange a owl:Class ;
     rdfs:label "MetadataAssertionPredicateChange" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:minCardinality 0 ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kgcl:old_value ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
             owl:onProperty kgcl:old_value ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty kgcl:new_value ],
+            owl:onProperty kgcl:old_value ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty kgcl:new_value ],
@@ -388,11 +391,8 @@ kgcl:MetadataAssertionPredicateChange a owl:Class ;
             owl:allValuesFrom xsd:string ;
             owl:onProperty kgcl:new_value ],
         [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty kgcl:old_value ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty kgcl:old_value ],
+            owl:minCardinality 0 ;
+            owl:onProperty kgcl:new_value ],
         kgcl:NodeMetadataAssertionChange ;
     skos:altLabel "node scope change" ;
     skos:definition "A node metadata assertion change where the predicate of a metadata assertion is changed." ;
@@ -405,7 +405,7 @@ kgcl:MetadataAssertionReplacement a owl:Class ;
             owl:onProperty kgcl:old_value ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty kgcl:new_value ],
+            owl:onProperty kgcl:old_value ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty kgcl:new_value ],
@@ -413,10 +413,10 @@ kgcl:MetadataAssertionReplacement a owl:Class ;
             owl:allValuesFrom xsd:string ;
             owl:onProperty kgcl:old_value ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty kgcl:old_value ],
-        [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
+            owl:onProperty kgcl:new_value ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
             owl:onProperty kgcl:new_value ],
         kgcl:NodeMetadataAssertionChange ;
     skos:definition "A node metadata assertion change where the object of a metadata assertion is changed" ;
@@ -425,13 +425,13 @@ kgcl:MetadataAssertionReplacement a owl:Class ;
 kgcl:NameBecomesSynonym a owl:Class ;
     rdfs:label "NameBecomesSynonym" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty kgcl:change_description ],
-        [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty kgcl:change_description ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
+            owl:onProperty kgcl:change_description ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
             owl:onProperty kgcl:change_description ],
         kgcl:NodeSynonymChange ;
     skos:definition "A node synonym where the name NAME of an node NODE moves to a synonym, and NODE receives a new name. This change consists of compose of (1) a node rename where NAME is replaced by a different name (2) a new synonym" ;
@@ -440,8 +440,11 @@ kgcl:NameBecomesSynonym a owl:Class ;
 kgcl:NewMapping a owl:Class ;
     rdfs:label "NewMapping" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom <http://w3id.org/kgcl/om/Node> ;
+            owl:minCardinality 0 ;
             owl:onProperty <http://w3id.org/kgcl/om/predicate> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <http://w3id.org/kgcl/om/object> ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty <http://w3id.org/kgcl/om/predicate> ],
@@ -449,14 +452,11 @@ kgcl:NewMapping a owl:Class ;
             owl:allValuesFrom <http://w3id.org/kgcl/om/Node> ;
             owl:onProperty <http://w3id.org/kgcl/om/object> ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <http://w3id.org/kgcl/om/object> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <http://w3id.org/kgcl/om/object> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
+            owl:allValuesFrom <http://w3id.org/kgcl/om/Node> ;
             owl:onProperty <http://w3id.org/kgcl/om/predicate> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <http://w3id.org/kgcl/om/object> ],
         kgcl:NodeMappingChange ;
     skos:altLabel "xref change" ;
     skos:definition "A node mapping change where a mapping is added to a node" ;
@@ -466,9 +466,12 @@ kgcl:NewMetadataAssertion a owl:Class ;
     rdfs:label "NewMetadataAssertion" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:allValuesFrom <http://w3id.org/kgcl/om/Node> ;
-            owl:onProperty <http://w3id.org/kgcl/om/predicate> ],
+            owl:onProperty <http://w3id.org/kgcl/om/object> ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
+            owl:onProperty <http://w3id.org/kgcl/om/predicate> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
             owl:onProperty <http://w3id.org/kgcl/om/predicate> ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
@@ -478,9 +481,6 @@ kgcl:NewMetadataAssertion a owl:Class ;
             owl:onProperty <http://w3id.org/kgcl/om/object> ],
         [ a owl:Restriction ;
             owl:allValuesFrom <http://w3id.org/kgcl/om/Node> ;
-            owl:onProperty <http://w3id.org/kgcl/om/object> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
             owl:onProperty <http://w3id.org/kgcl/om/predicate> ],
         kgcl:NodeMetadataAssertionChange ;
     skos:altLabel "xref change" ;
@@ -490,40 +490,46 @@ kgcl:NewMetadataAssertion a owl:Class ;
 kgcl:NewSynonym a owl:Class ;
     rdfs:label "NewSynonym" ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <http://w3id.org/kgcl/om/predicate> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kgcl:new_value ],
+        [ a owl:Restriction ;
             owl:allValuesFrom xml1:lang ;
             owl:onProperty kgcl:language ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty kgcl:new_value ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty kgcl:new_value ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty kgcl:language ],
-        [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
             owl:onProperty kgcl:new_value ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty kgcl:qualifier ],
-        [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty kgcl:qualifier ],
+            owl:onProperty kgcl:xrefs ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty kgcl:language ],
+            owl:allValuesFrom xsd:anyURI ;
+            owl:onProperty kgcl:xrefs ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
+            owl:onProperty kgcl:qualifier ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
             owl:onProperty kgcl:qualifier ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty <http://w3id.org/kgcl/om/predicate> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kgcl:language ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kgcl:qualifier ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kgcl:new_value ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kgcl:language ],
         [ a owl:Restriction ;
             owl:allValuesFrom <http://w3id.org/kgcl/om/Node> ;
-            owl:onProperty <http://w3id.org/kgcl/om/predicate> ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
             owl:onProperty <http://w3id.org/kgcl/om/predicate> ],
         kgcl:NodeSynonymChange ;
     skos:altLabel "add synonym",
@@ -541,10 +547,10 @@ kgcl:NodeAnnotationReplacement a owl:Class ;
 kgcl:NodeDeepening a owl:Class ;
     rdfs:label "NodeDeepening" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
+            owl:maxCardinality 1 ;
             owl:onProperty kgcl:change_description ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
+            owl:allValuesFrom xsd:string ;
             owl:onProperty kgcl:change_description ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
@@ -558,31 +564,31 @@ kgcl:NodeDirectMerge a owl:Class ;
     rdfs:seeAlso <http://wiki.geneontology.org/index.php/Merging_Ontology_Terms>,
         <http://wiki.geneontology.org/index.php/Principles_for_merging_terms> ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty kgcl:change_description ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty kgcl:change_description ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom owl:Thing ;
-            owl:onProperty kgcl:about_node ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty kgcl:about_node ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom owl:Thing ;
-            owl:onProperty kgcl:has_direct_replacement ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty kgcl:change_description ],
-        [ a owl:Restriction ;
             owl:minCardinality 1 ;
             owl:onProperty kgcl:has_direct_replacement ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kgcl:has_direct_replacement ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kgcl:about_node ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kgcl:change_description ],
         [ a owl:Restriction ;
             owl:onProperty linkml:mixins ;
             owl:someValuesFrom kgcl:AllowsAutomaticReplacementOfEdges ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kgcl:change_description ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom owl:Thing ;
+            owl:onProperty kgcl:about_node ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kgcl:change_description ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom owl:Thing ;
             owl:onProperty kgcl:has_direct_replacement ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
@@ -597,25 +603,25 @@ kgcl:NodeObsoletionWithDirectReplacement a owl:Class ;
     rdfs:seeAlso <http://wiki.geneontology.org/index.php/Merging_Ontology_Terms>,
         <http://wiki.geneontology.org/index.php/Principles_for_merging_terms> ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kgcl:change_description ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kgcl:has_direct_replacement ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom owl:Thing ;
+            owl:onProperty kgcl:has_direct_replacement ],
+        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty kgcl:change_description ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
             owl:onProperty kgcl:change_description ],
         [ a owl:Restriction ;
-            owl:allValuesFrom owl:Thing ;
-            owl:onProperty kgcl:has_direct_replacement ],
-        [ a owl:Restriction ;
             owl:onProperty linkml:mixins ;
             owl:someValuesFrom kgcl:AllowsAutomaticReplacementOfEdges ],
         [ a owl:Restriction ;
             owl:minCardinality 1 ;
-            owl:onProperty kgcl:has_direct_replacement ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty kgcl:change_description ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
             owl:onProperty kgcl:has_direct_replacement ],
         kgcl:NodeObsoletion ;
     skos:definition "An obsoletion change in which information from the obsoleted node is selectively copied to a single target, and edges can automatically be rewired to point to the target node" ;
@@ -627,17 +633,17 @@ kgcl:NodeObsoletionWithNoDirectReplacement a owl:Class ;
             owl:maxCardinality 1 ;
             owl:onProperty kgcl:change_description ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty kgcl:change_description ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty kgcl:change_description ],
-        [ a owl:Restriction ;
             owl:minCardinality 1 ;
             owl:onProperty kgcl:has_nondirect_replacement ],
         [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kgcl:change_description ],
+        [ a owl:Restriction ;
             owl:allValuesFrom owl:Thing ;
             owl:onProperty kgcl:has_nondirect_replacement ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kgcl:change_description ],
         kgcl:NodeObsoletion ;
     skos:definition "An obsoletion change in which there is no direct replacement" ;
     skos:inScheme <https://w3id.org/kgcl> .
@@ -645,13 +651,13 @@ kgcl:NodeObsoletionWithNoDirectReplacement a owl:Class ;
 kgcl:NodeShallowing a owl:Class ;
     rdfs:label "NodeShallowing" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty kgcl:change_description ],
-        [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty kgcl:change_description ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
+            owl:onProperty kgcl:change_description ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
             owl:onProperty kgcl:change_description ],
         kgcl:NodeMove ;
     skos:definition "The opposite of node deepening" ;
@@ -660,13 +666,13 @@ kgcl:NodeShallowing a owl:Class ;
 kgcl:ObjectPropertyCreation a owl:Class ;
     rdfs:label "ObjectPropertyCreation" ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kgcl:change_description ],
+        [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty kgcl:change_description ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty kgcl:change_description ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
             owl:onProperty kgcl:change_description ],
         kgcl:NodeCreation ;
     skos:definition "A node creation where the node is an object property (a relation)" ;
@@ -675,13 +681,13 @@ kgcl:ObjectPropertyCreation a owl:Class ;
 kgcl:ObjectPropertyDeletion a owl:Class ;
     rdfs:label "ObjectPropertyDeletion" ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kgcl:change_description ],
+        [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
             owl:onProperty kgcl:change_description ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty kgcl:change_description ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
             owl:onProperty kgcl:change_description ],
         kgcl:NodeDeletion ;
     skos:definition "A node deletion where the node is an object property (a relation)" ;
@@ -714,8 +720,8 @@ kgcl:RemoveFromSubset a owl:Class ;
 kgcl:RemoveMapping a owl:Class ;
     rdfs:label "RemoveMapping" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom <http://w3id.org/kgcl/om/Node> ;
-            owl:onProperty <http://w3id.org/kgcl/om/object> ],
+            owl:maxCardinality 1 ;
+            owl:onProperty <http://w3id.org/kgcl/om/predicate> ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty <http://w3id.org/kgcl/om/predicate> ],
@@ -726,11 +732,11 @@ kgcl:RemoveMapping a owl:Class ;
             owl:allValuesFrom <http://w3id.org/kgcl/om/Node> ;
             owl:onProperty <http://w3id.org/kgcl/om/predicate> ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
+            owl:allValuesFrom <http://w3id.org/kgcl/om/Node> ;
             owl:onProperty <http://w3id.org/kgcl/om/object> ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty <http://w3id.org/kgcl/om/predicate> ],
+            owl:onProperty <http://w3id.org/kgcl/om/object> ],
         kgcl:NodeMappingChange ;
     skos:definition "A node mapping change where a mapping is deleted" ;
     skos:inScheme <https://w3id.org/kgcl> .
@@ -738,22 +744,22 @@ kgcl:RemoveMapping a owl:Class ;
 kgcl:RemoveMetadataAssertion a owl:Class ;
     rdfs:label "RemoveMetadataAssertion" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom <http://w3id.org/kgcl/om/Node> ;
+            owl:minCardinality 0 ;
+            owl:onProperty <http://w3id.org/kgcl/om/object> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
             owl:onProperty <http://w3id.org/kgcl/om/object> ],
         [ a owl:Restriction ;
             owl:allValuesFrom <http://w3id.org/kgcl/om/Node> ;
             owl:onProperty <http://w3id.org/kgcl/om/predicate> ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
+            owl:allValuesFrom <http://w3id.org/kgcl/om/Node> ;
             owl:onProperty <http://w3id.org/kgcl/om/object> ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
+            owl:maxCardinality 1 ;
             owl:onProperty <http://w3id.org/kgcl/om/predicate> ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty <http://w3id.org/kgcl/om/object> ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
             owl:onProperty <http://w3id.org/kgcl/om/predicate> ],
         kgcl:NodeMetadataAssertionChange ;
     skos:definition "A node metadata assertion change where a metadata assertion is deleted" ;
@@ -784,41 +790,41 @@ kgcl:RemoveUnder a owl:Class ;
 kgcl:SynonymPredicateChange a owl:Class ;
     rdfs:label "SynonymPredicateChange" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty kgcl:new_value ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty kgcl:has_textual_diff ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty kgcl:old_value ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty kgcl:new_value ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty kgcl:target ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty kgcl:old_value ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty kgcl:has_textual_diff ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty kgcl:target ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty kgcl:old_value ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty kgcl:new_value ],
-        [ a owl:Restriction ;
             owl:allValuesFrom kgcl:TextualDiff ;
             owl:onProperty kgcl:has_textual_diff ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
+            owl:onProperty kgcl:new_value ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kgcl:old_value ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kgcl:new_value ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
             owl:onProperty kgcl:target ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kgcl:target ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kgcl:old_value ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kgcl:old_value ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kgcl:new_value ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kgcl:target ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kgcl:has_textual_diff ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kgcl:has_textual_diff ],
         kgcl:NodeSynonymChange ;
     skos:altLabel "node scope change" ;
     skos:definition "A node synonym change where the predicate of a synonym is changed. Background: synonyms can be represented by a variety of predicates. For example, many OBO ontologies make use of predicates such as oio:hasExactSynonym, oio:hasRelatedSynonym, etc" ;
@@ -827,41 +833,41 @@ kgcl:SynonymPredicateChange a owl:Class ;
 kgcl:SynonymReplacement a owl:Class ;
     rdfs:label "SynonymReplacement" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kgcl:has_textual_diff ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
             owl:onProperty kgcl:qualifier ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
-            owl:onProperty kgcl:old_value ],
+            owl:onProperty kgcl:qualifier ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty kgcl:new_value ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty kgcl:new_value ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty kgcl:qualifier ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty kgcl:new_value ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
             owl:onProperty kgcl:has_textual_diff ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty kgcl:qualifier ],
         [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kgcl:old_value ],
+        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty kgcl:old_value ],
+            owl:onProperty kgcl:new_value ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty kgcl:old_value ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty kgcl:has_textual_diff ],
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kgcl:new_value ],
         [ a owl:Restriction ;
             owl:allValuesFrom kgcl:TextualDiff ;
             owl:onProperty kgcl:has_textual_diff ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kgcl:old_value ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kgcl:new_value ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kgcl:old_value ],
         kgcl:NodeSynonymChange ;
     skos:definition "A node synonym change where the text of a synonym is changed" ;
     skos:inScheme <https://w3id.org/kgcl> .
@@ -880,50 +886,14 @@ kgcl:obsoletion_policies a owl:ObjectProperty ;
 <http://w3id.org/kgcl/om/Edge> a owl:Class ;
     rdfs:label "Edge" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom <http://w3id.org/kgcl/om/Node> ;
-            owl:onProperty <http://w3id.org/kgcl/om/predicate> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom <http://w3id.org/kgcl/om/Node> ;
-            owl:onProperty <http://w3id.org/kgcl/om/subject> ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <http://w3id.org/kgcl/om/object_representation> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty <http://w3id.org/kgcl/om/predicate_representation> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty <http://w3id.org/kgcl/om/object_representation> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <http://w3id.org/kgcl/om/subject> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty <http://w3id.org/kgcl/om/subject_representation> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <http://w3id.org/kgcl/om/object_representation> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom <http://w3id.org/kgcl/om/Node> ;
-            owl:onProperty <http://w3id.org/kgcl/om/object> ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <http://w3id.org/kgcl/om/subject> ],
-        [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty <http://w3id.org/kgcl/om/annotation_set> ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <http://w3id.org/kgcl/om/predicate> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <http://w3id.org/kgcl/om/subject_representation> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <http://w3id.org/kgcl/om/object> ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
+            owl:allValuesFrom xsd:string ;
             owl:onProperty <http://w3id.org/kgcl/om/predicate_representation> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom <http://w3id.org/kgcl/om/Node> ;
+            owl:onProperty <http://w3id.org/kgcl/om/object> ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty <http://w3id.org/kgcl/om/annotation_set> ],
@@ -931,17 +901,53 @@ kgcl:obsoletion_policies a owl:ObjectProperty ;
             owl:maxCardinality 1 ;
             owl:onProperty <http://w3id.org/kgcl/om/subject_representation> ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <http://w3id.org/kgcl/om/predicate_representation> ],
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty <http://w3id.org/kgcl/om/subject_representation> ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty <http://w3id.org/kgcl/om/predicate> ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <http://w3id.org/kgcl/om/object> ],
+            owl:onProperty <http://w3id.org/kgcl/om/object_representation> ],
         [ a owl:Restriction ;
             owl:allValuesFrom <http://w3id.org/kgcl/om/Annotation> ;
             owl:onProperty <http://w3id.org/kgcl/om/annotation_set> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty <http://w3id.org/kgcl/om/object_representation> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <http://w3id.org/kgcl/om/predicate_representation> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <http://w3id.org/kgcl/om/object> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <http://w3id.org/kgcl/om/subject> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom <http://w3id.org/kgcl/om/Node> ;
+            owl:onProperty <http://w3id.org/kgcl/om/predicate> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <http://w3id.org/kgcl/om/subject> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <http://w3id.org/kgcl/om/object> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <http://w3id.org/kgcl/om/predicate> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <http://w3id.org/kgcl/om/predicate> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <http://w3id.org/kgcl/om/predicate_representation> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom <http://w3id.org/kgcl/om/Node> ;
+            owl:onProperty <http://w3id.org/kgcl/om/subject> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <http://w3id.org/kgcl/om/subject_representation> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <http://w3id.org/kgcl/om/object_representation> ],
         <http://w3id.org/kgcl/om/OntologyElement> ;
     skos:altLabel "axiom",
         "relationship",
@@ -972,23 +978,23 @@ Note that not all axioms are intended to map to edges. Axioms/triples where the 
 <http://w3id.org/kgcl/om/PropertyValue> a owl:Class ;
     rdfs:label "PropertyValue" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <http://w3id.org/kgcl/om/filler> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
+            owl:maxCardinality 1 ;
             owl:onProperty <http://w3id.org/kgcl/om/property> ],
         [ a owl:Restriction ;
             owl:allValuesFrom <http://w3id.org/kgcl/om/Node> ;
             owl:onProperty <http://w3id.org/kgcl/om/property> ],
         [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <http://w3id.org/kgcl/om/filler> ],
+        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty <http://w3id.org/kgcl/om/property> ],
+            owl:onProperty <http://w3id.org/kgcl/om/filler> ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
             owl:onProperty <http://w3id.org/kgcl/om/filler> ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <http://w3id.org/kgcl/om/filler> ],
+            owl:minCardinality 0 ;
+            owl:onProperty <http://w3id.org/kgcl/om/property> ],
         <http://w3id.org/kgcl/om/OntologyElement> ;
     skos:definition "a property-value pair" ;
     skos:inScheme <https://w3id.org/kgcl/ontology> .
@@ -1059,52 +1065,52 @@ kgcl:EdgeObsoletion a owl:Class ;
     rdfs:label "EdgeObsoletion" ;
     rdfs:seeAlso <https://mondo.readthedocs.io/en/latest/editors-guide/g-logical-axioms/#excluded-subclassof> ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom <http://w3id.org/kgcl/om/Node> ;
+            owl:onProperty <http://w3id.org/kgcl/om/object> ],
+        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty <http://w3id.org/kgcl/om/predicate> ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <http://w3id.org/kgcl/om/object> ],
+            owl:allValuesFrom <http://w3id.org/kgcl/om/Node> ;
+            owl:onProperty <http://w3id.org/kgcl/om/subject> ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <http://w3id.org/kgcl/om/predicate> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <http://w3id.org/kgcl/om/object> ],
+            owl:onProperty linkml:mixins ;
+            owl:someValuesFrom kgcl:Obsoletion ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty <http://w3id.org/kgcl/om/subject> ],
         [ a owl:Restriction ;
+            owl:allValuesFrom <http://w3id.org/kgcl/om/Node> ;
+            owl:onProperty <http://w3id.org/kgcl/om/predicate> ],
+        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty <http://w3id.org/kgcl/om/subject> ],
+            owl:onProperty kgcl:change_description ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <http://w3id.org/kgcl/om/object> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kgcl:change_description ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <http://w3id.org/kgcl/om/annotation_set> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <http://w3id.org/kgcl/om/object> ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
             owl:onProperty kgcl:change_description ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty <http://w3id.org/kgcl/om/annotation_set> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom <http://w3id.org/kgcl/om/Node> ;
-            owl:onProperty <http://w3id.org/kgcl/om/object> ],
-        [ a owl:Restriction ;
-            owl:onProperty linkml:mixins ;
-            owl:someValuesFrom kgcl:Obsoletion ],
+            owl:onProperty <http://w3id.org/kgcl/om/predicate> ],
         [ a owl:Restriction ;
             owl:allValuesFrom <http://w3id.org/kgcl/om/Annotation> ;
             owl:onProperty <http://w3id.org/kgcl/om/annotation_set> ],
         [ a owl:Restriction ;
-            owl:allValuesFrom <http://w3id.org/kgcl/om/Node> ;
+            owl:maxCardinality 1 ;
             owl:onProperty <http://w3id.org/kgcl/om/subject> ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty kgcl:change_description ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty kgcl:change_description ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom <http://w3id.org/kgcl/om/Node> ;
-            owl:onProperty <http://w3id.org/kgcl/om/predicate> ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
             owl:onProperty <http://w3id.org/kgcl/om/annotation_set> ],
         kgcl:EdgeChange ;
     skos:altLabel "relationship obsoletion" ;
@@ -1128,29 +1134,29 @@ kgcl:MultiNodeObsoletion a owl:Class ;
     rdfs:label "MultiNodeObsoletion" ;
     rdfs:seeAlso <https://github.com/cmungall/obo-scripts/blob/master/obo-obsoletify.pl> ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:minCardinality 0 ;
+            owl:maxCardinality 1 ;
             owl:onProperty kgcl:change_description ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty kgcl:change_set ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom kgcl:NodeObsoletion ;
-            owl:onProperty kgcl:change_set ],
+            owl:onProperty kgcl:associated_change_set ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty kgcl:associated_change_set ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom owl:Thing ;
-            owl:onProperty kgcl:associated_change_set ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty kgcl:associated_change_set ],
+            owl:onProperty kgcl:change_set ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
             owl:onProperty kgcl:change_description ],
         [ a owl:Restriction ;
+            owl:allValuesFrom kgcl:NodeObsoletion ;
+            owl:onProperty kgcl:change_set ],
+        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
+            owl:onProperty kgcl:associated_change_set ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
             owl:onProperty kgcl:change_description ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom owl:Thing ;
+            owl:onProperty kgcl:associated_change_set ],
         kgcl:ComplexChange ;
     skos:altLabel "multi class obsoletion",
         "multi concept obsoletion",
@@ -1163,6 +1169,15 @@ kgcl:NewLabel a owl:Class ;
     rdfs:label "NewLabel" ;
     rdfs:seeAlso <https://github.com/INCATools/kgcl/issues/100> ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kgcl:new_value ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kgcl:new_language ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kgcl:new_value ],
+        [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty kgcl:new_language ],
         [ a owl:Restriction ;
@@ -1173,22 +1188,13 @@ kgcl:NewLabel a owl:Class ;
             owl:onProperty kgcl:change_description ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
-            owl:onProperty kgcl:new_value ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty kgcl:new_value ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty kgcl:change_description ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty kgcl:new_language ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
             owl:onProperty kgcl:change_description ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty kgcl:new_value ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kgcl:change_description ],
         kgcl:NodeChange ;
     skos:altLabel "add label",
         "add name" ;
@@ -1198,11 +1204,17 @@ kgcl:NewLabel a owl:Class ;
 kgcl:NewTextDefinition a owl:Class ;
     rdfs:label "NewTextDefinition" ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kgcl:new_value ],
+        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty kgcl:new_value ],
         [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty kgcl:new_value ],
+            owl:minCardinality 0 ;
+            owl:onProperty kgcl:xrefs ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:anyURI ;
+            owl:onProperty kgcl:xrefs ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty kgcl:new_value ],
@@ -1213,58 +1225,58 @@ kgcl:NewTextDefinition a owl:Class ;
 kgcl:NodeRename a owl:Class ;
     rdfs:label "NodeRename" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty kgcl:change_description ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty kgcl:new_language ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty kgcl:new_value ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty kgcl:old_value ],
-        [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty kgcl:old_language ],
         [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kgcl:old_language ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kgcl:change_description ],
+        [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty kgcl:old_value ],
         [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
+            owl:maxCardinality 1 ;
             owl:onProperty kgcl:new_value ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
+            owl:minCardinality 0 ;
+            owl:onProperty kgcl:new_value ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
             owl:onProperty kgcl:has_textual_diff ],
         [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty kgcl:old_language ],
-        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty kgcl:new_language ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty kgcl:change_description ],
         [ a owl:Restriction ;
             owl:allValuesFrom kgcl:TextualDiff ;
             owl:onProperty kgcl:has_textual_diff ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
-            owl:onProperty kgcl:old_value ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty kgcl:old_language ],
+            owl:onProperty kgcl:new_language ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty kgcl:new_language ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
+            owl:allValuesFrom xsd:string ;
             owl:onProperty kgcl:new_value ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kgcl:change_description ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
             owl:onProperty kgcl:has_textual_diff ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kgcl:old_value ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kgcl:old_value ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kgcl:old_language ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
             owl:onProperty kgcl:change_description ],
         kgcl:NodeChange ;
     skos:definition "A node change where the name (aka rdfs:label) of the node changes" ;
@@ -1274,31 +1286,31 @@ kgcl:NodeUnobsoletion a owl:Class ;
     rdfs:label "NodeUnobsoletion" ;
     rdfs:seeAlso <http://wiki.geneontology.org/index.php/Restoring_an_Obsolete_Ontology_Term> ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom <http://w3id.org/kgcl/om/Node> ;
+            owl:onProperty kgcl:has_direct_replacement ],
+        [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
             owl:onProperty kgcl:change_description ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kgcl:has_direct_replacement ],
         [ a owl:Restriction ;
             owl:onProperty linkml:mixins ;
             owl:someValuesFrom kgcl:Unobsoletion ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
+            owl:onProperty kgcl:has_nondirect_replacement ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
             owl:onProperty kgcl:change_description ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty kgcl:has_nondirect_replacement ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty kgcl:has_direct_replacement ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom <http://w3id.org/kgcl/om/Node> ;
-            owl:onProperty kgcl:has_nondirect_replacement ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty kgcl:has_direct_replacement ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty kgcl:change_description ],
         [ a owl:Restriction ;
             owl:allValuesFrom <http://w3id.org/kgcl/om/Node> ;
+            owl:onProperty kgcl:has_nondirect_replacement ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
             owl:onProperty kgcl:has_direct_replacement ],
         kgcl:NodeChange ;
     skos:altLabel "class unobsoletion",
@@ -1322,10 +1334,10 @@ kgcl:PredicateChange a owl:Class ;
             owl:allValuesFrom xsd:string ;
             owl:onProperty kgcl:change_description ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
+            owl:minCardinality 0 ;
             owl:onProperty kgcl:change_description ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
+            owl:maxCardinality 1 ;
             owl:onProperty kgcl:change_description ],
         kgcl:EdgeChange ;
     skos:definition "An edge change where the predicate (relationship type) is modified." ;
@@ -1334,35 +1346,35 @@ kgcl:PredicateChange a owl:Class ;
 kgcl:RemoveNodeFromSubset a owl:Class ;
     rdfs:label "RemoveNodeFromSubset" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty kgcl:in_subset ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty kgcl:change_description ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom owl:Thing ;
-            owl:onProperty kgcl:in_subset ],
-        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty kgcl:in_subset ],
+            owl:onProperty kgcl:about_node ],
         [ a owl:Restriction ;
             owl:onProperty linkml:mixins ;
             owl:someValuesFrom kgcl:RemoveFromSubset ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty kgcl:about_node ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty kgcl:about_node ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
             owl:onProperty kgcl:change_description ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty kgcl:change_description ],
+            owl:onProperty kgcl:in_subset ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom owl:Thing ;
+            owl:onProperty kgcl:in_subset ],
         [ a owl:Restriction ;
             owl:allValuesFrom owl:Thing ;
             owl:onProperty kgcl:about_node ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kgcl:in_subset ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kgcl:about_node ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kgcl:change_description ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kgcl:change_description ],
         kgcl:NodeChange ;
     skos:altLabel "remove term from slim" ;
     skos:definition "Removes a node from a subset, by removing an annotation" ;
@@ -1371,10 +1383,10 @@ kgcl:RemoveNodeFromSubset a owl:Class ;
 kgcl:RemoveTextDefinition a owl:Class ;
     rdfs:label "RemoveTextDefinition" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
+            owl:minCardinality 0 ;
             owl:onProperty kgcl:old_value ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
+            owl:allValuesFrom xsd:string ;
             owl:onProperty kgcl:old_value ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
@@ -1387,10 +1399,25 @@ kgcl:SetLanguageForName a owl:Class ;
     rdfs:label "SetLanguageForName" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty kgcl:change_description ],
+            owl:onProperty kgcl:new_value ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kgcl:new_value ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kgcl:old_value ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kgcl:old_value ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty kgcl:old_value ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kgcl:change_description ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kgcl:change_description ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty kgcl:new_value ],
@@ -1399,22 +1426,7 @@ kgcl:SetLanguageForName a owl:Class ;
             owl:someValuesFrom kgcl:LanguageTagChange ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty kgcl:old_value ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
             owl:onProperty kgcl:change_description ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty kgcl:new_value ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty kgcl:new_value ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty kgcl:change_description ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty kgcl:old_value ],
         kgcl:NodeChange ;
     skos:definition "A node change where the string value for the name is unchanged but the language tag is set" ;
     skos:inScheme <https://w3id.org/kgcl> .
@@ -1440,29 +1452,29 @@ kgcl:TextDefinitionReplacement a owl:Class ;
             owl:minCardinality 0 ;
             owl:onProperty kgcl:has_textual_diff ],
         [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty kgcl:old_value ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty kgcl:new_value ],
-        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty kgcl:has_textual_diff ],
+            owl:onProperty kgcl:old_value ],
         [ a owl:Restriction ;
             owl:allValuesFrom kgcl:TextualDiff ;
             owl:onProperty kgcl:has_textual_diff ],
         [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kgcl:has_textual_diff ],
+        [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty kgcl:new_value ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
+            owl:allValuesFrom xsd:string ;
             owl:onProperty kgcl:new_value ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kgcl:old_value ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty kgcl:old_value ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty kgcl:old_value ],
+            owl:onProperty kgcl:new_value ],
         kgcl:NodeTextDefinitionChange ;
     skos:definition "A node change where a text definition is modified" ;
     skos:inScheme <https://w3id.org/kgcl> .
@@ -1470,10 +1482,10 @@ kgcl:TextDefinitionReplacement a owl:Class ;
 kgcl:Transaction a owl:Class ;
     rdfs:label "Transaction" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom kgcl:Change ;
+            owl:minCardinality 0 ;
             owl:onProperty kgcl:change_set ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
+            owl:allValuesFrom kgcl:Change ;
             owl:onProperty kgcl:change_set ],
         kgcl:Change ;
     skos:definition "A change that is a composition of a set of changes, where those changes are treated as a single unit. Could be a single change, or the results of an ontology diff" ;
@@ -1710,80 +1722,80 @@ kgcl:Deletion a owl:Class ;
 kgcl:EdgeDeletion a owl:Class ;
     rdfs:label "EdgeDeletion" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty kgcl:subject_type ],
-        [ a owl:Restriction ;
-            owl:onProperty linkml:mixins ;
-            owl:someValuesFrom kgcl:Deletion ],
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kgcl:change_description ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty <http://w3id.org/kgcl/om/annotation_set> ],
+            owl:onProperty kgcl:object_type ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty kgcl:change_description ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty kgcl:subject_type ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
             owl:onProperty <http://w3id.org/kgcl/om/object> ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <http://w3id.org/kgcl/om/predicate> ],
+            owl:minCardinality 0 ;
+            owl:onProperty <http://w3id.org/kgcl/om/subject> ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty <http://w3id.org/kgcl/om/subject> ],
+            owl:onProperty <http://w3id.org/kgcl/om/annotation_set> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kgcl:predicate_type ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kgcl:predicate_type ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty <http://w3id.org/kgcl/om/annotation_set> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom <http://w3id.org/kgcl/om/Node> ;
+            owl:onProperty <http://w3id.org/kgcl/om/object> ],
         [ a owl:Restriction ;
             owl:allValuesFrom <http://w3id.org/kgcl/om/Annotation> ;
             owl:onProperty <http://w3id.org/kgcl/om/annotation_set> ],
         [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty kgcl:predicate_type ],
+            owl:allValuesFrom <http://w3id.org/kgcl/om/Node> ;
+            owl:onProperty <http://w3id.org/kgcl/om/predicate> ],
         [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty kgcl:change_description ],
+            owl:minCardinality 0 ;
+            owl:onProperty <http://w3id.org/kgcl/om/predicate> ],
+        [ a owl:Restriction ;
+            owl:onProperty linkml:mixins ;
+            owl:someValuesFrom kgcl:Deletion ],
         [ a owl:Restriction ;
             owl:allValuesFrom <http://w3id.org/kgcl/om/Node> ;
             owl:onProperty <http://w3id.org/kgcl/om/subject> ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty <http://w3id.org/kgcl/om/object> ],
+            owl:onProperty <http://w3id.org/kgcl/om/subject> ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty kgcl:predicate_type ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <http://w3id.org/kgcl/om/predicate> ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty kgcl:predicate_type ],
+            owl:onProperty kgcl:subject_type ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty kgcl:object_type ],
         [ a owl:Restriction ;
-            owl:allValuesFrom <http://w3id.org/kgcl/om/Node> ;
+            owl:maxCardinality 1 ;
             owl:onProperty <http://w3id.org/kgcl/om/object> ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
             owl:onProperty kgcl:subject_type ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <http://w3id.org/kgcl/om/subject> ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty kgcl:change_description ],
-        [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
             owl:onProperty kgcl:object_type ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty kgcl:object_type ],
+            owl:onProperty kgcl:change_description ],
         [ a owl:Restriction ;
-            owl:allValuesFrom <http://w3id.org/kgcl/om/Node> ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kgcl:subject_type ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
             owl:onProperty <http://w3id.org/kgcl/om/predicate> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kgcl:predicate_type ],
         kgcl:EdgeChange ;
     skos:altLabel "relationship deletion" ;
     skos:definition "An edge change in which an edge is removed. All edge annotations/properies are removed in the same action." ;
@@ -1795,19 +1807,19 @@ kgcl:NodeAnnotationChange a owl:Class ;
             owl:maxCardinality 1 ;
             owl:onProperty kgcl:annotation_property_type ],
         [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty kgcl:annotation_property ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty kgcl:annotation_property_type ],
-        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty kgcl:annotation_property ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty kgcl:annotation_property ],
         [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kgcl:annotation_property ],
+        [ a owl:Restriction ;
             owl:minCardinality 0 ;
+            owl:onProperty kgcl:annotation_property_type ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
             owl:onProperty kgcl:annotation_property_type ],
         kgcl:NodeChange ;
     skos:definition "A node change where the change alters node properties/annotations. TODO" ;
@@ -1816,6 +1828,12 @@ kgcl:NodeAnnotationChange a owl:Class ;
 kgcl:target a owl:DatatypeProperty ;
     rdfs:label "target" ;
     skos:definition "The secondary entity on which the change operates" ;
+    skos:inScheme <https://w3id.org/kgcl> .
+
+kgcl:xrefs a owl:DatatypeProperty ;
+    rdfs:label "xrefs" ;
+    rdfs:range xsd:anyURI ;
+    skos:definition "Cross-references that support a definition or synonym, such as the publication or database record it comes from (for example PMID:12869615). They are attached to the definition or synonym itself, as in the OBO format def: \"...\" [PMID:12869615], not to the node. For cross-references on the node itself (mappings), see NewMapping." ;
     skos:inScheme <https://w3id.org/kgcl> .
 
 kgcl:ChangeLanguageElement a owl:Class ;
@@ -1829,80 +1847,80 @@ kgcl:EdgeCreation a owl:Class ;
     rdfs:label "EdgeCreation" ;
     rdfs:seeAlso <http://wiki.geneontology.org/index.php/Guidelines_for_creating_relationships_between_terms> ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty kgcl:subject_type ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom <http://w3id.org/kgcl/om/Node> ;
+            owl:maxCardinality 1 ;
             owl:onProperty <http://w3id.org/kgcl/om/predicate> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kgcl:object_type ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kgcl:change_description ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <http://w3id.org/kgcl/om/predicate> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <http://w3id.org/kgcl/om/annotation_set> ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty <http://w3id.org/kgcl/om/object> ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
+            owl:minCardinality 0 ;
             owl:onProperty kgcl:predicate_type ],
         [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
+            owl:maxCardinality 1 ;
             owl:onProperty kgcl:subject_type ],
-        [ a owl:Restriction ;
-            owl:onProperty linkml:mixins ;
-            owl:someValuesFrom kgcl:Creation ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty kgcl:object_type ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty kgcl:change_description ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom <http://w3id.org/kgcl/om/Node> ;
-            owl:onProperty <http://w3id.org/kgcl/om/subject> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty kgcl:change_description ],
         [ a owl:Restriction ;
             owl:allValuesFrom <http://w3id.org/kgcl/om/Node> ;
             owl:onProperty <http://w3id.org/kgcl/om/object> ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <http://w3id.org/kgcl/om/annotation_set> ],
+            owl:minCardinality 0 ;
+            owl:onProperty <http://w3id.org/kgcl/om/subject> ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty kgcl:change_description ],
+            owl:allValuesFrom <http://w3id.org/kgcl/om/Node> ;
+            owl:onProperty <http://w3id.org/kgcl/om/predicate> ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
+            owl:minCardinality 0 ;
             owl:onProperty kgcl:object_type ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <http://w3id.org/kgcl/om/predicate> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <http://w3id.org/kgcl/om/annotation_set> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <http://w3id.org/kgcl/om/predicate> ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
+            owl:allValuesFrom xsd:string ;
             owl:onProperty kgcl:subject_type ],
         [ a owl:Restriction ;
             owl:allValuesFrom <http://w3id.org/kgcl/om/Annotation> ;
             owl:onProperty <http://w3id.org/kgcl/om/annotation_set> ],
         [ a owl:Restriction ;
+            owl:onProperty linkml:mixins ;
+            owl:someValuesFrom kgcl:Creation ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <http://w3id.org/kgcl/om/subject> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <http://w3id.org/kgcl/om/annotation_set> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kgcl:subject_type ],
+        [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
             owl:onProperty kgcl:predicate_type ],
         [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty kgcl:object_type ],
+            owl:maxCardinality 1 ;
+            owl:onProperty kgcl:change_description ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
+            owl:allValuesFrom <http://w3id.org/kgcl/om/Node> ;
+            owl:onProperty <http://w3id.org/kgcl/om/subject> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
             owl:onProperty kgcl:predicate_type ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty <http://w3id.org/kgcl/om/object> ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <http://w3id.org/kgcl/om/subject> ],
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kgcl:change_description ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty <http://w3id.org/kgcl/om/subject> ],
+            owl:onProperty kgcl:object_type ],
         kgcl:EdgeChange ;
     skos:altLabel "relationship creation" ;
     skos:definition "An edge change in which a de-novo edge is created. The edge is potentially annotated in the same action." ;
@@ -1912,62 +1930,62 @@ kgcl:NodeCreation a owl:Class ;
     rdfs:label "NodeCreation" ;
     rdfs:seeAlso <http://wiki.geneontology.org/index.php/Guidelines_for_creating_a_GO_term> ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom <http://w3id.org/kgcl/om/Node> ;
-            owl:onProperty kgcl:node_id ],
+            owl:allValuesFrom xml1:lang ;
+            owl:onProperty kgcl:language ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty <http://w3id.org/kgcl/om/name> ],
         [ a owl:Restriction ;
             owl:onProperty linkml:mixins ;
             owl:someValuesFrom kgcl:Creation ],
         [ a owl:Restriction ;
-            owl:allValuesFrom xml1:lang ;
-            owl:onProperty kgcl:language ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <http://w3id.org/kgcl/om/owl_type> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty kgcl:change_description ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <http://w3id.org/kgcl/om/name> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty <http://w3id.org/kgcl/om/name> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty kgcl:change_description ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty kgcl:language ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty kgcl:node_id ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty kgcl:change_description ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom kgcl:OwlTypeEnum ;
-            owl:onProperty <http://w3id.org/kgcl/om/owl_type> ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <http://w3id.org/kgcl/om/name> ],
-        [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty <http://w3id.org/kgcl/om/annotation_set> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kgcl:language ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kgcl:language ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <http://w3id.org/kgcl/om/name> ],
         [ a owl:Restriction ;
             owl:allValuesFrom <http://w3id.org/kgcl/om/Annotation> ;
             owl:onProperty <http://w3id.org/kgcl/om/annotation_set> ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
+            owl:onProperty <http://w3id.org/kgcl/om/annotation_set> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
             owl:onProperty kgcl:node_id ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty kgcl:language ],
+            owl:onProperty <http://w3id.org/kgcl/om/name> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kgcl:change_description ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kgcl:change_description ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kgcl:change_description ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty <http://w3id.org/kgcl/om/owl_type> ],
         [ a owl:Restriction ;
+            owl:allValuesFrom <http://w3id.org/kgcl/om/Node> ;
+            owl:onProperty kgcl:node_id ],
+        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty <http://w3id.org/kgcl/om/annotation_set> ],
+            owl:onProperty <http://w3id.org/kgcl/om/owl_type> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom kgcl:OwlTypeEnum ;
+            owl:onProperty <http://w3id.org/kgcl/om/owl_type> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kgcl:node_id ],
         kgcl:NodeChange ;
     skos:definition "a node change in which a new node is created" ;
     skos:inScheme <https://w3id.org/kgcl> .
@@ -1975,16 +1993,16 @@ kgcl:NodeCreation a owl:Class ;
 kgcl:NodeDeletion a owl:Class ;
     rdfs:label "NodeDeletion" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty kgcl:change_description ],
-        [ a owl:Restriction ;
             owl:onProperty linkml:mixins ;
             owl:someValuesFrom kgcl:Deletion ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kgcl:change_description ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
             owl:onProperty kgcl:change_description ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
+            owl:maxCardinality 1 ;
             owl:onProperty kgcl:change_description ],
         kgcl:NodeChange ;
     skos:definition "Deletion of a node from the graph. Note that it is recommended nodes are obsoleted and never merged, but this operation exists to represent deletions in ontologies, accidental or otherwise" ;
@@ -1999,26 +2017,26 @@ kgcl:NodeMove a owl:Class ;
             owl:allValuesFrom xsd:string ;
             owl:onProperty kgcl:old_object_type ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
+            owl:maxCardinality 1 ;
             owl:onProperty kgcl:change_description ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kgcl:new_object_type ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
-            owl:onProperty kgcl:change_description ],
+            owl:onProperty kgcl:new_object_type ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
+            owl:allValuesFrom xsd:string ;
             owl:onProperty kgcl:change_description ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty kgcl:old_object_type ],
         [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
+            owl:maxCardinality 1 ;
             owl:onProperty kgcl:new_object_type ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty kgcl:new_object_type ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty kgcl:new_object_type ],
+            owl:onProperty kgcl:change_description ],
         kgcl:EdgeChange ;
     skos:definition "A node move is a combination of deleting a parent edge and adding a parent edge, where the predicate is preserved and the object/parent node changes" ;
     skos:inScheme <https://w3id.org/kgcl> .
@@ -2054,68 +2072,50 @@ kgcl:SimpleChange a owl:Class ;
     rdfs:label "SimpleChange" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
-            owl:onProperty kgcl:new_value ],
+            owl:onProperty kgcl:old_datatype ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
-            owl:onProperty kgcl:old_language ],
+            owl:onProperty kgcl:new_datatype ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kgcl:new_value_type ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kgcl:new_datatype ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty kgcl:new_value ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kgcl:old_value ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty kgcl:new_datatype ],
         [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty kgcl:old_value_type ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty kgcl:new_language ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
+            owl:maxCardinality 1 ;
             owl:onProperty kgcl:new_language ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
-            owl:onProperty kgcl:old_datatype ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
             owl:onProperty kgcl:old_value ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty kgcl:old_value_type ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty kgcl:old_language ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty kgcl:old_value ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty kgcl:new_value_type ],
         [ owl:unionOf ( kgcl:EdgeChange kgcl:LogicalAxiomChange kgcl:NodeChange ) ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty kgcl:new_value_type ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty kgcl:new_datatype ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty kgcl:old_value ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty kgcl:new_datatype ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty kgcl:new_value_type ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty kgcl:new_language ],
+            owl:onProperty kgcl:old_language ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty kgcl:new_value ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty kgcl:old_datatype ],
+            owl:onProperty kgcl:old_value ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kgcl:new_value_type ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kgcl:old_value_type ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kgcl:new_value ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty kgcl:old_datatype ],
@@ -2124,6 +2124,24 @@ kgcl:SimpleChange a owl:Class ;
             owl:onProperty kgcl:old_language ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
+            owl:onProperty kgcl:new_language ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kgcl:new_value_type ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kgcl:old_datatype ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kgcl:old_value_type ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kgcl:new_language ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kgcl:old_language ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
             owl:onProperty kgcl:old_value_type ],
         kgcl:Change ;
     skos:altLabel "atomic change" ;
@@ -2220,31 +2238,31 @@ xml1:lang a rdfs:Datatype .
 prov:Agent a owl:Class ;
     rdfs:label "Agent" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty prov:acted_on_behalf_of ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom prov:Activity ;
-            owl:onProperty prov:was_informed_by ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://w3id.org/kgcl/basics/id> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty <https://w3id.org/kgcl/basics/id> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty <https://w3id.org/kgcl/basics/id> ],
-        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty prov:acted_on_behalf_of ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
+            owl:maxCardinality 1 ;
             owl:onProperty prov:was_informed_by ],
         [ a owl:Restriction ;
             owl:allValuesFrom prov:Agent ;
             owl:onProperty prov:acted_on_behalf_of ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
+            owl:onProperty <https://w3id.org/kgcl/basics/id> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty prov:was_informed_by ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty prov:acted_on_behalf_of ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty <https://w3id.org/kgcl/basics/id> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty <https://w3id.org/kgcl/basics/id> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom prov:Activity ;
             owl:onProperty prov:was_informed_by ],
         prov:ProvElement ;
     skos:definition "a provence-generating agent" ;
@@ -2258,30 +2276,6 @@ kgcl:NodeObsoletion a owl:Class ;
             owl:minCardinality 0 ;
             owl:onProperty kgcl:associated_change_set ],
         [ a owl:Restriction ;
-            owl:allValuesFrom owl:Thing ;
-            owl:onProperty kgcl:associated_change_set ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty kgcl:change_description ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty kgcl:has_nondirect_replacement ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom <http://w3id.org/kgcl/om/Node> ;
-            owl:onProperty kgcl:has_direct_replacement ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty kgcl:has_direct_replacement ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty kgcl:has_direct_replacement ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom <http://w3id.org/kgcl/om/Node> ;
-            owl:onProperty kgcl:has_nondirect_replacement ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty kgcl:change_description ],
-        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty kgcl:change_description ],
         [ a owl:Restriction ;
@@ -2290,6 +2284,30 @@ kgcl:NodeObsoletion a owl:Class ;
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty kgcl:associated_change_set ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kgcl:has_nondirect_replacement ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kgcl:has_direct_replacement ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom <http://w3id.org/kgcl/om/Node> ;
+            owl:onProperty kgcl:has_nondirect_replacement ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom <http://w3id.org/kgcl/om/Node> ;
+            owl:onProperty kgcl:has_direct_replacement ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kgcl:change_description ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kgcl:has_direct_replacement ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom owl:Thing ;
+            owl:onProperty kgcl:associated_change_set ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kgcl:change_description ],
         kgcl:NodeChange ;
     skos:altLabel "class obsoletion",
         "concept obsoletion",
@@ -2340,50 +2358,50 @@ kgcl:object_type a owl:DatatypeProperty ;
 <http://w3id.org/kgcl/om/Annotation> a owl:Class ;
     rdfs:label "Annotation" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <http://w3id.org/kgcl/om/property> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty <http://w3id.org/kgcl/om/property_type> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <http://w3id.org/kgcl/om/filler_type> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty <http://w3id.org/kgcl/om/filler_type> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <http://w3id.org/kgcl/om/annotation_set> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <http://w3id.org/kgcl/om/property_type> ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <http://w3id.org/kgcl/om/property_type> ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <http://w3id.org/kgcl/om/filler> ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <http://w3id.org/kgcl/om/property> ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <http://w3id.org/kgcl/om/filler_type> ],
-        [ a owl:Restriction ;
             owl:allValuesFrom <http://w3id.org/kgcl/om/Annotation> ;
             owl:onProperty <http://w3id.org/kgcl/om/annotation_set> ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
+            owl:maxCardinality 1 ;
             owl:onProperty <http://w3id.org/kgcl/om/filler> ],
         [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty <http://w3id.org/kgcl/om/filler_type> ],
+        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty <http://w3id.org/kgcl/om/annotation_set> ],
+            owl:onProperty <http://w3id.org/kgcl/om/property> ],
         [ a owl:Restriction ;
             owl:allValuesFrom <http://w3id.org/kgcl/om/Node> ;
             owl:onProperty <http://w3id.org/kgcl/om/property> ],
         [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <http://w3id.org/kgcl/om/property_type> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <http://w3id.org/kgcl/om/property_type> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty <http://w3id.org/kgcl/om/property_type> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <http://w3id.org/kgcl/om/annotation_set> ],
+        [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
             owl:onProperty <http://w3id.org/kgcl/om/filler> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <http://w3id.org/kgcl/om/annotation_set> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <http://w3id.org/kgcl/om/filler_type> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <http://w3id.org/kgcl/om/filler> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <http://w3id.org/kgcl/om/property> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <http://w3id.org/kgcl/om/filler_type> ],
         <http://w3id.org/kgcl/om/PropertyValue> ;
     skos:definition "owl annotations. Not to be confused with annotations sensu GO" ;
     skos:inScheme <https://w3id.org/kgcl/ontology> ;
@@ -2395,39 +2413,39 @@ kgcl:EdgeChange a owl:Class ;
             owl:allValuesFrom <http://w3id.org/kgcl/om/Edge> ;
             owl:onProperty kgcl:about_edge ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty kgcl:datatype ],
-        [ owl:unionOf ( kgcl:EdgeCreation kgcl:EdgeDeletion kgcl:EdgeLogicalInterpretationChange kgcl:EdgeObsoletion kgcl:EdgeRewiring kgcl:NodeMove kgcl:PredicateChange ) ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty kgcl:object_type ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty kgcl:datatype ],
-        [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
             owl:onProperty kgcl:object_type ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty kgcl:about_edge ],
+            owl:onProperty kgcl:datatype ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kgcl:datatype ],
         [ a owl:Restriction ;
             owl:allValuesFrom xml1:lang ;
             owl:onProperty kgcl:language ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
+            owl:maxCardinality 1 ;
             owl:onProperty kgcl:about_edge ],
+        [ owl:unionOf ( kgcl:EdgeCreation kgcl:EdgeDeletion kgcl:EdgeLogicalInterpretationChange kgcl:EdgeObsoletion kgcl:EdgeRewiring kgcl:NodeMove kgcl:PredicateChange ) ],
         [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
+            owl:minCardinality 0 ;
+            owl:onProperty kgcl:language ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kgcl:language ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
             owl:onProperty kgcl:datatype ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty kgcl:language ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty kgcl:language ],
+            owl:onProperty kgcl:object_type ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty kgcl:object_type ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kgcl:about_edge ],
         kgcl:SimpleChange ;
     skos:altLabel "axiom change",
         "triple change" ;
@@ -2437,22 +2455,49 @@ kgcl:EdgeChange a owl:Class ;
 prov:Activity a owl:Class ;
     rdfs:label "Activity" ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <https://w3id.org/kgcl/basics/id> ],
+        [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty <https://w3id.org/kgcl/basics/description> ],
+            owl:onProperty prov:started_at_time ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
+            owl:onProperty <https://w3id.org/kgcl/basics/description> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
             owl:onProperty <https://w3id.org/kgcl/basics/description> ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
             owl:onProperty <https://w3id.org/kgcl/basics/id> ],
         [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty <https://w3id.org/kgcl/basics/description> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty prov:was_informed_by ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty prov:used ],
+        [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
             owl:onProperty prov:used ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:dateTime ;
+            owl:onProperty prov:ended_at_time ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty <https://w3id.org/kgcl/basics/id> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty prov:was_informed_by ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty prov:was_associated_with ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
             owl:onProperty prov:started_at_time ],
         [ a owl:Restriction ;
-            owl:allValuesFrom prov:Agent ;
+            owl:maxCardinality 1 ;
             owl:onProperty prov:was_associated_with ],
         [ a owl:Restriction ;
             owl:allValuesFrom prov:Activity ;
@@ -2461,44 +2506,17 @@ prov:Activity a owl:Class ;
             owl:maxCardinality 1 ;
             owl:onProperty prov:ended_at_time ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty prov:ended_at_time ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty prov:started_at_time ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty prov:was_associated_with ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty prov:was_associated_with ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty prov:was_informed_by ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://w3id.org/kgcl/basics/id> ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty prov:was_informed_by ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty prov:used ],
-        [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty <https://w3id.org/kgcl/basics/id> ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty prov:used ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty prov:started_at_time ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <https://w3id.org/kgcl/basics/description> ],
-        [ a owl:Restriction ;
             owl:allValuesFrom xsd:dateTime ;
+            owl:onProperty prov:started_at_time ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom prov:Agent ;
+            owl:onProperty prov:was_associated_with ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
             owl:onProperty prov:ended_at_time ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty prov:used ],
         prov:ProvElement ;
     skos:definition "a provence-generating activity" ;
     skos:inScheme <https://w3id.org/kgcl/prov> ;
@@ -2541,113 +2559,113 @@ kgcl:Change a owl:Class ;
     rdfs:label "Change" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty kgcl:see_also ],
-        [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty <https://w3id.org/kgcl/basics/id> ],
+            owl:onProperty kgcl:pull_request ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty kgcl:change_description ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty kgcl:term_tracker_issue ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom owl:Thing ;
-            owl:onProperty kgcl:associated_change_set ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty kgcl:creator ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty kgcl:contributor ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty kgcl:see_also ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty kgcl:has_undo ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty kgcl:change_date ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:dateTime ;
-            owl:onProperty kgcl:change_date ],
         [ a owl:Restriction ;
             owl:allValuesFrom prov:Activity ;
             owl:onProperty prov:was_generated_by ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty kgcl:creator ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty kgcl:term_tracker_issue ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty kgcl:see_also ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty kgcl:has_undo ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom kgcl:Change ;
-            owl:onProperty kgcl:has_undo ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty prov:was_generated_by ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty kgcl:type ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty kgcl:contributor ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty kgcl:type ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty kgcl:change_description ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty kgcl:associated_change_set ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty kgcl:contributor ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty kgcl:term_tracker_issue ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty kgcl:creator ],
-        [ owl:unionOf ( kgcl:ComplexChange kgcl:SimpleChange kgcl:Transaction ) ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty kgcl:pull_request ],
+            owl:onProperty kgcl:change_date ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty <https://w3id.org/kgcl/basics/id> ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty kgcl:pull_request ],
+            owl:minCardinality 0 ;
+            owl:onProperty kgcl:contributor ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty kgcl:associated_change_set ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
+            owl:allValuesFrom xsd:string ;
             owl:onProperty kgcl:type ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kgcl:pull_request ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kgcl:associated_change_set ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom owl:Thing ;
+            owl:onProperty kgcl:associated_change_set ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:dateTime ;
+            owl:onProperty kgcl:change_date ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty prov:was_generated_by ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kgcl:creator ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom kgcl:Change ;
+            owl:onProperty kgcl:has_undo ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kgcl:has_undo ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kgcl:change_description ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty <https://w3id.org/kgcl/basics/id> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kgcl:term_tracker_issue ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kgcl:see_also ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kgcl:term_tracker_issue ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kgcl:change_description ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kgcl:creator ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kgcl:creator ],
+        [ owl:unionOf ( kgcl:ComplexChange kgcl:SimpleChange kgcl:Transaction ) ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kgcl:term_tracker_issue ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty kgcl:change_date ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty kgcl:change_description ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty prov:was_generated_by ],
+            owl:onProperty kgcl:see_also ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
             owl:onProperty <https://w3id.org/kgcl/basics/id> ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
+            owl:onProperty kgcl:type ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kgcl:contributor ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kgcl:type ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty prov:was_generated_by ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kgcl:has_undo ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
             owl:onProperty kgcl:pull_request ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kgcl:contributor ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kgcl:see_also ],
         kgcl:ChangeLanguageElement ;
     skos:definition "Any change perform on an ontology or knowledge graph" ;
     skos:inScheme <https://w3id.org/kgcl> .
@@ -2660,33 +2678,33 @@ kgcl:Change a owl:Class ;
 kgcl:NodeChange a owl:Class ;
     rdfs:label "NodeChange" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty kgcl:about_node_representation ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty kgcl:language ],
-        [ a owl:Restriction ;
             owl:allValuesFrom xml1:lang ;
             owl:onProperty kgcl:language ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
+            owl:onProperty kgcl:about_node_representation ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kgcl:language ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kgcl:about_node_representation ],
+        [ owl:unionOf ( kgcl:AddNodeToSubset kgcl:NewLabel kgcl:NodeAnnotationChange kgcl:NodeCreation kgcl:NodeDeletion kgcl:NodeMappingChange kgcl:NodeMetadataAssertionChange kgcl:NodeObsoletion kgcl:NodeRename kgcl:NodeSynonymChange kgcl:NodeTextDefinitionChange kgcl:NodeUnobsoletion kgcl:RemoveNodeFromSubset kgcl:SetLanguageForName ) ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
             owl:onProperty kgcl:language ],
         [ a owl:Restriction ;
             owl:allValuesFrom <http://w3id.org/kgcl/om/Node> ;
             owl:onProperty kgcl:about_node ],
         [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kgcl:about_node ],
+        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty kgcl:about_node ],
-        [ owl:unionOf ( kgcl:AddNodeToSubset kgcl:NewLabel kgcl:NodeAnnotationChange kgcl:NodeCreation kgcl:NodeDeletion kgcl:NodeMappingChange kgcl:NodeMetadataAssertionChange kgcl:NodeObsoletion kgcl:NodeRename kgcl:NodeSynonymChange kgcl:NodeTextDefinitionChange kgcl:NodeUnobsoletion kgcl:RemoveNodeFromSubset kgcl:SetLanguageForName ) ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty kgcl:about_node_representation ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty kgcl:about_node_representation ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty kgcl:about_node ],
         kgcl:SimpleChange ;
     skos:definition "A simple change where the change is about a node" ;
     skos:inScheme <https://w3id.org/kgcl> .
@@ -2727,22 +2745,13 @@ kgcl:new_value a owl:DatatypeProperty ;
     rdfs:label "Node" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty <https://w3id.org/kgcl/basics/id> ],
+            owl:onProperty <http://w3id.org/kgcl/om/owl_type> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom <http://w3id.org/kgcl/om/Annotation> ;
+            owl:onProperty <http://w3id.org/kgcl/om/annotation_set> ],
         [ a owl:Restriction ;
             owl:allValuesFrom kgcl:OwlTypeEnum ;
             owl:onProperty <http://w3id.org/kgcl/om/owl_type> ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <http://w3id.org/kgcl/om/name> ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty <http://w3id.org/kgcl/om/owl_type> ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <http://w3id.org/kgcl/om/annotation_set> ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty <http://w3id.org/kgcl/om/name> ],
         [ a owl:Restriction ;
             owl:minCardinality 1 ;
             owl:onProperty <https://w3id.org/kgcl/basics/id> ],
@@ -2751,16 +2760,25 @@ kgcl:new_value a owl:DatatypeProperty ;
             owl:onProperty <http://w3id.org/kgcl/om/name> ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
+            owl:onProperty <https://w3id.org/kgcl/basics/id> ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
             owl:onProperty <http://w3id.org/kgcl/om/annotation_set> ],
         [ a owl:Restriction ;
-            owl:allValuesFrom <http://w3id.org/kgcl/om/Annotation> ;
-            owl:onProperty <http://w3id.org/kgcl/om/annotation_set> ],
+            owl:minCardinality 0 ;
+            owl:onProperty <http://w3id.org/kgcl/om/owl_type> ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:string ;
             owl:onProperty <https://w3id.org/kgcl/basics/id> ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty <http://w3id.org/kgcl/om/owl_type> ],
+            owl:maxCardinality 1 ;
+            owl:onProperty <http://w3id.org/kgcl/om/name> ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty <http://w3id.org/kgcl/om/name> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty <http://w3id.org/kgcl/om/annotation_set> ],
         <http://w3id.org/kgcl/om/OntologyElement> ;
     skos:altLabel "entity",
         "term" ;
@@ -2788,39 +2806,19 @@ kgcl:change_description a owl:DatatypeProperty ;
 * [GitHub](https://github.com/cmungall/knowledge-graph-change-language)""" .
 
 [] a owl:Restriction ;
-    rdfs:subClassOf kgcl:SynonymPredicateChange ;
+    rdfs:subClassOf kgcl:NodeMetadataAssertionChange ;
     owl:onProperty kgcl:type ;
-    owl:someValuesFrom kgcl:SynonymPredicateChange .
+    owl:someValuesFrom kgcl:NodeMetadataAssertionChange .
 
 [] a owl:Restriction ;
-    rdfs:subClassOf kgcl:EdgeObsoletion ;
+    rdfs:subClassOf kgcl:MappingCreation ;
     owl:onProperty kgcl:type ;
-    owl:someValuesFrom kgcl:EdgeObsoletion .
+    owl:someValuesFrom kgcl:MappingCreation .
 
 [] a owl:Restriction ;
-    rdfs:subClassOf kgcl:EdgeDeletion ;
+    rdfs:subClassOf kgcl:NewTextDefinition ;
     owl:onProperty kgcl:type ;
-    owl:someValuesFrom kgcl:EdgeDeletion .
-
-[] a owl:Restriction ;
-    rdfs:subClassOf kgcl:RemoveNodeFromSubset ;
-    owl:onProperty kgcl:type ;
-    owl:someValuesFrom kgcl:RemoveNodeFromSubset .
-
-[] a owl:Restriction ;
-    rdfs:subClassOf kgcl:MappingReplacement ;
-    owl:onProperty kgcl:type ;
-    owl:someValuesFrom kgcl:MappingReplacement .
-
-[] a owl:Restriction ;
-    rdfs:subClassOf kgcl:SetLanguageForName ;
-    owl:onProperty kgcl:type ;
-    owl:someValuesFrom kgcl:SetLanguageForName .
-
-[] a owl:Restriction ;
-    rdfs:subClassOf kgcl:ClassDeletion ;
-    owl:onProperty kgcl:type ;
-    owl:someValuesFrom kgcl:ClassDeletion .
+    owl:someValuesFrom kgcl:NewTextDefinition .
 
 [] a owl:Restriction ;
     rdfs:subClassOf kgcl:NodeUnobsoletion ;
@@ -2828,18 +2826,139 @@ kgcl:change_description a owl:DatatypeProperty ;
     owl:someValuesFrom kgcl:NodeUnobsoletion .
 
 [] a owl:Restriction ;
-    rdfs:subClassOf kgcl:ClassCreation ;
+    rdfs:subClassOf kgcl:ObjectPropertyDeletion ;
     owl:onProperty kgcl:type ;
-    owl:someValuesFrom kgcl:ClassCreation .
+    owl:someValuesFrom kgcl:ObjectPropertyDeletion .
 
 [] a owl:Restriction ;
-    rdfs:subClassOf kgcl:ComplexChange ;
+    owl:onProperty linkml:mixins ;
+    owl:someValuesFrom kgcl:DatatypeOrLanguageTagChange .
+
+[] a owl:Restriction ;
+    rdfs:subClassOf kgcl:NodeObsoletionWithDirectReplacement ;
     owl:onProperty kgcl:type ;
-    owl:someValuesFrom kgcl:ComplexChange .
+    owl:someValuesFrom kgcl:NodeObsoletionWithDirectReplacement .
+
+[] a owl:Restriction ;
+    rdfs:subClassOf kgcl:SimpleChange ;
+    owl:onProperty kgcl:type ;
+    owl:someValuesFrom kgcl:SimpleChange .
+
+[] a owl:Restriction ;
+    rdfs:subClassOf kgcl:EdgeObsoletion ;
+    owl:onProperty kgcl:type ;
+    owl:someValuesFrom kgcl:EdgeObsoletion .
+
+[] a owl:Restriction ;
+    rdfs:subClassOf kgcl:LogicalAxiomChange ;
+    owl:onProperty kgcl:type ;
+    owl:someValuesFrom kgcl:LogicalAxiomChange .
 
 [] a owl:Restriction ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom <http://w3id.org/kgcl/om/OntologySubset> ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kgcl:old_value ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kgcl:new_value ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kgcl:about ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kgcl:about ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom <http://w3id.org/kgcl/om/OntologyElement> ;
+            owl:onProperty kgcl:about ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kgcl:has_undo ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kgcl:has_undo ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kgcl:new_value ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kgcl:old_value ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kgcl:old_value ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom kgcl:Change ;
+            owl:onProperty kgcl:has_undo ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:string ;
+            owl:onProperty kgcl:new_value ] ;
+    owl:onProperty linkml:mixins ;
+    owl:someValuesFrom kgcl:ChangeMixin .
+
+[] a owl:Restriction ;
+    rdfs:subClassOf kgcl:Change ;
+    owl:onProperty kgcl:type ;
+    owl:someValuesFrom kgcl:Change .
+
+[] a owl:Restriction ;
+    rdfs:subClassOf kgcl:AddNodeToSubset ;
+    owl:onProperty kgcl:type ;
+    owl:someValuesFrom kgcl:AddNodeToSubset .
+
+[] a owl:Restriction ;
+    owl:onProperty linkml:mixins ;
+    owl:someValuesFrom kgcl:Deletion .
+
+[] a owl:Restriction ;
+    rdfs:subClassOf kgcl:NodeAnnotationReplacement ;
+    owl:onProperty kgcl:type ;
+    owl:someValuesFrom kgcl:NodeAnnotationReplacement .
+
+[] a owl:Restriction ;
+    rdfs:subClassOf kgcl:MetadataAssertionReplacement ;
+    owl:onProperty kgcl:type ;
+    owl:someValuesFrom kgcl:MetadataAssertionReplacement .
+
+[] a owl:Restriction ;
+    rdfs:subClassOf kgcl:EdgeLogicalInterpretationChange ;
+    owl:onProperty kgcl:type ;
+    owl:someValuesFrom kgcl:EdgeLogicalInterpretationChange .
+
+[] a owl:Restriction ;
+    rdfs:subClassOf kgcl:RemoveNodeFromSubset ;
+    owl:onProperty kgcl:type ;
+    owl:someValuesFrom kgcl:RemoveNodeFromSubset .
+
+[] a owl:Restriction ;
+    rdfs:subClassOf kgcl:SynonymPredicateChange ;
+    owl:onProperty kgcl:type ;
+    owl:someValuesFrom kgcl:SynonymPredicateChange .
+
+[] a owl:Restriction ;
+    rdfs:subClassOf kgcl:NodeObsoletion ;
+    owl:onProperty kgcl:type ;
+    owl:someValuesFrom kgcl:NodeObsoletion .
+
+[] a owl:Restriction ;
+    rdfs:subClassOf kgcl:NodeCreation ;
+    owl:onProperty kgcl:type ;
+    owl:someValuesFrom kgcl:NodeCreation .
+
+[] a owl:Restriction ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom kgcl:Deletion ;
+            owl:onProperty kgcl:has_undo ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kgcl:has_undo ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kgcl:has_undo ] ;
+    owl:onProperty linkml:mixins ;
+    owl:someValuesFrom kgcl:Creation .
+
+[] a owl:Restriction ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom owl:Thing ;
             owl:onProperty kgcl:in_subset ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
@@ -2848,17 +2967,22 @@ kgcl:change_description a owl:DatatypeProperty ;
             owl:minCardinality 0 ;
             owl:onProperty kgcl:in_subset ] ;
     owl:onProperty linkml:mixins ;
-    owl:someValuesFrom kgcl:SubsetMembershipChange .
+    owl:someValuesFrom kgcl:AddToSubset .
 
 [] a owl:Restriction ;
-    rdfs:subClassOf kgcl:EdgeRewiring ;
+    rdfs:subClassOf kgcl:RemoveMapping ;
     owl:onProperty kgcl:type ;
-    owl:someValuesFrom kgcl:EdgeRewiring .
+    owl:someValuesFrom kgcl:RemoveMapping .
 
 [] a owl:Restriction ;
-    rdfs:subClassOf kgcl:NewLabel ;
+    rdfs:subClassOf kgcl:NodeDirectMerge ;
     owl:onProperty kgcl:type ;
-    owl:someValuesFrom kgcl:NewLabel .
+    owl:someValuesFrom kgcl:NodeDirectMerge .
+
+[] a owl:Restriction ;
+    rdfs:subClassOf kgcl:NodeMappingChange ;
+    owl:onProperty kgcl:type ;
+    owl:someValuesFrom kgcl:NodeMappingChange .
 
 [] a owl:Restriction ;
     rdfs:subClassOf kgcl:NodeSynonymChange ;
@@ -2867,61 +2991,89 @@ kgcl:change_description a owl:DatatypeProperty ;
 
 [] a owl:Restriction ;
     owl:onProperty linkml:mixins ;
-    owl:someValuesFrom kgcl:DatatypeOrLanguageTagChange .
-
-[] a owl:Restriction ;
-    rdfs:subClassOf kgcl:NodeAnnotationChange ;
-    owl:onProperty kgcl:type ;
-    owl:someValuesFrom kgcl:NodeAnnotationChange .
-
-[] a owl:Restriction ;
-    rdfs:subClassOf kgcl:NodeDeepening ;
-    owl:onProperty kgcl:type ;
-    owl:someValuesFrom kgcl:NodeDeepening .
-
-[] a owl:Restriction ;
-    rdfs:subClassOf kgcl:Transaction ;
-    owl:onProperty kgcl:type ;
-    owl:someValuesFrom kgcl:Transaction .
-
-[] a owl:Restriction ;
-    rdfs:subClassOf kgcl:NodeDirectMerge ;
-    owl:onProperty kgcl:type ;
-    owl:someValuesFrom kgcl:NodeDirectMerge .
-
-[] a owl:Restriction ;
-    rdfs:subClassOf kgcl:SynonymReplacement ;
-    owl:onProperty kgcl:type ;
-    owl:someValuesFrom kgcl:SynonymReplacement .
-
-[] a owl:Restriction ;
-    rdfs:subClassOf kgcl:RemoveMapping ;
-    owl:onProperty kgcl:type ;
-    owl:someValuesFrom kgcl:RemoveMapping .
+    owl:someValuesFrom kgcl:AllowsAutomaticReplacementOfEdges .
 
 [] a owl:Restriction ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty kgcl:has_undo ],
+            owl:allValuesFrom <http://w3id.org/kgcl/om/OntologySubset> ;
+            owl:onProperty kgcl:in_subset ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty kgcl:has_undo ],
+            owl:onProperty kgcl:in_subset ],
         [ a owl:Restriction ;
-            owl:allValuesFrom kgcl:Deletion ;
-            owl:onProperty kgcl:has_undo ] ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kgcl:in_subset ] ;
     owl:onProperty linkml:mixins ;
-    owl:someValuesFrom kgcl:Creation .
+    owl:someValuesFrom kgcl:SubsetMembershipChange .
 
 [] a owl:Restriction ;
-    owl:onProperty linkml:mixins ;
-    owl:someValuesFrom kgcl:Deletion .
+    rdfs:subClassOf kgcl:TextDefinitionReplacement ;
+    owl:onProperty kgcl:type ;
+    owl:someValuesFrom kgcl:TextDefinitionReplacement .
+
+[] a owl:Restriction ;
+    rdfs:subClassOf kgcl:PredicateChange ;
+    owl:onProperty kgcl:type ;
+    owl:someValuesFrom kgcl:PredicateChange .
+
+[] a owl:Restriction ;
+    rdfs:subClassOf kgcl:EdgeRewiring ;
+    owl:onProperty kgcl:type ;
+    owl:someValuesFrom kgcl:EdgeRewiring .
+
+[] a owl:Restriction ;
+    rdfs:subClassOf kgcl:RemoveMetadataAssertion ;
+    owl:onProperty kgcl:type ;
+    owl:someValuesFrom kgcl:RemoveMetadataAssertion .
+
+[] a owl:Restriction ;
+    rdfs:subClassOf kgcl:NodeTextDefinitionChange ;
+    owl:onProperty kgcl:type ;
+    owl:someValuesFrom kgcl:NodeTextDefinitionChange .
+
+[] a owl:Restriction ;
+    rdfs:subClassOf kgcl:MultiNodeObsoletion ;
+    owl:onProperty kgcl:type ;
+    owl:someValuesFrom kgcl:MultiNodeObsoletion .
+
+[] a owl:Restriction ;
+    rdfs:subClassOf kgcl:ComplexChange ;
+    owl:onProperty kgcl:type ;
+    owl:someValuesFrom kgcl:ComplexChange .
 
 [] a owl:Restriction ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
+            owl:minCardinality 0 ;
+            owl:onProperty kgcl:has_undo ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom kgcl:AddToSubset ;
             owl:onProperty kgcl:has_undo ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
+            owl:onProperty kgcl:in_subset ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kgcl:has_undo ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom owl:Thing ;
+            owl:onProperty kgcl:in_subset ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty kgcl:in_subset ] ;
+    owl:onProperty linkml:mixins ;
+    owl:someValuesFrom kgcl:RemoveFromSubset .
+
+[] a owl:Restriction ;
+    rdfs:subClassOf kgcl:SetLanguageForName ;
+    owl:onProperty kgcl:type ;
+    owl:someValuesFrom kgcl:SetLanguageForName .
+
+[] a owl:Restriction ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty kgcl:has_undo ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
             owl:onProperty kgcl:has_undo ],
         [ a owl:Restriction ;
             owl:allValuesFrom kgcl:Obsoletion ;
@@ -2930,44 +3082,39 @@ kgcl:change_description a owl:DatatypeProperty ;
     owl:someValuesFrom kgcl:Unobsoletion .
 
 [] a owl:Restriction ;
-    rdfs:subClassOf kgcl:RemoveSynonym ;
-    owl:onProperty kgcl:type ;
-    owl:someValuesFrom kgcl:RemoveSynonym .
-
-[] a owl:Restriction ;
-    rdfs:subClassOf kgcl:NodeTextDefinitionChange ;
-    owl:onProperty kgcl:type ;
-    owl:someValuesFrom kgcl:NodeTextDefinitionChange .
-
-[] a owl:Restriction ;
-    rdfs:subClassOf kgcl:Change ;
-    owl:onProperty kgcl:type ;
-    owl:someValuesFrom kgcl:Change .
-
-[] a owl:Restriction ;
     rdfs:subClassOf kgcl:EdgeChange ;
     owl:onProperty kgcl:type ;
     owl:someValuesFrom kgcl:EdgeChange .
 
 [] a owl:Restriction ;
-    rdfs:subClassOf kgcl:NodeAnnotationReplacement ;
+    rdfs:subClassOf kgcl:Transaction ;
     owl:onProperty kgcl:type ;
-    owl:someValuesFrom kgcl:NodeAnnotationReplacement .
+    owl:someValuesFrom kgcl:Transaction .
 
 [] a owl:Restriction ;
-    rdfs:subClassOf kgcl:NewMetadataAssertion ;
+    rdfs:subClassOf kgcl:RemoveSynonym ;
     owl:onProperty kgcl:type ;
-    owl:someValuesFrom kgcl:NewMetadataAssertion .
+    owl:someValuesFrom kgcl:RemoveSynonym .
 
 [] a owl:Restriction ;
-    rdfs:subClassOf kgcl:MetadataAssertionReplacement ;
+    rdfs:subClassOf kgcl:MappingPredicateChange ;
     owl:onProperty kgcl:type ;
-    owl:someValuesFrom kgcl:MetadataAssertionReplacement .
+    owl:someValuesFrom kgcl:MappingPredicateChange .
 
 [] a owl:Restriction ;
-    rdfs:subClassOf kgcl:NewTextDefinition ;
+    rdfs:subClassOf kgcl:ClassCreation ;
     owl:onProperty kgcl:type ;
-    owl:someValuesFrom kgcl:NewTextDefinition .
+    owl:someValuesFrom kgcl:ClassCreation .
+
+[] a owl:Restriction ;
+    rdfs:subClassOf kgcl:NewMapping ;
+    owl:onProperty kgcl:type ;
+    owl:someValuesFrom kgcl:NewMapping .
+
+[] a owl:Restriction ;
+    rdfs:subClassOf kgcl:NewLabel ;
+    owl:onProperty kgcl:type ;
+    owl:someValuesFrom kgcl:NewLabel .
 
 [] a owl:Restriction ;
     rdfs:subClassOf kgcl:MetadataAssertionPredicateChange ;
@@ -2975,9 +3122,9 @@ kgcl:change_description a owl:DatatypeProperty ;
     owl:someValuesFrom kgcl:MetadataAssertionPredicateChange .
 
 [] a owl:Restriction ;
-    rdfs:subClassOf kgcl:NodeMetadataAssertionChange ;
+    rdfs:subClassOf kgcl:NewMetadataAssertion ;
     owl:onProperty kgcl:type ;
-    owl:someValuesFrom kgcl:NodeMetadataAssertionChange .
+    owl:someValuesFrom kgcl:NewMetadataAssertion .
 
 [] a owl:Restriction ;
     rdfs:subClassOf kgcl:PlaceUnder ;
@@ -2990,190 +3137,9 @@ kgcl:change_description a owl:DatatypeProperty ;
     owl:someValuesFrom kgcl:RemoveUnder .
 
 [] a owl:Restriction ;
-    rdfs:subClassOf kgcl:EdgeCreation ;
+    rdfs:subClassOf kgcl:MappingReplacement ;
     owl:onProperty kgcl:type ;
-    owl:someValuesFrom kgcl:EdgeCreation .
-
-[] a owl:Restriction ;
-    rdfs:subClassOf kgcl:NodeObsoletion ;
-    owl:onProperty kgcl:type ;
-    owl:someValuesFrom kgcl:NodeObsoletion .
-
-[] a owl:Restriction ;
-    rdfs:subClassOf kgcl:NodeMove ;
-    owl:onProperty kgcl:type ;
-    owl:someValuesFrom kgcl:NodeMove .
-
-[] a owl:Restriction ;
-    rdfs:subClassOf [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty kgcl:about ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom kgcl:Obsoletion ;
-            owl:onProperty kgcl:has_undo ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty kgcl:about ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty kgcl:has_undo ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom owl:Thing ;
-            owl:onProperty kgcl:about ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty kgcl:has_undo ] ;
-    owl:onProperty linkml:mixins ;
-    owl:someValuesFrom kgcl:Obsoletion .
-
-[] a owl:Restriction ;
-    rdfs:subClassOf kgcl:SimpleChange ;
-    owl:onProperty kgcl:type ;
-    owl:someValuesFrom kgcl:SimpleChange .
-
-[] a owl:Restriction ;
-    rdfs:subClassOf kgcl:NewMapping ;
-    owl:onProperty kgcl:type ;
-    owl:someValuesFrom kgcl:NewMapping .
-
-[] a owl:Restriction ;
-    rdfs:subClassOf kgcl:TextDefinitionReplacement ;
-    owl:onProperty kgcl:type ;
-    owl:someValuesFrom kgcl:TextDefinitionReplacement .
-
-[] a owl:Restriction ;
-    rdfs:subClassOf kgcl:NodeRename ;
-    owl:onProperty kgcl:type ;
-    owl:someValuesFrom kgcl:NodeRename .
-
-[] a owl:Restriction ;
-    rdfs:subClassOf kgcl:NodeChange ;
-    owl:onProperty kgcl:type ;
-    owl:someValuesFrom kgcl:NodeChange .
-
-[] a owl:Restriction ;
-    rdfs:subClassOf kgcl:NewSynonym ;
-    owl:onProperty kgcl:type ;
-    owl:someValuesFrom kgcl:NewSynonym .
-
-[] a owl:Restriction ;
-    rdfs:subClassOf kgcl:LogicalAxiomChange ;
-    owl:onProperty kgcl:type ;
-    owl:someValuesFrom kgcl:LogicalAxiomChange .
-
-[] a owl:Restriction ;
-    owl:onProperty linkml:mixins ;
-    owl:someValuesFrom kgcl:AllowsAutomaticReplacementOfEdges .
-
-[] a owl:Restriction ;
-    rdfs:subClassOf kgcl:ObjectPropertyCreation ;
-    owl:onProperty kgcl:type ;
-    owl:someValuesFrom kgcl:ObjectPropertyCreation .
-
-[] a owl:Restriction ;
-    rdfs:subClassOf [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty kgcl:in_subset ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom owl:Thing ;
-            owl:onProperty kgcl:in_subset ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty kgcl:in_subset ] ;
-    owl:onProperty linkml:mixins ;
-    owl:someValuesFrom kgcl:AddToSubset .
-
-[] a owl:Restriction ;
-    rdfs:subClassOf kgcl:MultiNodeObsoletion ;
-    owl:onProperty kgcl:type ;
-    owl:someValuesFrom kgcl:MultiNodeObsoletion .
-
-[] a owl:Restriction ;
-    rdfs:subClassOf kgcl:RemoveTextDefinition ;
-    owl:onProperty kgcl:type ;
-    owl:someValuesFrom kgcl:RemoveTextDefinition .
-
-[] a owl:Restriction ;
-    rdfs:subClassOf [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty kgcl:has_undo ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom owl:Thing ;
-            owl:onProperty kgcl:in_subset ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty kgcl:in_subset ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty kgcl:has_undo ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty kgcl:in_subset ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom kgcl:AddToSubset ;
-            owl:onProperty kgcl:has_undo ] ;
-    owl:onProperty linkml:mixins ;
-    owl:someValuesFrom kgcl:RemoveFromSubset .
-
-[] a owl:Restriction ;
-    rdfs:subClassOf kgcl:ObjectPropertyDeletion ;
-    owl:onProperty kgcl:type ;
-    owl:someValuesFrom kgcl:ObjectPropertyDeletion .
-
-[] a owl:Restriction ;
-    rdfs:subClassOf kgcl:EdgeLogicalInterpretationChange ;
-    owl:onProperty kgcl:type ;
-    owl:someValuesFrom kgcl:EdgeLogicalInterpretationChange .
-
-[] a owl:Restriction ;
-    rdfs:subClassOf kgcl:NodeMappingChange ;
-    owl:onProperty kgcl:type ;
-    owl:someValuesFrom kgcl:NodeMappingChange .
-
-[] a owl:Restriction ;
-    rdfs:subClassOf kgcl:NodeObsoletionWithDirectReplacement ;
-    owl:onProperty kgcl:type ;
-    owl:someValuesFrom kgcl:NodeObsoletionWithDirectReplacement .
-
-[] a owl:Restriction ;
-    rdfs:subClassOf kgcl:NodeObsoletionWithNoDirectReplacement ;
-    owl:onProperty kgcl:type ;
-    owl:someValuesFrom kgcl:NodeObsoletionWithNoDirectReplacement .
-
-[] a owl:Restriction ;
-    rdfs:subClassOf kgcl:MappingPredicateChange ;
-    owl:onProperty kgcl:type ;
-    owl:someValuesFrom kgcl:MappingPredicateChange .
-
-[] a owl:Restriction ;
-    rdfs:subClassOf kgcl:NodeShallowing ;
-    owl:onProperty kgcl:type ;
-    owl:someValuesFrom kgcl:NodeShallowing .
-
-[] a owl:Restriction ;
-    rdfs:subClassOf kgcl:MappingCreation ;
-    owl:onProperty kgcl:type ;
-    owl:someValuesFrom kgcl:MappingCreation .
-
-[] a owl:Restriction ;
-    rdfs:subClassOf kgcl:NodeCreation ;
-    owl:onProperty kgcl:type ;
-    owl:someValuesFrom kgcl:NodeCreation .
-
-[] a owl:Restriction ;
-    rdfs:subClassOf kgcl:AddNodeToSubset ;
-    owl:onProperty kgcl:type ;
-    owl:someValuesFrom kgcl:AddNodeToSubset .
-
-[] a owl:Restriction ;
-    rdfs:subClassOf kgcl:PredicateChange ;
-    owl:onProperty kgcl:type ;
-    owl:someValuesFrom kgcl:PredicateChange .
-
-[] a owl:Restriction ;
-    rdfs:subClassOf kgcl:NodeDeletion ;
-    owl:onProperty kgcl:type ;
-    owl:someValuesFrom kgcl:NodeDeletion .
+    owl:someValuesFrom kgcl:MappingReplacement .
 
 [] a owl:Restriction ;
     rdfs:subClassOf kgcl:NameBecomesSynonym ;
@@ -3181,47 +3147,99 @@ kgcl:change_description a owl:DatatypeProperty ;
     owl:someValuesFrom kgcl:NameBecomesSynonym .
 
 [] a owl:Restriction ;
-    rdfs:subClassOf kgcl:RemoveMetadataAssertion ;
+    rdfs:subClassOf kgcl:NodeDeletion ;
     owl:onProperty kgcl:type ;
-    owl:someValuesFrom kgcl:RemoveMetadataAssertion .
+    owl:someValuesFrom kgcl:NodeDeletion .
+
+[] a owl:Restriction ;
+    rdfs:subClassOf kgcl:NodeRename ;
+    owl:onProperty kgcl:type ;
+    owl:someValuesFrom kgcl:NodeRename .
+
+[] a owl:Restriction ;
+    rdfs:subClassOf kgcl:NewSynonym ;
+    owl:onProperty kgcl:type ;
+    owl:someValuesFrom kgcl:NewSynonym .
+
+[] a owl:Restriction ;
+    rdfs:subClassOf kgcl:NodeMove ;
+    owl:onProperty kgcl:type ;
+    owl:someValuesFrom kgcl:NodeMove .
+
+[] a owl:Restriction ;
+    rdfs:subClassOf kgcl:NodeDeepening ;
+    owl:onProperty kgcl:type ;
+    owl:someValuesFrom kgcl:NodeDeepening .
+
+[] a owl:Restriction ;
+    rdfs:subClassOf kgcl:NodeObsoletionWithNoDirectReplacement ;
+    owl:onProperty kgcl:type ;
+    owl:someValuesFrom kgcl:NodeObsoletionWithNoDirectReplacement .
+
+[] a owl:Restriction ;
+    rdfs:subClassOf kgcl:NodeChange ;
+    owl:onProperty kgcl:type ;
+    owl:someValuesFrom kgcl:NodeChange .
+
+[] a owl:Restriction ;
+    rdfs:subClassOf kgcl:EdgeDeletion ;
+    owl:onProperty kgcl:type ;
+    owl:someValuesFrom kgcl:EdgeDeletion .
 
 [] a owl:Restriction ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom <http://w3id.org/kgcl/om/OntologyElement> ;
-            owl:onProperty kgcl:about ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
+            owl:allValuesFrom owl:Thing ;
             owl:onProperty kgcl:about ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty kgcl:about ],
         [ a owl:Restriction ;
-            owl:allValuesFrom kgcl:Change ;
-            owl:onProperty kgcl:has_undo ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty kgcl:new_value ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty kgcl:old_value ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom xsd:string ;
-            owl:onProperty kgcl:new_value ],
-        [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty kgcl:has_undo ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty kgcl:old_value ],
+            owl:onProperty kgcl:has_undo ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty kgcl:old_value ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
+            owl:allValuesFrom kgcl:Obsoletion ;
             owl:onProperty kgcl:has_undo ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty kgcl:new_value ] ;
+            owl:onProperty kgcl:about ] ;
     owl:onProperty linkml:mixins ;
-    owl:someValuesFrom kgcl:ChangeMixin .
+    owl:someValuesFrom kgcl:Obsoletion .
+
+[] a owl:Restriction ;
+    rdfs:subClassOf kgcl:RemoveTextDefinition ;
+    owl:onProperty kgcl:type ;
+    owl:someValuesFrom kgcl:RemoveTextDefinition .
+
+[] a owl:Restriction ;
+    rdfs:subClassOf kgcl:ObjectPropertyCreation ;
+    owl:onProperty kgcl:type ;
+    owl:someValuesFrom kgcl:ObjectPropertyCreation .
+
+[] a owl:Restriction ;
+    rdfs:subClassOf kgcl:NodeAnnotationChange ;
+    owl:onProperty kgcl:type ;
+    owl:someValuesFrom kgcl:NodeAnnotationChange .
+
+[] a owl:Restriction ;
+    rdfs:subClassOf kgcl:EdgeCreation ;
+    owl:onProperty kgcl:type ;
+    owl:someValuesFrom kgcl:EdgeCreation .
+
+[] a owl:Restriction ;
+    rdfs:subClassOf kgcl:NodeShallowing ;
+    owl:onProperty kgcl:type ;
+    owl:someValuesFrom kgcl:NodeShallowing .
+
+[] a owl:Restriction ;
+    rdfs:subClassOf kgcl:SynonymReplacement ;
+    owl:onProperty kgcl:type ;
+    owl:someValuesFrom kgcl:SynonymReplacement .
+
+[] a owl:Restriction ;
+    rdfs:subClassOf kgcl:ClassDeletion ;
+    owl:onProperty kgcl:type ;
+    owl:someValuesFrom kgcl:ClassDeletion .
 
