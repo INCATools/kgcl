@@ -386,3 +386,35 @@ about_node: GO:9999999
 about_node_representation: curie
 name: foo
 ```
+
+### Create an object property
+
+Class: [`ObjectPropertyCreation`](https://w3id.org/kgcl/ObjectPropertyCreation)
+
+```kgcl
+create object property BFO:0000050
+```
+
+```yaml
+id: CHANGE:001
+type: ObjectPropertyCreation
+about_node: BFO:0000050
+about_node_representation: curie
+```
+
+## Deleting nodes
+
+### Delete an object property
+
+Class: [`ObjectPropertyDeletion`](https://w3id.org/kgcl/ObjectPropertyDeletion)
+
+```kgcl
+delete object property BFO:0000050
+```
+
+```yaml
+id: CHANGE:001
+type: ObjectPropertyDeletion
+about_node: BFO:0000050
+about_node_representation: curie
+```

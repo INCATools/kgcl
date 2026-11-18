@@ -29,6 +29,8 @@ from kgcl_schema.datamodel.kgcl import (
     NodeShallowing,
     NodeTextDefinitionChange,
     NodeUnobsoletion,
+    ObjectPropertyCreation,
+    ObjectPropertyDeletion,
     PlaceUnder,
     PredicateChange,
     RemoveSynonym,
@@ -128,6 +130,10 @@ def parse_statement(input: str) -> Change:
         return parse_create(tree, id)
     elif command == "create_class":
         return parse_create_class(tree, id)
+    elif command == "create_object_property":
+        return parse_create_object_property(tree, id)
+    elif command == "delete_object_property":
+        return parse_delete_object_property(tree, id)
     elif command == "create_synonym":
         return parse_create_synonym(tree, id)
     elif command == "add_to_subset":
@@ -253,6 +259,16 @@ def parse_create_class(tree, id):
     entity, representation = get_entity_representation(term_id_token)
 
     return ClassCreation(
+        id=id, about_node=entity, about_node_representation=representation
+    )
+
+
+def parse_create_object_property(tree, id):
+    """Create new object property."""
+    term_id_token = extract(tree, "id")
+    entity, representation = get_entity_representation(term_id_token)
+
+    return ObjectPropertyCreation(
         id=id, about_node=entity, about_node_representation=representation
     )
 
@@ -565,6 +581,16 @@ def parse_delete(tree, id):
     entity, representation = get_entity_representation(entity_token)
 
     return NodeDeletion(
+        id=id, about_node=entity, about_node_representation=representation
+    )
+
+
+def parse_delete_object_property(tree, id):
+    """Delete an object property."""
+    entity_token = extract(tree, "entity")
+    entity, representation = get_entity_representation(entity_token)
+
+    return ObjectPropertyDeletion(
         id=id, about_node=entity, about_node_representation=representation
     )
 
