@@ -151,7 +151,9 @@ INNER_TRIPLE_SINGLE_QUOTE_LITERAL: /((?!\'\'\').)*/
 ID :  "<" INNER_ID ">" 
      | INNER_ID
 
-INNER_ID: /\S+/
+// An ID never starts with a quote, so a quoted value such as "old"@en is
+// read as a TERM with a language tag (or datatype), not as one bare ID.
+INNER_ID: /[^\s'"]\S*/
 
 STRING: /.+/
 

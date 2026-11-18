@@ -41,12 +41,14 @@ def render_entity(entity, rdf_type):
     Render entity based on rdf type.
 
     :param entity: entity to be rendered.
-    :param rdf_type: type of RDF ["uri", "label", "literal]
+    :param rdf_type: type of RDF ["uri", "label", "literal"]; "curie", the
+        representation the parser records for identifiers, is treated as "uri".
     """
+    raw = entity
     entity = repr(entity)
     if rdf_type is None:
         return entity
-    elif rdf_type == "uri":
+    elif rdf_type in ("uri", "curie"):
         entity = entity.replace("'", "")
         return entity
     elif rdf_type == "label":
@@ -58,7 +60,7 @@ def render_entity(entity, rdf_type):
         #     entity = entity.replace("'", "`")
         return entity
     elif rdf_type == "literal":
-        # TODO: test this
+        entity = str(raw)
         if '"' not in entity:
             return '"' + entity + '"'
         elif "'''" not in entity and entity[-1] != "'":

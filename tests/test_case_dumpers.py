@@ -57,6 +57,10 @@ SECTIONS = {
         "PredicateChange": "Change the predicate (relationship type) of an edge.",
         "NodeDeepening": "Move a node under a more specific parent.",
         "NodeShallowing": "Move a node under a more general parent.",
+        "NodeMove": "Move an edge's object from one node to another.",
+    },
+    "Annotations": {
+        "NodeAnnotationChange": "Change the value of an annotation.",
     },
     "Obsoletion": {
         "NodeObsoletion": "Obsolete a node.",

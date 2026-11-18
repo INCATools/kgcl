@@ -287,3 +287,55 @@ Test_29:
   command_with_curie: obsolete GO:0005634 with replacement GO:9999999
   command_with_uri: obsolete http://purl.obolibrary.org/obo/GO_0005634 with replacement
     http://purl.obolibrary.org/obo/GO_9999999
+Test_30:
+  id: CHANGE:001
+  type: NodeMove
+  old_value: GO:0043231
+  new_value: GO:0005739
+  about_edge:
+    subject: GO:0005634
+    predicate: BFO:0000050
+    object: GO:0043231
+    subject_representation: curie
+    predicate_representation: curie
+    object_representation: curie
+  old_object_type: curie
+  new_object_type: curie
+  command_with_curie: move GO:0005634 BFO:0000050 GO:0043231 from GO:0043231 to GO:0005739
+  command_with_uri: move http://purl.obolibrary.org/obo/GO_0005634 http://purl.obolibrary.org/obo/BFO_0000050
+    http://purl.obolibrary.org/obo/GO_0043231 from http://purl.obolibrary.org/obo/GO_0043231
+    to http://purl.obolibrary.org/obo/GO_0005739
+Test_31:
+  id: CHANGE:001
+  type: NodeAnnotationChange
+  old_value: old
+  new_value: new
+  old_value_type: literal
+  new_value_type: literal
+  new_language: fr
+  old_language: en
+  about_node: GO:0005634
+  about_node_representation: curie
+  annotation_property: rdfs:comment
+  annotation_property_type: curie
+  command_with_curie: change annotation of GO:0005634 with rdfs:comment from "old"@en
+    to "new"@fr
+  command_with_uri: change annotation of http://purl.obolibrary.org/obo/GO_0005634
+    with rdfs:comment from "old"@en to "new"@fr
+Test_32:
+  id: CHANGE:001
+  type: NodeAnnotationChange
+  old_value: '1'
+  new_value: '2'
+  old_value_type: literal
+  new_value_type: literal
+  new_datatype: xsd:integer
+  old_datatype: xsd:integer
+  about_node: GO:0005634
+  about_node_representation: curie
+  annotation_property: rdfs:comment
+  annotation_property_type: curie
+  command_with_curie: change annotation of GO:0005634 with rdfs:comment from "1"^^xsd:integer
+    to "2"^^xsd:integer
+  command_with_uri: change annotation of http://purl.obolibrary.org/obo/GO_0005634
+    with rdfs:comment from "1"^^xsd:integer to "2"^^xsd:integer

@@ -682,11 +682,15 @@ def parse_add_label(tree, id):
 
 
 def extract(tree, data):
-    """Extract node."""
+    """Extract the text of the first token under the named node, or None.
+
+    Returns a plain ``str`` rather than a lark ``Token``, so parsed change
+    objects hold ordinary values.
+    """
     node = get_next(tree.find_data(data))
     if node is not None:
         node_token = next(get_tokens(node))
-        return node_token
+        return str(node_token)
     else:
         return None
 
