@@ -620,6 +620,45 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#move-an-edges-object-from-one-node-to-another" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Move an edge's object from one node to another
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#annotations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Annotations
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Annotations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#change-the-value-of-an-annotation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Change the value of an annotation
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1259,6 +1298,45 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#move-an-edges-object-from-one-node-to-another" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Move an edge's object from one node to another
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#annotations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Annotations
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Annotations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#change-the-value-of-an-annotation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Change the value of an annotation
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1643,6 +1721,42 @@ changes, see the <a href="../change-types/">visual guide to change types</a>.</p
 <span class="w">  </span><span class="nt">object_representation</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">curie</span>
 <span class="nt">old_object_type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">curie</span>
 <span class="nt">new_object_type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">curie</span>
+</code></pre></div>
+<h3 id="move-an-edges-object-from-one-node-to-another">Move an edge's object from one node to another<a class="headerlink" href="#move-an-edges-object-from-one-node-to-another" title="Permanent link">&para;</a></h3>
+<p>Class: <a href="https://w3id.org/kgcl/NodeMove"><code>NodeMove</code></a></p>
+<div class="highlight"><pre><span></span><code>move GO:0005634 BFO:0000050 GO:0043231 from GO:0043231 to GO:0005739
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CHANGE:001</span>
+<span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">NodeMove</span>
+<span class="nt">old_value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GO:0043231</span>
+<span class="nt">new_value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GO:0005739</span>
+<span class="nt">about_edge</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">subject</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GO:0005634</span>
+<span class="w">  </span><span class="nt">predicate</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">BFO:0000050</span>
+<span class="w">  </span><span class="nt">object</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GO:0043231</span>
+<span class="w">  </span><span class="nt">subject_representation</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">curie</span>
+<span class="w">  </span><span class="nt">predicate_representation</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">curie</span>
+<span class="w">  </span><span class="nt">object_representation</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">curie</span>
+<span class="nt">old_object_type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">curie</span>
+<span class="nt">new_object_type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">curie</span>
+</code></pre></div>
+<h2 id="annotations">Annotations<a class="headerlink" href="#annotations" title="Permanent link">&para;</a></h2>
+<h3 id="change-the-value-of-an-annotation">Change the value of an annotation<a class="headerlink" href="#change-the-value-of-an-annotation" title="Permanent link">&para;</a></h3>
+<p>Class: <a href="https://w3id.org/kgcl/NodeAnnotationChange"><code>NodeAnnotationChange</code></a></p>
+<div class="highlight"><pre><span></span><code>change annotation of GO:0005634 with rdfs:comment from &quot;old&quot;@en to &quot;new&quot;@fr
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CHANGE:001</span>
+<span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">NodeAnnotationChange</span>
+<span class="nt">old_value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">old</span>
+<span class="nt">new_value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">new</span>
+<span class="nt">old_value_type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">literal</span>
+<span class="nt">new_value_type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">literal</span>
+<span class="nt">new_language</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">fr</span>
+<span class="nt">old_language</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">en</span>
+<span class="nt">about_node</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GO:0005634</span>
+<span class="nt">about_node_representation</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">curie</span>
+<span class="nt">annotation_property</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">rdfs:comment</span>
+<span class="nt">annotation_property_type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">curie</span>
 </code></pre></div>
 <h2 id="obsoletion">Obsoletion<a class="headerlink" href="#obsoletion" title="Permanent link">&para;</a></h2>
 <h3 id="obsolete-a-node">Obsolete a node<a class="headerlink" href="#obsolete-a-node" title="Permanent link">&para;</a></h3>
