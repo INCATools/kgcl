@@ -788,8 +788,8 @@
 </table>
 <h2 id="comments">Comments<a class="headerlink" href="#comments" title="Permanent link">&para;</a></h2>
 <ul>
-<li>if a node obsoletion C, C about N1, and C has direct replacement N2, and there exists an edge with an edge property referencing N1, it is possible to replace with N2</li>
-<li>if a node obsoletion C C about N1, and Chas direct replacement N2, then N1 IAO:0100001 N2</li>
+<li>If C is a node obsoletion of N1 (C's about_node is N1) and C has direct replacement N2, then any edge or annotation that references N1 can be automatically updated to reference N2 instead.</li>
+<li>If C is a node obsoletion of N1 and C has direct replacement N2, then N1 IAO:0100001 (term replaced by) N2.</li>
 </ul>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information<a class="headerlink" href="#identifier-and-mapping-information" title="Permanent link">&para;</a></h2>
 <h3 id="schema-source">Schema Source<a class="headerlink" href="#schema-source" title="Permanent link">&para;</a></h3>
@@ -825,10 +825,11 @@
 <span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">An obsoletion replacement where it IS valid to automatically update annotations/edges</span>
 <span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">pointing at the node with its direct replacement</span>
 <span class="nt">comments</span><span class="p">:</span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">if a node obsoletion C, C about N1, and C has direct replacement N2, and there exists</span>
-<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">an edge with an edge property referencing N1, it is possible to replace with N2</span>
-<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">if a node obsoletion C C about N1, and Chas direct replacement N2, then N1 IAO:0100001</span>
-<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">N2</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">If C is a node obsoletion of N1 (C&#39;s about_node is N1) and C has direct replacement</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">N2, then any edge or annotation that references N1 can be automatically updated</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">to reference N2 instead.</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">If C is a node obsoletion of N1 and C has direct replacement N2, then N1 IAO:0100001</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">(term replaced by) N2.</span>
 <span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/kgcl</span>
 <span class="nt">close_mappings</span><span class="p">:</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">IAO:0100001</span>

@@ -1119,11 +1119,11 @@
 <span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">An obsoletion replacement where it IS valid to automatically update</span>
 <span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">annotations/edges pointing at the node with its direct replacement</span>
 <span class="w">    </span><span class="nt">comments</span><span class="p">:</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">if a node obsoletion C, C about N1, and C has direct replacement N2, and there</span>
-<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">exists an edge with an edge property referencing N1, it is possible to replace</span>
-<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">with N2</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">if a node obsoletion C C about N1, and Chas direct replacement N2, then N1 IAO:0100001</span>
-<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">N2</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">If C is a node obsoletion of N1 (C&#39;s about_node is N1) and C has direct replacement</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">N2, then any edge or annotation that references N1 can be automatically updated</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">to reference N2 instead.</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">If C is a node obsoletion of N1 and C has direct replacement N2, then N1 IAO:0100001</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">(term replaced by) N2.</span>
 <span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/kgcl</span>
 <span class="w">    </span><span class="nt">close_mappings</span><span class="p">:</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">IAO:0100001</span>
@@ -1139,11 +1139,11 @@
 <span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">An obsoletion replacement where it is NOT valid to automatically</span>
 <span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">update annotations/edges pointing at the node with its direct replacement</span>
 <span class="w">    </span><span class="nt">comments</span><span class="p">:</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">if a node obsoletion C, C about N1, and C has direct replacement N2, and there</span>
-<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">exists an edge with an edge property referencing N1, it is possible to replace</span>
-<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">with N2</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">if a node obsoletion C C about N1, and Chas direct replacement N2, then N1 oio:consider</span>
-<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">N2</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">If C is a node obsoletion of N1 (C&#39;s about_node is N1) and C has nondirect replacement</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">N2, then edges or annotations that reference N1 should not be automatically</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">updated to reference N2; each needs review.</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">If C is a node obsoletion of N1 and C has nondirect replacement N2, then N1</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">oio:consider N2.</span>
 <span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/kgcl</span>
 <span class="w">    </span><span class="nt">close_mappings</span><span class="p">:</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">oio:consider</span>
@@ -1404,7 +1404,7 @@
 <span class="w">    </span><span class="nt">multivalued</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
 <span class="w">  </span><span class="nt">change_description</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">change_description</span>
-<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">A string serialization of the change. This should be both human-readable,</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">A string serialization of the change. This should be both human-readable</span>
 <span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">and parseable.</span>
 <span class="w">    </span><span class="nt">comments</span><span class="p">:</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;{</span><span class="se">&#39;&#39;</span><span class="s">Form</span><span class="nv"> </span><span class="s">1</span><span class="se">&#39;&#39;</span><span class="s">:</span><span class="nv"> </span><span class="se">&#39;&#39;</span><span class="s">IRIs</span><span class="nv"> </span><span class="s">are</span><span class="nv"> </span><span class="s">denoted</span><span class="nv"> </span><span class="s">by</span><span class="nv"> </span><span class="s">CURIEs,</span><span class="nv"> </span><span class="s">optionally</span><span class="nv"> </span><span class="s">followed</span><span class="nv"> </span><span class="s">by</span><span class="nv"> </span><span class="s">label</span><span class="nv"> </span><span class="s">in</span>
