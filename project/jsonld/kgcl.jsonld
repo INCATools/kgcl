@@ -3083,6 +3083,51 @@
       "@type": "SlotDefinition"
     },
     {
+      "name": "ClassDeletion_change_description",
+      "definition_uri": "http://w3id.org/kgcl/change_description",
+      "description": "A string serialization of the change. This should be both human-readable, and parseable.",
+      "comments": [
+        "{'Form 1': 'IRIs are denoted by CURIEs, optionally followed by label in parenthesis'}",
+        "{'Form 2': \"IRIs are denoted by the rdfs:label in single quotes, e.g. 'nervous system'\"}"
+      ],
+      "examples": [
+        {
+          "value": "rename UBERON:0002398 from 'manus' to 'hand'",
+          "@type": "Example"
+        },
+        {
+          "value": "move 'hand' from 'part of' 'hindlimb' to 'part of' 'forelimb'",
+          "@type": "Example"
+        },
+        {
+          "value": "merge 'cellular metabolic process' into 'metabolic process'",
+          "@type": "Example"
+        },
+        {
+          "value": "search and replace 'metabolic process' with 'metabolism' in all labels under 'biological process'",
+          "@type": "Example"
+        },
+        {
+          "value": "search and replace 'metabolic process' with 'metabolism' in all labels under 'biological process' retaining as 'exact synonym'",
+          "@type": "Example"
+        }
+      ],
+      "from_schema": "https://w3id.org/kgcl",
+      "is_a": "NodeDeletion_change_description",
+      "string_serialization": "delete class {about_node}",
+      "domain": "ClassDeletion",
+      "slot_uri": "http://w3id.org/kgcl/change_description",
+      "alias": "change_description",
+      "owner": "ClassDeletion",
+      "domain_of": [
+        "ClassDeletion"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "change_description",
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
       "name": "ObjectPropertyDeletion_change_description",
       "definition_uri": "http://w3id.org/kgcl/change_description",
       "description": "A string serialization of the change. This should be both human-readable, and parseable.",
@@ -5721,6 +5766,42 @@
       "@type": "ClassDefinition"
     },
     {
+      "name": "ClassDeletion",
+      "definition_uri": "http://w3id.org/kgcl/ClassDeletion",
+      "description": "A node deletion where the owl type is 'owl:Class'",
+      "from_schema": "https://w3id.org/kgcl",
+      "is_a": "NodeDeletion",
+      "slots": [
+        "id",
+        "type",
+        "Change_was_generated_by",
+        "Change_see_also",
+        "Change_pull_request",
+        "Change_term_tracker_issue",
+        "Change_creator",
+        "Change_change_date",
+        "contributor",
+        "has_undo",
+        "associated_change_set",
+        "old_value",
+        "new_value",
+        "old_value_type",
+        "new_value_type",
+        "new_language",
+        "old_language",
+        "new_datatype",
+        "old_datatype",
+        "about_node",
+        "about_node_representation",
+        "language",
+        "about",
+        "ClassDeletion_change_description"
+      ],
+      "slot_usage": {},
+      "class_uri": "http://w3id.org/kgcl/ClassDeletion",
+      "@type": "ClassDefinition"
+    },
+    {
       "name": "ObjectPropertyDeletion",
       "definition_uri": "http://w3id.org/kgcl/ObjectPropertyDeletion",
       "description": "A node deletion where the owl type is 'ObjectProperty'",
@@ -6197,9 +6278,9 @@
   ],
   "metamodel_version": "1.11.0",
   "source_file": "kgcl.yaml",
-  "source_file_date": "2026-11-18T10:32:38",
-  "source_file_size": 34103,
-  "generation_date": "2026-11-18T10:32:46",
+  "source_file_date": "2026-11-18T10:48:20",
+  "source_file_size": 34308,
+  "generation_date": "2026-11-18T10:48:28",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/kgcl.context.jsonld",

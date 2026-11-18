@@ -91,6 +91,34 @@ message ClassCreation
   node superclass = 0
   string changeDescription = 0
  }
+// A node deletion where the owl type is 'owl:Class'
+message ClassDeletion
+ {
+  string id = 0
+  string type = 0
+  activity wasGeneratedBy = 0
+  string seeAlso = 0
+  string pullRequest = 0
+  string termTrackerIssue = 0
+  string creator = 0
+  datetime changeDate = 0
+  string contributor = 0
+  change hasUndo = 0
+ repeated  change associatedChangeSet = 0
+  string oldValue = 0
+  string newValue = 0
+  string oldValueType = 0
+  string newValueType = 0
+  string newLanguage = 0
+  string oldLanguage = 0
+  string newDatatype = 0
+  string oldDatatype = 0
+  node aboutNode = 0
+  string aboutNodeRepresentation = 0
+  languageTag language = 0
+  ontologyElement about = 0
+  string changeDescription = 0
+ }
 // A node that is a class
 message ClassNode
  {

@@ -184,6 +184,15 @@ om:Annotation CLOSED {
     )
 }
 
+<ClassDeletion> CLOSED {
+    (  $<ClassDeletion_tes> (  &<NodeDeletion_tes> ;
+          rdf:type [ <NodeDeletion> ] ? ;
+          <change_description> @linkml:String ?
+       ) ;
+       rdf:type [ <ClassDeletion> ]
+    )
+}
+
 om:ClassNode CLOSED {
     (  $om:ClassNode_tes (  &om:Node_tes ;
           rdf:type [ om:Node ] ?
@@ -599,7 +608,7 @@ om:Node  (
           ) ;
           rdf:type [ <NodeDeletion> ]
        )
-    } OR @<ObjectPropertyDeletion>
+    } OR @<ClassDeletion> OR @<ObjectPropertyDeletion>
 )
 
 <NodeDirectMerge> CLOSED {
