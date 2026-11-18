@@ -3719,8 +3719,8 @@ CREATE TABLE "NewTextDefinition_xrefs" (
 	PRIMARY KEY ("NewTextDefinition_id", xrefs),
 	FOREIGN KEY("NewTextDefinition_id") REFERENCES "NewTextDefinition" (id)
 );
-CREATE INDEX "ix_NewTextDefinition_xrefs_NewTextDefinition_id" ON "NewTextDefinition_xrefs" ("NewTextDefinition_id");
 CREATE INDEX "ix_NewTextDefinition_xrefs_xrefs" ON "NewTextDefinition_xrefs" (xrefs);
+CREATE INDEX "ix_NewTextDefinition_xrefs_NewTextDefinition_id" ON "NewTextDefinition_xrefs" ("NewTextDefinition_id");
 
 CREATE TABLE "NodeObsoletion_has_nondirect_replacement" (
 	"NodeObsoletion_id" TEXT,
@@ -3997,8 +3997,8 @@ CREATE TABLE "NodeObsoletionWithDirectReplacement_has_nondirect_replacement" (
 	FOREIGN KEY("NodeObsoletionWithDirectReplacement_id") REFERENCES "NodeObsoletionWithDirectReplacement" (id),
 	FOREIGN KEY(has_nondirect_replacement_id) REFERENCES "Node" (id)
 );
-CREATE INDEX "ix_NodeObsoletionWithDirectReplacement_has_nondirect_replacement_NodeObsoletionWithDirectReplacement_id" ON "NodeObsoletionWithDirectReplacement_has_nondirect_replacement" ("NodeObsoletionWithDirectReplacement_id");
 CREATE INDEX "ix_NodeObsoletionWithDirectReplacement_has_nondirect_replacement_has_nondirect_replacement_id" ON "NodeObsoletionWithDirectReplacement_has_nondirect_replacement" (has_nondirect_replacement_id);
+CREATE INDEX "ix_NodeObsoletionWithDirectReplacement_has_nondirect_replacement_NodeObsoletionWithDirectReplacement_id" ON "NodeObsoletionWithDirectReplacement_has_nondirect_replacement" ("NodeObsoletionWithDirectReplacement_id");
 
 CREATE TABLE "NodeObsoletionWithNoDirectReplacement_has_nondirect_replacement" (
 	"NodeObsoletionWithNoDirectReplacement_id" TEXT,
@@ -4007,5 +4007,5 @@ CREATE TABLE "NodeObsoletionWithNoDirectReplacement_has_nondirect_replacement" (
 	FOREIGN KEY("NodeObsoletionWithNoDirectReplacement_id") REFERENCES "NodeObsoletionWithNoDirectReplacement" (id),
 	FOREIGN KEY(has_nondirect_replacement_id) REFERENCES "Node" (id)
 );
-CREATE INDEX "ix_NodeObsoletionWithNoDirectReplacement_has_nondirect_replacement_NodeObsoletionWithNoDirectReplacement_id" ON "NodeObsoletionWithNoDirectReplacement_has_nondirect_replacement" ("NodeObsoletionWithNoDirectReplacement_id");
 CREATE INDEX "ix_NodeObsoletionWithNoDirectReplacement_has_nondirect_replacement_has_nondirect_replacement_id" ON "NodeObsoletionWithNoDirectReplacement_has_nondirect_replacement" (has_nondirect_replacement_id);
+CREATE INDEX "ix_NodeObsoletionWithNoDirectReplacement_has_nondirect_replacement_NodeObsoletionWithNoDirectReplacement_id" ON "NodeObsoletionWithNoDirectReplacement_has_nondirect_replacement" ("NodeObsoletionWithNoDirectReplacement_id");
