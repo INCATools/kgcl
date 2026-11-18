@@ -8,7 +8,7 @@
 --     * Slot: pull_request
 --     * Slot: term_tracker_issue
 --     * Slot: creator
---     * Slot: change_date
+--     * Slot: change_date Description: The date and time at which the change was made
 --     * Slot: contributor
 --     * Slot: has_undo Description: A change that reverses this change
 --     * Slot: change_description Description: A string serialization of the change. This should be both human-readable, and parseable.
@@ -85,7 +85,7 @@
 --     * Slot: pull_request
 --     * Slot: term_tracker_issue
 --     * Slot: creator
---     * Slot: change_date
+--     * Slot: change_date Description: The date and time at which the change was made
 --     * Slot: contributor
 --     * Slot: has_undo Description: A change that reverses this change
 --     * Slot: change_description Description: A string serialization of the change. This should be both human-readable, and parseable.
@@ -97,7 +97,7 @@
 --     * Slot: pull_request
 --     * Slot: term_tracker_issue
 --     * Slot: creator
---     * Slot: change_date
+--     * Slot: change_date Description: The date and time at which the change was made
 --     * Slot: contributor
 --     * Slot: has_undo Description: A change that reverses this change
 --     * Slot: change_description Description: A string serialization of the change. This should be both human-readable, and parseable.
@@ -109,7 +109,7 @@
 --     * Slot: pull_request
 --     * Slot: term_tracker_issue
 --     * Slot: creator
---     * Slot: change_date
+--     * Slot: change_date Description: The date and time at which the change was made
 --     * Slot: contributor
 --     * Slot: has_undo Description: A change that reverses this change
 --     * Slot: change_description Description: A string serialization of the change. This should be both human-readable, and parseable.
@@ -121,7 +121,7 @@
 --     * Slot: pull_request
 --     * Slot: term_tracker_issue
 --     * Slot: creator
---     * Slot: change_date
+--     * Slot: change_date Description: The date and time at which the change was made
 --     * Slot: contributor
 --     * Slot: has_undo Description: A change that reverses this change
 --     * Slot: change_description Description: A string serialization of the change. This should be both human-readable, and parseable.
@@ -221,7 +221,7 @@
 --     * Slot: pull_request
 --     * Slot: term_tracker_issue
 --     * Slot: creator
---     * Slot: change_date
+--     * Slot: change_date Description: The date and time at which the change was made
 --     * Slot: contributor
 --     * Slot: has_undo Description: A change that reverses this change
 --     * Slot: change_description Description: A string serialization of the change. This should be both human-readable, and parseable.
@@ -250,7 +250,7 @@
 --     * Slot: pull_request
 --     * Slot: term_tracker_issue
 --     * Slot: creator
---     * Slot: change_date
+--     * Slot: change_date Description: The date and time at which the change was made
 --     * Slot: contributor
 --     * Slot: change_description Description: A string serialization of the change. This should be both human-readable, and parseable.
 --     * Slot: annotation_set_id
@@ -281,7 +281,7 @@
 --     * Slot: pull_request
 --     * Slot: term_tracker_issue
 --     * Slot: creator
---     * Slot: change_date
+--     * Slot: change_date Description: The date and time at which the change was made
 --     * Slot: contributor
 --     * Slot: change_description Description: A string serialization of the change. This should be both human-readable, and parseable.
 --     * Slot: annotation_set_id
@@ -312,7 +312,7 @@
 --     * Slot: pull_request
 --     * Slot: term_tracker_issue
 --     * Slot: creator
---     * Slot: change_date
+--     * Slot: change_date Description: The date and time at which the change was made
 --     * Slot: contributor
 --     * Slot: has_undo Description: A change that reverses this change
 --     * Slot: change_description Description: A string serialization of the change. This should be both human-readable, and parseable.
@@ -343,7 +343,7 @@
 --     * Slot: pull_request
 --     * Slot: term_tracker_issue
 --     * Slot: creator
---     * Slot: change_date
+--     * Slot: change_date Description: The date and time at which the change was made
 --     * Slot: contributor
 --     * Slot: has_undo Description: A change that reverses this change
 --     * Slot: change_description Description: A string serialization of the change. This should be both human-readable, and parseable.
@@ -372,7 +372,7 @@
 --     * Slot: pull_request
 --     * Slot: term_tracker_issue
 --     * Slot: creator
---     * Slot: change_date
+--     * Slot: change_date Description: The date and time at which the change was made
 --     * Slot: contributor
 --     * Slot: change_description Description: A string serialization of the change. This should be both human-readable, and parseable.
 --     * Slot: annotation_set_id
@@ -398,7 +398,7 @@
 --     * Slot: pull_request
 --     * Slot: term_tracker_issue
 --     * Slot: creator
---     * Slot: change_date
+--     * Slot: change_date Description: The date and time at which the change was made
 --     * Slot: contributor
 --     * Slot: has_undo Description: A change that reverses this change
 --     * Slot: change_description Description: A string serialization of the change. This should be both human-readable, and parseable.
@@ -427,7 +427,7 @@
 --     * Slot: pull_request
 --     * Slot: term_tracker_issue
 --     * Slot: creator
---     * Slot: change_date
+--     * Slot: change_date Description: The date and time at which the change was made
 --     * Slot: contributor
 --     * Slot: change_description Description: A string serialization of the change. This should be both human-readable, and parseable.
 --     * Slot: annotation_set_id
@@ -455,7 +455,7 @@
 --     * Slot: pull_request
 --     * Slot: term_tracker_issue
 --     * Slot: creator
---     * Slot: change_date
+--     * Slot: change_date Description: The date and time at which the change was made
 --     * Slot: contributor
 --     * Slot: has_undo Description: A change that reverses this change
 --     * Slot: change_description Description: A string serialization of the change. This should be both human-readable, and parseable.
@@ -481,7 +481,7 @@
 --     * Slot: pull_request
 --     * Slot: term_tracker_issue
 --     * Slot: creator
---     * Slot: change_date
+--     * Slot: change_date Description: The date and time at which the change was made
 --     * Slot: contributor
 --     * Slot: has_undo Description: A change that reverses this change
 --     * Slot: change_description Description: A string serialization of the change. This should be both human-readable, and parseable.
@@ -507,7 +507,7 @@
 --     * Slot: pull_request
 --     * Slot: term_tracker_issue
 --     * Slot: creator
---     * Slot: change_date
+--     * Slot: change_date Description: The date and time at which the change was made
 --     * Slot: contributor
 --     * Slot: has_undo Description: A change that reverses this change
 --     * Slot: change_description Description: A string serialization of the change. This should be both human-readable, and parseable.
@@ -531,7 +531,7 @@
 --     * Slot: pull_request
 --     * Slot: term_tracker_issue
 --     * Slot: creator
---     * Slot: change_date
+--     * Slot: change_date Description: The date and time at which the change was made
 --     * Slot: contributor
 --     * Slot: has_undo Description: A change that reverses this change
 --     * Slot: change_description Description: A string serialization of the change. This should be both human-readable, and parseable.
@@ -555,7 +555,7 @@
 --     * Slot: pull_request
 --     * Slot: term_tracker_issue
 --     * Slot: creator
---     * Slot: change_date
+--     * Slot: change_date Description: The date and time at which the change was made
 --     * Slot: contributor
 --     * Slot: has_undo Description: A change that reverses this change
 --     * Slot: change_description Description: A string serialization of the change. This should be both human-readable, and parseable.
@@ -576,7 +576,7 @@
 --     * Slot: pull_request
 --     * Slot: term_tracker_issue
 --     * Slot: creator
---     * Slot: change_date
+--     * Slot: change_date Description: The date and time at which the change was made
 --     * Slot: contributor
 --     * Slot: has_undo Description: A change that reverses this change
 --     * Slot: change_description Description: A string serialization of the change. This should be both human-readable, and parseable.
@@ -599,7 +599,7 @@
 --     * Slot: pull_request
 --     * Slot: term_tracker_issue
 --     * Slot: creator
---     * Slot: change_date
+--     * Slot: change_date Description: The date and time at which the change was made
 --     * Slot: contributor
 --     * Slot: has_undo Description: A change that reverses this change
 --     * Slot: change_description Description: A string serialization of the change. This should be both human-readable, and parseable.
@@ -622,7 +622,7 @@
 --     * Slot: pull_request
 --     * Slot: term_tracker_issue
 --     * Slot: creator
---     * Slot: change_date
+--     * Slot: change_date Description: The date and time at which the change was made
 --     * Slot: contributor
 --     * Slot: has_undo Description: A change that reverses this change
 --     * Slot: change_description Description: A string serialization of the change. This should be both human-readable, and parseable.
@@ -646,7 +646,7 @@
 --     * Slot: pull_request
 --     * Slot: term_tracker_issue
 --     * Slot: creator
---     * Slot: change_date
+--     * Slot: change_date Description: The date and time at which the change was made
 --     * Slot: contributor
 --     * Slot: has_undo Description: A change that reverses this change
 --     * Slot: change_description Description: A string serialization of the change. This should be both human-readable, and parseable.
@@ -669,7 +669,7 @@
 --     * Slot: pull_request
 --     * Slot: term_tracker_issue
 --     * Slot: creator
---     * Slot: change_date
+--     * Slot: change_date Description: The date and time at which the change was made
 --     * Slot: contributor
 --     * Slot: has_undo Description: A change that reverses this change
 --     * Slot: change_description Description: A string serialization of the change. This should be both human-readable, and parseable.
@@ -695,7 +695,7 @@
 --     * Slot: pull_request
 --     * Slot: term_tracker_issue
 --     * Slot: creator
---     * Slot: change_date
+--     * Slot: change_date Description: The date and time at which the change was made
 --     * Slot: contributor
 --     * Slot: has_undo Description: A change that reverses this change
 --     * Slot: change_description Description: A string serialization of the change. This should be both human-readable, and parseable.
@@ -720,7 +720,7 @@
 --     * Slot: pull_request
 --     * Slot: term_tracker_issue
 --     * Slot: creator
---     * Slot: change_date
+--     * Slot: change_date Description: The date and time at which the change was made
 --     * Slot: contributor
 --     * Slot: has_undo Description: A change that reverses this change
 --     * Slot: change_description Description: A string serialization of the change. This should be both human-readable, and parseable.
@@ -743,7 +743,7 @@
 --     * Slot: pull_request
 --     * Slot: term_tracker_issue
 --     * Slot: creator
---     * Slot: change_date
+--     * Slot: change_date Description: The date and time at which the change was made
 --     * Slot: contributor
 --     * Slot: has_undo Description: A change that reverses this change
 --     * Slot: change_description Description: A string serialization of the change. This should be both human-readable, and parseable.
@@ -768,7 +768,7 @@
 --     * Slot: pull_request
 --     * Slot: term_tracker_issue
 --     * Slot: creator
---     * Slot: change_date
+--     * Slot: change_date Description: The date and time at which the change was made
 --     * Slot: contributor
 --     * Slot: has_undo Description: A change that reverses this change
 --     * Slot: change_description Description: A string serialization of the change. This should be both human-readable, and parseable.
@@ -791,7 +791,7 @@
 --     * Slot: pull_request
 --     * Slot: term_tracker_issue
 --     * Slot: creator
---     * Slot: change_date
+--     * Slot: change_date Description: The date and time at which the change was made
 --     * Slot: contributor
 --     * Slot: has_undo Description: A change that reverses this change
 --     * Slot: change_description Description: A string serialization of the change. This should be both human-readable, and parseable.
@@ -814,7 +814,7 @@
 --     * Slot: pull_request
 --     * Slot: term_tracker_issue
 --     * Slot: creator
---     * Slot: change_date
+--     * Slot: change_date Description: The date and time at which the change was made
 --     * Slot: contributor
 --     * Slot: has_undo Description: A change that reverses this change
 --     * Slot: change_description Description: A string serialization of the change. This should be both human-readable, and parseable.
@@ -838,7 +838,7 @@
 --     * Slot: pull_request
 --     * Slot: term_tracker_issue
 --     * Slot: creator
---     * Slot: change_date
+--     * Slot: change_date Description: The date and time at which the change was made
 --     * Slot: contributor
 --     * Slot: has_undo Description: A change that reverses this change
 --     * Slot: change_description Description: A string serialization of the change. This should be both human-readable, and parseable.
@@ -863,7 +863,7 @@
 --     * Slot: pull_request
 --     * Slot: term_tracker_issue
 --     * Slot: creator
---     * Slot: change_date
+--     * Slot: change_date Description: The date and time at which the change was made
 --     * Slot: contributor
 --     * Slot: has_undo Description: A change that reverses this change
 --     * Slot: change_description Description: A string serialization of the change. This should be both human-readable, and parseable.
@@ -887,7 +887,7 @@
 --     * Slot: pull_request
 --     * Slot: term_tracker_issue
 --     * Slot: creator
---     * Slot: change_date
+--     * Slot: change_date Description: The date and time at which the change was made
 --     * Slot: contributor
 --     * Slot: has_undo Description: A change that reverses this change
 --     * Slot: change_description Description: A string serialization of the change. This should be both human-readable, and parseable.
@@ -912,7 +912,7 @@
 --     * Slot: pull_request
 --     * Slot: term_tracker_issue
 --     * Slot: creator
---     * Slot: change_date
+--     * Slot: change_date Description: The date and time at which the change was made
 --     * Slot: contributor
 --     * Slot: has_undo Description: A change that reverses this change
 --     * Slot: change_description Description: A string serialization of the change. This should be both human-readable, and parseable.
@@ -937,7 +937,7 @@
 --     * Slot: pull_request
 --     * Slot: term_tracker_issue
 --     * Slot: creator
---     * Slot: change_date
+--     * Slot: change_date Description: The date and time at which the change was made
 --     * Slot: contributor
 --     * Slot: has_undo Description: A change that reverses this change
 --     * Slot: change_description Description: A string serialization of the change. This should be both human-readable, and parseable.
@@ -960,7 +960,7 @@
 --     * Slot: pull_request
 --     * Slot: term_tracker_issue
 --     * Slot: creator
---     * Slot: change_date
+--     * Slot: change_date Description: The date and time at which the change was made
 --     * Slot: contributor
 --     * Slot: has_undo Description: A change that reverses this change
 --     * Slot: change_description Description: A string serialization of the change. This should be both human-readable, and parseable.
@@ -983,7 +983,7 @@
 --     * Slot: pull_request
 --     * Slot: term_tracker_issue
 --     * Slot: creator
---     * Slot: change_date
+--     * Slot: change_date Description: The date and time at which the change was made
 --     * Slot: contributor
 --     * Slot: has_undo Description: A change that reverses this change
 --     * Slot: change_description Description: A string serialization of the change. This should be both human-readable, and parseable.
@@ -1006,7 +1006,7 @@
 --     * Slot: pull_request
 --     * Slot: term_tracker_issue
 --     * Slot: creator
---     * Slot: change_date
+--     * Slot: change_date Description: The date and time at which the change was made
 --     * Slot: contributor
 --     * Slot: has_undo Description: A change that reverses this change
 --     * Slot: change_description Description: A string serialization of the change. This should be both human-readable, and parseable.
@@ -1031,7 +1031,7 @@
 --     * Slot: pull_request
 --     * Slot: term_tracker_issue
 --     * Slot: creator
---     * Slot: change_date
+--     * Slot: change_date Description: The date and time at which the change was made
 --     * Slot: contributor
 --     * Slot: has_undo Description: A change that reverses this change
 --     * Slot: change_description Description: A string serialization of the change. This should be both human-readable, and parseable.
@@ -1056,7 +1056,7 @@
 --     * Slot: pull_request
 --     * Slot: term_tracker_issue
 --     * Slot: creator
---     * Slot: change_date
+--     * Slot: change_date Description: The date and time at which the change was made
 --     * Slot: contributor
 --     * Slot: has_undo Description: A change that reverses this change
 --     * Slot: change_description Description: A string serialization of the change. This should be both human-readable, and parseable.
@@ -1079,7 +1079,7 @@
 --     * Slot: pull_request
 --     * Slot: term_tracker_issue
 --     * Slot: creator
---     * Slot: change_date
+--     * Slot: change_date Description: The date and time at which the change was made
 --     * Slot: contributor
 --     * Slot: has_undo Description: A change that reverses this change
 --     * Slot: change_description Description: A string serialization of the change. This should be both human-readable, and parseable.
@@ -1102,7 +1102,7 @@
 --     * Slot: pull_request
 --     * Slot: term_tracker_issue
 --     * Slot: creator
---     * Slot: change_date
+--     * Slot: change_date Description: The date and time at which the change was made
 --     * Slot: contributor
 --     * Slot: has_undo Description: A change that reverses this change
 --     * Slot: change_description Description: A string serialization of the change. This should be both human-readable, and parseable.
@@ -1125,7 +1125,7 @@
 --     * Slot: pull_request
 --     * Slot: term_tracker_issue
 --     * Slot: creator
---     * Slot: change_date
+--     * Slot: change_date Description: The date and time at which the change was made
 --     * Slot: contributor
 --     * Slot: has_undo Description: A change that reverses this change
 --     * Slot: change_description Description: A string serialization of the change. This should be both human-readable, and parseable.
@@ -1148,7 +1148,7 @@
 --     * Slot: pull_request
 --     * Slot: term_tracker_issue
 --     * Slot: creator
---     * Slot: change_date
+--     * Slot: change_date Description: The date and time at which the change was made
 --     * Slot: contributor
 --     * Slot: has_undo Description: A change that reverses this change
 --     * Slot: change_description Description: A string serialization of the change. This should be both human-readable, and parseable.
@@ -1171,7 +1171,7 @@
 --     * Slot: pull_request
 --     * Slot: term_tracker_issue
 --     * Slot: creator
---     * Slot: change_date
+--     * Slot: change_date Description: The date and time at which the change was made
 --     * Slot: contributor
 --     * Slot: has_undo Description: A change that reverses this change
 --     * Slot: change_description Description: A string serialization of the change. This should be both human-readable, and parseable.
@@ -1194,7 +1194,7 @@
 --     * Slot: pull_request
 --     * Slot: term_tracker_issue
 --     * Slot: creator
---     * Slot: change_date
+--     * Slot: change_date Description: The date and time at which the change was made
 --     * Slot: contributor
 --     * Slot: has_undo Description: A change that reverses this change
 --     * Slot: change_description Description: A string serialization of the change. This should be both human-readable, and parseable.
@@ -1218,7 +1218,7 @@
 --     * Slot: pull_request
 --     * Slot: term_tracker_issue
 --     * Slot: creator
---     * Slot: change_date
+--     * Slot: change_date Description: The date and time at which the change was made
 --     * Slot: contributor
 --     * Slot: has_undo Description: A change that reverses this change
 --     * Slot: change_description Description: A string serialization of the change. This should be both human-readable, and parseable.
@@ -1243,7 +1243,7 @@
 --     * Slot: pull_request
 --     * Slot: term_tracker_issue
 --     * Slot: creator
---     * Slot: change_date
+--     * Slot: change_date Description: The date and time at which the change was made
 --     * Slot: contributor
 --     * Slot: change_description Description: A string serialization of the change. This should be both human-readable, and parseable.
 --     * Slot: in_subset Description: The subset from which the node is to be removed
@@ -1269,7 +1269,7 @@
 --     * Slot: pull_request
 --     * Slot: term_tracker_issue
 --     * Slot: creator
---     * Slot: change_date
+--     * Slot: change_date Description: The date and time at which the change was made
 --     * Slot: contributor
 --     * Slot: change_description Description: A string serialization of the change. This should be both human-readable, and parseable.
 --     * Slot: MultiNodeObsoletion_id Description: Autocreated FK slot
@@ -1295,7 +1295,7 @@
 --     * Slot: pull_request
 --     * Slot: term_tracker_issue
 --     * Slot: creator
---     * Slot: change_date
+--     * Slot: change_date Description: The date and time at which the change was made
 --     * Slot: contributor
 --     * Slot: change_description Description: A string serialization of the change. This should be both human-readable, and parseable.
 --     * Slot: has_undo_id Description: A change that reverses this change
@@ -1322,7 +1322,7 @@
 --     * Slot: pull_request
 --     * Slot: term_tracker_issue
 --     * Slot: creator
---     * Slot: change_date
+--     * Slot: change_date Description: The date and time at which the change was made
 --     * Slot: contributor
 --     * Slot: change_description Description: A string serialization of the change. This should be both human-readable, and parseable.
 --     * Slot: annotation_set_id
@@ -1351,7 +1351,7 @@
 --     * Slot: pull_request
 --     * Slot: term_tracker_issue
 --     * Slot: creator
---     * Slot: change_date
+--     * Slot: change_date Description: The date and time at which the change was made
 --     * Slot: contributor
 --     * Slot: change_description Description: A string serialization of the change. This should be both human-readable, and parseable.
 --     * Slot: annotation_set_id
@@ -1379,7 +1379,7 @@
 --     * Slot: pull_request
 --     * Slot: term_tracker_issue
 --     * Slot: creator
---     * Slot: change_date
+--     * Slot: change_date Description: The date and time at which the change was made
 --     * Slot: contributor
 --     * Slot: change_description Description: A string serialization of the change. This should be both human-readable, and parseable.
 --     * Slot: annotation_set_id
@@ -1404,7 +1404,7 @@
 --     * Slot: pull_request
 --     * Slot: term_tracker_issue
 --     * Slot: creator
---     * Slot: change_date
+--     * Slot: change_date Description: The date and time at which the change was made
 --     * Slot: contributor
 --     * Slot: has_undo Description: A change that reverses this change
 --     * Slot: change_description Description: A string serialization of the change. This should be both human-readable, and parseable.
@@ -1429,7 +1429,7 @@
 --     * Slot: pull_request
 --     * Slot: term_tracker_issue
 --     * Slot: creator
---     * Slot: change_date
+--     * Slot: change_date Description: The date and time at which the change was made
 --     * Slot: contributor
 --     * Slot: change_description Description: A string serialization of the change. This should be both human-readable, and parseable.
 --     * Slot: has_undo_id Description: A change that reverses this change
@@ -1454,7 +1454,7 @@
 --     * Slot: pull_request
 --     * Slot: term_tracker_issue
 --     * Slot: creator
---     * Slot: change_date
+--     * Slot: change_date Description: The date and time at which the change was made
 --     * Slot: contributor
 --     * Slot: change_description Description: A string serialization of the change. This should be both human-readable, and parseable.
 --     * Slot: has_undo_id Description: A change that reverses this change
@@ -1479,7 +1479,7 @@
 --     * Slot: pull_request
 --     * Slot: term_tracker_issue
 --     * Slot: creator
---     * Slot: change_date
+--     * Slot: change_date Description: The date and time at which the change was made
 --     * Slot: contributor
 --     * Slot: change_description Description: A string serialization of the change. This should be both human-readable, and parseable.
 --     * Slot: has_undo_id Description: A change that reverses this change
@@ -1591,7 +1591,7 @@ CREATE TABLE "Change" (
 	pull_request TEXT,
 	term_tracker_issue TEXT,
 	creator TEXT,
-	change_date TEXT,
+	change_date DATETIME,
 	contributor TEXT,
 	has_undo TEXT,
 	change_description TEXT,
@@ -1731,7 +1731,7 @@ CREATE TABLE "SimpleChange" (
 	pull_request TEXT,
 	term_tracker_issue TEXT,
 	creator TEXT,
-	change_date TEXT,
+	change_date DATETIME,
 	contributor TEXT,
 	has_undo TEXT,
 	change_description TEXT,
@@ -1749,7 +1749,7 @@ CREATE TABLE "ComplexChange" (
 	pull_request TEXT,
 	term_tracker_issue TEXT,
 	creator TEXT,
-	change_date TEXT,
+	change_date DATETIME,
 	contributor TEXT,
 	has_undo TEXT,
 	change_description TEXT,
@@ -1767,7 +1767,7 @@ CREATE TABLE "MultiNodeObsoletion" (
 	pull_request TEXT,
 	term_tracker_issue TEXT,
 	creator TEXT,
-	change_date TEXT,
+	change_date DATETIME,
 	contributor TEXT,
 	has_undo TEXT,
 	change_description TEXT,
@@ -1785,7 +1785,7 @@ CREATE TABLE "Transaction" (
 	pull_request TEXT,
 	term_tracker_issue TEXT,
 	creator TEXT,
-	change_date TEXT,
+	change_date DATETIME,
 	contributor TEXT,
 	has_undo TEXT,
 	change_description TEXT,
@@ -1846,7 +1846,7 @@ CREATE TABLE "EdgeChange" (
 	pull_request TEXT,
 	term_tracker_issue TEXT,
 	creator TEXT,
-	change_date TEXT,
+	change_date DATETIME,
 	contributor TEXT,
 	has_undo TEXT,
 	change_description TEXT,
@@ -1882,7 +1882,7 @@ CREATE TABLE "EdgeCreation" (
 	pull_request TEXT,
 	term_tracker_issue TEXT,
 	creator TEXT,
-	change_date TEXT,
+	change_date DATETIME,
 	contributor TEXT,
 	change_description TEXT,
 	annotation_set_id INTEGER,
@@ -1925,7 +1925,7 @@ CREATE TABLE "PlaceUnder" (
 	pull_request TEXT,
 	term_tracker_issue TEXT,
 	creator TEXT,
-	change_date TEXT,
+	change_date DATETIME,
 	contributor TEXT,
 	change_description TEXT,
 	annotation_set_id INTEGER,
@@ -1968,7 +1968,7 @@ CREATE TABLE "EdgeDeletion" (
 	pull_request TEXT,
 	term_tracker_issue TEXT,
 	creator TEXT,
-	change_date TEXT,
+	change_date DATETIME,
 	contributor TEXT,
 	has_undo TEXT,
 	change_description TEXT,
@@ -2011,7 +2011,7 @@ CREATE TABLE "RemoveUnder" (
 	pull_request TEXT,
 	term_tracker_issue TEXT,
 	creator TEXT,
-	change_date TEXT,
+	change_date DATETIME,
 	contributor TEXT,
 	has_undo TEXT,
 	change_description TEXT,
@@ -2049,7 +2049,7 @@ CREATE TABLE "EdgeRewiring" (
 	pull_request TEXT,
 	term_tracker_issue TEXT,
 	creator TEXT,
-	change_date TEXT,
+	change_date DATETIME,
 	contributor TEXT,
 	has_undo TEXT,
 	change_description TEXT,
@@ -2085,7 +2085,7 @@ CREATE TABLE "MappingCreation" (
 	pull_request TEXT,
 	term_tracker_issue TEXT,
 	creator TEXT,
-	change_date TEXT,
+	change_date DATETIME,
 	contributor TEXT,
 	change_description TEXT,
 	annotation_set_id INTEGER,
@@ -2125,7 +2125,7 @@ CREATE TABLE "NodeMove" (
 	pull_request TEXT,
 	term_tracker_issue TEXT,
 	creator TEXT,
-	change_date TEXT,
+	change_date DATETIME,
 	contributor TEXT,
 	has_undo TEXT,
 	change_description TEXT,
@@ -2158,7 +2158,7 @@ CREATE TABLE "NodeDeepening" (
 	pull_request TEXT,
 	term_tracker_issue TEXT,
 	creator TEXT,
-	change_date TEXT,
+	change_date DATETIME,
 	contributor TEXT,
 	has_undo TEXT,
 	change_description TEXT,
@@ -2191,7 +2191,7 @@ CREATE TABLE "NodeShallowing" (
 	pull_request TEXT,
 	term_tracker_issue TEXT,
 	creator TEXT,
-	change_date TEXT,
+	change_date DATETIME,
 	contributor TEXT,
 	has_undo TEXT,
 	change_description TEXT,
@@ -2222,7 +2222,7 @@ CREATE TABLE "PredicateChange" (
 	pull_request TEXT,
 	term_tracker_issue TEXT,
 	creator TEXT,
-	change_date TEXT,
+	change_date DATETIME,
 	contributor TEXT,
 	has_undo TEXT,
 	change_description TEXT,
@@ -2253,7 +2253,7 @@ CREATE TABLE "EdgeLogicalInterpretationChange" (
 	pull_request TEXT,
 	term_tracker_issue TEXT,
 	creator TEXT,
-	change_date TEXT,
+	change_date DATETIME,
 	contributor TEXT,
 	has_undo TEXT,
 	change_description TEXT,
@@ -2281,7 +2281,7 @@ CREATE TABLE "LogicalAxiomChange" (
 	pull_request TEXT,
 	term_tracker_issue TEXT,
 	creator TEXT,
-	change_date TEXT,
+	change_date DATETIME,
 	contributor TEXT,
 	has_undo TEXT,
 	change_description TEXT,
@@ -2310,7 +2310,7 @@ CREATE TABLE "NodeChange" (
 	pull_request TEXT,
 	term_tracker_issue TEXT,
 	creator TEXT,
-	change_date TEXT,
+	change_date DATETIME,
 	contributor TEXT,
 	has_undo TEXT,
 	change_description TEXT,
@@ -2340,7 +2340,7 @@ CREATE TABLE "NodeRename" (
 	pull_request TEXT,
 	term_tracker_issue TEXT,
 	creator TEXT,
-	change_date TEXT,
+	change_date DATETIME,
 	contributor TEXT,
 	has_undo TEXT,
 	change_description TEXT,
@@ -2372,7 +2372,7 @@ CREATE TABLE "NewLabel" (
 	pull_request TEXT,
 	term_tracker_issue TEXT,
 	creator TEXT,
-	change_date TEXT,
+	change_date DATETIME,
 	contributor TEXT,
 	has_undo TEXT,
 	change_description TEXT,
@@ -2402,7 +2402,7 @@ CREATE TABLE "SetLanguageForName" (
 	pull_request TEXT,
 	term_tracker_issue TEXT,
 	creator TEXT,
-	change_date TEXT,
+	change_date DATETIME,
 	contributor TEXT,
 	has_undo TEXT,
 	change_description TEXT,
@@ -2436,7 +2436,7 @@ CREATE TABLE "NodeAnnotationChange" (
 	pull_request TEXT,
 	term_tracker_issue TEXT,
 	creator TEXT,
-	change_date TEXT,
+	change_date DATETIME,
 	contributor TEXT,
 	has_undo TEXT,
 	change_description TEXT,
@@ -2468,7 +2468,7 @@ CREATE TABLE "NodeAnnotationReplacement" (
 	pull_request TEXT,
 	term_tracker_issue TEXT,
 	creator TEXT,
-	change_date TEXT,
+	change_date DATETIME,
 	contributor TEXT,
 	has_undo TEXT,
 	change_description TEXT,
@@ -2498,7 +2498,7 @@ CREATE TABLE "NodeSynonymChange" (
 	pull_request TEXT,
 	term_tracker_issue TEXT,
 	creator TEXT,
-	change_date TEXT,
+	change_date DATETIME,
 	contributor TEXT,
 	has_undo TEXT,
 	change_description TEXT,
@@ -2530,7 +2530,7 @@ CREATE TABLE "NewSynonym" (
 	pull_request TEXT,
 	term_tracker_issue TEXT,
 	creator TEXT,
-	change_date TEXT,
+	change_date DATETIME,
 	contributor TEXT,
 	has_undo TEXT,
 	change_description TEXT,
@@ -2561,7 +2561,7 @@ CREATE TABLE "NameBecomesSynonym" (
 	pull_request TEXT,
 	term_tracker_issue TEXT,
 	creator TEXT,
-	change_date TEXT,
+	change_date DATETIME,
 	contributor TEXT,
 	has_undo TEXT,
 	change_description TEXT,
@@ -2591,7 +2591,7 @@ CREATE TABLE "RemoveSynonym" (
 	pull_request TEXT,
 	term_tracker_issue TEXT,
 	creator TEXT,
-	change_date TEXT,
+	change_date DATETIME,
 	contributor TEXT,
 	has_undo TEXT,
 	change_description TEXT,
@@ -2622,7 +2622,7 @@ CREATE TABLE "SynonymReplacement" (
 	pull_request TEXT,
 	term_tracker_issue TEXT,
 	creator TEXT,
-	change_date TEXT,
+	change_date DATETIME,
 	contributor TEXT,
 	has_undo TEXT,
 	change_description TEXT,
@@ -2655,7 +2655,7 @@ CREATE TABLE "SynonymPredicateChange" (
 	pull_request TEXT,
 	term_tracker_issue TEXT,
 	creator TEXT,
-	change_date TEXT,
+	change_date DATETIME,
 	contributor TEXT,
 	has_undo TEXT,
 	change_description TEXT,
@@ -2687,7 +2687,7 @@ CREATE TABLE "NodeMappingChange" (
 	pull_request TEXT,
 	term_tracker_issue TEXT,
 	creator TEXT,
-	change_date TEXT,
+	change_date DATETIME,
 	contributor TEXT,
 	has_undo TEXT,
 	change_description TEXT,
@@ -2719,7 +2719,7 @@ CREATE TABLE "NewMapping" (
 	pull_request TEXT,
 	term_tracker_issue TEXT,
 	creator TEXT,
-	change_date TEXT,
+	change_date DATETIME,
 	contributor TEXT,
 	has_undo TEXT,
 	change_description TEXT,
@@ -2753,7 +2753,7 @@ CREATE TABLE "RemoveMapping" (
 	pull_request TEXT,
 	term_tracker_issue TEXT,
 	creator TEXT,
-	change_date TEXT,
+	change_date DATETIME,
 	contributor TEXT,
 	has_undo TEXT,
 	change_description TEXT,
@@ -2785,7 +2785,7 @@ CREATE TABLE "MappingReplacement" (
 	pull_request TEXT,
 	term_tracker_issue TEXT,
 	creator TEXT,
-	change_date TEXT,
+	change_date DATETIME,
 	contributor TEXT,
 	has_undo TEXT,
 	change_description TEXT,
@@ -2815,7 +2815,7 @@ CREATE TABLE "MappingPredicateChange" (
 	pull_request TEXT,
 	term_tracker_issue TEXT,
 	creator TEXT,
-	change_date TEXT,
+	change_date DATETIME,
 	contributor TEXT,
 	has_undo TEXT,
 	change_description TEXT,
@@ -2845,7 +2845,7 @@ CREATE TABLE "NodeMetadataAssertionChange" (
 	pull_request TEXT,
 	term_tracker_issue TEXT,
 	creator TEXT,
-	change_date TEXT,
+	change_date DATETIME,
 	contributor TEXT,
 	has_undo TEXT,
 	change_description TEXT,
@@ -2877,7 +2877,7 @@ CREATE TABLE "NewMetadataAssertion" (
 	pull_request TEXT,
 	term_tracker_issue TEXT,
 	creator TEXT,
-	change_date TEXT,
+	change_date DATETIME,
 	contributor TEXT,
 	has_undo TEXT,
 	change_description TEXT,
@@ -2911,7 +2911,7 @@ CREATE TABLE "RemoveMetadataAssertion" (
 	pull_request TEXT,
 	term_tracker_issue TEXT,
 	creator TEXT,
-	change_date TEXT,
+	change_date DATETIME,
 	contributor TEXT,
 	has_undo TEXT,
 	change_description TEXT,
@@ -2943,7 +2943,7 @@ CREATE TABLE "MetadataAssertionReplacement" (
 	pull_request TEXT,
 	term_tracker_issue TEXT,
 	creator TEXT,
-	change_date TEXT,
+	change_date DATETIME,
 	contributor TEXT,
 	has_undo TEXT,
 	change_description TEXT,
@@ -2973,7 +2973,7 @@ CREATE TABLE "MetadataAssertionPredicateChange" (
 	pull_request TEXT,
 	term_tracker_issue TEXT,
 	creator TEXT,
-	change_date TEXT,
+	change_date DATETIME,
 	contributor TEXT,
 	has_undo TEXT,
 	change_description TEXT,
@@ -3003,7 +3003,7 @@ CREATE TABLE "NodeTextDefinitionChange" (
 	pull_request TEXT,
 	term_tracker_issue TEXT,
 	creator TEXT,
-	change_date TEXT,
+	change_date DATETIME,
 	contributor TEXT,
 	has_undo TEXT,
 	change_description TEXT,
@@ -3033,7 +3033,7 @@ CREATE TABLE "NewTextDefinition" (
 	pull_request TEXT,
 	term_tracker_issue TEXT,
 	creator TEXT,
-	change_date TEXT,
+	change_date DATETIME,
 	contributor TEXT,
 	has_undo TEXT,
 	change_description TEXT,
@@ -3063,7 +3063,7 @@ CREATE TABLE "RemoveTextDefinition" (
 	pull_request TEXT,
 	term_tracker_issue TEXT,
 	creator TEXT,
-	change_date TEXT,
+	change_date DATETIME,
 	contributor TEXT,
 	has_undo TEXT,
 	change_description TEXT,
@@ -3093,7 +3093,7 @@ CREATE TABLE "TextDefinitionReplacement" (
 	pull_request TEXT,
 	term_tracker_issue TEXT,
 	creator TEXT,
-	change_date TEXT,
+	change_date DATETIME,
 	contributor TEXT,
 	has_undo TEXT,
 	change_description TEXT,
@@ -3125,7 +3125,7 @@ CREATE TABLE "AddNodeToSubset" (
 	pull_request TEXT,
 	term_tracker_issue TEXT,
 	creator TEXT,
-	change_date TEXT,
+	change_date DATETIME,
 	contributor TEXT,
 	has_undo TEXT,
 	change_description TEXT,
@@ -3159,7 +3159,7 @@ CREATE TABLE "RemoveNodeFromSubset" (
 	pull_request TEXT,
 	term_tracker_issue TEXT,
 	creator TEXT,
-	change_date TEXT,
+	change_date DATETIME,
 	contributor TEXT,
 	change_description TEXT,
 	in_subset TEXT,
@@ -3194,7 +3194,7 @@ CREATE TABLE "NodeObsoletion" (
 	pull_request TEXT,
 	term_tracker_issue TEXT,
 	creator TEXT,
-	change_date TEXT,
+	change_date DATETIME,
 	contributor TEXT,
 	change_description TEXT,
 	"MultiNodeObsoletion_id" TEXT,
@@ -3232,7 +3232,7 @@ CREATE TABLE "NodeCreation" (
 	pull_request TEXT,
 	term_tracker_issue TEXT,
 	creator TEXT,
-	change_date TEXT,
+	change_date DATETIME,
 	contributor TEXT,
 	change_description TEXT,
 	annotation_set_id INTEGER,
@@ -3271,7 +3271,7 @@ CREATE TABLE "ClassCreation" (
 	pull_request TEXT,
 	term_tracker_issue TEXT,
 	creator TEXT,
-	change_date TEXT,
+	change_date DATETIME,
 	contributor TEXT,
 	change_description TEXT,
 	annotation_set_id INTEGER,
@@ -3310,7 +3310,7 @@ CREATE TABLE "ObjectPropertyCreation" (
 	pull_request TEXT,
 	term_tracker_issue TEXT,
 	creator TEXT,
-	change_date TEXT,
+	change_date DATETIME,
 	contributor TEXT,
 	change_description TEXT,
 	annotation_set_id INTEGER,
@@ -3345,7 +3345,7 @@ CREATE TABLE "NodeDeletion" (
 	pull_request TEXT,
 	term_tracker_issue TEXT,
 	creator TEXT,
-	change_date TEXT,
+	change_date DATETIME,
 	contributor TEXT,
 	has_undo TEXT,
 	change_description TEXT,
@@ -3428,8 +3428,8 @@ CREATE INDEX "ix_ProvElement_id" ON "ProvElement" (id);
 
 CREATE TABLE "Activity" (
 	id TEXT NOT NULL,
-	started_at_time TEXT,
-	ended_at_time TEXT,
+	started_at_time DATETIME,
+	ended_at_time DATETIME,
 	was_informed_by TEXT,
 	was_associated_with TEXT,
 	used TEXT,
@@ -3587,8 +3587,8 @@ CREATE TABLE "NodeObsoletion_has_nondirect_replacement" (
 	FOREIGN KEY("NodeObsoletion_id") REFERENCES "NodeObsoletion" (id),
 	FOREIGN KEY(has_nondirect_replacement_id) REFERENCES "Node" (id)
 );
-CREATE INDEX "ix_NodeObsoletion_has_nondirect_replacement_NodeObsoletion_id" ON "NodeObsoletion_has_nondirect_replacement" ("NodeObsoletion_id");
 CREATE INDEX "ix_NodeObsoletion_has_nondirect_replacement_has_nondirect_replacement_id" ON "NodeObsoletion_has_nondirect_replacement" (has_nondirect_replacement_id);
+CREATE INDEX "ix_NodeObsoletion_has_nondirect_replacement_NodeObsoletion_id" ON "NodeObsoletion_has_nondirect_replacement" ("NodeObsoletion_id");
 
 CREATE TABLE "Configuration_obsoletion_policies" (
 	"Configuration_id" INTEGER,
@@ -3596,8 +3596,8 @@ CREATE TABLE "Configuration_obsoletion_policies" (
 	PRIMARY KEY ("Configuration_id", obsoletion_policies),
 	FOREIGN KEY("Configuration_id") REFERENCES "Configuration" (id)
 );
-CREATE INDEX "ix_Configuration_obsoletion_policies_Configuration_id" ON "Configuration_obsoletion_policies" ("Configuration_id");
 CREATE INDEX "ix_Configuration_obsoletion_policies_obsoletion_policies" ON "Configuration_obsoletion_policies" (obsoletion_policies);
+CREATE INDEX "ix_Configuration_obsoletion_policies_Configuration_id" ON "Configuration_obsoletion_policies" ("Configuration_id");
 
 CREATE TABLE "AllowsAutomaticReplacementOfEdges" (
 	id INTEGER NOT NULL,
@@ -3673,7 +3673,7 @@ CREATE TABLE "EdgeObsoletion" (
 	pull_request TEXT,
 	term_tracker_issue TEXT,
 	creator TEXT,
-	change_date TEXT,
+	change_date DATETIME,
 	contributor TEXT,
 	change_description TEXT,
 	annotation_set_id INTEGER,
@@ -3712,7 +3712,7 @@ CREATE TABLE "NodeUnobsoletion" (
 	pull_request TEXT,
 	term_tracker_issue TEXT,
 	creator TEXT,
-	change_date TEXT,
+	change_date DATETIME,
 	contributor TEXT,
 	change_description TEXT,
 	has_undo_id INTEGER,
@@ -3746,7 +3746,7 @@ CREATE TABLE "NodeDirectMerge" (
 	pull_request TEXT,
 	term_tracker_issue TEXT,
 	creator TEXT,
-	change_date TEXT,
+	change_date DATETIME,
 	contributor TEXT,
 	change_description TEXT,
 	has_undo_id INTEGER,
@@ -3780,7 +3780,7 @@ CREATE TABLE "NodeObsoletionWithDirectReplacement" (
 	pull_request TEXT,
 	term_tracker_issue TEXT,
 	creator TEXT,
-	change_date TEXT,
+	change_date DATETIME,
 	contributor TEXT,
 	change_description TEXT,
 	has_undo_id INTEGER,
@@ -3814,7 +3814,7 @@ CREATE TABLE "NodeObsoletionWithNoDirectReplacement" (
 	pull_request TEXT,
 	term_tracker_issue TEXT,
 	creator TEXT,
-	change_date TEXT,
+	change_date DATETIME,
 	contributor TEXT,
 	change_description TEXT,
 	has_undo_id INTEGER,
@@ -3865,5 +3865,5 @@ CREATE TABLE "NodeObsoletionWithNoDirectReplacement_has_nondirect_replacement" (
 	FOREIGN KEY("NodeObsoletionWithNoDirectReplacement_id") REFERENCES "NodeObsoletionWithNoDirectReplacement" (id),
 	FOREIGN KEY(has_nondirect_replacement_id) REFERENCES "Node" (id)
 );
-CREATE INDEX "ix_NodeObsoletionWithNoDirectReplacement_has_nondirect_replacement_has_nondirect_replacement_id" ON "NodeObsoletionWithNoDirectReplacement_has_nondirect_replacement" (has_nondirect_replacement_id);
 CREATE INDEX "ix_NodeObsoletionWithNoDirectReplacement_has_nondirect_replacement_NodeObsoletionWithNoDirectReplacement_id" ON "NodeObsoletionWithNoDirectReplacement_has_nondirect_replacement" ("NodeObsoletionWithNoDirectReplacement_id");
+CREATE INDEX "ix_NodeObsoletionWithNoDirectReplacement_has_nondirect_replacement_has_nondirect_replacement_id" ON "NodeObsoletionWithNoDirectReplacement_has_nondirect_replacement" (has_nondirect_replacement_id);

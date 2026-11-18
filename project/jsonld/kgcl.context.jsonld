@@ -59,6 +59,7 @@
          "@id": "associated_change_set"
       },
       "change_date": {
+         "@type": "xsd:dateTime",
          "@id": "dcterms:date"
       },
       "change_description": {
@@ -117,6 +118,7 @@
          "@id": "dcterms:description"
       },
       "ended_at_time": {
+         "@type": "xsd:dateTime",
          "@id": "prov:endedAtTime"
       },
       "filler": {
@@ -249,6 +251,7 @@
          "@id": "rdfs:seeAlso"
       },
       "started_at_time": {
+         "@type": "xsd:dateTime",
          "@id": "prov:startedAtTime"
       },
       "subclass": {

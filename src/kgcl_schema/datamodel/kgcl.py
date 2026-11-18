@@ -1,5 +1,5 @@
 # Auto generated from kgcl.yaml by pythongen.py version: 0.0.1
-# Generation date: 2026-11-13T17:04:22
+# Generation date: 2026-11-18T10:12:42
 # Schema: kgcl_schema
 #
 # id: https://w3id.org/kgcl
@@ -58,8 +58,8 @@ from rdflib import (
     URIRef
 )
 
-from linkml_runtime.linkml_model.types import String, Uriorcurie
-from linkml_runtime.utils.metamodelcore import URIorCURIE
+from linkml_runtime.linkml_model.types import Datetime, String, Uriorcurie
+from linkml_runtime.utils.metamodelcore import URIorCURIE, XSDDateTime
 
 metamodel_version = "1.11.0"
 version = "0.0.1"
@@ -377,7 +377,7 @@ class Change(ChangeLanguageElement):
     pull_request: Optional[str] = None
     term_tracker_issue: Optional[str] = None
     creator: Optional[str] = None
-    change_date: Optional[str] = None
+    change_date: Optional[Union[str, XSDDateTime]] = None
     contributor: Optional[str] = None
     has_undo: Optional[Union[str, ChangeId]] = None
     change_description: Optional[str] = None
@@ -406,8 +406,8 @@ class Change(ChangeLanguageElement):
         if self.creator is not None and not isinstance(self.creator, str):
             self.creator = str(self.creator)
 
-        if self.change_date is not None and not isinstance(self.change_date, str):
-            self.change_date = str(self.change_date)
+        if self.change_date is not None and not isinstance(self.change_date, XSDDateTime):
+            self.change_date = XSDDateTime(self.change_date)
 
         if self.contributor is not None and not isinstance(self.contributor, str):
             self.contributor = str(self.contributor)
@@ -3075,8 +3075,8 @@ class Activity(ProvElement):
     class_model_uri: ClassVar[URIRef] = KGCL.Activity
 
     id: Union[str, ActivityId] = None
-    started_at_time: Optional[str] = None
-    ended_at_time: Optional[str] = None
+    started_at_time: Optional[Union[str, XSDDateTime]] = None
+    ended_at_time: Optional[Union[str, XSDDateTime]] = None
     was_informed_by: Optional[Union[str, ActivityId]] = None
     was_associated_with: Optional[Union[str, AgentId]] = None
     used: Optional[str] = None
@@ -3088,11 +3088,11 @@ class Activity(ProvElement):
         if not isinstance(self.id, ActivityId):
             self.id = ActivityId(self.id)
 
-        if self.started_at_time is not None and not isinstance(self.started_at_time, str):
-            self.started_at_time = str(self.started_at_time)
+        if self.started_at_time is not None and not isinstance(self.started_at_time, XSDDateTime):
+            self.started_at_time = XSDDateTime(self.started_at_time)
 
-        if self.ended_at_time is not None and not isinstance(self.ended_at_time, str):
-            self.ended_at_time = str(self.ended_at_time)
+        if self.ended_at_time is not None and not isinstance(self.ended_at_time, XSDDateTime):
+            self.ended_at_time = XSDDateTime(self.ended_at_time)
 
         if self.was_informed_by is not None and not isinstance(self.was_informed_by, ActivityId):
             self.was_informed_by = ActivityId(self.was_informed_by)
@@ -3209,7 +3209,7 @@ slots.contributor = Slot(uri=DCTERMS.creator, name="contributor", curie=DCTERMS.
                    model_uri=KGCL.contributor, domain=None, range=Optional[str])
 
 slots.change_date = Slot(uri=DCTERMS.date, name="change_date", curie=DCTERMS.curie('date'),
-                   model_uri=KGCL.change_date, domain=None, range=Optional[str])
+                   model_uri=KGCL.change_date, domain=None, range=Optional[Union[str, XSDDateTime]])
 
 slots.term_tracker_issue = Slot(uri=KGCL.term_tracker_issue, name="term_tracker_issue", curie=KGCL.curie('term_tracker_issue'),
                    model_uri=KGCL.term_tracker_issue, domain=None, range=Optional[str])
@@ -3377,10 +3377,10 @@ slots.property_value_set = Slot(uri=OM.property_value_set, name="property_value_
                    model_uri=KGCL.property_value_set, domain=None, range=Optional[Union[Union[dict, PropertyValue], list[Union[dict, PropertyValue]]]])
 
 slots.started_at_time = Slot(uri=PROV.startedAtTime, name="started_at_time", curie=PROV.curie('startedAtTime'),
-                   model_uri=KGCL.started_at_time, domain=None, range=Optional[str])
+                   model_uri=KGCL.started_at_time, domain=None, range=Optional[Union[str, XSDDateTime]])
 
 slots.ended_at_time = Slot(uri=PROV.endedAtTime, name="ended_at_time", curie=PROV.curie('endedAtTime'),
-                   model_uri=KGCL.ended_at_time, domain=None, range=Optional[str])
+                   model_uri=KGCL.ended_at_time, domain=None, range=Optional[Union[str, XSDDateTime]])
 
 slots.was_informed_by = Slot(uri=PROV.wasInformedBy, name="was_informed_by", curie=PROV.curie('wasInformedBy'),
                    model_uri=KGCL.was_informed_by, domain=None, range=Optional[Union[str, ActivityId]])
@@ -3455,7 +3455,7 @@ slots.Change_creator = Slot(uri=DCTERMS.creator, name="Change_creator", curie=DC
                    model_uri=KGCL.Change_creator, domain=Change, range=Optional[str])
 
 slots.Change_change_date = Slot(uri=DCTERMS.date, name="Change_change_date", curie=DCTERMS.curie('date'),
-                   model_uri=KGCL.Change_change_date, domain=Change, range=Optional[str])
+                   model_uri=KGCL.Change_change_date, domain=Change, range=Optional[Union[str, XSDDateTime]])
 
 slots.MultiNodeObsoletion_change_set = Slot(uri=KGCL.change_set, name="MultiNodeObsoletion_change_set", curie=KGCL.curie('change_set'),
                    model_uri=KGCL.MultiNodeObsoletion_change_set, domain=MultiNodeObsoletion, range=Optional[Union[dict[Union[str, NodeObsoletionId], Union[dict, "NodeObsoletion"]], list[Union[dict, "NodeObsoletion"]]]])

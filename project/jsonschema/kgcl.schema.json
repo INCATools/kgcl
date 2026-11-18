@@ -11,6 +11,7 @@
                     ]
                 },
                 "ended_at_time": {
+                    "format": "date-time",
                     "type": [
                         "string",
                         "null"
@@ -20,6 +21,7 @@
                     "type": "string"
                 },
                 "started_at_time": {
+                    "format": "date-time",
                     "type": [
                         "string",
                         "null"
@@ -240,6 +242,8 @@
                     ]
                 },
                 "change_date": {
+                    "description": "The date and time at which the change was made",
+                    "format": "date-time",
                     "type": [
                         "string",
                         "null"
@@ -709,6 +713,8 @@
                     ]
                 },
                 "change_date": {
+                    "description": "The date and time at which the change was made",
+                    "format": "date-time",
                     "type": [
                         "string",
                         "null"
@@ -1035,6 +1041,8 @@
                     ]
                 },
                 "change_date": {
+                    "description": "The date and time at which the change was made",
+                    "format": "date-time",
                     "type": [
                         "string",
                         "null"
@@ -1397,6 +1405,8 @@
                     ]
                 },
                 "change_date": {
+                    "description": "The date and time at which the change was made",
+                    "format": "date-time",
                     "type": [
                         "string",
                         "null"
@@ -2099,6 +2109,8 @@
                     ]
                 },
                 "change_date": {
+                    "description": "The date and time at which the change was made",
+                    "format": "date-time",
                     "type": [
                         "string",
                         "null"
@@ -2447,6 +2459,8 @@
                     ]
                 },
                 "change_date": {
+                    "description": "The date and time at which the change was made",
+                    "format": "date-time",
                     "type": [
                         "string",
                         "null"
@@ -2831,6 +2845,8 @@
                     ]
                 },
                 "change_date": {
+                    "description": "The date and time at which the change was made",
+                    "format": "date-time",
                     "type": [
                         "string",
                         "null"
@@ -3190,6 +3206,8 @@
                     ]
                 },
                 "change_date": {
+                    "description": "The date and time at which the change was made",
+                    "format": "date-time",
                     "type": [
                         "string",
                         "null"
@@ -3538,6 +3556,8 @@
                     ]
                 },
                 "change_date": {
+                    "description": "The date and time at which the change was made",
+                    "format": "date-time",
                     "type": [
                         "string",
                         "null"
@@ -3887,6 +3907,8 @@
                     ]
                 },
                 "change_date": {
+                    "description": "The date and time at which the change was made",
+                    "format": "date-time",
                     "type": [
                         "string",
                         "null"
@@ -4277,6 +4299,8 @@
                     ]
                 },
                 "change_date": {
+                    "description": "The date and time at which the change was made",
+                    "format": "date-time",
                     "type": [
                         "string",
                         "null"
@@ -4610,6 +4634,8 @@
                     ]
                 },
                 "change_date": {
+                    "description": "The date and time at which the change was made",
+                    "format": "date-time",
                     "type": [
                         "string",
                         "null"
@@ -4979,6 +5005,8 @@
                     ]
                 },
                 "change_date": {
+                    "description": "The date and time at which the change was made",
+                    "format": "date-time",
                     "type": [
                         "string",
                         "null"
@@ -5295,6 +5323,8 @@
                     ]
                 },
                 "change_date": {
+                    "description": "The date and time at which the change was made",
+                    "format": "date-time",
                     "type": [
                         "string",
                         "null"
@@ -5611,6 +5641,8 @@
                     ]
                 },
                 "change_date": {
+                    "description": "The date and time at which the change was made",
+                    "format": "date-time",
                     "type": [
                         "string",
                         "null"
@@ -5927,6 +5959,8 @@
                     ]
                 },
                 "change_date": {
+                    "description": "The date and time at which the change was made",
+                    "format": "date-time",
                     "type": [
                         "string",
                         "null"
@@ -6230,6 +6264,8 @@
                     ]
                 },
                 "change_date": {
+                    "description": "The date and time at which the change was made",
+                    "format": "date-time",
                     "type": [
                         "string",
                         "null"
@@ -6506,6 +6542,8 @@
                     ]
                 },
                 "change_date": {
+                    "description": "The date and time at which the change was made",
+                    "format": "date-time",
                     "type": [
                         "string",
                         "null"
@@ -6822,6 +6860,8 @@
                     ]
                 },
                 "change_date": {
+                    "description": "The date and time at which the change was made",
+                    "format": "date-time",
                     "type": [
                         "string",
                         "null"
@@ -7138,6 +7178,8 @@
                     ]
                 },
                 "change_date": {
+                    "description": "The date and time at which the change was made",
+                    "format": "date-time",
                     "type": [
                         "string",
                         "null"
@@ -7466,6 +7508,8 @@
                     ]
                 },
                 "change_date": {
+                    "description": "The date and time at which the change was made",
+                    "format": "date-time",
                     "type": [
                         "string",
                         "null"
@@ -7794,6 +7838,8 @@
                     ]
                 },
                 "change_date": {
+                    "description": "The date and time at which the change was made",
+                    "format": "date-time",
                     "type": [
                         "string",
                         "null"
@@ -8123,6 +8169,8 @@
                     ]
                 },
                 "change_date": {
+                    "description": "The date and time at which the change was made",
+                    "format": "date-time",
                     "type": [
                         "string",
                         "null"
@@ -8486,6 +8534,8 @@
                     ]
                 },
                 "change_date": {
+                    "description": "The date and time at which the change was made",
+                    "format": "date-time",
                     "type": [
                         "string",
                         "null"
@@ -8816,6 +8866,8 @@
                     ]
                 },
                 "change_date": {
+                    "description": "The date and time at which the change was made",
+                    "format": "date-time",
                     "type": [
                         "string",
                         "null"
@@ -9132,6 +9184,8 @@
                     ]
                 },
                 "change_date": {
+                    "description": "The date and time at which the change was made",
+                    "format": "date-time",
                     "type": [
                         "string",
                         "null"
@@ -9469,6 +9523,8 @@
                     ]
                 },
                 "change_date": {
+                    "description": "The date and time at which the change was made",
+                    "format": "date-time",
                     "type": [
                         "string",
                         "null"
@@ -9802,6 +9858,8 @@
                     ]
                 },
                 "change_date": {
+                    "description": "The date and time at which the change was made",
+                    "format": "date-time",
                     "type": [
                         "string",
                         "null"
@@ -10157,6 +10215,8 @@
                     ]
                 },
                 "change_date": {
+                    "description": "The date and time at which the change was made",
+                    "format": "date-time",
                     "type": [
                         "string",
                         "null"
@@ -10484,6 +10544,8 @@
                     ]
                 },
                 "change_date": {
+                    "description": "The date and time at which the change was made",
+                    "format": "date-time",
                     "type": [
                         "string",
                         "null"
@@ -10819,6 +10881,8 @@
                     ]
                 },
                 "change_date": {
+                    "description": "The date and time at which the change was made",
+                    "format": "date-time",
                     "type": [
                         "string",
                         "null"
@@ -11135,6 +11199,8 @@
                     ]
                 },
                 "change_date": {
+                    "description": "The date and time at which the change was made",
+                    "format": "date-time",
                     "type": [
                         "string",
                         "null"
@@ -11448,6 +11514,8 @@
                     ]
                 },
                 "change_date": {
+                    "description": "The date and time at which the change was made",
+                    "format": "date-time",
                     "type": [
                         "string",
                         "null"
@@ -11803,6 +11871,8 @@
                     ]
                 },
                 "change_date": {
+                    "description": "The date and time at which the change was made",
+                    "format": "date-time",
                     "type": [
                         "string",
                         "null"
@@ -12151,6 +12221,8 @@
                     ]
                 },
                 "change_date": {
+                    "description": "The date and time at which the change was made",
+                    "format": "date-time",
                     "type": [
                         "string",
                         "null"
@@ -12497,6 +12569,8 @@
                     ]
                 },
                 "change_date": {
+                    "description": "The date and time at which the change was made",
+                    "format": "date-time",
                     "type": [
                         "string",
                         "null"
@@ -12832,6 +12906,8 @@
                     ]
                 },
                 "change_date": {
+                    "description": "The date and time at which the change was made",
+                    "format": "date-time",
                     "type": [
                         "string",
                         "null"
@@ -13156,6 +13232,8 @@
                     ]
                 },
                 "change_date": {
+                    "description": "The date and time at which the change was made",
+                    "format": "date-time",
                     "type": [
                         "string",
                         "null"
@@ -13500,6 +13578,8 @@
                     ]
                 },
                 "change_date": {
+                    "description": "The date and time at which the change was made",
+                    "format": "date-time",
                     "type": [
                         "string",
                         "null"
@@ -13816,6 +13896,8 @@
                     ]
                 },
                 "change_date": {
+                    "description": "The date and time at which the change was made",
+                    "format": "date-time",
                     "type": [
                         "string",
                         "null"
@@ -14143,6 +14225,8 @@
                     ]
                 },
                 "change_date": {
+                    "description": "The date and time at which the change was made",
+                    "format": "date-time",
                     "type": [
                         "string",
                         "null"
@@ -14501,6 +14585,8 @@
                     ]
                 },
                 "change_date": {
+                    "description": "The date and time at which the change was made",
+                    "format": "date-time",
                     "type": [
                         "string",
                         "null"
@@ -14957,6 +15043,8 @@
                     ]
                 },
                 "change_date": {
+                    "description": "The date and time at which the change was made",
+                    "format": "date-time",
                     "type": [
                         "string",
                         "null"
@@ -15320,6 +15408,8 @@
                     ]
                 },
                 "change_date": {
+                    "description": "The date and time at which the change was made",
+                    "format": "date-time",
                     "type": [
                         "string",
                         "null"
@@ -15727,6 +15817,8 @@
                     ]
                 },
                 "change_date": {
+                    "description": "The date and time at which the change was made",
+                    "format": "date-time",
                     "type": [
                         "string",
                         "null"
@@ -16055,6 +16147,8 @@
                     ]
                 },
                 "change_date": {
+                    "description": "The date and time at which the change was made",
+                    "format": "date-time",
                     "type": [
                         "string",
                         "null"
@@ -16395,6 +16489,8 @@
                     ]
                 },
                 "change_date": {
+                    "description": "The date and time at which the change was made",
+                    "format": "date-time",
                     "type": [
                         "string",
                         "null"
@@ -16722,6 +16818,8 @@
                     ]
                 },
                 "change_date": {
+                    "description": "The date and time at which the change was made",
+                    "format": "date-time",
                     "type": [
                         "string",
                         "null"
@@ -17038,6 +17136,8 @@
                     ]
                 },
                 "change_date": {
+                    "description": "The date and time at which the change was made",
+                    "format": "date-time",
                     "type": [
                         "string",
                         "null"
@@ -17372,6 +17472,8 @@
                     ]
                 },
                 "change_date": {
+                    "description": "The date and time at which the change was made",
+                    "format": "date-time",
                     "type": [
                         "string",
                         "null"
@@ -17923,6 +18025,8 @@
                     ]
                 },
                 "change_date": {
+                    "description": "The date and time at which the change was made",
+                    "format": "date-time",
                     "type": [
                         "string",
                         "null"
@@ -18226,6 +18330,8 @@
                     ]
                 },
                 "change_date": {
+                    "description": "The date and time at which the change was made",
+                    "format": "date-time",
                     "type": [
                         "string",
                         "null"
@@ -18582,6 +18688,8 @@
                     ]
                 },
                 "change_date": {
+                    "description": "The date and time at which the change was made",
+                    "format": "date-time",
                     "type": [
                         "string",
                         "null"
@@ -18916,6 +19024,8 @@
                     ]
                 },
                 "change_date": {
+                    "description": "The date and time at which the change was made",
+                    "format": "date-time",
                     "type": [
                         "string",
                         "null"
@@ -19261,6 +19371,8 @@
                     ]
                 },
                 "change_date": {
+                    "description": "The date and time at which the change was made",
+                    "format": "date-time",
                     "type": [
                         "string",
                         "null"
@@ -19581,6 +19693,8 @@
                     ]
                 },
                 "change_date": {
+                    "description": "The date and time at which the change was made",
+                    "format": "date-time",
                     "type": [
                         "string",
                         "null"

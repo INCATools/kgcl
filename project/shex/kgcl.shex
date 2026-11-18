@@ -58,8 +58,8 @@ basics:LanguageTag xml1:lang
 prov:Activity CLOSED {
     (  $prov:Activity_tes (  &prov:ProvElement_tes ;
           rdf:type [ prov:ProvElement ] ? ;
-          prov:startedAtTime @linkml:String ? ;
-          prov:endedAtTime @linkml:String ? ;
+          prov:startedAtTime @linkml:Datetime ? ;
+          prov:endedAtTime @linkml:Datetime ? ;
           prov:wasInformedBy @prov:Activity ? ;
           prov:wasAssociatedWith @prov:Agent ? ;
           prov:used @linkml:String ? ;
@@ -132,7 +132,7 @@ om:Annotation CLOSED {
           <pull_request> @linkml:String ? ;
           <term_tracker_issue> @linkml:String ? ;
           dc1:creator @linkml:String ? ;
-          dc1:date @linkml:String ? ;
+          dc1:date @linkml:Datetime ? ;
           dc1:creator @linkml:String ? ;
           <has_undo> @<Change> ? ;
           <change_description> @linkml:String ? ;
