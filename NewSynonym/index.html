@@ -814,6 +814,8 @@
 
 
 
+      NewSynonym : xrefs
+
 </code></pre>
 <h2 id="inheritance">Inheritance<a class="headerlink" href="#inheritance" title="Permanent link">&para;</a></h2>
 <ul>
@@ -867,6 +869,12 @@
 <td><a href="../predicate/">predicate</a></td>
 <td>0..1 <br/> <a href="../Node/">Node</a></td>
 <td></td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../xrefs/">xrefs</a></td>
+<td>* <br/> <a href="../String/">String</a></td>
+<td>Cross-references that support a definition or synonym, such as the publicatio...</td>
 <td>direct</td>
 </tr>
 <tr>
@@ -1044,6 +1052,7 @@
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">language</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">qualifier</span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">predicate</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">xrefs</span>
 </code></pre></div>
 </details>
 <h3 id="induced">Induced<a class="headerlink" href="#induced" title="Permanent link">&para;</a></h3>
@@ -1118,6 +1127,27 @@
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">RemoveMetadataAssertion</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Edge</span>
 <span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Node</span>
+<span class="w">  </span><span class="nt">xrefs</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">xrefs</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;Cross-references</span><span class="nv"> </span><span class="s">that</span><span class="nv"> </span><span class="s">support</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">definition</span><span class="nv"> </span><span class="s">or</span><span class="nv"> </span><span class="s">synonym,</span><span class="nv"> </span><span class="s">such</span><span class="nv"> </span><span class="s">as</span><span class="nv"> </span><span class="s">the</span>
+<span class="w">      </span><span class="s">publication</span><span class="nv"> </span><span class="s">or</span><span class="nv"> </span><span class="s">database</span><span class="nv"> </span><span class="s">record</span><span class="nv"> </span><span class="s">it</span><span class="nv"> </span><span class="s">comes</span><span class="nv"> </span><span class="s">from</span><span class="nv"> </span><span class="s">(for</span><span class="nv"> </span><span class="s">example</span><span class="nv"> </span><span class="s">PMID:12869615).</span><span class="nv"> </span><span class="s">They</span>
+<span class="w">      </span><span class="s">are</span><span class="nv"> </span><span class="s">attached</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">definition</span><span class="nv"> </span><span class="s">or</span><span class="nv"> </span><span class="s">synonym</span><span class="nv"> </span><span class="s">itself,</span><span class="nv"> </span><span class="s">as</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">OBO</span><span class="nv"> </span><span class="s">format</span><span class="nv"> </span><span class="s">def:</span>
+<span class="w">      </span><span class="s">&quot;...&quot;</span><span class="nv"> </span><span class="s">[PMID:12869615],</span><span class="nv"> </span><span class="s">not</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">node.</span><span class="nv"> </span><span class="s">For</span><span class="nv"> </span><span class="s">cross-references</span><span class="nv"> </span><span class="s">on</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">node</span><span class="nv"> </span><span class="s">itself</span>
+<span class="w">      </span><span class="s">(mappings),</span><span class="nv"> </span><span class="s">see</span><span class="nv"> </span><span class="s">NewMapping.&#39;</span>
+<span class="w">    </span><span class="nt">comments</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Values are strings, as oboInOwl:hasDbXref values are in OBO ontologies (e.g.</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">&quot;PMID:12869615&quot;^^xsd:string), not IRIs.</span>
+<span class="w">    </span><span class="nt">examples</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PMID:12869615</span>
+<span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/kgcl</span>
+<span class="w">    </span><span class="nt">rank</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">slot_uri</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">oio:hasDbXref</span>
+<span class="w">    </span><span class="nt">owner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">NewSynonym</span>
+<span class="w">    </span><span class="nt">domain_of</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">NewSynonym</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">NewTextDefinition</span>
+<span class="w">    </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="w">    </span><span class="nt">multivalued</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <span class="w">  </span><span class="nt">about_node</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">about_node</span>
 <span class="w">    </span><span class="nt">from_schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://w3id.org/kgcl</span>

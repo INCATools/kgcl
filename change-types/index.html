@@ -1152,6 +1152,10 @@ add label &#39;noyau&#39;@fr to GO:0005634
   classDef changed fill:#fff3b0,stroke:#b58900,stroke-width:2px</code></pre>
 <div class="highlight"><pre><span></span><code>create exact synonym &#39;cell nucleus&#39; for GO:0005634
 </code></pre></div>
+<p>To record the source of a synonym, add cross-references (<code>oboInOwl:hasDbXref</code>) at
+the end, separated by commas:</p>
+<div class="highlight"><pre><span></span><code>create exact synonym &#39;cell nucleus&#39; for GO:0005634 with xrefs GOC:go_curators
+</code></pre></div>
 <p>The related commands:</p>
 <div class="highlight"><pre><span></span><code>remove synonym &#39;cell nucleus&#39; for GO:0005634
 change synonym &#39;cell nucleus&#39; for GO:0005634 to &#39;cell nucleus proper&#39;
@@ -1168,6 +1172,10 @@ change synonym &#39;cell nucleus&#39; for GO:0005634 to &#39;cell nucleus proper
   before ==&gt; after
   classDef changed fill:#fff3b0,stroke:#b58900,stroke-width:2px</code></pre>
 <div class="highlight"><pre><span></span><code>add definition &#39;A membrane-bounded organelle of eukaryotic cells in which chromosomes are housed and replicated.&#39; to GO:0005634
+</code></pre></div>
+<p>Many ontologies require a definition to cite at least one source. Add these as
+cross-references at the end, separated by commas:</p>
+<div class="highlight"><pre><span></span><code>add definition &#39;A membrane-bounded organelle of eukaryotic cells in which chromosomes are housed and replicated.&#39; to GO:0005634 with xrefs GOC:go_curators, ISBN:0198547684
 </code></pre></div>
 <p>The related commands:</p>
 <div class="highlight"><pre><span></span><code>change definition of GO:0005634 to &#39;A membrane-bounded organelle that contains the chromosomes.&#39;
