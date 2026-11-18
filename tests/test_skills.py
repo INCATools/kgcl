@@ -80,6 +80,12 @@ class SkillsTestSuite(unittest.TestCase):
         )
         self.assertEqual(1, mixed.returncode)
         self.assertIn("2 of 3 commands parsed", mixed.stdout)
+        # The trigger phrase wins over ```kgcl fences: stray bullets still count
+        fenced = "```kgcl\nobsolete GO:0005634\n```\n\n" + issue
+        both = subprocess.run(
+            [sys.executable, str(script), "-f", "-"], input=fenced, capture_output=True, text=True
+        )
+        self.assertIn("2 of 3 commands parsed", both.stdout)
         bad = subprocess.run(
             [sys.executable, str(script), "add label 'Parkinson's disease' to MONDO:0005180"],
             capture_output=True,

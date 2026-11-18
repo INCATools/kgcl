@@ -208,6 +208,9 @@ change with the commands above (a merge, for example, is often written as an
 - **Tools support different subsets.** Not every tool that applies KGCL handles every
   command (for example, OAK's OBO backend skips `deepen` and `shallow`). Check the tool's output for
   skipped changes.
-- **Tools may bundle an older parser.** `with xrefs` is recent; OAK 0.6.23 (with
-  kgcl-schema 0.6.9) rejects it. A dry run with the tool shows whether its parser
-  accepts the commands.
+- **`with xrefs` needs a recent parser.** It is newer than kgcl-schema 0.8.0, the
+  latest PyPI release; install from GitHub
+  (`pip install git+https://github.com/INCATools/kgcl.git`) until the next release.
+  Tools parse with whatever kgcl-schema is installed alongside them (an OAK 0.6.23
+  install with kgcl-schema 0.6.9 rejects it), so a dry run with the tool shows whether
+  its parser accepts the commands.

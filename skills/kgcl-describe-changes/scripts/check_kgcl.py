@@ -5,13 +5,13 @@ Reads commands from arguments, from files (-f), or from standard input, one
 per line. Blank lines and lines starting with '#' are skipped, and a leading
 Markdown bullet ("- " or "* ") is removed.
 
-If the input contains ```kgcl code fences (a Markdown file such as release
-notes), only the lines inside those fences are checked.
-
 If the input contains Ontobot's trigger phrase ("Hey ontobot!, apply:"), it is
 read the way Ontobot reads an issue body: every bulleted line anywhere in the
 text is a command, and all other lines are ignored. Ontobot also deletes "<"
 and ">" from the body, so IRIs in angle brackets are flagged.
+
+Otherwise, if the input contains ```kgcl code fences (a Markdown file such as
+release notes), only the lines inside those fences are checked.
 
 For each command, prints OK with the change type, or FAIL with the parser's
 message. Also notes when the parser's own rendering of the change differs from
@@ -45,7 +45,10 @@ ONTOBOT = re.compile(r"^\s*hey ontobot!?,?\s*apply:?\s*$", re.IGNORECASE)
 
 def commands_from(lines):
     lines = [line.rstrip("\n") for line in lines]
-    if any(line.strip() == "```kgcl" for line in lines):
+    if any(ONTOBOT.match(line) for line in lines):
+        # Ontobot treats every bulleted line in the issue body as a command
+        lines = [line for line in lines if BULLET.match(line)]
+    elif any(line.strip() == "```kgcl" for line in lines):
         # Markdown: keep only the lines inside ```kgcl fences
         kept, inside = [], False
         for line in lines:
@@ -55,9 +58,6 @@ def commands_from(lines):
             if inside:
                 kept.append(line)
         lines = kept
-    elif any(ONTOBOT.match(line) for line in lines):
-        # Ontobot treats every bulleted line in the issue body as a command
-        lines = [line for line in lines if BULLET.match(line)]
     for line in lines:
         line = BULLET.sub("", line).strip()
         if not line or line.startswith("#") or line.startswith("```"):
@@ -88,6 +88,12 @@ def main() -> int:
         lines.extend(sys.stdin.readlines())
 
     ontobot = any(ONTOBOT.match(line.rstrip("\n")) for line in lines)
+    try:
+        from importlib.metadata import version
+
+        print(f"kgcl-schema {version('kgcl-schema')}\n")
+    except Exception:
+        pass
     changes, failures, total = [], 0, 0
     for command in commands_from(lines):
         total += 1

@@ -17,6 +17,11 @@ The `kgcl-schema` Python package (`pip install kgcl-schema`) parses commands int
 data model and renders them back. Command syntax is in
 [references/kgcl-commands.md](references/kgcl-commands.md).
 
+`with xrefs` and RDF output (`kgcl-parse -O rdf`, `to_rdf`) are newer than the latest
+release on PyPI (0.8.0). Until the next release, install from GitHub to use them:
+`pip install git+https://github.com/INCATools/kgcl.git`. The checker script prints the
+installed version (a GitHub install reports `0.0.0`).
+
 ## Check commands
 
 Use the bundled script; it checks each line separately and reports every failure, not
@@ -113,10 +118,10 @@ runoak -i simpleobo:edit.obo apply "create exact synonym 'cell nucleus' for GO:0
 
 Two things to check:
 
-- **The tool's own parser may be older** than the `kgcl-schema` you validated with,
-  because tools bundle their own copy. OAK 0.6.23 ships kgcl-schema 0.6.9, which rejects
-  `with xrefs` and fails the whole patch. `--dry-run` parses with the tool's copy, so it
-  catches this.
+- **The tool's parser may be older** than the `kgcl-schema` you validated with, since a
+  tool uses whatever version is installed alongside it. An OAK 0.6.23 install with
+  kgcl-schema 0.6.9 rejects `with xrefs` and fails the whole patch. `--dry-run` parses
+  with the tool's copy, so it catches this.
 - **Unsupported change types may be skipped** with only a warning (OAK's OBO backend
   skips `deepen` and `shallow`). A dry run won't show this. Read the tool's output, and
   diff the result against the input to confirm each change was made.

@@ -17,6 +17,10 @@ share two files, kept identical in every folder:
 - `scripts/check_kgcl.py`: checks commands line by line, and with `--yaml PATH` writes
   them as KGCL YAML (needs `pip install kgcl-schema`).
 
+`with xrefs` and RDF output need a kgcl-schema newer than 0.8.0, the latest PyPI release
+when these skills were written; until the next release, install from GitHub with
+`pip install git+https://github.com/INCATools/kgcl.git`.
+
 ## Installing
 
 For Claude Code, copy the skill folders into `~/.claude/skills/` (all projects) or

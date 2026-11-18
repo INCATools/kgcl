@@ -52,10 +52,11 @@ commands; it is short, and it lists the limits (no apostrophes, types with no co
    Don't hand over a command that hasn't parsed.
 7. **Check that the applying tool can handle each command**, when you know which tool
    will apply the request. Two things go wrong:
-   - **The tool's parser is older.** Tools bundle their own copy of `kgcl-schema`, which
-     may predate recent syntax. OAK 0.6.23, for example, ships kgcl-schema 0.6.9 and
-     rejects the whole patch if any command uses `with xrefs`. A dry run catches this:
-     `runoak -i <ontology> apply --dry-run "..."` parses with OAK's own copy.
+   - **The tool's parser is older.** A tool parses with whatever `kgcl-schema` is
+     installed alongside it, which may predate recent syntax. An OAK 0.6.23 install with
+     kgcl-schema 0.6.9, for example, rejects the whole patch if any command uses
+     `with xrefs`. A dry run catches this: `runoak -i <ontology> apply --dry-run "..."`
+     parses with OAK's copy.
    - **The tool skips a change type**, with only a warning. OAK's OBO backend skips
      `deepen` and `shallow`. A dry run does not catch this; apply to a copy of the file
      and compare.
@@ -69,8 +70,13 @@ commands; it is short, and it lists the limits (no apostrophes, types with no co
 
 ## Validating
 
-The parser is in the `kgcl-schema` Python package (`pip install kgcl-schema`). Check
-all commands at once, one per line, with the bundled script:
+The parser is in the `kgcl-schema` Python package (`pip install kgcl-schema`).
+`with xrefs` and RDF output (`kgcl-parse -O rdf`, `to_rdf`) are newer than the latest
+release on PyPI (0.8.0). Until the next release, install from GitHub to use them:
+`pip install git+https://github.com/INCATools/kgcl.git`. The checker script prints the
+installed version (a GitHub install reports `0.0.0`).
+
+Check all commands at once, one per line, with the bundled script:
 
 ```bash
 python scripts/check_kgcl.py -f changes.txt

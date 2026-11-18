@@ -82,6 +82,11 @@ record: add provenance fields to that file rather than writing the YAML by hand.
 labels containing apostrophes will produce commands that can't parse; those changes
 have to be recorded in YAML or JSON (see the `kgcl-validate-convert` skill).
 
+`with xrefs` (which records definition and synonym sources) is newer than kgcl-schema
+0.8.0, the latest release on PyPI. Until the next release, install from GitHub to check
+it: `pip install git+https://github.com/INCATools/kgcl.git`. The script prints the
+installed version first (a GitHub install reports `0.0.0`).
+
 ## Provenance
 
 A retrospective record is more useful with who, when and why. The command language has
