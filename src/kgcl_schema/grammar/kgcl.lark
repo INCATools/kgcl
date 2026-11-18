@@ -1,9 +1,13 @@
 ?expression: rename 
+           | add_label
            | create
            | obsolete 
            | delete 
            | move
            | create_class 
+           | create_object_property
+           | delete_object_property
+           | delete_class
            | unobsolete
            | deepen
            | shallow
@@ -22,8 +26,11 @@
 
 rename : "rename" _WS [id _WS "from" _WS] old_label ["@" old_language] _WS ("to"|"as"|"->") _WS new_label ["@" new_language]
 
+add_label : "add label" _WS new_label ["@" new_language] _WS "to" _WS entity
+
 create : "create node" _WS id _WS label ["@" language]
 create_class: "create" _WS id
+create_object_property: "create object property" _WS id
 
 create_synonym: "create" _WS [synonym_qualifier _WS] "synonym" _WS synonym ["@" language] _WS "for" _WS entity
 synonym_qualifier : /exact|narrow|broad|related/
@@ -33,6 +40,8 @@ remove_synonym: "remove" _WS "synonym" _WS synonym ["@" language] _WS "for" _WS 
 change_synonym: "change" _WS [synonym_qualifier _WS] "synonym" _WS synonym ["@" language] _WS "for" _WS entity _WS ("to"|"->") _WS new_synonym
 
 delete : "delete" _WS entity
+delete_object_property : "delete object property" _WS entity
+delete_class : "delete class" _WS entity
 
 obsolete : "obsolete" _WS entity
          | "obsolete" _WS entity _WS "with replacement" _WS replacement
@@ -142,7 +151,9 @@ INNER_TRIPLE_SINGLE_QUOTE_LITERAL: /((?!\'\'\').)*/
 ID :  "<" INNER_ID ">" 
      | INNER_ID
 
-INNER_ID: /\S+/
+// An ID never starts with a quote, so a quoted value such as "old"@en is
+// read as a TERM with a language tag (or datatype), not as one bare ID.
+INNER_ID: /[^\s'"]\S*/
 
 STRING: /.+/
 

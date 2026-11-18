@@ -10,29 +10,26 @@ license = "MIT"
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.9"
+python = ">=3.10,<4.0"
 linkml-runtime = ">=1.1.24"
 lark = ">=1.1.2"
 prefixmaps = "^0.2.0"
 curies = ">=0.6.0"
 
-[tool.poetry.dev-dependencies]
-linkml = ">=1.5.2"
-pytest = "^7.1.2"
-mkdocs-material = "^8.2.8"
-mkdocs-mermaid2-plugin = "^0.6.0"
-
 [tool.poetry.group.dev.dependencies]
-linkml = ">=1.4.3"
+linkml = ">=1.9.0"
+pytest = ">=8.0"
+mkdocs-material = ">=9.5"
+# 1.2.3+ moved to the ProperDocs fork and pulls in `properdocs`; stay on the MkDocs-maintained release
+mkdocs-redirects = ">=1.2.1,<1.2.3"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
 
 [tool.poetry.scripts]
-kgcl-diff = "kgcl.kgcl_diff:cli"
-kgcl-apply = "kgcl.kgcl:cli"
-kgcl-parse = "kgcl.grammar.parser:cli"
+kgcl-parse = "kgcl_schema.grammar.parser:cli"
+generate_viz_json = "kgcl_schema.scripts.generate_json:generate_viz_json"
 
 [tool.poetry.extras]
 docs = ["linkml", "mkdocs-material"]

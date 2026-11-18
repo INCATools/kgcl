@@ -42,8 +42,10 @@ classes:
     class_uri: prov:Agent
 slots:
   started_at_time:
+    range: datetime
     slot_uri: prov:startedAtTime
   ended_at_time:
+    range: datetime
     slot_uri: prov:endedAtTime
   was_informed_by:
     range: Activity

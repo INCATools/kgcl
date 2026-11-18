@@ -1,5 +1,6 @@
 # Examples of use of kgcl
 
-This folder contains example data conforming to kgcl
+This folder contains example data conforming to kgcl.
 
-The source for these is in [src/data](../src/data/examples)
+- [`de-novo.yaml`](de-novo.yaml): a session with activities and changes, in the YAML form read by
+  `kgcl_schema.utils.from_yaml`. The conversion tests in `tests/test_model/test_conversion.py` use it.

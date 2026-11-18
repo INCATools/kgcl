@@ -13,8 +13,10 @@ from kgcl_schema.datamodel.kgcl import (
     AddNodeToSubset,
     Change,
     ClassCreation,
+    ClassDeletion,
     EdgeCreation,
     EdgeDeletion,
+    NewLabel,
     NewSynonym,
     NewTextDefinition,
     NodeAnnotationChange,
@@ -28,6 +30,8 @@ from kgcl_schema.datamodel.kgcl import (
     NodeShallowing,
     NodeTextDefinitionChange,
     NodeUnobsoletion,
+    ObjectPropertyCreation,
+    ObjectPropertyDeletion,
     PlaceUnder,
     PredicateChange,
     RemoveSynonym,
@@ -101,6 +105,8 @@ def parse_statement(input: str) -> Change:
 
     if command == "rename":
         return parse_rename(tree, id)
+    elif command == "add_label":
+        return parse_add_label(tree, id)
     elif command == "obsolete":
         return parse_obsolete(tree, id)
     elif command == "unobsolete":
@@ -125,6 +131,12 @@ def parse_statement(input: str) -> Change:
         return parse_create(tree, id)
     elif command == "create_class":
         return parse_create_class(tree, id)
+    elif command == "create_object_property":
+        return parse_create_object_property(tree, id)
+    elif command == "delete_object_property":
+        return parse_delete_object_property(tree, id)
+    elif command == "delete_class":
+        return parse_delete_class(tree, id)
     elif command == "create_synonym":
         return parse_create_synonym(tree, id)
     elif command == "add_to_subset":
@@ -250,6 +262,16 @@ def parse_create_class(tree, id):
     entity, representation = get_entity_representation(term_id_token)
 
     return ClassCreation(
+        id=id, about_node=entity, about_node_representation=representation
+    )
+
+
+def parse_create_object_property(tree, id):
+    """Create new object property."""
+    term_id_token = extract(tree, "id")
+    entity, representation = get_entity_representation(term_id_token)
+
+    return ObjectPropertyCreation(
         id=id, about_node=entity, about_node_representation=representation
     )
 
@@ -566,6 +588,26 @@ def parse_delete(tree, id):
     )
 
 
+def parse_delete_object_property(tree, id):
+    """Delete an object property."""
+    entity_token = extract(tree, "entity")
+    entity, representation = get_entity_representation(entity_token)
+
+    return ObjectPropertyDeletion(
+        id=id, about_node=entity, about_node_representation=representation
+    )
+
+
+def parse_delete_class(tree, id):
+    """Delete a class."""
+    entity_token = extract(tree, "entity")
+    entity, representation = get_entity_representation(entity_token)
+
+    return ClassDeletion(
+        id=id, about_node=entity, about_node_representation=representation
+    )
+
+
 def parse_unobsolete(tree, id):
     """Unobsolete a node."""
     entity_token = extract(tree, "entity")
@@ -623,12 +665,32 @@ def parse_rename(tree, id):
     )
 
 
+def parse_add_label(tree, id):
+    """Add a label to a node that has none."""
+    new_token = extract(tree, "new_label")
+    new_value, _ = get_entity_representation(new_token)
+    new_language = extract(tree, "new_language")
+    entity_token = extract(tree, "entity")
+    entity, representation = get_entity_representation(entity_token)
+    return NewLabel(
+        id=id,
+        about_node=entity,
+        about_node_representation=representation,
+        new_value=new_value,
+        new_language=new_language,
+    )
+
+
 def extract(tree, data):
-    """Extract node."""
+    """Extract the text of the first token under the named node, or None.
+
+    Returns a plain ``str`` rather than a lark ``Token``, so parsed change
+    objects hold ordinary values.
+    """
     node = get_next(tree.find_data(data))
     if node is not None:
         node_token = next(get_tokens(node))
-        return node_token
+        return str(node_token)
     else:
         return None
 

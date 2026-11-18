@@ -35,6 +35,10 @@
     {
       "prefix_prefix": "linkml",
       "prefix_reference": "https://w3id.org/linkml/"
+    },
+    {
+      "prefix_prefix": "rdfs",
+      "prefix_reference": "http://www.w3.org/2000/01/rdf-schema#"
     }
   ],
   "default_prefix": "kgcl",
@@ -56,7 +60,7 @@
       "definition_uri": "https://w3id.org/linkml/String",
       "description": "A character string",
       "notes": [
-        "In RDF serializations, a slot with range of string is treated as a literal or type xsd:string.   If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"string\"."
+        "In RDF serializations, a slot with range of string is treated as a literal or type xsd:string. If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"string\"."
       ],
       "from_schema": "https://w3id.org/linkml/types",
       "imported_from": "linkml:types",
@@ -504,11 +508,27 @@
     {
       "name": "change_date",
       "definition_uri": "http://w3id.org/kgcl/change_date",
+      "description": "The date and time at which the change was made",
       "from_schema": "https://w3id.org/kgcl",
       "mappings": [
         "http://purl.org/dc/terms/date"
       ],
       "slot_uri": "http://purl.org/dc/terms/date",
+      "owner": "Change",
+      "domain_of": [
+        "Change"
+      ],
+      "range": "datetime",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "term_tracker_issue",
+      "definition_uri": "http://w3id.org/kgcl/term_tracker_issue",
+      "from_schema": "https://w3id.org/kgcl",
+      "exact_mappings": [
+        "http://purl.obolibrary.org/obo/IAO_0000233"
+      ],
+      "slot_uri": "http://w3id.org/kgcl/term_tracker_issue",
       "owner": "Change",
       "domain_of": [
         "Change"
@@ -523,9 +543,10 @@
       "from_schema": "https://w3id.org/kgcl",
       "domain": "Change",
       "slot_uri": "http://w3id.org/kgcl/has_undo",
-      "owner": "Change",
+      "owner": "ChangeMixin",
       "domain_of": [
-        "Change"
+        "Change",
+        "ChangeMixin"
       ],
       "range": "Change",
       "@type": "SlotDefinition"
@@ -580,8 +601,13 @@
       "description": "The 'focus' entity on which the change operates",
       "from_schema": "https://w3id.org/kgcl",
       "slot_uri": "http://w3id.org/kgcl/about",
+      "owner": "ChangeMixin",
+      "domain_of": [
+        "ChangeMixin"
+      ],
       "range": "OntologyElement",
       "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -609,6 +635,7 @@
       ],
       "range": "Edge",
       "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -647,6 +674,7 @@
       "owner": "TextDefinitionReplacement",
       "domain_of": [
         "SimpleChange",
+        "ChangeMixin",
         "NodeRename",
         "SetLanguageForName",
         "RemoveSynonym",
@@ -671,7 +699,9 @@
       "owner": "TextDefinitionReplacement",
       "domain_of": [
         "SimpleChange",
+        "ChangeMixin",
         "NodeRename",
+        "NewLabel",
         "SetLanguageForName",
         "NewSynonym",
         "SynonymReplacement",
@@ -731,10 +761,11 @@
       "description": "The new language tag of a literal",
       "from_schema": "https://w3id.org/kgcl",
       "slot_uri": "http://w3id.org/kgcl/new_language",
-      "owner": "NodeRename",
+      "owner": "NewLabel",
       "domain_of": [
         "SimpleChange",
-        "NodeRename"
+        "NodeRename",
+        "NewLabel"
       ],
       "range": "string",
       "@type": "SlotDefinition"
@@ -759,9 +790,10 @@
       "description": "The qualifier of a change operation",
       "from_schema": "https://w3id.org/kgcl",
       "slot_uri": "http://w3id.org/kgcl/qualifier",
-      "owner": "NewSynonym",
+      "owner": "SynonymReplacement",
       "domain_of": [
-        "NewSynonym"
+        "NewSynonym",
+        "SynonymReplacement"
       ],
       "range": "string",
       "@type": "SlotDefinition"
@@ -935,7 +967,6 @@
         "SubsetMembershipChange"
       ],
       "range": "OntologySubset",
-      "inlined": true,
       "@type": "SlotDefinition"
     },
     {
@@ -997,6 +1028,10 @@
       ],
       "from_schema": "https://w3id.org/kgcl",
       "slot_uri": "http://w3id.org/kgcl/change_description",
+      "owner": "Change",
+      "domain_of": [
+        "Change"
+      ],
       "range": "string",
       "@type": "SlotDefinition"
     },
@@ -1019,6 +1054,7 @@
       ],
       "range": "TextualDiff",
       "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -1027,7 +1063,6 @@
       "description": "A collection of changes",
       "from_schema": "https://w3id.org/kgcl",
       "slot_uri": "http://w3id.org/kgcl/change_set",
-      "multivalued": true,
       "owner": "Session",
       "domain_of": [
         "ComplexChange",
@@ -1035,6 +1070,24 @@
         "Session"
       ],
       "range": "Change",
+      "multivalued": true,
+      "inlined": true,
+      "inlined_as_list": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "associated_change_set",
+      "definition_uri": "http://w3id.org/kgcl/associated_change_set",
+      "description": "All changes forced as a result of this obsoletion. For example, starting with `A subClassOf B subClassOf C`, if we obsolete node B, then we may decide to bundle in a node move change of A from B to C. Note: this change set is not considered a part of the obsoletion, as obsoletion is considered atomic/simple. Instead this is a reference to a change set that may exist elsewhere",
+      "from_schema": "https://w3id.org/kgcl",
+      "is_a": "change_set",
+      "slot_uri": "http://w3id.org/kgcl/associated_change_set",
+      "owner": "Change",
+      "domain_of": [
+        "Change"
+      ],
+      "range": "Change",
+      "multivalued": true,
       "inlined": true,
       "inlined_as_list": true,
       "@type": "SlotDefinition"
@@ -1068,9 +1121,10 @@
         "http://purl.obolibrary.org/obo/IAO_0100001"
       ],
       "slot_uri": "http://w3id.org/kgcl/has_direct_replacement",
-      "owner": "NodeObsoletion",
+      "owner": "NodeUnobsoletion",
       "domain_of": [
-        "NodeObsoletion"
+        "NodeObsoletion",
+        "NodeUnobsoletion"
       ],
       "range": "Node",
       "@type": "SlotDefinition"
@@ -1088,12 +1142,13 @@
         "http://www.geneontology.org/formats/oboInOwl#consider"
       ],
       "slot_uri": "http://w3id.org/kgcl/has_nondirect_replacement",
-      "multivalued": true,
-      "owner": "NodeObsoletion",
+      "owner": "NodeUnobsoletion",
       "domain_of": [
-        "NodeObsoletion"
+        "NodeObsoletion",
+        "NodeUnobsoletion"
       ],
       "range": "Node",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -1197,6 +1252,7 @@
       ],
       "range": "Annotation",
       "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -1295,9 +1351,10 @@
       "definition_uri": "http://w3id.org/kgcl/om/property_value_set",
       "from_schema": "https://w3id.org/kgcl/ontology",
       "slot_uri": "http://w3id.org/kgcl/om/property_value_set",
-      "multivalued": true,
       "range": "PropertyValue",
+      "multivalued": true,
       "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -1312,7 +1369,7 @@
       "domain_of": [
         "Activity"
       ],
-      "range": "string",
+      "range": "datetime",
       "@type": "SlotDefinition"
     },
     {
@@ -1327,7 +1384,7 @@
       "domain_of": [
         "Activity"
       ],
-      "range": "string",
+      "range": "datetime",
       "@type": "SlotDefinition"
     },
     {
@@ -1412,12 +1469,12 @@
       "definition_uri": "http://www.w3.org/ns/prov#activity_set",
       "from_schema": "https://w3id.org/kgcl/prov",
       "slot_uri": "http://www.w3.org/ns/prov#activity_set",
-      "multivalued": true,
       "owner": "Session",
       "domain_of": [
         "Session"
       ],
       "range": "Activity",
+      "multivalued": true,
       "inlined": true,
       "inlined_as_list": true,
       "@type": "SlotDefinition"
@@ -1427,8 +1484,8 @@
       "definition_uri": "http://www.w3.org/ns/prov#agent_set",
       "from_schema": "https://w3id.org/kgcl/prov",
       "slot_uri": "http://www.w3.org/ns/prov#agent_set",
-      "multivalued": true,
       "range": "Agent",
+      "multivalued": true,
       "inlined": true,
       "inlined_as_list": true,
       "@type": "SlotDefinition"
@@ -1566,13 +1623,13 @@
       "name": "configuration__obsoletion_policies",
       "from_schema": "https://w3id.org/kgcl",
       "slot_uri": "http://w3id.org/kgcl/obsoletion_policies",
-      "multivalued": true,
       "alias": "obsoletion_policies",
       "owner": "Configuration",
       "domain_of": [
         "Configuration"
       ],
       "range": "ObsoletionPolicyEnum",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -1586,79 +1643,6 @@
         "Configuration"
       ],
       "range": "uriorcurie",
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "term_tracker_issue",
-      "comments": [
-        "If this change has an issue on a system like github, include the URL here"
-      ],
-      "from_schema": "https://w3id.org/kgcl",
-      "slot_uri": "http://w3id.org/kgcl/term_tracker_issue",
-      "range": "string",
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "associated_change_set",
-      "description": "All changes associated with a set of obsoletions. This change set is the composed change set rather than the set of individual changes. For example, if previous state is:\\n  `A subClassOf B subClassOf C subClassOf D` and we obsolete {B,C}, then the individual changes are `A moves from B to C` and `B moves from C to D`, but the composed change set is `A moves from B to D`\"",
-      "from_schema": "https://w3id.org/kgcl",
-      "is_a": "change_set",
-      "slot_uri": "http://w3id.org/kgcl/associated_change_set",
-      "multivalued": true,
-      "range": "Change",
-      "inlined": true,
-      "inlined_as_list": true,
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "change_type",
-      "from_schema": "https://w3id.org/kgcl",
-      "slot_uri": "http://w3id.org/kgcl/change_type",
-      "range": "ChangeClassType",
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "count",
-      "from_schema": "https://w3id.org/kgcl",
-      "slot_uri": "http://w3id.org/kgcl/count",
-      "range": "integer",
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "change_1",
-      "from_schema": "https://w3id.org/kgcl",
-      "slot_uri": "http://w3id.org/kgcl/change_1",
-      "range": "NodeRename",
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "change_2",
-      "description": "",
-      "from_schema": "https://w3id.org/kgcl",
-      "slot_uri": "http://w3id.org/kgcl/change_2",
-      "range": "NewSynonym",
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "subset",
-      "description": "The subset from which the node is to be removed",
-      "from_schema": "https://w3id.org/kgcl",
-      "slot_uri": "http://w3id.org/kgcl/subset",
-      "range": "string",
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "replaced_by",
-      "from_schema": "https://w3id.org/kgcl",
-      "slot_uri": "http://w3id.org/kgcl/replaced_by",
-      "range": "Node",
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "consider",
-      "from_schema": "https://w3id.org/kgcl",
-      "slot_uri": "http://w3id.org/kgcl/consider",
-      "range": "Node",
       "@type": "SlotDefinition"
     },
     {
@@ -1729,10 +1713,14 @@
     },
     {
       "name": "Change_term_tracker_issue",
+      "definition_uri": "http://w3id.org/kgcl/term_tracker_issue",
       "comments": [
         "If this change has an issue on a system like github, include the URL here"
       ],
       "from_schema": "https://w3id.org/kgcl",
+      "exact_mappings": [
+        "http://purl.obolibrary.org/obo/IAO_0000233"
+      ],
       "is_a": "term_tracker_issue",
       "domain": "Change",
       "slot_uri": "http://w3id.org/kgcl/term_tracker_issue",
@@ -1772,8 +1760,9 @@
     {
       "name": "Change_change_date",
       "definition_uri": "http://w3id.org/kgcl/change_date",
+      "description": "The date and time at which the change was made",
       "comments": [
-        "This should be the composition of 'was generated by' and 'ended at time'"
+        "In PROV terms, this is the time at which the activity that generated the change ended, i.e. the composition of 'was generated by' and 'ended at time'. It is stored directly on the change as a single value for convenience."
       ],
       "from_schema": "https://w3id.org/kgcl",
       "mappings": [
@@ -1789,7 +1778,7 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "change_date",
-      "range": "string",
+      "range": "datetime",
       "@type": "SlotDefinition"
     },
     {
@@ -1800,7 +1789,6 @@
       "is_a": "change_set",
       "domain": "MultiNodeObsoletion",
       "slot_uri": "http://w3id.org/kgcl/change_set",
-      "multivalued": true,
       "alias": "change_set",
       "owner": "MultiNodeObsoletion",
       "domain_of": [
@@ -1809,6 +1797,7 @@
       "is_usage_slot": true,
       "usage_slot_name": "change_set",
       "range": "NodeObsoletion",
+      "multivalued": true,
       "inlined": true,
       "inlined_as_list": true,
       "@type": "SlotDefinition"
@@ -1860,74 +1849,23 @@
     },
     {
       "name": "MultiNodeObsoletion_associated_change_set",
+      "definition_uri": "http://w3id.org/kgcl/associated_change_set",
       "description": "All changes associated with a set of obsoletions. This change set is the composed change set rather than the set of individual changes. For example, if previous state is:\\n  `A subClassOf B subClassOf C subClassOf D` and we obsolete {B,C}, then the individual changes are `A moves from B to C` and `B moves from C to D`, but the composed change set is `A moves from B to D`\"",
       "from_schema": "https://w3id.org/kgcl",
-      "is_a": "change_set",
+      "is_a": "associated_change_set",
       "domain": "MultiNodeObsoletion",
       "slot_uri": "http://w3id.org/kgcl/associated_change_set",
-      "multivalued": true,
-      "alias": "associated change set",
+      "alias": "associated_change_set",
       "owner": "MultiNodeObsoletion",
       "domain_of": [
         "MultiNodeObsoletion"
       ],
       "is_usage_slot": true,
-      "usage_slot_name": "associated change set",
+      "usage_slot_name": "associated_change_set",
       "range": "Change",
+      "multivalued": true,
       "inlined": true,
       "inlined_as_list": true,
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "ChangeSetSummaryStatistic_change_type",
-      "from_schema": "https://w3id.org/kgcl",
-      "is_a": "change_type",
-      "domain": "ChangeSetSummaryStatistic",
-      "slot_uri": "http://w3id.org/kgcl/change_type",
-      "alias": "change type",
-      "owner": "ChangeSetSummaryStatistic",
-      "domain_of": [
-        "ChangeSetSummaryStatistic"
-      ],
-      "is_usage_slot": true,
-      "usage_slot_name": "change type",
-      "range": "ChangeClassType",
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "ChangeSetSummaryStatistic_count",
-      "from_schema": "https://w3id.org/kgcl",
-      "is_a": "count",
-      "domain": "ChangeSetSummaryStatistic",
-      "slot_uri": "http://w3id.org/kgcl/count",
-      "alias": "count",
-      "owner": "ChangeSetSummaryStatistic",
-      "domain_of": [
-        "ChangeSetSummaryStatistic"
-      ],
-      "is_usage_slot": true,
-      "usage_slot_name": "count",
-      "range": "integer",
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "ChangeSetSummaryStatistic_property_value_set",
-      "definition_uri": "http://w3id.org/kgcl/om/property_value_set",
-      "description": "Summary statistic is grouped by these constraints",
-      "from_schema": "https://w3id.org/kgcl/ontology",
-      "is_a": "property_value_set",
-      "domain": "ChangeSetSummaryStatistic",
-      "slot_uri": "http://w3id.org/kgcl/om/property_value_set",
-      "multivalued": true,
-      "alias": "property_value_set",
-      "owner": "ChangeSetSummaryStatistic",
-      "domain_of": [
-        "ChangeSetSummaryStatistic"
-      ],
-      "is_usage_slot": true,
-      "usage_slot_name": "property_value_set",
-      "range": "PropertyValue",
-      "inlined": true,
       "@type": "SlotDefinition"
     },
     {
@@ -1947,6 +1885,7 @@
       "usage_slot_name": "about",
       "range": "OntologyElement",
       "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -1966,6 +1905,7 @@
       "usage_slot_name": "has_undo",
       "range": "Obsoletion",
       "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -2021,6 +1961,7 @@
       "usage_slot_name": "has_undo",
       "range": "Obsoletion",
       "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -2040,6 +1981,7 @@
       "usage_slot_name": "has_undo",
       "range": "Deletion",
       "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -2058,7 +2000,6 @@
       "is_usage_slot": true,
       "usage_slot_name": "in_subset",
       "range": "OntologySubset",
-      "inlined": true,
       "@type": "SlotDefinition"
     },
     {
@@ -2077,7 +2018,6 @@
       "is_usage_slot": true,
       "usage_slot_name": "in_subset",
       "range": "OntologySubset",
-      "inlined": true,
       "@type": "SlotDefinition"
     },
     {
@@ -2097,26 +2037,29 @@
       "usage_slot_name": "has_undo",
       "range": "AddToSubset",
       "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
-      "name": "EdgeChange_subject",
-      "definition_uri": "http://w3id.org/kgcl/om/subject",
+      "name": "EdgeChange_about_edge",
+      "definition_uri": "http://w3id.org/kgcl/about_edge",
       "comments": [
         "if subject is empty, use the about field of the last node change"
       ],
-      "from_schema": "https://w3id.org/kgcl/ontology",
-      "is_a": "subject",
+      "from_schema": "https://w3id.org/kgcl",
+      "is_a": "about_edge",
       "domain": "EdgeChange",
-      "slot_uri": "http://w3id.org/kgcl/om/subject",
-      "alias": "subject",
+      "slot_uri": "http://w3id.org/kgcl/about_edge",
+      "alias": "about_edge",
       "owner": "EdgeChange",
       "domain_of": [
         "EdgeChange"
       ],
       "is_usage_slot": true,
-      "usage_slot_name": "subject",
-      "range": "Node",
+      "usage_slot_name": "about_edge",
+      "range": "Edge",
+      "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -2615,6 +2558,69 @@
       "@type": "SlotDefinition"
     },
     {
+      "name": "NewLabel_new_value",
+      "definition_uri": "http://w3id.org/kgcl/new_value",
+      "description": "The value of a property held in the new instance of the ontology",
+      "from_schema": "https://w3id.org/kgcl",
+      "is_a": "new_value",
+      "domain": "NewLabel",
+      "slot_uri": "http://w3id.org/kgcl/new_value",
+      "alias": "new_value",
+      "owner": "NewLabel",
+      "domain_of": [
+        "NewLabel"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "new_value",
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "NewLabel_change_description",
+      "definition_uri": "http://w3id.org/kgcl/change_description",
+      "description": "A string serialization of the change. This should be both human-readable, and parseable.",
+      "comments": [
+        "{'Form 1': 'IRIs are denoted by CURIEs, optionally followed by label in parenthesis'}",
+        "{'Form 2': \"IRIs are denoted by the rdfs:label in single quotes, e.g. 'nervous system'\"}"
+      ],
+      "examples": [
+        {
+          "value": "rename UBERON:0002398 from 'manus' to 'hand'",
+          "@type": "Example"
+        },
+        {
+          "value": "move 'hand' from 'part of' 'hindlimb' to 'part of' 'forelimb'",
+          "@type": "Example"
+        },
+        {
+          "value": "merge 'cellular metabolic process' into 'metabolic process'",
+          "@type": "Example"
+        },
+        {
+          "value": "search and replace 'metabolic process' with 'metabolism' in all labels under 'biological process'",
+          "@type": "Example"
+        },
+        {
+          "value": "search and replace 'metabolic process' with 'metabolism' in all labels under 'biological process' retaining as 'exact synonym'",
+          "@type": "Example"
+        }
+      ],
+      "from_schema": "https://w3id.org/kgcl",
+      "is_a": "change_description",
+      "string_serialization": "add label {new_value} to {about_node}",
+      "domain": "NewLabel",
+      "slot_uri": "http://w3id.org/kgcl/change_description",
+      "alias": "change_description",
+      "owner": "NewLabel",
+      "domain_of": [
+        "NewLabel"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "change_description",
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
       "name": "SetLanguageForName_change_description",
       "definition_uri": "http://w3id.org/kgcl/change_description",
       "description": "A string serialization of the change. This should be both human-readable, and parseable.",
@@ -2657,39 +2663,6 @@
       "is_usage_slot": true,
       "usage_slot_name": "change_description",
       "range": "string",
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "NameBecomesSynonym_change_1",
-      "from_schema": "https://w3id.org/kgcl",
-      "is_a": "change_1",
-      "domain": "NameBecomesSynonym",
-      "slot_uri": "http://w3id.org/kgcl/change_1",
-      "alias": "change 1",
-      "owner": "NameBecomesSynonym",
-      "domain_of": [
-        "NameBecomesSynonym"
-      ],
-      "is_usage_slot": true,
-      "usage_slot_name": "change 1",
-      "range": "NodeRename",
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "NameBecomesSynonym_change_2",
-      "description": "",
-      "from_schema": "https://w3id.org/kgcl",
-      "is_a": "change_2",
-      "domain": "NameBecomesSynonym",
-      "slot_uri": "http://w3id.org/kgcl/change_2",
-      "alias": "change 2",
-      "owner": "NameBecomesSynonym",
-      "domain_of": [
-        "NameBecomesSynonym"
-      ],
-      "is_usage_slot": true,
-      "usage_slot_name": "change 2",
-      "range": "NewSynonym",
       "@type": "SlotDefinition"
     },
     {
@@ -2801,20 +2774,21 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "RemoveNodeFromSubset_subset",
+      "name": "RemoveNodeFromSubset_in_subset",
+      "definition_uri": "http://w3id.org/kgcl/in_subset",
       "description": "The subset from which the node is to be removed",
       "from_schema": "https://w3id.org/kgcl",
-      "is_a": "subset",
+      "is_a": "RemoveFromSubset_in_subset",
       "domain": "RemoveNodeFromSubset",
-      "slot_uri": "http://w3id.org/kgcl/subset",
-      "alias": "subset",
+      "slot_uri": "http://w3id.org/kgcl/in_subset",
+      "alias": "in_subset",
       "owner": "RemoveNodeFromSubset",
       "domain_of": [
         "RemoveNodeFromSubset"
       ],
       "is_usage_slot": true,
-      "usage_slot_name": "subset",
-      "range": "string",
+      "usage_slot_name": "in_subset",
+      "range": "OntologySubset",
       "@type": "SlotDefinition"
     },
     {
@@ -2864,20 +2838,21 @@
     },
     {
       "name": "NodeObsoletion_associated_change_set",
+      "definition_uri": "http://w3id.org/kgcl/associated_change_set",
       "description": "All changes forced as a result of this obsoletion. For example, starting with `A subClassOf B subClassOf C`, if we obsolete node B, then we may decide to bundle in a node move change of A from B to C. Note: this change set is not considered a part of the obsoletion, as obsoletion is considered atomic/simple. Instead this is a reference to a change set that may exist elsewhere",
       "from_schema": "https://w3id.org/kgcl",
       "is_a": "change_set",
       "domain": "NodeObsoletion",
       "slot_uri": "http://w3id.org/kgcl/associated_change_set",
-      "multivalued": true,
-      "alias": "associated change set",
+      "alias": "associated_change_set",
       "owner": "NodeObsoletion",
       "domain_of": [
         "NodeObsoletion"
       ],
       "is_usage_slot": true,
-      "usage_slot_name": "associated change set",
+      "usage_slot_name": "associated_change_set",
       "range": "Change",
+      "multivalued": true,
       "inlined": true,
       "inlined_as_list": true,
       "@type": "SlotDefinition"
@@ -2925,38 +2900,6 @@
       "is_usage_slot": true,
       "usage_slot_name": "change_description",
       "range": "string",
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "NodeUnobsoletion_replaced_by",
-      "from_schema": "https://w3id.org/kgcl",
-      "is_a": "replaced_by",
-      "domain": "NodeUnobsoletion",
-      "slot_uri": "http://w3id.org/kgcl/replaced_by",
-      "alias": "replaced by",
-      "owner": "NodeUnobsoletion",
-      "domain_of": [
-        "NodeUnobsoletion"
-      ],
-      "is_usage_slot": true,
-      "usage_slot_name": "replaced by",
-      "range": "Node",
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "NodeUnobsoletion_consider",
-      "from_schema": "https://w3id.org/kgcl",
-      "is_a": "consider",
-      "domain": "NodeUnobsoletion",
-      "slot_uri": "http://w3id.org/kgcl/consider",
-      "alias": "consider",
-      "owner": "NodeUnobsoletion",
-      "domain_of": [
-        "NodeUnobsoletion"
-      ],
-      "is_usage_slot": true,
-      "usage_slot_name": "consider",
-      "range": "Node",
       "@type": "SlotDefinition"
     },
     {
@@ -3140,6 +3083,96 @@
       "@type": "SlotDefinition"
     },
     {
+      "name": "ClassDeletion_change_description",
+      "definition_uri": "http://w3id.org/kgcl/change_description",
+      "description": "A string serialization of the change. This should be both human-readable, and parseable.",
+      "comments": [
+        "{'Form 1': 'IRIs are denoted by CURIEs, optionally followed by label in parenthesis'}",
+        "{'Form 2': \"IRIs are denoted by the rdfs:label in single quotes, e.g. 'nervous system'\"}"
+      ],
+      "examples": [
+        {
+          "value": "rename UBERON:0002398 from 'manus' to 'hand'",
+          "@type": "Example"
+        },
+        {
+          "value": "move 'hand' from 'part of' 'hindlimb' to 'part of' 'forelimb'",
+          "@type": "Example"
+        },
+        {
+          "value": "merge 'cellular metabolic process' into 'metabolic process'",
+          "@type": "Example"
+        },
+        {
+          "value": "search and replace 'metabolic process' with 'metabolism' in all labels under 'biological process'",
+          "@type": "Example"
+        },
+        {
+          "value": "search and replace 'metabolic process' with 'metabolism' in all labels under 'biological process' retaining as 'exact synonym'",
+          "@type": "Example"
+        }
+      ],
+      "from_schema": "https://w3id.org/kgcl",
+      "is_a": "NodeDeletion_change_description",
+      "string_serialization": "delete class {about_node}",
+      "domain": "ClassDeletion",
+      "slot_uri": "http://w3id.org/kgcl/change_description",
+      "alias": "change_description",
+      "owner": "ClassDeletion",
+      "domain_of": [
+        "ClassDeletion"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "change_description",
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "ObjectPropertyDeletion_change_description",
+      "definition_uri": "http://w3id.org/kgcl/change_description",
+      "description": "A string serialization of the change. This should be both human-readable, and parseable.",
+      "comments": [
+        "{'Form 1': 'IRIs are denoted by CURIEs, optionally followed by label in parenthesis'}",
+        "{'Form 2': \"IRIs are denoted by the rdfs:label in single quotes, e.g. 'nervous system'\"}"
+      ],
+      "examples": [
+        {
+          "value": "rename UBERON:0002398 from 'manus' to 'hand'",
+          "@type": "Example"
+        },
+        {
+          "value": "move 'hand' from 'part of' 'hindlimb' to 'part of' 'forelimb'",
+          "@type": "Example"
+        },
+        {
+          "value": "merge 'cellular metabolic process' into 'metabolic process'",
+          "@type": "Example"
+        },
+        {
+          "value": "search and replace 'metabolic process' with 'metabolism' in all labels under 'biological process'",
+          "@type": "Example"
+        },
+        {
+          "value": "search and replace 'metabolic process' with 'metabolism' in all labels under 'biological process' retaining as 'exact synonym'",
+          "@type": "Example"
+        }
+      ],
+      "from_schema": "https://w3id.org/kgcl",
+      "is_a": "NodeDeletion_change_description",
+      "string_serialization": "delete object property {about_node}",
+      "domain": "ObjectPropertyDeletion",
+      "slot_uri": "http://w3id.org/kgcl/change_description",
+      "alias": "change_description",
+      "owner": "ObjectPropertyDeletion",
+      "domain_of": [
+        "ObjectPropertyDeletion"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "change_description",
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
       "name": "NodeDirectMerge_has_direct_replacement",
       "definition_uri": "http://w3id.org/kgcl/has_direct_replacement",
       "description": "An obsoletion replacement where it IS valid to automatically update annotations/edges pointing at the node with its direct replacement",
@@ -3316,7 +3349,6 @@
       "is_a": "has_nondirect_replacement",
       "domain": "NodeObsoletionWithNoDirectReplacement",
       "slot_uri": "http://w3id.org/kgcl/has_nondirect_replacement",
-      "multivalued": true,
       "alias": "has_nondirect_replacement",
       "owner": "NodeObsoletionWithNoDirectReplacement",
       "domain_of": [
@@ -3326,6 +3358,7 @@
       "usage_slot_name": "has_nondirect_replacement",
       "range": "Node",
       "required": true,
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -3398,11 +3431,13 @@
         "Change_was_generated_by",
         "Change_see_also",
         "Change_pull_request",
+        "Change_term_tracker_issue",
         "Change_creator",
         "Change_change_date",
         "contributor",
         "has_undo",
-        "Change_term_tracker_issue"
+        "change_description",
+        "associated_change_set"
       ],
       "slot_usage": {},
       "class_uri": "http://w3id.org/kgcl/Change",
@@ -3424,11 +3459,13 @@
         "Change_was_generated_by",
         "Change_see_also",
         "Change_pull_request",
+        "Change_term_tracker_issue",
         "Change_creator",
         "Change_change_date",
         "contributor",
         "has_undo",
-        "Change_term_tracker_issue",
+        "change_description",
+        "associated_change_set",
         "old_value",
         "new_value",
         "old_value_type",
@@ -3455,11 +3492,13 @@
         "Change_was_generated_by",
         "Change_see_also",
         "Change_pull_request",
+        "Change_term_tracker_issue",
         "Change_creator",
         "Change_change_date",
         "contributor",
         "has_undo",
-        "Change_term_tracker_issue",
+        "change_description",
+        "associated_change_set",
         "change_set"
       ],
       "slot_usage": {},
@@ -3487,11 +3526,11 @@
         "Change_was_generated_by",
         "Change_see_also",
         "Change_pull_request",
+        "Change_term_tracker_issue",
         "Change_creator",
         "Change_change_date",
         "contributor",
         "has_undo",
-        "Change_term_tracker_issue",
         "MultiNodeObsoletion_change_set",
         "MultiNodeObsoletion_change_description",
         "MultiNodeObsoletion_associated_change_set"
@@ -3512,11 +3551,13 @@
         "Change_was_generated_by",
         "Change_see_also",
         "Change_pull_request",
+        "Change_term_tracker_issue",
         "Change_creator",
         "Change_change_date",
         "contributor",
         "has_undo",
-        "Change_term_tracker_issue",
+        "change_description",
+        "associated_change_set",
         "change_set"
       ],
       "slot_usage": {},
@@ -3529,11 +3570,6 @@
       "description": "A summary statistic for a set of changes of the same type, grouped by zero or more node properties",
       "from_schema": "https://w3id.org/kgcl",
       "is_a": "ChangeLanguageElement",
-      "slots": [
-        "ChangeSetSummaryStatistic_change_type",
-        "ChangeSetSummaryStatistic_count",
-        "ChangeSetSummaryStatistic_property_value_set"
-      ],
       "slot_usage": {},
       "class_uri": "http://w3id.org/kgcl/ChangeSetSummaryStatistic",
       "@type": "ClassDefinition"
@@ -3544,6 +3580,12 @@
       "description": "root class for all change mixins",
       "from_schema": "https://w3id.org/kgcl",
       "mixin": true,
+      "slots": [
+        "about",
+        "has_undo",
+        "old_value",
+        "new_value"
+      ],
       "slot_usage": {},
       "class_uri": "http://w3id.org/kgcl/ChangeMixin",
       "@type": "ClassDefinition"
@@ -3567,6 +3609,8 @@
       "is_a": "ChangeMixin",
       "mixin": true,
       "slots": [
+        "old_value",
+        "new_value",
         "Obsoletion_about",
         "Obsoletion_has_undo"
       ],
@@ -3581,6 +3625,12 @@
       "from_schema": "https://w3id.org/kgcl",
       "is_a": "ChangeMixin",
       "mixin": true,
+      "slots": [
+        "about",
+        "has_undo",
+        "old_value",
+        "new_value"
+      ],
       "slot_usage": {},
       "class_uri": "http://w3id.org/kgcl/DatatypeOrLanguageTagChange",
       "@type": "ClassDefinition"
@@ -3591,6 +3641,8 @@
       "from_schema": "https://w3id.org/kgcl",
       "is_a": "DatatypeOrLanguageTagChange",
       "slots": [
+        "about",
+        "has_undo",
         "LanguageTagChange_old_value",
         "LanguageTagChange_new_value"
       ],
@@ -3603,6 +3655,12 @@
       "definition_uri": "http://w3id.org/kgcl/DatatypeChange",
       "from_schema": "https://w3id.org/kgcl",
       "is_a": "DatatypeOrLanguageTagChange",
+      "slots": [
+        "about",
+        "has_undo",
+        "old_value",
+        "new_value"
+      ],
       "slot_usage": {},
       "class_uri": "http://w3id.org/kgcl/DatatypeChange",
       "@type": "ClassDefinition"
@@ -3615,6 +3673,8 @@
       "is_a": "Obsoletion",
       "mixin": true,
       "slots": [
+        "old_value",
+        "new_value",
         "Obsoletion_about",
         "Obsoletion_has_undo"
       ],
@@ -3633,6 +3693,9 @@
       "is_a": "ChangeMixin",
       "mixin": true,
       "slots": [
+        "about",
+        "old_value",
+        "new_value",
         "Unobsoletion_has_undo"
       ],
       "slot_usage": {},
@@ -3649,6 +3712,12 @@
       "from_schema": "https://w3id.org/kgcl",
       "is_a": "ChangeMixin",
       "mixin": true,
+      "slots": [
+        "about",
+        "has_undo",
+        "old_value",
+        "new_value"
+      ],
       "slot_usage": {},
       "class_uri": "http://w3id.org/kgcl/Deletion",
       "@type": "ClassDefinition"
@@ -3661,6 +3730,9 @@
       "is_a": "ChangeMixin",
       "mixin": true,
       "slots": [
+        "about",
+        "old_value",
+        "new_value",
         "Creation_has_undo"
       ],
       "slot_usage": {},
@@ -3675,6 +3747,10 @@
       "is_a": "ChangeMixin",
       "mixin": true,
       "slots": [
+        "about",
+        "has_undo",
+        "old_value",
+        "new_value",
         "in_subset"
       ],
       "slot_usage": {},
@@ -3689,6 +3765,10 @@
       "is_a": "SubsetMembershipChange",
       "mixin": true,
       "slots": [
+        "about",
+        "has_undo",
+        "old_value",
+        "new_value",
         "AddToSubset_in_subset"
       ],
       "slot_usage": {},
@@ -3703,6 +3783,9 @@
       "is_a": "SubsetMembershipChange",
       "mixin": true,
       "slots": [
+        "about",
+        "old_value",
+        "new_value",
         "RemoveFromSubset_in_subset",
         "RemoveFromSubset_has_undo"
       ],
@@ -3730,11 +3813,13 @@
         "Change_was_generated_by",
         "Change_see_also",
         "Change_pull_request",
+        "Change_term_tracker_issue",
         "Change_creator",
         "Change_change_date",
         "contributor",
         "has_undo",
-        "Change_term_tracker_issue",
+        "change_description",
+        "associated_change_set",
         "old_value",
         "new_value",
         "old_value_type",
@@ -3743,11 +3828,10 @@
         "old_language",
         "new_datatype",
         "old_datatype",
-        "about_edge",
+        "EdgeChange_about_edge",
         "object_type",
         "language",
-        "datatype",
-        "EdgeChange_subject"
+        "datatype"
       ],
       "slot_usage": {},
       "class_uri": "http://w3id.org/kgcl/EdgeChange",
@@ -3774,11 +3858,12 @@
         "Change_was_generated_by",
         "Change_see_also",
         "Change_pull_request",
+        "Change_term_tracker_issue",
         "Change_creator",
         "Change_change_date",
         "contributor",
         "has_undo",
-        "Change_term_tracker_issue",
+        "associated_change_set",
         "old_value",
         "new_value",
         "old_value_type",
@@ -3787,7 +3872,7 @@
         "old_language",
         "new_datatype",
         "old_datatype",
-        "about_edge",
+        "EdgeChange_about_edge",
         "language",
         "datatype",
         "subject",
@@ -3797,7 +3882,8 @@
         "predicate_type",
         "object_type",
         "annotation_set",
-        "EdgeCreation_change_description"
+        "EdgeCreation_change_description",
+        "about"
       ],
       "slot_usage": {},
       "class_uri": "http://w3id.org/kgcl/EdgeCreation",
@@ -3815,11 +3901,12 @@
         "Change_was_generated_by",
         "Change_see_also",
         "Change_pull_request",
+        "Change_term_tracker_issue",
         "Change_creator",
         "Change_change_date",
         "contributor",
         "has_undo",
-        "Change_term_tracker_issue",
+        "associated_change_set",
         "old_value",
         "new_value",
         "old_value_type",
@@ -3828,7 +3915,7 @@
         "old_language",
         "new_datatype",
         "old_datatype",
-        "about_edge",
+        "EdgeChange_about_edge",
         "language",
         "datatype",
         "subject",
@@ -3838,7 +3925,8 @@
         "predicate_type",
         "object_type",
         "annotation_set",
-        "EdgeCreation_change_description"
+        "EdgeCreation_change_description",
+        "about"
       ],
       "slot_usage": {},
       "class_uri": "http://w3id.org/kgcl/PlaceUnder",
@@ -3862,11 +3950,12 @@
         "Change_was_generated_by",
         "Change_see_also",
         "Change_pull_request",
+        "Change_term_tracker_issue",
         "Change_creator",
         "Change_change_date",
         "contributor",
         "has_undo",
-        "Change_term_tracker_issue",
+        "associated_change_set",
         "old_value",
         "new_value",
         "old_value_type",
@@ -3875,7 +3964,7 @@
         "old_language",
         "new_datatype",
         "old_datatype",
-        "about_edge",
+        "EdgeChange_about_edge",
         "language",
         "datatype",
         "subject",
@@ -3885,7 +3974,8 @@
         "predicate_type",
         "object_type",
         "annotation_set",
-        "EdgeDeletion_change_description"
+        "EdgeDeletion_change_description",
+        "about"
       ],
       "slot_usage": {},
       "class_uri": "http://w3id.org/kgcl/EdgeDeletion",
@@ -3903,11 +3993,12 @@
         "Change_was_generated_by",
         "Change_see_also",
         "Change_pull_request",
+        "Change_term_tracker_issue",
         "Change_creator",
         "Change_change_date",
         "contributor",
         "has_undo",
-        "Change_term_tracker_issue",
+        "associated_change_set",
         "old_value",
         "new_value",
         "old_value_type",
@@ -3916,7 +4007,7 @@
         "old_language",
         "new_datatype",
         "old_datatype",
-        "about_edge",
+        "EdgeChange_about_edge",
         "language",
         "datatype",
         "subject",
@@ -3926,7 +4017,8 @@
         "predicate_type",
         "object_type",
         "annotation_set",
-        "EdgeDeletion_change_description"
+        "EdgeDeletion_change_description",
+        "about"
       ],
       "slot_usage": {},
       "class_uri": "http://w3id.org/kgcl/RemoveUnder",
@@ -3956,11 +4048,12 @@
         "Change_was_generated_by",
         "Change_see_also",
         "Change_pull_request",
+        "Change_term_tracker_issue",
         "Change_creator",
         "Change_change_date",
         "contributor",
         "has_undo",
-        "Change_term_tracker_issue",
+        "associated_change_set",
         "old_value",
         "new_value",
         "old_value_type",
@@ -3969,7 +4062,7 @@
         "old_language",
         "new_datatype",
         "old_datatype",
-        "about_edge",
+        "EdgeChange_about_edge",
         "object_type",
         "language",
         "datatype",
@@ -4002,11 +4095,13 @@
         "Change_was_generated_by",
         "Change_see_also",
         "Change_pull_request",
+        "Change_term_tracker_issue",
         "Change_creator",
         "Change_change_date",
         "contributor",
         "has_undo",
-        "Change_term_tracker_issue",
+        "change_description",
+        "associated_change_set",
         "old_value",
         "new_value",
         "old_value_type",
@@ -4015,11 +4110,10 @@
         "old_language",
         "new_datatype",
         "old_datatype",
-        "about_edge",
+        "EdgeChange_about_edge",
         "object_type",
         "language",
-        "datatype",
-        "EdgeChange_subject"
+        "datatype"
       ],
       "slot_usage": {},
       "class_uri": "http://w3id.org/kgcl/EdgeRewiring",
@@ -4047,11 +4141,12 @@
         "Change_was_generated_by",
         "Change_see_also",
         "Change_pull_request",
+        "Change_term_tracker_issue",
         "Change_creator",
         "Change_change_date",
         "contributor",
         "has_undo",
-        "Change_term_tracker_issue",
+        "associated_change_set",
         "old_value",
         "new_value",
         "old_value_type",
@@ -4060,12 +4155,13 @@
         "old_language",
         "new_datatype",
         "old_datatype",
-        "about_edge",
+        "EdgeChange_about_edge",
         "language",
         "datatype",
         "subject_type",
         "predicate_type",
         "object_type",
+        "about",
         "MappingCreation_subject",
         "MappingCreation_predicate",
         "MappingCreation_object",
@@ -4094,11 +4190,12 @@
         "Change_was_generated_by",
         "Change_see_also",
         "Change_pull_request",
+        "Change_term_tracker_issue",
         "Change_creator",
         "Change_change_date",
         "contributor",
         "has_undo",
-        "Change_term_tracker_issue",
+        "associated_change_set",
         "old_value",
         "new_value",
         "old_value_type",
@@ -4107,11 +4204,10 @@
         "old_language",
         "new_datatype",
         "old_datatype",
-        "about_edge",
+        "EdgeChange_about_edge",
         "object_type",
         "language",
         "datatype",
-        "EdgeChange_subject",
         "old_object_type",
         "new_object_type",
         "NodeMove_change_description"
@@ -4138,11 +4234,12 @@
         "Change_was_generated_by",
         "Change_see_also",
         "Change_pull_request",
+        "Change_term_tracker_issue",
         "Change_creator",
         "Change_change_date",
         "contributor",
         "has_undo",
-        "Change_term_tracker_issue",
+        "associated_change_set",
         "old_value",
         "new_value",
         "old_value_type",
@@ -4151,11 +4248,10 @@
         "old_language",
         "new_datatype",
         "old_datatype",
-        "about_edge",
+        "EdgeChange_about_edge",
         "object_type",
         "language",
         "datatype",
-        "EdgeChange_subject",
         "old_object_type",
         "new_object_type",
         "NodeDeepening_change_description"
@@ -4182,11 +4278,12 @@
         "Change_was_generated_by",
         "Change_see_also",
         "Change_pull_request",
+        "Change_term_tracker_issue",
         "Change_creator",
         "Change_change_date",
         "contributor",
         "has_undo",
-        "Change_term_tracker_issue",
+        "associated_change_set",
         "old_value",
         "new_value",
         "old_value_type",
@@ -4195,11 +4292,10 @@
         "old_language",
         "new_datatype",
         "old_datatype",
-        "about_edge",
+        "EdgeChange_about_edge",
         "object_type",
         "language",
         "datatype",
-        "EdgeChange_subject",
         "old_object_type",
         "new_object_type",
         "NodeShallowing_change_description"
@@ -4226,11 +4322,12 @@
         "Change_was_generated_by",
         "Change_see_also",
         "Change_pull_request",
+        "Change_term_tracker_issue",
         "Change_creator",
         "Change_change_date",
         "contributor",
         "has_undo",
-        "Change_term_tracker_issue",
+        "associated_change_set",
         "old_value",
         "new_value",
         "old_value_type",
@@ -4239,11 +4336,10 @@
         "old_language",
         "new_datatype",
         "old_datatype",
-        "about_edge",
+        "EdgeChange_about_edge",
         "object_type",
         "language",
         "datatype",
-        "EdgeChange_subject",
         "PredicateChange_change_description"
       ],
       "slot_usage": {},
@@ -4268,11 +4364,13 @@
         "Change_was_generated_by",
         "Change_see_also",
         "Change_pull_request",
+        "Change_term_tracker_issue",
         "Change_creator",
         "Change_change_date",
         "contributor",
         "has_undo",
-        "Change_term_tracker_issue",
+        "change_description",
+        "associated_change_set",
         "old_value",
         "new_value",
         "old_value_type",
@@ -4281,11 +4379,10 @@
         "old_language",
         "new_datatype",
         "old_datatype",
-        "about_edge",
+        "EdgeChange_about_edge",
         "object_type",
         "language",
-        "datatype",
-        "EdgeChange_subject"
+        "datatype"
       ],
       "slot_usage": {},
       "class_uri": "http://w3id.org/kgcl/EdgeLogicalInterpretationChange",
@@ -4303,11 +4400,13 @@
         "Change_was_generated_by",
         "Change_see_also",
         "Change_pull_request",
+        "Change_term_tracker_issue",
         "Change_creator",
         "Change_change_date",
         "contributor",
         "has_undo",
-        "Change_term_tracker_issue",
+        "change_description",
+        "associated_change_set",
         "old_value",
         "new_value",
         "old_value_type",
@@ -4334,11 +4433,13 @@
         "Change_was_generated_by",
         "Change_see_also",
         "Change_pull_request",
+        "Change_term_tracker_issue",
         "Change_creator",
         "Change_change_date",
         "contributor",
         "has_undo",
-        "Change_term_tracker_issue",
+        "change_description",
+        "associated_change_set",
         "old_value",
         "new_value",
         "old_value_type",
@@ -4374,11 +4475,12 @@
         "Change_was_generated_by",
         "Change_see_also",
         "Change_pull_request",
+        "Change_term_tracker_issue",
         "Change_creator",
         "Change_change_date",
         "contributor",
         "has_undo",
-        "Change_term_tracker_issue",
+        "associated_change_set",
         "old_value_type",
         "new_value_type",
         "new_datatype",
@@ -4398,6 +4500,60 @@
       "@type": "ClassDefinition"
     },
     {
+      "name": "NewLabel",
+      "definition_uri": "http://w3id.org/kgcl/NewLabel",
+      "description": "A node change where a name (aka rdfs:label) is added to a node that does not already have one. To replace an existing name, use NodeRename.",
+      "examples": [
+        {
+          "value": "add label 'nucleus' to GO:0005634",
+          "description": "adding the rdfs:label 'nucleus' to a GO class that has no label",
+          "@type": "Example"
+        },
+        {
+          "value": "add label 'noyau'@fr to GO:0005634",
+          "description": "adding a French-language rdfs:label to a GO class",
+          "@type": "Example"
+        }
+      ],
+      "from_schema": "https://w3id.org/kgcl",
+      "see_also": [
+        "https://github.com/INCATools/kgcl/issues/100"
+      ],
+      "aliases": [
+        "add label",
+        "add name"
+      ],
+      "is_a": "NodeChange",
+      "slots": [
+        "id",
+        "type",
+        "Change_was_generated_by",
+        "Change_see_also",
+        "Change_pull_request",
+        "Change_term_tracker_issue",
+        "Change_creator",
+        "Change_change_date",
+        "contributor",
+        "has_undo",
+        "associated_change_set",
+        "old_value",
+        "old_value_type",
+        "new_value_type",
+        "old_language",
+        "new_datatype",
+        "old_datatype",
+        "about_node",
+        "about_node_representation",
+        "language",
+        "NewLabel_new_value",
+        "new_language",
+        "NewLabel_change_description"
+      ],
+      "slot_usage": {},
+      "class_uri": "http://w3id.org/kgcl/NewLabel",
+      "@type": "ClassDefinition"
+    },
+    {
       "name": "SetLanguageForName",
       "definition_uri": "http://w3id.org/kgcl/SetLanguageForName",
       "description": "A node change where the string value for the name is unchanged but the language tag is set",
@@ -4412,11 +4568,12 @@
         "Change_was_generated_by",
         "Change_see_also",
         "Change_pull_request",
+        "Change_term_tracker_issue",
         "Change_creator",
         "Change_change_date",
         "contributor",
         "has_undo",
-        "Change_term_tracker_issue",
+        "associated_change_set",
         "old_value_type",
         "new_value_type",
         "new_language",
@@ -4428,7 +4585,8 @@
         "language",
         "old_value",
         "new_value",
-        "SetLanguageForName_change_description"
+        "SetLanguageForName_change_description",
+        "about"
       ],
       "slot_usage": {},
       "class_uri": "http://w3id.org/kgcl/SetLanguageForName",
@@ -4446,11 +4604,13 @@
         "Change_was_generated_by",
         "Change_see_also",
         "Change_pull_request",
+        "Change_term_tracker_issue",
         "Change_creator",
         "Change_change_date",
         "contributor",
         "has_undo",
-        "Change_term_tracker_issue",
+        "change_description",
+        "associated_change_set",
         "old_value",
         "new_value",
         "old_value_type",
@@ -4481,11 +4641,13 @@
         "Change_was_generated_by",
         "Change_see_also",
         "Change_pull_request",
+        "Change_term_tracker_issue",
         "Change_creator",
         "Change_change_date",
         "contributor",
         "has_undo",
-        "Change_term_tracker_issue",
+        "change_description",
+        "associated_change_set",
         "old_value",
         "new_value",
         "old_value_type",
@@ -4515,11 +4677,13 @@
         "Change_was_generated_by",
         "Change_see_also",
         "Change_pull_request",
+        "Change_term_tracker_issue",
         "Change_creator",
         "Change_change_date",
         "contributor",
         "has_undo",
-        "Change_term_tracker_issue",
+        "change_description",
+        "associated_change_set",
         "old_value",
         "new_value",
         "old_value_type",
@@ -4553,11 +4717,13 @@
         "Change_was_generated_by",
         "Change_see_also",
         "Change_pull_request",
+        "Change_term_tracker_issue",
         "Change_creator",
         "Change_change_date",
         "contributor",
         "has_undo",
-        "Change_term_tracker_issue",
+        "change_description",
+        "associated_change_set",
         "old_value",
         "old_value_type",
         "new_value_type",
@@ -4588,11 +4754,12 @@
         "Change_was_generated_by",
         "Change_see_also",
         "Change_pull_request",
+        "Change_term_tracker_issue",
         "Change_creator",
         "Change_change_date",
         "contributor",
         "has_undo",
-        "Change_term_tracker_issue",
+        "associated_change_set",
         "old_value",
         "new_value",
         "old_value_type",
@@ -4604,8 +4771,6 @@
         "about_node",
         "about_node_representation",
         "language",
-        "NameBecomesSynonym_change_1",
-        "NameBecomesSynonym_change_2",
         "NameBecomesSynonym_change_description"
       ],
       "slot_usage": {},
@@ -4624,11 +4789,13 @@
         "Change_was_generated_by",
         "Change_see_also",
         "Change_pull_request",
+        "Change_term_tracker_issue",
         "Change_creator",
         "Change_change_date",
         "contributor",
         "has_undo",
-        "Change_term_tracker_issue",
+        "change_description",
+        "associated_change_set",
         "new_value",
         "old_value_type",
         "new_value_type",
@@ -4657,11 +4824,13 @@
         "Change_was_generated_by",
         "Change_see_also",
         "Change_pull_request",
+        "Change_term_tracker_issue",
         "Change_creator",
         "Change_change_date",
         "contributor",
         "has_undo",
-        "Change_term_tracker_issue",
+        "change_description",
+        "associated_change_set",
         "old_value_type",
         "new_value_type",
         "new_language",
@@ -4673,6 +4842,7 @@
         "language",
         "old_value",
         "new_value",
+        "qualifier",
         "has_textual_diff"
       ],
       "slot_usage": {},
@@ -4694,11 +4864,13 @@
         "Change_was_generated_by",
         "Change_see_also",
         "Change_pull_request",
+        "Change_term_tracker_issue",
         "Change_creator",
         "Change_change_date",
         "contributor",
         "has_undo",
-        "Change_term_tracker_issue",
+        "change_description",
+        "associated_change_set",
         "old_value_type",
         "new_value_type",
         "new_language",
@@ -4732,11 +4904,13 @@
         "Change_was_generated_by",
         "Change_see_also",
         "Change_pull_request",
+        "Change_term_tracker_issue",
         "Change_creator",
         "Change_change_date",
         "contributor",
         "has_undo",
-        "Change_term_tracker_issue",
+        "change_description",
+        "associated_change_set",
         "old_value",
         "new_value",
         "old_value_type",
@@ -4768,11 +4942,13 @@
         "Change_was_generated_by",
         "Change_see_also",
         "Change_pull_request",
+        "Change_term_tracker_issue",
         "Change_creator",
         "Change_change_date",
         "contributor",
         "has_undo",
-        "Change_term_tracker_issue",
+        "change_description",
+        "associated_change_set",
         "old_value",
         "new_value",
         "old_value_type",
@@ -4803,11 +4979,13 @@
         "Change_was_generated_by",
         "Change_see_also",
         "Change_pull_request",
+        "Change_term_tracker_issue",
         "Change_creator",
         "Change_change_date",
         "contributor",
         "has_undo",
-        "Change_term_tracker_issue",
+        "change_description",
+        "associated_change_set",
         "old_value",
         "new_value",
         "old_value_type",
@@ -4838,11 +5016,13 @@
         "Change_was_generated_by",
         "Change_see_also",
         "Change_pull_request",
+        "Change_term_tracker_issue",
         "Change_creator",
         "Change_change_date",
         "contributor",
         "has_undo",
-        "Change_term_tracker_issue",
+        "change_description",
+        "associated_change_set",
         "old_value_type",
         "new_value_type",
         "new_language",
@@ -4874,11 +5054,13 @@
         "Change_was_generated_by",
         "Change_see_also",
         "Change_pull_request",
+        "Change_term_tracker_issue",
         "Change_creator",
         "Change_change_date",
         "contributor",
         "has_undo",
-        "Change_term_tracker_issue",
+        "change_description",
+        "associated_change_set",
         "old_value_type",
         "new_value_type",
         "new_language",
@@ -4910,11 +5092,13 @@
         "Change_was_generated_by",
         "Change_see_also",
         "Change_pull_request",
+        "Change_term_tracker_issue",
         "Change_creator",
         "Change_change_date",
         "contributor",
         "has_undo",
-        "Change_term_tracker_issue",
+        "change_description",
+        "associated_change_set",
         "old_value",
         "new_value",
         "old_value_type",
@@ -4946,11 +5130,13 @@
         "Change_was_generated_by",
         "Change_see_also",
         "Change_pull_request",
+        "Change_term_tracker_issue",
         "Change_creator",
         "Change_change_date",
         "contributor",
         "has_undo",
-        "Change_term_tracker_issue",
+        "change_description",
+        "associated_change_set",
         "old_value",
         "new_value",
         "old_value_type",
@@ -4981,11 +5167,13 @@
         "Change_was_generated_by",
         "Change_see_also",
         "Change_pull_request",
+        "Change_term_tracker_issue",
         "Change_creator",
         "Change_change_date",
         "contributor",
         "has_undo",
-        "Change_term_tracker_issue",
+        "change_description",
+        "associated_change_set",
         "old_value",
         "new_value",
         "old_value_type",
@@ -5016,11 +5204,13 @@
         "Change_was_generated_by",
         "Change_see_also",
         "Change_pull_request",
+        "Change_term_tracker_issue",
         "Change_creator",
         "Change_change_date",
         "contributor",
         "has_undo",
-        "Change_term_tracker_issue",
+        "change_description",
+        "associated_change_set",
         "old_value_type",
         "new_value_type",
         "new_language",
@@ -5052,11 +5242,13 @@
         "Change_was_generated_by",
         "Change_see_also",
         "Change_pull_request",
+        "Change_term_tracker_issue",
         "Change_creator",
         "Change_change_date",
         "contributor",
         "has_undo",
-        "Change_term_tracker_issue",
+        "change_description",
+        "associated_change_set",
         "old_value_type",
         "new_value_type",
         "new_language",
@@ -5086,11 +5278,13 @@
         "Change_was_generated_by",
         "Change_see_also",
         "Change_pull_request",
+        "Change_term_tracker_issue",
         "Change_creator",
         "Change_change_date",
         "contributor",
         "has_undo",
-        "Change_term_tracker_issue",
+        "change_description",
+        "associated_change_set",
         "old_value",
         "new_value",
         "old_value_type",
@@ -5119,11 +5313,13 @@
         "Change_was_generated_by",
         "Change_see_also",
         "Change_pull_request",
+        "Change_term_tracker_issue",
         "Change_creator",
         "Change_change_date",
         "contributor",
         "has_undo",
-        "Change_term_tracker_issue",
+        "change_description",
+        "associated_change_set",
         "old_value",
         "old_value_type",
         "new_value_type",
@@ -5152,11 +5348,13 @@
         "Change_was_generated_by",
         "Change_see_also",
         "Change_pull_request",
+        "Change_term_tracker_issue",
         "Change_creator",
         "Change_change_date",
         "contributor",
         "has_undo",
-        "Change_term_tracker_issue",
+        "change_description",
+        "associated_change_set",
         "new_value",
         "old_value_type",
         "new_value_type",
@@ -5185,11 +5383,13 @@
         "Change_was_generated_by",
         "Change_see_also",
         "Change_pull_request",
+        "Change_term_tracker_issue",
         "Change_creator",
         "Change_change_date",
         "contributor",
         "has_undo",
-        "Change_term_tracker_issue",
+        "change_description",
+        "associated_change_set",
         "old_value_type",
         "new_value_type",
         "new_language",
@@ -5228,11 +5428,13 @@
         "Change_was_generated_by",
         "Change_see_also",
         "Change_pull_request",
+        "Change_term_tracker_issue",
         "Change_creator",
         "Change_change_date",
         "contributor",
         "has_undo",
-        "Change_term_tracker_issue",
+        "change_description",
+        "associated_change_set",
         "old_value",
         "new_value",
         "old_value_type",
@@ -5244,6 +5446,7 @@
         "about_node",
         "about_node_representation",
         "language",
+        "about",
         "AddToSubset_in_subset"
       ],
       "slot_usage": {},
@@ -5268,11 +5471,12 @@
         "Change_was_generated_by",
         "Change_see_also",
         "Change_pull_request",
+        "Change_term_tracker_issue",
         "Change_creator",
         "Change_change_date",
         "contributor",
         "has_undo",
-        "Change_term_tracker_issue",
+        "associated_change_set",
         "old_value",
         "new_value",
         "old_value_type",
@@ -5285,8 +5489,8 @@
         "language",
         "RemoveNodeFromSubset_change_description",
         "RemoveNodeFromSubset_about_node",
-        "RemoveNodeFromSubset_subset",
-        "RemoveFromSubset_in_subset"
+        "RemoveNodeFromSubset_in_subset",
+        "about"
       ],
       "slot_usage": {},
       "class_uri": "http://w3id.org/kgcl/RemoveNodeFromSubset",
@@ -5316,11 +5520,11 @@
         "Change_was_generated_by",
         "Change_see_also",
         "Change_pull_request",
+        "Change_term_tracker_issue",
         "Change_creator",
         "Change_change_date",
         "contributor",
         "has_undo",
-        "Change_term_tracker_issue",
         "old_value",
         "new_value",
         "old_value_type",
@@ -5366,11 +5570,12 @@
         "Change_was_generated_by",
         "Change_see_also",
         "Change_pull_request",
+        "Change_term_tracker_issue",
         "Change_creator",
         "Change_change_date",
         "contributor",
         "has_undo",
-        "Change_term_tracker_issue",
+        "associated_change_set",
         "old_value",
         "new_value",
         "old_value_type",
@@ -5382,9 +5587,10 @@
         "about_node",
         "about_node_representation",
         "language",
+        "has_direct_replacement",
+        "has_nondirect_replacement",
         "NodeUnobsoletion_change_description",
-        "NodeUnobsoletion_replaced_by",
-        "NodeUnobsoletion_consider"
+        "about"
       ],
       "slot_usage": {},
       "class_uri": "http://w3id.org/kgcl/NodeUnobsoletion",
@@ -5411,11 +5617,12 @@
         "Change_was_generated_by",
         "Change_see_also",
         "Change_pull_request",
+        "Change_term_tracker_issue",
         "Change_creator",
         "Change_change_date",
         "contributor",
         "has_undo",
-        "Change_term_tracker_issue",
+        "associated_change_set",
         "old_value",
         "new_value",
         "old_value_type",
@@ -5431,7 +5638,8 @@
         "owl_type",
         "annotation_set",
         "language",
-        "NodeCreation_change_description"
+        "NodeCreation_change_description",
+        "about"
       ],
       "slot_usage": {},
       "class_uri": "http://w3id.org/kgcl/NodeCreation",
@@ -5449,11 +5657,12 @@
         "Change_was_generated_by",
         "Change_see_also",
         "Change_pull_request",
+        "Change_term_tracker_issue",
         "Change_creator",
         "Change_change_date",
         "contributor",
         "has_undo",
-        "Change_term_tracker_issue",
+        "associated_change_set",
         "old_value",
         "new_value",
         "old_value_type",
@@ -5469,6 +5678,7 @@
         "owl_type",
         "annotation_set",
         "language",
+        "about",
         "superclass",
         "ClassCreation_change_description"
       ],
@@ -5488,11 +5698,12 @@
         "Change_was_generated_by",
         "Change_see_also",
         "Change_pull_request",
+        "Change_term_tracker_issue",
         "Change_creator",
         "Change_change_date",
         "contributor",
         "has_undo",
-        "Change_term_tracker_issue",
+        "associated_change_set",
         "old_value",
         "new_value",
         "old_value_type",
@@ -5508,6 +5719,7 @@
         "owl_type",
         "annotation_set",
         "language",
+        "about",
         "ObjectPropertyCreation_change_description"
       ],
       "slot_usage": {},
@@ -5529,11 +5741,12 @@
         "Change_was_generated_by",
         "Change_see_also",
         "Change_pull_request",
+        "Change_term_tracker_issue",
         "Change_creator",
         "Change_change_date",
         "contributor",
         "has_undo",
-        "Change_term_tracker_issue",
+        "associated_change_set",
         "old_value",
         "new_value",
         "old_value_type",
@@ -5545,10 +5758,83 @@
         "about_node",
         "about_node_representation",
         "language",
-        "NodeDeletion_change_description"
+        "NodeDeletion_change_description",
+        "about"
       ],
       "slot_usage": {},
       "class_uri": "http://w3id.org/kgcl/NodeDeletion",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "ClassDeletion",
+      "definition_uri": "http://w3id.org/kgcl/ClassDeletion",
+      "description": "A node deletion where the owl type is 'owl:Class'",
+      "from_schema": "https://w3id.org/kgcl",
+      "is_a": "NodeDeletion",
+      "slots": [
+        "id",
+        "type",
+        "Change_was_generated_by",
+        "Change_see_also",
+        "Change_pull_request",
+        "Change_term_tracker_issue",
+        "Change_creator",
+        "Change_change_date",
+        "contributor",
+        "has_undo",
+        "associated_change_set",
+        "old_value",
+        "new_value",
+        "old_value_type",
+        "new_value_type",
+        "new_language",
+        "old_language",
+        "new_datatype",
+        "old_datatype",
+        "about_node",
+        "about_node_representation",
+        "language",
+        "about",
+        "ClassDeletion_change_description"
+      ],
+      "slot_usage": {},
+      "class_uri": "http://w3id.org/kgcl/ClassDeletion",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "ObjectPropertyDeletion",
+      "definition_uri": "http://w3id.org/kgcl/ObjectPropertyDeletion",
+      "description": "A node deletion where the owl type is 'ObjectProperty'",
+      "from_schema": "https://w3id.org/kgcl",
+      "is_a": "NodeDeletion",
+      "slots": [
+        "id",
+        "type",
+        "Change_was_generated_by",
+        "Change_see_also",
+        "Change_pull_request",
+        "Change_term_tracker_issue",
+        "Change_creator",
+        "Change_change_date",
+        "contributor",
+        "has_undo",
+        "associated_change_set",
+        "old_value",
+        "new_value",
+        "old_value_type",
+        "new_value_type",
+        "new_language",
+        "old_language",
+        "new_datatype",
+        "old_datatype",
+        "about_node",
+        "about_node_representation",
+        "language",
+        "about",
+        "ObjectPropertyDeletion_change_description"
+      ],
+      "slot_usage": {},
+      "class_uri": "http://w3id.org/kgcl/ObjectPropertyDeletion",
       "@type": "ClassDefinition"
     },
     {
@@ -5573,11 +5859,11 @@
         "Change_was_generated_by",
         "Change_see_also",
         "Change_pull_request",
+        "Change_term_tracker_issue",
         "Change_creator",
         "Change_change_date",
         "contributor",
         "has_undo",
-        "Change_term_tracker_issue",
         "old_value",
         "new_value",
         "old_value_type",
@@ -5618,11 +5904,11 @@
         "Change_was_generated_by",
         "Change_see_also",
         "Change_pull_request",
+        "Change_term_tracker_issue",
         "Change_creator",
         "Change_change_date",
         "contributor",
         "has_undo",
-        "Change_term_tracker_issue",
         "old_value",
         "new_value",
         "old_value_type",
@@ -5656,11 +5942,11 @@
         "Change_was_generated_by",
         "Change_see_also",
         "Change_pull_request",
+        "Change_term_tracker_issue",
         "Change_creator",
         "Change_change_date",
         "contributor",
         "has_undo",
-        "Change_term_tracker_issue",
         "old_value",
         "new_value",
         "old_value_type",
@@ -5748,8 +6034,8 @@
         },
         {
           "name": "obsoletion_policies",
-          "multivalued": true,
           "range": "ObsoletionPolicyEnum",
+          "multivalued": true,
           "@type": "SlotDefinition"
         },
         {
@@ -5928,7 +6214,13 @@
       "name": "OntologySubset",
       "definition_uri": "http://w3id.org/kgcl/om/OntologySubset",
       "from_schema": "https://w3id.org/kgcl/ontology",
-      "is_a": "OntologyElement",
+      "is_a": "Node",
+      "slots": [
+        "id",
+        "name",
+        "annotation_set",
+        "owl_type"
+      ],
       "slot_usage": {},
       "class_uri": "http://w3id.org/kgcl/om/OntologySubset",
       "@type": "ClassDefinition"
@@ -5984,11 +6276,11 @@
       "@type": "ClassDefinition"
     }
   ],
-  "metamodel_version": "1.7.0",
+  "metamodel_version": "1.11.0",
   "source_file": "kgcl.yaml",
-  "source_file_date": "2024-02-25T18:04:37",
-  "source_file_size": 32109,
-  "generation_date": "2024-02-25T23:33:07",
+  "source_file_date": "2026-11-18T10:48:20",
+  "source_file_size": 34308,
+  "generation_date": "2026-11-18T10:48:28",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/kgcl.context.jsonld",

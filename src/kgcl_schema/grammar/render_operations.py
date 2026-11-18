@@ -4,13 +4,16 @@
 from kgcl_schema.datamodel.kgcl import (
     AddNodeToSubset,
     ClassCreation,
+    ClassDeletion,
     EdgeCreation,
     EdgeDeletion,
     NewSynonym,
+    NewLabel,
     NewTextDefinition,
     NodeAnnotationChange,
     NodeCreation,
     NodeDeepening,
+    NodeShallowing,
     NodeDeletion,
     NodeMove,
     NodeObsoletion,
@@ -18,6 +21,8 @@ from kgcl_schema.datamodel.kgcl import (
     NodeRename,
     NodeTextDefinitionChange,
     NodeUnobsoletion,
+    ObjectPropertyCreation,
+    ObjectPropertyDeletion,
     PlaceUnder,
     PredicateChange,
     RemoveNodeFromSubset,
@@ -36,12 +41,14 @@ def render_entity(entity, rdf_type):
     Render entity based on rdf type.
 
     :param entity: entity to be rendered.
-    :param rdf_type: type of RDF ["uri", "label", "literal]
+    :param rdf_type: type of RDF ["uri", "label", "literal"]; "curie", the
+        representation the parser records for identifiers, is treated as "uri".
     """
+    raw = entity
     entity = repr(entity)
     if rdf_type is None:
         return entity
-    elif rdf_type == "uri":
+    elif rdf_type in ("uri", "curie"):
         entity = entity.replace("'", "")
         return entity
     elif rdf_type == "label":
@@ -53,7 +60,7 @@ def render_entity(entity, rdf_type):
         #     entity = entity.replace("'", "`")
         return entity
     elif rdf_type == "literal":
-        # TODO: test this
+        entity = str(raw)
         if '"' not in entity:
             return '"' + entity + '"'
         elif "'''" not in entity and entity[-1] != "'":
@@ -85,6 +92,13 @@ def render(kgcl_instance: Change) -> str:
             new = new + "@" + new_language
 
         return "rename " + subject + " from " + old + " to " + new
+
+    if type(kgcl_instance) is NewLabel:
+        subject = render_entity(kgcl_instance.about_node, "uri")
+        new = render_entity(kgcl_instance.new_value, "label")
+        if kgcl_instance.new_language is not None:
+            new = new + "@" + kgcl_instance.new_language
+        return "add label " + new + " to " + subject
 
     if type(kgcl_instance) is NodeAnnotationChange:
         subject = render_entity(
@@ -143,6 +157,14 @@ def render(kgcl_instance: Change) -> str:
         subject = render_entity(kgcl_instance.about_node, "uri")
         return "delete " + subject
 
+    if type(kgcl_instance) is ObjectPropertyDeletion:
+        subject = render_entity(kgcl_instance.about_node, "uri")
+        return "delete object property " + subject
+
+    if type(kgcl_instance) is ClassDeletion:
+        subject = render_entity(kgcl_instance.about_node, "uri")
+        return "delete class " + subject
+
     if type(kgcl_instance) is NodeMove:
         subject = render_entity(kgcl_instance.about_edge.subject, "uri")
         predicate = render_entity(kgcl_instance.about_edge.predicate, "uri")
@@ -199,6 +221,10 @@ def render(kgcl_instance: Change) -> str:
     if type(kgcl_instance) is ClassCreation:
         subject = render_entity(kgcl_instance.about_node, "uri")
         return "create " + subject
+
+    if type(kgcl_instance) is ObjectPropertyCreation:
+        subject = render_entity(kgcl_instance.about_node, "uri")
+        return "create object property " + subject
 
     if type(kgcl_instance) is NewSynonym:
         subject = render_entity(kgcl_instance.about_node, "uri")
@@ -294,6 +320,12 @@ def render(kgcl_instance: Change) -> str:
         old_value = render_entity(kgcl_instance.old_value, "uri")
         new_value = render_entity(kgcl_instance.new_value, "uri")
         return "deepen " + subject + " from " + old_value + " to " + new_value
+
+    if type(kgcl_instance) is NodeShallowing:
+        subject = render_entity(kgcl_instance.about_edge.subject, "uri")
+        old_value = render_entity(kgcl_instance.old_value, "uri")
+        new_value = render_entity(kgcl_instance.new_value, "uri")
+        return "shallow " + subject + " from " + old_value + " to " + new_value
 
     if type(kgcl_instance) is NewTextDefinition:
         subject = render_entity(kgcl_instance.about_node, "uri")

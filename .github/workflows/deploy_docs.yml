@@ -23,48 +23,27 @@ jobs:
     #       check-out repo and set-up python
     #----------------------------------------------
     - name: Check out repository
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
       with:
         # persist-credentials: false # otherwise, the token used is the GITHUB_TOKEN, instead of your personal token
         fetch-depth: 0 # otherwise, you will failed to push refs to dest repo
 
     - name: Set up Python3
-      uses: actions/setup-python@v3
+      uses: actions/setup-python@v5
       with:
-        python-version: 3.9
+        python-version: "3.12"
 
     #----------------------------------------------
     #          install & configure poetry
     #----------------------------------------------
     - name: Install Poetry
-      uses: snok/install-poetry@v1.3
-      # with:
-      #   virtualenvs-create: true
-      #   virtualenvs-in-project: true
+      uses: snok/install-poetry@v1
 
     #----------------------------------------------
-    #       load cached venv if cache exists
-    #----------------------------------------------
-    # - name: Load cached venv 
-    #   id: cached-poetry-dependencies
-    #   uses: actions/cache@v2
-    #   with:
-    #     path: .venv
-    #     key: venv-${{ runner.os }}-${{ hashFiles('**/poetry.lock') }}
-
-    #----------------------------------------------
-    # install dependencies if cache does not exist
+    #             install dependencies
     #----------------------------------------------
     - name: Install dependencies
-      # if: steps.cached-poetry-dependencies.outputs.cache-hit != 'true'
-      # run: poetry install --no-interaction --no-root
       run: poetry install -E docs
-
-    #----------------------------------------------
-    #    install your root project, if required
-    #----------------------------------------------
-    # - name: Install library
-    #   run: poetry install --no-interaction
 
     - name: Build and deploy documentation
       run: |
