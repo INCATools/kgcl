@@ -1,0 +1,7 @@
+rename 'nucleus' to 'cell nucleus'
+deprecate GO:0005635
+create exact synonym "nuclear envelope" for GO:0005635
+add definition 'The double membrane surrounding the nucleus.' to GO:0005635 with xrefs GOC:go_curators
+rename GO:0031965 from 'nuclear membrane' to 'nucleus's membrane'
+obsolete <http://purl.obolibrary.org/obo/GO_9999999> with replacement GO:0005634
+add edge GO:0031965 BFO:0000050 GO:0005635

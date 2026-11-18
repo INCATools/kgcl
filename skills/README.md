@@ -33,6 +33,24 @@ cp -r skills/kgcl-* ~/.claude/skills/
 Other agents that support Agent Skills have their own skills directory; see their
 documentation.
 
+## Test cases
+
+Each skill has a test case in `evals/<case>/`, in the layout the
+[skill-creator](https://github.com/anthropics/skills/tree/main/skills/skill-creator) skill and `claude plugin eval` read:
+
+- `prompt.md`: the task, as a user would type it, with run settings on top
+- `files/`: the input files, copied into the run's folder by `place-files.sh`
+- `case.yaml`: what a good result looks like
+- `graders/`: one checkable statement per file
+- `grade.py`: checks the same statements against a run's output files directly
+  (`python grade.py <output folder> [grading.json]`, needs `kgcl-schema`)
+
+To run a case with and without its skill using Claude Code, from the skill's folder:
+`claude plugin eval . --allow-tools Write,Edit,Bash --scaffold`. These are real model
+runs and are billed. When the skills were written, all three cases passed with the
+skills; without them, the Ontobot case failed the check that every bullet is a valid
+command.
+
 ## Editing
 
 `tests/test_skills.py` checks that every line in a ```` ```kgcl ```` block parses and

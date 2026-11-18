@@ -1,0 +1,30 @@
+format-version: 1.2
+ontology: mondo-extract
+
+[Term]
+id: MONDO:0001385
+name: cortical blindness
+is_a: MONDO:0003569
+
+[Term]
+id: MONDO:0003569
+name: blindness
+
+[Term]
+id: MONDO:0005180
+name: Parkinson disease
+is_a: MONDO:0005071
+
+[Term]
+id: MONDO:0005071
+name: nervous system disorder
+
+[Term]
+id: MONDO:0700001
+name: Parkinson disease, juvenile onset
+is_a: MONDO:0005071
+
+[Term]
+id: MONDO:0700002
+name: juvenile Parkinson disease
+is_a: MONDO:0005180

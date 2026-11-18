@@ -1,0 +1,9 @@
+schema_version: "1.1"
+name: release-notes-go-extract
+context:
+  scaffold_script: place-files.sh
+expected_outcome: |
+  release-notes.md describes five changes in ```kgcl blocks that all parse: one obsoletion with
+  replacement (with the label change and removed parent folded into it), a deepen of GO:0031965
+  rather than a delete/create pair, an exact synonym, a definition with its GOC:go_curators
+  source, and a new parent for GO:0005634.

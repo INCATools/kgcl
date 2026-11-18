@@ -151,3 +151,60 @@ class ReferenceTestSuite(unittest.TestCase):
                 continue
             with self.subTest(change_type=cls):
                 self.assertIn(f"`{cls}`", text)
+
+
+EVAL_CASES = sorted(p.parent for p in SKILLS_DIR.glob("*/evals/*/case.yaml"))
+GRADER_HEADER = "---\ntype: llm\nfocus: trace\nweight: 1\n---\n"
+
+
+class EvalCasesTestSuite(unittest.TestCase):
+    """The test cases in skills/*/evals/ follow the layout skill-creator and
+    `claude plugin eval` read."""
+
+    def test_every_skill_has_a_case(self):
+        self.assertEqual(
+            {s.name for s in SKILL_DIRS}, {c.parent.parent.name for c in EVAL_CASES}
+        )
+
+    def test_case_layout(self):
+        for case in EVAL_CASES:
+            with self.subTest(case=case.name):
+                meta = yaml.safe_load((case / "case.yaml").read_text(encoding="utf-8"))
+                self.assertEqual(case.name, meta["name"])
+                self.assertEqual("1.1", meta["schema_version"])
+                self.assertTrue(meta["expected_outcome"].strip())
+                prompt = (case / "prompt.md").read_text(encoding="utf-8")
+                self.assertTrue(prompt.startswith("---\n"))
+                settings = yaml.safe_load(prompt.split("---\n")[1])
+                self.assertLessEqual(
+                    set(settings), {"tags", "max_turns", "timeout_seconds", "allowed_tools"}
+                )
+                files_line = re.search(r"^Input files: (.+)$", prompt, re.MULTILINE)
+                if files_line:
+                    self.assertEqual("place-files.sh", meta["context"]["scaffold_script"])
+                    for name in files_line.group(1).split(", "):
+                        self.assertTrue((case / "files" / name).is_file(), name)
+                graders = sorted((case / "graders").glob("*.md"))
+                self.assertTrue(graders)
+                for g in graders:
+                    self.assertTrue(g.read_text(encoding="utf-8").startswith(GRADER_HEADER), g.name)
+
+    def test_grade_script_matches_graders(self):
+        """grade.py checks the same statements as graders/, and fails cleanly on
+        a run that produced nothing."""
+        import tempfile
+
+        for case in EVAL_CASES:
+            with self.subTest(case=case.name), tempfile.TemporaryDirectory() as empty:
+                run = subprocess.run(
+                    [sys.executable, str(case / "grade.py"), empty],
+                    capture_output=True,
+                    text=True,
+                )
+                self.assertEqual(1, run.returncode, run.stderr)
+                checked = [ln[6:] for ln in run.stdout.splitlines() if ln[:6] in ("PASS  ", "FAIL  ")]
+                stated = [
+                    g.read_text(encoding="utf-8")[len(GRADER_HEADER):].strip()
+                    for g in sorted((case / "graders").glob("*.md"))
+                ]
+                self.assertEqual(stated, checked)
