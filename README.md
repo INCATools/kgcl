@@ -20,3 +20,14 @@ The following URIs will resolve to the KGCL standard:
 - [Documentation](https://incatools.github.io/kgcl/)
 - [Publication](https://academic.oup.com/database/article/doi/10.1093/database/baae133/7972659): Hegde H, Vendetti J, Goutte-Gattat D, Caufield JH, Graybeal JB, Harris NL, Karam N, Kindermann C, Matentzoglu N, Overton JA, Musen MA, Mungall CJ. A change language for ontologies and knowledge graphs. Database (Oxford). Oxford University Press (OUP); 2025 Jan 22;2025(baae133). https://doi.org/10.1093/database/baae133 PMCID: PMC11753292 
 
+## Running the project locally
+
+You need Python 3.10 or later and [Poetry](https://python-poetry.org/).
+
+```bash
+pip install poetry
+poetry install
+poetry run pytest
+```
+
+To regenerate the Python datamodel and project files after editing the schema, run `make gen-project`.
