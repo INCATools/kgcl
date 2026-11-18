@@ -58,7 +58,7 @@ message Annotation
   string propertyType = 0
   string fillerType = 0
  }
-// A node creation where the owl type is 'owl:Class'
+// A node creation where the node is a class (as opposed to a relation)
 message ClassCreation
  {
   string id = 0
@@ -91,7 +91,7 @@ message ClassCreation
   node superclass = 0
   string changeDescription = 0
  }
-// A node deletion where the owl type is 'owl:Class'
+// A node deletion where the node is a class (as opposed to a relation)
 message ClassDeletion
  {
   string id = 0
@@ -826,7 +826,7 @@ message NodeDeepening
   string newObjectType = 0
   string changeDescription = 0
  }
-// Deletion of a node from the graph. Note it is recommended nodes are obsoleted and never merged, but this operation exists to represent deletions in ontologies, accidental or otherwise
+// Deletion of a node from the graph. Note that it is recommended nodes are obsoleted and never merged, but this operation exists to represent deletions in ontologies, accidental or otherwise
 message NodeDeletion
  {
   string id = 0
@@ -1172,7 +1172,7 @@ message NodeUnobsoletion
   string changeDescription = 0
   ontologyElement about = 0
  }
-// A node creation where the owl type is 'ObjectProperty'
+// A node creation where the node is an object property (a relation)
 message ObjectPropertyCreation
  {
   string id = 0
@@ -1204,7 +1204,7 @@ message ObjectPropertyCreation
   ontologyElement about = 0
   string changeDescription = 0
  }
-// A node deletion where the owl type is 'ObjectProperty'
+// A node deletion where the node is an object property (a relation)
 message ObjectPropertyDeletion
  {
   string id = 0
