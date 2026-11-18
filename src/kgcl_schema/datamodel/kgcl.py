@@ -1,5 +1,5 @@
 # Auto generated from kgcl.yaml by pythongen.py version: 0.0.1
-# Generation date: 2026-11-18T10:32:49
+# Generation date: 2026-11-18T10:48:36
 # Schema: kgcl_schema
 #
 # id: https://w3id.org/kgcl
@@ -307,6 +307,10 @@ class ObjectPropertyCreationId(NodeCreationId):
 
 
 class NodeDeletionId(NodeChangeId):
+    pass
+
+
+class ClassDeletionId(NodeDeletionId):
     pass
 
 
@@ -2574,6 +2578,34 @@ class NodeDeletion(NodeChange):
 
 
 @dataclass(repr=False)
+class ClassDeletion(NodeDeletion):
+    """
+    A node deletion where the owl type is 'owl:Class'
+    """
+    _inherited_slots: ClassVar[list[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = KGCL["ClassDeletion"]
+    class_class_curie: ClassVar[str] = "kgcl:ClassDeletion"
+    class_name: ClassVar[str] = "ClassDeletion"
+    class_model_uri: ClassVar[URIRef] = KGCL.ClassDeletion
+
+    id: Union[str, ClassDeletionId] = None
+    change_description: Optional[str] = None
+
+    def __post_init__(self, *_: str, **kwargs: Any):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, ClassDeletionId):
+            self.id = ClassDeletionId(self.id)
+
+        if self.change_description is not None and not isinstance(self.change_description, str):
+            self.change_description = str(self.change_description)
+
+        super().__post_init__(**kwargs)
+        self.type = str(self.class_name)
+
+
+@dataclass(repr=False)
 class ObjectPropertyDeletion(NodeDeletion):
     """
     A node deletion where the owl type is 'ObjectProperty'
@@ -3611,6 +3643,9 @@ slots.ObjectPropertyCreation_change_description = Slot(uri=KGCL.change_descripti
 
 slots.NodeDeletion_change_description = Slot(uri=KGCL.change_description, name="NodeDeletion_change_description", curie=KGCL.curie('change_description'),
                    model_uri=KGCL.NodeDeletion_change_description, domain=NodeDeletion, range=Optional[str])
+
+slots.ClassDeletion_change_description = Slot(uri=KGCL.change_description, name="ClassDeletion_change_description", curie=KGCL.curie('change_description'),
+                   model_uri=KGCL.ClassDeletion_change_description, domain=ClassDeletion, range=Optional[str])
 
 slots.ObjectPropertyDeletion_change_description = Slot(uri=KGCL.change_description, name="ObjectPropertyDeletion_change_description", curie=KGCL.curie('change_description'),
                    model_uri=KGCL.ObjectPropertyDeletion_change_description, domain=ObjectPropertyDeletion, range=Optional[str])

@@ -334,6 +334,9 @@
       "ClassCreation": {
          "@id": "ClassCreation"
       },
+      "ClassDeletion": {
+         "@id": "ClassDeletion"
+      },
       "ClassNode": {
          "@id": "owl:Class"
       },

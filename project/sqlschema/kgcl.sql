@@ -65,6 +65,7 @@
 --     * Slot: ClassCreation_id Description: Autocreated FK slot
 --     * Slot: ObjectPropertyCreation_id Description: Autocreated FK slot
 --     * Slot: NodeDeletion_id Description: Autocreated FK slot
+--     * Slot: ClassDeletion_id Description: Autocreated FK slot
 --     * Slot: ObjectPropertyDeletion_id Description: Autocreated FK slot
 --     * Slot: NodeDirectMerge_id Description: Autocreated FK slot
 --     * Slot: NodeObsoletionWithDirectReplacement_id Description: Autocreated FK slot
@@ -1410,6 +1411,30 @@
 --     * Slot: has_undo Description: A change that reverses this change
 --     * Slot: change_description Description: A string serialization of the change. This should be both human-readable, and parseable.
 --     * Slot: about_id Description: The 'focus' entity on which the change operates
+-- # Class: ClassDeletion Description: A node deletion where the owl type is 'owl:Class'
+--     * Slot: about_node
+--     * Slot: about_node_representation Description: The representation of a node (URI, CURIE, label)
+--     * Slot: language Description: The language tag of a literal
+--     * Slot: old_value Description: The value of a property held in the old instance of the ontology
+--     * Slot: new_value Description: The value of a property held in the new instance of the ontology
+--     * Slot: old_value_type Description: The type (IRI or Literal) of an old value
+--     * Slot: new_value_type Description: The type (IRI or Literal) of a new value
+--     * Slot: new_language Description: The new language tag of a literal
+--     * Slot: old_language Description: The old language tag of a literal
+--     * Slot: new_datatype Description: The new datatype of a literal
+--     * Slot: old_datatype Description: The old datatype of a literal
+--     * Slot: id
+--     * Slot: type
+--     * Slot: was_generated_by
+--     * Slot: see_also
+--     * Slot: pull_request
+--     * Slot: term_tracker_issue
+--     * Slot: creator
+--     * Slot: change_date Description: The date and time at which the change was made
+--     * Slot: contributor
+--     * Slot: has_undo Description: A change that reverses this change
+--     * Slot: change_description Description: A string serialization of the change. This should be both human-readable, and parseable.
+--     * Slot: about_id Description: The 'focus' entity on which the change operates
 -- # Class: ObjectPropertyDeletion Description: A node deletion where the owl type is 'ObjectProperty'
 --     * Slot: about_node
 --     * Slot: about_node_representation Description: The representation of a node (URI, CURIE, label)
@@ -1673,6 +1698,7 @@ CREATE TABLE "Change" (
 	"ClassCreation_id" TEXT,
 	"ObjectPropertyCreation_id" TEXT,
 	"NodeDeletion_id" TEXT,
+	"ClassDeletion_id" TEXT,
 	"ObjectPropertyDeletion_id" TEXT,
 	"NodeDirectMerge_id" TEXT,
 	"NodeObsoletionWithDirectReplacement_id" TEXT,
@@ -1734,6 +1760,7 @@ CREATE TABLE "Change" (
 	FOREIGN KEY("ClassCreation_id") REFERENCES "ClassCreation" (id),
 	FOREIGN KEY("ObjectPropertyCreation_id") REFERENCES "ObjectPropertyCreation" (id),
 	FOREIGN KEY("NodeDeletion_id") REFERENCES "NodeDeletion" (id),
+	FOREIGN KEY("ClassDeletion_id") REFERENCES "ClassDeletion" (id),
 	FOREIGN KEY("ObjectPropertyDeletion_id") REFERENCES "ObjectPropertyDeletion" (id),
 	FOREIGN KEY("NodeDirectMerge_id") REFERENCES "NodeDirectMerge" (id),
 	FOREIGN KEY("NodeObsoletionWithDirectReplacement_id") REFERENCES "NodeObsoletionWithDirectReplacement" (id),
@@ -3385,6 +3412,38 @@ CREATE TABLE "NodeDeletion" (
 );
 CREATE INDEX "ix_NodeDeletion_id" ON "NodeDeletion" (id);
 
+CREATE TABLE "ClassDeletion" (
+	about_node TEXT,
+	about_node_representation TEXT,
+	language TEXT,
+	old_value TEXT,
+	new_value TEXT,
+	old_value_type TEXT,
+	new_value_type TEXT,
+	new_language TEXT,
+	old_language TEXT,
+	new_datatype TEXT,
+	old_datatype TEXT,
+	id TEXT NOT NULL,
+	type TEXT,
+	was_generated_by TEXT,
+	see_also TEXT,
+	pull_request TEXT,
+	term_tracker_issue TEXT,
+	creator TEXT,
+	change_date DATETIME,
+	contributor TEXT,
+	has_undo TEXT,
+	change_description TEXT,
+	about_id INTEGER,
+	PRIMARY KEY (id),
+	FOREIGN KEY(about_node) REFERENCES "Node" (id),
+	FOREIGN KEY(was_generated_by) REFERENCES "Activity" (id),
+	FOREIGN KEY(has_undo) REFERENCES "Change" (id),
+	FOREIGN KEY(about_id) REFERENCES "OntologyElement" (id)
+);
+CREATE INDEX "ix_ClassDeletion_id" ON "ClassDeletion" (id);
+
 CREATE TABLE "ObjectPropertyDeletion" (
 	about_node TEXT,
 	about_node_representation TEXT,
@@ -3646,8 +3705,8 @@ CREATE TABLE "NodeObsoletion_has_nondirect_replacement" (
 	FOREIGN KEY("NodeObsoletion_id") REFERENCES "NodeObsoletion" (id),
 	FOREIGN KEY(has_nondirect_replacement_id) REFERENCES "Node" (id)
 );
-CREATE INDEX "ix_NodeObsoletion_has_nondirect_replacement_NodeObsoletion_id" ON "NodeObsoletion_has_nondirect_replacement" ("NodeObsoletion_id");
 CREATE INDEX "ix_NodeObsoletion_has_nondirect_replacement_has_nondirect_replacement_id" ON "NodeObsoletion_has_nondirect_replacement" (has_nondirect_replacement_id);
+CREATE INDEX "ix_NodeObsoletion_has_nondirect_replacement_NodeObsoletion_id" ON "NodeObsoletion_has_nondirect_replacement" ("NodeObsoletion_id");
 
 CREATE TABLE "Configuration_obsoletion_policies" (
 	"Configuration_id" INTEGER,
@@ -3894,8 +3953,8 @@ CREATE TABLE "NodeUnobsoletion_has_nondirect_replacement" (
 	FOREIGN KEY("NodeUnobsoletion_id") REFERENCES "NodeUnobsoletion" (id),
 	FOREIGN KEY(has_nondirect_replacement_id) REFERENCES "Node" (id)
 );
-CREATE INDEX "ix_NodeUnobsoletion_has_nondirect_replacement_has_nondirect_replacement_id" ON "NodeUnobsoletion_has_nondirect_replacement" (has_nondirect_replacement_id);
 CREATE INDEX "ix_NodeUnobsoletion_has_nondirect_replacement_NodeUnobsoletion_id" ON "NodeUnobsoletion_has_nondirect_replacement" ("NodeUnobsoletion_id");
+CREATE INDEX "ix_NodeUnobsoletion_has_nondirect_replacement_has_nondirect_replacement_id" ON "NodeUnobsoletion_has_nondirect_replacement" (has_nondirect_replacement_id);
 
 CREATE TABLE "NodeDirectMerge_has_nondirect_replacement" (
 	"NodeDirectMerge_id" TEXT,
@@ -3904,8 +3963,8 @@ CREATE TABLE "NodeDirectMerge_has_nondirect_replacement" (
 	FOREIGN KEY("NodeDirectMerge_id") REFERENCES "NodeDirectMerge" (id),
 	FOREIGN KEY(has_nondirect_replacement_id) REFERENCES "Node" (id)
 );
-CREATE INDEX "ix_NodeDirectMerge_has_nondirect_replacement_has_nondirect_replacement_id" ON "NodeDirectMerge_has_nondirect_replacement" (has_nondirect_replacement_id);
 CREATE INDEX "ix_NodeDirectMerge_has_nondirect_replacement_NodeDirectMerge_id" ON "NodeDirectMerge_has_nondirect_replacement" ("NodeDirectMerge_id");
+CREATE INDEX "ix_NodeDirectMerge_has_nondirect_replacement_has_nondirect_replacement_id" ON "NodeDirectMerge_has_nondirect_replacement" (has_nondirect_replacement_id);
 
 CREATE TABLE "NodeObsoletionWithDirectReplacement_has_nondirect_replacement" (
 	"NodeObsoletionWithDirectReplacement_id" TEXT,
@@ -3914,8 +3973,8 @@ CREATE TABLE "NodeObsoletionWithDirectReplacement_has_nondirect_replacement" (
 	FOREIGN KEY("NodeObsoletionWithDirectReplacement_id") REFERENCES "NodeObsoletionWithDirectReplacement" (id),
 	FOREIGN KEY(has_nondirect_replacement_id) REFERENCES "Node" (id)
 );
-CREATE INDEX "ix_NodeObsoletionWithDirectReplacement_has_nondirect_replacement_has_nondirect_replacement_id" ON "NodeObsoletionWithDirectReplacement_has_nondirect_replacement" (has_nondirect_replacement_id);
 CREATE INDEX "ix_NodeObsoletionWithDirectReplacement_has_nondirect_replacement_NodeObsoletionWithDirectReplacement_id" ON "NodeObsoletionWithDirectReplacement_has_nondirect_replacement" ("NodeObsoletionWithDirectReplacement_id");
+CREATE INDEX "ix_NodeObsoletionWithDirectReplacement_has_nondirect_replacement_has_nondirect_replacement_id" ON "NodeObsoletionWithDirectReplacement_has_nondirect_replacement" (has_nondirect_replacement_id);
 
 CREATE TABLE "NodeObsoletionWithNoDirectReplacement_has_nondirect_replacement" (
 	"NodeObsoletionWithNoDirectReplacement_id" TEXT,

@@ -122,6 +122,10 @@
                                         "parent": "NodeChange",
                                         "children": [
                                             {
+                                                "name": "ClassDeletion",
+                                                "parent": "NodeDeletion"
+                                            },
+                                            {
                                                 "name": "ObjectPropertyDeletion",
                                                 "parent": "NodeDeletion"
                                             }

@@ -13,6 +13,7 @@ from kgcl_schema.datamodel.kgcl import (
     AddNodeToSubset,
     Change,
     ClassCreation,
+    ClassDeletion,
     EdgeCreation,
     EdgeDeletion,
     NewLabel,
@@ -134,6 +135,8 @@ def parse_statement(input: str) -> Change:
         return parse_create_object_property(tree, id)
     elif command == "delete_object_property":
         return parse_delete_object_property(tree, id)
+    elif command == "delete_class":
+        return parse_delete_class(tree, id)
     elif command == "create_synonym":
         return parse_create_synonym(tree, id)
     elif command == "add_to_subset":
@@ -591,6 +594,16 @@ def parse_delete_object_property(tree, id):
     entity, representation = get_entity_representation(entity_token)
 
     return ObjectPropertyDeletion(
+        id=id, about_node=entity, about_node_representation=representation
+    )
+
+
+def parse_delete_class(tree, id):
+    """Delete a class."""
+    entity_token = extract(tree, "entity")
+    entity, representation = get_entity_representation(entity_token)
+
+    return ClassDeletion(
         id=id, about_node=entity, about_node_representation=representation
     )
 
