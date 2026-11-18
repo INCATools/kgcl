@@ -670,6 +670,7 @@ message NewSynonym
   languageTag language = 0
   string qualifier = 0
   node predicate = 0
+ repeated  string xrefs = 0
  }
 // A node change where a de-novo text definition is created
 message NewTextDefinition
@@ -697,6 +698,7 @@ message NewTextDefinition
   string aboutNodeRepresentation = 0
   languageTag language = 0
   string newValue = 0
+ repeated  string xrefs = 0
  }
 // Any named entity in an ontology. May be a class, individual, property
 message Node

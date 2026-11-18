@@ -8455,6 +8455,16 @@
                         "string",
                         "null"
                     ]
+                },
+                "xrefs": {
+                    "description": "Cross-references that support a definition or synonym, such as the publication or database record it comes from (for example PMID:12869615). They are attached to the definition or synonym itself, as in the OBO format def: \"...\" [PMID:12869615], not to the node. For cross-references on the node itself (mappings), see NewMapping.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
                 }
             },
             "required": [
@@ -8777,6 +8787,16 @@
                 "was_generated_by": {
                     "type": [
                         "string",
+                        "null"
+                    ]
+                },
+                "xrefs": {
+                    "description": "Cross-references that support a definition or synonym, such as the publication or database record it comes from (for example PMID:12869615). They are attached to the definition or synonym itself, as in the OBO format def: \"...\" [PMID:12869615], not to the node. For cross-references on the node itself (mappings), see NewMapping.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
                         "null"
                     ]
                 }

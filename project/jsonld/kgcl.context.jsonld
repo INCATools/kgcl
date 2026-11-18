@@ -301,6 +301,9 @@
          "@type": "@id",
          "@id": "prov:wasInformedBy"
       },
+      "xrefs": {
+         "@id": "oio:hasDbXref"
+      },
       "Activity": {
          "@id": "prov:Activity"
       },

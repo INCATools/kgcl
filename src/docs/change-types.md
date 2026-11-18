@@ -79,6 +79,13 @@ flowchart LR
 create exact synonym 'cell nucleus' for GO:0005634
 ```
 
+To record the source of a synonym, add cross-references (`oboInOwl:hasDbXref`) at
+the end, separated by commas:
+
+```kgcl
+create exact synonym 'cell nucleus' for GO:0005634 with xrefs GOC:go_curators
+```
+
 The related commands:
 
 ```kgcl
@@ -104,6 +111,13 @@ flowchart LR
 
 ```kgcl
 add definition 'A membrane-bounded organelle of eukaryotic cells in which chromosomes are housed and replicated.' to GO:0005634
+```
+
+Many ontologies require a definition to cite at least one source. Add these as
+cross-references at the end, separated by commas:
+
+```kgcl
+add definition 'A membrane-bounded organelle of eukaryotic cells in which chromosomes are housed and replicated.' to GO:0005634 with xrefs GOC:go_curators, ISBN:0198547684
 ```
 
 The related commands:
