@@ -74,6 +74,13 @@ def render_entity(entity, rdf_type):
     # return "'" + entity.replace("\\'", "`") + "'"
 
 
+def render_xrefs(xrefs) -> str:
+    """Render a ``with xrefs ...`` clause, or nothing if there are no xrefs."""
+    if not xrefs:
+        return ""
+    return " with xrefs " + ", ".join(str(x) for x in xrefs)
+
+
 def render(kgcl_instance: Change) -> str:
     """Render KGCL."""
     if type(kgcl_instance) is NodeRename:
@@ -236,11 +243,10 @@ def render(kgcl_instance: Change) -> str:
             synonym = synonym + "@" + language
 
         if qualifier is not None:
-            return (
-                "create " + qualifier + " synonym" + " " + synonym + " for " + subject
-            )
+            command = "create " + qualifier + " synonym " + synonym + " for " + subject
         else:
-            return "create synonym " + synonym + " for " + subject
+            command = "create synonym " + synonym + " for " + subject
+        return command + render_xrefs(kgcl_instance.xrefs)
 
     if type(kgcl_instance) is RemoveSynonym:
         subject = render_entity(kgcl_instance.about_node, "uri")
@@ -330,7 +336,13 @@ def render(kgcl_instance: Change) -> str:
     if type(kgcl_instance) is NewTextDefinition:
         subject = render_entity(kgcl_instance.about_node, "uri")
         definition = render_entity(kgcl_instance.new_value, "label")
-        return "add definition " + definition + " to " + subject
+        return (
+            "add definition "
+            + definition
+            + " to "
+            + subject
+            + render_xrefs(kgcl_instance.xrefs)
+        )
 
     if type(kgcl_instance) is NodeTextDefinitionChange:
         subject = render_entity(kgcl_instance.about_node, "uri")

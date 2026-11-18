@@ -215,6 +215,7 @@ def parse_create_synonym(tree, id):
         new_value=synonym,
         qualifier=qualifier_token,
         language=language_token,
+        xrefs=extract_xrefs(tree),
     )
 
 
@@ -287,6 +288,7 @@ def parse_add_definition(tree, id):
         about_node=entity,
         about_node_representation=representation,
         new_value=new_value,
+        xrefs=extract_xrefs(tree),
     )
 
 
@@ -693,6 +695,14 @@ def extract(tree, data):
         return str(node_token)
     else:
         return None
+
+
+def extract_xrefs(tree) -> List[str]:
+    """Extract the cross-references of a ``with xrefs ...`` clause, in order."""
+    node = get_next(tree.find_data("xrefs"))
+    if node is None:
+        return []
+    return [str(xref.children[0]) for xref in node.children]
 
 
 def get_tokens(tree):
