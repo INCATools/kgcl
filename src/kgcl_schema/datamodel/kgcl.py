@@ -1,5 +1,5 @@
 # Auto generated from kgcl.yaml by pythongen.py version: 0.0.1
-# Generation date: 2026-11-18T10:12:42
+# Generation date: 2026-11-18T10:32:49
 # Schema: kgcl_schema
 #
 # id: https://w3id.org/kgcl
@@ -307,6 +307,10 @@ class ObjectPropertyCreationId(NodeCreationId):
 
 
 class NodeDeletionId(NodeChangeId):
+    pass
+
+
+class ObjectPropertyDeletionId(NodeDeletionId):
     pass
 
 
@@ -2570,6 +2574,34 @@ class NodeDeletion(NodeChange):
 
 
 @dataclass(repr=False)
+class ObjectPropertyDeletion(NodeDeletion):
+    """
+    A node deletion where the owl type is 'ObjectProperty'
+    """
+    _inherited_slots: ClassVar[list[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = KGCL["ObjectPropertyDeletion"]
+    class_class_curie: ClassVar[str] = "kgcl:ObjectPropertyDeletion"
+    class_name: ClassVar[str] = "ObjectPropertyDeletion"
+    class_model_uri: ClassVar[URIRef] = KGCL.ObjectPropertyDeletion
+
+    id: Union[str, ObjectPropertyDeletionId] = None
+    change_description: Optional[str] = None
+
+    def __post_init__(self, *_: str, **kwargs: Any):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, ObjectPropertyDeletionId):
+            self.id = ObjectPropertyDeletionId(self.id)
+
+        if self.change_description is not None and not isinstance(self.change_description, str):
+            self.change_description = str(self.change_description)
+
+        super().__post_init__(**kwargs)
+        self.type = str(self.class_name)
+
+
+@dataclass(repr=False)
 class NodeDirectMerge(NodeObsoletion):
     """
     An obsoletion change in which all metadata (including name/label) from the source node is deleted and added to the
@@ -3579,6 +3611,9 @@ slots.ObjectPropertyCreation_change_description = Slot(uri=KGCL.change_descripti
 
 slots.NodeDeletion_change_description = Slot(uri=KGCL.change_description, name="NodeDeletion_change_description", curie=KGCL.curie('change_description'),
                    model_uri=KGCL.NodeDeletion_change_description, domain=NodeDeletion, range=Optional[str])
+
+slots.ObjectPropertyDeletion_change_description = Slot(uri=KGCL.change_description, name="ObjectPropertyDeletion_change_description", curie=KGCL.curie('change_description'),
+                   model_uri=KGCL.ObjectPropertyDeletion_change_description, domain=ObjectPropertyDeletion, range=Optional[str])
 
 slots.NodeDirectMerge_has_direct_replacement = Slot(uri=KGCL.has_direct_replacement, name="NodeDirectMerge_has_direct_replacement", curie=KGCL.curie('has_direct_replacement'),
                    model_uri=KGCL.NodeDirectMerge_has_direct_replacement, domain=NodeDirectMerge, range=Union[str, NodeId])

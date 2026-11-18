@@ -119,7 +119,13 @@
                                     },
                                     {
                                         "name": "NodeDeletion",
-                                        "parent": "NodeChange"
+                                        "parent": "NodeChange",
+                                        "children": [
+                                            {
+                                                "name": "ObjectPropertyDeletion",
+                                                "parent": "NodeDeletion"
+                                            }
+                                        ]
                                     },
                                     {
                                         "name": "NodeMappingChange",

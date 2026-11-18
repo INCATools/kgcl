@@ -588,17 +588,19 @@ om:Node  (
     )
 }
 
-<NodeDeletion> CLOSED {
-    (  $<NodeDeletion_tes> (  &<NodeChange_tes> ;
-          rdf:type [ <NodeChange> ] ? ;
-          &<Deletion_tes> ;
-          rdf:type [ <Deletion> ] ? ;
-          <change_description> @linkml:String ? ;
-          <about> @om:OntologyElement ?
-       ) ;
-       rdf:type [ <NodeDeletion> ]
-    )
-}
+<NodeDeletion>  (
+    CLOSED {
+       (  $<NodeDeletion_tes> (  &<NodeChange_tes> ;
+             rdf:type [ <NodeChange> ] ? ;
+             &<Deletion_tes> ;
+             rdf:type [ <Deletion> ] ? ;
+             <change_description> @linkml:String ? ;
+             <about> @om:OntologyElement ?
+          ) ;
+          rdf:type [ <NodeDeletion> ]
+       )
+    } OR @<ObjectPropertyDeletion>
+)
 
 <NodeDirectMerge> CLOSED {
     (  $<NodeDirectMerge_tes> (  &<NodeObsoletion_tes> ;
@@ -749,6 +751,15 @@ om:Node  (
           <change_description> @linkml:String ?
        ) ;
        rdf:type [ <ObjectPropertyCreation> ]
+    )
+}
+
+<ObjectPropertyDeletion> CLOSED {
+    (  $<ObjectPropertyDeletion_tes> (  &<NodeDeletion_tes> ;
+          rdf:type [ <NodeDeletion> ] ? ;
+          <change_description> @linkml:String ?
+       ) ;
+       rdf:type [ <ObjectPropertyDeletion> ]
     )
 }
 
