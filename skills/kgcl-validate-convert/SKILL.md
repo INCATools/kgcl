@@ -111,9 +111,15 @@ runoak -i simpleobo:edit.obo apply --dry-run "create exact synonym 'cell nucleus
 runoak -i simpleobo:edit.obo apply "create exact synonym 'cell nucleus' for GO:0005634" -o edit-new.obo
 ```
 
-Each tool supports a different subset of change types, and unsupported ones may be
-skipped with only a warning (OAK's OBO backend, for example, skips `deepen`). Read the
-tool's output, and diff the result against the input to confirm each change was made.
+Two things to check:
+
+- **The tool's own parser may be older** than the `kgcl-schema` you validated with,
+  because tools bundle their own copy. OAK 0.6.23 ships kgcl-schema 0.6.9, which rejects
+  `with xrefs` and fails the whole patch. `--dry-run` parses with the tool's copy, so it
+  catches this.
+- **Unsupported change types may be skipped** with only a warning (OAK's OBO backend
+  skips `deepen` and `shallow`). A dry run won't show this. Read the tool's output, and
+  diff the result against the input to confirm each change was made.
 Writing a file in place overwrites it, so write to a new file, or confirm with the user
 first. Other appliers: [KGCL-Java](https://github.com/gouttegd/kgcl-java) and its ROBOT
 plugin, and [Ontobot](https://github.com/INCATools/ontobot-change-agent) for GitHub

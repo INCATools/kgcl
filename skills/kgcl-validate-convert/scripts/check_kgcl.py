@@ -5,6 +5,9 @@ Reads commands from arguments, from files (-f), or from standard input, one
 per line. Blank lines and lines starting with '#' are skipped, and a leading
 Markdown bullet ("- " or "* ") is removed.
 
+If the input contains ```kgcl code fences (a Markdown file such as release
+notes), only the lines inside those fences are checked.
+
 If the input contains Ontobot's trigger phrase ("Hey ontobot!, apply:"), it is
 read the way Ontobot reads an issue body: every bulleted line anywhere in the
 text is a command, and all other lines are ignored. Ontobot also deletes "<"
@@ -18,7 +21,8 @@ Exit status is 0 if every command parsed, 1 otherwise.
 
     python check_kgcl.py "obsolete GO:0005634" "rename GO:0005634 from 'a' to 'b'"
     python check_kgcl.py -f changes.txt
-    python check_kgcl.py -f issue.md --yaml     # also print the parsed changes as YAML
+    python check_kgcl.py -f release-notes.md   # only the ```kgcl blocks
+    python check_kgcl.py -f changes.txt --yaml changes.yaml   # also write the changes as KGCL YAML
 
 Requires the kgcl-schema package (pip install kgcl-schema).
 """
@@ -41,7 +45,17 @@ ONTOBOT = re.compile(r"^\s*hey ontobot!?,?\s*apply:?\s*$", re.IGNORECASE)
 
 def commands_from(lines):
     lines = [line.rstrip("\n") for line in lines]
-    if any(ONTOBOT.match(line) for line in lines):
+    if any(line.strip() == "```kgcl" for line in lines):
+        # Markdown: keep only the lines inside ```kgcl fences
+        kept, inside = [], False
+        for line in lines:
+            if line.strip().startswith("```"):
+                inside = line.strip() == "```kgcl" and not inside
+                continue
+            if inside:
+                kept.append(line)
+        lines = kept
+    elif any(ONTOBOT.match(line) for line in lines):
         # Ontobot treats every bulleted line in the issue body as a command
         lines = [line for line in lines if BULLET.match(line)]
     for line in lines:
@@ -63,7 +77,7 @@ def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__.split("\n\n")[0])
     ap.add_argument("commands", nargs="*", help="KGCL commands, one per argument")
     ap.add_argument("-f", "--file", action="append", default=[], help="file of commands, one per line ('-' for standard input)")
-    ap.add_argument("--yaml", action="store_true", help="print the parsed changes as KGCL YAML")
+    ap.add_argument("--yaml", metavar="PATH", help="write the parsed changes to PATH as KGCL YAML (only if all commands parse)")
     args = ap.parse_args()
 
     lines = list(args.commands)
@@ -97,9 +111,13 @@ def main() -> int:
             print(f"      parser reads it as: {rendered}")
 
     print(f"\n{total - failures} of {total} commands parsed.")
-    if args.yaml and changes:
-        print()
-        print(to_yaml(Session(change_set=changes)))
+    if args.yaml:
+        if failures:
+            print(f"Not writing {args.yaml}: fix the failed commands first.")
+        else:
+            with open(args.yaml, "w", encoding="utf-8") as out:
+                out.write(to_yaml(Session(change_set=changes)))
+            print(f"Wrote {len(changes)} changes to {args.yaml}.")
     return 1 if failures else 0
 
 

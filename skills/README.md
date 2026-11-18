@@ -14,7 +14,8 @@ share two files, kept identical in every folder:
 
 - `references/kgcl-commands.md`: every command form the parser accepts, with its
   change type and known limits.
-- `scripts/check_kgcl.py`: checks commands line by line (needs `pip install kgcl-schema`).
+- `scripts/check_kgcl.py`: checks commands line by line, and with `--yaml PATH` writes
+  them as KGCL YAML (needs `pip install kgcl-schema`).
 
 ## Installing
 

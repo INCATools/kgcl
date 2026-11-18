@@ -198,10 +198,16 @@ change with the commands above (a merge, for example, is often written as an
   value, and double or triple quotes are not accepted there either. A label such as
   `Parkinson's disease` cannot be written as a command. Write that change in YAML or
   JSON, and tell the user why. (Tracked in
-  [kgcl#40](https://github.com/INCATools/kgcl/issues/40).)
+  [kgcl#40](https://github.com/INCATools/kgcl/issues/40).) A label change can also be
+  written as `change annotation of GO:0031965 with rdfs:label from "old" to "new's"`,
+  since annotation values use double quotes, but that records a `NodeAnnotationChange`
+  rather than a `NodeRename`, and Ontobot turns `"` into `'`, which breaks it.
 - **`change synonym` drops the scope.** `change exact synonym ...` parses, but the scope
   is not recorded. Leave it out. (Tracked in
   [kgcl#117](https://github.com/INCATools/kgcl/issues/117).)
 - **Tools support different subsets.** Not every tool that applies KGCL handles every
   command (for example, OAK's OBO backend skips `deepen` and `shallow`). Check the tool's output for
   skipped changes.
+- **Tools may bundle an older parser.** `with xrefs` is recent; OAK 0.6.23 (with
+  kgcl-schema 0.6.9) rejects it. A dry run with the tool shows whether its parser
+  accepts the commands.

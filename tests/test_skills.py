@@ -89,6 +89,36 @@ class SkillsTestSuite(unittest.TestCase):
         self.assertIn("apostrophe", bad.stdout)
 
 
+    def test_check_script_markdown(self):
+        script = SKILL_DIRS[0] / "scripts" / "check_kgcl.py"
+        md = "# Notes\n\nSome prose.\n\n```kgcl\nobsolete GO:0005634\n```\n\n- a bullet\n\n```bash\nls\n```\n"
+        run = subprocess.run(
+            [sys.executable, str(script), "-f", "-"], input=md, capture_output=True, text=True
+        )
+        self.assertEqual(0, run.returncode, run.stdout)
+        self.assertIn("1 of 1 commands parsed", run.stdout)
+
+    def test_check_script_writes_yaml(self):
+        import tempfile
+
+        from kgcl_schema.utils import from_yaml
+
+        script = SKILL_DIRS[0] / "scripts" / "check_kgcl.py"
+        with tempfile.TemporaryDirectory() as tmp:
+            out = Path(tmp) / "changes.yaml"
+            run = subprocess.run(
+                [sys.executable, str(script), "--yaml", str(out), "obsolete GO:0005634",
+                 "create exact synonym 'x' for GO:0005634"],
+                capture_output=True,
+                text=True,
+            )
+            self.assertEqual(0, run.returncode, run.stdout + run.stderr)
+            session = from_yaml(str(out))
+            self.assertEqual(
+                ["NodeObsoletion", "NewSynonym"], [type(c).__name__ for c in session.change_set]
+            )
+
+
 REFERENCE = SKILLS_DIR / "kgcl-request-changes" / "references" / "kgcl-commands.md"
 # A reference table row: | `command` | `ChangeType` ... |
 TABLE_ROW = re.compile(r"^\| `([^`]+)` \| `([A-Za-z]+)`", re.MULTILINE)

@@ -50,13 +50,19 @@ commands; it is short, and it lists the limits (no apostrophes, types with no co
    citations. If an ontology requires a source and none was given, point that out.
 6. **Validate.** Run every command through the parser before presenting it (see below).
    Don't hand over a command that hasn't parsed.
-7. **Check that the applying tool supports each change type**, when you know which
-   tool will apply the request. Tools implement different subsets of KGCL, and some
-   skip an unsupported change with only a warning. OAK's OBO backend, for example,
-   skips `deepen` and `shallow`. Do a dry run if you can (`runoak -i <ontology> apply
-   --dry-run "..."` only checks parsing, so apply to a copy and compare). Where a type
-   isn't supported, fall back to plainer commands: a `deepen` becomes
-   `delete edge X rdfs:subClassOf OLD` plus `create edge X rdfs:subClassOf NEW`.
+7. **Check that the applying tool can handle each command**, when you know which tool
+   will apply the request. Two things go wrong:
+   - **The tool's parser is older.** Tools bundle their own copy of `kgcl-schema`, which
+     may predate recent syntax. OAK 0.6.23, for example, ships kgcl-schema 0.6.9 and
+     rejects the whole patch if any command uses `with xrefs`. A dry run catches this:
+     `runoak -i <ontology> apply --dry-run "..."` parses with OAK's own copy.
+   - **The tool skips a change type**, with only a warning. OAK's OBO backend skips
+     `deepen` and `shallow`. A dry run does not catch this; apply to a copy of the file
+     and compare.
+
+   Fall back to plainer commands where needed: a `deepen` becomes
+   `delete edge X rdfs:subClassOf OLD` plus `create edge X rdfs:subClassOf NEW`, and
+   xrefs the tool can't take have to be added by hand (say so).
 8. **Present** the commands in a ```` ```kgcl ```` code block, one per line, with a
    short plain-language note on anything the user should check (placeholder IDs,
    assumptions about scope, changes that couldn't be written as commands).

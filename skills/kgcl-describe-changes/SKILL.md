@@ -71,11 +71,14 @@ commands.
 
 ```bash
 python scripts/check_kgcl.py -f diff.kgcl.txt
-python scripts/check_kgcl.py -f diff.kgcl.txt --yaml > changes.yaml
+python scripts/check_kgcl.py -f changes.kgcl.txt --yaml changes.yaml
+python scripts/check_kgcl.py -f release-notes.md     # checks only the ```kgcl blocks
 ```
 
 The script needs the `kgcl-schema` package (`pip install kgcl-schema`). It prints OK
-and the change type for each command, or FAIL with the parser's message. A diff of
+and the change type for each command, or FAIL with the parser's message. With `--yaml`,
+it also writes the changes as KGCL YAML, the starting point for a machine-readable
+record: add provenance fields to that file rather than writing the YAML by hand. A diff of
 labels containing apostrophes will produce commands that can't parse; those changes
 have to be recorded in YAML or JSON (see the `kgcl-validate-convert` skill).
 
