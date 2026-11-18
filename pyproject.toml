@@ -15,6 +15,7 @@ linkml-runtime = ">=1.1.24"
 lark = ">=1.1.2"
 prefixmaps = "^0.2.0"
 curies = ">=0.6.0"
+rdflib = ">=6.0.0"
 
 [tool.poetry.group.dev.dependencies]
 linkml = ">=1.9.0"

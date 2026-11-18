@@ -37,6 +37,10 @@
       "prefix_reference": "https://w3id.org/linkml/"
     },
     {
+      "prefix_prefix": "rdf",
+      "prefix_reference": "http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    },
+    {
       "prefix_prefix": "rdfs",
       "prefix_reference": "http://www.w3.org/2000/01/rdf-schema#"
     }
@@ -6278,9 +6282,9 @@
   ],
   "metamodel_version": "1.11.0",
   "source_file": "kgcl.yaml",
-  "source_file_date": "2026-11-18T12:05:54",
-  "source_file_size": 34457,
-  "generation_date": "2026-11-18T12:06:06",
+  "source_file_date": "2026-11-18T15:25:15",
+  "source_file_size": 34508,
+  "generation_date": "2026-11-18T15:25:20",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/kgcl.context.jsonld",

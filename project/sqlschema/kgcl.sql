@@ -3705,8 +3705,8 @@ CREATE TABLE "NodeObsoletion_has_nondirect_replacement" (
 	FOREIGN KEY("NodeObsoletion_id") REFERENCES "NodeObsoletion" (id),
 	FOREIGN KEY(has_nondirect_replacement_id) REFERENCES "Node" (id)
 );
-CREATE INDEX "ix_NodeObsoletion_has_nondirect_replacement_NodeObsoletion_id" ON "NodeObsoletion_has_nondirect_replacement" ("NodeObsoletion_id");
 CREATE INDEX "ix_NodeObsoletion_has_nondirect_replacement_has_nondirect_replacement_id" ON "NodeObsoletion_has_nondirect_replacement" (has_nondirect_replacement_id);
+CREATE INDEX "ix_NodeObsoletion_has_nondirect_replacement_NodeObsoletion_id" ON "NodeObsoletion_has_nondirect_replacement" ("NodeObsoletion_id");
 
 CREATE TABLE "Configuration_obsoletion_policies" (
 	"Configuration_id" INTEGER,
@@ -3714,8 +3714,8 @@ CREATE TABLE "Configuration_obsoletion_policies" (
 	PRIMARY KEY ("Configuration_id", obsoletion_policies),
 	FOREIGN KEY("Configuration_id") REFERENCES "Configuration" (id)
 );
-CREATE INDEX "ix_Configuration_obsoletion_policies_Configuration_id" ON "Configuration_obsoletion_policies" ("Configuration_id");
 CREATE INDEX "ix_Configuration_obsoletion_policies_obsoletion_policies" ON "Configuration_obsoletion_policies" (obsoletion_policies);
+CREATE INDEX "ix_Configuration_obsoletion_policies_Configuration_id" ON "Configuration_obsoletion_policies" ("Configuration_id");
 
 CREATE TABLE "AllowsAutomaticReplacementOfEdges" (
 	id INTEGER NOT NULL,

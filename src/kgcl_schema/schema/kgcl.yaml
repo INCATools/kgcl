@@ -16,6 +16,7 @@ prefixes:
   oio: http://www.geneontology.org/formats/oboInOwl#
   xml: http://www.w3.org/XML/1998/namespace#
   linkml: https://w3id.org/linkml/
+  rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
   rdfs: http://www.w3.org/2000/01/rdf-schema#
 default_prefix: kgcl
 default_range: string
