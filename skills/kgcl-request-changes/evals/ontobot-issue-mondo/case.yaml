@@ -1,0 +1,10 @@
+schema_version: "1.1"
+name: ontobot-issue-mondo
+context:
+  scaffold_script: place-files.sh
+expected_outcome: |
+  issue.md holds the Ontobot trigger phrase and three bulleted commands (two synonyms with the
+  right scopes, and an obsoletion of MONDO:0700001 with replacement MONDO:0700002). The rationale
+  is written as plain paragraphs, since Ontobot runs every bullet as a command. The rename to
+  "Parkinson's disease" is not written as a command, because KGCL can't quote an apostrophe;
+  the issue says so and asks for it to be done another way.

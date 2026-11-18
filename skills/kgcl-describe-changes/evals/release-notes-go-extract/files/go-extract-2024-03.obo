@@ -1,0 +1,33 @@
+format-version: 1.2
+ontology: test
+
+[Term]
+id: GO:0005634
+name: nucleus
+def: "A membrane-bounded organelle." [GOC:go_curators]
+synonym: "cell nucleus" EXACT []
+is_a: GO:0043231
+
+[Term]
+id: GO:0043231
+name: intracellular membrane-bounded organelle
+
+[Term]
+id: GO:0016020
+name: membrane
+
+[Term]
+id: GO:0031090
+name: organelle membrane
+is_a: GO:0016020
+
+[Term]
+id: GO:0031965
+name: nuclear membrane
+is_a: GO:0031090
+
+[Term]
+id: GO:9999999
+name: obsolete cell nucleus
+is_obsolete: true
+replaced_by: GO:0005634

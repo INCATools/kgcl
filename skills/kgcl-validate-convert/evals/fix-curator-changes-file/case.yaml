@@ -1,0 +1,10 @@
+schema_version: "1.1"
+name: fix-curator-changes-file
+context:
+  scaffold_script: place-files.sh
+expected_outcome: |
+  changes.json loads as a KGCL session and holds a fixed version of each line: 'deprecate'
+  becomes an obsoletion, the double-quoted synonym is single-quoted, 'add edge' becomes create
+  edge, the IRI obsoletion is kept, and the apostrophe rename is kept as a JSON NodeRename (it
+  can't be a command). report.md flags that line 1 names no term, and the JSON has no rename
+  without a term ID.

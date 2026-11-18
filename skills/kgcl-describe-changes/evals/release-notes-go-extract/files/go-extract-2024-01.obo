@@ -1,0 +1,29 @@
+format-version: 1.2
+ontology: test
+
+[Term]
+id: GO:0005634
+name: nucleus
+
+[Term]
+id: GO:0043231
+name: intracellular membrane-bounded organelle
+
+[Term]
+id: GO:0016020
+name: membrane
+
+[Term]
+id: GO:0031090
+name: organelle membrane
+is_a: GO:0016020
+
+[Term]
+id: GO:0031965
+name: nuclear membrane
+is_a: GO:0016020
+
+[Term]
+id: GO:9999999
+name: cell nucleus
+is_a: GO:0043231
