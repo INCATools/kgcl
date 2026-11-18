@@ -6,8 +6,8 @@
 message Activity
  {
   string id = 0
-  string startedAtTime = 0
-  string endedAtTime = 0
+  datetime startedAtTime = 0
+  datetime endedAtTime = 0
   activity wasInformedBy = 0
   agent wasAssociatedWith = 0
   string used = 0
@@ -23,7 +23,7 @@ message AddNodeToSubset
   string pullRequest = 0
   string termTrackerIssue = 0
   string creator = 0
-  string changeDate = 0
+  datetime changeDate = 0
   string contributor = 0
   change hasUndo = 0
   string changeDescription = 0
@@ -68,7 +68,7 @@ message ClassCreation
   string pullRequest = 0
   string termTrackerIssue = 0
   string creator = 0
-  string changeDate = 0
+  datetime changeDate = 0
   string contributor = 0
   change hasUndo = 0
  repeated  change associatedChangeSet = 0
@@ -154,7 +154,7 @@ message EdgeCreation
   string pullRequest = 0
   string termTrackerIssue = 0
   string creator = 0
-  string changeDate = 0
+  datetime changeDate = 0
   string contributor = 0
   change hasUndo = 0
  repeated  change associatedChangeSet = 0
@@ -189,7 +189,7 @@ message EdgeDeletion
   string pullRequest = 0
   string termTrackerIssue = 0
   string creator = 0
-  string changeDate = 0
+  datetime changeDate = 0
   string contributor = 0
   change hasUndo = 0
  repeated  change associatedChangeSet = 0
@@ -224,7 +224,7 @@ message EdgeLogicalInterpretationChange
   string pullRequest = 0
   string termTrackerIssue = 0
   string creator = 0
-  string changeDate = 0
+  datetime changeDate = 0
   string contributor = 0
   change hasUndo = 0
   string changeDescription = 0
@@ -252,7 +252,7 @@ message EdgeObsoletion
   string pullRequest = 0
   string termTrackerIssue = 0
   string creator = 0
-  string changeDate = 0
+  datetime changeDate = 0
   string contributor = 0
   change hasUndo = 0
  repeated  change associatedChangeSet = 0
@@ -285,7 +285,7 @@ message EdgeRewiring
   string pullRequest = 0
   string termTrackerIssue = 0
   string creator = 0
-  string changeDate = 0
+  datetime changeDate = 0
   string contributor = 0
   change hasUndo = 0
   string changeDescription = 0
@@ -328,7 +328,7 @@ message LogicalAxiomChange
   string pullRequest = 0
   string termTrackerIssue = 0
   string creator = 0
-  string changeDate = 0
+  datetime changeDate = 0
   string contributor = 0
   change hasUndo = 0
   string changeDescription = 0
@@ -352,7 +352,7 @@ message MappingCreation
   string pullRequest = 0
   string termTrackerIssue = 0
   string creator = 0
-  string changeDate = 0
+  datetime changeDate = 0
   string contributor = 0
   change hasUndo = 0
  repeated  change associatedChangeSet = 0
@@ -387,7 +387,7 @@ message MappingPredicateChange
   string pullRequest = 0
   string termTrackerIssue = 0
   string creator = 0
-  string changeDate = 0
+  datetime changeDate = 0
   string contributor = 0
   change hasUndo = 0
   string changeDescription = 0
@@ -414,7 +414,7 @@ message MappingReplacement
   string pullRequest = 0
   string termTrackerIssue = 0
   string creator = 0
-  string changeDate = 0
+  datetime changeDate = 0
   string contributor = 0
   change hasUndo = 0
   string changeDescription = 0
@@ -441,7 +441,7 @@ message MetadataAssertionPredicateChange
   string pullRequest = 0
   string termTrackerIssue = 0
   string creator = 0
-  string changeDate = 0
+  datetime changeDate = 0
   string contributor = 0
   change hasUndo = 0
   string changeDescription = 0
@@ -468,7 +468,7 @@ message MetadataAssertionReplacement
   string pullRequest = 0
   string termTrackerIssue = 0
   string creator = 0
-  string changeDate = 0
+  datetime changeDate = 0
   string contributor = 0
   change hasUndo = 0
   string changeDescription = 0
@@ -495,7 +495,7 @@ message MultiNodeObsoletion
   string pullRequest = 0
   string termTrackerIssue = 0
   string creator = 0
-  string changeDate = 0
+  datetime changeDate = 0
   string contributor = 0
   change hasUndo = 0
  repeated  nodeObsoletion changeSet = 0
@@ -512,7 +512,7 @@ message NameBecomesSynonym
   string pullRequest = 0
   string termTrackerIssue = 0
   string creator = 0
-  string changeDate = 0
+  datetime changeDate = 0
   string contributor = 0
   change hasUndo = 0
  repeated  change associatedChangeSet = 0
@@ -539,7 +539,7 @@ message NewLabel
   string pullRequest = 0
   string termTrackerIssue = 0
   string creator = 0
-  string changeDate = 0
+  datetime changeDate = 0
   string contributor = 0
   change hasUndo = 0
  repeated  change associatedChangeSet = 0
@@ -566,7 +566,7 @@ message NewMapping
   string pullRequest = 0
   string termTrackerIssue = 0
   string creator = 0
-  string changeDate = 0
+  datetime changeDate = 0
   string contributor = 0
   change hasUndo = 0
   string changeDescription = 0
@@ -595,7 +595,7 @@ message NewMetadataAssertion
   string pullRequest = 0
   string termTrackerIssue = 0
   string creator = 0
-  string changeDate = 0
+  datetime changeDate = 0
   string contributor = 0
   change hasUndo = 0
   string changeDescription = 0
@@ -624,7 +624,7 @@ message NewSynonym
   string pullRequest = 0
   string termTrackerIssue = 0
   string creator = 0
-  string changeDate = 0
+  datetime changeDate = 0
   string contributor = 0
   change hasUndo = 0
   string changeDescription = 0
@@ -653,7 +653,7 @@ message NewTextDefinition
   string pullRequest = 0
   string termTrackerIssue = 0
   string creator = 0
-  string changeDate = 0
+  datetime changeDate = 0
   string contributor = 0
   change hasUndo = 0
   string changeDescription = 0
@@ -688,7 +688,7 @@ message NodeAnnotationChange
   string pullRequest = 0
   string termTrackerIssue = 0
   string creator = 0
-  string changeDate = 0
+  datetime changeDate = 0
   string contributor = 0
   change hasUndo = 0
   string changeDescription = 0
@@ -717,7 +717,7 @@ message NodeAnnotationReplacement
   string pullRequest = 0
   string termTrackerIssue = 0
   string creator = 0
-  string changeDate = 0
+  datetime changeDate = 0
   string contributor = 0
   change hasUndo = 0
   string changeDescription = 0
@@ -746,7 +746,7 @@ message NodeCreation
   string pullRequest = 0
   string termTrackerIssue = 0
   string creator = 0
-  string changeDate = 0
+  datetime changeDate = 0
   string contributor = 0
   change hasUndo = 0
  repeated  change associatedChangeSet = 0
@@ -778,7 +778,7 @@ message NodeDeepening
   string pullRequest = 0
   string termTrackerIssue = 0
   string creator = 0
-  string changeDate = 0
+  datetime changeDate = 0
   string contributor = 0
   change hasUndo = 0
  repeated  change associatedChangeSet = 0
@@ -808,7 +808,7 @@ message NodeDeletion
   string pullRequest = 0
   string termTrackerIssue = 0
   string creator = 0
-  string changeDate = 0
+  datetime changeDate = 0
   string contributor = 0
   change hasUndo = 0
  repeated  change associatedChangeSet = 0
@@ -836,7 +836,7 @@ message NodeDirectMerge
   string pullRequest = 0
   string termTrackerIssue = 0
   string creator = 0
-  string changeDate = 0
+  datetime changeDate = 0
   string contributor = 0
   change hasUndo = 0
   string oldValue = 0
@@ -866,7 +866,7 @@ message NodeMappingChange
   string pullRequest = 0
   string termTrackerIssue = 0
   string creator = 0
-  string changeDate = 0
+  datetime changeDate = 0
   string contributor = 0
   change hasUndo = 0
   string changeDescription = 0
@@ -893,7 +893,7 @@ message NodeMetadataAssertionChange
   string pullRequest = 0
   string termTrackerIssue = 0
   string creator = 0
-  string changeDate = 0
+  datetime changeDate = 0
   string contributor = 0
   change hasUndo = 0
   string changeDescription = 0
@@ -920,7 +920,7 @@ message NodeMove
   string pullRequest = 0
   string termTrackerIssue = 0
   string creator = 0
-  string changeDate = 0
+  datetime changeDate = 0
   string contributor = 0
   change hasUndo = 0
  repeated  change associatedChangeSet = 0
@@ -950,7 +950,7 @@ message NodeObsoletion
   string pullRequest = 0
   string termTrackerIssue = 0
   string creator = 0
-  string changeDate = 0
+  datetime changeDate = 0
   string contributor = 0
   change hasUndo = 0
   string oldValue = 0
@@ -980,7 +980,7 @@ message NodeObsoletionWithDirectReplacement
   string pullRequest = 0
   string termTrackerIssue = 0
   string creator = 0
-  string changeDate = 0
+  datetime changeDate = 0
   string contributor = 0
   change hasUndo = 0
   string oldValue = 0
@@ -1010,7 +1010,7 @@ message NodeObsoletionWithNoDirectReplacement
   string pullRequest = 0
   string termTrackerIssue = 0
   string creator = 0
-  string changeDate = 0
+  datetime changeDate = 0
   string contributor = 0
   change hasUndo = 0
   string oldValue = 0
@@ -1040,7 +1040,7 @@ message NodeRename
   string pullRequest = 0
   string termTrackerIssue = 0
   string creator = 0
-  string changeDate = 0
+  datetime changeDate = 0
   string contributor = 0
   change hasUndo = 0
  repeated  change associatedChangeSet = 0
@@ -1068,7 +1068,7 @@ message NodeShallowing
   string pullRequest = 0
   string termTrackerIssue = 0
   string creator = 0
-  string changeDate = 0
+  datetime changeDate = 0
   string contributor = 0
   change hasUndo = 0
  repeated  change associatedChangeSet = 0
@@ -1097,7 +1097,7 @@ message NodeSynonymChange
   string pullRequest = 0
   string termTrackerIssue = 0
   string creator = 0
-  string changeDate = 0
+  datetime changeDate = 0
   string contributor = 0
   change hasUndo = 0
   string changeDescription = 0
@@ -1124,7 +1124,7 @@ message NodeUnobsoletion
   string pullRequest = 0
   string termTrackerIssue = 0
   string creator = 0
-  string changeDate = 0
+  datetime changeDate = 0
   string contributor = 0
   change hasUndo = 0
  repeated  change associatedChangeSet = 0
@@ -1154,7 +1154,7 @@ message ObjectPropertyCreation
   string pullRequest = 0
   string termTrackerIssue = 0
   string creator = 0
-  string changeDate = 0
+  datetime changeDate = 0
   string contributor = 0
   change hasUndo = 0
  repeated  change associatedChangeSet = 0
@@ -1193,7 +1193,7 @@ message PlaceUnder
   string pullRequest = 0
   string termTrackerIssue = 0
   string creator = 0
-  string changeDate = 0
+  datetime changeDate = 0
   string contributor = 0
   change hasUndo = 0
  repeated  change associatedChangeSet = 0
@@ -1228,7 +1228,7 @@ message PredicateChange
   string pullRequest = 0
   string termTrackerIssue = 0
   string creator = 0
-  string changeDate = 0
+  datetime changeDate = 0
   string contributor = 0
   change hasUndo = 0
  repeated  change associatedChangeSet = 0
@@ -1262,7 +1262,7 @@ message RemoveMapping
   string pullRequest = 0
   string termTrackerIssue = 0
   string creator = 0
-  string changeDate = 0
+  datetime changeDate = 0
   string contributor = 0
   change hasUndo = 0
   string changeDescription = 0
@@ -1291,7 +1291,7 @@ message RemoveMetadataAssertion
   string pullRequest = 0
   string termTrackerIssue = 0
   string creator = 0
-  string changeDate = 0
+  datetime changeDate = 0
   string contributor = 0
   change hasUndo = 0
   string changeDescription = 0
@@ -1320,7 +1320,7 @@ message RemoveNodeFromSubset
   string pullRequest = 0
   string termTrackerIssue = 0
   string creator = 0
-  string changeDate = 0
+  datetime changeDate = 0
   string contributor = 0
   change hasUndo = 0
  repeated  change associatedChangeSet = 0
@@ -1349,7 +1349,7 @@ message RemoveSynonym
   string pullRequest = 0
   string termTrackerIssue = 0
   string creator = 0
-  string changeDate = 0
+  datetime changeDate = 0
   string contributor = 0
   change hasUndo = 0
   string changeDescription = 0
@@ -1376,7 +1376,7 @@ message RemoveTextDefinition
   string pullRequest = 0
   string termTrackerIssue = 0
   string creator = 0
-  string changeDate = 0
+  datetime changeDate = 0
   string contributor = 0
   change hasUndo = 0
   string changeDescription = 0
@@ -1404,7 +1404,7 @@ message RemoveUnder
   string pullRequest = 0
   string termTrackerIssue = 0
   string creator = 0
-  string changeDate = 0
+  datetime changeDate = 0
   string contributor = 0
   change hasUndo = 0
  repeated  change associatedChangeSet = 0
@@ -1445,7 +1445,7 @@ message SetLanguageForName
   string pullRequest = 0
   string termTrackerIssue = 0
   string creator = 0
-  string changeDate = 0
+  datetime changeDate = 0
   string contributor = 0
   change hasUndo = 0
  repeated  change associatedChangeSet = 0
@@ -1473,7 +1473,7 @@ message SynonymPredicateChange
   string pullRequest = 0
   string termTrackerIssue = 0
   string creator = 0
-  string changeDate = 0
+  datetime changeDate = 0
   string contributor = 0
   change hasUndo = 0
   string changeDescription = 0
@@ -1502,7 +1502,7 @@ message SynonymReplacement
   string pullRequest = 0
   string termTrackerIssue = 0
   string creator = 0
-  string changeDate = 0
+  datetime changeDate = 0
   string contributor = 0
   change hasUndo = 0
   string changeDescription = 0
@@ -1531,7 +1531,7 @@ message TextDefinitionReplacement
   string pullRequest = 0
   string termTrackerIssue = 0
   string creator = 0
-  string changeDate = 0
+  datetime changeDate = 0
   string contributor = 0
   change hasUndo = 0
   string changeDescription = 0
@@ -1559,7 +1559,7 @@ message Transaction
   string pullRequest = 0
   string termTrackerIssue = 0
   string creator = 0
-  string changeDate = 0
+  datetime changeDate = 0
   string contributor = 0
   change hasUndo = 0
   string changeDescription = 0
