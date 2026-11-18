@@ -69,6 +69,10 @@ SECTIONS = {
     "Creating nodes": {
         "ClassCreation": "Create a class.",
         "NodeCreation": "Create a node with a label.",
+        "ObjectPropertyCreation": "Create an object property.",
+    },
+    "Deleting nodes": {
+        "ObjectPropertyDeletion": "Delete an object property.",
     },
 }
 CLASS_DESCRIPTION = {

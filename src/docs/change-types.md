@@ -301,7 +301,9 @@ These change the set of terms rather than a term's content, so they have no diag
 | --- | --- |
 | `ClassCreation` | `create GO:9999999` |
 | `NodeCreation` (with a label) | `create node GO:9999999 'cell nucleus'` |
+| `ObjectPropertyCreation` | `create object property BFO:0000050` |
 | `NodeDeletion` | `delete GO:9999999` |
+| `ObjectPropertyDeletion` | `delete object property BFO:0000050` |
 
 Deleting a term removes it entirely. In most published ontologies, obsoletion is
 preferred, because other resources may already refer to the term.

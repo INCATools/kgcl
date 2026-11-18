@@ -20,6 +20,8 @@ from kgcl_schema.datamodel.kgcl import (
     NodeRename,
     NodeTextDefinitionChange,
     NodeUnobsoletion,
+    ObjectPropertyCreation,
+    ObjectPropertyDeletion,
     PlaceUnder,
     PredicateChange,
     RemoveNodeFromSubset,
@@ -152,6 +154,10 @@ def render(kgcl_instance: Change) -> str:
         subject = render_entity(kgcl_instance.about_node, "uri")
         return "delete " + subject
 
+    if type(kgcl_instance) is ObjectPropertyDeletion:
+        subject = render_entity(kgcl_instance.about_node, "uri")
+        return "delete object property " + subject
+
     if type(kgcl_instance) is NodeMove:
         subject = render_entity(kgcl_instance.about_edge.subject, "uri")
         predicate = render_entity(kgcl_instance.about_edge.predicate, "uri")
@@ -208,6 +214,10 @@ def render(kgcl_instance: Change) -> str:
     if type(kgcl_instance) is ClassCreation:
         subject = render_entity(kgcl_instance.about_node, "uri")
         return "create " + subject
+
+    if type(kgcl_instance) is ObjectPropertyCreation:
+        subject = render_entity(kgcl_instance.about_node, "uri")
+        return "create object property " + subject
 
     if type(kgcl_instance) is NewSynonym:
         subject = render_entity(kgcl_instance.about_node, "uri")

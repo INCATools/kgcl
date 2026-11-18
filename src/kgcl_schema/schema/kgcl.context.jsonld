@@ -494,6 +494,9 @@
       "ObjectPropertyCreation": {
          "@id": "ObjectPropertyCreation"
       },
+      "ObjectPropertyDeletion": {
+         "@id": "ObjectPropertyDeletion"
+      },
       "Obsoletion": {
          "@id": "Obsoletion"
       },

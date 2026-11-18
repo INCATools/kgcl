@@ -133,6 +133,9 @@
                                 "$ref": "#/$defs/NodeDeletion"
                             },
                             {
+                                "$ref": "#/$defs/ObjectPropertyDeletion"
+                            },
+                            {
                                 "$ref": "#/$defs/ClassCreation"
                             },
                             {
@@ -604,6 +607,9 @@
                                 "$ref": "#/$defs/NodeDeletion"
                             },
                             {
+                                "$ref": "#/$defs/ObjectPropertyDeletion"
+                            },
+                            {
                                 "$ref": "#/$defs/ClassCreation"
                             },
                             {
@@ -930,6 +936,9 @@
                             },
                             {
                                 "$ref": "#/$defs/NodeDeletion"
+                            },
+                            {
+                                "$ref": "#/$defs/ObjectPropertyDeletion"
                             },
                             {
                                 "$ref": "#/$defs/ClassCreation"
@@ -1296,6 +1305,9 @@
                                 "$ref": "#/$defs/NodeDeletion"
                             },
                             {
+                                "$ref": "#/$defs/ObjectPropertyDeletion"
+                            },
+                            {
                                 "$ref": "#/$defs/ClassCreation"
                             },
                             {
@@ -1470,6 +1482,9 @@
                             },
                             {
                                 "$ref": "#/$defs/NodeDeletion"
+                            },
+                            {
+                                "$ref": "#/$defs/ObjectPropertyDeletion"
                             },
                             {
                                 "$ref": "#/$defs/ClassCreation"
@@ -2000,6 +2015,9 @@
                                 "$ref": "#/$defs/NodeDeletion"
                             },
                             {
+                                "$ref": "#/$defs/ObjectPropertyDeletion"
+                            },
+                            {
                                 "$ref": "#/$defs/ClassCreation"
                             },
                             {
@@ -2348,6 +2366,9 @@
                             },
                             {
                                 "$ref": "#/$defs/NodeDeletion"
+                            },
+                            {
+                                "$ref": "#/$defs/ObjectPropertyDeletion"
                             },
                             {
                                 "$ref": "#/$defs/ClassCreation"
@@ -2736,6 +2757,9 @@
                                 "$ref": "#/$defs/NodeDeletion"
                             },
                             {
+                                "$ref": "#/$defs/ObjectPropertyDeletion"
+                            },
+                            {
                                 "$ref": "#/$defs/ClassCreation"
                             },
                             {
@@ -3097,6 +3121,9 @@
                                 "$ref": "#/$defs/NodeDeletion"
                             },
                             {
+                                "$ref": "#/$defs/ObjectPropertyDeletion"
+                            },
+                            {
                                 "$ref": "#/$defs/ClassCreation"
                             },
                             {
@@ -3445,6 +3472,9 @@
                             },
                             {
                                 "$ref": "#/$defs/NodeDeletion"
+                            },
+                            {
+                                "$ref": "#/$defs/ObjectPropertyDeletion"
                             },
                             {
                                 "$ref": "#/$defs/ClassCreation"
@@ -3796,6 +3826,9 @@
                             },
                             {
                                 "$ref": "#/$defs/NodeDeletion"
+                            },
+                            {
+                                "$ref": "#/$defs/ObjectPropertyDeletion"
                             },
                             {
                                 "$ref": "#/$defs/ClassCreation"
@@ -4190,6 +4223,9 @@
                                 "$ref": "#/$defs/NodeDeletion"
                             },
                             {
+                                "$ref": "#/$defs/ObjectPropertyDeletion"
+                            },
+                            {
                                 "$ref": "#/$defs/ClassCreation"
                             },
                             {
@@ -4523,6 +4559,9 @@
                             },
                             {
                                 "$ref": "#/$defs/NodeDeletion"
+                            },
+                            {
+                                "$ref": "#/$defs/ObjectPropertyDeletion"
                             },
                             {
                                 "$ref": "#/$defs/ClassCreation"
@@ -4896,6 +4935,9 @@
                                 "$ref": "#/$defs/NodeDeletion"
                             },
                             {
+                                "$ref": "#/$defs/ObjectPropertyDeletion"
+                            },
+                            {
                                 "$ref": "#/$defs/ClassCreation"
                             },
                             {
@@ -5212,6 +5254,9 @@
                             },
                             {
                                 "$ref": "#/$defs/NodeDeletion"
+                            },
+                            {
+                                "$ref": "#/$defs/ObjectPropertyDeletion"
                             },
                             {
                                 "$ref": "#/$defs/ClassCreation"
@@ -5532,6 +5577,9 @@
                                 "$ref": "#/$defs/NodeDeletion"
                             },
                             {
+                                "$ref": "#/$defs/ObjectPropertyDeletion"
+                            },
+                            {
                                 "$ref": "#/$defs/ClassCreation"
                             },
                             {
@@ -5850,6 +5898,9 @@
                                 "$ref": "#/$defs/NodeDeletion"
                             },
                             {
+                                "$ref": "#/$defs/ObjectPropertyDeletion"
+                            },
+                            {
                                 "$ref": "#/$defs/ClassCreation"
                             },
                             {
@@ -6155,6 +6206,9 @@
                                 "$ref": "#/$defs/NodeDeletion"
                             },
                             {
+                                "$ref": "#/$defs/ObjectPropertyDeletion"
+                            },
+                            {
                                 "$ref": "#/$defs/ClassCreation"
                             },
                             {
@@ -6431,6 +6485,9 @@
                             },
                             {
                                 "$ref": "#/$defs/NodeDeletion"
+                            },
+                            {
+                                "$ref": "#/$defs/ObjectPropertyDeletion"
                             },
                             {
                                 "$ref": "#/$defs/ClassCreation"
@@ -6751,6 +6808,9 @@
                                 "$ref": "#/$defs/NodeDeletion"
                             },
                             {
+                                "$ref": "#/$defs/ObjectPropertyDeletion"
+                            },
+                            {
                                 "$ref": "#/$defs/ClassCreation"
                             },
                             {
@@ -7067,6 +7127,9 @@
                             },
                             {
                                 "$ref": "#/$defs/NodeDeletion"
+                            },
+                            {
+                                "$ref": "#/$defs/ObjectPropertyDeletion"
                             },
                             {
                                 "$ref": "#/$defs/ClassCreation"
@@ -7399,6 +7462,9 @@
                                 "$ref": "#/$defs/NodeDeletion"
                             },
                             {
+                                "$ref": "#/$defs/ObjectPropertyDeletion"
+                            },
+                            {
                                 "$ref": "#/$defs/ClassCreation"
                             },
                             {
@@ -7727,6 +7793,9 @@
                             },
                             {
                                 "$ref": "#/$defs/NodeDeletion"
+                            },
+                            {
+                                "$ref": "#/$defs/ObjectPropertyDeletion"
                             },
                             {
                                 "$ref": "#/$defs/ClassCreation"
@@ -8058,6 +8127,9 @@
                             },
                             {
                                 "$ref": "#/$defs/NodeDeletion"
+                            },
+                            {
+                                "$ref": "#/$defs/ObjectPropertyDeletion"
                             },
                             {
                                 "$ref": "#/$defs/ClassCreation"
@@ -8425,6 +8497,9 @@
                                 "$ref": "#/$defs/NodeDeletion"
                             },
                             {
+                                "$ref": "#/$defs/ObjectPropertyDeletion"
+                            },
+                            {
                                 "$ref": "#/$defs/ClassCreation"
                             },
                             {
@@ -8757,6 +8832,9 @@
                                 "$ref": "#/$defs/NodeDeletion"
                             },
                             {
+                                "$ref": "#/$defs/ObjectPropertyDeletion"
+                            },
+                            {
                                 "$ref": "#/$defs/ClassCreation"
                             },
                             {
@@ -9073,6 +9151,9 @@
                             },
                             {
                                 "$ref": "#/$defs/NodeDeletion"
+                            },
+                            {
+                                "$ref": "#/$defs/ObjectPropertyDeletion"
                             },
                             {
                                 "$ref": "#/$defs/ClassCreation"
@@ -9414,6 +9495,9 @@
                                 "$ref": "#/$defs/NodeDeletion"
                             },
                             {
+                                "$ref": "#/$defs/ObjectPropertyDeletion"
+                            },
+                            {
                                 "$ref": "#/$defs/ClassCreation"
                             },
                             {
@@ -9747,6 +9831,9 @@
                             },
                             {
                                 "$ref": "#/$defs/NodeDeletion"
+                            },
+                            {
+                                "$ref": "#/$defs/ObjectPropertyDeletion"
                             },
                             {
                                 "$ref": "#/$defs/ClassCreation"
@@ -10106,6 +10193,9 @@
                                 "$ref": "#/$defs/NodeDeletion"
                             },
                             {
+                                "$ref": "#/$defs/ObjectPropertyDeletion"
+                            },
+                            {
                                 "$ref": "#/$defs/ClassCreation"
                             },
                             {
@@ -10433,6 +10523,9 @@
                             },
                             {
                                 "$ref": "#/$defs/NodeDeletion"
+                            },
+                            {
+                                "$ref": "#/$defs/ObjectPropertyDeletion"
                             },
                             {
                                 "$ref": "#/$defs/ClassCreation"
@@ -10772,6 +10865,9 @@
                                 "$ref": "#/$defs/NodeDeletion"
                             },
                             {
+                                "$ref": "#/$defs/ObjectPropertyDeletion"
+                            },
+                            {
                                 "$ref": "#/$defs/ClassCreation"
                             },
                             {
@@ -11090,6 +11186,9 @@
                                 "$ref": "#/$defs/NodeDeletion"
                             },
                             {
+                                "$ref": "#/$defs/ObjectPropertyDeletion"
+                            },
+                            {
                                 "$ref": "#/$defs/ClassCreation"
                             },
                             {
@@ -11403,6 +11502,9 @@
                             },
                             {
                                 "$ref": "#/$defs/NodeDeletion"
+                            },
+                            {
+                                "$ref": "#/$defs/ObjectPropertyDeletion"
                             },
                             {
                                 "$ref": "#/$defs/ClassCreation"
@@ -11762,6 +11864,9 @@
                                 "$ref": "#/$defs/NodeDeletion"
                             },
                             {
+                                "$ref": "#/$defs/ObjectPropertyDeletion"
+                            },
+                            {
                                 "$ref": "#/$defs/ClassCreation"
                             },
                             {
@@ -12112,6 +12217,9 @@
                                 "$ref": "#/$defs/NodeDeletion"
                             },
                             {
+                                "$ref": "#/$defs/ObjectPropertyDeletion"
+                            },
+                            {
                                 "$ref": "#/$defs/ClassCreation"
                             },
                             {
@@ -12460,6 +12568,9 @@
                                 "$ref": "#/$defs/NodeDeletion"
                             },
                             {
+                                "$ref": "#/$defs/ObjectPropertyDeletion"
+                            },
+                            {
                                 "$ref": "#/$defs/ClassCreation"
                             },
                             {
@@ -12797,6 +12908,9 @@
                                 "$ref": "#/$defs/NodeDeletion"
                             },
                             {
+                                "$ref": "#/$defs/ObjectPropertyDeletion"
+                            },
+                            {
                                 "$ref": "#/$defs/ClassCreation"
                             },
                             {
@@ -13121,6 +13235,9 @@
                             },
                             {
                                 "$ref": "#/$defs/NodeDeletion"
+                            },
+                            {
+                                "$ref": "#/$defs/ObjectPropertyDeletion"
                             },
                             {
                                 "$ref": "#/$defs/ClassCreation"
@@ -13469,6 +13586,9 @@
                                 "$ref": "#/$defs/NodeDeletion"
                             },
                             {
+                                "$ref": "#/$defs/ObjectPropertyDeletion"
+                            },
+                            {
                                 "$ref": "#/$defs/ClassCreation"
                             },
                             {
@@ -13785,6 +13905,9 @@
                             },
                             {
                                 "$ref": "#/$defs/NodeDeletion"
+                            },
+                            {
+                                "$ref": "#/$defs/ObjectPropertyDeletion"
                             },
                             {
                                 "$ref": "#/$defs/ClassCreation"
@@ -14114,6 +14237,9 @@
                             },
                             {
                                 "$ref": "#/$defs/NodeDeletion"
+                            },
+                            {
+                                "$ref": "#/$defs/ObjectPropertyDeletion"
                             },
                             {
                                 "$ref": "#/$defs/ClassCreation"
@@ -14476,6 +14602,9 @@
                                 "$ref": "#/$defs/NodeDeletion"
                             },
                             {
+                                "$ref": "#/$defs/ObjectPropertyDeletion"
+                            },
+                            {
                                 "$ref": "#/$defs/ClassCreation"
                             },
                             {
@@ -14744,6 +14873,338 @@
             "title": "ObjectPropertyCreation",
             "type": "object"
         },
+        "ObjectPropertyDeletion": {
+            "additionalProperties": false,
+            "description": "A node deletion where the owl type is 'ObjectProperty'",
+            "properties": {
+                "about": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/OntologyElement"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "The 'focus' entity on which the change operates"
+                },
+                "about_node": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "about_node_representation": {
+                    "description": "The representation of a node (URI, CURIE, label) ",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "associated_change_set": {
+                    "description": "All changes forced as a result of this obsoletion. For example, starting with `A subClassOf B subClassOf C`, if we obsolete node B, then we may decide to bundle in a node move change of A from B to C. Note: this change set is not considered a part of the obsoletion, as obsoletion is considered atomic/simple. Instead this is a reference to a change set that may exist elsewhere",
+                    "items": {
+                        "anyOf": [
+                            {
+                                "$ref": "#/$defs/Transaction"
+                            },
+                            {
+                                "$ref": "#/$defs/MultiNodeObsoletion"
+                            },
+                            {
+                                "$ref": "#/$defs/LogicalAxiomChange"
+                            },
+                            {
+                                "$ref": "#/$defs/NodeRename"
+                            },
+                            {
+                                "$ref": "#/$defs/NewLabel"
+                            },
+                            {
+                                "$ref": "#/$defs/SetLanguageForName"
+                            },
+                            {
+                                "$ref": "#/$defs/NodeAnnotationChange"
+                            },
+                            {
+                                "$ref": "#/$defs/NodeSynonymChange"
+                            },
+                            {
+                                "$ref": "#/$defs/NodeMappingChange"
+                            },
+                            {
+                                "$ref": "#/$defs/NodeMetadataAssertionChange"
+                            },
+                            {
+                                "$ref": "#/$defs/AddNodeToSubset"
+                            },
+                            {
+                                "$ref": "#/$defs/RemoveNodeFromSubset"
+                            },
+                            {
+                                "$ref": "#/$defs/NodeObsoletion"
+                            },
+                            {
+                                "$ref": "#/$defs/NodeUnobsoletion"
+                            },
+                            {
+                                "$ref": "#/$defs/NodeCreation"
+                            },
+                            {
+                                "$ref": "#/$defs/NodeDeletion"
+                            },
+                            {
+                                "$ref": "#/$defs/ObjectPropertyDeletion"
+                            },
+                            {
+                                "$ref": "#/$defs/ClassCreation"
+                            },
+                            {
+                                "$ref": "#/$defs/ObjectPropertyCreation"
+                            },
+                            {
+                                "$ref": "#/$defs/NodeDirectMerge"
+                            },
+                            {
+                                "$ref": "#/$defs/NodeObsoletionWithDirectReplacement"
+                            },
+                            {
+                                "$ref": "#/$defs/NodeObsoletionWithNoDirectReplacement"
+                            },
+                            {
+                                "$ref": "#/$defs/NewTextDefinition"
+                            },
+                            {
+                                "$ref": "#/$defs/RemoveTextDefinition"
+                            },
+                            {
+                                "$ref": "#/$defs/TextDefinitionReplacement"
+                            },
+                            {
+                                "$ref": "#/$defs/NewMetadataAssertion"
+                            },
+                            {
+                                "$ref": "#/$defs/RemoveMetadataAssertion"
+                            },
+                            {
+                                "$ref": "#/$defs/MetadataAssertionReplacement"
+                            },
+                            {
+                                "$ref": "#/$defs/MetadataAssertionPredicateChange"
+                            },
+                            {
+                                "$ref": "#/$defs/NewMapping"
+                            },
+                            {
+                                "$ref": "#/$defs/RemoveMapping"
+                            },
+                            {
+                                "$ref": "#/$defs/MappingReplacement"
+                            },
+                            {
+                                "$ref": "#/$defs/MappingPredicateChange"
+                            },
+                            {
+                                "$ref": "#/$defs/NewSynonym"
+                            },
+                            {
+                                "$ref": "#/$defs/NameBecomesSynonym"
+                            },
+                            {
+                                "$ref": "#/$defs/RemoveSynonym"
+                            },
+                            {
+                                "$ref": "#/$defs/SynonymReplacement"
+                            },
+                            {
+                                "$ref": "#/$defs/SynonymPredicateChange"
+                            },
+                            {
+                                "$ref": "#/$defs/NodeAnnotationReplacement"
+                            },
+                            {
+                                "$ref": "#/$defs/EdgeCreation"
+                            },
+                            {
+                                "$ref": "#/$defs/EdgeDeletion"
+                            },
+                            {
+                                "$ref": "#/$defs/EdgeObsoletion"
+                            },
+                            {
+                                "$ref": "#/$defs/EdgeRewiring"
+                            },
+                            {
+                                "$ref": "#/$defs/NodeMove"
+                            },
+                            {
+                                "$ref": "#/$defs/PredicateChange"
+                            },
+                            {
+                                "$ref": "#/$defs/EdgeLogicalInterpretationChange"
+                            },
+                            {
+                                "$ref": "#/$defs/NodeDeepening"
+                            },
+                            {
+                                "$ref": "#/$defs/NodeShallowing"
+                            },
+                            {
+                                "$ref": "#/$defs/RemoveUnder"
+                            },
+                            {
+                                "$ref": "#/$defs/PlaceUnder"
+                            },
+                            {
+                                "$ref": "#/$defs/MappingCreation"
+                            }
+                        ]
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "change_date": {
+                    "description": "The date and time at which the change was made",
+                    "format": "date-time",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "change_description": {
+                    "description": "A string serialization of the change. This should be both human-readable, and parseable.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "contributor": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "creator": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "has_undo": {
+                    "description": "A change that reverses this change",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "id": {
+                    "type": "string"
+                },
+                "language": {
+                    "description": "The language tag of a literal",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "new_datatype": {
+                    "description": "The new datatype of a literal",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "new_language": {
+                    "description": "The new language tag of a literal",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "new_value": {
+                    "description": "The value of a property held in the new instance of the ontology",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "new_value_type": {
+                    "description": "The type (IRI or Literal) of a new value",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "old_datatype": {
+                    "description": "The old datatype of a literal",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "old_language": {
+                    "description": "The old language tag of a literal",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "old_value": {
+                    "description": "The value of a property held in the old instance of the ontology",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "old_value_type": {
+                    "description": "The type (IRI or Literal) of an old value",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "pull_request": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "see_also": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "term_tracker_issue": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "type": {
+                    "enum": [
+                        "ObjectPropertyDeletion"
+                    ],
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "was_generated_by": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "id"
+            ],
+            "title": "ObjectPropertyDeletion",
+            "type": "object"
+        },
         "Obsoletion": {
             "additionalProperties": false,
             "description": "Obsoletion of an element deprecates usage of that element, but does not delete that element.",
@@ -14932,6 +15393,9 @@
                             },
                             {
                                 "$ref": "#/$defs/NodeDeletion"
+                            },
+                            {
+                                "$ref": "#/$defs/ObjectPropertyDeletion"
                             },
                             {
                                 "$ref": "#/$defs/ClassCreation"
@@ -15297,6 +15761,9 @@
                             },
                             {
                                 "$ref": "#/$defs/NodeDeletion"
+                            },
+                            {
+                                "$ref": "#/$defs/ObjectPropertyDeletion"
                             },
                             {
                                 "$ref": "#/$defs/ClassCreation"
@@ -15708,6 +16175,9 @@
                                 "$ref": "#/$defs/NodeDeletion"
                             },
                             {
+                                "$ref": "#/$defs/ObjectPropertyDeletion"
+                            },
+                            {
                                 "$ref": "#/$defs/ClassCreation"
                             },
                             {
@@ -16036,6 +16506,9 @@
                             },
                             {
                                 "$ref": "#/$defs/NodeDeletion"
+                            },
+                            {
+                                "$ref": "#/$defs/ObjectPropertyDeletion"
                             },
                             {
                                 "$ref": "#/$defs/ClassCreation"
@@ -16380,6 +16853,9 @@
                                 "$ref": "#/$defs/NodeDeletion"
                             },
                             {
+                                "$ref": "#/$defs/ObjectPropertyDeletion"
+                            },
+                            {
                                 "$ref": "#/$defs/ClassCreation"
                             },
                             {
@@ -16709,6 +17185,9 @@
                                 "$ref": "#/$defs/NodeDeletion"
                             },
                             {
+                                "$ref": "#/$defs/ObjectPropertyDeletion"
+                            },
+                            {
                                 "$ref": "#/$defs/ClassCreation"
                             },
                             {
@@ -17025,6 +17504,9 @@
                             },
                             {
                                 "$ref": "#/$defs/NodeDeletion"
+                            },
+                            {
+                                "$ref": "#/$defs/ObjectPropertyDeletion"
                             },
                             {
                                 "$ref": "#/$defs/ClassCreation"
@@ -17361,6 +17843,9 @@
                             },
                             {
                                 "$ref": "#/$defs/NodeDeletion"
+                            },
+                            {
+                                "$ref": "#/$defs/ObjectPropertyDeletion"
                             },
                             {
                                 "$ref": "#/$defs/ClassCreation"
@@ -17723,6 +18208,9 @@
                                 "$ref": "#/$defs/NodeDeletion"
                             },
                             {
+                                "$ref": "#/$defs/ObjectPropertyDeletion"
+                            },
+                            {
                                 "$ref": "#/$defs/ClassCreation"
                             },
                             {
@@ -17914,6 +18402,9 @@
                             },
                             {
                                 "$ref": "#/$defs/NodeDeletion"
+                            },
+                            {
+                                "$ref": "#/$defs/ObjectPropertyDeletion"
                             },
                             {
                                 "$ref": "#/$defs/ClassCreation"
@@ -18219,6 +18710,9 @@
                             },
                             {
                                 "$ref": "#/$defs/NodeDeletion"
+                            },
+                            {
+                                "$ref": "#/$defs/ObjectPropertyDeletion"
                             },
                             {
                                 "$ref": "#/$defs/ClassCreation"
@@ -18579,6 +19073,9 @@
                                 "$ref": "#/$defs/NodeDeletion"
                             },
                             {
+                                "$ref": "#/$defs/ObjectPropertyDeletion"
+                            },
+                            {
                                 "$ref": "#/$defs/ClassCreation"
                             },
                             {
@@ -18913,6 +19410,9 @@
                             },
                             {
                                 "$ref": "#/$defs/NodeDeletion"
+                            },
+                            {
+                                "$ref": "#/$defs/ObjectPropertyDeletion"
                             },
                             {
                                 "$ref": "#/$defs/ClassCreation"
@@ -19262,6 +19762,9 @@
                                 "$ref": "#/$defs/NodeDeletion"
                             },
                             {
+                                "$ref": "#/$defs/ObjectPropertyDeletion"
+                            },
+                            {
                                 "$ref": "#/$defs/ClassCreation"
                             },
                             {
@@ -19584,6 +20087,9 @@
                                 "$ref": "#/$defs/NodeDeletion"
                             },
                             {
+                                "$ref": "#/$defs/ObjectPropertyDeletion"
+                            },
+                            {
                                 "$ref": "#/$defs/ClassCreation"
                             },
                             {
@@ -19758,6 +20264,9 @@
                             },
                             {
                                 "$ref": "#/$defs/NodeDeletion"
+                            },
+                            {
+                                "$ref": "#/$defs/ObjectPropertyDeletion"
                             },
                             {
                                 "$ref": "#/$defs/ClassCreation"
@@ -20041,6 +20550,9 @@
                     },
                     {
                         "$ref": "#/$defs/NodeDeletion"
+                    },
+                    {
+                        "$ref": "#/$defs/ObjectPropertyDeletion"
                     },
                     {
                         "$ref": "#/$defs/ClassCreation"

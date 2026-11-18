@@ -8,6 +8,8 @@ from kgcl_schema.datamodel.kgcl import (
     NodeObsoletion,
     NewSynonym,
     ClassCreation,
+    ObjectPropertyCreation,
+    ObjectPropertyDeletion,
     NodeTextDefinitionChange,
     PredicateChange,
     Change,
@@ -212,6 +214,22 @@ CASES: List[CASE] = [
         f"create {NEW_TERM}",
         f"create {NEW_TERM_URI}",
         ClassCreation(id=UID, about_node=NEW_TERM, about_node_representation="curie"),
+        None,
+    ),
+    (
+        f"create object property {PART_OF}",
+        f"create object property {PART_OF_URI}",
+        ObjectPropertyCreation(
+            id=UID, about_node=PART_OF, about_node_representation="curie"
+        ),
+        None,
+    ),
+    (
+        f"delete object property {PART_OF}",
+        f"delete object property {PART_OF_URI}",
+        ObjectPropertyDeletion(
+            id=UID, about_node=PART_OF, about_node_representation="curie"
+        ),
         None,
     ),
     (
