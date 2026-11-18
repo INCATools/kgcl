@@ -256,7 +256,7 @@
                     ]
                 },
                 "change_description": {
-                    "description": "A string serialization of the change. This should be both human-readable, and parseable.",
+                    "description": "A string serialization of the change. This should be both human-readable and parseable.",
                     "type": [
                         "string",
                         "null"
@@ -733,7 +733,7 @@
                     ]
                 },
                 "change_description": {
-                    "description": "A string serialization of the change. This should be both human-readable, and parseable.",
+                    "description": "A string serialization of the change. This should be both human-readable and parseable.",
                     "type": [
                         "string",
                         "null"
@@ -855,7 +855,7 @@
         },
         "ClassCreation": {
             "additionalProperties": false,
-            "description": "A node creation where the owl type is 'owl:Class'",
+            "description": "A node creation where the node is a class (as opposed to a relation)",
             "properties": {
                 "about": {
                     "anyOf": [
@@ -1067,7 +1067,7 @@
                     ]
                 },
                 "change_description": {
-                    "description": "A string serialization of the change. This should be both human-readable, and parseable.",
+                    "description": "A string serialization of the change. This should be both human-readable and parseable.",
                     "type": [
                         "string",
                         "null"
@@ -1226,7 +1226,7 @@
         },
         "ClassDeletion": {
             "additionalProperties": false,
-            "description": "A node deletion where the owl type is 'owl:Class'",
+            "description": "A node deletion where the node is a class (as opposed to a relation)",
             "properties": {
                 "about": {
                     "anyOf": [
@@ -1428,7 +1428,7 @@
                     ]
                 },
                 "change_description": {
-                    "description": "A string serialization of the change. This should be both human-readable, and parseable.",
+                    "description": "A string serialization of the change. This should be both human-readable and parseable.",
                     "type": [
                         "string",
                         "null"
@@ -1772,7 +1772,7 @@
                     ]
                 },
                 "change_description": {
-                    "description": "A string serialization of the change. This should be both human-readable, and parseable.",
+                    "description": "A string serialization of the change. This should be both human-readable and parseable.",
                     "type": [
                         "string",
                         "null"
@@ -2488,7 +2488,7 @@
                     ]
                 },
                 "change_description": {
-                    "description": "A string serialization of the change. This should be both human-readable, and parseable.",
+                    "description": "A string serialization of the change. This should be both human-readable and parseable.",
                     "type": [
                         "string",
                         "null"
@@ -2844,7 +2844,7 @@
                     ]
                 },
                 "change_description": {
-                    "description": "A string serialization of the change. This should be both human-readable, and parseable.",
+                    "description": "A string serialization of the change. This should be both human-readable and parseable.",
                     "type": [
                         "string",
                         "null"
@@ -3236,7 +3236,7 @@
                     ]
                 },
                 "change_description": {
-                    "description": "A string serialization of the change. This should be both human-readable, and parseable.",
+                    "description": "A string serialization of the change. This should be both human-readable and parseable.",
                     "type": [
                         "string",
                         "null"
@@ -3603,7 +3603,7 @@
                     ]
                 },
                 "change_description": {
-                    "description": "A string serialization of the change. This should be both human-readable, and parseable.",
+                    "description": "A string serialization of the change. This should be both human-readable and parseable.",
                     "type": [
                         "string",
                         "null"
@@ -3959,7 +3959,7 @@
                     ]
                 },
                 "change_description": {
-                    "description": "A string serialization of the change. This should be both human-readable, and parseable.",
+                    "description": "A string serialization of the change. This should be both human-readable and parseable.",
                     "type": [
                         "string",
                         "null"
@@ -4316,7 +4316,7 @@
                     ]
                 },
                 "change_description": {
-                    "description": "A string serialization of the change. This should be both human-readable, and parseable.",
+                    "description": "A string serialization of the change. This should be both human-readable and parseable.",
                     "type": [
                         "string",
                         "null"
@@ -4714,7 +4714,7 @@
                     ]
                 },
                 "change_description": {
-                    "description": "A string serialization of the change. This should be both human-readable, and parseable.",
+                    "description": "A string serialization of the change. This should be both human-readable and parseable.",
                     "type": [
                         "string",
                         "null"
@@ -5055,7 +5055,7 @@
                     ]
                 },
                 "change_description": {
-                    "description": "A string serialization of the change. This should be both human-readable, and parseable.",
+                    "description": "A string serialization of the change. This should be both human-readable and parseable.",
                     "type": [
                         "string",
                         "null"
@@ -5432,7 +5432,7 @@
                     ]
                 },
                 "change_description": {
-                    "description": "A string serialization of the change. This should be both human-readable, and parseable.",
+                    "description": "A string serialization of the change. This should be both human-readable and parseable.",
                     "type": [
                         "string",
                         "null"
@@ -5756,7 +5756,7 @@
                     ]
                 },
                 "change_description": {
-                    "description": "A string serialization of the change. This should be both human-readable, and parseable.",
+                    "description": "A string serialization of the change. This should be both human-readable and parseable.",
                     "type": [
                         "string",
                         "null"
@@ -6080,7 +6080,7 @@
                     ]
                 },
                 "change_description": {
-                    "description": "A string serialization of the change. This should be both human-readable, and parseable.",
+                    "description": "A string serialization of the change. This should be both human-readable and parseable.",
                     "type": [
                         "string",
                         "null"
@@ -6404,7 +6404,7 @@
                     ]
                 },
                 "change_description": {
-                    "description": "A string serialization of the change. This should be both human-readable, and parseable.",
+                    "description": "A string serialization of the change. This should be both human-readable and parseable.",
                     "type": [
                         "string",
                         "null"
@@ -6715,7 +6715,7 @@
                     ]
                 },
                 "change_description": {
-                    "description": "A string serialization of the change. This should be both human-readable, and parseable.",
+                    "description": "A string serialization of the change. This should be both human-readable and parseable.",
                     "type": [
                         "string",
                         "null"
@@ -6999,7 +6999,7 @@
                     ]
                 },
                 "change_description": {
-                    "description": "A string serialization of the change. This should be both human-readable, and parseable.",
+                    "description": "A string serialization of the change. This should be both human-readable and parseable.",
                     "type": [
                         "string",
                         "null"
@@ -7323,7 +7323,7 @@
                     ]
                 },
                 "change_description": {
-                    "description": "A string serialization of the change. This should be both human-readable, and parseable.",
+                    "description": "A string serialization of the change. This should be both human-readable and parseable.",
                     "type": [
                         "string",
                         "null"
@@ -7647,7 +7647,7 @@
                     ]
                 },
                 "change_description": {
-                    "description": "A string serialization of the change. This should be both human-readable, and parseable.",
+                    "description": "A string serialization of the change. This should be both human-readable and parseable.",
                     "type": [
                         "string",
                         "null"
@@ -7983,7 +7983,7 @@
                     ]
                 },
                 "change_description": {
-                    "description": "A string serialization of the change. This should be both human-readable, and parseable.",
+                    "description": "A string serialization of the change. This should be both human-readable and parseable.",
                     "type": [
                         "string",
                         "null"
@@ -8319,7 +8319,7 @@
                     ]
                 },
                 "change_description": {
-                    "description": "A string serialization of the change. This should be both human-readable, and parseable.",
+                    "description": "A string serialization of the change. This should be both human-readable and parseable.",
                     "type": [
                         "string",
                         "null"
@@ -8656,7 +8656,7 @@
                     ]
                 },
                 "change_description": {
-                    "description": "A string serialization of the change. This should be both human-readable, and parseable.",
+                    "description": "A string serialization of the change. This should be both human-readable and parseable.",
                     "type": [
                         "string",
                         "null"
@@ -9027,7 +9027,7 @@
                     ]
                 },
                 "change_description": {
-                    "description": "A string serialization of the change. This should be both human-readable, and parseable.",
+                    "description": "A string serialization of the change. This should be both human-readable and parseable.",
                     "type": [
                         "string",
                         "null"
@@ -9365,7 +9365,7 @@
                     ]
                 },
                 "change_description": {
-                    "description": "A string serialization of the change. This should be both human-readable, and parseable.",
+                    "description": "A string serialization of the change. This should be both human-readable and parseable.",
                     "type": [
                         "string",
                         "null"
@@ -9689,7 +9689,7 @@
                     ]
                 },
                 "change_description": {
-                    "description": "A string serialization of the change. This should be both human-readable, and parseable.",
+                    "description": "A string serialization of the change. This should be both human-readable and parseable.",
                     "type": [
                         "string",
                         "null"
@@ -10034,7 +10034,7 @@
                     ]
                 },
                 "change_description": {
-                    "description": "A string serialization of the change. This should be both human-readable, and parseable.",
+                    "description": "A string serialization of the change. This should be both human-readable and parseable.",
                     "type": [
                         "string",
                         "null"
@@ -10375,7 +10375,7 @@
                     ]
                 },
                 "change_description": {
-                    "description": "A string serialization of the change. This should be both human-readable, and parseable.",
+                    "description": "A string serialization of the change. This should be both human-readable and parseable.",
                     "type": [
                         "string",
                         "null"
@@ -10536,7 +10536,7 @@
         },
         "NodeDeletion": {
             "additionalProperties": false,
-            "description": "Deletion of a node from the graph. Note it is recommended nodes are obsoleted and never merged, but this operation exists to represent deletions in ontologies, accidental or otherwise",
+            "description": "Deletion of a node from the graph. Note that it is recommended nodes are obsoleted and never merged, but this operation exists to represent deletions in ontologies, accidental or otherwise",
             "properties": {
                 "about": {
                     "anyOf": [
@@ -10738,7 +10738,7 @@
                     ]
                 },
                 "change_description": {
-                    "description": "A string serialization of the change. This should be both human-readable, and parseable.",
+                    "description": "A string serialization of the change. This should be both human-readable and parseable.",
                     "type": [
                         "string",
                         "null"
@@ -10898,7 +10898,7 @@
                     ]
                 },
                 "associated_change_set": {
-                    "description": "All changes forced as a result of this obsoletion. For example, starting with `A subClassOf B subClassOf C`, if we obsolete node B, then we may decide to bundle in a node move change of A from B to C. Note: this change set is not considered a part of the obsoletion, as obsoletion is considered atomic/simple. Instead this is a reference to a change set that may exist elsewhere",
+                    "description": "All changes forced as a result of this obsoletion. For example, starting with `A subClassOf B subClassOf C`, if we obsolete node B, then we may decide to bundle in a node move change of A from B to C. Note that this change set is not considered a part of the obsoletion, as obsoletion is considered atomic/simple. Instead this is a reference to a change set that may exist elsewhere",
                     "items": {
                         "anyOf": [
                             {
@@ -11073,7 +11073,7 @@
                     ]
                 },
                 "change_description": {
-                    "description": "A string serialization of the change. This should be both human-readable, and parseable.",
+                    "description": "A string serialization of the change. This should be both human-readable and parseable.",
                     "type": [
                         "string",
                         "null"
@@ -11416,7 +11416,7 @@
                     ]
                 },
                 "change_description": {
-                    "description": "A string serialization of the change. This should be both human-readable, and parseable.",
+                    "description": "A string serialization of the change. This should be both human-readable and parseable.",
                     "type": [
                         "string",
                         "null"
@@ -11740,7 +11740,7 @@
                     ]
                 },
                 "change_description": {
-                    "description": "A string serialization of the change. This should be both human-readable, and parseable.",
+                    "description": "A string serialization of the change. This should be both human-readable and parseable.",
                     "type": [
                         "string",
                         "null"
@@ -12061,7 +12061,7 @@
                     ]
                 },
                 "change_description": {
-                    "description": "A string serialization of the change. This should be both human-readable, and parseable.",
+                    "description": "A string serialization of the change. This should be both human-readable and parseable.",
                     "type": [
                         "string",
                         "null"
@@ -12249,7 +12249,7 @@
                     ]
                 },
                 "associated_change_set": {
-                    "description": "All changes forced as a result of this obsoletion. For example, starting with `A subClassOf B subClassOf C`, if we obsolete node B, then we may decide to bundle in a node move change of A from B to C. Note: this change set is not considered a part of the obsoletion, as obsoletion is considered atomic/simple. Instead this is a reference to a change set that may exist elsewhere",
+                    "description": "All changes forced as a result of this obsoletion. For example, starting with `A subClassOf B subClassOf C`, if we obsolete node B, then we may decide to bundle in a node move change of A from B to C. Note that this change set is not considered a part of the obsoletion, as obsoletion is considered atomic/simple. Instead this is a reference to a change set that may exist elsewhere",
                     "items": {
                         "anyOf": [
                             {
@@ -12424,7 +12424,7 @@
                     ]
                 },
                 "change_description": {
-                    "description": "A string serialization of the change. This should be both human-readable, and parseable.",
+                    "description": "A string serialization of the change. This should be both human-readable and parseable.",
                     "type": [
                         "string",
                         "null"
@@ -12605,7 +12605,7 @@
                     ]
                 },
                 "associated_change_set": {
-                    "description": "All changes forced as a result of this obsoletion. For example, starting with `A subClassOf B subClassOf C`, if we obsolete node B, then we may decide to bundle in a node move change of A from B to C. Note: this change set is not considered a part of the obsoletion, as obsoletion is considered atomic/simple. Instead this is a reference to a change set that may exist elsewhere",
+                    "description": "All changes forced as a result of this obsoletion. For example, starting with `A subClassOf B subClassOf C`, if we obsolete node B, then we may decide to bundle in a node move change of A from B to C. Note that this change set is not considered a part of the obsoletion, as obsoletion is considered atomic/simple. Instead this is a reference to a change set that may exist elsewhere",
                     "items": {
                         "anyOf": [
                             {
@@ -12780,7 +12780,7 @@
                     ]
                 },
                 "change_description": {
-                    "description": "A string serialization of the change. This should be both human-readable, and parseable.",
+                    "description": "A string serialization of the change. This should be both human-readable and parseable.",
                     "type": [
                         "string",
                         "null"
@@ -12959,7 +12959,7 @@
                     ]
                 },
                 "associated_change_set": {
-                    "description": "All changes forced as a result of this obsoletion. For example, starting with `A subClassOf B subClassOf C`, if we obsolete node B, then we may decide to bundle in a node move change of A from B to C. Note: this change set is not considered a part of the obsoletion, as obsoletion is considered atomic/simple. Instead this is a reference to a change set that may exist elsewhere",
+                    "description": "All changes forced as a result of this obsoletion. For example, starting with `A subClassOf B subClassOf C`, if we obsolete node B, then we may decide to bundle in a node move change of A from B to C. Note that this change set is not considered a part of the obsoletion, as obsoletion is considered atomic/simple. Instead this is a reference to a change set that may exist elsewhere",
                     "items": {
                         "anyOf": [
                             {
@@ -13134,7 +13134,7 @@
                     ]
                 },
                 "change_description": {
-                    "description": "A string serialization of the change. This should be both human-readable, and parseable.",
+                    "description": "A string serialization of the change. This should be both human-readable and parseable.",
                     "type": [
                         "string",
                         "null"
@@ -13477,7 +13477,7 @@
                     ]
                 },
                 "change_description": {
-                    "description": "A string serialization of the change. This should be both human-readable, and parseable.",
+                    "description": "A string serialization of the change. This should be both human-readable and parseable.",
                     "type": [
                         "string",
                         "null"
@@ -13504,7 +13504,7 @@
                             "type": "null"
                         }
                     ],
-                    "description": "A representation of character-level changes on a textual literal property. For example, if a text definition may change by only a single character such as addition of a period, it is useful to be able to see this visually."
+                    "description": "A representation of character-level changes on a textual literal property. For example, if a text definition changes by only a single character such as addition of a period, it is useful to be able to see this visually."
                 },
                 "has_undo": {
                     "description": "A change that reverses this change",
@@ -13809,7 +13809,7 @@
                     ]
                 },
                 "change_description": {
-                    "description": "A string serialization of the change. This should be both human-readable, and parseable.",
+                    "description": "A string serialization of the change. This should be both human-readable and parseable.",
                     "type": [
                         "string",
                         "null"
@@ -14161,7 +14161,7 @@
                     ]
                 },
                 "change_description": {
-                    "description": "A string serialization of the change. This should be both human-readable, and parseable.",
+                    "description": "A string serialization of the change. This should be both human-readable and parseable.",
                     "type": [
                         "string",
                         "null"
@@ -14485,7 +14485,7 @@
                     ]
                 },
                 "change_description": {
-                    "description": "A string serialization of the change. This should be both human-readable, and parseable.",
+                    "description": "A string serialization of the change. This should be both human-readable and parseable.",
                     "type": [
                         "string",
                         "null"
@@ -14820,7 +14820,7 @@
                     ]
                 },
                 "change_description": {
-                    "description": "A string serialization of the change. This should be both human-readable, and parseable.",
+                    "description": "A string serialization of the change. This should be both human-readable and parseable.",
                     "type": [
                         "string",
                         "null"
@@ -14974,7 +14974,7 @@
         },
         "ObjectPropertyCreation": {
             "additionalProperties": false,
-            "description": "A node creation where the owl type is 'ObjectProperty'",
+            "description": "A node creation where the node is an object property (a relation)",
             "properties": {
                 "about": {
                     "anyOf": [
@@ -15186,7 +15186,7 @@
                     ]
                 },
                 "change_description": {
-                    "description": "A string serialization of the change. This should be both human-readable, and parseable.",
+                    "description": "A string serialization of the change. This should be both human-readable and parseable.",
                     "type": [
                         "string",
                         "null"
@@ -15339,7 +15339,7 @@
         },
         "ObjectPropertyDeletion": {
             "additionalProperties": false,
-            "description": "A node deletion where the owl type is 'ObjectProperty'",
+            "description": "A node deletion where the node is an object property (a relation)",
             "properties": {
                 "about": {
                     "anyOf": [
@@ -15541,7 +15541,7 @@
                     ]
                 },
                 "change_description": {
-                    "description": "A string serialization of the change. This should be both human-readable, and parseable.",
+                    "description": "A string serialization of the change. This should be both human-readable and parseable.",
                     "type": [
                         "string",
                         "null"
@@ -15985,7 +15985,7 @@
                     ]
                 },
                 "change_description": {
-                    "description": "A string serialization of the change. This should be both human-readable, and parseable.",
+                    "description": "A string serialization of the change. This should be both human-readable and parseable.",
                     "type": [
                         "string",
                         "null"
@@ -16356,7 +16356,7 @@
                     ]
                 },
                 "change_description": {
-                    "description": "A string serialization of the change. This should be both human-readable, and parseable.",
+                    "description": "A string serialization of the change. This should be both human-readable and parseable.",
                     "type": [
                         "string",
                         "null"
@@ -16771,7 +16771,7 @@
                     ]
                 },
                 "change_description": {
-                    "description": "A string serialization of the change. This should be both human-readable, and parseable.",
+                    "description": "A string serialization of the change. This should be both human-readable and parseable.",
                     "type": [
                         "string",
                         "null"
@@ -17107,7 +17107,7 @@
                     ]
                 },
                 "change_description": {
-                    "description": "A string serialization of the change. This should be both human-readable, and parseable.",
+                    "description": "A string serialization of the change. This should be both human-readable and parseable.",
                     "type": [
                         "string",
                         "null"
@@ -17455,7 +17455,7 @@
                     ]
                 },
                 "change_description": {
-                    "description": "A string serialization of the change. This should be both human-readable, and parseable.",
+                    "description": "A string serialization of the change. This should be both human-readable and parseable.",
                     "type": [
                         "string",
                         "null"
@@ -17790,7 +17790,7 @@
                     ]
                 },
                 "change_description": {
-                    "description": "A string serialization of the change. This should be both human-readable, and parseable.",
+                    "description": "A string serialization of the change. This should be both human-readable and parseable.",
                     "type": [
                         "string",
                         "null"
@@ -18114,7 +18114,7 @@
                     ]
                 },
                 "change_description": {
-                    "description": "A string serialization of the change. This should be both human-readable, and parseable.",
+                    "description": "A string serialization of the change. This should be both human-readable and parseable.",
                     "type": [
                         "string",
                         "null"
@@ -18456,7 +18456,7 @@
                     ]
                 },
                 "change_description": {
-                    "description": "A string serialization of the change. This should be both human-readable, and parseable.",
+                    "description": "A string serialization of the change. This should be both human-readable and parseable.",
                     "type": [
                         "string",
                         "null"
@@ -19021,7 +19021,7 @@
                     ]
                 },
                 "change_description": {
-                    "description": "A string serialization of the change. This should be both human-readable, and parseable.",
+                    "description": "A string serialization of the change. This should be both human-readable and parseable.",
                     "type": [
                         "string",
                         "null"
@@ -19332,7 +19332,7 @@
                     ]
                 },
                 "change_description": {
-                    "description": "A string serialization of the change. This should be both human-readable, and parseable.",
+                    "description": "A string serialization of the change. This should be both human-readable and parseable.",
                     "type": [
                         "string",
                         "null"
@@ -19696,7 +19696,7 @@
                     ]
                 },
                 "change_description": {
-                    "description": "A string serialization of the change. This should be both human-readable, and parseable.",
+                    "description": "A string serialization of the change. This should be both human-readable and parseable.",
                     "type": [
                         "string",
                         "null"
@@ -19723,7 +19723,7 @@
                             "type": "null"
                         }
                     ],
-                    "description": "A representation of character-level changes on a textual literal property. For example, if a text definition may change by only a single character such as addition of a period, it is useful to be able to see this visually."
+                    "description": "A representation of character-level changes on a textual literal property. For example, if a text definition changes by only a single character such as addition of a period, it is useful to be able to see this visually."
                 },
                 "has_undo": {
                     "description": "A change that reverses this change",
@@ -20038,7 +20038,7 @@
                     ]
                 },
                 "change_description": {
-                    "description": "A string serialization of the change. This should be both human-readable, and parseable.",
+                    "description": "A string serialization of the change. This should be both human-readable and parseable.",
                     "type": [
                         "string",
                         "null"
@@ -20065,7 +20065,7 @@
                             "type": "null"
                         }
                     ],
-                    "description": "A representation of character-level changes on a textual literal property. For example, if a text definition may change by only a single character such as addition of a period, it is useful to be able to see this visually."
+                    "description": "A representation of character-level changes on a textual literal property. For example, if a text definition changes by only a single character such as addition of a period, it is useful to be able to see this visually."
                 },
                 "has_undo": {
                     "description": "A change that reverses this change",
@@ -20391,7 +20391,7 @@
                     ]
                 },
                 "change_description": {
-                    "description": "A string serialization of the change. This should be both human-readable, and parseable.",
+                    "description": "A string serialization of the change. This should be both human-readable and parseable.",
                     "type": [
                         "string",
                         "null"
@@ -20418,7 +20418,7 @@
                             "type": "null"
                         }
                     ],
-                    "description": "A representation of character-level changes on a textual literal property. For example, if a text definition may change by only a single character such as addition of a period, it is useful to be able to see this visually."
+                    "description": "A representation of character-level changes on a textual literal property. For example, if a text definition changes by only a single character such as addition of a period, it is useful to be able to see this visually."
                 },
                 "has_undo": {
                     "description": "A change that reverses this change",
@@ -20719,7 +20719,7 @@
                     ]
                 },
                 "change_description": {
-                    "description": "A string serialization of the change. This should be both human-readable, and parseable.",
+                    "description": "A string serialization of the change. This should be both human-readable and parseable.",
                     "type": [
                         "string",
                         "null"

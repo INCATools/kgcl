@@ -11,7 +11,7 @@
 --     * Slot: change_date Description: The date and time at which the change was made
 --     * Slot: contributor
 --     * Slot: has_undo Description: A change that reverses this change
---     * Slot: change_description Description: A string serialization of the change. This should be both human-readable, and parseable.
+--     * Slot: change_description Description: A string serialization of the change. This should be both human-readable and parseable.
 --     * Slot: Change_id Description: Autocreated FK slot
 --     * Slot: SimpleChange_id Description: Autocreated FK slot
 --     * Slot: ComplexChange_id Description: Autocreated FK slot
@@ -90,7 +90,7 @@
 --     * Slot: change_date Description: The date and time at which the change was made
 --     * Slot: contributor
 --     * Slot: has_undo Description: A change that reverses this change
---     * Slot: change_description Description: A string serialization of the change. This should be both human-readable, and parseable.
+--     * Slot: change_description Description: A string serialization of the change. This should be both human-readable and parseable.
 -- # Abstract Class: ComplexChange Description: A change that is is a composition of other changes
 --     * Slot: id
 --     * Slot: type
@@ -102,7 +102,7 @@
 --     * Slot: change_date Description: The date and time at which the change was made
 --     * Slot: contributor
 --     * Slot: has_undo Description: A change that reverses this change
---     * Slot: change_description Description: A string serialization of the change. This should be both human-readable, and parseable.
+--     * Slot: change_description Description: A string serialization of the change. This should be both human-readable and parseable.
 -- # Class: MultiNodeObsoletion Description: A complex change consisting of multiple obsoletions.
 --     * Slot: id
 --     * Slot: type
@@ -114,7 +114,7 @@
 --     * Slot: change_date Description: The date and time at which the change was made
 --     * Slot: contributor
 --     * Slot: has_undo Description: A change that reverses this change
---     * Slot: change_description Description: A string serialization of the change. This should be both human-readable, and parseable.
+--     * Slot: change_description Description: A string serialization of the change. This should be both human-readable and parseable.
 -- # Class: Transaction Description: A change that is a composition of a set of changes, where those changes are treated as a single unit. Could be a single change, or the results of an ontology diff
 --     * Slot: id
 --     * Slot: type
@@ -126,7 +126,7 @@
 --     * Slot: change_date Description: The date and time at which the change was made
 --     * Slot: contributor
 --     * Slot: has_undo Description: A change that reverses this change
---     * Slot: change_description Description: A string serialization of the change. This should be both human-readable, and parseable.
+--     * Slot: change_description Description: A string serialization of the change. This should be both human-readable and parseable.
 -- # Class: ChangeSetSummaryStatistic Description: A summary statistic for a set of changes of the same type, grouped by zero or more node properties
 --     * Slot: id
 -- # Class: ChangeMixin Description: root class for all change mixins
@@ -226,7 +226,7 @@
 --     * Slot: change_date Description: The date and time at which the change was made
 --     * Slot: contributor
 --     * Slot: has_undo Description: A change that reverses this change
---     * Slot: change_description Description: A string serialization of the change. This should be both human-readable, and parseable.
+--     * Slot: change_description Description: A string serialization of the change. This should be both human-readable and parseable.
 --     * Slot: about_edge_id
 -- # Class: EdgeCreation Description: An edge change in which a de-novo edge is created. The edge is potentially annotated in the same action.
 --     * Slot: subject
@@ -254,7 +254,7 @@
 --     * Slot: creator
 --     * Slot: change_date Description: The date and time at which the change was made
 --     * Slot: contributor
---     * Slot: change_description Description: A string serialization of the change. This should be both human-readable, and parseable.
+--     * Slot: change_description Description: A string serialization of the change. This should be both human-readable and parseable.
 --     * Slot: annotation_set_id
 --     * Slot: about_edge_id
 --     * Slot: has_undo_id Description: A change that reverses this change
@@ -285,7 +285,7 @@
 --     * Slot: creator
 --     * Slot: change_date Description: The date and time at which the change was made
 --     * Slot: contributor
---     * Slot: change_description Description: A string serialization of the change. This should be both human-readable, and parseable.
+--     * Slot: change_description Description: A string serialization of the change. This should be both human-readable and parseable.
 --     * Slot: annotation_set_id
 --     * Slot: about_edge_id
 --     * Slot: has_undo_id Description: A change that reverses this change
@@ -317,7 +317,7 @@
 --     * Slot: change_date Description: The date and time at which the change was made
 --     * Slot: contributor
 --     * Slot: has_undo Description: A change that reverses this change
---     * Slot: change_description Description: A string serialization of the change. This should be both human-readable, and parseable.
+--     * Slot: change_description Description: A string serialization of the change. This should be both human-readable and parseable.
 --     * Slot: annotation_set_id
 --     * Slot: about_edge_id
 --     * Slot: about_id Description: The 'focus' entity on which the change operates
@@ -348,7 +348,7 @@
 --     * Slot: change_date Description: The date and time at which the change was made
 --     * Slot: contributor
 --     * Slot: has_undo Description: A change that reverses this change
---     * Slot: change_description Description: A string serialization of the change. This should be both human-readable, and parseable.
+--     * Slot: change_description Description: A string serialization of the change. This should be both human-readable and parseable.
 --     * Slot: annotation_set_id
 --     * Slot: about_edge_id
 --     * Slot: about_id Description: The 'focus' entity on which the change operates
@@ -376,7 +376,7 @@
 --     * Slot: creator
 --     * Slot: change_date Description: The date and time at which the change was made
 --     * Slot: contributor
---     * Slot: change_description Description: A string serialization of the change. This should be both human-readable, and parseable.
+--     * Slot: change_description Description: A string serialization of the change. This should be both human-readable and parseable.
 --     * Slot: annotation_set_id
 --     * Slot: about_edge_id
 --     * Slot: has_undo_id Description: A change that reverses this change
@@ -403,7 +403,7 @@
 --     * Slot: change_date Description: The date and time at which the change was made
 --     * Slot: contributor
 --     * Slot: has_undo Description: A change that reverses this change
---     * Slot: change_description Description: A string serialization of the change. This should be both human-readable, and parseable.
+--     * Slot: change_description Description: A string serialization of the change. This should be both human-readable and parseable.
 --     * Slot: about_edge_id
 -- # Class: MappingCreation Description: A specific kind of edge creation in which the created edge is a mapping.
 --     * Slot: subject Description: This corresponds to subject_id in SSSOM
@@ -431,7 +431,7 @@
 --     * Slot: creator
 --     * Slot: change_date Description: The date and time at which the change was made
 --     * Slot: contributor
---     * Slot: change_description Description: A string serialization of the change. This should be both human-readable, and parseable.
+--     * Slot: change_description Description: A string serialization of the change. This should be both human-readable and parseable.
 --     * Slot: annotation_set_id
 --     * Slot: about_edge_id
 --     * Slot: has_undo_id Description: A change that reverses this change
@@ -460,7 +460,7 @@
 --     * Slot: change_date Description: The date and time at which the change was made
 --     * Slot: contributor
 --     * Slot: has_undo Description: A change that reverses this change
---     * Slot: change_description Description: A string serialization of the change. This should be both human-readable, and parseable.
+--     * Slot: change_description Description: A string serialization of the change. This should be both human-readable and parseable.
 --     * Slot: about_edge_id
 -- # Class: NodeDeepening Description: A node move in which a node where the destination is a proper descendant of the original location. Note that here descendant applied not just to subclass, but edges of any predicate in the relational graph
 --     * Slot: old_object_type Description: The type (IRI or Literal) of an old object
@@ -486,7 +486,7 @@
 --     * Slot: change_date Description: The date and time at which the change was made
 --     * Slot: contributor
 --     * Slot: has_undo Description: A change that reverses this change
---     * Slot: change_description Description: A string serialization of the change. This should be both human-readable, and parseable.
+--     * Slot: change_description Description: A string serialization of the change. This should be both human-readable and parseable.
 --     * Slot: about_edge_id
 -- # Class: NodeShallowing Description: The opposite of node deepening
 --     * Slot: old_object_type Description: The type (IRI or Literal) of an old object
@@ -512,7 +512,7 @@
 --     * Slot: change_date Description: The date and time at which the change was made
 --     * Slot: contributor
 --     * Slot: has_undo Description: A change that reverses this change
---     * Slot: change_description Description: A string serialization of the change. This should be both human-readable, and parseable.
+--     * Slot: change_description Description: A string serialization of the change. This should be both human-readable and parseable.
 --     * Slot: about_edge_id
 -- # Class: PredicateChange Description: An edge change where the predicate (relationship type) is modified.
 --     * Slot: object_type Description: The type (IRI or Literal) of an object
@@ -536,7 +536,7 @@
 --     * Slot: change_date Description: The date and time at which the change was made
 --     * Slot: contributor
 --     * Slot: has_undo Description: A change that reverses this change
---     * Slot: change_description Description: A string serialization of the change. This should be both human-readable, and parseable.
+--     * Slot: change_description Description: A string serialization of the change. This should be both human-readable and parseable.
 --     * Slot: about_edge_id
 -- # Class: EdgeLogicalInterpretationChange Description: An edge change where the subject, object, and predicate are unchanged, but the logical interpretation changes
 --     * Slot: object_type Description: The type (IRI or Literal) of an object
@@ -560,7 +560,7 @@
 --     * Slot: change_date Description: The date and time at which the change was made
 --     * Slot: contributor
 --     * Slot: has_undo Description: A change that reverses this change
---     * Slot: change_description Description: A string serialization of the change. This should be both human-readable, and parseable.
+--     * Slot: change_description Description: A string serialization of the change. This should be both human-readable and parseable.
 --     * Slot: about_edge_id
 -- # Class: LogicalAxiomChange Description: A simple change where a logical axiom is changed, where the logical axiom cannot be represented as an edge
 --     * Slot: old_value Description: The value of a property held in the old instance of the ontology
@@ -581,7 +581,7 @@
 --     * Slot: change_date Description: The date and time at which the change was made
 --     * Slot: contributor
 --     * Slot: has_undo Description: A change that reverses this change
---     * Slot: change_description Description: A string serialization of the change. This should be both human-readable, and parseable.
+--     * Slot: change_description Description: A string serialization of the change. This should be both human-readable and parseable.
 -- # Abstract Class: NodeChange Description: A simple change where the change is about a node
 --     * Slot: about_node
 --     * Slot: about_node_representation Description: The representation of a node (URI, CURIE, label)
@@ -604,7 +604,7 @@
 --     * Slot: change_date Description: The date and time at which the change was made
 --     * Slot: contributor
 --     * Slot: has_undo Description: A change that reverses this change
---     * Slot: change_description Description: A string serialization of the change. This should be both human-readable, and parseable.
+--     * Slot: change_description Description: A string serialization of the change. This should be both human-readable and parseable.
 -- # Class: NodeRename Description: A node change where the name (aka rdfs:label) of the node changes
 --     * Slot: old_value Description: The value of a property held in the old instance of the ontology
 --     * Slot: new_value Description: The value of a property held in the new instance of the ontology
@@ -627,8 +627,8 @@
 --     * Slot: change_date Description: The date and time at which the change was made
 --     * Slot: contributor
 --     * Slot: has_undo Description: A change that reverses this change
---     * Slot: change_description Description: A string serialization of the change. This should be both human-readable, and parseable.
---     * Slot: has_textual_diff_id Description: A representation of character-level changes on a textual literal property. For example, if a text definition may change by only a single character such as addition of a period, it is useful to be able to see this visually.
+--     * Slot: change_description Description: A string serialization of the change. This should be both human-readable and parseable.
+--     * Slot: has_textual_diff_id Description: A representation of character-level changes on a textual literal property. For example, if a text definition changes by only a single character such as addition of a period, it is useful to be able to see this visually.
 -- # Class: NewLabel Description: A node change where a name (aka rdfs:label) is added to a node that does not already have one. To replace an existing name, use NodeRename.
 --     * Slot: new_value Description: The value of a property held in the new instance of the ontology
 --     * Slot: new_language Description: The new language tag of a literal
@@ -651,7 +651,7 @@
 --     * Slot: change_date Description: The date and time at which the change was made
 --     * Slot: contributor
 --     * Slot: has_undo Description: A change that reverses this change
---     * Slot: change_description Description: A string serialization of the change. This should be both human-readable, and parseable.
+--     * Slot: change_description Description: A string serialization of the change. This should be both human-readable and parseable.
 -- # Class: SetLanguageForName Description: A node change where the string value for the name is unchanged but the language tag is set
 --     * Slot: old_value Description: The value of a property held in the old instance of the ontology
 --     * Slot: new_value Description: The value of a property held in the new instance of the ontology
@@ -674,7 +674,7 @@
 --     * Slot: change_date Description: The date and time at which the change was made
 --     * Slot: contributor
 --     * Slot: has_undo Description: A change that reverses this change
---     * Slot: change_description Description: A string serialization of the change. This should be both human-readable, and parseable.
+--     * Slot: change_description Description: A string serialization of the change. This should be both human-readable and parseable.
 --     * Slot: about_id Description: The 'focus' entity on which the change operates
 -- # Class: NodeAnnotationChange Description: A node change where the change alters node properties/annotations. TODO
 --     * Slot: annotation_property Description: An annotation property
@@ -700,7 +700,7 @@
 --     * Slot: change_date Description: The date and time at which the change was made
 --     * Slot: contributor
 --     * Slot: has_undo Description: A change that reverses this change
---     * Slot: change_description Description: A string serialization of the change. This should be both human-readable, and parseable.
+--     * Slot: change_description Description: A string serialization of the change. This should be both human-readable and parseable.
 -- # Class: NodeAnnotationReplacement Description: A node annotation change where the change replaces a particular property value. TODO
 --     * Slot: annotation_property Description: An annotation property
 --     * Slot: annotation_property_type Description: The type of a property (URI, CURIE, label)
@@ -725,7 +725,7 @@
 --     * Slot: change_date Description: The date and time at which the change was made
 --     * Slot: contributor
 --     * Slot: has_undo Description: A change that reverses this change
---     * Slot: change_description Description: A string serialization of the change. This should be both human-readable, and parseable.
+--     * Slot: change_description Description: A string serialization of the change. This should be both human-readable and parseable.
 -- # Class: NodeSynonymChange
 --     * Slot: about_node
 --     * Slot: about_node_representation Description: The representation of a node (URI, CURIE, label)
@@ -748,7 +748,7 @@
 --     * Slot: change_date Description: The date and time at which the change was made
 --     * Slot: contributor
 --     * Slot: has_undo Description: A change that reverses this change
---     * Slot: change_description Description: A string serialization of the change. This should be both human-readable, and parseable.
+--     * Slot: change_description Description: A string serialization of the change. This should be both human-readable and parseable.
 -- # Class: NewSynonym Description: A node synonym change where a de-novo synonym is created
 --     * Slot: new_value Description: The value of a property held in the new instance of the ontology
 --     * Slot: language Description: The language tag of a literal
@@ -773,7 +773,7 @@
 --     * Slot: change_date Description: The date and time at which the change was made
 --     * Slot: contributor
 --     * Slot: has_undo Description: A change that reverses this change
---     * Slot: change_description Description: A string serialization of the change. This should be both human-readable, and parseable.
+--     * Slot: change_description Description: A string serialization of the change. This should be both human-readable and parseable.
 -- # Class: NameBecomesSynonym Description: A node synonym where the name NAME of an node NODE moves to a synonym, and NODE receives a new name. This change consists of compose of (1) a node rename where NAME is replaced by a different name (2) a new synonym
 --     * Slot: about_node
 --     * Slot: about_node_representation Description: The representation of a node (URI, CURIE, label)
@@ -796,7 +796,7 @@
 --     * Slot: change_date Description: The date and time at which the change was made
 --     * Slot: contributor
 --     * Slot: has_undo Description: A change that reverses this change
---     * Slot: change_description Description: A string serialization of the change. This should be both human-readable, and parseable.
+--     * Slot: change_description Description: A string serialization of the change. This should be both human-readable and parseable.
 -- # Class: RemoveSynonym Description: A node synonym change where a synonym is deleted
 --     * Slot: old_value Description: The value of a property held in the old instance of the ontology
 --     * Slot: about_node
@@ -819,7 +819,7 @@
 --     * Slot: change_date Description: The date and time at which the change was made
 --     * Slot: contributor
 --     * Slot: has_undo Description: A change that reverses this change
---     * Slot: change_description Description: A string serialization of the change. This should be both human-readable, and parseable.
+--     * Slot: change_description Description: A string serialization of the change. This should be both human-readable and parseable.
 -- # Class: SynonymReplacement Description: A node synonym change where the text of a synonym is changed
 --     * Slot: old_value Description: The value of a property held in the old instance of the ontology
 --     * Slot: new_value Description: The value of a property held in the new instance of the ontology
@@ -843,8 +843,8 @@
 --     * Slot: change_date Description: The date and time at which the change was made
 --     * Slot: contributor
 --     * Slot: has_undo Description: A change that reverses this change
---     * Slot: change_description Description: A string serialization of the change. This should be both human-readable, and parseable.
---     * Slot: has_textual_diff_id Description: A representation of character-level changes on a textual literal property. For example, if a text definition may change by only a single character such as addition of a period, it is useful to be able to see this visually.
+--     * Slot: change_description Description: A string serialization of the change. This should be both human-readable and parseable.
+--     * Slot: has_textual_diff_id Description: A representation of character-level changes on a textual literal property. For example, if a text definition changes by only a single character such as addition of a period, it is useful to be able to see this visually.
 -- # Class: SynonymPredicateChange Description: A node synonym change where the predicate of a synonym is changed. Background: synonyms can be represented by a variety of predicates. For example, many OBO ontologies make use of predicates such as oio:hasExactSynonym, oio:hasRelatedSynonym, etc
 --     * Slot: old_value Description: The value of a property held in the old instance of the ontology
 --     * Slot: new_value Description: The value of a property held in the new instance of the ontology
@@ -868,8 +868,8 @@
 --     * Slot: change_date Description: The date and time at which the change was made
 --     * Slot: contributor
 --     * Slot: has_undo Description: A change that reverses this change
---     * Slot: change_description Description: A string serialization of the change. This should be both human-readable, and parseable.
---     * Slot: has_textual_diff_id Description: A representation of character-level changes on a textual literal property. For example, if a text definition may change by only a single character such as addition of a period, it is useful to be able to see this visually.
+--     * Slot: change_description Description: A string serialization of the change. This should be both human-readable and parseable.
+--     * Slot: has_textual_diff_id Description: A representation of character-level changes on a textual literal property. For example, if a text definition changes by only a single character such as addition of a period, it is useful to be able to see this visually.
 -- # Class: NodeMappingChange Description: A node change where the mappings for that node are altered
 --     * Slot: about_node
 --     * Slot: about_node_representation Description: The representation of a node (URI, CURIE, label)
@@ -892,7 +892,7 @@
 --     * Slot: change_date Description: The date and time at which the change was made
 --     * Slot: contributor
 --     * Slot: has_undo Description: A change that reverses this change
---     * Slot: change_description Description: A string serialization of the change. This should be both human-readable, and parseable.
+--     * Slot: change_description Description: A string serialization of the change. This should be both human-readable and parseable.
 -- # Class: NewMapping Description: A node mapping change where a mapping is added to a node
 --     * Slot: object
 --     * Slot: predicate
@@ -917,7 +917,7 @@
 --     * Slot: change_date Description: The date and time at which the change was made
 --     * Slot: contributor
 --     * Slot: has_undo Description: A change that reverses this change
---     * Slot: change_description Description: A string serialization of the change. This should be both human-readable, and parseable.
+--     * Slot: change_description Description: A string serialization of the change. This should be both human-readable and parseable.
 -- # Class: RemoveMapping Description: A node mapping change where a mapping is deleted
 --     * Slot: object
 --     * Slot: predicate
@@ -942,7 +942,7 @@
 --     * Slot: change_date Description: The date and time at which the change was made
 --     * Slot: contributor
 --     * Slot: has_undo Description: A change that reverses this change
---     * Slot: change_description Description: A string serialization of the change. This should be both human-readable, and parseable.
+--     * Slot: change_description Description: A string serialization of the change. This should be both human-readable and parseable.
 -- # Class: MappingReplacement Description: A node mapping change where the object of a mapping is changed
 --     * Slot: old_value Description: The value of a property held in the old instance of the ontology
 --     * Slot: new_value Description: The value of a property held in the new instance of the ontology
@@ -965,7 +965,7 @@
 --     * Slot: change_date Description: The date and time at which the change was made
 --     * Slot: contributor
 --     * Slot: has_undo Description: A change that reverses this change
---     * Slot: change_description Description: A string serialization of the change. This should be both human-readable, and parseable.
+--     * Slot: change_description Description: A string serialization of the change. This should be both human-readable and parseable.
 -- # Class: MappingPredicateChange Description: A node mapping change where the predicate of a mapping is changed.
 --     * Slot: old_value Description: The value of a property held in the old instance of the ontology
 --     * Slot: new_value Description: The value of a property held in the new instance of the ontology
@@ -988,7 +988,7 @@
 --     * Slot: change_date Description: The date and time at which the change was made
 --     * Slot: contributor
 --     * Slot: has_undo Description: A change that reverses this change
---     * Slot: change_description Description: A string serialization of the change. This should be both human-readable, and parseable.
+--     * Slot: change_description Description: A string serialization of the change. This should be both human-readable and parseable.
 -- # Class: NodeMetadataAssertionChange Description: A node change where the metadata assertion (OWL annotations) for that node are altered
 --     * Slot: about_node
 --     * Slot: about_node_representation Description: The representation of a node (URI, CURIE, label)
@@ -1011,7 +1011,7 @@
 --     * Slot: change_date Description: The date and time at which the change was made
 --     * Slot: contributor
 --     * Slot: has_undo Description: A change that reverses this change
---     * Slot: change_description Description: A string serialization of the change. This should be both human-readable, and parseable.
+--     * Slot: change_description Description: A string serialization of the change. This should be both human-readable and parseable.
 -- # Class: NewMetadataAssertion Description: A node metadata assertion change where a metadata assertion is added to a node
 --     * Slot: object
 --     * Slot: predicate
@@ -1036,7 +1036,7 @@
 --     * Slot: change_date Description: The date and time at which the change was made
 --     * Slot: contributor
 --     * Slot: has_undo Description: A change that reverses this change
---     * Slot: change_description Description: A string serialization of the change. This should be both human-readable, and parseable.
+--     * Slot: change_description Description: A string serialization of the change. This should be both human-readable and parseable.
 -- # Class: RemoveMetadataAssertion Description: A node metadata assertion change where a metadata assertion is deleted
 --     * Slot: object
 --     * Slot: predicate
@@ -1061,7 +1061,7 @@
 --     * Slot: change_date Description: The date and time at which the change was made
 --     * Slot: contributor
 --     * Slot: has_undo Description: A change that reverses this change
---     * Slot: change_description Description: A string serialization of the change. This should be both human-readable, and parseable.
+--     * Slot: change_description Description: A string serialization of the change. This should be both human-readable and parseable.
 -- # Class: MetadataAssertionReplacement Description: A node metadata assertion change where the object of a metadata assertion is changed
 --     * Slot: old_value Description: The value of a property held in the old instance of the ontology
 --     * Slot: new_value Description: The value of a property held in the new instance of the ontology
@@ -1084,7 +1084,7 @@
 --     * Slot: change_date Description: The date and time at which the change was made
 --     * Slot: contributor
 --     * Slot: has_undo Description: A change that reverses this change
---     * Slot: change_description Description: A string serialization of the change. This should be both human-readable, and parseable.
+--     * Slot: change_description Description: A string serialization of the change. This should be both human-readable and parseable.
 -- # Class: MetadataAssertionPredicateChange Description: A node metadata assertion change where the predicate of a metadata assertion is changed.
 --     * Slot: old_value Description: The value of a property held in the old instance of the ontology
 --     * Slot: new_value Description: The value of a property held in the new instance of the ontology
@@ -1107,7 +1107,7 @@
 --     * Slot: change_date Description: The date and time at which the change was made
 --     * Slot: contributor
 --     * Slot: has_undo Description: A change that reverses this change
---     * Slot: change_description Description: A string serialization of the change. This should be both human-readable, and parseable.
+--     * Slot: change_description Description: A string serialization of the change. This should be both human-readable and parseable.
 -- # Abstract Class: NodeTextDefinitionChange Description: A node change where the text definition is changed
 --     * Slot: about_node
 --     * Slot: about_node_representation Description: The representation of a node (URI, CURIE, label)
@@ -1130,7 +1130,7 @@
 --     * Slot: change_date Description: The date and time at which the change was made
 --     * Slot: contributor
 --     * Slot: has_undo Description: A change that reverses this change
---     * Slot: change_description Description: A string serialization of the change. This should be both human-readable, and parseable.
+--     * Slot: change_description Description: A string serialization of the change. This should be both human-readable and parseable.
 -- # Class: NewTextDefinition Description: A node change where a de-novo text definition is created
 --     * Slot: new_value Description: The value of a property held in the new instance of the ontology
 --     * Slot: about_node
@@ -1153,7 +1153,7 @@
 --     * Slot: change_date Description: The date and time at which the change was made
 --     * Slot: contributor
 --     * Slot: has_undo Description: A change that reverses this change
---     * Slot: change_description Description: A string serialization of the change. This should be both human-readable, and parseable.
+--     * Slot: change_description Description: A string serialization of the change. This should be both human-readable and parseable.
 -- # Class: RemoveTextDefinition Description: A node change where a text definition is deleted
 --     * Slot: old_value Description: The value of a property held in the old instance of the ontology
 --     * Slot: about_node
@@ -1176,7 +1176,7 @@
 --     * Slot: change_date Description: The date and time at which the change was made
 --     * Slot: contributor
 --     * Slot: has_undo Description: A change that reverses this change
---     * Slot: change_description Description: A string serialization of the change. This should be both human-readable, and parseable.
+--     * Slot: change_description Description: A string serialization of the change. This should be both human-readable and parseable.
 -- # Class: TextDefinitionReplacement Description: A node change where a text definition is modified
 --     * Slot: old_value Description: The value of a property held in the old instance of the ontology
 --     * Slot: new_value Description: The value of a property held in the new instance of the ontology
@@ -1199,8 +1199,8 @@
 --     * Slot: change_date Description: The date and time at which the change was made
 --     * Slot: contributor
 --     * Slot: has_undo Description: A change that reverses this change
---     * Slot: change_description Description: A string serialization of the change. This should be both human-readable, and parseable.
---     * Slot: has_textual_diff_id Description: A representation of character-level changes on a textual literal property. For example, if a text definition may change by only a single character such as addition of a period, it is useful to be able to see this visually.
+--     * Slot: change_description Description: A string serialization of the change. This should be both human-readable and parseable.
+--     * Slot: has_textual_diff_id Description: A representation of character-level changes on a textual literal property. For example, if a text definition changes by only a single character such as addition of a period, it is useful to be able to see this visually.
 -- # Class: AddNodeToSubset Description: Places a node inside a subset, by annotating that node
 --     * Slot: about_node
 --     * Slot: about_node_representation Description: The representation of a node (URI, CURIE, label)
@@ -1223,7 +1223,7 @@
 --     * Slot: change_date Description: The date and time at which the change was made
 --     * Slot: contributor
 --     * Slot: has_undo Description: A change that reverses this change
---     * Slot: change_description Description: A string serialization of the change. This should be both human-readable, and parseable.
+--     * Slot: change_description Description: A string serialization of the change. This should be both human-readable and parseable.
 --     * Slot: in_subset Description: subset that the element is being placed inside.
 --     * Slot: about_id Description: The 'focus' entity on which the change operates
 -- # Class: RemoveNodeFromSubset Description: Removes a node from a subset, by removing an annotation
@@ -1247,7 +1247,7 @@
 --     * Slot: creator
 --     * Slot: change_date Description: The date and time at which the change was made
 --     * Slot: contributor
---     * Slot: change_description Description: A string serialization of the change. This should be both human-readable, and parseable.
+--     * Slot: change_description Description: A string serialization of the change. This should be both human-readable and parseable.
 --     * Slot: in_subset Description: The subset from which the node is to be removed
 --     * Slot: has_undo_id Description: A change that reverses this change
 --     * Slot: about_id Description: The 'focus' entity on which the change operates
@@ -1273,7 +1273,7 @@
 --     * Slot: creator
 --     * Slot: change_date Description: The date and time at which the change was made
 --     * Slot: contributor
---     * Slot: change_description Description: A string serialization of the change. This should be both human-readable, and parseable.
+--     * Slot: change_description Description: A string serialization of the change. This should be both human-readable and parseable.
 --     * Slot: MultiNodeObsoletion_id Description: Autocreated FK slot
 --     * Slot: has_undo_id Description: A change that reverses this change
 --     * Slot: about_id Description: The element that is obsoleted by this change.
@@ -1299,7 +1299,7 @@
 --     * Slot: creator
 --     * Slot: change_date Description: The date and time at which the change was made
 --     * Slot: contributor
---     * Slot: change_description Description: A string serialization of the change. This should be both human-readable, and parseable.
+--     * Slot: change_description Description: A string serialization of the change. This should be both human-readable and parseable.
 --     * Slot: has_undo_id Description: A change that reverses this change
 --     * Slot: about_id Description: The 'focus' entity on which the change operates
 -- # Class: NodeCreation Description: a node change in which a new node is created
@@ -1326,11 +1326,11 @@
 --     * Slot: creator
 --     * Slot: change_date Description: The date and time at which the change was made
 --     * Slot: contributor
---     * Slot: change_description Description: A string serialization of the change. This should be both human-readable, and parseable.
+--     * Slot: change_description Description: A string serialization of the change. This should be both human-readable and parseable.
 --     * Slot: annotation_set_id
 --     * Slot: has_undo_id Description: A change that reverses this change
 --     * Slot: about_id Description: The 'focus' entity on which the change operates
--- # Class: ClassCreation Description: A node creation where the owl type is 'owl:Class'
+-- # Class: ClassCreation Description: A node creation where the node is a class (as opposed to a relation)
 --     * Slot: superclass
 --     * Slot: node_id Description: id of a node to be created
 --     * Slot: name
@@ -1355,11 +1355,11 @@
 --     * Slot: creator
 --     * Slot: change_date Description: The date and time at which the change was made
 --     * Slot: contributor
---     * Slot: change_description Description: A string serialization of the change. This should be both human-readable, and parseable.
+--     * Slot: change_description Description: A string serialization of the change. This should be both human-readable and parseable.
 --     * Slot: annotation_set_id
 --     * Slot: has_undo_id Description: A change that reverses this change
 --     * Slot: about_id Description: The 'focus' entity on which the change operates
--- # Class: ObjectPropertyCreation Description: A node creation where the owl type is 'ObjectProperty'
+-- # Class: ObjectPropertyCreation Description: A node creation where the node is an object property (a relation)
 --     * Slot: node_id Description: id of a node to be created
 --     * Slot: name
 --     * Slot: owl_type
@@ -1383,11 +1383,11 @@
 --     * Slot: creator
 --     * Slot: change_date Description: The date and time at which the change was made
 --     * Slot: contributor
---     * Slot: change_description Description: A string serialization of the change. This should be both human-readable, and parseable.
+--     * Slot: change_description Description: A string serialization of the change. This should be both human-readable and parseable.
 --     * Slot: annotation_set_id
 --     * Slot: has_undo_id Description: A change that reverses this change
 --     * Slot: about_id Description: The 'focus' entity on which the change operates
--- # Class: NodeDeletion Description: Deletion of a node from the graph. Note it is recommended nodes are obsoleted and never merged, but this operation exists to represent deletions in ontologies, accidental or otherwise
+-- # Class: NodeDeletion Description: Deletion of a node from the graph. Note that it is recommended nodes are obsoleted and never merged, but this operation exists to represent deletions in ontologies, accidental or otherwise
 --     * Slot: about_node
 --     * Slot: about_node_representation Description: The representation of a node (URI, CURIE, label)
 --     * Slot: language Description: The language tag of a literal
@@ -1409,9 +1409,9 @@
 --     * Slot: change_date Description: The date and time at which the change was made
 --     * Slot: contributor
 --     * Slot: has_undo Description: A change that reverses this change
---     * Slot: change_description Description: A string serialization of the change. This should be both human-readable, and parseable.
+--     * Slot: change_description Description: A string serialization of the change. This should be both human-readable and parseable.
 --     * Slot: about_id Description: The 'focus' entity on which the change operates
--- # Class: ClassDeletion Description: A node deletion where the owl type is 'owl:Class'
+-- # Class: ClassDeletion Description: A node deletion where the node is a class (as opposed to a relation)
 --     * Slot: about_node
 --     * Slot: about_node_representation Description: The representation of a node (URI, CURIE, label)
 --     * Slot: language Description: The language tag of a literal
@@ -1433,9 +1433,9 @@
 --     * Slot: change_date Description: The date and time at which the change was made
 --     * Slot: contributor
 --     * Slot: has_undo Description: A change that reverses this change
---     * Slot: change_description Description: A string serialization of the change. This should be both human-readable, and parseable.
+--     * Slot: change_description Description: A string serialization of the change. This should be both human-readable and parseable.
 --     * Slot: about_id Description: The 'focus' entity on which the change operates
--- # Class: ObjectPropertyDeletion Description: A node deletion where the owl type is 'ObjectProperty'
+-- # Class: ObjectPropertyDeletion Description: A node deletion where the node is an object property (a relation)
 --     * Slot: about_node
 --     * Slot: about_node_representation Description: The representation of a node (URI, CURIE, label)
 --     * Slot: language Description: The language tag of a literal
@@ -1457,7 +1457,7 @@
 --     * Slot: change_date Description: The date and time at which the change was made
 --     * Slot: contributor
 --     * Slot: has_undo Description: A change that reverses this change
---     * Slot: change_description Description: A string serialization of the change. This should be both human-readable, and parseable.
+--     * Slot: change_description Description: A string serialization of the change. This should be both human-readable and parseable.
 --     * Slot: about_id Description: The 'focus' entity on which the change operates
 -- # Class: NodeDirectMerge Description: An obsoletion change in which all metadata (including name/label) from the source node is deleted and added to the target node, and edges can automatically be rewired to point to the target node
 --     * Slot: has_direct_replacement Description: An obsoletion replacement where it IS valid to automatically update annotations/edges pointing at the node with its direct replacement
@@ -1481,7 +1481,7 @@
 --     * Slot: creator
 --     * Slot: change_date Description: The date and time at which the change was made
 --     * Slot: contributor
---     * Slot: change_description Description: A string serialization of the change. This should be both human-readable, and parseable.
+--     * Slot: change_description Description: A string serialization of the change. This should be both human-readable and parseable.
 --     * Slot: has_undo_id Description: A change that reverses this change
 --     * Slot: about_id Description: The element that is obsoleted by this change.
 -- # Class: NodeObsoletionWithDirectReplacement Description: An obsoletion change in which information from the obsoleted node is selectively copied to a single target, and edges can automatically be rewired to point to the target node
@@ -1506,7 +1506,7 @@
 --     * Slot: creator
 --     * Slot: change_date Description: The date and time at which the change was made
 --     * Slot: contributor
---     * Slot: change_description Description: A string serialization of the change. This should be both human-readable, and parseable.
+--     * Slot: change_description Description: A string serialization of the change. This should be both human-readable and parseable.
 --     * Slot: has_undo_id Description: A change that reverses this change
 --     * Slot: about_id Description: The element that is obsoleted by this change.
 -- # Class: NodeObsoletionWithNoDirectReplacement Description: An obsoletion change in which there is no direct replacement
@@ -1531,7 +1531,7 @@
 --     * Slot: creator
 --     * Slot: change_date Description: The date and time at which the change was made
 --     * Slot: contributor
---     * Slot: change_description Description: A string serialization of the change. This should be both human-readable, and parseable.
+--     * Slot: change_description Description: A string serialization of the change. This should be both human-readable and parseable.
 --     * Slot: has_undo_id Description: A change that reverses this change
 --     * Slot: about_id Description: The element that is obsoleted by this change.
 -- # Class: TextualDiff Description: A summarizing of a change on a piece of text. This could be rendered in a number of different ways
@@ -3705,8 +3705,8 @@ CREATE TABLE "NodeObsoletion_has_nondirect_replacement" (
 	FOREIGN KEY("NodeObsoletion_id") REFERENCES "NodeObsoletion" (id),
 	FOREIGN KEY(has_nondirect_replacement_id) REFERENCES "Node" (id)
 );
-CREATE INDEX "ix_NodeObsoletion_has_nondirect_replacement_has_nondirect_replacement_id" ON "NodeObsoletion_has_nondirect_replacement" (has_nondirect_replacement_id);
 CREATE INDEX "ix_NodeObsoletion_has_nondirect_replacement_NodeObsoletion_id" ON "NodeObsoletion_has_nondirect_replacement" ("NodeObsoletion_id");
+CREATE INDEX "ix_NodeObsoletion_has_nondirect_replacement_has_nondirect_replacement_id" ON "NodeObsoletion_has_nondirect_replacement" (has_nondirect_replacement_id);
 
 CREATE TABLE "Configuration_obsoletion_policies" (
 	"Configuration_id" INTEGER,
@@ -3953,8 +3953,8 @@ CREATE TABLE "NodeUnobsoletion_has_nondirect_replacement" (
 	FOREIGN KEY("NodeUnobsoletion_id") REFERENCES "NodeUnobsoletion" (id),
 	FOREIGN KEY(has_nondirect_replacement_id) REFERENCES "Node" (id)
 );
-CREATE INDEX "ix_NodeUnobsoletion_has_nondirect_replacement_NodeUnobsoletion_id" ON "NodeUnobsoletion_has_nondirect_replacement" ("NodeUnobsoletion_id");
 CREATE INDEX "ix_NodeUnobsoletion_has_nondirect_replacement_has_nondirect_replacement_id" ON "NodeUnobsoletion_has_nondirect_replacement" (has_nondirect_replacement_id);
+CREATE INDEX "ix_NodeUnobsoletion_has_nondirect_replacement_NodeUnobsoletion_id" ON "NodeUnobsoletion_has_nondirect_replacement" ("NodeUnobsoletion_id");
 
 CREATE TABLE "NodeDirectMerge_has_nondirect_replacement" (
 	"NodeDirectMerge_id" TEXT,
@@ -3963,8 +3963,8 @@ CREATE TABLE "NodeDirectMerge_has_nondirect_replacement" (
 	FOREIGN KEY("NodeDirectMerge_id") REFERENCES "NodeDirectMerge" (id),
 	FOREIGN KEY(has_nondirect_replacement_id) REFERENCES "Node" (id)
 );
-CREATE INDEX "ix_NodeDirectMerge_has_nondirect_replacement_NodeDirectMerge_id" ON "NodeDirectMerge_has_nondirect_replacement" ("NodeDirectMerge_id");
 CREATE INDEX "ix_NodeDirectMerge_has_nondirect_replacement_has_nondirect_replacement_id" ON "NodeDirectMerge_has_nondirect_replacement" (has_nondirect_replacement_id);
+CREATE INDEX "ix_NodeDirectMerge_has_nondirect_replacement_NodeDirectMerge_id" ON "NodeDirectMerge_has_nondirect_replacement" ("NodeDirectMerge_id");
 
 CREATE TABLE "NodeObsoletionWithDirectReplacement_has_nondirect_replacement" (
 	"NodeObsoletionWithDirectReplacement_id" TEXT,
@@ -3973,8 +3973,8 @@ CREATE TABLE "NodeObsoletionWithDirectReplacement_has_nondirect_replacement" (
 	FOREIGN KEY("NodeObsoletionWithDirectReplacement_id") REFERENCES "NodeObsoletionWithDirectReplacement" (id),
 	FOREIGN KEY(has_nondirect_replacement_id) REFERENCES "Node" (id)
 );
-CREATE INDEX "ix_NodeObsoletionWithDirectReplacement_has_nondirect_replacement_NodeObsoletionWithDirectReplacement_id" ON "NodeObsoletionWithDirectReplacement_has_nondirect_replacement" ("NodeObsoletionWithDirectReplacement_id");
 CREATE INDEX "ix_NodeObsoletionWithDirectReplacement_has_nondirect_replacement_has_nondirect_replacement_id" ON "NodeObsoletionWithDirectReplacement_has_nondirect_replacement" (has_nondirect_replacement_id);
+CREATE INDEX "ix_NodeObsoletionWithDirectReplacement_has_nondirect_replacement_NodeObsoletionWithDirectReplacement_id" ON "NodeObsoletionWithDirectReplacement_has_nondirect_replacement" ("NodeObsoletionWithDirectReplacement_id");
 
 CREATE TABLE "NodeObsoletionWithNoDirectReplacement_has_nondirect_replacement" (
 	"NodeObsoletionWithNoDirectReplacement_id" TEXT,

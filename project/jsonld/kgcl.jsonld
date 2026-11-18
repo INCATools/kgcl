@@ -999,7 +999,7 @@
     {
       "name": "change_description",
       "definition_uri": "http://w3id.org/kgcl/change_description",
-      "description": "A string serialization of the change. This should be both human-readable, and parseable.",
+      "description": "A string serialization of the change. This should be both human-readable and parseable.",
       "comments": [
         "{'Form 1': 'IRIs are denoted by CURIEs, optionally followed by label in parenthesis'}",
         "{'Form 2': \"IRIs are denoted by the rdfs:label in single quotes, e.g. 'nervous system'\"}"
@@ -1038,7 +1038,7 @@
     {
       "name": "has_textual_diff",
       "definition_uri": "http://w3id.org/kgcl/has_textual_diff",
-      "description": "A representation of character-level changes on a textual literal property. For example, if a text definition may change by only a single character such as addition of a period, it is useful to be able to see this visually.",
+      "description": "A representation of character-level changes on a textual literal property. For example, if a text definition changes by only a single character such as addition of a period, it is useful to be able to see this visually.",
       "comments": [
         "this is NOT for representing the diff of the change as a whole."
       ],
@@ -1113,8 +1113,8 @@
       "definition_uri": "http://w3id.org/kgcl/has_direct_replacement",
       "description": "An obsoletion replacement where it IS valid to automatically update annotations/edges pointing at the node with its direct replacement",
       "comments": [
-        "if a node obsoletion C, C about N1, and C has direct replacement N2, and there exists an edge with an edge property referencing N1, it is possible to replace with N2",
-        "if a node obsoletion C C about N1, and Chas direct replacement N2, then N1 IAO:0100001 N2"
+        "If C is a node obsoletion of N1 (C's about_node is N1) and C has direct replacement N2, then any edge or annotation that references N1 can be automatically updated to reference N2 instead.",
+        "If C is a node obsoletion of N1 and C has direct replacement N2, then N1 IAO:0100001 (term replaced by) N2."
       ],
       "from_schema": "https://w3id.org/kgcl",
       "close_mappings": [
@@ -1134,8 +1134,8 @@
       "definition_uri": "http://w3id.org/kgcl/has_nondirect_replacement",
       "description": "An obsoletion replacement where it is NOT valid to automatically update annotations/edges pointing at the node with its direct replacement",
       "comments": [
-        "if a node obsoletion C, C about N1, and C has direct replacement N2, and there exists an edge with an edge property referencing N1, it is possible to replace with N2",
-        "if a node obsoletion C C about N1, and Chas direct replacement N2, then N1 oio:consider N2"
+        "If C is a node obsoletion of N1 (C's about_node is N1) and C has nondirect replacement N2, then edges or annotations that reference N1 should not be automatically updated to reference N2; each needs review.",
+        "If C is a node obsoletion of N1 and C has nondirect replacement N2, then N1 oio:consider N2."
       ],
       "from_schema": "https://w3id.org/kgcl",
       "close_mappings": [
@@ -1805,7 +1805,7 @@
     {
       "name": "MultiNodeObsoletion_change_description",
       "definition_uri": "http://w3id.org/kgcl/change_description",
-      "description": "A string serialization of the change. This should be both human-readable, and parseable.",
+      "description": "A string serialization of the change. This should be both human-readable and parseable.",
       "comments": [
         "{'Form 1': 'IRIs are denoted by CURIEs, optionally followed by label in parenthesis'}",
         "{'Form 2': \"IRIs are denoted by the rdfs:label in single quotes, e.g. 'nervous system'\"}"
@@ -2065,7 +2065,7 @@
     {
       "name": "EdgeCreation_change_description",
       "definition_uri": "http://w3id.org/kgcl/change_description",
-      "description": "A string serialization of the change. This should be both human-readable, and parseable.",
+      "description": "A string serialization of the change. This should be both human-readable and parseable.",
       "comments": [
         "{'Form 1': 'IRIs are denoted by CURIEs, optionally followed by label in parenthesis'}",
         "{'Form 2': \"IRIs are denoted by the rdfs:label in single quotes, e.g. 'nervous system'\"}"
@@ -2110,7 +2110,7 @@
     {
       "name": "EdgeDeletion_change_description",
       "definition_uri": "http://w3id.org/kgcl/change_description",
-      "description": "A string serialization of the change. This should be both human-readable, and parseable.",
+      "description": "A string serialization of the change. This should be both human-readable and parseable.",
       "comments": [
         "{'Form 1': 'IRIs are denoted by CURIEs, optionally followed by label in parenthesis'}",
         "{'Form 2': \"IRIs are denoted by the rdfs:label in single quotes, e.g. 'nervous system'\"}"
@@ -2155,7 +2155,7 @@
     {
       "name": "EdgeObsoletion_change_description",
       "definition_uri": "http://w3id.org/kgcl/change_description",
-      "description": "A string serialization of the change. This should be both human-readable, and parseable.",
+      "description": "A string serialization of the change. This should be both human-readable and parseable.",
       "comments": [
         "{'Form 1': 'IRIs are denoted by CURIEs, optionally followed by label in parenthesis'}",
         "{'Form 2': \"IRIs are denoted by the rdfs:label in single quotes, e.g. 'nervous system'\"}"
@@ -2200,7 +2200,7 @@
     {
       "name": "MappingCreation_change_description",
       "definition_uri": "http://w3id.org/kgcl/change_description",
-      "description": "A string serialization of the change. This should be both human-readable, and parseable.",
+      "description": "A string serialization of the change. This should be both human-readable and parseable.",
       "comments": [
         "{'Form 1': 'IRIs are denoted by CURIEs, optionally followed by label in parenthesis'}",
         "{'Form 2': \"IRIs are denoted by the rdfs:label in single quotes, e.g. 'nervous system'\"}"
@@ -2299,7 +2299,7 @@
     {
       "name": "NodeMove_change_description",
       "definition_uri": "http://w3id.org/kgcl/change_description",
-      "description": "A string serialization of the change. This should be both human-readable, and parseable.",
+      "description": "A string serialization of the change. This should be both human-readable and parseable.",
       "comments": [
         "{'Form 1': 'IRIs are denoted by CURIEs, optionally followed by label in parenthesis'}",
         "{'Form 2': \"IRIs are denoted by the rdfs:label in single quotes, e.g. 'nervous system'\"}"
@@ -2344,7 +2344,7 @@
     {
       "name": "NodeDeepening_change_description",
       "definition_uri": "http://w3id.org/kgcl/change_description",
-      "description": "A string serialization of the change. This should be both human-readable, and parseable.",
+      "description": "A string serialization of the change. This should be both human-readable and parseable.",
       "comments": [
         "{'Form 1': 'IRIs are denoted by CURIEs, optionally followed by label in parenthesis'}",
         "{'Form 2': \"IRIs are denoted by the rdfs:label in single quotes, e.g. 'nervous system'\"}"
@@ -2389,7 +2389,7 @@
     {
       "name": "NodeShallowing_change_description",
       "definition_uri": "http://w3id.org/kgcl/change_description",
-      "description": "A string serialization of the change. This should be both human-readable, and parseable.",
+      "description": "A string serialization of the change. This should be both human-readable and parseable.",
       "comments": [
         "{'Form 1': 'IRIs are denoted by CURIEs, optionally followed by label in parenthesis'}",
         "{'Form 2': \"IRIs are denoted by the rdfs:label in single quotes, e.g. 'nervous system'\"}"
@@ -2434,7 +2434,7 @@
     {
       "name": "PredicateChange_change_description",
       "definition_uri": "http://w3id.org/kgcl/change_description",
-      "description": "A string serialization of the change. This should be both human-readable, and parseable.",
+      "description": "A string serialization of the change. This should be both human-readable and parseable.",
       "comments": [
         "{'Form 1': 'IRIs are denoted by CURIEs, optionally followed by label in parenthesis'}",
         "{'Form 2': \"IRIs are denoted by the rdfs:label in single quotes, e.g. 'nervous system'\"}"
@@ -2515,7 +2515,7 @@
     {
       "name": "NodeRename_change_description",
       "definition_uri": "http://w3id.org/kgcl/change_description",
-      "description": "A string serialization of the change. This should be both human-readable, and parseable.",
+      "description": "A string serialization of the change. This should be both human-readable and parseable.",
       "comments": [
         "{'Form 1': 'IRIs are denoted by CURIEs, optionally followed by label in parenthesis'}",
         "{'Form 2': \"IRIs are denoted by the rdfs:label in single quotes, e.g. 'nervous system'\"}"
@@ -2578,7 +2578,7 @@
     {
       "name": "NewLabel_change_description",
       "definition_uri": "http://w3id.org/kgcl/change_description",
-      "description": "A string serialization of the change. This should be both human-readable, and parseable.",
+      "description": "A string serialization of the change. This should be both human-readable and parseable.",
       "comments": [
         "{'Form 1': 'IRIs are denoted by CURIEs, optionally followed by label in parenthesis'}",
         "{'Form 2': \"IRIs are denoted by the rdfs:label in single quotes, e.g. 'nervous system'\"}"
@@ -2623,7 +2623,7 @@
     {
       "name": "SetLanguageForName_change_description",
       "definition_uri": "http://w3id.org/kgcl/change_description",
-      "description": "A string serialization of the change. This should be both human-readable, and parseable.",
+      "description": "A string serialization of the change. This should be both human-readable and parseable.",
       "comments": [
         "{'Form 1': 'IRIs are denoted by CURIEs, optionally followed by label in parenthesis'}",
         "{'Form 2': \"IRIs are denoted by the rdfs:label in single quotes, e.g. 'nervous system'\"}"
@@ -2668,7 +2668,7 @@
     {
       "name": "NameBecomesSynonym_change_description",
       "definition_uri": "http://w3id.org/kgcl/change_description",
-      "description": "A string serialization of the change. This should be both human-readable, and parseable.",
+      "description": "A string serialization of the change. This should be both human-readable and parseable.",
       "comments": [
         "{'Form 1': 'IRIs are denoted by CURIEs, optionally followed by label in parenthesis'}",
         "{'Form 2': \"IRIs are denoted by the rdfs:label in single quotes, e.g. 'nervous system'\"}"
@@ -2713,7 +2713,7 @@
     {
       "name": "RemoveNodeFromSubset_change_description",
       "definition_uri": "http://w3id.org/kgcl/change_description",
-      "description": "A string serialization of the change. This should be both human-readable, and parseable.",
+      "description": "A string serialization of the change. This should be both human-readable and parseable.",
       "comments": [
         "{'Form 1': 'IRIs are denoted by CURIEs, optionally followed by label in parenthesis'}",
         "{'Form 2': \"IRIs are denoted by the rdfs:label in single quotes, e.g. 'nervous system'\"}"
@@ -2794,7 +2794,7 @@
     {
       "name": "NodeObsoletion_change_description",
       "definition_uri": "http://w3id.org/kgcl/change_description",
-      "description": "A string serialization of the change. This should be both human-readable, and parseable.",
+      "description": "A string serialization of the change. This should be both human-readable and parseable.",
       "comments": [
         "{'Form 1': 'IRIs are denoted by CURIEs, optionally followed by label in parenthesis'}",
         "{'Form 2': \"IRIs are denoted by the rdfs:label in single quotes, e.g. 'nervous system'\"}"
@@ -2839,7 +2839,7 @@
     {
       "name": "NodeObsoletion_associated_change_set",
       "definition_uri": "http://w3id.org/kgcl/associated_change_set",
-      "description": "All changes forced as a result of this obsoletion. For example, starting with `A subClassOf B subClassOf C`, if we obsolete node B, then we may decide to bundle in a node move change of A from B to C. Note: this change set is not considered a part of the obsoletion, as obsoletion is considered atomic/simple. Instead this is a reference to a change set that may exist elsewhere",
+      "description": "All changes forced as a result of this obsoletion. For example, starting with `A subClassOf B subClassOf C`, if we obsolete node B, then we may decide to bundle in a node move change of A from B to C. Note that this change set is not considered a part of the obsoletion, as obsoletion is considered atomic/simple. Instead this is a reference to a change set that may exist elsewhere",
       "from_schema": "https://w3id.org/kgcl",
       "is_a": "change_set",
       "domain": "NodeObsoletion",
@@ -2860,7 +2860,7 @@
     {
       "name": "NodeUnobsoletion_change_description",
       "definition_uri": "http://w3id.org/kgcl/change_description",
-      "description": "A string serialization of the change. This should be both human-readable, and parseable.",
+      "description": "A string serialization of the change. This should be both human-readable and parseable.",
       "comments": [
         "{'Form 1': 'IRIs are denoted by CURIEs, optionally followed by label in parenthesis'}",
         "{'Form 2': \"IRIs are denoted by the rdfs:label in single quotes, e.g. 'nervous system'\"}"
@@ -2905,7 +2905,7 @@
     {
       "name": "NodeCreation_change_description",
       "definition_uri": "http://w3id.org/kgcl/change_description",
-      "description": "A string serialization of the change. This should be both human-readable, and parseable.",
+      "description": "A string serialization of the change. This should be both human-readable and parseable.",
       "comments": [
         "{'Form 1': 'IRIs are denoted by CURIEs, optionally followed by label in parenthesis'}",
         "{'Form 2': \"IRIs are denoted by the rdfs:label in single quotes, e.g. 'nervous system'\"}"
@@ -2950,7 +2950,7 @@
     {
       "name": "ClassCreation_change_description",
       "definition_uri": "http://w3id.org/kgcl/change_description",
-      "description": "A string serialization of the change. This should be both human-readable, and parseable.",
+      "description": "A string serialization of the change. This should be both human-readable and parseable.",
       "comments": [
         "{'Form 1': 'IRIs are denoted by CURIEs, optionally followed by label in parenthesis'}",
         "{'Form 2': \"IRIs are denoted by the rdfs:label in single quotes, e.g. 'nervous system'\"}"
@@ -2995,7 +2995,7 @@
     {
       "name": "ObjectPropertyCreation_change_description",
       "definition_uri": "http://w3id.org/kgcl/change_description",
-      "description": "A string serialization of the change. This should be both human-readable, and parseable.",
+      "description": "A string serialization of the change. This should be both human-readable and parseable.",
       "comments": [
         "{'Form 1': 'IRIs are denoted by CURIEs, optionally followed by label in parenthesis'}",
         "{'Form 2': \"IRIs are denoted by the rdfs:label in single quotes, e.g. 'nervous system'\"}"
@@ -3040,7 +3040,7 @@
     {
       "name": "NodeDeletion_change_description",
       "definition_uri": "http://w3id.org/kgcl/change_description",
-      "description": "A string serialization of the change. This should be both human-readable, and parseable.",
+      "description": "A string serialization of the change. This should be both human-readable and parseable.",
       "comments": [
         "{'Form 1': 'IRIs are denoted by CURIEs, optionally followed by label in parenthesis'}",
         "{'Form 2': \"IRIs are denoted by the rdfs:label in single quotes, e.g. 'nervous system'\"}"
@@ -3085,7 +3085,7 @@
     {
       "name": "ClassDeletion_change_description",
       "definition_uri": "http://w3id.org/kgcl/change_description",
-      "description": "A string serialization of the change. This should be both human-readable, and parseable.",
+      "description": "A string serialization of the change. This should be both human-readable and parseable.",
       "comments": [
         "{'Form 1': 'IRIs are denoted by CURIEs, optionally followed by label in parenthesis'}",
         "{'Form 2': \"IRIs are denoted by the rdfs:label in single quotes, e.g. 'nervous system'\"}"
@@ -3130,7 +3130,7 @@
     {
       "name": "ObjectPropertyDeletion_change_description",
       "definition_uri": "http://w3id.org/kgcl/change_description",
-      "description": "A string serialization of the change. This should be both human-readable, and parseable.",
+      "description": "A string serialization of the change. This should be both human-readable and parseable.",
       "comments": [
         "{'Form 1': 'IRIs are denoted by CURIEs, optionally followed by label in parenthesis'}",
         "{'Form 2': \"IRIs are denoted by the rdfs:label in single quotes, e.g. 'nervous system'\"}"
@@ -3177,8 +3177,8 @@
       "definition_uri": "http://w3id.org/kgcl/has_direct_replacement",
       "description": "An obsoletion replacement where it IS valid to automatically update annotations/edges pointing at the node with its direct replacement",
       "comments": [
-        "if a node obsoletion C, C about N1, and C has direct replacement N2, and there exists an edge with an edge property referencing N1, it is possible to replace with N2",
-        "if a node obsoletion C C about N1, and Chas direct replacement N2, then N1 IAO:0100001 N2"
+        "If C is a node obsoletion of N1 (C's about_node is N1) and C has direct replacement N2, then any edge or annotation that references N1 can be automatically updated to reference N2 instead.",
+        "If C is a node obsoletion of N1 and C has direct replacement N2, then N1 IAO:0100001 (term replaced by) N2."
       ],
       "from_schema": "https://w3id.org/kgcl",
       "close_mappings": [
@@ -3221,7 +3221,7 @@
     {
       "name": "NodeDirectMerge_change_description",
       "definition_uri": "http://w3id.org/kgcl/change_description",
-      "description": "A string serialization of the change. This should be both human-readable, and parseable.",
+      "description": "A string serialization of the change. This should be both human-readable and parseable.",
       "comments": [
         "{'Form 1': 'IRIs are denoted by CURIEs, optionally followed by label in parenthesis'}",
         "{'Form 2': \"IRIs are denoted by the rdfs:label in single quotes, e.g. 'nervous system'\"}"
@@ -3268,8 +3268,8 @@
       "definition_uri": "http://w3id.org/kgcl/has_direct_replacement",
       "description": "An obsoletion replacement where it IS valid to automatically update annotations/edges pointing at the node with its direct replacement",
       "comments": [
-        "if a node obsoletion C, C about N1, and C has direct replacement N2, and there exists an edge with an edge property referencing N1, it is possible to replace with N2",
-        "if a node obsoletion C C about N1, and Chas direct replacement N2, then N1 IAO:0100001 N2"
+        "If C is a node obsoletion of N1 (C's about_node is N1) and C has direct replacement N2, then any edge or annotation that references N1 can be automatically updated to reference N2 instead.",
+        "If C is a node obsoletion of N1 and C has direct replacement N2, then N1 IAO:0100001 (term replaced by) N2."
       ],
       "from_schema": "https://w3id.org/kgcl",
       "close_mappings": [
@@ -3292,7 +3292,7 @@
     {
       "name": "NodeObsoletionWithDirectReplacement_change_description",
       "definition_uri": "http://w3id.org/kgcl/change_description",
-      "description": "A string serialization of the change. This should be both human-readable, and parseable.",
+      "description": "A string serialization of the change. This should be both human-readable and parseable.",
       "comments": [
         "{'Form 1': 'IRIs are denoted by CURIEs, optionally followed by label in parenthesis'}",
         "{'Form 2': \"IRIs are denoted by the rdfs:label in single quotes, e.g. 'nervous system'\"}"
@@ -3339,8 +3339,8 @@
       "definition_uri": "http://w3id.org/kgcl/has_nondirect_replacement",
       "description": "An obsoletion replacement where it is NOT valid to automatically update annotations/edges pointing at the node with its direct replacement",
       "comments": [
-        "if a node obsoletion C, C about N1, and C has direct replacement N2, and there exists an edge with an edge property referencing N1, it is possible to replace with N2",
-        "if a node obsoletion C C about N1, and Chas direct replacement N2, then N1 oio:consider N2"
+        "If C is a node obsoletion of N1 (C's about_node is N1) and C has nondirect replacement N2, then edges or annotations that reference N1 should not be automatically updated to reference N2; each needs review.",
+        "If C is a node obsoletion of N1 and C has nondirect replacement N2, then N1 oio:consider N2."
       ],
       "from_schema": "https://w3id.org/kgcl",
       "close_mappings": [
@@ -3364,7 +3364,7 @@
     {
       "name": "NodeObsoletionWithNoDirectReplacement_change_description",
       "definition_uri": "http://w3id.org/kgcl/change_description",
-      "description": "A string serialization of the change. This should be both human-readable, and parseable.",
+      "description": "A string serialization of the change. This should be both human-readable and parseable.",
       "comments": [
         "{'Form 1': 'IRIs are denoted by CURIEs, optionally followed by label in parenthesis'}",
         "{'Form 2': \"IRIs are denoted by the rdfs:label in single quotes, e.g. 'nervous system'\"}"
@@ -5648,7 +5648,7 @@
     {
       "name": "ClassCreation",
       "definition_uri": "http://w3id.org/kgcl/ClassCreation",
-      "description": "A node creation where the owl type is 'owl:Class'",
+      "description": "A node creation where the node is a class (as opposed to a relation)",
       "from_schema": "https://w3id.org/kgcl",
       "is_a": "NodeCreation",
       "slots": [
@@ -5689,7 +5689,7 @@
     {
       "name": "ObjectPropertyCreation",
       "definition_uri": "http://w3id.org/kgcl/ObjectPropertyCreation",
-      "description": "A node creation where the owl type is 'ObjectProperty'",
+      "description": "A node creation where the node is an object property (a relation)",
       "from_schema": "https://w3id.org/kgcl",
       "is_a": "NodeCreation",
       "slots": [
@@ -5729,7 +5729,7 @@
     {
       "name": "NodeDeletion",
       "definition_uri": "http://w3id.org/kgcl/NodeDeletion",
-      "description": "Deletion of a node from the graph. Note it is recommended nodes are obsoleted and never merged, but this operation exists to represent deletions in ontologies, accidental or otherwise",
+      "description": "Deletion of a node from the graph. Note that it is recommended nodes are obsoleted and never merged, but this operation exists to represent deletions in ontologies, accidental or otherwise",
       "from_schema": "https://w3id.org/kgcl",
       "is_a": "NodeChange",
       "mixins": [
@@ -5768,7 +5768,7 @@
     {
       "name": "ClassDeletion",
       "definition_uri": "http://w3id.org/kgcl/ClassDeletion",
-      "description": "A node deletion where the owl type is 'owl:Class'",
+      "description": "A node deletion where the node is a class (as opposed to a relation)",
       "from_schema": "https://w3id.org/kgcl",
       "is_a": "NodeDeletion",
       "slots": [
@@ -5804,7 +5804,7 @@
     {
       "name": "ObjectPropertyDeletion",
       "definition_uri": "http://w3id.org/kgcl/ObjectPropertyDeletion",
-      "description": "A node deletion where the owl type is 'ObjectProperty'",
+      "description": "A node deletion where the node is an object property (a relation)",
       "from_schema": "https://w3id.org/kgcl",
       "is_a": "NodeDeletion",
       "slots": [
@@ -6278,9 +6278,9 @@
   ],
   "metamodel_version": "1.11.0",
   "source_file": "kgcl.yaml",
-  "source_file_date": "2026-11-18T10:48:20",
-  "source_file_size": 34308,
-  "generation_date": "2026-11-18T10:48:28",
+  "source_file_date": "2026-11-18T12:05:54",
+  "source_file_size": 34457,
+  "generation_date": "2026-11-18T12:06:06",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/kgcl.context.jsonld",

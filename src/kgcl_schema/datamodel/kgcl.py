@@ -1,5 +1,5 @@
 # Auto generated from kgcl.yaml by pythongen.py version: 0.0.1
-# Generation date: 2026-11-18T10:48:36
+# Generation date: 2026-11-18T12:06:11
 # Schema: kgcl_schema
 #
 # id: https://w3id.org/kgcl
@@ -2475,7 +2475,7 @@ class NodeCreation(NodeChange):
 @dataclass(repr=False)
 class ClassCreation(NodeCreation):
     """
-    A node creation where the owl type is 'owl:Class'
+    A node creation where the node is a class (as opposed to a relation)
     """
     _inherited_slots: ClassVar[list[str]] = []
 
@@ -2507,7 +2507,7 @@ class ClassCreation(NodeCreation):
 @dataclass(repr=False)
 class ObjectPropertyCreation(NodeCreation):
     """
-    A node creation where the owl type is 'ObjectProperty'
+    A node creation where the node is an object property (a relation)
     """
     _inherited_slots: ClassVar[list[str]] = []
 
@@ -2535,8 +2535,8 @@ class ObjectPropertyCreation(NodeCreation):
 @dataclass(repr=False)
 class NodeDeletion(NodeChange):
     """
-    Deletion of a node from the graph. Note it is recommended nodes are obsoleted and never merged, but this operation
-    exists to represent deletions in ontologies, accidental or otherwise
+    Deletion of a node from the graph. Note that it is recommended nodes are obsoleted and never merged, but this
+    operation exists to represent deletions in ontologies, accidental or otherwise
     """
     _inherited_slots: ClassVar[list[str]] = []
 
@@ -2580,7 +2580,7 @@ class NodeDeletion(NodeChange):
 @dataclass(repr=False)
 class ClassDeletion(NodeDeletion):
     """
-    A node deletion where the owl type is 'owl:Class'
+    A node deletion where the node is a class (as opposed to a relation)
     """
     _inherited_slots: ClassVar[list[str]] = []
 
@@ -2608,7 +2608,7 @@ class ClassDeletion(NodeDeletion):
 @dataclass(repr=False)
 class ObjectPropertyDeletion(NodeDeletion):
     """
-    A node deletion where the owl type is 'ObjectProperty'
+    A node deletion where the node is an object property (a relation)
     """
     _inherited_slots: ClassVar[list[str]] = []
 
