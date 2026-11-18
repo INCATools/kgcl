@@ -302,7 +302,6 @@
          "@id": "prov:wasInformedBy"
       },
       "xrefs": {
-         "@type": "xsd:anyURI",
          "@id": "oio:hasDbXref"
       },
       "Activity": {

@@ -1,5 +1,5 @@
 # Auto generated from kgcl.yaml by pythongen.py version: 0.0.1
-# Generation date: 2026-11-18T13:13:34
+# Generation date: 2026-11-18T13:24:19
 # Schema: kgcl_schema
 #
 # id: https://w3id.org/kgcl
@@ -1625,7 +1625,7 @@ class NewSynonym(NodeSynonymChange):
     language: Optional[str] = None
     qualifier: Optional[str] = None
     predicate: Optional[Union[str, NodeId]] = None
-    xrefs: Optional[Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]]] = empty_list()
+    xrefs: Optional[Union[str, list[str]]] = empty_list()
 
     def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
@@ -1647,7 +1647,7 @@ class NewSynonym(NodeSynonymChange):
 
         if not isinstance(self.xrefs, list):
             self.xrefs = [self.xrefs] if self.xrefs is not None else []
-        self.xrefs = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.xrefs]
+        self.xrefs = [v if isinstance(v, str) else str(v) for v in self.xrefs]
 
         super().__post_init__(**kwargs)
         self.type = str(self.class_name)
@@ -2130,7 +2130,7 @@ class NewTextDefinition(NodeTextDefinitionChange):
 
     id: Union[str, NewTextDefinitionId] = None
     new_value: Optional[str] = None
-    xrefs: Optional[Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]]] = empty_list()
+    xrefs: Optional[Union[str, list[str]]] = empty_list()
 
     def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
@@ -2143,7 +2143,7 @@ class NewTextDefinition(NodeTextDefinitionChange):
 
         if not isinstance(self.xrefs, list):
             self.xrefs = [self.xrefs] if self.xrefs is not None else []
-        self.xrefs = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.xrefs]
+        self.xrefs = [v if isinstance(v, str) else str(v) for v in self.xrefs]
 
         super().__post_init__(**kwargs)
         self.type = str(self.class_name)
@@ -3340,7 +3340,7 @@ slots.qualifier = Slot(uri=KGCL.qualifier, name="qualifier", curie=KGCL.curie('q
                    model_uri=KGCL.qualifier, domain=None, range=Optional[str])
 
 slots.xrefs = Slot(uri=OIO.hasDbXref, name="xrefs", curie=OIO.curie('hasDbXref'),
-                   model_uri=KGCL.xrefs, domain=None, range=Optional[Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]]])
+                   model_uri=KGCL.xrefs, domain=None, range=Optional[Union[str, list[str]]])
 
 slots.subclass = Slot(uri=KGCL.subclass, name="subclass", curie=KGCL.curie('subclass'),
                    model_uri=KGCL.subclass, domain=None, range=Optional[str])
