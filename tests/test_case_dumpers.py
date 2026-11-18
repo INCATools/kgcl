@@ -72,6 +72,7 @@ SECTIONS = {
         "ObjectPropertyCreation": "Create an object property.",
     },
     "Deleting nodes": {
+        "ClassDeletion": "Delete a class.",
         "ObjectPropertyDeletion": "Delete an object property.",
     },
 }

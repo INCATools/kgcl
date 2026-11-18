@@ -7,6 +7,7 @@
            | create_class 
            | create_object_property
            | delete_object_property
+           | delete_class
            | unobsolete
            | deepen
            | shallow
@@ -40,6 +41,7 @@ change_synonym: "change" _WS [synonym_qualifier _WS] "synonym" _WS synonym ["@" 
 
 delete : "delete" _WS entity
 delete_object_property : "delete object property" _WS entity
+delete_class : "delete class" _WS entity
 
 obsolete : "obsolete" _WS entity
          | "obsolete" _WS entity _WS "with replacement" _WS replacement

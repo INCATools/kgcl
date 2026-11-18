@@ -4,6 +4,7 @@
 from kgcl_schema.datamodel.kgcl import (
     AddNodeToSubset,
     ClassCreation,
+    ClassDeletion,
     EdgeCreation,
     EdgeDeletion,
     NewSynonym,
@@ -157,6 +158,10 @@ def render(kgcl_instance: Change) -> str:
     if type(kgcl_instance) is ObjectPropertyDeletion:
         subject = render_entity(kgcl_instance.about_node, "uri")
         return "delete object property " + subject
+
+    if type(kgcl_instance) is ClassDeletion:
+        subject = render_entity(kgcl_instance.about_node, "uri")
+        return "delete class " + subject
 
     if type(kgcl_instance) is NodeMove:
         subject = render_entity(kgcl_instance.about_edge.subject, "uri")

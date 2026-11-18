@@ -404,6 +404,21 @@ about_node_representation: curie
 
 ## Deleting nodes
 
+### Delete a class
+
+Class: [`ClassDeletion`](https://w3id.org/kgcl/ClassDeletion)
+
+```kgcl
+delete class GO:9999999
+```
+
+```yaml
+id: CHANGE:001
+type: ClassDeletion
+about_node: GO:9999999
+about_node_representation: curie
+```
+
 ### Delete an object property
 
 Class: [`ObjectPropertyDeletion`](https://w3id.org/kgcl/ObjectPropertyDeletion)
